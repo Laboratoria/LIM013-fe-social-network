@@ -170,39 +170,52 @@ a la red social.
 
 Te dejamos un ejemplo de cómo definir criterios de aceptación y definiciones de terminado para una H.U. Si se te complica definirlas o no tienes idea de que considerar para cada H.U. es de gran ayuda revisar redes sociales como `facebok`, `twitter`, `instagram`, `tik tok` o la red social que más te guste y puedas evaluar qué consideran en cada funcionalidad para darla como terminada y aceptada
 
-    > Como usuario registrado debo poder iniciar sesión con email y password válidos para ingresar
-    > a la red social.
-    >
-    > **Criterios de Aceptación:** todo lo que debe ocurrir para satisfacer las
-    > necesidades del usuario.
-    > - Si el mail o password no es válido, al momento de logearme, debo poder 
-    >   ver un mensaje de error.
-    > - Debe ser visible si hay algún mensaje de error.
-    > - Debo poder ver esta página de creación en Móviles y desktop (responsive). 
-    > - No debe necesitar recargar la página para crear una cuenta (SPA).
-    >
-    > **Definición de terminado:** todos los aspectos técnicos que deben cumplirse
-    > para que, como equipo, sepan que esa historia está terminada y lista
-    > para publicarse. **Todas** tus Historias de Usuario (salvo excepciones), deben
-    > incluir estos aspectos en su Definición de Terminado (más todo lo que
-    > necesiten agregar):
-    > - La funcionalidad cumple y satisface los criterios de aceptación.
-    > - La funcionalidad tiene _test unitarios_.
-    > - El diseño visual corresponde al prototipo propuesto.
-    > - El código de esta funcionalidad recibió code review de una o dos compañeras 
-    > de otro equipo.
-    > - La funcionalidad esta desplegada y pública para ser probada. 
-    > - La funcionalidad fue probada manualmente buscando errores e imperfecciones simples..
-    > - La página es responsive (mobile first)
-    > - Se hicieron pruebas de usuabilidad y se implementó el feedback si se 
-    >   consideró necesario.
+   > Como usuario registrado debo poder iniciar sesión con email y password válidos para ingresar
+   > a la red social.
+   >
+   > **Criterios de Aceptación:** todo lo que debe ocurrir para satisfacer las
+   > necesidades del usuario.
+   > - Si el mail o password no es válido, al momento de logearme, debo poder 
+   >   ver un mensaje de error.
+   > - Debe ser visible si hay algún mensaje de error.
+   > - Debo poder ver esta página de creación en Móviles y desktop (responsive). 
+   > - No debe necesitar recargar la página para crear una cuenta (SPA).
+   >
+   > **Definición de terminado:** todos los aspectos técnicos que deben cumplirse
+   > para que, como equipo, sepan que esa historia está terminada y lista
+   > para publicarse. **Todas** tus Historias de Usuario (salvo excepciones), deben
+   > incluir estos aspectos en su Definición de Terminado (más todo lo que
+   > necesiten agregar):
+   > - La funcionalidad cumple y satisface los criterios de aceptación.
+   > - La funcionalidad tiene _test unitarios_.
+   > - El diseño visual corresponde al prototipo propuesto.
+   > - El código de esta funcionalidad recibió code review de una o dos compañeras 
+   > de otro equipo.
+   > - La funcionalidad esta desplegada y pública para ser probada. 
+   > - La funcionalidad fue probada manualmente buscando errores e imperfecciones simples..
+   > - La página es responsive (mobile first)
+   > - Se hicieron pruebas de usuabilidad y se implementó el feedback si se 
+   >   consideró necesario.
 
 
 ### 5.3 Diseño de la Interfaz de Usuario (prototipo de baja fidelidad)
 
 Debes definir cuál será el flujo que seguirá el usuario dentro de tu aplicación
-y, con eso, diseña la Interfaz de Usuario (UI por sus siglas en inglés) que
+y, con eso, diseñar la Interfaz de Usuario (UI por sus siglas en inglés) que
 siga este flujo.
+
+A continuación te proporcionamos un layout (diseño) de la vista mobile y desktop que puedes
+elegir replicar visualmente y cuyo contenido, colores y fuentes de texto, dejaremos a tu elección.
+En caso de elegir trabajar con este layaout (diseño) ya no deberás de crear un prototipo de baja
+fidelidad.
+
+* Vista mobile
+
+    ![mobile](https://user-images.githubusercontent.com/32286663/56174616-ec9f6100-5fb8-11e9-9edb-d5ef7c251d9c.png)
+
+* Vista Desktop
+
+    ![desktop](https://user-images.githubusercontent.com/32286663/56174626-fcb74080-5fb8-11e9-8854-26e8d9c4e25f.png)
 
 ### 5.4 Consideraciones técnicas Front-end
 
