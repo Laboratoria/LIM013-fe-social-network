@@ -37,8 +37,9 @@ acceso y loguearse con ella; crear, editar, borrar y _"likear"_ publicacciones.
 ## 3. Objetivos de aprendizaje
 
 El objetivo principal de aprendizaje de este proyecto es construir una
-[Single-page Application (SPA)](https://es.wikipedia.org/wiki/Single-page_application)
-[_responsive_](https://github.com/Laboratoria/curricula-js/tree/master/topics/css/02-responsive)
+[Single-page Application (SPA)](https://es.wikipedia.org/wiki/Single-page_application) que se adapte 
+al patrón modelo - vista - controlador [MVC](https://es.wikipedia.org/wiki/Modelo%E2%80%93vista%E2%80%93controlador)
+y que sea [_responsive_](https://github.com/Laboratoria/curricula-js/tree/master/topics/css/02-responsive)
  (con más de una vista / página) en la que podamos **leer, escribir, actualizar y
  eliminar datos.**
 
@@ -47,12 +48,13 @@ El objetivo principal de aprendizaje de este proyecto es construir una
 * [ ] [Uso de HTML semántico.](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
 * [ ] Uso de selectores de CSS.
 * [ ] Construir tu aplicación respetando el diseño realizado (maquetación).
-* [ ] [Uso de flexbox en CSS.](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+* [ ] Uso de [flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) | [Grid]('https://css-tricks.com/snippets/css/complete-guide-grid/') en CSS.
 
 ### DOM y Web APIs
 
-* [ ] Uso de selectores del DOM.
-* [ ] Manejo de eventos del DOM.
+* [ ] [Uso de selectores del DOM.](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/template_strings)
+* [ ] [Manejo de eventos del DOM](https://lms.laboratoria.la/cohorts/lim-2020-07-bc-core-lim013/courses/browser/02-dom/04-events)
+(aprovecha el objeto de evento en sus handlers, uso de event delegacion.)
 * [ ] [Manipulación dinámica del DOM.](https://developer.mozilla.org/es/docs/Referencia_DOM_de_Gecko/Introducci%C3%B3n)
 (appendChild |createElement | createTextNode| innerHTML | textContent | etc.)
 * [ ] [History API.](https://developer.mozilla.org/es/docs/DOM/Manipulando_el_historial_del_navegador)
@@ -60,6 +62,7 @@ El objetivo principal de aprendizaje de este proyecto es construir una
 
 ### JavaScript
 
+* [ ] [Uso de template strings](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/template_strings)
 * [ ] Uso de condicionales (if-else | switch | operador ternario)
 * [ ] Uso de funciones (parámetros | argumentos | valor de retorno)
 * [ ] Manipular arrays (filter | map | sort | reduce)
@@ -87,7 +90,7 @@ El objetivo principal de aprendizaje de este proyecto es construir una
 
 * [ ] Uso de comandos de git (add | commit | pull | status | push)
 * [ ] Manejo de repositorios de GitHub (clone | fork | gh-pages)
-* [ ] Colaboración en Github (branches | pull requests | |tags)
+* [ ] Colaboración en Github (branches | pull requests | code reviews |tags)
 * [ ] Organización en Github (projects | issues | labels | milestones)
 
 ### Firebase
@@ -147,8 +150,11 @@ que detalles:
 ### 5.2 Historias de usuario
 
 Para este proyecto vamos a entregarte las Historias de  Usuario para tú junto a tu equipo
-puedan escribir los criterios de aceptación y definición determinado de cada una. De igual
-manera te recomendamos adaptarlas a la tématica de tu red social.
+puedan escribir los criterios de aceptación y definición determinado de cada una. Recuerda 
+priorizar la implementación de tus funcionalidades, en función al esfuerzo que demandan en
+relación al valor que le aportan al usuario, y ejecutar en equipo todas las historias de
+usuario dentro del tiempo estimado para cada sprint y que finalmente se vean reflejadas 
+en publicaciones completamentamente funcionales al final de cada sprint.
 
 * Como usuario nuevo debo poder crear una cuenta con email y password válidos para ingresar
 a la red social.
@@ -168,7 +174,7 @@ a la red social.
 
 * Yo como usuario loggeado debo poder visualizar los datos de mi perfil creado y editarlos para actualizar mi información.
 
-Te dejamos un ejemplo de cómo definir criterios de aceptación y definiciones de terminado para una H.U. Si se te complica definirlas o no tienes idea de que considerar para cada H.U. es de gran ayuda revisar redes sociales como `facebok`, `twitter`, `instagram`, `tik tok` o la red social que más te guste y puedas evaluar qué consideran en cada funcionalidad para darla como terminada y aceptada
+Te dejamos un ejemplo de cómo definir criterios de aceptación y definiciones de terminado para una H.U. Si se te complica definirlas o no tienes idea de que considerar para cada H.U. es de gran ayuda revisar redes sociales como `facebok`, `twitter`, `instagram`, `tik tok` o la red social que más te guste y puedas evaluar qué consideran en cada funcionalidad para darla como terminada y aceptada. De igual manera recuerda considerar tus objetivos de aprendizaje en tu planificación.
 
    > Como usuario registrado debo poder iniciar sesión con email y password válidos para ingresar
    > a la red social.
@@ -222,12 +228,13 @@ fidelidad.
 * Separar la manipulación del DOM de la lógica (Separación de responsabilidades).
 * Contar con múltiples vistas. Para esto, tu aplicación debe ser una
  [Single Page Application (SPA)](https://es.wikipedia.org/wiki/Single-page_application).
- Te recomendamos revisar la [Píldora de SPA](https://www.loom.com/share/fa63a8ad0e9a43428222c15b6f6613d3) que también puedes encontrar en la sección de recursos
- al final del `Readme.md`.
+ Te recomendamos revisar la [Píldora de SPA](https://www.loom.com/share/fa63a8ad0e9a43428222c15b6f6613d3) que también
+ puedes encontrar en la sección de recursos al final del `Readme.md`. De igual manera puedes revisar 
+ [este repositorio]('https://github.com/merunga/todomvc-vanillajs') donde puedes ver cómo construir un To-do MVC con `vanillajs`.
 * Debe ser responsive por lo cual debe verse bien en dispositivos de pantallas grandes
 (computadoras/es, laptops, etc.) y pequeñas (_tablets_, celulares, etc.). Te
 sugerimos seguir la técnica de _`mobile first`_ (más detalles sobre esta técnica
-al final).
+al final). De igual manera no está permitido el uso de frameworks de CCS (bootstrap).
 * Alterar y persistir datos. Los datos que agregues o modifiques deberán
   persistir a lo largo de la aplicación. Te recomendamos que uses
   [Firebase](https://firebase.google.com/) para eso también.
@@ -235,7 +242,8 @@ al final).
 #### Pruebas unitarias (unit tests)
 
 * Los tests unitarios deben cubrir un mínimo del 70% de _statements_, _functions_,
-  _lines_, y _branches_.
+  _lines_, y _branches_. Te recomendamos revisar la [Pildora de mock Firebase](https://www.youtube.com/watch?v=06myVn41OTY&t=1s)
+  que también puedes encontrar en la sección de recursos al final del `Readme.md`.
 
 ### 5.8 Consideraciones técnicas UX
 
