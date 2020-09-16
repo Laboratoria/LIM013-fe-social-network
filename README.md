@@ -230,7 +230,7 @@ fidelidad.
  [Single Page Application (SPA)](https://es.wikipedia.org/wiki/Single-page_application).
  Te recomendamos revisar la [Píldora de SPA](https://www.loom.com/share/fa63a8ad0e9a43428222c15b6f6613d3) que también
  puedes encontrar en la sección de recursos al final del `Readme.md`. De igual manera puedes revisar 
- [este repositorio]('https://github.com/merunga/todomvc-vanillajs') donde puedes ver cómo construir un To-do MVC con `vanillajs`.
+ [este repositorio](https://github.com/merunga/todomvc-vanillajs) donde puedes ver cómo construir un To-do MVC con `vanillajs`.
 * Debe ser responsive por lo cual debe verse bien en dispositivos de pantallas grandes
 (computadoras/es, laptops, etc.) y pequeñas (_tablets_, celulares, etc.). Te
 sugerimos seguir la técnica de _`mobile first`_ (más detalles sobre esta técnica
