@@ -1,5 +1,8 @@
-// Este es el punto de entrada de tu aplicacion
+import { cambioVista } from './controller/router.js';
 
-import { myFunction } from './lib/index.js';
+const init = () => {
+  validation(cambioVista);
+};
 
-myFunction();
+window.addEventListener('load', init);
+window.addEventListener('hashchange', init);
