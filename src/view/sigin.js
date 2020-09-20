@@ -3,7 +3,6 @@
 import { cambioVista } from '../controller/router.js';
 import { signingIn, signingInGoogle } from '../controller/signin-controller.js';
 
-
 export default () => {
   // creado de inicio de sesión//
   const vistaSignIn = document.createElement('div');
