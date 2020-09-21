@@ -5,12 +5,10 @@
 //   console.log('Hola mundo!');
 // };
 
-import vistaSignIn from './sigin.js';
-
+import Register from './register.js';
 
 const components = {
-  sigin: vistaSignIn,
+  register: Register,
 };
-
 
 export { components };

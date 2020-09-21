@@ -1,8 +1,8 @@
 import { cambioVista } from './controller/router.js';
 
 const init = () => {
-  validation(cambioVista);
+  cambioVista(window.location.hash);
+  window.addEventListener('hashchange', () => cambioVista(window.location.hash));
 };
 
 window.addEventListener('load', init);
-window.addEventListener('hashchange', init);
