@@ -1,39 +1,45 @@
 
-/* eslint-disable import/no-cycle */
-import { cambioVista } from '../controller/router.js';
-import { signingIn, signingInGoogle } from '../controller/signin-controller.js';
-
+/* import { signingIn, signingInGoogle } from '../controller/signin-controller.js'; */
 export default () => {
-  // creado de inicio de sesión//
-  const vistaSignIn = document.createElement('div');
-  vistaSignIn.classList.add('sign-in');
-  vistaSignIn.innerHTML = `
-        <div class="LogIn_Container">
-        <h1>PetsLandia</h1>
-        <p>Comparte los mejores momentos de tu mascota</p>
-        <input class="email" type="email" class="emailLogin" placeholder="E-mail">
-        <input class="password" type="password" id="passwordLogin" placeholder="Contraseña">
-        <button type="button" class="buttom_logIn" id="buttomLogIn">Inicia Sesión</button>
-        <p>O ingresa con:</p>
-        <a href="#">
-            <i class="fab fa-facebook"></i>
-        </a>
-        <a href="#">
-            <i class="fab fa-google-plus"></i>
-        </a>
-        <p>¿No tienes cuenta?.</p>
-        <button type="button" class="buttom_SignUp" id="buttomSignUp">Registrate</button>
-        </div>`;
-  // Sesión con correo y contraseña//
-  const buttonLogIn = vistaSignIn.querySelector('#buttomLogIn');
-  buttonLogIn.addEventListener('click', signingIn);
-  // Registro de usuario//
-  const buttonViewSignUp = vistaSignIn.querySelector('#buttomSignUp');
-  buttonViewSignUp.addEventListener('click', () => {
-    cambioVista('#/signup');
-  });
-  // Iniciar sesión con Google
-  const buttonLogInGoogle = vistaSignIn.querySelector('#btnLogInGoogle');
-  buttonLogInGoogle.addEventListener('click', signingInGoogle);
-  return vistaSignIn;
+  const viewSignIn = `
+  <section class="container">
+  <form action="/action_page.php">
+    <section class="row">
+      <section class="vl">
+        <span class="vl-innertext">or</span>
+      </section>
+      <section class="col">
+
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+        />
+        <input type="submit" value="Login" />
+        <section class="hide-md-lg">
+          <p>O ingresa con ...</p>
+        </section>
+      </section>
+      <section class="col">
+          <a href="#" class="fa fa-facebook"></a> 
+          <a href="#" class="fa fa-google"></a>
+
+      </section>
+      <section class="register">
+        <p>¿No tienes cuenta?<a href="#/Register" style="color: blue"> Registrate</a></p> 
+      </section>
+    </section>
+  </form>
+</section>`;
+  const divElem = document.createElement('div');
+  divElem.classList.add('sign');
+  divElem.innerHTML = viewSignIn;
+  return divElem;
 };

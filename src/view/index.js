@@ -5,12 +5,14 @@
 //   console.log('Hola mundo!');
 // };
 
-import vistaSignIn from './sigin.js';
-
+import Register from './register.js';
+import viewSignIn from './sigin.js';
+import viewNotFound from './404.js';
 
 const components = {
-  sigin: vistaSignIn,
+  register: Register,
+  signIn: viewSignIn,
+  notFound: viewNotFound,
 };
-
 
 export { components };

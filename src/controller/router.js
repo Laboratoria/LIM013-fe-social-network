@@ -1,19 +1,16 @@
+// eslint-disable-next-line import/no-cycle
 import { components } from '../view/index.js';
 
-const cambioVista = (route) => {
-  const currentUser = user();
-  window.location.hash = route;
+export const cambioVista = (hash) => {
   const sectionContainer = document.getElementById('container');
   sectionContainer.innerHTML = '';
-  let routeSelected = '';
-  switch (route) {
-    case '#/signin': routeSelected = sectionContainer.appendChild(components.signin());
-      break;
-    case '#/signup': routeSelected = sectionContainer.appendChild(components.signup());
-      break;
-    default: routeSelected = sectionContainer.appendChild(components.notfound());
-      break;
+
+  switch (hash) {
+    case '#/signIn':
+    { return sectionContainer.appendChild(components.signIn()); }
+    case '#/Register':
+    { return sectionContainer.appendChild(components.register()); }
+    default:
+      return sectionContainer.appendChild(components.notFound());
   }
-  return routeSelected;
 };
-export { cambioVista };
