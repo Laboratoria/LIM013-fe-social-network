@@ -1,0 +1,92 @@
+header {
+    background-color:rgba(232,232,232,1);
+    width: 100vw;
+    height: 80px;
+    /* position: fixed; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+}
+/* el botón check asociado al input */
+#check-menu {
+    display: none;
+}
+
+header > img {
+    padding-left: 20px;
+    width: 150px;
+}
+
+/* el botón que despliega el menú */
+header > label {
+    display: block;
+    padding-right: 15px;
+}
+
+nav {
+    position: absolute; 
+    width: 100vw;
+    background-color: rgba(33,96,150,1);
+    margin-top: 115px; 
+    transform: translateX(+100%);
+    transition: 0.5s;
+}
+
+nav > ul {
+    display: flex;
+    flex-direction: column;
+    margin:0;
+    padding: 0;
+    list-style: none;       
+}
+
+nav > ul > li > a {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    border-top: 1px solid white;
+}
+
+nav > ul > li > a:hover {
+    background-color: #f7971c;
+}
+
+/* si se dio check al input, llama a la barra de navegación */
+#check-menu:checked ~ nav {
+    transform: translateX(0%);
+}
+
+@media screen and (min-width: 890px)  {
+
+    header > label {
+        display: none;
+    }
+
+    nav {
+        position: static;
+        width: auto;
+        height: auto;
+        margin: 0;
+        background-color: rgba(232,232,232,1);       
+        transform: translateX(0%);
+    }
+
+    nav > ul {
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        list-style: none;       
+    }
+
+    nav > ul > li > a {
+        border: none;
+        color:#007cba;
+    }
+
+    nav > ul > li > a:hover {
+        background: initial;
+        color: #f7971c;
+    }
+}

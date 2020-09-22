@@ -1,12 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <link type="text/css" rel="stylesheet" href="style.css">
+  <title>Intranet</title>
 </head>
+
 <body>
+  <header>
+    <img src="img/logo.png" alt="logo">
+    
+    <input type="checkbox" id="check-menu">
+    <label for="check-menu"> <img src="img/menu.png" alt="menu-burguer"></label>
+
+    <nav>
+      <ul>
+        <li><a href="">Inicio</a></li>
+        <li><a href="">Mi perfil</a></li>
+        <li><a href="">Cerrar sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+   <main>
+    <!-- PERFIL CON OPCIÓN PARA POSTEAR -->
+    <section id="profile">
+      <img src="img/perfil.png" alt="profile-picture">
+      <ul class="profile-data">
+        <li class="name"> Fulanita Suarez</li>
+        <li class="data"> Profesora de Matemáticas</li>
+        <li class="data"> Grado: </li>
+        <li class="data"> Cursos: </li>
+      </ul>
+    </section>
+
+    <section class="post">
+      <div class="post-options">
+        <label for="privacy-post">Privacidad: </label>
+        <select id="privacy-post">
+          <option value="public">Público</option>
+          <option value="private">Privado</option>
+        </select>
+        <button type="button" id="edit-post"><img src="" alt="edit-post"></button>      
+      </div>
+
+      <!-- ver si usar un formulario para enviar los datos <form action="" asociado a un botón input submit" -->
+      <div class="text-container">
+        <label for="post-text"></label>
+        <textarea id="post-text" name="post-text" placeholder="¿Qué quieres compartir?"></textarea>
+      </div>
+
+      <div class="post-buttons">
+        <button type="button" id="load-img"><img src="" alt="load-img"></button>
+        <button id="share-post" class="button-post">Compartir</button>
+      </div>
+    </section>
+
+    <!-- SECCIÓN CON LOS DEMÁS POSTS -->
+    <section id="timeline" class="posted">
+      <!-- ocultar íconos de borrar y editar -->
+      <div class="post-author">
+        <span>Publicado por __</span>      
+      </div>
+
+      <!-- ver si usar un formulario para enviar los datos <form action="" asociado a un botón input submit" -->
+      <div class="text-container">
+        <label for="post-text-posted"></label>
+        <textarea class="post-text-posted" name="post-text-posted" readonly></textarea>
+      </div>
+
+      <div class="post-buttons">
+        <button type="button" id="like-post" class="button-post"><img src="" alt="like"></button>
+        <button id="share-post" class="button-post">Comentar</button>
+      </div>
+    </section>
+  </main>
   <script type="module" src="main.js"></script>
 </body>
+
 </html>
