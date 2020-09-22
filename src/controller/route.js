@@ -5,11 +5,14 @@ const changeView = (route) => {
   container.innerHTML = '';
   switch (route) {
     case '':
-      return container.appendChild(components.logIn());
+      container.appendChild(components.logIn());
+      break;
     case '#/signUp':
-      return container.appendChild(components.signUp());
+      container.appendChild(components.signUp());
+      break;
     case '#/home':
-      return container.appendChild(components.home());
+      container.appendChild(components.home());
+      break;
     default:
       break;
   }
