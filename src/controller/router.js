@@ -4,13 +4,15 @@ import { components } from '../view/index.js';
 export const cambioVista = (hash) => {
   const sectionContainer = document.getElementById('container');
   sectionContainer.innerHTML = '';
+  let routeSelected = '';
 
   switch (hash) {
-    case '#/signIn':
-    { return sectionContainer.appendChild(components.signIn()); }
-    case '#/Register':
-    { return sectionContainer.appendChild(components.register()); }
-    default:
-      return sectionContainer.appendChild(components.notFound());
+    case '#/signIn': routeSelected = sectionContainer.appendChild(components.signIn());
+      break;
+    case '#/Register': routeSelected = sectionContainer.appendChild(components.register());
+      break;
+    default: routeSelected = sectionContainer.appendChild(components.notFound());
+      break;
   }
+  return routeSelected;
 };

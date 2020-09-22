@@ -3,7 +3,7 @@
 export default () => {
   const viewSignIn = `
   <section class="container">
-  <form action="/action_page.php">
+  <form action="/action_page.php" class="signIn_Form">
     <section class="row">
       <section class="vl">
         <span class="vl-innertext">or</span>
@@ -12,17 +12,19 @@ export default () => {
 
         <input
           type="email"
+          id="SignInForm_email"
           name="email"
           placeholder="Email"
           required
         />
         <input
           type="password"
+          id="SignInForm_password"
           name="password"
           placeholder="Password"
           required
         />
-        <input type="submit" value="Login" />
+        <button type="submit" class='submit_signIn'>Inicia Sesión</button>
         <section class="hide-md-lg">
           <p>O ingresa con ...</p>
         </section>
@@ -43,3 +45,11 @@ export default () => {
   divElem.innerHTML = viewSignIn;
   return divElem;
 };
+/*
+const formSignIn = document.querySelector('.submit_signIn');
+formSignIn.addEventListener('click', (e) => {
+  e.preventDefault();
+  const inputEmail = document.querySelector('#SignInForm_email').value;
+  const inputPassword = document.querySelector('#SignInForm_password').value;
+  console.log(inputEmail, inputPassword);
+}); */
