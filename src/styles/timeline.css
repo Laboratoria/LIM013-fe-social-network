@@ -1,0 +1,149 @@
+#timelineView {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    align-items: center; 
+  }
+
+  /* Datos del perfil */
+
+#profile {
+    display:flex;
+    margin-top: 10px;
+}
+
+#profile > img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+/* Cuadro para postear */
+
+.post {
+    margin-top: 15px;
+    background-color:lightgray;
+    width: 320px;
+    height:200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+#post-text {
+    width: 280px;
+    height: 80px;
+    border-radius: 8px;
+    border: 5px solid gray;
+}
+
+textarea {
+    resize: none;
+    color:#007cba;
+  }
+
+.post-buttons{
+    width: 280px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;   
+}  
+
+.button-post {
+    background-color: #41A530;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+/* Timeline: Ya posteados */
+
+.posted {
+    margin-top: 15px;
+    background-color: lightgray;
+    width: 320px;
+    height:150px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.post-author {
+    background-color: #41A530;
+    display: flex;
+    flex-direction: column;
+    width: 290px;
+    height: 35px;
+    border-radius: 8px 8px 0px 0px; 
+    justify-content: center;
+    padding-left: 30px;
+}
+
+.post-text-posted {
+    width: 300px;
+    height: 60px;
+    border-radius: 0px 0px 3px 3px;
+}
+
+
+@media screen and (min-width: 890px)  {
+
+    #timelineView {
+        display: grid;
+        grid-template-columns: auto 350px auto auto;
+        column-gap: 25px;
+      }
+
+    #profile {
+        display: flex;
+        margin: 0;
+        padding: 10px;
+        justify-content: flex-end;
+        border: 5px solid lightgray;
+        border-radius: 5px;
+        grid-column: 2;
+      }  
+
+    .post {
+        margin-top: 15px;
+        background-color: lightgray;
+        width: 500px;
+        height:200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        grid-column: 3;
+     }  
+     #post-text {
+        width: 470px;
+        height: 80px;
+    }
+    .posted {
+        margin-top: 15px;
+        background-color: lightgray;
+        width: 500px;
+        height:150px;
+        border-radius: 8px;
+        grid-column: 3;
+    }
+    .post-author {
+        width: 470px;
+        height: 35px;
+        justify-content: center;
+    }
+    .post-text-posted {
+        width: 492px;
+        height: 60px;      
+    }
+    
+    
+
+
+}

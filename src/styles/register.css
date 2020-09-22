@@ -1,0 +1,41 @@
+.form-flex {
+    width: 300px;
+    height: 70vh;
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-flex li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input:not(.button-post) {
+    height: 30px;
+    width: 250px;
+    border-radius: 20px;
+    border-color: #41A530;
+    border-style: solid;  
+}
+
+@media screen and (min-width: 890px)  {
+
+    #section-register {
+        display: grid;
+        grid-template-columns: auto auto;
+        column-gap: 25px;
+      }
+
+    input:not(.button-post) {
+        height: 30px;
+        width: 310px;
+        border-style: solid;
+        border-radius: 20px;
+    }
+
+}

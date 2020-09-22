@@ -1,5 +1,20 @@
+<<<<<<< HEAD
 @import 'login.css';
 @import 'perfil.css';
 * {
     margin: 0;
 }
+=======
+@import url(menu.css);
+@import url(timeline.css);
+@import url(register.css);
+
+ body{
+    margin: 0;
+    font-family: "Helvetica";
+    font-size: 17px;
+    background: white;
+    color:#007cba;
+}
+
+>>>>>>> master
