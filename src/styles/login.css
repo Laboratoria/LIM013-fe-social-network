@@ -1,0 +1,131 @@
+.imagen-celular{
+	display: none;
+}
+#view-login-desktop{
+		display: flex;
+		width: 100%;
+		flex-wrap: wrap;
+		justify-content: center;
+}
+.item-login{
+    width: 50%;
+}
+#img-colegio{
+		width: 100%;
+		height: 100vh;
+}
+.formulario-login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+		justify-content: center;
+		text-align: center;
+		background-color: #EEF2F5;
+}
+.formulario-login h1{
+	color: #007cba;
+		font-size: 40px;
+		margin-bottom: 3%;
+}
+.formulario-login p{
+	color: #065FA2;
+		font-size: 20px;
+		margin-bottom: 6%;
+}
+.input-form{
+		font-size: 18px;
+		margin-bottom: 12%;
+		margin-left: 6px;
+		border:solid 2px #41A530;
+		border-radius: 4px;
+}
+.formulario-login i{
+	font-size: x-large;
+	color: #41A530;
+}
+#btn-ingresar{
+	margin-bottom: 6%;
+	padding: 15px 45px;
+	font-size: 15px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+  color: #fff;
+  background-color: #007cba;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #999;
+}
+#btn-ingresar:hover {
+	background-color: #065FA2;
+}
+#btn-ingresar:active {
+  background-color: #065FA2;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+#btn-fb {
+	border:solid #007cba;
+}
+#btn-fb i{
+	color:#007cba;
+}
+#btn-gmail{
+	border: solid #CB2B04;
+}
+#btn-gmail i{
+	color:#CB2B04;
+}
+.redes{
+	background-color: #ffffff;
+	font-size: xx-large;
+	width: 1.6em;
+	margin-right: 5%;
+	margin-bottom: 6%;
+	outline: none;
+	cursor: pointer;
+}
+.redes:hover {
+	background-color: #C0C1C2;
+}
+#nueva-cuenta{
+	font-size: 22px;
+	color: #f7971c;
+	font-weight: bold;
+}
+@media (max-width:600px){
+	.saludo{
+		display: none;
+	}
+	.imagen-celular{
+		display: flex;
+		width: 100%;
+		margin-top: 0;
+	}
+	#img-celular{
+		width: 100%;
+	}
+	.imagen-login{
+		display: none;
+	}
+	.item-login{
+		width: 100%;
+		height: 100vh;
+}
+.formulario-login{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	background:#EEF2F5;
+}
+#formulario-principal{
+	display: flex;
+	margin-top: 10%;
+}
+#correo{
+	margin-top: 15%;
+}
+
+}

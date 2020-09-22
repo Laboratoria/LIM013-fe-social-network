@@ -1,12 +1,11 @@
-import viewLogin from './login.js';
-import viewPerfil from './perfil.js';
-import registerView from './register.js';
-import timelineView from './timeline.js';
+import {loginPrincipal} from './login.js';
+import {Perfil} from './perfil.js';
 
-export const components={
-    login:viewLogin,
-    perfil:viewPerfil,
-    register:registerView,
-    timeline:timelineView,
+const components={
+    login:loginPrincipal,
+    perfil:Perfil,
+   // register:registerView,
+    //timeline:timelineView,
 
 };
+export {components};
