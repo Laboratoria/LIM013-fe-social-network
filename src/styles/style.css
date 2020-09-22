@@ -1,0 +1,5 @@
+@import 'login.css';
+@import 'perfil.css';
+* {
+    margin: 0;
+}
