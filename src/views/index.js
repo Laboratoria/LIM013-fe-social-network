@@ -1,5 +1,7 @@
-import {viewLogin} from './login.js';
+import viewLogin from './login.js';
+import viewPerfil from './perfil.js';
 
 export const components={
-    login:viewLogin
+    login:viewLogin,
+    perfil:viewPerfil
 };
