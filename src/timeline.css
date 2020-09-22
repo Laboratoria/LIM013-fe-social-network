@@ -1,4 +1,4 @@
-main {
+#timelineView {
     display: flex;
     flex-direction: column;
     width: 100vw;
@@ -94,7 +94,7 @@ textarea {
 
 @media screen and (min-width: 890px)  {
 
-    main {
+    #timelineView {
         display: grid;
         grid-template-columns: auto 350px auto auto;
         column-gap: 25px;

@@ -1,4 +1,4 @@
-export const registerForm = () => {
+export const registerView = () => {
   const registerTmplt = `
   <section id="section-register">
     <div>
