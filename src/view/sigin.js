@@ -1,6 +1,7 @@
 
 // eslint-disable-next-line import/no-cycle
 import { cambioVista } from '../controller/router.js';
+// eslint-disable-next-line import/no-cycle
 import { signingIn } from '../controller/signin-controller.js';
 
 export default () => {
@@ -50,7 +51,8 @@ export default () => {
           <a href="#" class="fa fa-google"></a>
       </section>
       <section class="register">
-        <p>¿No tienes cuenta?<a href="#/Register" style="color: blue"> Registrate</a></p> 
+      <p>¿No tienes cuenta?</p>        
+      <button class="signup" id="SignUp"><a href="#/Register" style="color: blue"> Registrate</a></button> 
       </section>
     </section>
   </form>
@@ -60,7 +62,12 @@ export default () => {
   divElem.classList.add('sign');
   divElem.innerHTML = viewSignIn;
   // Iniciando sesión con correo y contraseña
-  const signUpForm = document.querySelector('#signIn-form');
-  signUpForm.addEventListener('submit', signingIn);
+  const signInForm = divElem.querySelector('#signIn-form');
+  signInForm.addEventListener('submit', signingIn);
+  // Pasando a vista de registro
+  const signUpForm = divElem.querySelector('#SignUp');
+  signUpForm.addEventListener('submit', () => {
+    cambioVista('#/Register');
+  });
   return divElem;
 };

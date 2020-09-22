@@ -15,15 +15,16 @@ const firebaseConfig = {
 };
   // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-export const auth = firebase.auth();
 
-
+// Initialize Firestore
 export const storage = firebase.storage();
 
+// Iniciar Firestore
+export const data = firebase.firestore();
 
 const init = () => {
-  cambioVista(window.location.hash);
-  window.addEventListener('hashchange', () => cambioVista(window.location.hash));
+  validation(cambioVista);
 };
 
 window.addEventListener('load', init);
+window.addEventListener('hashchange', init);
