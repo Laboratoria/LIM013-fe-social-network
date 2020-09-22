@@ -169,6 +169,26 @@ input[type='submit']:hover {
     margin-bottom: 0rem;
 }
 
+.position {
+	margin: 1rem 1rem;
+}
+.registerForm-container p{
+	font-size: 150%;
+    text-align: center;
+	font-weight: bold;
+	
+}
+span.error-msg {
+    font-size: 70%;
+    /* margin-right: 0rem; */
+    margin-left: 1rem;
+}
+.msg-alert-reg{
+	margin-bottom: 1rem;
+}
+.bttonSudmitt{
+	width: 100%;
+}
 
 /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 650px) {
@@ -199,5 +219,7 @@ input[type='submit']:hover {
 	.hide-md-lg {
 		display: block;
 		text-align: center;
-    }
+	}
 }
+
+
