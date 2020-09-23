@@ -22,7 +22,7 @@ export const loginPrincipal=()=>{
 					<button id="btn-ingresar">INGRESAR</button>
 					<p>O ingresa con</p>
 					<button id="btn-fb" class="redes"><i class="fab fa-facebook-f"></i></button>
-					<button id="btn-gmail" class="redes"><i class="fab fa-google"></i></button>
+					<button  id="btn-gmail" class="redes"><i class="fab fa-google"></i></button>
 					<p>¿Todavia no eres miembro?</p>
 					<a id="nueva-cuenta" href="#">Únete Ahora</a>
 				</form>
@@ -33,3 +33,5 @@ export const loginPrincipal=()=>{
 	div.innerHTML=viewLogin;
 	return div;
 }
+
+/* agregué type button a los botones de google y facebook */
