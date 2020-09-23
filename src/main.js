@@ -1,6 +1,5 @@
 import { cambioVista } from './controller/router.js';
 import { validation } from './firebase/validation-controller.js';
-
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -23,8 +22,7 @@ export const storage = firebase.storage();
 export const data = firebase.firestore();
 
 const init = () => {
-  validation(cambioVista);
+  cambioVista(window.location.hash);
+  window.addEventListener('hashchange', () => cambioVista(window.location.hash));
 };
-
 window.addEventListener('load', init);
-window.addEventListener('hashchange', init);

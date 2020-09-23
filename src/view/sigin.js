@@ -1,8 +1,6 @@
 
-// eslint-disable-next-line import/no-cycle
-import { cambioVista } from '../controller/router.js';
-// eslint-disable-next-line import/no-cycle
-import { signingIn } from '../controller/signin-controller.js';
+
+/* import { signingIn, signingInGoogle } from '../controller/signin-controller.js'; */
 
 export default () => {
   const viewSignIn = `
@@ -21,27 +19,36 @@ export default () => {
 </a>
 </header>
   <section class="container">
-  <form id="signIn-form">
+
+  <form action="/action_page.php" class="signIn_Form">
+
     <section class="row">
       <section class="vl">
         <span class="vl-innertext">or</span>
       </section>
       <section class="col">
+
+
         <input
           type="email"
-          id="signIn-email"
+          id="SignInForm_email"
           name="email"
           placeholder="Email"
+          autocomplete="on" 
+
           required
         />
         <input
           type="password"
-          id="signIn-password"
+
+          id="SignInForm_password"
           name="password"
           placeholder="Password"
+          autocomplete="on" 
           required
         />
-        <input type="submit" value="Login" />
+        <button type="submit" class='submit_signIn'>Inicia Sesión</button>
+
         <section class="hide-md-lg">
           <p>O ingresa con ...</p>
         </section>
@@ -49,10 +56,12 @@ export default () => {
       <section class="col">
           <a href="#" class="fa fa-facebook"></a> 
           <a href="#" class="fa fa-google"></a>
+
+
       </section>
       <section class="register">
-      <p>¿No tienes cuenta?</p>        
-      <button class="signup" id="SignUp"><a href="#/Register" style="color: blue"> Registrate</a></button> 
+        <p>¿No tienes cuenta?<a href="#/Register" style="color: blue"> Registrate</a></p> 
+
       </section>
     </section>
   </form>
@@ -61,13 +70,16 @@ export default () => {
   const divElem = document.createElement('div');
   divElem.classList.add('sign');
   divElem.innerHTML = viewSignIn;
-  // Iniciando sesión con correo y contraseña
-  const signInForm = divElem.querySelector('#signIn-form');
-  signInForm.addEventListener('submit', signingIn);
-  // Pasando a vista de registro
-  const signUpForm = divElem.querySelector('#SignUp');
-  signUpForm.addEventListener('submit', () => {
-    cambioVista('#/Register');
-  });
+
+
+
   return divElem;
 };
+/*
+const formSignIn = document.querySelector('.submit_signIn');
+formSignIn.addEventListener('click', (e) => {
+  e.preventDefault();
+  const inputEmail = document.querySelector('#SignInForm_email').value;
+  const inputPassword = document.querySelector('#SignInForm_password').value;
+  console.log(inputEmail, inputPassword);
+}); */
