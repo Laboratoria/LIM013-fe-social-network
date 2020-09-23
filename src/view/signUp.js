@@ -1,8 +1,10 @@
 import { createUser } from '../controller/controller-firebase.js';
 
 export default () => {
-  const viewSignUp = `
-  <section class="text-infoSingUp">
+  const viewSignUp = document.createElement('section');
+  viewSignUp.classList.add('container-signUp');
+  viewSignUp.innerHTML = `
+<section class="text-infoSingUp">
   <p class="text-infoTitle">Why create my account in TravelIn?</p>
   <p class="text">Because TravelIn will allow you to create bonds and get closer to a great network of travel lovers</p>
 </section>
@@ -16,7 +18,7 @@ export default () => {
     <form id="signup-form" class="signup-form" >
       <div class="div-input">
         <i class="fas fa-user"></i>
-        <input type="email" id="email" placeholder="E-mail" required />
+        <input type="text" id="usarname" placeholder="Username" required />
       </div>
       <div class="div-input">
       <i class="fas fa-envelope"></i>
@@ -33,10 +35,7 @@ export default () => {
   </div>
 </section>
 `;
-  const sectionElement = document.createElement('section');
-  sectionElement.innerHTML = viewSignUp;
-  sectionElement.classList.add('container-signUp');
-  return sectionElement;
+
 
   // /* ---------------Valida los campos required-----------------*/
   //   const validar = () => {
@@ -53,39 +52,18 @@ export default () => {
   //   };
 
   /* ------------ Capturando el formulario sign up -------------*/
-  // const signupForm = viewSignUp.querySelector('#signup-form');
-  // signupForm.addEventListener('submit', (e) => {
-  //   e.preventDefault();
-  //   const email = viewSignUp.querySelector('#email').value;
-  //   const password = viewSignUp.querySelector('#password').value;
-  //     createUser(email, password)
-  //       .then(() => {
-  //       resetear el formulario una vez ingresado los datos
-  //         console.log('enviando');
-  //         signupForm.reset();
-  //       })
-  //       .catch();}
-
-  //   /* ------------Registro con Google------------------*/
-
-  //   const btnGoogle = viewSignUp.querySelector('#btn-google');
-  //   btnGoogle.addEventListener('click', () => {
-  //     // Accede al servicio auth de firebase para validar datos ingresados
-  //     const auth = firebase.auth();
-  //     const provider = new firebase.auth.GoogleAuthProvider();
-  //     auth
-  //       .signInWithPopup(provider)
-  //       .then(() => {
-  //         console.log('google sign in');
-  //       })
-  //       .catch((err) => {
-  //         console.log(err);
-  //       });
-  //     console.log('hola');
-  //   });
-
-
-//   return viewSignUp;
+  const signupForm = viewSignUp.querySelector('#signup-form');
+  signupForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = viewSignUp.querySelector('#email').value;
+    const password = viewSignUp.querySelector('#password').value;
+    createUser(email, password)
+      .then(() => {
+      // resetear el formulario una vez ingresado los datos
+        console.log('enviando');
+        signupForm.reset();
+      })
+      .catch();
+  });
+  return viewSignUp;
 };
-
-

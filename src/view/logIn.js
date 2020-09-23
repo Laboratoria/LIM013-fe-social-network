@@ -1,5 +1,8 @@
+
 export default () => {
-  const viewLogIn = `
+  const viewLogIn = document.createElement('section');
+  viewLogIn.classList.add('container-logIn');
+  viewLogIn.innerHTML = `
   <section class="text-info">
     <p class="text-infoTitle">what is TravelIn?</p>
     <p class="text">Travelin is a social network that unites people who share the same passion for travel.</p>
@@ -33,8 +36,22 @@ export default () => {
     </div>
   </section>
   `;
-  const sectionElement = document.createElement('section');
-  sectionElement.innerHTML = viewLogIn;
-  sectionElement.classList.add('container-logIn');
-  return sectionElement;
+
+  const btnGoogle = viewLogIn.querySelector('#btn-google');
+  btnGoogle.addEventListener('click', () => {
+    // Accede al servicio auth de firebase para validar datos ingresados
+    const auth = firebase.auth();
+    const provider = new firebase.auth.GoogleAuthProvider();
+    auth
+      .signInWithPopup(provider)
+      .then(() => {
+        console.log('google sign in');
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    console.log('hola');
+  });
+
+  return viewLogIn;
 };
