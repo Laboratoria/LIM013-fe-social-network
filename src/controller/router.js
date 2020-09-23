@@ -16,7 +16,6 @@ export const cambioVista = (hash) => {
       break;
     case '#/Register': routeSelected = sectionContainer.appendChild(components.register());
       break;
-    default: routeSelected = sectionContainer.appendChild(components.notFound());
     // eslint-disable-next-line no-fallthrough
     case '#/home':
       getAllPosts((notes) => {
@@ -30,7 +29,20 @@ export const cambioVista = (hash) => {
         routeSelected = sectionContainer.appendChild(components.home(arrNotes));
       });
       break;
+    case '#/profile':
+      getAllPosts((notes) => {
+        const arrNotes = [];
+        notes.forEach((note) => {
+          if (note.user === currentUser.uid) {
+            arrNotes.push(note);
+          }
+        });
+        sectionContainer.innerHTML = '';
+        routeSelected = sectionContainer.appendChild(components.profile(arrNotes));
+      });
+      break;
+    default: routeSelected = sectionContainer.appendChild(components.notfound());
+      break;
   }
-
   return routeSelected;
 };
