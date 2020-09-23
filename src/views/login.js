@@ -21,8 +21,8 @@ export const loginPrincipal=()=>{
 					<input type="text" id="clave" name="clave" placeholder="Contraseña"class="input-form"/><br>
 					<button id="btn-ingresar">INGRESAR</button>
 					<p>O ingresa con</p>
-					<button id="btn-fb" class="redes"><i class="fab fa-facebook-f"></i></button>
-					<button  id="btn-gmail" class="redes"><i class="fab fa-google"></i></button>
+					<button type="button" id="btn-fb" class="redes"><i class="fab fa-facebook-f"></i></button>
+					<button type="button" id="btn-gmail" class="redes"><i class="fab fa-google"></i></button>
 					<p>¿Todavia no eres miembro?</p>
 					<a id="nueva-cuenta" href="#">Únete Ahora</a>
 				</form>
@@ -31,7 +31,41 @@ export const loginPrincipal=()=>{
 	</section>`
 	const div= document.createElement('div')
 	div.innerHTML=viewLogin;
-	return div;
-}
+	
 
-/* agregué type button a los botones de google y facebook */
+const btnGmail = div.querySelector('#btn-gmail');
+
+btnGmail.addEventListener('click', (e) => {
+		
+		e.preventDefault();
+		console.log(e);
+        const provider = new firebase.auth.GoogleAuthProvider();
+        firebase.auth().signInWithPopup(provider)
+            .then(result => {
+                alert(result.user.displayName);
+			})
+            .catch(error => {
+                console.log(error);
+            });
+	});
+
+const btnFb = div.querySelector('#btn-fb');
+
+btnFb.addEventListener('click', (e) => {
+		
+	e.preventDefault();
+	console.log(e);
+	const provider = new firebase.auth.FacebookAuthProvider();
+	firebase.auth().signInWithPopup(provider)
+		.then(result => {
+			console.log(result);
+		})
+		.catch(error => {
+			console.log(error);
+		});
+});
+
+
+
+	return div;
+}	
