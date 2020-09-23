@@ -21,37 +21,46 @@ export default () => {
   </div>
 `;
   /* ---------------Valida los campos required-----------------*/
-  const validar = () => {
-    let valid = true;
-    const inputRequired = document.querySelectorAll('.signup-form input');
-    console.log(inputRequired);
-    for (let i = 0; i < inputRequired.length; i += 1) {
-      if (inputRequired[i].value === '') {
-        inputRequired[i].classList.add('error');
-        valid = false;
-      }
-    }
-    return valid;
-  };
+  // const validar = () => {
+  //   let valid = true;
+  //   const inputRequired = document.querySelectorAll('.signup-form input');
+  //   console.log(inputRequired);
+  //   for (let i = 0; i < inputRequired.length; i += 1) {
+  //     if (inputRequired[i].value === '') {
+  //       inputRequired[i].classList.add('error');
+  //       valid = false;
+  //     }
+  //   }
+  //   return valid;
+  // };
+
 
   /* ------------ Capturando el formulario sign up -------------*/
   const signupForm = viewSignUp.querySelector('#signup-form');
   signupForm.addEventListener('submit', (e) => {
-    validar();
     e.preventDefault();
 
+    const username = viewSignUp.querySelector('#username').value;
     const email = viewSignUp.querySelector('#email').value;
     const password = viewSignUp.querySelector('#password').value;
 
-    if (validar()) {
-      createUser(email, password)
-        .then(() => {
+    createUser(email, password)
+      .then(() => {
         // resetear el formulario una vez ingresado los datos
-          console.log('enviando');
-          signupForm.reset();
-        })
-        .catch();
-    }
+        console.log('enviando');
+        signupForm.reset();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    const db = firebase.firestore();
+    db.collection('users').add({
+      User: username,
+      Email: email,
+      Password: password,
+    })
+      .then();
   });
 
   /* ------------Registro con Google------------------*/
