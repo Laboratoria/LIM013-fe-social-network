@@ -5,30 +5,30 @@ export default () => {
     <p class="text">Travelin is a social network that unites people who share the same passion for travel.</p>
     <img src="img/imgLogo.png">
   </section>
-  <section class="logIn">
-    <div class="box-login">
+  <section class="section-register">
+    <div class="box-section-register">
       <header>
         <h1 class="title">TravelIn</h1>
         <p class="text">¡ welcome to travelin !</p>
         <p class="text-title">Sign in</p>
       </header>
       <form>
-        <div class="input-logIn">
+        <div class="div-input">
         <i class="fas fa-envelope"></i>
         <input type="email" id="email" placeholder="E-mail" required />
         </div>
-        <div class="input-logIn">
+        <div class="div-input">
         <i class="fas fa-lock"></i>
         <input type="password" id="password" pattern="[a-zA-Z0-9]{8,20}" placeholder="Password" required />
         </div>
         <button type="submit" class="btn-logIn"><a href="#/home">Log in</a></button>
         <p class="text">or enter with ...</p>
         <div class="option">
-          <img src="img/gmail.png" class="gmail">
+          <img src="img/gmail.png" class="gmail" id="btn-google">
           <img src="img/facebook.png" class="facebook">
         </div>
         <p class="text">New to TravelIn?</p>
-        <button type="submit" class="newAccount"><a href="#/signUp">Create an account</a></button>
+        <button class="newAccount"><a href="#/signUp">Create an account</a></button>
       </form>
     </div>
   </section>

@@ -12,30 +12,34 @@
 /****************************************vista de logIn***********************************/
 /*css para vista SignIn*/
 /*contenedor de text-info y logIn*/
-.container-logIn{
+.container-logIn , .container-signUp{
     position: absolute;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-evenly;
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
 }
 /*referente a text-info*/
 .text-info img{
     margin-top: 100px;
 }
-.text-info .text{
-    margin-left: 20%;
-}
-.text-info{
+
+.text-info,.text-infoSingUp{
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-end;
     color: #ffffff;
-    margin-right: 10%;
     width: 50%;
-
 }
+.text-info{
+    margin-right: 10%;
+}
+.text-infoSingUp{
+    margin-left: 10%;
+}
+
 .text-infoTitle{
     font-size: 24px;
     color: #ffffff;
@@ -45,7 +49,7 @@
 }
 /*referente a logIn*/
 /*contenedor de box-logIn*/
-.logIn{
+.section-register{
     width: 50%;
     height:100%;
     display: flex;  
@@ -53,7 +57,7 @@
     justify-items: center;
     align-items: center;
 }
-.box-login{
+.box-section-register{
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -62,7 +66,7 @@
     min-width: 350px;
     height: 80%;
 }
-.box-login header{
+.box-section-register header{
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -80,7 +84,7 @@
     color: #444;
     font-weight: bold;
 }
-.input-logIn input {
+.div-input input {
     background: none;
     outline: none;
     border: none;
@@ -90,10 +94,10 @@
     color: #333;
     border-radius: 55px;
   }
-  .box-login input::placeholder {
+  .box-section-register input::placeholder {
     color: #aaa;
   }
-  .input-logIn {
+  .div-input {
     max-width: 100%;
     background-color: #f0f0f0;
     height: 55px;
@@ -104,13 +108,13 @@
     font-size: 16px;
     width: 100%;
   }
-  .input-logIn i {
+  .div-input i {
     text-align: center;
     line-height: 55px;
     color: #acacac;
     font-size: 16px;
   }
-.logIn form{
+.section-register form{
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-evenly;
@@ -118,24 +122,24 @@
     width: 100%;
     height: 80%;
 }
-.btn-logIn,.newAccount{
+
+.btn-logIn,.newAccount,.btn-signUp{
+    font-weight: 600;
     justify-content: center;
     width: 60%;
     border: none;
     outline: none;
     height: 49px;
     border-radius: 49px;
-    margin-left: auto;
-    margin-right: auto;
     cursor: pointer;
 }
-.btn-logIn{
+.btn-logIn,.backLogin{
     background-color: transparent;
     border-color: #2CAB92;
     color: #2CAB92;
     border-style: solid;
 }
-.newAccount{
+.newAccount,.btn-signUp{
     color: #ffffff;
     height: 55px;
     background-color:#2CAB92;
@@ -143,15 +147,23 @@
 .newAccount a{
     color: #ffffff;
 }
-.btn-logIn a{
+.btn-logIn a,.backLogin a{
     color: #2CAB92;
 }
-.btn-logIn a,.newAccount a{
+.btn-logIn a,.newAccount a,.backLogin a{
     text-decoration: none;
     font-size: 16px;
+
 }
-.btn-logIn:hover,.newAccount:hover{
-    background-color:  #8dccc9;
+.newAccount:hover,.btn-signUp:hover{
+    background-color:  #2b7a75;
+    width: 62%;
+    height: 54px;
+}
+.backLogin:hover,.btn-logIn:hover{
+    border-color: #2b7a75;
+    color: #2b7a75;
+    height: 55px;
 }
 .option{
     display: flex;
@@ -172,7 +184,7 @@
     height: 45px;
 }
 /*referente a diseño circular de la vista de logIn*/
-.container-logIn:before {
+.container-logIn:before  {
     content: "";
     position: absolute;
     height: 2000px;
@@ -182,8 +194,40 @@
     background-image: linear-gradient(-45deg, #2CAB92 0%, #04befe 100%);
     border-radius: 50%;
     z-index: -1;
+    transition: 1s ease-in-out;
+
 }
 /******************************Vista de signUp***********************************/
+.backLogin{
+    justify-content: center;
+    width: 20%;
+    height: 49px;
+    border-radius: 49px;
+    cursor: pointer;
+}
+.backLogin a{
+    font-size: 30px;
+}
+.container-signUp:before {
+    content: "";
+    position: absolute;
+    height: 2000px;
+    width: 2000px;
+    left: 50%;
+    transform: translateY(-50%);
+    background-image: linear-gradient(45deg, #2CAB92 0%, #04befe 100%);
+    border-radius: 50%;
+    z-index: -1;
+    transition: 1s ease-in-out;
+}
+.container-signUp{
+    position: absolute;
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+}
 
 
 
@@ -201,21 +245,41 @@
         transition: 1s ease-in-out;
         z-index: -1;
     }
-    .text-info .text{
-        margin-left: 0%;
-    }
+   
     .text-info img{
         display: none;
     }
-    .container-logIn{
+    .container-logIn , .container-signUp{
         flex-flow: row wrap;
     }
 
-    .logIn{
+    .section-register{
         width: 80%;
     }
-    .box-login{
+    .box-section-register{
         width: 100%;
     }
     /*referente a vista SignUp*/
+    .container-signUp:before {
+        width: 1500px;
+        height: 1500px;
+        transform: translateX(-45%);
+        right: 30%;
+        bottom: 75%;
+        right: initial;
+        top: initial;
+        transition: 1s ease-in-out;
+        z-index: -1;
+    }
+    .text-infoSingUp{
+        width: 90%;
+        margin-left: 12%;
+        margin-right: 5%;
+    }
+    .text-infoSingUp .text , .text-info .text {
+        font-size: 14px;
+    }
+    
+
+
 }
