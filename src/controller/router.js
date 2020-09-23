@@ -3,8 +3,7 @@
 
 import { components } from '../view/index.js';
 // eslint-disable-next-line import/no-unresolved
-import { getAllPosts } from '../firebase/firestore-controller.js';
-import { user } from '../firebase/auth-controller.js';
+
 
 export const cambioVista = (hash) => {
   window.location.has = hash;

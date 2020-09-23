@@ -1,7 +1,6 @@
 
 import { signUp } from '../firebase/auth-controller.js';
-import {  userRegistration } from '../controller/register-controller.js';
-
+import { userRegistration } from '../controller/register-controller.js';
 
 export default () => {
   const viewRegister = `
@@ -89,8 +88,7 @@ export default () => {
 
 
   // Evento para registrar usuario
-    btonLogUp.addEventListener('submit', userRegistration);
-  
+  btonLogUp.addEventListener('submit', userRegistration);
 
   return divElemt;
 };
