@@ -1,7 +1,221 @@
-.option img{
-    width: 20px;
-    height: 20px;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 .error {
     border: 2px solid red;
+}
+/****************************************vista de logIn***********************************/
+/*css para vista SignIn*/
+/*contenedor de text-info y logIn*/
+.container-logIn{
+    position: absolute;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+}
+/*referente a text-info*/
+.text-info img{
+    margin-top: 100px;
+}
+.text-info .text{
+    margin-left: 20%;
+}
+.text-info{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-end;
+    color: #ffffff;
+    margin-right: 10%;
+    width: 50%;
+
+}
+.text-infoTitle{
+    font-size: 24px;
+    color: #ffffff;
+}
+.text{
+    font-size: 16px;
+}
+/*referente a logIn*/
+/*contenedor de box-logIn*/
+.logIn{
+    width: 50%;
+    height:100%;
+    display: flex;  
+    justify-content: space-evenly;
+    justify-items: center;
+    align-items: center;
+}
+.box-login{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%;
+    min-width: 350px;
+    height: 80%;
+}
+.box-login header{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
+.title{
+    font-size: 48px;
+    color: #2CAB92;
+    font-weight: bold;
+}
+.text-title{
+    font-size: 32px;
+    color: #444;
+    font-weight: bold;
+}
+.input-logIn input {
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+    border-radius: 55px;
+  }
+  .box-login input::placeholder {
+    color: #aaa;
+  }
+  .input-logIn {
+    max-width: 100%;
+    background-color: #f0f0f0;
+    height: 55px;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    position: relative;
+    font-size: 16px;
+    width: 100%;
+  }
+  .input-logIn i {
+    text-align: center;
+    line-height: 55px;
+    color: #acacac;
+    font-size: 16px;
+  }
+.logIn form{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+}
+.btn-logIn,.newAccount{
+    justify-content: center;
+    width: 60%;
+    border: none;
+    outline: none;
+    height: 49px;
+    border-radius: 49px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+.btn-logIn{
+    background-color: transparent;
+    border-color: #2CAB92;
+    color: #2CAB92;
+    border-style: solid;
+}
+.newAccount{
+    color: #ffffff;
+    height: 55px;
+    background-color:#2CAB92;
+}
+.newAccount a{
+    color: #ffffff;
+}
+.btn-logIn a{
+    color: #2CAB92;
+}
+.btn-logIn a,.newAccount a{
+    text-decoration: none;
+    font-size: 16px;
+}
+.btn-logIn:hover,.newAccount:hover{
+    background-color:  #8dccc9;
+}
+.option{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    width: 40%;
+}
+.option img{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.option img:hover{
+    width: 45px;
+    height: 45px;
+}
+/*referente a diseño circular de la vista de logIn*/
+.container-logIn:before {
+    content: "";
+    position: absolute;
+    height: 2000px;
+    width: 2000px;
+    right: 50%;
+    transform: translateY(-50%);
+    background-image: linear-gradient(-45deg, #2CAB92 0%, #04befe 100%);
+    border-radius: 50%;
+    z-index: -1;
+}
+/******************************Vista de signUp***********************************/
+
+
+
+/******************************media query***********************************/
+@media screen and (max-width:900px){
+    /*referente a vista logIn*/
+    .container-logIn:before {
+        width: 1500px;
+        height: 1500px;
+        transform: translateX(-50%);
+        left: 30%;
+        bottom: 75%;
+        right: initial;
+        top: initial;
+        transition: 1s ease-in-out;
+        z-index: -1;
+    }
+    .text-info .text{
+        margin-left: 0%;
+    }
+    .text-info img{
+        display: none;
+    }
+    .container-logIn{
+        flex-flow: row wrap;
+    }
+
+    .logIn{
+        width: 80%;
+    }
+    .box-login{
+        width: 100%;
+    }
+    /*referente a vista SignUp*/
 }

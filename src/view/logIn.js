@@ -1,5 +1,6 @@
 export default () => {
   const viewLogIn = `
+  <section class="container-logIn">
   <section class="text-info">
     <p class="text-infoTitle">what is TravelIn?</p>
     <p class="text">Travelin is a social network that unites people who share the same passion for travel.</p>
@@ -32,9 +33,10 @@ export default () => {
       <button type="submit" class="newAccount"><a href="#/signUp">Create an account</a></button>
     </form>
   </div>
-  </section>`;
+  </section>
+  `;
   const sectionElement = document.createElement('section');
   sectionElement.innerHTML = viewLogIn;
-  sectionElement.classList.add('container-logIn');
+ 
   return sectionElement;
 };
