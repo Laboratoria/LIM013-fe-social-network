@@ -1,15 +1,11 @@
-import { viewRegister  } from "../view/register.js";
+import { signUp, user, verificationEmail } from '../firebase/auth-controller.js';
 
-const btonLogUp = viewRegister.querySelector('#submit-buttomRegister');
-consol.log(btonLogUp);
-btonLogUp.addEventListener('click', () => {
-  const nameUser = divElemt.querySelector('#nameUser').value;
-  const emailLogUp = divElemt.querySelector('#emailSignUp').value;
-  const passwordLogUp = divElemt.querySelector('#passwordSignUp').value;
-  console.log(nameUser);
-  console.log(emailLogUp);
-  console.log(passwordLogUp);
-    // Authenticate the User
-    firebase.auth().createUserWithEmailAndPassword(emailLogUp, passwordLogUp).catch(function (error) {
-      console.log("SigUp")
-    });
+export const userRegistration = () => {
+  const nameUser = document.querySelector('#nameUser');
+  const emailLogUp = document.querySelector('#emailSignUp').value;
+  const passwordLogUp = document.querySelector('#passwordSignUp').value;
+
+  signUp(emailLogUp, passwordLogUp).then((result) => {
+console.log(result);
+  });
+};

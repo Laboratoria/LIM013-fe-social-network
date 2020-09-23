@@ -1,3 +1,6 @@
+import { signUp } from '../firebase/auth-controller.js';
+import {  userRegistration } from '../controller/register-controller.js';
+
 export default () => {
   const viewRegister = `
   <header>
@@ -74,18 +77,12 @@ export default () => {
   divElemt.classList.add('position');
   divElemt.innerHTML = viewRegister;
 
-  const btonLogUp = divElemt.querySelector('#submit-buttomRegister');
-  btonLogUp.addEventListener('click', () => {
-    const nameUser = divElemt.querySelector('#nameUser').value;
-    const emailLogUp = divElemt.querySelector('#emailSignUp').value;
-    const passwordLogUp = divElemt.querySelector('#passwordSignUp').value;
-    console.log(nameUser);
-    console.log(emailLogUp);
-    console.log(passwordLogUp);
-      // Authenticate the User
-      firebase.auth().createUserWithEmailAndPassword(emailLogUp, passwordLogUp).catch(function (error) {
-        console.log("SigUp")
-      });
-  });
+  const btonLogUp = divElemt.querySelector('#signUp-form');
+  console.log(btonLogUp);
+
+
+  // Evento para registrar usuario
+    btonLogUp.addEventListener('submit', userRegistration);
+  
   return divElemt;
 };
