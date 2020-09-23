@@ -42,7 +42,7 @@ btnGmail.addEventListener('click', (e) => {
         const provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithPopup(provider)
             .then(result => {
-                alert(result.user.displayName);
+                alert("Bienvenid@,"+ result.user.displayName);
 			})
             .catch(error => {
                 console.log(error);
@@ -58,7 +58,7 @@ btnFb.addEventListener('click', (e) => {
 	const provider = new firebase.auth.FacebookAuthProvider();
 	firebase.auth().signInWithPopup(provider)
 		.then(result => {
-			console.log(result);
+			alert("Bienvenid@,"+ result.user.displayName);
 		})
 		.catch(error => {
 			console.log(error);
