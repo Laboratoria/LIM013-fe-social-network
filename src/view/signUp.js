@@ -30,7 +30,7 @@ export default () => {
       </div>
       <button type="submit" class="btn-signUp">SIGN UP</button>
       <p class="text">Back to signIn</p>
-      <button class="backLogin"><a  class="fas fa-arrow-left" href=""></a></button>
+      <button class="backLogin"><i class="fas fa-arrow-left"></i></button>
     </form>
   </div>
 </section>
@@ -51,6 +51,8 @@ export default () => {
   //     return valid;
   //   };
 
+  const btnBackLogin = viewSignUp.querySelector('.backLogin');
+  btnBackLogin.addEventListener('click', () => { window.location.hash = ''; });
   /* ------------ Capturando el formulario sign up -------------*/
   const signupForm = viewSignUp.querySelector('#signup-form');
   signupForm.addEventListener('submit', (e) => {

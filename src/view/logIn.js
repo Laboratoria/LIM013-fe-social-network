@@ -31,12 +31,15 @@ export default () => {
           <img src="img/facebook.png" class="facebook">
         </div>
         <p class="text">New to TravelIn?</p>
-        <button class="newAccount"><a href="#/signUp">Create an account</a></button>
+        <button class="newAccount">Create an account</button>
       </form>
     </div>
   </section>
   `;
-
+  // redirigir a la vista de '#/signUp'
+  const btnNewAccount = viewLogIn.querySelector('.newAccount');
+  btnNewAccount.addEventListener('click', () => { window.location.hash = '#/signUp'; });
+  // autenticar con google
   const btnGoogle = viewLogIn.querySelector('#btn-google');
   btnGoogle.addEventListener('click', () => {
     // Accede al servicio auth de firebase para validar datos ingresados
@@ -45,7 +48,7 @@ export default () => {
     auth
       .signInWithPopup(provider)
       .then(() => {
-        console.log('google sign in');
+        window.location.hash = '#/home';
       })
       .catch((err) => {
         console.log(err);
