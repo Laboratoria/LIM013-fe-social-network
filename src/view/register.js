@@ -1,3 +1,7 @@
+/* eslint-disable import/no-cycle */
+import { cambioVista } from '../controller/router.js';
+import { userRegistration } from '../controller/register-controller.js';
+
 export default () => {
   const viewRegister = `
   <header>
@@ -17,14 +21,13 @@ export default () => {
   <section class="register-container">
   <section class="registerForm-container">
     <p>Regístrate</p>
-    <form action="/action_page.php">
+    <form id="signUp-form">
     <section class="msg-alert-reg">
       <input
         class="input-register validity"
         id="nameUser"
         type="text"
         placeholder="Nombre de usuario"
-        pattern="([a-zA-ZÁÉÍÓÚñáéíóúÑ]{1,30}\\s*)+"
         required
       />
       <span class="error-msg">Solo letras</span>
@@ -34,8 +37,7 @@ export default () => {
         class="input-register validity"
         id="emailSignUp"
         type="email"
-        placeholder="e-mail"
-        pattern="[A-Za-z0-9]+@[a-z]+\\.[a-z]+"
+        placeholder="e-mail"    
         required
       />
       <span class="error-msg">Ingrese un e-mail valido</span>
@@ -72,5 +74,17 @@ export default () => {
   const divElemt = document.createElement('div');
   divElemt.classList.add('position');
   divElemt.innerHTML = viewRegister;
+
+  const nameUser = divElemt.querySelector('#nameUser');
+  const emailLogUp = divElemt.querySelector('#emailSignUp');
+  const passwordLogUp = divElemt.querySelector('#passwordSignUp');
+  const btonLogUp = divElemt.querySelector('#submit-buttomRegister');
+
+  nameUser.addEventListener;
+   emailLogUp = divElemt.querySelector('#emailSignUp');
+   passwordLogUp = divElemt.querySelector('#passwordSignUp');
+   btonLogUp = divElemt.querySelector('#submit-buttomRegister');
+
+
   return divElemt;
 };
