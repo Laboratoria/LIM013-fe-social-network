@@ -37,6 +37,7 @@ export default () => {
   </section>
   `;
 
+  /* ------------Registro con Google------------------*/
   const btnGoogle = viewLogIn.querySelector('#btn-google');
   btnGoogle.addEventListener('click', () => {
     // Accede al servicio auth de firebase para validar datos ingresados

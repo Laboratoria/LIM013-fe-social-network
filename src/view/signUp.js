@@ -18,7 +18,7 @@ export default () => {
     <form id="signup-form" class="signup-form" >
       <div class="div-input">
         <i class="fas fa-user"></i>
-        <input type="text" id="usarname" placeholder="Username" required />
+        <input type="text" id="username" placeholder="Username" required />
       </div>
       <div class="div-input">
       <i class="fas fa-envelope"></i>
@@ -29,6 +29,7 @@ export default () => {
       <input type="password" id="password" pattern="[a-zA-Z0-9]{8,20}" placeholder="Password" required />
       </div>
       <button type="submit" class="btn-signUp">SIGN UP</button>
+      <p id = "error-message" class = "error-message"></p>
       <p class="text">Back to signIn</p>
       <button class="backLogin"><a  class="fas fa-arrow-left" href=""></a></button>
     </form>
@@ -55,15 +56,34 @@ export default () => {
   const signupForm = viewSignUp.querySelector('#signup-form');
   signupForm.addEventListener('submit', (e) => {
     e.preventDefault();
+
+    const error = viewSignUp.querySelector('#error-message');
+    const username = viewSignUp.querySelector('#username').value;
     const email = viewSignUp.querySelector('#email').value;
     const password = viewSignUp.querySelector('#password').value;
+
     createUser(email, password)
       .then(() => {
-      // resetear el formulario una vez ingresado los datos
+        // resetear el formulario una vez ingresado los datos
         console.log('enviando');
         signupForm.reset();
+        window.location.hash = '#/home';
       })
-      .catch();
+      .catch((err) => {
+        error.textContent = err.message;
+        setTimeout(() => {
+          signupForm.removeChild(error);
+        }, 3000);
+      });
+
+    const db = firebase.firestore();
+    db.collection('users').add({
+      User: username,
+      Email: email,
+      Password: password,
+    })
+      .then();
   });
+
   return viewSignUp;
 };
