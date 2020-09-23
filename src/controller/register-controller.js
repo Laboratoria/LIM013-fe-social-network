@@ -1,4 +1,6 @@
+
 import { signUp, user, verificationEmail } from '../firebase/auth-controller.js';
+
 
 export const userRegistration = () => {
   const nameUser = document.querySelector('#nameUser');
@@ -6,6 +8,8 @@ export const userRegistration = () => {
   const passwordLogUp = document.querySelector('#passwordSignUp').value;
 
   signUp(emailLogUp, passwordLogUp).then((result) => {
+
 console.log(result);
+
   });
 };

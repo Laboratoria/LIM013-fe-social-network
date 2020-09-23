@@ -1,4 +1,5 @@
 import { cambioVista } from './controller/router.js';
+import { validation } from './firebase/validation-controller.js';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -13,7 +14,12 @@ const firebaseConfig = {
 };
   // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-firebase.analytics();
+
+// Initialize Firestore
+export const storage = firebase.storage();
+
+// Iniciar Firestore
+export const data = firebase.firestore();
 
 const init = () => {
   cambioVista(window.location.hash);

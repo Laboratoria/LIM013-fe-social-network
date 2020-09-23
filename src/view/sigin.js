@@ -1,5 +1,7 @@
 
+
 /* import { signingIn, signingInGoogle } from '../controller/signin-controller.js'; */
+
 export default () => {
   const viewSignIn = `
   <header>
@@ -17,12 +19,15 @@ export default () => {
 </a>
 </header>
   <section class="container">
+
   <form action="/action_page.php" class="signIn_Form">
+
     <section class="row">
       <section class="vl">
         <span class="vl-innertext">or</span>
       </section>
       <section class="col">
+
 
         <input
           type="email"
@@ -30,10 +35,12 @@ export default () => {
           name="email"
           placeholder="Email"
           autocomplete="on" 
+
           required
         />
         <input
           type="password"
+
           id="SignInForm_password"
           name="password"
           placeholder="Password"
@@ -41,6 +48,7 @@ export default () => {
           required
         />
         <button type="submit" class='submit_signIn'>Inicia Sesión</button>
+
         <section class="hide-md-lg">
           <p>O ingresa con ...</p>
         </section>
@@ -49,16 +57,22 @@ export default () => {
           <a href="#" class="fa fa-facebook"></a> 
           <a href="#" class="fa fa-google"></a>
 
+
       </section>
       <section class="register">
         <p>¿No tienes cuenta?<a href="#/Register" style="color: blue"> Registrate</a></p> 
+
       </section>
     </section>
   </form>
 </section>`;
+
   const divElem = document.createElement('div');
   divElem.classList.add('sign');
   divElem.innerHTML = viewSignIn;
+
+
+
   return divElem;
 };
 /*

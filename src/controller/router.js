@@ -1,7 +1,14 @@
-// eslint-disable-next-line import/no-cycle
+
+/* eslint-disable import/no-cycle */
+
 import { components } from '../view/index.js';
+// eslint-disable-next-line import/no-unresolved
+import { getAllPosts } from '../firebase/firestore-controller.js';
+import { user } from '../firebase/auth-controller.js';
 
 export const cambioVista = (hash) => {
+  window.location.has = hash;
+
   const sectionContainer = document.getElementById('container');
   sectionContainer.innerHTML = '';
   let routeSelected = '';
