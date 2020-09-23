@@ -14,6 +14,7 @@ const firebaseConfig = {
   // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
+
 const init = () => {
   cambioVista(window.location.hash);
   window.addEventListener('hashchange', () => cambioVista(window.location.hash));

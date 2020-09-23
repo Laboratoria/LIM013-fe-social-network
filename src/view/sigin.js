@@ -2,6 +2,20 @@
 /* import { signingIn, signingInGoogle } from '../controller/signin-controller.js'; */
 export default () => {
   const viewSignIn = `
+  <header>
+  <h1>Petlandia</h1>
+  <a href="#/">
+  <figure class="imagenHeader">
+    <img
+      src="../imagenes/image.png"
+      class="logoHeader"
+      alt="imagenPetlandia"
+      width="400px"
+      height="auto"
+    />
+  </figure>
+</a>
+</header>
   <section class="container">
   <form action="/action_page.php" class="signIn_Form">
     <section class="row">
@@ -15,6 +29,7 @@ export default () => {
           id="SignInForm_email"
           name="email"
           placeholder="Email"
+          autocomplete="on" 
           required
         />
         <input
@@ -22,6 +37,7 @@ export default () => {
           id="SignInForm_password"
           name="password"
           placeholder="Password"
+          autocomplete="on" 
           required
         />
         <button type="submit" class='submit_signIn'>Inicia Sesión</button>
