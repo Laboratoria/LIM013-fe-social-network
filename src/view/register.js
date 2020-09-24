@@ -1,5 +1,5 @@
-import { signUp } from '../firebase/auth-controller.js';
-import {  userRegistration } from '../controller/register-controller.js';
+
+import { userRegistration } from '../controller/register-controller.js';
 
 export default () => {
   const viewRegister = `
@@ -36,8 +36,10 @@ export default () => {
         class="input-register validity"
         id="emailSignUp"
         type="email"
+
         placeholder="e-mail"   
         autocomplete="on" 
+
         required
       />
       <span class="error-msg">Ingrese un e-mail valido</span>
@@ -51,7 +53,9 @@ export default () => {
         minlength="8"
         maxlength="15"
         pattern="[A-Za-z0-9]{6,30}$"
+
         autocomplete="on"
+
         required
       />
       <span class="error-msg">Tamaño mínimo de 6 caracteres</span>
@@ -77,12 +81,13 @@ export default () => {
   divElemt.classList.add('position');
   divElemt.innerHTML = viewRegister;
 
+
   const btonLogUp = divElemt.querySelector('#signUp-form');
   console.log(btonLogUp);
 
 
   // Evento para registrar usuario
-    btonLogUp.addEventListener('submit', userRegistration);
-  
+  btonLogUp.addEventListener('submit', userRegistration);
+
   return divElemt;
 };

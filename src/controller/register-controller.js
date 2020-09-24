@@ -1,24 +1,28 @@
-import { signUp, user, verificationEmail, createProfileInfo } from '../firebase/auth-controller.js';
+// eslint-disable-next-line import/named
+import { signUp, verifEmail } from '../firebase/auth-controller.js';
 
+const showMessage = (txtmessage) => {
+  const showWindow = document.createElement('div');
+  showWindow.classList.add('showWindow');
+  showWindow.textContent = txtmessage;
+  document.body.appendChild(showWindow);
+  setTimeout(() => {
+    document.body.removeChild(showWindow);
+  }, 4000);
+};
 export const userRegistration = () => {
-  const nameUser = document.querySelector('#nameUser');
+  const userName = document.querySelector('#nameUser').value;
   const emailLogUp = document.querySelector('#emailSignUp').value;
   const passwordLogUp = document.querySelector('#passwordSignUp').value;
 
   signUp(emailLogUp, passwordLogUp).then((result) => {
-    createProfileInfo(result.user.uid);
-    verificationEmail().then(() => {
-      // Guardando nombre de usuario en la base de datos
-      const userData = user();
-      updateUserName(userData, nameUser.value);
-  
-      const notification = document.createElement('div');
-      notification.classList.add('notification');
-      notification.textContent = 'Revisa tu correo electrónico para terminar el registro';
-      document.body.appendChild(notification);
-      setTimeout(() => {
-        document.body.removeChild(notification);
-      }, 3000);
-    });
+    showMessage(`⚠️ ${userName}, enviamos un correo para activar su cuenta.`);
+    verifEmail()
+      .then(() => {})
+      .catch((error) => {
+        showMessage(error.code);
+      });
+    console.log(result);
+    window.location.hash = '';
   });
 };

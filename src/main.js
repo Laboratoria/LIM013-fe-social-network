@@ -13,7 +13,10 @@ const firebaseConfig = {
 };
   // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-firebase.analytics();
+
+// Initialize Firestore
+export const storage = firebase.storage();
+
 
 const init = () => {
   cambioVista(window.location.hash);
