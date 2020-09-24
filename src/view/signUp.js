@@ -1,4 +1,4 @@
-import { createUser } from '../controller/controller-firebase.js';
+import { createUser, sendEmail } from '../controller/controller-firebase.js';
 
 export default () => {
   const viewSignUp = document.createElement('section');
@@ -31,7 +31,7 @@ export default () => {
       <button type="submit" class="btn-signUp">SIGN UP</button>
       <p id = "error-message" class = "error-message"></p>
       <p class="text">Back to signIn</p>
-      <button class="backLogin"><a  class="fas fa-arrow-left" href=""></a></button>
+      <button class="backLogin"><i class="fas fa-arrow-left"></i></button>
     </form>
   </div>
 </section>
@@ -52,6 +52,8 @@ export default () => {
   //     return valid;
   //   };
 
+  const btnBackLogin = viewSignUp.querySelector('.backLogin');
+  btnBackLogin.addEventListener('click', () => { window.location.hash = ''; });
   /* ------------ Capturando el formulario sign up -------------*/
   const signupForm = viewSignUp.querySelector('#signup-form');
   signupForm.addEventListener('submit', (e) => {
@@ -68,6 +70,7 @@ export default () => {
         console.log('enviando');
         signupForm.reset();
         window.location.hash = '#/home';
+        sendEmail();
       })
       .catch((err) => {
         error.textContent = err.message;

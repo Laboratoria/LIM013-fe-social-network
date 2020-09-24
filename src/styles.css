@@ -149,13 +149,11 @@
     height: 55px;
     background-color:#2CAB92;
 }
-.newAccount a{
-    color: #ffffff;
-}
-.btn-logIn a,.backLogin a{
+
+.btn-logIn a,.backLogin i{
     color: #2CAB92;
 }
-.btn-logIn a,.newAccount a,.backLogin a{
+.btn-logIn a,.newAccount,.backLogin i{
     text-decoration: none;
     font-size: 16px;
 
@@ -210,7 +208,7 @@
     border-radius: 49px;
     cursor: pointer;
 }
-.backLogin a{
+.backLogin i{
     font-size: 30px;
 }
 .container-signUp:before {
