@@ -75,7 +75,7 @@ export default () => {
       .catch((err) => {
         error.textContent = err.message;
         setTimeout(() => {
-          signupForm.removeChild(error);
+          error.textContent = '';
         }, 3000);
       });
 

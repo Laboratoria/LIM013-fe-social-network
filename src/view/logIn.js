@@ -26,7 +26,7 @@ export default () => {
         <i class="fas fa-lock"></i>
         <input type="password" id="password" pattern="[a-zA-Z0-9]{8,20}" placeholder="Password" required />
         </div>
-        <button type="submit" class="btn-logIn"><a href="#/home">Log in</a></button>
+        <button type="submit" class="btn-logIn">Log in</a></button>
         <p class="text">or enter with ...</p>
         <div class="option">
           <img src="img/gmail.png" class="gmail" id="btn-google">
@@ -62,7 +62,8 @@ export default () => {
   });
   // iniciar sesión con credenciales creados
   const btnSignIn = viewLogIn.querySelector('.btn-logIn');
-  btnSignIn.addEventListener('submit', () => {
+  btnSignIn.addEventListener('click', (e) => {
+    e.preventDefault();
     const email = viewLogIn.querySelector('#email').value;
     const password = viewLogIn.querySelector('#password').value;
     signIn(email, password)
@@ -70,9 +71,9 @@ export default () => {
       // redireccionar a Home
         window.location.hash = '#/home';
       })
-      .catch(
-        alert('no se encontro cuenta'),
-      );
+      .catch((err) => {
+        console.log(err);
+      });
   });
   return viewLogIn;
 };

@@ -9,8 +9,8 @@ export const sendEmail = () => {
   const user = firebase.auth().currentUser;
   user.sendEmailVerification().then(() => {
   // Email sent.
-  }).catch((error) => {
-    console.log(error);
+  }).catch(() => {
+  // console.log(error);
   // An error happened.
   });
 };
