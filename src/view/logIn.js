@@ -67,7 +67,9 @@ export default () => {
       // redireccionar a Home
         window.location.hash = '#/home';
       })
-      .catch();
+      .catch(
+        alert('no se encontro cuenta'),
+      );
   });
   return viewLogIn;
 };
