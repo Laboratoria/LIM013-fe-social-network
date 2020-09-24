@@ -6,6 +6,11 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
+.error-message{
+    color: red;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 .error {
     border: 2px solid red;
 }

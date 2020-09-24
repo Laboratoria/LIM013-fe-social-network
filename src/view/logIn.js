@@ -38,6 +38,9 @@ export default () => {
     </div>
   </section>
   `;
+
+
+  /* ------------Registro con Google------------------*/
   // redirigir a la vista de '#/signUp'
   const btnNewAccount = viewLogIn.querySelector('.newAccount');
   btnNewAccount.addEventListener('click', () => { window.location.hash = '#/signUp'; });
