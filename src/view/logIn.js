@@ -1,4 +1,6 @@
 
+import { signIn } from '../controller/controller-firebase.js';
+
 export default () => {
   const viewLogIn = document.createElement('section');
   viewLogIn.classList.add('container-logIn');
@@ -55,6 +57,17 @@ export default () => {
       });
     console.log('hola');
   });
-
+  // iniciar sesión con credenciales creados
+  const btnSignIn = viewLogIn.querySelector('.btn-logIn');
+  btnSignIn.addEventListener('submit', () => {
+    const email = viewLogIn.querySelector('#email').value;
+    const password = viewLogIn.querySelector('#password').value;
+    signIn(email, password)
+      .then(() => {
+      // redireccionar a Home
+        window.location.hash = '#/home';
+      })
+      .catch();
+  });
   return viewLogIn;
 };

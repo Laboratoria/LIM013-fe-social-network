@@ -1,4 +1,4 @@
-import { createUser } from '../controller/controller-firebase.js';
+import { createUser, sendEmail } from '../controller/controller-firebase.js';
 
 export default () => {
   const viewSignUp = document.createElement('section');
@@ -64,6 +64,7 @@ export default () => {
       // resetear el formulario una vez ingresado los datos
         console.log('enviando');
         signupForm.reset();
+        sendEmail();
       })
       .catch();
   });
