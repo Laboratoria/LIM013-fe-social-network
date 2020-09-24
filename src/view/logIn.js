@@ -17,7 +17,7 @@ export default () => {
         <p class="text">¡ welcome to travelin !</p>
         <p class="text-title">Sign in</p>
       </header>
-      <form>
+      <form id="SignIn-form">
         <div class="div-input">
         <i class="fas fa-envelope"></i>
         <input type="email" id="email" placeholder="E-mail" required />
@@ -61,6 +61,7 @@ export default () => {
     console.log('hola');
   });
   // iniciar sesión con credenciales creados
+
   const btnSignIn = viewLogIn.querySelector('.btn-logIn');
   btnSignIn.addEventListener('click', (e) => {
     e.preventDefault();

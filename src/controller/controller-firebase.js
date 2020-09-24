@@ -4,15 +4,10 @@ export const createUser = (email, password) => {
   // Nota; para autenticar el usuario, habilitar en el proyecto de SN Laboratoria/autenticacion
   return auth.createUserWithEmailAndPassword(email, password);
 };
-// verificar correo electrónico
+// Enviar correo de verificación
 export const sendEmail = () => {
   const user = firebase.auth().currentUser;
-  user.sendEmailVerification().then(() => {
-  // Email sent.
-  }).catch(() => {
-  // console.log(error);
-  // An error happened.
-  });
+  return user.sendEmailVerification();
 };
 
 // función para iniciar sesión

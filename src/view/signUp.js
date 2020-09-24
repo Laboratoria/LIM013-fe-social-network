@@ -69,7 +69,6 @@ export default () => {
         // resetear el formulario una vez ingresado los datos
         console.log('enviando');
         signupForm.reset();
-        window.location.hash = '#/home';
         sendEmail();
       })
       .catch((err) => {
