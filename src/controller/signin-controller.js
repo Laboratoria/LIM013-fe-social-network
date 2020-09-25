@@ -1,4 +1,6 @@
-import { signIn } from '../firebase/auth-controller.js';
+
+// eslint-disable-next-line import/named
+import { signIn, googleSignIn, loginFacebook } from '../firebase/auth-controller.js';
 
 const showMessage = (txtmessage) => {
   const showWindow = document.createElement('div');
@@ -13,7 +15,6 @@ const showMessage = (txtmessage) => {
 export const signingIn = () => {
   const emailLogIn = document.querySelector('#SignInForm_email').value;
   const passwordLogIn = document.querySelector('#SignInForm_password').value;
-
   signIn(emailLogIn, passwordLogIn)
     .then(() => {
       firebase.auth().onAuthStateChanged((user) => {
@@ -27,4 +28,18 @@ export const signingIn = () => {
         }
       });
     });
+};
+export const signInGoogle = () => {
+  googleSignIn().then((result) => {
+    console.log('signIn');
+  }).catch((error) => {
+    console.log(error);
+  });
+};
+export const signInFacebook = () => {
+  loginFacebook().then((result) => {
+    console.log('signIn');
+  }).catch((error) => {
+    console.log(error);
+  });
 };
