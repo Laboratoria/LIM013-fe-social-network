@@ -7,6 +7,17 @@ export const verifEmail = () => {
   const user = firebase.auth().currentUser;
   return user.sendEmailVerification();
 };
+// Inicio de sesión con Gmail
+export const googleSignIn = () => {
+  const base = new firebase.auth.GoogleAuthProvider();
+  return firebase.auth().signInWithPopup(base);
+};
+// Inicio de sesión con Facebook
+export const loginFacebook = () => {
+  const provider = new firebase.auth.FacebookAuthProvider();
+  return firebase.auth().signInWithPopup(provider);
+};
+
 // Usuario loggeado
 
 

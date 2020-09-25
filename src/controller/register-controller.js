@@ -1,4 +1,4 @@
-
+// eslint-disable-next-line import/named
 import { signUp, verifEmail } from '../firebase/auth-controller.js';
 
 const showMessage = (txtmessage) => {
