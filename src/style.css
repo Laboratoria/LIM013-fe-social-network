@@ -9,13 +9,12 @@ body {
 	background-attachment: fixed;}
 header h1{
 	font-size: 300%;
-	padding: 28% 25% 0%;
     font-family: 'Architects Daughter', cursive;
 	margin: 0rem 0rem;
 	text-align: center;
 }
-.logoHeader{
-	width: 250px;
+.logoHeader,.logoHeader1{
+	width: 80%;
 	height:auto;
 }
 /* style the container */
@@ -31,7 +30,7 @@ header h1{
 	flex-direction:column;
 	align-content: center;
 }
-.signIn_Form{
+.signIn_Form,.signUp-form{
 	display:flex;
 	flex-direction: column;
 	border-radius: 5px;
@@ -197,11 +196,9 @@ span.error-msg {
 	.imagenHeader {
 		justify-content: center;
 		margin: 1rem 1rem 1rem 1rem;
+		width:80%;
 	}
-	.logoHeader {
-        width: 70%;
-        margin: 0rem 1rem 0rem 1rem;
-    }
+
     header h2 {
         font-size: 100%;
     }
@@ -225,23 +222,22 @@ span.error-msg {
 }
 @media (min-width: 751px) and (max-width: 1500px) {
 
-	.sign{
+	.sign,.position{
 		display:flex;
 		flex-direction:row;
 		align-content: center;
-}
-header{
+	}
+	header{
 	width:50%;
 }
 .logoHeader{
-	width: 400px;
 	height:auto;
 	margin: 10% 16%;
 }
-.containerForm{
+.containerForm,.register-container{
 	width:50%;
 }
-.signIn_Form{
+.signIn_Form,.signUp-form{
 	width:90%;
 	margin:20% 5%;
 	padding:20px;

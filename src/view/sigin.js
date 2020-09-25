@@ -6,7 +6,7 @@ export default () => {
   <header>
     <h1>Petlandia</h1>
       <img
-      src="../imagenes/logo.psd"
+      src="../imagenes/petlandia.png"
       class="logoHeader"
       alt="imagenPetlandia"
       />
