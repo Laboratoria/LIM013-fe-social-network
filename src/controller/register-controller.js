@@ -15,14 +15,19 @@ export const userRegistration = () => {
   const emailLogUp = document.querySelector('#emailSignUp').value;
   const passwordLogUp = document.querySelector('#passwordSignUp').value;
 
-  signUp(emailLogUp, passwordLogUp).then((result) => {
-    showMessage(`⚠️ ${userName}, enviamos un correo para activar su cuenta.`);
-    verifEmail()
-      .then(() => {})
-      .catch((error) => {
-        showMessage(error.code);
-      });
-    console.log(result);
-    window.location.hash = '';
-  });
+  signUp(emailLogUp, passwordLogUp)
+    .then((result) => {
+      showMessage(`⚠️ ${userName}, enviamos un correo para activar su cuenta.`);
+      verifEmail()
+        .then(() => {})
+        .catch((error) => {
+          showMessage(error.code);
+        });
+      console.log(result);
+      window.location.hash = '';
+    })
+    .catch(() => {
+      showMessage('⚠️Error al auntenticar el usuario, el correo ha sido registrado anteriormente');
+      window.location.hash = '';
+    });
 };

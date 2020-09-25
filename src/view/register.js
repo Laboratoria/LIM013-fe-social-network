@@ -1,5 +1,4 @@
 
-import { signUp } from '../firebase/auth-controller.js';
 import { userRegistration } from '../controller/register-controller.js';
 
 export default () => {
@@ -27,6 +26,7 @@ export default () => {
         class="input-register validity"
         id="nameUser"
         type="text"
+        pattern="([a-zA-ZÁÉÍÓÚñáéíóúÑ]{1,30}\\s*)+"
         placeholder="Nombre de usuario"
         required
       />
@@ -37,10 +37,9 @@ export default () => {
         class="input-register validity"
         id="emailSignUp"
         type="email"
-
+        pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"
         placeholder="e-mail"   
         autocomplete="on" 
-
         required
       />
       <span class="error-msg">Ingrese un e-mail valido</span>
@@ -77,15 +76,11 @@ export default () => {
   </p>
   </section>`;
 
-
   const divElemt = document.createElement('div');
   divElemt.classList.add('position');
   divElemt.innerHTML = viewRegister;
 
-
   const btonLogUp = divElemt.querySelector('#signUp-form');
-  console.log(btonLogUp);
-
 
   // Evento para registrar usuario
   btonLogUp.addEventListener('submit', userRegistration);

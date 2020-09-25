@@ -1,4 +1,6 @@
 
+// eslint-disable-next-line import/no-cycle
+import { signingIn } from '../controller/signin-controller.js';
 
 /* import { signingIn, signingInGoogle } from '../controller/signin-controller.js'; */
 
@@ -20,7 +22,7 @@ export default () => {
 </header>
   <section class="container">
 
-  <form action="/action_page.php" class="signIn_Form">
+  <form id="signIn-form" class="signIn_Form">
 
     <section class="row">
       <section class="vl">
@@ -35,15 +37,15 @@ export default () => {
           name="email"
           placeholder="Email"
           autocomplete="on" 
-
+          pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"
           required
         />
         <input
           type="password"
-
           id="SignInForm_password"
           name="password"
           placeholder="Password"
+          pattern="[A-Za-z0-9]{6,30}$"
           autocomplete="on" 
           required
         />
@@ -71,7 +73,10 @@ export default () => {
   divElem.classList.add('sign');
   divElem.innerHTML = viewSignIn;
 
+  const btonSignIn = divElem.querySelector('#signIn-form');
 
+  // Evento para registrar usuario
+  btonSignIn.addEventListener('submit', signingIn);
 
   return divElem;
 };

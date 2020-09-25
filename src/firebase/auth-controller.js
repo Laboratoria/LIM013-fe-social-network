@@ -7,6 +7,11 @@ export const verifEmail = () => {
   const user = firebase.auth().currentUser;
   return user.sendEmailVerification();
 };
+
+export const signIn = (emailSignIn, passwordSignIn) => firebase.auth()
+  .signInWithEmailAndPassword(emailSignIn, passwordSignIn);
+
+export const logOut = () => firebase.auth().signOut();
 // Usuario loggeado
 
 
