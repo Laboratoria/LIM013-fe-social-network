@@ -1,17 +1,29 @@
+// --------------------------------SIGN IN-------------------------------------
+// Sign in with created credentials
+export const signIn = (email, password) => {
+  const auth = firebase.auth();
+  return auth.signInWithEmailAndPassword(email, password);
+};
+// Sign in with google
+export const signInforgoogle = () => {
+  const auth = firebase.auth();
+  const provider = new firebase.auth.GoogleAuthProvider();
+  return auth.signInWithPopup(provider);
+};
+// -----------------------------------SIGN UP------------------------------------
+// Create user
 export const createUser = (email, password) => {
   const auth = firebase.auth();
-  // creando método para autenticar email y password
-  // Nota; para autenticar el usuario, habilitar en el proyecto de SN Laboratoria/autenticacion
   return auth.createUserWithEmailAndPassword(email, password);
 };
-// Enviar correo de verificación
+// Send email to verify created account
 export const sendEmail = () => {
   const user = firebase.auth().currentUser;
   return user.sendEmailVerification();
 };
-
-// función para iniciar sesión
-export const signIn = (email, password) => {
+// --------------------------------RECOVER PASSWORD---------------------------
+// Send link for recover password
+export const sendRecoverPass = (emailAddress) => {
   const auth = firebase.auth();
-  return auth.signInWithEmailAndPassword(email, password);
+  return auth.sendPasswordResetEmail(emailAddress);
 };

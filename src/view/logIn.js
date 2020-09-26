@@ -1,5 +1,6 @@
 
-import { signIn } from '../controller/controller-firebase.js';
+import { signIn, signInforgoogle } from '../controller/controller-firebase.js';
+// import { controlerSignIn } from '../controller/signIn-controller.js';
 
 export default () => {
   const viewLogIn = document.createElement('section');
@@ -17,7 +18,7 @@ export default () => {
         <p class="text">¡ welcome to travelin !</p>
         <p class="text-title">Sign in</p>
       </header>
-      <form id="SignIn-form">
+      <form id="signIn-form"">
         <div class="div-input">
         <i class="fas fa-envelope"></i>
         <input type="email" id="email" placeholder="E-mail" required />
@@ -27,6 +28,8 @@ export default () => {
         <input type="password" id="password" pattern="[a-zA-Z0-9]{8,20}" placeholder="Password" required />
         </div>
         <button type="submit" class="btn-logIn">Log in</a></button>
+        <p id = "error-message" class = "error-message"></p>
+        <a class = "recoverPass" href="#/recoverPassword">Did you forget your password?</a>
         <p class="text">or enter with ...</p>
         <div class="option">
           <img src="img/gmail.png" class="gmail" id="btn-google">
@@ -38,43 +41,37 @@ export default () => {
     </div>
   </section>
   `;
-
-
-  /* ------------Registro con Google------------------*/
-  // redirigir a la vista de '#/signUp'
+  /* -----------------------handle send to Sign In--------------- */
   const btnNewAccount = viewLogIn.querySelector('.newAccount');
   btnNewAccount.addEventListener('click', () => { window.location.hash = '#/signUp'; });
-  // autenticar con google
+  /* ----------regarding DOM manipulation for login with google------------ */
   const btnGoogle = viewLogIn.querySelector('#btn-google');
   btnGoogle.addEventListener('click', () => {
-    // Accede al servicio auth de firebase para validar datos ingresados
-    const auth = firebase.auth();
-    const provider = new firebase.auth.GoogleAuthProvider();
-    auth
-      .signInWithPopup(provider)
+    signInforgoogle()
       .then(() => {
         window.location.hash = '#/home';
-      })
-      .catch((err) => {
-        console.log(err);
       });
-    console.log('hola');
   });
-  // iniciar sesión con credenciales creados
-
-  const btnSignIn = viewLogIn.querySelector('.btn-logIn');
-  btnSignIn.addEventListener('click', (e) => {
+  /* ------------regarding DOM manipulation for login with created credentials------------- */
+  const signInForm = viewLogIn.querySelector('#signIn-form');
+  signInForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const email = viewLogIn.querySelector('#email').value;
     const password = viewLogIn.querySelector('#password').value;
+    const error = viewLogIn.querySelector('#error-message');
     signIn(email, password)
       .then(() => {
-      // redireccionar a Home
         window.location.hash = '#/home';
       })
       .catch((err) => {
-        console.log(err);
+        error.textContent = err.message;
+        setTimeout(() => {
+          error.textContent = '';
+        }, 3000);
       });
   });
+  // controlerSignIn.handleSignIn(viewLogIn);
+  // controlerSignIn.handleSignInForGoogle(viewLogIn);
+  // controlerSignIn.sendCreateNewAccount(viewLogIn);
   return viewLogIn;
 };

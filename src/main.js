@@ -1,5 +1,4 @@
 // Este es el punto de entrada de tu aplicacion
-
 import { changeView } from './controller/route.js';
 
 const init = () => {
