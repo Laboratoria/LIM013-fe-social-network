@@ -5,22 +5,24 @@ export default () => {
   const viewRegister = `
   <header>
   <h1>Petlandia</h1>
-
+  <a href="#/">
+  <figure class="imagenHeader">
     <img
-      src="../imagenes/petlandia.png"
-      class="logoHeader1"
+      src="../imagenes/image.png"
+      class="logoHeader"
       alt="imagenPetlandia"
       width="400px"
       height="auto"
     />
-
+  </figure>
+</a>
 </header>
   <section class="register-container">
   <section class="registerForm-container">
-    <form action="/action_page.php" class="signUp-form" id="signUp-form">
-      <p>Regístrate</p>
-      <section class="msg-alert-reg">
-        <input
+    <p>Regístrate</p>
+    <form id="signUp-form">
+    <section class="msg-alert-reg">
+      <input
         class="input-register validity"
         id="nameUser"
         type="text"
@@ -28,6 +30,7 @@ export default () => {
         placeholder="Nombre de usuario"
         required
       />
+      <span class="error-msg">Solo letras</span>
     </section>
     <section class="msg-alert-reg">
       <input
@@ -39,6 +42,7 @@ export default () => {
         autocomplete="on" 
         required
       />
+      <span class="error-msg">Ingrese un e-mail valido</span>
     </section>
     <section class="msg-alert-reg">
       <input
@@ -46,24 +50,28 @@ export default () => {
         id="passwordSignUp"
         type="password"
         placeholder="contraseña"
-        minlength="8"
+        minlength="6"
         maxlength="15"
-        pattern="[A-Za-z0-9]{6,30}$"
+        pattern="[A-Za-z0-9]{6,15}$"
         autocomplete="on"
         required
       />
+      <span class="error-msg">Tamaño mínimo de 6 caracteres</span>
     </section>
     <input type="submit" class="bttonSudmitt" id="submit-buttomRegister" value="Crear Cuenta" />
-    <p>
+    </form>
+    </section>
+  
+  <p>
     ¿Ya tienes una cuenta?.<a
       href="#/signIn"
       style="color: blue"
       class="text-init-session"
-      id="btnViewLogIn">Inicia sesión</a>
-      </p>
-    </form>
-    </section> 
-
+      id="btnViewLogIn"
+    >
+      Inicia sesión</a
+    >
+  </p>
   </section>`;
 
   const divElemt = document.createElement('div');

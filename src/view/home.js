@@ -1,8 +1,8 @@
 
 export default () => {
-  const viewHome = `
+  const newLocal = `
   <header>
-  <h1>Profile</h1>
+  <h1>Home</h1>
   <a href="#/home">
 </a>
 <a
@@ -13,6 +13,7 @@ export default () => {
       Cerrar sesión</a
     >
 </header>`;
+  const viewHome = newLocal;
 
   const divElemt = document.createElement('div');
   divElemt.classList.add('position');

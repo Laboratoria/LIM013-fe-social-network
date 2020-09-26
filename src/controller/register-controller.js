@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/named
-import { signUp, verifEmail } from '../firebase/auth-controller.js';
+import { signUp, verifEmail, logOut } from '../firebase/auth-controller.js';
 
 const showMessage = (txtmessage) => {
   const showWindow = document.createElement('div');
@@ -24,10 +24,15 @@ export const userRegistration = () => {
           showMessage(error.code);
         });
       console.log(result);
-      window.location.hash = '';
     })
     .catch(() => {
-      showMessage('⚠️Error al auntenticar el usuario, el correo ha sido registrado anteriormente');
-      window.location.hash = '';
+      showMessage(
+        '⚠️Error al auntenticar el usuario, el correo ha sido registrado anteriormente',
+      );
+    });
+  logOut()
+    .then(() => {})
+    .catch((error) => {
+      showMessage('Error al cerrar sesion', error.code);
     });
 };
