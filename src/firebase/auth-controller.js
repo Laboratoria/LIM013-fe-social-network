@@ -17,6 +17,8 @@ export const loginFacebook = () => {
   const provider = new firebase.auth.FacebookAuthProvider();
   return firebase.auth().signInWithPopup(provider);
 };
+export const logOut = () => firebase.auth().signOut();
+
 
 // Usuario loggeado
 
