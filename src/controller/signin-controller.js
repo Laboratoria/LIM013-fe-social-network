@@ -29,8 +29,10 @@ export const signingIn = () => {
       showMessage('Bienvenido');
     })
     .catch(() => {
+      showMessage('No puedes ingresar');
     });
 };
+
 export const signInGoogle = () => {
   googleSignIn()
     .then((result) => {
@@ -40,7 +42,6 @@ export const signInGoogle = () => {
           console.log('No se actualizo usuario');
         });
       window.location.hash = '#/home';
-      // changeHash('#/wall');
       console.log(result);
       console.log('Cuenta registrada');
     }).catch((error) => {
@@ -51,9 +52,8 @@ export const signInGoogle = () => {
 
 export const signInFacebook = () => {
   loginFacebook().then((result) => {
-    createUser(result.user.uid, result.user.displayName, result.user.photoURL, 'Aprendiendo a Bailar');
+    createUser(result.user.uid, result.user.displayName, 'Conociendo tu mascota');
     window.location.hash = '#/home';
-    // changeHash('#/wall');
     console.log('Ingreso con facebook');
   })
     .catch(() => { console.log('No se registro la cuenta'); });

@@ -4,7 +4,13 @@ import { userRegistration } from '../controller/register-controller.js';
 export default () => {
   const viewRegister = `
   <header>
-  <h1>Petlandia</h1>
+  <h1>Petlandia       <img
+  src="../imagenes/huella.png"
+  class="logoHuella"
+  alt="imagenHuella"
+  width="400px"
+  height="auto"
+/> </h1>
   <a href="#/">
   <figure class="imagenHeader">
     <img
@@ -20,7 +26,7 @@ export default () => {
   <section class="register-container">
   <section class="registerForm-container">
     <p>Regístrate</p>
-    <form id="signUp-form">
+    <form id="signUp-form" class="form">
     <section class="msg-alert-reg">
       <input
         class="input-register validity"
@@ -33,23 +39,29 @@ export default () => {
       <span class="error-msg">Solo letras</span>
     </section>
     <section class="msg-alert-reg">
-      <input
+    <span class="input-itemR">
+      <i class="fas fa-at"></i>
+      </span>    
+    <input
         class="input-register validity"
         id="emailSignUp"
         type="email"
         pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"
-        placeholder="e-mail"   
+        placeholder="Email"   
         autocomplete="on" 
         required
       />
       <span class="error-msg">Ingrese un e-mail valido</span>
     </section>
     <section class="msg-alert-reg">
-      <input
+    <span class="input-itemR">
+    <i class="fas fa-key"></i>
+    </span>  
+    <input
         class="input-register validity"
         id="passwordSignUp"
         type="password"
-        placeholder="contraseña"
+        placeholder="Password"
         minlength="6"
         maxlength="15"
         pattern="[A-Za-z0-9]{6,15}$"

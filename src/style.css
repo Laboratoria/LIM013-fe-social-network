@@ -3,29 +3,39 @@
 	box-sizing: border-box;
 }
 body {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Playfair Display', serif;
 	background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
 	background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
 	background-attachment: fixed;}
 header h1{
-	font-size: 300%;
-    font-family: 'Architects Daughter', cursive;
-	margin: 0rem 0rem;
+    font-size: 700%;
+    font-family: 'Playfair Display', serif;
+    margin: 2rem 2rem;
 	text-align: center;
+	color: #98AEBC;
+	text-shadow: 4px 3px 2px rgba(14,6,4,0.59), 4px 3px 2px rgba(3,14,9,0.59), 4px 3px 2px rgba(3,14,9,0.59);
+	text-transform: capitalize;
+}
+img.logoHuella{
+	width: 5%;
+    height: auto;
+    margin: 2rem 1rem;
+    position: absolute;
 }
 
-
 .logoHeader,.logoHeader1{
-	width: 80%;
-	height:auto;
+	width: 70%;
+	max-width: 70%;
+    height: auto;
+    margin: 2rem 7rem;
 }
 
 /* style the container */
 .container {
-	position: relative;
-	border-radius: 5px;
-	background-color: none;
-	padding: 20px 0 30px 0;
+    position: relative;
+    border-radius: 5px;
+    padding: 1rem 1rem 1rem 1rem;
+    margin: 1rem 1rem 1rem 1rem;
 }
 
 .sign{
@@ -36,11 +46,63 @@ header h1{
 .signIn_Form,.signUp-form{
 	display:flex;
 	flex-direction: column;
-	border-radius: 5px;
-	background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);
 }
+.signUp-form{
+	margin: 0rem 0rem;
+}
+.registerForm-container{
+    width: 450px;
+    min-height: 500px;
+    height: auto;
+    border-radius: 40px;
+    margin: 5rem 9rem;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    padding: 2%;
+    background: #92A7B5;
+    background: -moz-linear-gradient(45deg, #92A7B5 0%, #ABECEA 100%);
+    background: -webkit-linear-gradient(45deg, #92A7B5 0%, #ABECEA 100%);
+    background: linear-gradient(45deg, #92A7B5 0%, #ABECEA 100%);
+}
+form.form{
+	margin: 2rem 2rem;
+}
+.signIn_Form p{
+    font-family: 'Abel', sans-serif;
+    font-size: 200%;
+    font-weight: bold;
+    font-style: normal;
+    margin: 4rem 10rem;
+	position: absolute;
+	
+}
+.signIn_Form{
+	width: 450px;
+    min-height: 500px;
+    height: auto;
+    border-radius: 40px;
+    margin: 2% auto;
+	-webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+	box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    padding: 2%;
+	background: #92A7B5;
+	background: -moz-linear-gradient(45deg, #92A7B5 0%, #ABECEA 100%);
+	background: -webkit-linear-gradient(45deg, #92A7B5 0%, #ABECEA 100%);
+	background: linear-gradient(45deg, #92A7B5 0%, #ABECEA 100%);
+}
+.input-itemR{
+	background: none;
+	color: black;
+	padding: 10.5px 0px 15px 65px;
+	border-radius: 5px 0px 0px 5px;
+	position: absolute;
+	margin: 0.5rem 0.5rem 0rem 16rem;
+}
+
+
 /* style inputs and link buttons */
 input {
+	max-width: 100%;
 	width: 100%;
 	padding: 12px;
 	border: 2px solid #98AEBC ;
@@ -49,6 +111,7 @@ input {
 	opacity: 0.85;
 	display: inline-block;
 	font-size: 17px;
+	font-family: 'Abel', sans-serif;
 	line-height: 20px;
     text-decoration: none; 
     outline: none;/* remove underline from anchors */
@@ -56,6 +119,7 @@ input {
 
 input.btn {
 	width: 100%;
+	max-width: 100%;
 	padding: 12px;
 	border: none;
 	border-radius: 4px;
@@ -63,10 +127,10 @@ input.btn {
 	opacity: 0.85;
 	display: inline-block;
 	font-size: 17px;
+	font-family: 'Abel', sans-serif;
 	line-height: 20px;
 	text-decoration: none; /* remove underline from anchors */
 }
-
 input:hover,
 .btn:hover {
     opacity: 1;
@@ -79,30 +143,28 @@ input:hover,
 
 /* style the submit button */
 input[type='submit'] {
-	background-color: #98AEBC;
+	background-color: black;
 	color: white;
     cursor: pointer;
 }
 
 input[type='submit']:hover {
-	background-color: #ccc;
+	background-color: gray;
+	color: white;
 }
 
-.logoRedes img{
-    max-width: 50%;
-    margin: 0rem 0rem;
+section.logo-Redes {
+	margin: 9rem 2rem;
 }
-.logoRedes1 img{
-    max-width: 50%;
-    margin: 0rem 0rem;
-}
+
 .fa {
-    padding: 20px;
+	padding: 21px;
     text-align: center;
     text-decoration: none;
-	height: 26%;
-    margin: 0rem 1rem;
+    height: auto;
+    margin: 1rem 6rem;
     border-radius: 50%;
+    width: 9%;
 }
   
   .fa:hover {
@@ -129,10 +191,10 @@ input[type='submit']:hover {
 /* Two-column layout */
 .col {
 	float: left;
-	width: 50%;
-	margin: auto;
-	padding: 0 50px;
-	margin-top: 6px;
+    width: 58%;
+    margin: auto;
+    padding: 0 50px;
+    margin-top: 9rem;
 }
 
 /* Clear floats after the columns */
@@ -144,11 +206,11 @@ input[type='submit']:hover {
 
 /* vertical line */
 .vl {
-	position: absolute;
-	left: 50%;
-	transform: translate(-50%);
-	border: none;
-	height: 175px;
+    position: absolute;
+    left: 59%;
+    transform: translate(-50%);
+    border: 2px solid #f1f1f1;
+    height: 29rem;
 }
 
 /* text inside the vertical line */
@@ -156,8 +218,8 @@ input[type='submit']:hover {
 	position: absolute;
 	top: 50%;
 	transform: translate(-50%, -50%);
-	background-color: none;
-	border: 1px solid #ccc;
+	background-color: #f1f1f1;
+	border: 1px solid #f1f1f1;
 	border-radius: 50%;
 	padding: 8px 10px;
 }
@@ -170,7 +232,7 @@ input[type='submit']:hover {
 /* bottom container */
 .register p{
     text-align: center;
-    margin-bottom: 0rem;
+    margin-top: 1rem;
 }
 
 .position {
@@ -180,6 +242,7 @@ input[type='submit']:hover {
 	font-size: 150%;
     text-align: center;
 	font-weight: bold;
+	font-family: 'Abel', sans-serif;
 	
 }
 span.error-msg {
@@ -194,19 +257,48 @@ span.error-msg {
 	width: 100%;
 }
 
+.input-item {
+    background: none;
+    color: black;
+    padding: 14.5px 0px 15px 9px;
+    border-radius: 5px 0px 0px 5px;
+    position: absolute;
+    margin: 0.5rem 0.5rem 0rem 16rem;
+}
+#eye {
+    background: #fff;
+    color: #333;
+  
+    margin: 5.9px 0 0 0;
+    margin-left: -20px;
+    padding: 15px 9px 19px 0px;
+    border-radius: 0px 5px 5px 0px;
+  
+    float: right;
+    position: relative;
+    right: 1%;
+    top: -.2%;
+    z-index: 5;
+    
+    cursor: pointer;
+}
+
+
 /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 750px) {
 	.imagenHeader {
 		justify-content: center;
 		margin: 1rem 1rem 1rem 1rem;
 		width:80%;
+		max-width: 80%;
 	}
 
     header h2 {
         font-size: 100%;
     }
 	.col {
-        width: 100%;
+		width: 100%;
+		max-width: 100%;
         margin-top: 0;
         justify-self: center;
         margin: 1rem 0rem;
@@ -233,19 +325,20 @@ span.error-msg {
 	width:50%;
 }
 .logoHeader{
-	height:auto;
-	margin: 10% 16%;
+	height: auto;
+    margin: 5% 14%;
 }
 .containerForm,.register-container{
 	width:50%;
+	max-width: 50%;
 }
 .signIn_Form,.signUp-form{
-	width:90%;
-	margin:20% 5%;
-	padding:20px;
+    width: 100%;
+    max-width: 100%;
+    margin: 9% 0%;
+    padding: 1rem;
 }
 
 }
-
 
 

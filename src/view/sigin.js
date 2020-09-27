@@ -6,7 +6,14 @@ import { signingIn, signInGoogle, signInFacebook } from '../controller/signin-co
 export default () => {
   const viewSignIn = `
   <header>
-    <h1>Petlandia</h1>
+    <h1>Petlandia       <img
+    src="../imagenes/huella.png"
+    class="logoHuella"
+    alt="imagenHuella"
+    width="400px"
+    height="auto"
+  /> </h1>
+    <figure>
       <img
       src="../imagenes/petlandia.png"
       class="logoHeader"
@@ -18,13 +25,18 @@ export default () => {
 </a>
 </header>
   <section class="container">
+  
   <form id="signIn-form" class="signIn_Form">
-    <section class="row">
+  <p>SignIn</p>  
+  <section class="row">
       <section class="vl">
         <span class="vl-innertext">or</span>
       </section>
       <section class="col">
-        <input
+      <span class="input-item">
+      <i class="fas fa-at"></i>
+      </span>  
+      <input
           type="email"
           id="SignInForm_email"
           name="email"
@@ -50,15 +62,15 @@ export default () => {
           <p>O ingresa con ...</p>
         </section>
       </section>
-      <section >
+      <section class="logo-Redes">
           <a href="#" class="fa fa-facebook" id="btnFacebook"></a> 
           <a href="#" class="fa fa-google" id="btnGoogle"></a>
       </section>
-      <section class="register">
-        <p>¿No tienes cuenta?<a href="#/Register" style="color: blue"> Registrate</a></p> 
-      </section>
     </section>
   </form>
+  <section class="register">
+        <p>¿No tienes cuenta?<a href="#/Register" style="color: blue"> Registrate</a></p> 
+      </section>
 </section>`;
   const divElem = document.createElement('div');
   divElem.classList.add('sign');
