@@ -13,10 +13,13 @@ header h1{
 	margin: 0rem 0rem;
 	text-align: center;
 }
+
+
 .logoHeader,.logoHeader1{
 	width: 80%;
 	height:auto;
 }
+
 /* style the container */
 .container {
 	position: relative;
@@ -220,8 +223,7 @@ span.error-msg {
 		text-align: center;
 	}
 }
-@media (min-width: 751px) and (max-width: 1500px) {
-
+@media (min-width: 751px) {
 	.sign,.position{
 		display:flex;
 		flex-direction:row;

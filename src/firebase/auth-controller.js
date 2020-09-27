@@ -1,16 +1,17 @@
 // eslint-disable-next-line max-len
 export const signUp = (emailSignUp, passwordSignUp) => firebase.auth()
   .createUserWithEmailAndPassword(emailSignUp, passwordSignUp);
-
+// Usuario corriente
+export const userCurrent = () => firebase.auth().currentUser;
 // Verificación de email
 export const verifEmail = () => {
   const user = firebase.auth().currentUser;
   return user.sendEmailVerification();
 };
-
+// Inicio de sesión con correo y contraseña
 export const signIn = (emailSignIn, passwordSignIn) => firebase.auth()
   .signInWithEmailAndPassword(emailSignIn, passwordSignIn);
-
+// Cerrar de sesión
 export const logOut = () => firebase.auth().signOut();
 // Inicio de sesión con Gmail
 export const googleSignIn = () => {

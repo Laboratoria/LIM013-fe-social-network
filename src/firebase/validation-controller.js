@@ -1,15 +1,17 @@
 export const validation = callback => firebase.auth().onAuthStateChanged((user) => {
-  let route = '#/signIn';
   // if (window.location.hash === '#/Register') route = '#/Register';
+  // eslint-disable-next-line quotes
 
+  let route = '#/signIn';
+  if (window.location.hash === '#/Register') route = '#/Register';
   if (user) {
-    if (user.emailVerified === true) {
+    if (user.emailVerified) {
       switch (window.location.hash) {
-        case '#/home':
-          route = '#/home';
+        case '#/profile':
+          route = '#/profile';
           break;
         default:
-          route = '#/profile';
+          route = '#/home';
           break;
       }
     }

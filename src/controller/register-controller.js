@@ -10,7 +10,8 @@ const showMessage = (txtmessage) => {
     document.body.removeChild(showWindow);
   }, 4000);
 };
-export const userRegistration = () => {
+export const userRegistration = (e) => {
+  e.preventDefault();
   const userName = document.querySelector('#nameUser').value;
   const emailLogUp = document.querySelector('#emailSignUp').value;
   const passwordLogUp = document.querySelector('#passwordSignUp').value;
@@ -24,11 +25,10 @@ export const userRegistration = () => {
           showMessage(error.code);
         });
       console.log(result);
+      window.location.has = '';
     })
     .catch(() => {
-      showMessage(
-        '⚠️Error al auntenticar el usuario, el correo ha sido registrado anteriormente',
-      );
+      showMessage('⚠️Error al auntenticar el usuario, el correo ha sido registrado anteriormente');
     });
   logOut()
     .then(() => {})

@@ -1,8 +1,9 @@
 
 // eslint-disable-next-line import/named
 import {
-  signIn, googleSignIn, loginFacebook, logOut,
+  signIn, googleSignIn, loginFacebook,
 } from '../firebase/auth-controller.js';
+import { createUser } from '../firebase/firestore-controller.js';
 import {
   validation,
 } from '../firebase/validation-controller.js';
@@ -28,20 +29,32 @@ export const signingIn = () => {
       showMessage('Bienvenido');
     })
     .catch(() => {
-      logOut();
     });
 };
 export const signInGoogle = () => {
-  googleSignIn().then((result) => {
-    console.log('signIn');
-  }).catch((error) => {
-    console.log(error);
-  });
+  googleSignIn()
+    .then((result) => {
+      createUser(result.user.uid, result.user.displayName, result.user.photoURL, 'Conociendo tu mascota')
+        .catch((error) => {
+          console.log(error);
+          console.log('No se actualizo usuario');
+        });
+      window.location.hash = '#/home';
+      // changeHash('#/wall');
+      console.log(result);
+      console.log('Cuenta registrada');
+    }).catch((error) => {
+      console.log(error);
+      console.log('No se registro la cuenta');
+    });
 };
+
 export const signInFacebook = () => {
   loginFacebook().then((result) => {
-    console.log('signIn');
-  }).catch((error) => {
-    console.log(error);
-  });
+    createUser(result.user.uid, result.user.displayName, result.user.photoURL, 'Aprendiendo a Bailar');
+    window.location.hash = '#/home';
+    // changeHash('#/wall');
+    console.log('Ingreso con facebook');
+  })
+    .catch(() => { console.log('No se registro la cuenta'); });
 };

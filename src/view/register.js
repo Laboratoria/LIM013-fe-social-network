@@ -8,7 +8,7 @@ export default () => {
   <a href="#/">
   <figure class="imagenHeader">
     <img
-      src="../imagenes/image.png"
+      src="../imagenes/petlandia.png"
       class="logoHeader"
       alt="imagenPetlandia"
       width="400px"
