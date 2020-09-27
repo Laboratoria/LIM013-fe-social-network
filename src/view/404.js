@@ -4,6 +4,7 @@ export default () => {
   notFound.innerHTML = `
 <img src ="../src/img/notfound.png" class="nf-image">
     <p class="nf-number">404</p>
-    <p class="nf-text">Página no encontrada</p>`;
+    <p class="nf-text">Página no encontrada</p>
+    <a href="#/">Retornar</a>`;
   return notFound;
 };
