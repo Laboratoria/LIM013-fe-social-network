@@ -35,7 +35,7 @@ export default () => {
           <img src="img/gmail.png" class="gmail" id="btn-google">
           <img src="img/facebook.png" class="facebook">
         </div>
-        <p class="text">New to TravelIn?</p>
+        <p class="text">New to TravelIn ?</p>
         <button class="newAccount">Create an account</button>
       </form>
     </div>
@@ -60,14 +60,18 @@ export default () => {
     const password = viewLogIn.querySelector('#password').value;
     const error = viewLogIn.querySelector('#error-message');
     signIn(email, password)
-      .then(() => {
-        window.location.hash = '#/home';
+      .then((data) => {
+        if (data.user.emailVerified) {
+          window.location.hash = '#/home';
+        } else {
+          error.textContent = 'Account not verified, please check your inbox';
+        }
       })
       .catch((err) => {
         error.textContent = err.message;
         setTimeout(() => {
           error.textContent = '';
-        }, 3000);
+        }, 4000);
       });
   });
   // controlerSignIn.handleSignIn(viewLogIn);

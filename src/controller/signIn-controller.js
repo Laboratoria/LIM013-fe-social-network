@@ -10,14 +10,18 @@ const controlerSignIn = {
       const password = viewLogIn.querySelector('#password').value;
       const error = viewLogIn.querySelector('#error-message');
       signIn(email, password)
-        .then(() => {
-          window.location.hash = '#/home';
+        .then((data) => {
+          if (data.user.emailVerified) {
+            window.location.hash = '#/home';
+          } else {
+            error.textContent = 'Account not verified, please check your inbox';
+          }
         })
         .catch((err) => {
           error.textContent = err.message;
           setTimeout(() => {
             error.textContent = '';
-          }, 3000);
+          }, 4000);
         });
     });
   },

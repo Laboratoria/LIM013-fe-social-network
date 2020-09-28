@@ -15,7 +15,7 @@
     text-transform: capitalize;
 }
 .successful-message{
-    color:green;
+    color:#2CAB92;
     margin-top: 5px;
     margin-bottom: 5px;
     text-align: center;
@@ -43,6 +43,10 @@
     color: #ffffff;
     width: 50%;
 }
+.text-infoSingUp{
+    align-items: flex-start;
+}
+
 .text-info{
     margin-right: 10%;
 }
@@ -200,7 +204,15 @@
     border-radius: 50%;
     z-index: -1;
     transition: 1s ease-in-out;
-
+}
+.recoverPass{
+    color: #2CAB92;
+    text-decoration: none;
+}
+.recoverPass:hover{
+    color: #2b7a75;
+    text-decoration: underline;
+    cursor: pointer;
 }
 /******************************Vista de signUp***********************************/
 .backLogin{
@@ -261,15 +273,6 @@
 }
 .btn-recoverPass{
     margin: 20px;
-}
-.recoverPass{
-    text-decoration: none;
-}
-.recoverPass:hover{
-    color: #2CAB92;
-    text-decoration: underline;
-    cursor: pointer;
-
 }
 /******************************media query***********************************/
 @media screen and (max-width:900px){
