@@ -1,4 +1,7 @@
 
+import { signIn, signInforgoogle } from '../controller/controller-firebase.js';
+// import { controlerSignIn } from '../controller/signIn-controller.js';
+
 export default () => {
   const viewLogIn = document.createElement('section');
   viewLogIn.classList.add('container-logIn');
@@ -15,7 +18,7 @@ export default () => {
         <p class="text">¡ welcome to travelin !</p>
         <p class="text-title">Sign in</p>
       </header>
-      <form>
+      <form id="signIn-form"">
         <div class="div-input">
         <i class="fas fa-envelope"></i>
         <input type="email" id="email" placeholder="E-mail" required />
@@ -24,35 +27,51 @@ export default () => {
         <i class="fas fa-lock"></i>
         <input type="password" id="password" pattern="[a-zA-Z0-9]{8,20}" placeholder="Password" required />
         </div>
-        <button type="submit" class="btn-logIn"><a href="#/home">Log in</a></button>
+        <button type="submit" class="btn-logIn">Log in</a></button>
+        <p id = "error-message" class = "error-message"></p>
+        <a class = "recoverPass" href="#/recoverPassword">Did you forget your password?</a>
         <p class="text">or enter with ...</p>
         <div class="option">
           <img src="img/gmail.png" class="gmail" id="btn-google">
           <img src="img/facebook.png" class="facebook">
         </div>
         <p class="text">New to TravelIn?</p>
-        <button class="newAccount"><a href="#/signUp">Create an account</a></button>
+        <button class="newAccount">Create an account</button>
       </form>
     </div>
   </section>
   `;
-
-  /* ------------Registro con Google------------------*/
+  /* -----------------------handle send to Sign In--------------- */
+  const btnNewAccount = viewLogIn.querySelector('.newAccount');
+  btnNewAccount.addEventListener('click', () => { window.location.hash = '#/signUp'; });
+  /* ----------regarding DOM manipulation for login with google------------ */
   const btnGoogle = viewLogIn.querySelector('#btn-google');
   btnGoogle.addEventListener('click', () => {
-    // Accede al servicio auth de firebase para validar datos ingresados
-    const auth = firebase.auth();
-    const provider = new firebase.auth.GoogleAuthProvider();
-    auth
-      .signInWithPopup(provider)
+    signInforgoogle()
       .then(() => {
-        console.log('google sign in');
+        window.location.hash = '#/home';
+      });
+  });
+  /* ------------regarding DOM manipulation for login with created credentials------------- */
+  const signInForm = viewLogIn.querySelector('#signIn-form');
+  signInForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = viewLogIn.querySelector('#email').value;
+    const password = viewLogIn.querySelector('#password').value;
+    const error = viewLogIn.querySelector('#error-message');
+    signIn(email, password)
+      .then(() => {
+        window.location.hash = '#/home';
       })
       .catch((err) => {
-        console.log(err);
+        error.textContent = err.message;
+        setTimeout(() => {
+          error.textContent = '';
+        }, 3000);
       });
-    console.log('hola');
   });
-
+  // controlerSignIn.handleSignIn(viewLogIn);
+  // controlerSignIn.handleSignInForGoogle(viewLogIn);
+  // controlerSignIn.sendCreateNewAccount(viewLogIn);
   return viewLogIn;
 };

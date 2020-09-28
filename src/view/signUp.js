@@ -1,4 +1,4 @@
-import { createUser } from '../controller/controller-firebase.js';
+import { createUser, sendEmail } from '../controller/controller-firebase.js';
 
 export default () => {
   const viewSignUp = document.createElement('section');
@@ -29,61 +29,45 @@ export default () => {
       <input type="password" id="password" pattern="[a-zA-Z0-9]{8,20}" placeholder="Password" required />
       </div>
       <button type="submit" class="btn-signUp">SIGN UP</button>
-      <p id = "error-message" class = "error-message"></p>
+      <p id = "error-message"></p>
       <p class="text">Back to signIn</p>
-      <button class="backLogin"><a  class="fas fa-arrow-left" href=""></a></button>
+      <button class="backLogin"><i class="fas fa-arrow-left"></i></button>
     </form>
   </div>
 </section>
 `;
-
-
-  // /* ---------------Valida los campos required-----------------*/
-  //   const validar = () => {
-  //     let valid = true;
-  //     const inputRequired = document.querySelectorAll('.signup-form input');
-  //     console.log(inputRequired);
-  //     for (let i = 0; i < inputRequired.length; i += 1) {
-  //       if (inputRequired[i].value === '') {
-  //         inputRequired[i].classList.add('error');
-  //         valid = false;
-  //       }
-  //     }
-  //     return valid;
-  //   };
-
-  /* ------------ Capturando el formulario sign up -------------*/
+  /* ------------------------------handle back to Sign In----------------------------------- */
+  const btnBackLogin = viewSignUp.querySelector('.backLogin');
+  btnBackLogin.addEventListener('click', () => { window.location.hash = ''; });
+  /* -------------------------regarding DOM manipulation to create users-------------------- */
   const signupForm = viewSignUp.querySelector('#signup-form');
   signupForm.addEventListener('submit', (e) => {
     e.preventDefault();
-
-    const error = viewSignUp.querySelector('#error-message');
-    const username = viewSignUp.querySelector('#username').value;
     const email = viewSignUp.querySelector('#email').value;
     const password = viewSignUp.querySelector('#password').value;
-
+    const error = viewSignUp.querySelector('#error-message');
     createUser(email, password)
       .then(() => {
-        // resetear el formulario una vez ingresado los datos
-        console.log('enviando');
+        sendEmail()
+          .then(() => {
+            error.classList.add('successful-message');
+            error.textContent = 'Please check your inbox to verify your account';
+          })
+          .catch((err) => {
+            error.classList.add('error-message');
+            error.textContent = err.message;
+          });
         signupForm.reset();
-        window.location.hash = '#/home';
       })
       .catch((err) => {
+        error.classList.remove('successful-message');
+        error.classList.add('error-message');
         error.textContent = err.message;
         setTimeout(() => {
-          signupForm.removeChild(error);
-        }, 3000);
+          error.textContent = '';
+        }, 4000);
       });
-
-    const db = firebase.firestore();
-    db.collection('users').add({
-      User: username,
-      Email: email,
-      Password: password,
-    })
-      .then();
   });
-
+  /* --------------------------------return view Sing up-------------------------------- */
   return viewSignUp;
 };

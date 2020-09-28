@@ -13,6 +13,9 @@ const changeView = (route) => {
     case '#/home':
       container.appendChild(components.home());
       break;
+    case '#/recoverPassword':
+      container.appendChild(components.recoverPassword());
+      break;
     default:
       break;
   }

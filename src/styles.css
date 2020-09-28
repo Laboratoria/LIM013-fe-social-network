@@ -6,17 +6,24 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
+/*****************************classlist for messenger alert*************************/
 .error-message{
     color: red;
     margin-top: 5px;
     margin-bottom: 5px;
+    text-align: center;
+    text-transform: capitalize;
 }
-.error {
-    border: 2px solid red;
+.successful-message{
+    color:green;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    text-transform: capitalize;
 }
-/****************************************vista de logIn***********************************/
-/*css para vista SignIn*/
-/*contenedor de text-info y logIn*/
+/**************************************View Sing in***********************************/
+/*css view SignIn*/
+/*container for  text-info y logIn*/
 .container-logIn , .container-signUp{
     position: absolute;
     display: flex;
@@ -26,11 +33,9 @@
     height: 100%;
     overflow-x: hidden;
 }
-/*referente a text-info*/
 .text-info img{
     margin-top: 100px;
 }
-
 .text-info,.text-infoSingUp{
     display: flex;
     flex-flow: column nowrap;
@@ -44,7 +49,6 @@
 .text-infoSingUp{
     margin-left: 10%;
 }
-
 .text-infoTitle{
     font-size: 24px;
     color: #ffffff;
@@ -52,8 +56,8 @@
 .text{
     font-size: 16px;
 }
-/*referente a logIn*/
-/*contenedor de box-logIn*/
+/*regarding logIn*/
+/*container for box-logIn*/
 .section-register{
     width: 50%;
     height:100%;
@@ -94,7 +98,6 @@
     outline: none;
     border: none;
     line-height: 1;
-    font-weight: 600;
     font-size: 1.1rem;
     color: #333;
     border-radius: 55px;
@@ -127,8 +130,7 @@
     width: 100%;
     height: 80%;
 }
-
-.btn-logIn,.newAccount,.btn-signUp{
+.btn-logIn,.newAccount,.btn-signUp,.btn-recoverPass{
     font-weight: 600;
     justify-content: center;
     width: 60%;
@@ -144,23 +146,21 @@
     color: #2CAB92;
     border-style: solid;
 }
-.newAccount,.btn-signUp{
+.newAccount,.btn-signUp, .btn-recoverPass{
     color: #ffffff;
     height: 55px;
     background-color:#2CAB92;
 }
-.newAccount a{
-    color: #ffffff;
-}
-.btn-logIn a,.backLogin a{
+
+.btn-logIn a,.backLogin i{
     color: #2CAB92;
 }
-.btn-logIn a,.newAccount a,.backLogin a{
+.btn-logIn a,.newAccount,.backLogin i{
     text-decoration: none;
     font-size: 16px;
 
 }
-.newAccount:hover,.btn-signUp:hover{
+.newAccount:hover,.btn-signUp:hover, .btn-recoverPass:hover{
     background-color:  #2b7a75;
     width: 62%;
     height: 54px;
@@ -188,7 +188,7 @@
     width: 45px;
     height: 45px;
 }
-/*referente a diseño circular de la vista de logIn*/
+/*regarding circular layout of the login view*/
 .container-logIn:before  {
     content: "";
     position: absolute;
@@ -210,7 +210,7 @@
     border-radius: 49px;
     cursor: pointer;
 }
-.backLogin a{
+.backLogin i{
     font-size: 30px;
 }
 .container-signUp:before {
@@ -233,12 +233,47 @@
     width: 100%;
     height: 100%;
 }
+/******************************View Recover Password***********************************/
+.container-recoverPassword{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.container-recoverPassword header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 700px;
+    margin: 20px;
+}
+.container-recoverPassword form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 700px;
+}
+.container-recoverPassword .title {
+    font-size: 32px;
+    text-align: center;
+}
+.btn-recoverPass{
+    margin: 20px;
+}
+.recoverPass{
+    text-decoration: none;
+}
+.recoverPass:hover{
+    color: #2CAB92;
+    text-decoration: underline;
+    cursor: pointer;
 
-
-
+}
 /******************************media query***********************************/
 @media screen and (max-width:900px){
-    /*referente a vista logIn*/
+    /*responsive view logIn*/
     .container-logIn:before {
         width: 1500px;
         height: 1500px;
@@ -264,7 +299,7 @@
     .box-section-register{
         width: 100%;
     }
-    /*referente a vista SignUp*/
+    /*Responsive view  SignUp*/
     .container-signUp:before {
         width: 1500px;
         height: 1500px;
@@ -284,7 +319,11 @@
     .text-infoSingUp .text , .text-info .text {
         font-size: 14px;
     }
-    
-
-
+    /*responsive recover Password*/
+    .container-recoverPassword header{
+        width: 80%;
+    }
+    .container-recoverPassword form{
+        width: 80%;
+    }
 }
