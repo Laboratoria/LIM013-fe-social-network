@@ -3,16 +3,22 @@ import { userRegistration } from '../controller/register-controller.js';
 
 export default () => {
   const viewRegister = `
-  <header>
-  <h1>Petlandia       <img
+
+<header>
+<h1>
+  Petlandia
+</h1>
+
+  <img
   src="../imagenes/huella.png"
   class="logoHuella"
   alt="imagenHuella"
   width="400px"
   height="auto"
-/> </h1>
-  <a href="#/">
-  <figure class="imagenHeader">
+/>
+
+<a href="#/">
+
     <img
       src="../imagenes/petlandia.png"
       class="logoHeader"
@@ -20,13 +26,13 @@ export default () => {
       width="400px"
       height="auto"
     />
-  </figure>
+
 </a>
 </header>
-  <section class="register-container">
-  <section class="registerForm-container">
-    <p>Regístrate</p>
-    <form id="signUp-form" class="form">
+<section class="register-container">
+<section class="registerForm-container">
+  <h1>Regístrate</h1>
+  <form id="signUp-form" class="form">
     <section class="msg-alert-reg">
       <input
         class="input-register validity"
@@ -39,25 +45,25 @@ export default () => {
       <span class="error-msg">Solo letras</span>
     </section>
     <section class="msg-alert-reg">
-    <span class="input-itemR">
-      <i class="fas fa-at"></i>
-      </span>    
-    <input
+      <span class="input-itemR">
+        <i class="fas fa-at"></i>
+      </span>
+      <input
         class="input-register validity"
         id="emailSignUp"
         type="email"
         pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"
-        placeholder="Email"   
-        autocomplete="on" 
+        placeholder="Email"
+        autocomplete="on"
         required
       />
       <span class="error-msg">Ingrese un e-mail valido</span>
     </section>
     <section class="msg-alert-reg">
-    <span class="input-itemR">
-    <i class="fas fa-key"></i>
-    </span>  
-    <input
+      <span class="input-itemR">
+        <i class="fas fa-key"></i>
+      </span>
+      <input
         class="input-register validity"
         id="passwordSignUp"
         type="password"
@@ -70,10 +76,13 @@ export default () => {
       />
       <span class="error-msg">Tamaño mínimo de 6 caracteres</span>
     </section>
-    <input type="submit" class="bttonSudmitt" id="submit-buttomRegister" value="Crear Cuenta" />
-    </form>
-    </section>
-  
+    <input
+      type="submit"
+      class="bttonSudmitt"
+      id="submit-buttomRegister"
+      value="Crear Cuenta"
+    />
+  </form>
   <p>
     ¿Ya tienes una cuenta?.<a
       href="#/signIn"
@@ -84,7 +93,10 @@ export default () => {
       Inicia sesión</a
     >
   </p>
-  </section>`;
+</section>
+</section>
+
+`;
 
   const divElemt = document.createElement('div');
   divElemt.classList.add('position');
