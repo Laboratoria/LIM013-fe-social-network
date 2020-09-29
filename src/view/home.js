@@ -2,9 +2,7 @@
 // import { eachPost } from './post.js';
 // eslint-disable-next-line max-len
 // import { signingOut, gettingProfileInfo, savingChanges } from '../view-controller/profile-controller.js';
-import { getUser } from '../firebase/firestore-controller.js';
-import { logOut, userCurrent } from '../firebase/auth-controller.js';
-
+// import { getUser } from '../firebase/firestore-controller.js';
 
 export default () => {
   // loadingInfo();
@@ -71,7 +69,10 @@ export default () => {
   const nameProfile = divElemt.querySelector('#user-name-profile');
   const photoProfile = divElemt.querySelector('.circulo-profile');
   const user = firebase.auth().currentUser;
-  getUser(userCurrent.uid)
+  console.log(user);
+  const docRef = firebase.firestore().collection('user').doc(user.uid);
+
+  docRef.get()
     .then((docUser) => {
     // console.log(docUser.data().displayName);
       nameProfile.innerHTML = docUser.data().displayName;
