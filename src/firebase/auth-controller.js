@@ -3,6 +3,7 @@ export const signUp = (emailSignUp, passwordSignUp) => firebase.auth()
   .createUserWithEmailAndPassword(emailSignUp, passwordSignUp);
 // Usuario corriente
 export const userCurrent = () => firebase.auth().currentUser;
+
 // Verificación de email
 export const verifEmail = () => {
   const user = firebase.auth().currentUser;
@@ -23,7 +24,6 @@ export const loginFacebook = () => {
   const provider = new firebase.auth.FacebookAuthProvider();
   return firebase.auth().signInWithPopup(provider);
 };
-export const logOut = () => firebase.auth().signOut();
 
 
 // Usuario loggeado

@@ -27,22 +27,22 @@ export default () => {
   <section class="registerForm-container">
     <p>Regístrate</p>
     <form id="signUp-form" class="form">
-    <section class="msg-alert-reg">
-      <input
-        class="input-register validity"
-        id="nameUser"
-        type="text"
-        pattern="([a-zA-ZÁÉÍÓÚñáéíóúÑ]{1,30}\\s*)+"
-        placeholder="Nombre de usuario"
-        required
-      />
-      <span class="error-msg">Solo letras</span>
-    </section>
-    <section class="msg-alert-reg">
-    <span class="input-itemR">
-      <i class="fas fa-at"></i>
-      </span>    
-    <input
+      <section class="msg-alert-reg">
+        <input
+          class="input-register validity"
+          id="nameUser"
+          type="text"
+          pattern="([a-zA-ZÁÉÍÓÚñáéíóúÑ]{1,30}\\s*)+"
+          placeholder="Nombre de usuario"
+          required
+        />
+        <span class="error-msg">Solo letras</span>
+        </section>
+        <section class="msg-alert-reg">
+      <span class="input-itemR">
+        <i class="fas fa-at"></i>
+        </span>    
+        <input
         class="input-register validity"
         id="emailSignUp"
         type="email"

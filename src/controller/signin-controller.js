@@ -1,14 +1,10 @@
 
 // eslint-disable-next-line import/named
 import {
-  signIn, googleSignIn, loginFacebook,
+  signIn, googleSignIn, loginFacebook, logOut,
 } from '../firebase/auth-controller.js';
 import { createUser } from '../firebase/firestore-controller.js';
-import {
-  validation,
-} from '../firebase/validation-controller.js';
-// eslint-disable-next-line import/no-cycle
-import { cambioVista } from './router.js';
+
 
 const showMessage = (txtmessage) => {
   const showWindow = document.createElement('div');
@@ -25,8 +21,18 @@ export const signingIn = () => {
   const passwordLogIn = document.querySelector('#SignInForm_password').value;
   signIn(emailLogIn, passwordLogIn)
     .then(() => {
-      validation(cambioVista);
-      showMessage('Bienvenido');
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          if (user.emailVerified === false) {
+            showMessage('⚠️ Email no verificado, revise su correo porfavor.');
+            logOut();
+          } else {
+            showMessage('Puede ingresar');
+            window.location.hash = '#/home';
+          // changeView(window.location.hash);
+          }
+        }
+      });
     })
     .catch(() => {
       showMessage('No puedes ingresar');
@@ -36,7 +42,7 @@ export const signingIn = () => {
 export const signInGoogle = () => {
   googleSignIn()
     .then((result) => {
-      createUser(result.user.uid, result.user.displayName, result.user.photoURL, 'Conociendo tu mascota')
+      createUser(result.user.uid, result.user.displayName, result.user.photoURL)
         .catch((error) => {
           console.log(error);
           console.log('No se actualizo usuario');

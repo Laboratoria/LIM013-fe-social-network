@@ -78,7 +78,10 @@ export default () => {
   // Evento para registrar usuario
   const btonSignIn = divElem.querySelector('#signIn-form');
 
-  btonSignIn.addEventListener('click', signingIn);
+  btonSignIn.addEventListener('click', (e)=> {
+    e.preventDefault();
+    signingIn();
+  });
   // Capturar evento de boton de Google"//
   const btnGoogle = divElem.querySelector('#btnGoogle');
   btnGoogle.addEventListener('click', signInGoogle);

@@ -1,5 +1,6 @@
 
-export const createUser = (idDoc, newUserName, newInfoUser) => firebase.firestore().collection('USERS').doc(idDoc).set({
+export const createUser = (idDoc, newUserName, newUserPhoto) => firebase.firestore().collection('user').doc(idDoc).set({
   displayName: newUserName,
-  infoUser: newInfoUser,
+  photoURL: newUserPhoto,
 });
+export const getUser = docUser => firebase.firestore().collection('user').doc(docUser).get();

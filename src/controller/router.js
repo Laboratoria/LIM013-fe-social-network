@@ -2,14 +2,13 @@
 import { components } from '../view/index.js';
 // eslint-disable-next-line import/no-unresolved
 
-export const cambioVista = (hash) => {
-  window.location.hash = hash;
+export const cambioVista = (route) => {
+  window.location.hash = route;
   const sectionContainer = document.getElementById('container');
   sectionContainer.innerHTML = '';
   let routeSelected = '';
 
-  switch (hash) {
-    case '':
+  switch (route) {
     case '#/':
       routeSelected = sectionContainer.appendChild(components.signIn());
       break;
