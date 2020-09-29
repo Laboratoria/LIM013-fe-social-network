@@ -7,55 +7,50 @@ body {
 	background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
 	background-attachment: fixed;
 }
-.sign {
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-}
-header{
-    margin: 1rem 1rem 1rem 1rem;
-    width: 50%;
-    height: auto;
+header {
+	margin: 1rem 1rem 1rem 1rem;
+	width: 10%;
 }
 header h1 {
-    font-size: 800%;
-    font-family: 'Playfair Display', serif;
-    margin: 2rem 2rem;
-    text-align: center;
-    color: #98aebc;
-    text-shadow: 4px 3px 2px rgba(14, 6, 4, 0.59), 4px 3px 2px rgba(3, 14, 9, 0.59), 4px 3px 2px rgba(3, 14, 9, 0.59);
-    text-transform: capitalize;
+	font-size: 800%;
+	font-family: 'Playfair Display', serif;
+	margin: 2rem 2rem;
+	text-align: center;
+	color: #98aebc;
+	text-shadow: 4px 3px 2px rgba(14, 6, 4, 0.59),
+		4px 3px 2px rgba(3, 14, 9, 0.59), 4px 3px 2px rgba(3, 14, 9, 0.59);
+	text-transform: capitalize;
 }
 img.logoHuella {
-	width: 10%;
-    height: auto;
-    margin: 1rem 1rem 2rem 47rem;
-    position: relative;
-    bottom: 12rem;
+	width: 8%;
+	height: auto;
+	margin: 1rem 1rem 2rem 37rem;
+	position: absolute;
+	bottom: 31rem;
 }
 
-.logoHeader{
-    width: 62%;
-    max-width: 62%;
-    height: auto;
-    margin: 7rem 12rem;
-    position: relative;
-    bottom: 12rem;
-
+.logoHeader {
+	width: 33%;
+	max-width: 36%;
+	height: auto;
+	margin: 7rem 10rem;
+	position: absolute;
+	top: 8rem;
 }
-
 /* style the container */
 .container {
-	position: relative;
+	top: 2rem;
+	position: absolute;
 	border-radius: 5px;
 	padding: 1rem 1rem 1rem 1rem;
 	margin: 1rem 1rem 1rem 1rem;
+	left: 48rem;
 }
 
 .sign {
 	display: flex;
-    flex-direction: row;
-    align-content: center;
+	flex-direction: row;
+	align-content: center;
 }
 .signIn_Form,
 .signUp-form {
@@ -66,18 +61,20 @@ img.logoHuella {
 	margin: 0rem 0rem;
 }
 .registerForm-container {
-    width: 100%;
-    /* min-height: 500px; */
-    height: auto;
-    border-radius: 40px;
-    margin: 2rem 3rem;
-    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-    padding: 2%;
-    background: #92a7b5;
-    background: -moz-linear-gradient(45deg, #92a7b5 0%, #abecea 100%);
-    background: -webkit-linear-gradient(45deg, #92a7b5 0%, #abecea 100%);
-    background: linear-gradient(45deg, #92a7b5 0%, #abecea 100%);
+	width: auto;
+	height: auto;
+	border-radius: 40px;
+	margin: 2rem 0rem;
+	position: relative;
+	/* left: 6rem; */
+	-webkit-box-shadow: 0px 10px 13px -7px #000000,
+		5px 5px 15px 5px rgba(0, 0, 0, 0);
+	box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+	padding: 2%;
+	background: #92a7b5;
+	background: -moz-linear-gradient(45deg, #92a7b5 0%, #abecea 100%);
+	background: -webkit-linear-gradient(45deg, #92a7b5 0%, #abecea 100%);
+	background: linear-gradient(45deg, #92a7b5 0%, #abecea 100%);
 }
 form.form {
 	margin: 2rem 2rem;
@@ -97,26 +94,27 @@ form.form {
 	font-weight: bold;
 	font-family: 'Abel', sans-serif;
 }
-.signIn_Form {
-	width: 70%;
-    height: auto;
-    border-radius: 40px;
-    margin: 10rem 1rem 1rem 8rem;
-    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-    padding: 2%;
-    background: #92a7b5;
-    background: -moz-linear-gradient(45deg, #92a7b5 0%, #abecea 100%);
-    background: -webkit-linear-gradient(45deg, #92a7b5 0%, #abecea 100%);
-    background: linear-gradient(45deg, #92a7b5 0%, #abecea 100%);
+form.signIn_Form {
+	width: 50%;
+	height: auto;
+	border-radius: 40px;
+	margin: 2rem 1rem 1rem 10rem;
+	-webkit-box-shadow: 0px 10px 13px -7px #000000,
+		5px 5px 15px 5px rgba(0, 0, 0, 0);
+	box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+	padding: 2%;
+	background: #92a7b5;
+	background: -moz-linear-gradient(45deg, #92a7b5 0%, #abecea 100%);
+	background: -webkit-linear-gradient(45deg, #92a7b5 0%, #abecea 100%);
+	background: linear-gradient(45deg, #92a7b5 0%, #abecea 100%);
 }
-.input-itemR {
-    background: none;
-    color: black;
-    padding: 14.5px 0px 15px 9px;
-    border-radius: 5px 0px 0px 5px;
-    position: absolute;
-    margin: 0.445rem 0.45rem 1.45rem 25.5rem;
+span.input-itemR {
+	background: none;
+	color: black;
+	padding: 14.5px 0px 15px 9px;
+	border-radius: 5px 0px 0px 5px;
+	position: absolute;
+	margin: 0.445rem 0.45rem 1.45rem 18.5rem;
 }
 
 /* style inputs and link buttons */
@@ -173,22 +171,23 @@ input[type='submit']:hover {
 }
 
 section.logo-Redes {
-	width: auto;
-	margin: 3rem 6rem 1rem 6rem;
+	width: 73%;
+	margin: 2.5rem 5rem 4rem 3rem;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	height: auto;
 }
 section.msg-Redes p {
-	width: auto;
-	margin: 1rem 7rem;
+	width: 81%;
+	margin: 1rem 1rem;
 	text-align: center;
 	font-family: 'Playfair Display', serif;
 	font-size: 100%;
 	font-style: normal;
 	position: absolute;
 	font-weight: inherit;
+	top: 11rem;
 }
 section.register p {
 	width: auto;
@@ -200,23 +199,30 @@ section.register p {
 	position: relative;
 	font-weight: inherit;
 }
-.register-container{
-    width: 30%;
-    height: auto;
-    margin: 1rem 1rem 1rem 1rem;
-    position: relative;
-    left: 5rem;
-    top: 6rem;
+.register-container {
+	top: 2rem;
+	position: absolute;
+	border-radius: 5px;
+	padding: 1rem 1rem 1rem 1rem;
+	margin: 1rem 1rem 1rem 1rem;
+	left: 53rem;
+}
+.container_msg p {
+	margin: 1rem 1rem 1rem 1rem;
+	width: inherit;
+	text-align: center;
+	position: relative;
+	bottom: 5rem;
 }
 
 .fa {
-    padding: 1.5rem;
-    text-align: center;
-    text-decoration: none;
-    height: auto;
-    margin: 1rem 1rem;
-    border-radius: 50%;
-    width: 28%;
+	padding: 1.5rem;
+	text-align: center;
+	text-decoration: none;
+	height: auto;
+	margin: 1rem 1rem;
+	border-radius: 50%;
+	width: 28%;
 }
 
 .fa:hover {
@@ -241,15 +247,16 @@ section.register p {
 /* Two-column layout */
 .col {
 	width: auto;
-	margin: auto;
-	padding: 0 2rem;
-	margin-top: 2rem;
+	padding: 0rem 1rem;
+	margin: 0rem 1rem;
+	line-height: 0rem;
+	position: relative;
 }
 
 .position {
-    margin: 1rem 1rem;
-    display: flex;
-    flex-direction: row;
+	margin: 1rem 1rem;
+	display: flex;
+	flex-direction: row;
 }
 .registerForm-container p {
 	font-size: 100%;
@@ -277,13 +284,12 @@ span.error-msg {
 	width: 100%;
 }
 
-.input-item {
-    background: none;
-    color: black;
-    padding: 14.5px 0px 15px 9px;
-    border-radius: 5px 0px 0px 5px;
-    position: absolute;
-    margin: 0.445rem 0.45rem 1.45rem 21.5rem;
+span.input-item {
+	color: black;
+	padding: 14.5px 0px 15px 9px;
+	border-radius: 5px 0px 0px 5px;
+	position: absolute;
+	margin: 0.445rem 0.45rem 1.45rem 12.5rem;
 }
 #eye {
 	background: #fff;
@@ -303,25 +309,48 @@ span.error-msg {
 /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-	.sign{
+	body {
+		background: #fed6e3;
+		background: -moz-linear-gradient(
+			left,
+			#fed6e3 0%,
+			#e3fdf5 77%,
+			#a8edea 100%
+		);
+		background: -webkit-linear-gradient(
+			left,
+			#fed6e3 0%,
+			#e3fdf5 77%,
+			#a8edea 100%
+		);
+		background: linear-gradient(
+			to right,
+			#fed6e3 0%,
+			#e3fdf5 77%,
+			#a8edea 100%
+		);
+	}
+	.sign {
 		display: flex;
 		flex-direction: column;
 		align-content: center;
 		margin: 1rem 1rem 1rem 1rem;
 	}
 	header h1 {
-		font-size: 300%;
-		position: absolute;
-		margin: 1rem 0rem 1rem 1rem;
-		text-align: left;
+		font-size: 250%;
+		margin: 2rem 2rem;
+		text-align: center;
+		color: #98aebc;
+		text-shadow: 4px 3px 2px rgba(14, 6, 4, 0.59),
+			4px 3px 2px rgba(3, 14, 9, 0.59), 4px 3px 2px rgba(3, 14, 9, 0.59);
 	}
 	img.logoHuella {
 		margin: 0rem 1rem 1rem 1rem;
-		width: 14%;
+		width: 12%;
 		/* max-width: 15%; */
 		position: absolute;
-		top: 3rem;
-		left: 16rem;
+		top: 4rem;
+		left: 15rem;
 	}
 	.logoHeader {
 		width: 70%;
@@ -333,24 +362,27 @@ span.error-msg {
 		left: 5rem;
 	}
 	.container {
-		position: relative;
+		position: initial;
 		margin: auto;
 		width: auto;
 		padding: inherit;
-
 	}
-	.signIn_Form {
-	    width: inherit;
-    height: auto;
-    border-radius: 40px;
-    margin: 1rem 1rem 4rem 1rem;
-    position: relative;
-    top: 18rem;
+	form.signIn_Form {
+		width: inherit;
+		height: auto;
+		margin: 1rem 1rem 3rem 1rem;
+		position: relative;
+		top: 4rem;
+		background: none;
+		box-shadow: none;
+	}
+	.signIn_Form h1 {
+		font-size: 170%;
 	}
 	.col {
 		width: auto;
 		/* margin: 1rem 1rem 1rem 1rem; */
-		padding: 0 1rem;
+		padding: 0 0rem;
 	}
 	section.logo-Redes {
 		width: auto;
@@ -380,26 +412,17 @@ span.error-msg {
 		position: relative;
 	}
 	.input-item {
-    /* background: none; */
-    /* color: black; */
-    padding: 14.5px 0px 15px 9px;
-    /* border-radius: 5px 0px 0px 5px; */
-    position: absolute;
-    margin: auto auto auto 8rem;
+		/* background: none; */
+		/* color: black; */
+		padding: 14.5px 0px 15px 9px;
+		/* border-radius: 5px 0px 0px 5px; */
+		position: absolute;
+		margin: auto auto auto 8rem;
 	}
 	.registerForm-container {
 		width: auto;
-		/* min-height: 100%; */
-		/* height: auto; */
-		border-radius: 40px;
-		margin: 2rem 1rem;
-		/* -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); */
-		/* box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); */
-		padding: 2%;
-		/* background: #92A7B5; */
-		background: -moz-linear-gradient(45deg, #92a7b5 0%, #abecea 100%);
-		background: -webkit-linear-gradient(45deg, #92a7b5 0%, #abecea 100%);
-		/* background: linear-gradient(45deg, #92A7B5 0%, #ABECEA 100%); */
+		background: none;
+		box-shadow: none;
 	}
 	form.form {
 		margin: 2rem 1rem;
@@ -426,7 +449,7 @@ span.error-msg {
 		width: 100%;
 		flex-direction: column;
 	}
-	.fa{
+	.fa {
 		padding: 1.25rem;
 		text-align: center;
 		text-decoration: none;
@@ -436,20 +459,25 @@ span.error-msg {
 		width: 25%;
 	}
 	.register-container {
-		width: 92%;
+		width: auto;
 		height: auto;
 		margin: 1rem 1rem 1rem 1rem;
 		position: absolute;
 		left: 0rem;
-		top: 19rem;
+		top: 10rem;
+	}
+	.container_msg p {
+		margin: 1rem 1rem 1rem 1rem;
+		width: inherit;
+		text-align: center;
+		position: relative;
+		bottom: 0rem;
 	}
 }
-	
-
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 601px) and (max-width: 767px){
-	.sign{
+@media only screen and (min-width: 601px) and (max-width: 767px) {
+	.sign {
 		display: flex;
 		flex-direction: column;
 		align-content: center;
@@ -483,15 +511,14 @@ span.error-msg {
 		margin: auto;
 		width: auto;
 		padding: inherit;
-
 	}
 	.signIn_Form {
-	    width: inherit;
-    height: auto;
-    border-radius: 40px;
-    margin: 1rem 1rem 4rem 1rem;
-    position: relative;
-    top: 18rem;
+		width: inherit;
+		height: auto;
+		border-radius: 40px;
+		margin: 1rem 1rem 4rem 1rem;
+		position: relative;
+		top: 18rem;
 	}
 	.col {
 		width: auto;
@@ -526,12 +553,12 @@ span.error-msg {
 		position: relative;
 	}
 	.input-item {
-    /* background: none; */
-    /* color: black; */
-    padding: 14.5px 0px 15px 9px;
-    /* border-radius: 5px 0px 0px 5px; */
-    position: absolute;
-    margin: auto auto auto 8rem;
+		/* background: none; */
+		/* color: black; */
+		padding: 14.5px 0px 15px 9px;
+		/* border-radius: 5px 0px 0px 5px; */
+		position: absolute;
+		margin: auto auto auto 8rem;
 	}
 	.registerForm-container {
 		width: auto;
@@ -572,7 +599,7 @@ span.error-msg {
 		width: 100%;
 		flex-direction: column;
 	}
-	.fa{
+	.fa {
 		padding: 1.25rem;
 		text-align: center;
 		text-decoration: none;
@@ -590,11 +617,10 @@ span.error-msg {
 		top: 19rem;
 	}
 }
-	
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-	.sign{
+	.sign {
 		display: flex;
 		flex-direction: column;
 		align-content: center;
@@ -622,14 +648,12 @@ span.error-msg {
 		margin: 1rem 1rem;
 		top: 10rem;
 		left: 12rem;
-	
 	}
 	.container {
 		position: relative;
 		margin: auto;
 		width: auto;
 		padding: inherit;
-
 	}
 	.signIn_Form {
 		width: inherit;
@@ -678,26 +702,20 @@ span.error-msg {
 		position: relative;
 	}
 	.input-item {
-    /* background: none; */
-    /* color: black; */
-    padding: 14.5px 0px 15px 9px;
-    /* border-radius: 5px 0px 0px 5px; */
-    position: absolute;
-    margin: auto auto auto 8rem;
+		/* background: none; */
+		/* color: black; */
+		padding: 14.5px 0px 15px 9px;
+		/* border-radius: 5px 0px 0px 5px; */
+		position: absolute;
+		margin: auto auto auto 8rem;
 	}
 	.registerForm-container {
 		width: auto;
-		/* min-height: 100%; */
-		/* height: auto; */
-		border-radius: 40px;
+
 		margin: 2rem 1rem;
-		/* -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); */
-		/* box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); */
-		padding: 2%;
-		/* background: #92A7B5; */
-		background: -moz-linear-gradient(45deg, #92a7b5 0%, #abecea 100%);
-		background: -webkit-linear-gradient(45deg, #92a7b5 0%, #abecea 100%);
-		/* background: linear-gradient(45deg, #92A7B5 0%, #ABECEA 100%); */
+		box-shadow: none;
+
+		background: none;
 	}
 	form.form {
 		margin: 2rem 1rem;
@@ -724,7 +742,7 @@ span.error-msg {
 		width: 100%;
 		flex-direction: column;
 	}
-	.fa{
+	.fa {
 		text-align: center;
 		text-decoration: none;
 		height: auto;
@@ -733,20 +751,20 @@ span.error-msg {
 		width: 14%;
 	}
 	.register-container {
-		width: 70%;
-		height: auto;
-		margin: 1rem 1rem 1rem 1rem;
-		position: absolute;
-		left: 6rem;
-		top: 24rem;
+
+		width: auto;
+		margin: 2rem 7rem;
+		box-shadow: none;
+		background: none;
+	
 	}
-	section.msg-Redes p{
+	section.msg-Redes p {
 		font-size: 120%;
 	}
 }
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) and (max-width: 1119px){
-	.sign{
+@media only screen and (min-width: 992px) and (max-width: 1119px) {
+	.sign {
 		display: flex;
 		flex-direction: column;
 		align-content: center;
@@ -774,14 +792,12 @@ span.error-msg {
 		margin: 4rem 1rem;
 		top: 10rem;
 		left: 19rem;
-	
 	}
 	.container {
 		position: relative;
 		margin: auto;
 		width: auto;
 		padding: inherit;
-
 	}
 	.signIn_Form {
 		width: inherit;
@@ -830,12 +846,12 @@ span.error-msg {
 		position: relative;
 	}
 	.input-item {
-    /* background: none; */
-    /* color: black; */
-    padding: 14.5px 0px 15px 9px;
-    /* border-radius: 5px 0px 0px 5px; */
-    position: absolute;
-    margin: auto auto auto 8rem;
+		/* background: none; */
+		/* color: black; */
+		padding: 14.5px 0px 15px 9px;
+		/* border-radius: 5px 0px 0px 5px; */
+		position: absolute;
+		margin: auto auto auto 8rem;
 	}
 	.registerForm-container {
 		width: auto;
@@ -876,7 +892,7 @@ span.error-msg {
 		width: 100%;
 		flex-direction: column;
 	}
-	.fa{
+	.fa {
 		text-align: center;
 		text-decoration: none;
 		height: auto;
@@ -892,7 +908,7 @@ span.error-msg {
 		left: 8rem;
 		top: 34rem;
 	}
-	section.msg-Redes p{
+	section.msg-Redes p {
 		font-size: 120%;
 	}
 }

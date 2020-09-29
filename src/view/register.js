@@ -1,38 +1,33 @@
-
 import { userRegistration } from '../controller/register-controller.js';
 
 export default () => {
   const viewRegister = `
-
 <header>
 <h1>
   Petlandia
 </h1>
-
   <img
-  src="../imagenes/huella.png"
+  src="/imagenes/huella.png"
   class="logoHuella"
   alt="imagenHuella"
   width="400px"
   height="auto"
 />
-
 <a href="#/">
-
     <img
-      src="../imagenes/petlandia.png"
+      src="/imagenes/petlandia.png"
       class="logoHeader"
       alt="imagenPetlandia"
       width="400px"
       height="auto"
     />
-
 </a>
 </header>
 <section class="register-container">
 <section class="registerForm-container">
-  <h1>Regístrate</h1>
+  
   <form id="signUp-form" class="form">
+  <h1>Regístrate</h1>
     <section class="msg-alert-reg">
       <input
         class="input-register validity"
@@ -95,17 +90,16 @@ export default () => {
   </p>
 </section>
 </section>
-
 `;
-
   const divElemt = document.createElement('div');
   divElemt.classList.add('position');
   divElemt.innerHTML = viewRegister;
-
   const btonLogUp = divElemt.querySelector('#signUp-form');
-
   // Evento para registrar usuario
-  btonLogUp.addEventListener('submit', userRegistration);
+  btonLogUp.addEventListener('submit', (e) => {
+    e.preventDefault();
+    userRegistration();
+  });
 
   return divElemt;
 };
