@@ -1,4 +1,5 @@
-/*wiew header*/
+/*Header view*/
+
 .header-home {
   width: 100%;
   display: flex; 
@@ -7,13 +8,27 @@
   -moz-box-shadow: 0 4px 6px -6px #222;
   box-shadow: 0 4px 6px -6px #222;
   color: white; 
-  font-size: 1.35rem;
 }
 
 
 .header-home nav {
   width: 100%;
   display: flex; 
+}
+
+
+header nav ul li {
+  padding: 0.8rem; 
+}
+
+header nav ul li:hover {
+  cursor: pointer;
+}
+
+
+header nav ul li i {
+  font-size: 20px; 
+  margin-right: 0.4rem; 
 }
 
 
@@ -25,6 +40,12 @@
   align-items: center;
   padding: 0;
   list-style: none; 
+  font-size: 1.35rem;
+}
+
+
+.menu a {
+  color: white; 
 }
 
 
@@ -38,7 +59,7 @@
 .title-header {
   width: 33%; 
   text-align: center;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: bold;
 }
 
@@ -46,24 +67,17 @@
   cursor: default;
 }
 
-header nav ul li i {
-  font-size: 20px; 
-  margin-right: 0.4rem; 
-}
+
 .log-out {
   text-align: right;
   width: 33%;
 }
+
 .log-out i {
   margin-left: 1rem; 
 }
-header nav ul li {
-  padding: 0.8rem; 
-}
 
-header nav ul li:hover {
-  cursor: pointer;
-}
+
 #hamburger-menu {
   display: none;
   position: absolute;
@@ -71,7 +85,4 @@ header nav ul li:hover {
   font-size: 1.8rem; 
   left: 2rem;
   cursor: pointer; 
-}
-.hide {
-  display:none; 
 }

@@ -1,4 +1,4 @@
-/* export default () => {
+export default () => {
   const viewProfile = document.createElement('div');
   viewProfile.classList.add('profile-container');
   viewProfile.innerHTML = `
@@ -32,10 +32,10 @@
       </div>
     </div>
   `;
-  const hamburgerMenu = viewProfile.querySelector('#hamburger-menu');
+  /* const hamburgerMenu = viewProfile.querySelector('#hamburger-menu');
   const navBar = viewProfile.querySelector('.toggle');
   hamburgerMenu.addEventListener('click', () => {
     navBar.classList.toggle('active');
-  });
+  }); */
   return viewProfile;
-}; */
+};
