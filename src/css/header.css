@@ -31,6 +31,7 @@
   justify-content: flex-start; 
   align-items: center;
   padding: 0;
+  list-style: none; 
 }
 
 
@@ -58,6 +59,10 @@
   width: 33%;
 }
 
+.log-out i {
+  margin-left: 1rem; 
+}
+
 
 header nav ul li {
   padding: 0.8rem; 
@@ -65,6 +70,12 @@ header nav ul li {
 
 header nav ul li:hover {
   cursor: pointer;
+}
+
+
+header nav ul li i {
+  font-size: 20px; 
+  margin-right: 0.4rem; 
 }
 
 
@@ -119,15 +130,4 @@ header nav ul li:hover {
 
 .hide {
   display:none; 
-}
-
-
-ul {
-  list-style: none; 
-}
-
-
-i {
-  font-size: 20px; 
-  margin-right: 0.3rem; 
 }
