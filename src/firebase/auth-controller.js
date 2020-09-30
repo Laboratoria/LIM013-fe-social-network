@@ -24,6 +24,7 @@ export const loginFacebook = () => {
   return firebase.auth().signInWithPopup(provider);
 };
 
+
 // Usuario loggeado
 
 
