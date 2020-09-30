@@ -1,4 +1,3 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 * {
     margin: 0;
@@ -43,14 +42,12 @@
     color: #ffffff;
     width: 50%;
 }
-.text-infoSingUp{
-    align-items: flex-start;
-}
 
 .text-info{
     margin-right: 10%;
 }
 .text-infoSingUp{
+    align-items: flex-start;
     margin-left: 10%;
 }
 .text-infoTitle{
@@ -134,6 +131,9 @@
     width: 100%;
     height: 80%;
 }
+.btn-recoverPass{
+    margin: 20px;
+}
 .btn-logIn,.newAccount,.btn-signUp,.btn-recoverPass{
     font-weight: 600;
     justify-content: center;
@@ -143,6 +143,16 @@
     height: 49px;
     border-radius: 49px;
     cursor: pointer;
+}
+.backLogin{
+    justify-content: center;
+    width: 20%;
+    height: 49px;
+    border-radius: 49px;
+    cursor: pointer;
+}
+.backLogin i{
+    font-size: 30px;
 }
 .btn-logIn,.backLogin{
     background-color: transparent;
@@ -215,16 +225,6 @@
     cursor: pointer;
 }
 /******************************Vista de signUp***********************************/
-.backLogin{
-    justify-content: center;
-    width: 20%;
-    height: 49px;
-    border-radius: 49px;
-    cursor: pointer;
-}
-.backLogin i{
-    font-size: 30px;
-}
 .container-signUp:before {
     content: "";
     position: absolute;
@@ -271,9 +271,7 @@
     font-size: 32px;
     text-align: center;
 }
-.btn-recoverPass{
-    margin: 20px;
-}
+
 /******************************media query***********************************/
 @media screen and (max-width:900px){
     /*responsive view logIn*/
@@ -307,7 +305,6 @@
         width: 1500px;
         height: 1500px;
         transform: translateX(-45%);
-        right: 30%;
         bottom: 75%;
         right: initial;
         top: initial;
