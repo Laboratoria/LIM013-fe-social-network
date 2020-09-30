@@ -1,4 +1,4 @@
-export default () => {
+/* export default () => {
   const viewProfile = document.createElement('div');
   viewProfile.classList.add('profile-container');
   viewProfile.innerHTML = `
@@ -15,7 +15,7 @@ export default () => {
           <img class="photo" src="img/travel-girl.jpg">
         </div>
         <label id="select-profile" for="select-photo-profile">
-            <input type="file" id="select-photo-profile" class="hide" accept="image/jpeg, image/png">
+        <input type="file" id="select-photo-profile" class="hide" accept="image/jpeg, image/png">
             <span class="edit-photo"><i class="fas fa-camera"></i></span>
         </label>
         <div class="user-information">
@@ -32,10 +32,10 @@ export default () => {
       </div>
     </div>
   `;
-  /* const hamburgerMenu = viewProfile.querySelector('#hamburger-menu');
+  const hamburgerMenu = viewProfile.querySelector('#hamburger-menu');
   const navBar = viewProfile.querySelector('.toggle');
   hamburgerMenu.addEventListener('click', () => {
     navBar.classList.toggle('active');
-  }); */
+  });
   return viewProfile;
-};
+}; */
