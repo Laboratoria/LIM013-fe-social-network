@@ -3,9 +3,9 @@ import { signIn, signInforgoogle } from '../controller/controller-firebase.js';
 // import { controlerSignIn } from '../controller/signIn-controller.js';
 
 export default () => {
-  const viewLogIn = document.createElement('section');
-  viewLogIn.classList.add('container-logIn');
-  viewLogIn.innerHTML = `
+  const viewSignIn = document.createElement('section');
+  viewSignIn.classList.add('container-logIn');
+  viewSignIn.innerHTML = `
   <section class="text-info">
     <p class="text-infoTitle">What is TravelIn?</p>
     <p class="text">Travelin is a social network that unites people who share the same passion for travel.</p>
@@ -27,7 +27,7 @@ export default () => {
         <i class="fas fa-lock"></i>
         <input type="password" id="password" pattern="[a-zA-Z0-9]{8,20}" placeholder="Password" required />
         </div>
-        <button type="submit" class="btn-logIn">Log in</a></button>
+        <button type="submit" class="btn-logIn">SIGN IN</a></button>
         <p id = "error-message" class = "error-message"></p>
         <a class = "recoverPass" href="#/recoverPassword">Did you forget your password?</a>
         <p class="text">or enter with ...</p>
@@ -35,17 +35,17 @@ export default () => {
           <img src="img/gmail.png" class="gmail" id="btn-google">
           <img src="img/facebook.png" class="facebook">
         </div>
-        <p class="text">New to TravelIn?</p>
+        <p class="text">New to TravelIn ?</p>
         <button class="newAccount">Create an account</button>
       </form>
     </div>
   </section>
   `;
   /* -----------------------handle send to Sign In--------------- */
-  const btnNewAccount = viewLogIn.querySelector('.newAccount');
+  const btnNewAccount = viewSignIn.querySelector('.newAccount');
   btnNewAccount.addEventListener('click', () => { window.location.hash = '#/signUp'; });
   /* ----------regarding DOM manipulation for login with google------------ */
-  const btnGoogle = viewLogIn.querySelector('#btn-google');
+  const btnGoogle = viewSignIn.querySelector('#btn-google');
   btnGoogle.addEventListener('click', () => {
     signInforgoogle()
       .then(() => {
@@ -53,25 +53,29 @@ export default () => {
       });
   });
   /* ------------regarding DOM manipulation for login with created credentials------------- */
-  const signInForm = viewLogIn.querySelector('#signIn-form');
+  const signInForm = viewSignIn.querySelector('#signIn-form');
   signInForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    const email = viewLogIn.querySelector('#email').value;
-    const password = viewLogIn.querySelector('#password').value;
-    const error = viewLogIn.querySelector('#error-message');
+    const email = viewSignIn.querySelector('#email').value;
+    const password = viewSignIn.querySelector('#password').value;
+    const error = viewSignIn.querySelector('#error-message');
     signIn(email, password)
-      .then(() => {
-        window.location.hash = '#/home';
+      .then((data) => {
+        if (data.user.emailVerified) {
+          window.location.hash = '#/home';
+        } else {
+          error.textContent = 'Account not verified, please check your inbox';
+        }
       })
       .catch((err) => {
         error.textContent = err.message;
         setTimeout(() => {
           error.textContent = '';
-        }, 3000);
+        }, 4000);
       });
   });
-  // controlerSignIn.handleSignIn(viewLogIn);
-  // controlerSignIn.handleSignInForGoogle(viewLogIn);
-  // controlerSignIn.sendCreateNewAccount(viewLogIn);
-  return viewLogIn;
+  // controlerSignIn.handleSignIn(viewSignIn);
+  // controlerSignIn.handleSignInForGoogle(viewSignIn);
+  // controlerSignIn.sendCreateNewAccount(viewSignIn);
+  return viewSignIn;
 };
