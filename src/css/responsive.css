@@ -1,0 +1,104 @@
+/******************************media query***********************************/
+/* ------------------media query tablet-----------------*/
+@media screen and (max-width:768px){
+    /*responsive view logIn*/
+    .container-logIn:before {
+        width: 1500px;
+        height: 1500px;
+        transform: translateX(-50%);
+        left: 30%;
+        bottom: 75%;
+        right: initial;
+        top: initial;
+        transition: 1s ease-in-out;
+        z-index: -1;
+    }
+   
+    .text-info img{
+        display: none;
+    }
+    .container-logIn , .container-signUp{
+        flex-flow: row wrap;
+    }
+
+    .section-register{
+        width: 80%;
+    }
+    .box-section-register{
+        width: 100%;
+    }
+    /*Responsive view  SignUp*/
+    .container-signUp:before {
+        width: 1500px;
+        height: 1500px;
+        transform: translateX(-45%);
+        bottom: 75%;
+        right: initial;
+        top: initial;
+        transition: 1s ease-in-out;
+        z-index: -1;
+    }
+    .text-infoSingUp{
+        width: 90%;
+        margin-left: 12%;
+        margin-right: 5%;
+    }
+    .text-infoSingUp .text , .text-info .text {
+        font-size: 14px;
+    }
+    /*responsive recover Password*/
+    .container-recoverPassword header{
+        width: 80%;
+    }
+    .container-recoverPassword form{
+        width: 80%;
+    }
+    /*Responsive header*/
+    .menu {
+        width: 100%; 
+        flex-direction: column; 
+      }
+    
+      .box:nth-child(2) {
+        order: 1;
+        width: 100%; 
+        margin-top: 1.5rem; 
+        font-size: 2rem;
+      }
+      
+      .box:first-child {
+        order: 2;
+        width: 100%;
+        display: flex;
+        flex-flow: column nowrap; 
+      }
+          
+      .box:nth-child(3) {
+        order: 3;
+        width: 100%; 
+        margin-bottom: 1.5rem; 
+        text-align: center;
+      }
+    
+      header nav ul li {
+        width: 100%;
+        text-align: center;  
+        padding: 0; 
+      }
+    
+      #hamburger-menu {
+        display: flex;
+      }
+}
+/* ------------------media query small device-----------------*/
+@media screen and (max-width:576px){
+    /* -----------------Responsive profile--------------*/
+    .container-home{
+        grid-template-areas: "profile profile profile"
+                            "home home home"
+                            "aside aside aside";
+    }
+    .interest, .events, #viewall{
+        display: none;
+    }
+}

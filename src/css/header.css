@@ -1,11 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-
-
+/*wiew header*/
 .header-home {
   width: 100%;
   display: flex; 
@@ -53,17 +46,17 @@
   cursor: default;
 }
 
-
+header nav ul li i {
+  font-size: 20px; 
+  margin-right: 0.4rem; 
+}
 .log-out {
   text-align: right;
   width: 33%;
 }
-
 .log-out i {
   margin-left: 1rem; 
 }
-
-
 header nav ul li {
   padding: 0.8rem; 
 }
@@ -71,14 +64,6 @@ header nav ul li {
 header nav ul li:hover {
   cursor: pointer;
 }
-
-
-header nav ul li i {
-  font-size: 20px; 
-  margin-right: 0.4rem; 
-}
-
-
 #hamburger-menu {
   display: none;
   position: absolute;
@@ -87,47 +72,6 @@ header nav ul li i {
   left: 2rem;
   cursor: pointer; 
 }
-
-
-@media (max-width: 768px) {
-
-  .menu {
-    width: 100%; 
-    flex-direction: column; 
-  }
-
-  .box:nth-child(2) {
-    order: 1;
-    width: 100%; 
-    margin-top: 1.5rem; 
-    font-size: 2rem;
-  }
-  
-  .box:first-child {
-    order: 2;
-    width: 100%;
-    display: flex;
-    flex-flow: column nowrap; 
-  }
-      
-  .box:nth-child(3) {
-    order: 3;
-    width: 100%; 
-    margin-bottom: 1.5rem; 
-    text-align: center;
-  }
-
-  header nav ul li {
-    width: 100%;
-    text-align: center;  
-    padding: 0; 
-  }
-
-  #hamburger-menu {
-    display: flex;
-  }
-}
-
 .hide {
   display:none; 
 }
