@@ -7,6 +7,7 @@ import { createUser } from '../firebase/firestore-controller.js';
 // eslint-disable-next-line import/no-cycle
 
 
+
 const showMessage = (txtmessage) => {
   const showWindow = document.createElement('div');
   showWindow.classList.add('showWindow');
@@ -25,7 +26,7 @@ export const signingIn = () => {
       firebase.auth().onAuthStateChanged((user) => {
         if (user) {
           if (user.emailVerified === false) {
-            showMessage(':warning: Email no verificado, revise su correo porfavor.');
+            showMessage('Email no verificado, revise su correo porfavor.');
             logOut();
           } else {
             showMessage('Puede ingresar');
@@ -43,7 +44,7 @@ export const signingIn = () => {
 export const signInGoogle = () => {
   googleSignIn()
     .then((result) => {
-      createUser(result.user.uid, result.user.displayName, result.user.photoURL, 'Conociendo tu mascota')
+      createUser(result.user.uid, result.user.displayName, result.user.photoURL)
         .catch((error) => {
           console.log(error);
           console.log('No se actualizo usuario');
