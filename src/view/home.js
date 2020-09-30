@@ -37,11 +37,12 @@ export default () => {
         <div class="cover-image"></div>
         <div class="profile">
           <div class="profile-photo-name">
+            <img class="circulo-profile" src="">
             <label id="selectProfile" for="selectPhotoProfile" class="hide">
               <input type="file" id="selectPhotoProfile" class="hide" accept="image/jpeg, image/png">
               <img class ="photo-profile" src="./img/photo.png">
             </label>
-            <img class="circulo-profile" src="">
+
             <p class="user-name" id="user-name-profile"></p>
             <input class="hide validity" id="inputName" type="text" value="" maxlength="30" pattern="([a-zA-ZÁÉÍÓÚñáéíóúÑ]{1,30}\\s*)+">
           </div>

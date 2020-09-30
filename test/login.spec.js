@@ -1,8 +1,8 @@
+import { signIn } from '../src/firebase/auth-controller.js';
+
 const firebasemock = require('firebase-mock');
 
 const mockauth = new firebasemock.MockFirebase();
-const mockfirestore = new firebasemock.MockFirestore();
-mockfirestore.autoFlush();
 mockauth.autoFlush();
 
 global.firebase = firebasemock.MockFirebaseSdk(
@@ -11,3 +11,12 @@ global.firebase = firebasemock.MockFirebaseSdk(
   () => mockauth,
   () => mockfirestore,
 );
+
+describe('logIn', () => {
+  it('debería poder iniciar sesion', () => signIn('acuario@gmail.com', '123456')
+    .then((user) => {
+      expect(user.email).toBe('acuario@gmail.com');
+    }));
+});
+
+
