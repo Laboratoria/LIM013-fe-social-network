@@ -7,7 +7,7 @@ export default () => {
   viewLogIn.classList.add('container-logIn');
   viewLogIn.innerHTML = `
   <section class="text-info">
-    <p class="text-infoTitle">what is TravelIn?</p>
+    <p class="text-infoTitle">What is TravelIn?</p>
     <p class="text">Travelin is a social network that unites people who share the same passion for travel.</p>
     <img src="img/imgLogo.png">
   </section>
