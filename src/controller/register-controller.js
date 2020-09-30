@@ -10,8 +10,7 @@ const showMessage = (txtmessage) => {
     document.body.removeChild(showWindow);
   }, 4000);
 };
-export const userRegistration = (e) => {
-  e.preventDefault();
+export const userRegistration = () => {
   const userName = document.querySelector('#nameUser').value;
   const emailLogUp = document.querySelector('#emailSignUp').value;
   const passwordLogUp = document.querySelector('#passwordSignUp').value;

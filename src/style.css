@@ -1,4 +1,3 @@
-
 * {
 	box-sizing: border-box;
 }
@@ -12,119 +11,191 @@
 }*/
 body {
 	font-family: 'Playfair Display', serif;
-	background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+	background-image: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
 	background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
-	background-attachment: fixed;}
-header h1{
-    font-size: 700%;
-    font-family: 'Playfair Display', serif;
-    margin: 2rem 2rem;
+	background-attachment: fixed;
+}
+
+/*TODO  Vista: encabezado  */
+header {
+	margin: 1rem 1rem 1rem 1rem;
+	width: 10%;
+}
+header h1 {
+	font-size: 800%;
+	font-family: 'Playfair Display', serif;
+	margin: 2rem 2rem;
 	text-align: center;
-	color: #98AEBC;
-	text-shadow: 4px 3px 2px rgba(14,6,4,0.59), 4px 3px 2px rgba(3,14,9,0.59), 4px 3px 2px rgba(3,14,9,0.59);
+	color: #98aebc;
+	text-shadow: 4px 3px 2px rgba(14, 6, 4, 0.59),
+		4px 3px 2px rgba(3, 14, 9, 0.59), 4px 3px 2px rgba(3, 14, 9, 0.59);
 	text-transform: capitalize;
 }
-img.logoHuella{
-	width: 5%;
-    height: auto;
-    margin: 2rem 1rem;
-    position: absolute;
+img.logoHuella {
+	width: 8%;
+	height: auto;
+	margin: 1rem 1rem 2rem 37rem;
+	position: absolute;
+	bottom: 31rem;
 }
 
-.logoHeader,.logoHeader1{
-	width: 70%;
-	max-width: 70%;
-    height: auto;
-    margin: 2rem 7rem;
+.logoHeader {
+	width: 33%;
+	max-width: 36%;
+	height: auto;
+	margin: 7rem 10rem;
+	position: absolute;
+	top: 8rem;
 }
-
-/* style the container */
-.container {
-    position: relative;
-    border-radius: 5px;
-    padding: 1rem 1rem 1rem 1rem;
-    margin: 1rem 1rem 1rem 1rem;
+/*TODO Vista: registro de usuario  */
+.registerForm-container {
+	width: auto;
+	height: auto;
+	border-radius: 40px;
+	margin: 2rem 0rem;
+	position: relative;
+	-webkit-box-shadow: 0px 10px 13px -7px #000000,
+		5px 5px 15px 5px rgba(0, 0, 0, 0);
+	box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+	padding: 2%;
+	background: #92a7b5;
+	background: -moz-linear-gradient(45deg, #92a7b5 0%, #abecea 100%);
+	background: -webkit-linear-gradient(45deg, #92a7b5 0%, #abecea 100%);
+	background: linear-gradient(45deg, #92a7b5 0%, #abecea 100%);
 }
-
-.sign{
-	display:flex;
-	flex-direction:column;
-	align-content: center;
-}
-.signIn_Form,.signUp-form{
-	display:flex;
-	flex-direction: column;
-}
-.signUp-form{
-	margin: 0rem 0rem;
-}
-.registerForm-container{
-    width: 450px;
-    min-height: 500px;
-    height: auto;
-    border-radius: 40px;
-    margin: 5rem 9rem;
-    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
-    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
-    padding: 2%;
-    background: #92A7B5;
-    background: -moz-linear-gradient(45deg, #92A7B5 0%, #ABECEA 100%);
-    background: -webkit-linear-gradient(45deg, #92A7B5 0%, #ABECEA 100%);
-    background: linear-gradient(45deg, #92A7B5 0%, #ABECEA 100%);
-}
-form.form{
+form.form {
 	margin: 2rem 2rem;
 }
-.signIn_Form p{
-    font-family: 'Abel', sans-serif;
-    font-size: 200%;
-    font-weight: bold;
-    font-style: normal;
-    margin: 4rem 10rem;
-	position: absolute;
-	
-}
-.signIn_Form{
-	width: 450px;
-    min-height: 500px;
-    height: auto;
-    border-radius: 40px;
-    margin: 2% auto;
-	-webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
-	box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
-    padding: 2%;
-	background: #92A7B5;
-	background: -moz-linear-gradient(45deg, #92A7B5 0%, #ABECEA 100%);
-	background: -webkit-linear-gradient(45deg, #92A7B5 0%, #ABECEA 100%);
-	background: linear-gradient(45deg, #92A7B5 0%, #ABECEA 100%);
-}
-.input-itemR{
+span.input-itemR {
 	background: none;
 	color: black;
-	padding: 10.5px 0px 15px 65px;
+	padding: 14.5px 0px 15px 9px;
 	border-radius: 5px 0px 0px 5px;
 	position: absolute;
-	margin: 0.5rem 0.5rem 0rem 16rem;
+	margin: 0.445rem 0.45rem 1.45rem 18.5rem;
 }
 
+.position {
+	margin: 1rem 1rem;
+	display: flex;
+	flex-direction: row;
+}
+.signUp-form {
+	margin: 0rem 0rem;
+}
+.registerForm-container p {
+	font-size: 100%;
+	text-align: center;
+	font-family: 'Playfair Display', serif;
+	font-style: normal;
+	font-weight: inherit;
+}
+.registerForm-container h1 {
+	font-size: 150%;
+	text-align: center;
+	font-weight: bold;
+	font-family: 'Abel', sans-serif;
+}
 
-/* style inputs and link buttons */
+section.register p {
+	width: auto;
+	margin: 1rem 7rem;
+	text-align: center;
+	font-family: 'Playfair Display', serif;
+	font-size: 100%;
+	font-style: normal;
+	position: relative;
+	font-weight: inherit;
+}
+.register-container {
+	top: 2rem;
+	position: absolute;
+	border-radius: 5px;
+	padding: 1rem 1rem 1rem 1rem;
+	margin: 1rem 1rem 1rem 1rem;
+	left: 53rem;
+}
+span.error-msg {
+	font-size: 70%;
+	font-family: 'Playfair Display', serif;
+	/* margin-right: 0rem; */
+	margin-left: 1rem;
+}
+.msg-alert-reg {
+	margin-bottom: 1rem;
+}
+.col {
+	width: auto;
+	padding: 0rem 1rem;
+	margin: 0rem 1rem;
+	line-height: 0rem;
+	position: relative;
+}
+.bttonSudmitt {
+	width: 100%;
+}
+/*TODO Vista: inicio de sesion  */
+.container {
+	top: 2rem;
+	position: absolute;
+	border-radius: 5px;
+	padding: 1rem 1rem 1rem 1rem;
+	margin: 1rem 1rem 1rem 1rem;
+	left: 48rem;
+}
+.sign {
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+}
+.signIn_Form{
+	display: flex;
+	flex-direction: column;
+}
+.signIn_Form p {
+	font-family: 'Abel', sans-serif;
+	font-size: 200%;
+	font-weight: bold;
+	font-style: normal;
+	margin: 3rem 10.5rem;
+	position: absolute;
+	width: auto;
+}
+.signIn_Form h1 {
+	font-size: 150%;
+	text-align: center;
+	font-weight: bold;
+	font-family: 'Abel', sans-serif;
+}
+form.signIn_Form {
+	width: 50%;
+	height: auto;
+	border-radius: 40px;
+	margin: 2rem 1rem 1rem 10rem;
+	-webkit-box-shadow: 0px 10px 13px -7px #000000,
+		5px 5px 15px 5px rgba(0, 0, 0, 0);
+	box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+	padding: 2%;
+	background: #92a7b5;
+	background: -moz-linear-gradient(45deg, #92a7b5 0%, #abecea 100%);
+	background: -webkit-linear-gradient(45deg, #92a7b5 0%, #abecea 100%);
+	background: linear-gradient(45deg, #92a7b5 0%, #abecea 100%);
+}
 input {
 	max-width: 100%;
 	width: 100%;
 	padding: 12px;
-	border: 2px solid #98AEBC ;
+	border: 2px solid #98aebc;
 	border-radius: 25px;
 	margin: 5px 0;
 	opacity: 0.85;
 	display: inline-block;
-	font-size: 17px;
+	font-size: 100%;
 	font-family: 'Abel', sans-serif;
 	line-height: 20px;
-    text-decoration: none; 
-    outline: none;/* remove underline from anchors */
+	text-decoration: none;
+	outline: none;
 }
-
 input.btn {
 	width: 100%;
 	max-width: 100%;
@@ -141,212 +212,669 @@ input.btn {
 }
 input:hover,
 .btn:hover {
-    opacity: 1;
+	opacity: 1;
 }
-
-/* add appropriate colors to fb, twitter and google buttons */
-.login100-social-item{
-    align-self: center;
-}
-
-/* style the submit button */
 input[type='submit'] {
 	background-color: black;
 	color: white;
-    cursor: pointer;
+	cursor: pointer;
 }
-
 input[type='submit']:hover {
 	background-color: gray;
 	color: white;
 }
-
 section.logo-Redes {
-	margin: 9rem 2rem;
+	width: 73%;
+	margin: 2.5rem 5rem 4rem 3rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	height: auto;
 }
-
-.fa {
-	padding: 21px;
-    text-align: center;
-    text-decoration: none;
-    height: auto;
-    margin: 1rem 6rem;
-    border-radius: 50%;
-    width: 9%;
-}
-  
-  .fa:hover {
-      opacity: 0.7;
-  }
-  
-  .fa-facebook {
-    background: #3B5998;
-    color: white;
-  }
-  
-  .fa-google {
-    background: #dd4b39;
-    color: white;
-  }
-  
-  
-  
-.centerRed{
-    margin: 1rem 1rem 1rem 1rem;
-    text-align: center;
-    display: flex;
-}
-/* Two-column layout */
-.col {
-	float: left;
-    width: 58%;
-    margin: auto;
-    padding: 0 50px;
-    margin-top: 9rem;
-}
-
-/* Clear floats after the columns */
-.row:after {
-	content: '';
-	display: table;
-	clear: both;
-}
-
-/* vertical line */
-.vl {
-    position: absolute;
-    left: 59%;
-    transform: translate(-50%);
-    border: 2px solid #f1f1f1;
-    height: 29rem;
-}
-
-/* text inside the vertical line */
-.vl-innertext {
-	position: absolute;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	background-color: #f1f1f1;
-	border: 1px solid #f1f1f1;
-	border-radius: 50%;
-	padding: 8px 10px;
-}
-
-/* hide some text on medium and large screens */
-.hide-md-lg {
-	display: none;
-}
-
-/* bottom container */
-.register p{
-    text-align: center;
-    margin-top: 1rem;
-}
-
-.position {
+section.msg-Redes p {
+	width: 81%;
 	margin: 1rem 1rem;
+	text-align: center;
+	font-family: 'Playfair Display', serif;
+	font-size: 100%;
+	font-style: normal;
+	position: absolute;
+	font-weight: inherit;
+	top: 11rem;
 }
-.registerForm-container p{
-	font-size: 150%;
-    text-align: center;
-	font-weight: bold;
-	font-family: 'Abel', sans-serif;
-	
+.container_msg p {
+	margin: 1rem 1rem 1rem 1rem;
+	width: inherit;
+	text-align: center;
+	position: relative;
+	bottom: 5rem;
 }
-span.error-msg {
-    font-size: 70%;
-    /* margin-right: 0rem; */
-    margin-left: 1rem;
-}
-.msg-alert-reg{
-	margin-bottom: 1rem;
-}
-.bttonSudmitt{
-	width: 100%;
-}
-
-.input-item {
-    background: none;
-    color: black;
-    padding: 14.5px 0px 15px 9px;
-    border-radius: 5px 0px 0px 5px;
-    position: absolute;
-    margin: 0.5rem 0.5rem 0rem 16rem;
+span.input-item {
+	color: black;
+	padding: 14.5px 0px 15px 9px;
+	border-radius: 5px 0px 0px 5px;
+	position: absolute;
+	margin: 0.445rem 0.45rem 1.45rem 12.5rem;
 }
 #eye {
-    background: #fff;
-    color: #333;
-  
-    margin: 5.9px 0 0 0;
-    margin-left: -20px;
-    padding: 15px 9px 19px 0px;
-    border-radius: 0px 5px 5px 0px;
-  
-    float: right;
-    position: relative;
-    right: 1%;
-    top: -.2%;
-    z-index: 5;
-    
-    cursor: pointer;
+	background: #fff;
+	color: #333;
+	margin: 5.9px 0 0 0;
+	margin-left: -20px;
+	padding: 15px 9px 19px 0px;
+	border-radius: 0px 5px 5px 0px;
+	float: right;
+	position: relative;
+	right: 1%;
+	top: -0.2%;
+	z-index: 5;
+	cursor: pointer;
 }
-
-
+.fa {
+	padding: 1.5rem;
+	text-align: center;
+	text-decoration: none;
+	height: auto;
+	margin: 1rem 1rem;
+	border-radius: 50%;
+	width: 28%;
+}
+.fa:hover {
+	opacity: 0.7;
+}
+.fa-facebook {
+	background: #3b5998;
+	color: white;
+}
+.fa-google {
+	background: #dd4b39;
+	color: white;
+}
 /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 750px) {
-	.imagenHeader {
-		justify-content: center;
-		margin: 1rem 1rem 1rem 1rem;
-		width:80%;
-		max-width: 80%;
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	body {
+		background: #fed6e3;
+		background: -moz-linear-gradient(
+			left,
+			#fed6e3 0%,
+			#e3fdf5 77%,
+			#a8edea 100%
+		);
+		background: -webkit-linear-gradient(
+			left,
+			#fed6e3 0%,
+			#e3fdf5 77%,
+			#a8edea 100%
+		);
+		background: linear-gradient(
+			to right,
+			#fed6e3 0%,
+			#e3fdf5 77%,
+			#a8edea 100%
+		);
+		background-attachment: fixed;
 	}
-
-    header h2 {
-        font-size: 100%;
-    }
+	.sign {
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		margin: 1rem 1rem 1rem 1rem;
+	}
+	header h1 {
+		font-size: 250%;
+		margin: 2rem 2rem;
+		text-align: center;
+		color: #98aebc;
+		text-shadow: 4px 3px 2px rgba(14, 6, 4, 0.59),
+			4px 3px 2px rgba(3, 14, 9, 0.59), 4px 3px 2px rgba(3, 14, 9, 0.59);
+	}
+	img.logoHuella {
+		margin: 0rem 1rem 1rem 1rem;
+		width: 12%;
+		/* max-width: 15%; */
+		position: absolute;
+		top: 4rem;
+		left: 15rem;
+	}
+	.logoHeader {
+		width: 70%;
+		/* max-width: 50%; */
+		height: auto;
+		position: absolute;
+		margin: 1rem 1rem;
+		top: 7rem;
+		left: 5rem;
+	}
+	.container {
+		position: initial;
+		margin: auto;
+		width: auto;
+		padding: inherit;
+	}
+	form.signIn_Form {
+		width: inherit;
+		height: auto;
+		margin: 1rem 1rem 3rem 1rem;
+		position: relative;
+		top: 4rem;
+		background: none;
+		box-shadow: none;
+	}
+	.signIn_Form h1 {
+		font-size: 170%;
+	}
 	.col {
 		width: 100%;
-		max-width: 100%;
-        margin-top: 0;
-        justify-self: center;
-        margin: 1rem 0rem;
-        text-align: center;
-    }
- 
-	/* hide the vertical line */
-	.vl {
-		display: none;
+		margin: 1rem 1rem 1rem 0rem;
+		padding: 0 0rem;
 	}
-	/* show the hidden text on small screens */
-	.hide-md-lg {
-		display: block;
+	section.logo-Redes {
+		width: auto;
+		margin: 3rem 1rem 1rem 1rem;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		height: auto;
+	}
+	section.msg-Redes p {
+		width: auto;
+		margin: 1rem 2rem;
 		text-align: center;
+		/* font-family: 'Playfair Display', serif; */
+		font-size: 100%;
+		/* font-style: normal; */
+		/* position: absolute; */
+		font-weight: inherit;
+	}
+	section.register p {
+		width: auto;
+		margin: 1rem 1rem;
+		/* text-align: center; */
+		/* font-family: 'Playfair Display', serif; */
+		font-size: 100%;
+		/* font-style: normal; */
+		position: relative;
+	}
+	span.input-item {
+		margin: 0.5rem auto 0rem 14.5rem;
+	}
+	.registerForm-container {
+		width: auto;
+		background: none;
+		box-shadow: none;
+	}
+	form.form {
+		margin: 1rem 0rem;
+		width: inherit;
+	}
+	span.input-itemR {
+		margin: 0.5rem auto auto 15rem;
+	}
+	.registerForm-container p {
+		font-size: 100%;
+		text-align: center;
+		/* font-family: 'Playfair Display', serif; */
+		/* font-style: normal; */
+		/* font-weight: inherit; */
+		margin: 1rem 1rem 1rem 1rem;
+	}
+	.position {
+		margin: 1rem 1rem;
+		width: 100%;
+		flex-direction: column;
+	}
+	.fa {
+		padding: 1.25rem;
+		text-align: center;
+		text-decoration: none;
+		height: auto;
+		margin: 1rem 0.5rem 1rem 1rem;
+		border-radius: 50%;
+		width: 25%;
+	}
+	.register-container {
+		width: auto;
+		height: auto;
+		margin: 1rem 1rem 1rem 1rem;
+		position: absolute;
+		left: 0rem;
+		top: 10rem;
+	}
+	.container_msg p {
+		margin: 1rem 1rem 1rem 1rem;
+		width: inherit;
+		text-align: center;
+		position: relative;
+		bottom: 0rem;
 	}
 }
-@media (min-width: 751px) {
-	.sign,.position{
-		display:flex;
-		flex-direction:row;
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 601px) and (max-width: 767px) {
+	.sign {
+		display: flex;
+		flex-direction: column;
 		align-content: center;
+		margin: 1rem 1rem 1rem 1rem;
 	}
-	header{
-	width:50%;
-}
-.logoHeader{
-	height: auto;
-    margin: 5% 14%;
-}
-.containerForm,.register-container{
-	width:50%;
-	max-width: 50%;
-}
-.signIn_Form,.signUp-form{
-    width: 100%;
-    max-width: 100%;
-    margin: 9% 0%;
-    padding: 1rem;
+	header h1 {
+		font-size: 300%;
+		position: absolute;
+		margin: 1rem 0rem 1rem 1rem;
+		text-align: left;
+	}
+	img.logoHuella {
+		margin: 0rem 1rem 1rem 1rem;
+		width: 14%;
+		/* max-width: 15%; */
+		position: absolute;
+		top: 3rem;
+		left: 16rem;
+	}
+	.logoHeader {
+		width: 70%;
+		/* max-width: 50%; */
+		height: auto;
+		position: absolute;
+		margin: 1rem 1rem;
+		top: 7rem;
+		left: 5rem;
+	}
+	.container {
+		position: relative;
+		margin: auto;
+		width: auto;
+		padding: inherit;
+	}
+	.signIn_Form {
+		width: inherit;
+		height: auto;
+		border-radius: 40px;
+		margin: 1rem 1rem 4rem 1rem;
+		position: relative;
+		top: 18rem;
+	}
+	.col {
+		width: auto;
+		/* margin: 1rem 1rem 1rem 1rem; */
+		padding: 0 1rem;
+	}
+	section.logo-Redes {
+		width: auto;
+		margin: 3rem 1rem 1rem 1rem;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		height: auto;
+	}
+	section.msg-Redes p {
+		width: auto;
+		margin: 1rem 2rem;
+		text-align: center;
+		/* font-family: 'Playfair Display', serif; */
+		font-size: 100%;
+		/* font-style: normal; */
+		/* position: absolute; */
+		font-weight: inherit;
+	}
+	section.register p {
+		width: auto;
+		margin: 1rem 1rem;
+		/* text-align: center; */
+		/* font-family: 'Playfair Display', serif; */
+		font-size: 100%;
+		/* font-style: normal; */
+		position: relative;
+	}
+	span.input-item {
+		margin: auto auto auto 8rem;
+	}
+	.registerForm-container {
+		width: auto;
+		/* min-height: 100%; */
+		/* height: auto; */
+		border-radius: 40px;
+		margin: 2rem 1rem;
+		/* -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); */
+		/* box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); */
+		padding: 2%;
+		/* background: #92A7B5; */
+		background: -moz-linear-gradient(45deg, #92a7b5 0%, #abecea 100%);
+		background: -webkit-linear-gradient(45deg, #92a7b5 0%, #abecea 100%);
+		/* background: linear-gradient(45deg, #92A7B5 0%, #ABECEA 100%); */
+	}
+	form.form {
+		margin: 2rem 1rem;
+		width: inherit;
+	}
+	span.input-itemR {
+		margin: 0.5rem auto auto 8rem;
+	}
+	.registerForm-container p {
+		font-size: 100%;
+		text-align: center;
+		/* font-family: 'Playfair Display', serif; */
+		/* font-style: normal; */
+		/* font-weight: inherit; */
+		margin: 1rem 1rem 1rem 1rem;
+	}
+	.position {
+		margin: 1rem 1rem;
+		width: 100%;
+		flex-direction: column;
+	}
+	.fa {
+		padding: 1.25rem;
+		text-align: center;
+		text-decoration: none;
+		height: auto;
+		margin: 1rem 0.5rem 1rem 1rem;
+		border-radius: 50%;
+		width: 25%;
+	}
+	.register-container {
+		width: 92%;
+		height: auto;
+		margin: 1rem 1rem 1rem 1rem;
+		position: absolute;
+		left: 0rem;
+		top: 19rem;
+	}
 }
 
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.sign {
+		margin: 1rem 1rem;
+		width: 100%;
+		flex-direction: column;
+	}
+	header h1 {
+		font-size: 600%;
+		position: absolute;
+		margin: 1rem 0rem 1rem 4rem;
+		text-align: left;
+	}
+	img.logoHuella {
+		margin: 0rem 1rem 1rem 1rem;
+		width: 14%;
+		/* max-width: 15%; */
+		position: absolute;
+		top: 3rem;
+		left: 33rem;
+	}
+	.logoHeader {
+		width: 40%;
+		/* max-width: 50%; */
+		height: auto;
+		position: absolute;
+		margin: 1rem 1rem;
+		top: 10rem;
+		left: 12rem;
+	}
+	.container {
+		margin: 1rem 1rem;
+		width: 100%;
+		flex-direction: column;
+		left: 0rem;
+		position: relative;
+	}
+	.container_msg p {
+		margin: 1rem 1rem 1rem 1rem;
+		width: inherit;
+		text-align: center;
+		position: relative;
+		top: 20rem;
+	}
+	form.signIn_Form {
+		width: auto;
+		height: auto;
+		/* border-radius: 40px; */
+		margin: 1rem 1rem 1rem 1rem;
+		position: relative;
+		top: 21rem;
+		right: 1rem;
+		box-shadow: none;
+		background: none;
+	}
+	.signIn_Form p {
+		font-size: 100%;
+	}
+	.signIn_Form h1 {
+		font-size: 200%;
+	}
+	.col {
+		width: auto;
+		/* margin: 1rem 1rem 1rem 1rem; */
+		padding: 0 1rem;
+	}
+	section.logo-Redes {
+		width: auto;
+		margin: 3rem 1rem 1rem 1rem;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		height: auto;
+	}
+	section.msg-Redes p {
+		width: auto;
+		margin: 1rem 2rem;
+		text-align: center;
+		/* font-family: 'Playfair Display', serif; */
+		font-size: 100%;
+		/* font-style: normal; */
+		/* position: absolute; */
+		font-weight: inherit;
+	}
+	section.register p {
+		width: auto;
+		margin: 1rem 1rem;
+		/* text-align: center; */
+		/* font-family: 'Playfair Display', serif; */
+		font-size: 100%;
+		/* font-style: normal; */
+		position: relative;
+	}
+	span.input-item {
+		margin: auto auto auto 8rem;
+	}
+	.registerForm-container {
+		width: auto;
+
+		margin: 2rem 1rem;
+		box-shadow: none;
+
+		background: none;
+	}
+	form.form {
+		margin: 2rem 1rem;
+		width: inherit;
+	}
+	span.input-itemR {
+		margin: 0.5rem auto auto 8rem;
+	}
+	.registerForm-container p {
+		font-size: 100%;
+		text-align: center;
+		/* font-family: 'Playfair Display', serif; */
+		/* font-style: normal; */
+		/* font-weight: inherit; */
+		margin: 1rem 1rem 1rem 1rem;
+	}
+	.position {
+		margin: 1rem 1rem;
+		width: 100%;
+		flex-direction: column;
+	}
+	.fa {
+		text-align: center;
+		text-decoration: none;
+		height: auto;
+		margin: 1rem 0.5rem 1rem 1rem;
+		border-radius: 50%;
+		width: 14%;
+	}
+	.register-container {
+		width: auto;
+		margin: 6rem 1rem;
+		box-shadow: none;
+		background: none;
+		position: relative;
+		left: -1rem;
+		top: 13rem;
+	}
+	section.msg-Redes p {
+		font-size: 120%;
+	}
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1119px) {
+	.sign {
+		margin: 1rem 1rem;
+		width: 100%;
+		flex-direction: column;
+	}
+	header h1 {
+		font-size: 600%;
+		position: absolute;
+		margin: 1rem 0rem 1rem 4rem;
+		text-align: left;
+	}
+	img.logoHuella {
+		margin: 0rem 1rem 1rem 1rem;
+		width: 11%;
+		/* max-width: 15%; */
+		position: absolute;
+		top: 3rem;
+		left: 33rem;
+	}
+	.logoHeader {
+		width: 40%;
+		/* max-width: 50%; */
+		height: auto;
+		position: absolute;
+		margin: 1rem 1rem;
+		top: 12rem;
+		left: 21rem;
+	}
+	.container {
+		margin: 1rem 1rem;
+		width: 100%;
+		flex-direction: column;
+		left: 0rem;
+		position: relative;
+	}
+	.container_msg p {
+		top: 20rem;
+		font-size: 200%;
+	}
+	form.signIn_Form {
+		width: auto;
+		height: auto;
+		/* border-radius: 40px; */
+		margin: 1rem 1rem 1rem 1rem;
+		position: relative;
+		top: 21rem;
+		right: 1rem;
+		box-shadow: none;
+		background: none;
+	}
+	.signIn_Form p {
+		font-size: 100%;
+	}
+	.signIn_Form h1 {
+		font-size: 200%;
+	}
+	.col {
+		width: auto;
+		/* margin: 1rem 1rem 1rem 1rem; */
+		padding: 0 1rem;
+		line-height: 6rem;
+	}
+	section.logo-Redes {
+		width: auto;
+		margin: 3rem 1rem 1rem 1rem;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		height: auto;
+	}
+	section.msg-Redes p {
+		font-size: 200%;
+		margin: 6rem 4rem;
+	}
+	section.register p {
+		width: auto;
+		margin: 1rem 1rem;
+		/* text-align: center; */
+		/* font-family: 'Playfair Display', serif; */
+		font-size: 100%;
+		/* font-style: normal; */
+		position: relative;
+	}
+	span.input-item {
+		margin: auto auto auto 8rem;
+	}
+	.registerForm-container {
+		width: auto;
+
+		margin: 2rem 1rem;
+		box-shadow: none;
+
+		background: none;
+	}
+	form.form {
+		margin: 2rem 1rem;
+		width: inherit;
+	}
+	span.input-itemR {
+		margin: 0.5rem auto auto 8rem;
+	}
+	.registerForm-container p {
+		font-size: 100%;
+		text-align: center;
+		/* font-family: 'Playfair Display', serif; */
+		/* font-style: normal; */
+		/* font-weight: inherit; */
+		margin: 1rem 1rem 1rem 1rem;
+	}
+	.position {
+		margin: 1rem 1rem;
+		width: 100%;
+		flex-direction: column;
+	}
+	.fa {
+		text-align: center;
+		text-decoration: none;
+		/* height: 5rem; */
+		margin: 4rem 0.5rem 1rem 1rem;
+		border-radius: 50%;
+		width: 9%;
+	}
+	.register-container {
+		width: auto;
+		margin: 6rem 1rem;
+		box-shadow: none;
+		background: none;
+		position: relative;
+		left: 0rem;
+		top: 23rem;
+	}
+
+	.registerForm-container h1 {
+		font-size: 250%;
+	}
+	.registerForm-container p {
+		font-size: 200%;
+	}
+
+	input {
+		font-size: 150%;
+	}
+	span.error-msg {
+		font-size: 100%;
+	}
 }
 
-
+/* Extra large devices (large laptops and desktops, 1200px and up) */

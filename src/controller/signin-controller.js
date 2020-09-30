@@ -4,6 +4,8 @@ import {
   signIn, googleSignIn, loginFacebook, logOut,
 } from '../firebase/auth-controller.js';
 import { createUser } from '../firebase/firestore-controller.js';
+// eslint-disable-next-line import/no-cycle
+
 
 
 const showMessage = (txtmessage) => {
@@ -24,7 +26,7 @@ export const signingIn = () => {
       firebase.auth().onAuthStateChanged((user) => {
         if (user) {
           if (user.emailVerified === false) {
-            showMessage('⚠️ Email no verificado, revise su correo porfavor.');
+            showMessage('Email no verificado, revise su correo porfavor.');
             logOut();
           } else {
             showMessage('Puede ingresar');
