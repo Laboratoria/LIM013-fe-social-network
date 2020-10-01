@@ -15,6 +15,10 @@ const changeView = (route) => {
       headerHome.classList.remove('hide');
       container.appendChild(components.home());
       break;
+    case '#/profile':
+      headerHome.classList.remove('hide');
+      container.appendChild(components.profile());
+      break;
     case '#/recoverPassword':
       container.appendChild(components.recoverPassword());
       break;
