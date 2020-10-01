@@ -1,12 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-  <script type="module" src="main.js"></script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Petlandia</title>
+		<link rel="stylesheet" href="style.css" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Alegreya|Arima+Madurai|Dancing+Script|Dosis|Merriweather|Oleo+Script|Overlock|PT+Serif|Pacifico|Playball|Playfair+Display|Share|Unica+One|Vibur"
+			rel="stylesheet"
+		/>
+		<link rel="shortcut icon" type="image/png" href="/imagenes/018-pin.png" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+		<script
+			src="https://kit.fontawesome.com/1ad419416d.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
+
+	<body>
+    <header id='header'>
+      <nav class="nav_Mobile">
+        <img src="img/logoHeader.png" class="logo-header"/>
+        <label for='btn-menu'><i class="fas fa-bars"></i></label>
+        <ul class='menu_mobile'>
+          <li class="optionMobile">
+            <a class='btn-header' href='#/profile'>
+              <i class="fas fa-user-edit"></i>Mi Perfil</a>
+          </li>
+          <li class="optionMobile">
+            <a href='#/home'>
+              <i class="fas fa-home"></i>Inicio</a>
+          </li>
+          <li class="optionMobile">
+            <a class='btn-header' href='#/notFound'>
+              <i class="fas fa-sign-out-alt"></i>Cerrar Sesión</a>
+          </li>
+        </ul>
+      </nav>
+
+    </header>
+    
+	
+		<section id="container"></section>
+		<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-storage.js"></script>
+		<script type="module" src="main.js"></script>
+	</body>
 </html>
