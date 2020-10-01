@@ -1,4 +1,4 @@
-/*export const loadingInfo = () => {
+/* export const loadingInfo = () => {
   const currentUser = userCurrent();
   getUser(currentUser.uid).then((doc) => {
     localStorage.setItem('aboutMe', doc.data().aboutMe);
