@@ -4,6 +4,7 @@ import {
   signUp,
   loginFacebook,
   logOut,
+  verifEmail,
 } from '../src/firebase/auth-controller.js';
 
 const firebasemock = require('firebase-mock');
@@ -33,16 +34,6 @@ describe('Sign Up', () => {
   it('Must sign up', done => signUp('rosita.ibarra@gmail.com', '123456')
     .then((user) => {
       expect(user.email).toBe('rosita.ibarra@gmail.com');
-      done();
-    }));
-});
-describe('Sign In', () => {
-  it('Must be a function', () => {
-    expect(typeof signIn).toBe('function');
-  });
-  it('Must sign In', done => signIn('acuario@gmail.com', '123456')
-    .then((user) => {
-      expect(user.email).toBe('acuario@gmail.com');
       done();
     }));
 });
@@ -81,5 +72,13 @@ describe('Facebook', () => {
       expect(userFb.providerData).toEqual([{ providerId: 'facebook.com' }]);
       done();
     });
+  });
+});
+describe('verificationEmail', () => {
+  it('Debería enviar un mail de verificación', () => {
+    const myMock = jest.fn();
+    firebase.auth().currentUser.sendEmailVerification = myMock;
+    verifEmail();
+    expect(myMock.mock.calls).toHaveLength(1);
   });
 });
