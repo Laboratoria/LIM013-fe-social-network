@@ -4,7 +4,8 @@ import { getUser } from '../firebase/firestore-controller.js';
 
 export const dataProfile = () => {
   const actualUser = currentUser();
-  getUser(currentUser.uid).then((docUser) => {
+  localStorage.setItem('uid', actualUser);
+  getUser(actualUser.uid).then((docUser) => {
     localStorage.setItem('aboutMe', docUser.data().aboutMe);
     localStorage.setItem('location', docUser.data().location);
   });
