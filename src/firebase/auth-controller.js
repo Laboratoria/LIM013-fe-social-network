@@ -5,7 +5,7 @@ export const signUp = (emailSignUp, passwordSignUp) => firebase.auth()
 export const userCurrent = () => firebase.auth().currentUser();
 // Verificación de email
 export const verifEmail = () => {
-  const user = firebase.auth().currentUser;
+  const user = firebase.auth().currentUser();
   return user.sendEmailVerification();
 };
 // Inicio de sesión con correo y contraseña

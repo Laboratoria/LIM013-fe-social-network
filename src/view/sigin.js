@@ -14,6 +14,7 @@ export default () => {
 </header>
 <section class="register-container">
   <section class="signInForm-container">
+  <section class="left">  
 	  <form id="signIn-form" class="signIn_Form">
 		  <h1>SignIn</h1>
 		  <section class="col">
@@ -37,11 +38,12 @@ export default () => {
 		  </section>
 		  <section class="container_msg">
 			  <p>
-				  ¿No tienes cuenta?<a href="#/Register" style="color: blue">
+				  ¿No tienes cuenta?<a href="#/Register" style="color: blue" id="registerEnlace">
 					  Registrate</a>
 			  </p>
 		  </section>
-	  </form>
+    </form>
+    </section>
   </section>
 </section>
 `;

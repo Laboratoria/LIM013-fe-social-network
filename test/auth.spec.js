@@ -1,4 +1,4 @@
-import { signIn } from '../src/firebase/auth-controller.js';
+import { userCurrent, verifEmail, signIn, logOut, googleSignIn, loginFacebook  } from '../src/firebase/auth-controller.js';
 
 const firebasemock = require('firebase-mock');
 
@@ -15,4 +15,17 @@ describe('logIn', () => {
       expect(user.email).toBe('acuario@gmail.com');
     }));
 // eslint-disable-next-line eol-last
+});
+
+test('the data is peanut butter', done => {
+  function callback(data) {
+    try {
+      expect(data).toBe('peanut butter');
+      done();
+    } catch (error) {
+      done(error);
+    }
+  }
+
+  fetchData(callback);
 });

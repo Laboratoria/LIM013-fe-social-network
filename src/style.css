@@ -671,25 +671,10 @@ section.msg-Redes p {
 			5px 5px 15px 5px rgba(0, 0, 0, 0);
 		box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 		padding: 2%;
-		background: #acc5d6;
-		background: -moz-linear-gradient(
-			left,
-			#acc5d6 0%,
-			#7bd9cf 50%,
-			#daebec 100%
-		);
-		background: -webkit-linear-gradient(
-			left,
-			#acc5d6 0%,
-			#7bd9cf 50%,
-			#daebec 100%
-		);
-		background: linear-gradient(
-			to right,
-			#acc5d6 0%,
-			#7bd9cf 50%,
-			#daebec 100%
-		);
+		background: #ACC5D6;
+		background: -moz-linear-gradient(left, #ACC5D6 0%, #7BD9CF 71%, #DAEBEC 100%);
+		background: -webkit-linear-gradient(left, #ACC5D6 0%, #7BD9CF 71%, #DAEBEC 100%);
+		background: linear-gradient(to right, #ACC5D6 0%, #7BD9CF 71%, #DAEBEC 100%);
 	}
 	.registerForm-container h1 {
 		font-size: 220%;
