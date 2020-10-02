@@ -33,10 +33,5 @@ export default () => {
       </div>
     </div>
   `;
-  /* const hamburgerMenu = viewProfile.querySelector('#hamburger-menu');
-  const navBar = viewProfile.querySelector('.toggle');
-  hamburgerMenu.addEventListener('click', () => {
-    navBar.classList.toggle('active');
-  }); */
   return viewProfile;
 };
