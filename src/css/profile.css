@@ -1,0 +1,233 @@
+/*----------------view profile----------------------*/
+.profile-container {
+  width:100%;
+}
+.profile-content {
+  width: 70%;
+  margin: 0 auto; 
+}
+.profile-content i {
+  font-size: 20px;
+  color: #222;
+}
+.profile-information {
+  width: 100%;
+  position: relative; 
+  z-index: 0;  
+}
+.cover-page {
+  width: 100%;
+  height: 270px;
+  position: relative; 
+  z-index: 0; 
+}
+.edit-cover {
+  position: absolute; 
+  right: 1rem; 
+  bottom: 50%; 
+  z-index: 2;   
+  outline: none;
+  border:none;
+  text-align: center;
+  cursor: pointer; 
+}
+.edit-photo-btn {
+  height: 33px; 
+  width: 33px;
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto;
+  padding: 0.3rem; 
+  border-radius: 50%; 
+  background-color: white; 
+  font-size: 1.40rem;
+}
+.cover-photo {
+  width: 100%; 
+  height: 100%; 
+  z-index: 0; 
+}
+.profile-photo {
+  width: 100%; 
+  height: 170px; 
+  top: 28%; 
+  z-index: 1;
+  position: absolute; 
+  background-color: transparent;
+  justify-content: center;
+}
+.photo {
+  width: 170px; 
+  height: 170px; 
+  display: block; 
+  margin-left: auto;
+  margin-right: auto; 
+  background-color: white; 
+  border-radius: 50%; 
+  border: 0.3rem solid white; 
+}
+.edit-photo {
+  position: absolute;
+  z-index: 1; 
+  bottom: 43%; 
+  left: 55%; 
+  background-color: transparent;  
+  cursor: pointer; 
+  text-align: center; 
+}
+.user-information {
+  width: 100%; 
+  z-index: 0;
+  padding: 1rem 3rem 3rem 3rem; 
+  background-color: white;
+  color: #222; 
+  border-radius: 0 0 0.5rem 0.5rem;
+  border: 1px rgba(128, 128, 128, 0.226) solid; 
+}
+.edit-info {
+  margin-left: 100%;
+  margin-top: 1rem; 
+  cursor: pointer; 
+}
+.user-information h2 {
+  text-align: center;
+  font-size: 2rem; 
+}
+.user-information p {
+  text-align: left; 
+}
+.user-posts {
+  width: 90%;
+  margin: 2rem auto; 
+  background-color: white; 
+  border-radius: 0.5rem; 
+  border: 1px rgba(128, 128, 128, 0.226) solid; 
+}
+.user-posts p {
+  padding: 2rem; 
+  text-align: center;
+}
+/* ---------------------view modal settings -------------------------*/
+.modal-container{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top:0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+}
+.modal-settings{
+  width: 40%;
+  height: 90%;
+  background: #ffffff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px 10px 10px 10px;
+  position: relative;
+}
+ .modalHeader {
+  margin: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: column nowrap;
+  width: 80%;
+} 
+.btn-modalClose{
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  color:#2CAB92;
+  background-color: #ffffff;
+  border: solid 2px #2CAB92;
+  border-radius: 5px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  outline: none;
+}
+.modalTitle{
+  color:#2CAB92;
+  text-align: center;
+}
+
+.modal-settings form{
+  width: 60%;
+  height: 600px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+}
+.modal-settings label{
+  display: block;
+}
+.grupo input, .grupo textarea, #birthdayEdit{
+border: 1px solid #2CAB92;
+text-align: center;
+outline: none;
+border-radius: 5px;
+}
+.grupo input{
+width: 100%;
+height: 40px;
+}
+.modal-settings textarea{
+width: 100%;
+height: 60px;
+resize: none;
+}
+#birthdayEdit{
+  height: 40px;
+}
+.btn-update, .btn-cancel{
+margin-left: auto;
+margin-right: auto;
+width: 60%;
+height: 40px;
+border-radius: 55px;
+}
+.btn-update{
+  border: none;
+  background: #2CAB92;
+  color: #ffffff;
+}
+.btn-cancel{
+  border-color: #2CAB92;
+  color: #2CAB92;
+  background-color: transparent;
+  border-style: solid;
+}
+.grupo input:focus, #birthdayEdit:focus, textarea:focus{
+  box-shadow: 2px 7px 10px -5px #8894a0; 
+}
+.grupo input:hover, #birthdayEdit:hover, textarea:hover{
+  border: 1.6px solid #2b7a75;
+}
+.btn-cancel:hover{
+  border-color: #2b7a75;
+  color: #2b7a75;
+  width: 62%;
+  height: 44px;
+}
+.btn-update:hover{
+  background: #2b7a75;
+  width: 62%;
+height: 44px;
+}
+.btn-modalClose:hover{
+  width: 34px;
+  height: 34px;
+  border-color: #2b7a75;
+  color: #2b7a75;
+}
+.showEditProfile{
+  opacity: 1;
+  visibility: visible;
+}

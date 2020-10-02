@@ -1,13 +1,10 @@
-/*wiew header*/
+/*Header view*/
+
 .header-home {
   width: 100%;
   display: flex; 
   background-image: linear-gradient(-240deg, #3dbee9 0%, #46c5a5 100%);
-  -webkit-box-shadow: 0 4px 6px -6px #222;
-  -moz-box-shadow: 0 4px 6px -6px #222;
-  box-shadow: 0 4px 6px -6px #222;
   color: white; 
-  font-size: 1.35rem;
 }
 
 
@@ -17,57 +14,59 @@
 }
 
 
+header nav ul li i {
+  font-size: 20px; 
+  margin-right: 0.4rem; 
+}
+
+
 .menu {
   width: 100%; 
   display: flex; 
   flex-flow: row nowrap;
   justify-content: flex-start; 
   align-items: center;
-  padding: 0;
+  padding: 0 1rem; 
   list-style: none; 
+  font-size: 1.35rem;
+}
+
+
+.menu a {
+  color: white; 
+  padding: 1rem; 
 }
 
 
 .left-menu {
-  width: 34%;
+  width: 37%;
   display: flex;
   flex-flow: row nowrap; 
+  align-items: center;
 }
 
 
 .title-header {
-  width: 33%; 
+  width: 30%; 
   text-align: center;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: bold;
 }
 
-.title-header:hover {
-  cursor: default;
-}
 
-header nav ul li i {
-  font-size: 20px; 
-  margin-right: 0.4rem; 
-}
 .log-out {
-  text-align: right;
   width: 33%;
-}
-.log-out i {
-  margin-left: 1rem; 
-}
-header nav ul li {
-  padding: 0.8rem; 
+  display: flex; 
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem;
 }
 
-header nav ul li:hover {
-  cursor: pointer;
-}
+
 #hamburger-menu {
   display: none;
   position: absolute;
-  top: 2.1rem; 
+  top: 1.95rem; 
   font-size: 1.8rem; 
   left: 2rem;
   cursor: pointer; 

@@ -71,13 +71,15 @@
         width: 100%;
         display: flex;
         flex-flow: column nowrap; 
+        margin-top: 0.5rem;
       }
           
       .box:nth-child(3) {
         order: 3;
         width: 100%; 
-        margin-bottom: 1.5rem; 
-        text-align: center;
+        margin-bottom: 1.3rem; 
+        justify-content: center;
+        padding: 0; 
       }
     
       header nav ul li {
@@ -89,10 +91,26 @@
       #hamburger-menu {
         display: flex;
       }
+
+      /*Responsive profile*/
+    .edit-photo {
+      position: absolute;
+      z-index: 1; 
+      bottom: 43%; 
+      left: 57%; 
+    }
+    /*modal Profile edit*/
+    .modal-settings{
+        width: 60%;
+    }
 }
+
 /* ------------------media query small device-----------------*/
 @media screen and (max-width:576px){
-    /* -----------------Responsive profile--------------*/
+    body{
+        font-size: 12px;
+    }
+    /* -----------------Responsive home--------------*/
     .container-home{
         grid-template-areas: "profile profile profile"
                             "home home home"
@@ -101,4 +119,22 @@
     .interest, .events, #viewall{
         display: none;
     }
+    /*Responsive modal profile*/
+    .edit-photo {
+      position: absolute;
+      z-index: 1; 
+      bottom: 43%; 
+      left: 15rem; 
+    }
+    .modal-settings{
+        width: 80%;
+    }
+    .modal-settings form{
+        width: 80%;
+    }
+    .grupo input , #birthdayEdit{
+        height: 30px;
+    }
+  
 }
+

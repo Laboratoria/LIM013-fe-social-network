@@ -5,6 +5,25 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
+
+
+a {
+    text-decoration: none;
+}
+
+
+.shadow {
+    -webkit-box-shadow: 0 4px 6px -6px #222;
+    -moz-box-shadow: 0 4px 6px -6px #222;
+    box-shadow: 0 4px 6px -6px #222;
+  }
+
+
+.hide {
+    display:none; 
+}
+
+
 /*****************************classlist for messenger alert*************************/
 .error-message{
     color: red;
