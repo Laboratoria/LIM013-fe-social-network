@@ -22,10 +22,10 @@
 	</head>
 
 	<body>
-    <header id='header'>
+    <header id='headerHome'>
       <nav class="nav_Mobile">
-        <img src="img/logoHeader.png" class="logo-header"/>
-        <label for='btn-menu'><i class="fas fa-bars"></i></label>
+		<p class="name_app">Petlandia</p>        
+		<label class='btn-menu'><i class="fas fa-bars"></i></label>
         <ul class='menu_mobile'>
           <li class="optionMobile">
             <a class='btn-header' href='#/profile'>
@@ -41,9 +41,76 @@
           </li>
         </ul>
       </nav>
-
-    </header>
-    
+	</header>
+	<div class="body_container">
+		<aside class="profile_section">
+			<div class="card">
+				<div class="background">
+					<img class="background-img" src="" alt="">
+				</div>
+				<div class="content">
+					<div class="profile">
+						<img class="profile-img" src="https://lh3.googleusercontent.com/a-/AOh14GhUGGtCW2PepIrJVxOIrl2jm4Q9XzDMs7tlm2TS" alt="">
+					</div>
+					<div class="header">
+						<h2 class="name">Lorem</h2>
+						<p class='location'></p>
+					</div>
+					<div class="info">
+						<p class="description"></p>
+					</div>
+					<div class="labels">
+						<div class="label">
+							<p>Phone:</p>
+							<h2 class="phone"></h2>
+						</div>
+						<div class="label">
+							<p>Cell:</p>
+							<h2 class="cell"></h2>
+						</div>
+						<div class="label">
+							<p>Email:</p>
+							<h2 class="email"></h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</aside>
+		<div class="timeline_section">
+			<div class="update-container">
+			  <h6 class="w3-opacity">Social Media template by w3.css</h6>
+			  <p contenteditable="true" class="w3-border w3-padding">Status: Feeling Blue</p>
+			  <button type="button" class="w3-button w3-theme"><i class="fa fa-pencil"></i>  Post</button> 
+			</div>
+		
+			<div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+				<img src="/w3images/avatar2.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+				<span class="w3-right w3-opacity">1 min</span>
+				<h4>John Doe</h4><br>
+				<hr class="w3-clear">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<div class="w3-row-padding" style="margin:0 -16px">
+					<div class="w3-half">
+				  		<img src="/w3images/lights.jpg" style="width:100%" alt="Northern Lights" class="w3-margin-bottom">
+					</div>
+				</div>
+				<button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
+				<button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
+			</div>
+		</div>
+	
+	</div>
+    <script>
+		const toggle = document.querySelector(".btn-menu");
+		toggle.addEventListener("click",()=>{
+			const menuLat = document.querySelector(".menu_mobile");
+			if (menuLat.className === "menu_mobile") {
+				menuLat.className += " responsive";
+			} else {
+				menuLat.className = "menu_mobile";
+    }
+  });
+	</script>
 	
 		<section id="container"></section>
 		<script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
