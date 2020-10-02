@@ -1,9 +1,3 @@
-// import { changeView } from '../view-controller/router.js';
-// import { eachPost } from './post.js';
-// eslint-disable-next-line max-len
-// import { signingOut, gettingProfileInfo, savingChanges } from '../view-controller/profile-controller.js';
-// import { getUser } from '../firebase/firestore-controller.js';
-
 export default () => {
   // loadingInfo();
   /*
@@ -42,7 +36,6 @@ export default () => {
               <input type="file" id="selectPhotoProfile" class="hide" accept="image/jpeg, image/png">
               <img class ="photo-profile" src="./img/photo.png">
             </label>
-
             <p class="user-name" id="user-name-profile"></p>
             <input class="hide validity" id="inputName" type="text" value="" maxlength="30" pattern="([a-zA-ZÁÉÍÓÚñáéíóúÑ]{1,30}\\s*)+">
           </div>
@@ -60,19 +53,15 @@ export default () => {
           </div>
         </div>
       </div>
-
   </main>
   `;
   const divElemt = document.createElement('div');
   divElemt.classList.add('position');
   divElemt.innerHTML = viewHome;
-
   const nameProfile = divElemt.querySelector('#user-name-profile');
   const photoProfile = divElemt.querySelector('.circulo-profile');
   const user = firebase.auth().currentUser;
-  console.log(user);
-  const docRef = firebase.firestore().collection('user').doc(user.uid);
-
+  const docRef = firebase.firestore().collection('users').doc(user.uid);
   docRef.get()
     .then((docUser) => {
     // console.log(docUser.data().displayName);

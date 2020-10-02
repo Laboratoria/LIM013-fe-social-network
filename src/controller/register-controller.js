@@ -16,14 +16,13 @@ export const userRegistration = () => {
   const passwordLogUp = document.querySelector('#passwordSignUp').value;
 
   signUp(emailLogUp, passwordLogUp)
-    .then((result) => {
+    .then(() => {
       showMessage(`⚠️ ${userName}, enviamos un correo para activar su cuenta.`);
       verifEmail()
         .then(() => {})
         .catch((error) => {
           showMessage(error.code);
         });
-      console.log(result);
       window.location.has = '';
     })
     .catch(() => {

@@ -9,6 +9,7 @@ export const cambioVista = (route) => {
   let routeSelected = '';
 
   switch (route) {
+    case '':
     case '#/':
       routeSelected = sectionContainer.appendChild(components.signIn());
       break;

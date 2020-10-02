@@ -1,8 +1,8 @@
-// import { logOut, userCurrent } from '../firebase/auth-controller.js';
-// import { getUser } from '../firebase/firestore-controller.js';
+/* import { logOut, userCurrent } from '../firebase/auth-controller.js'; */
+/* import { getUser } from '../firebase/firestore-controller.js'; */
 
 
-/*export const loadingInfo = () => {
+/* export const loadingInfo = () => {
   const currentUser = userCurrent();
   getUser(currentUser.uid).then((doc) => {
     localStorage.setItem('aboutMe', doc.data().aboutMe);

@@ -7,9 +7,6 @@ import {
 // eslint-disable-next-line import/no-unresolved
 import { createUser } from '../firebase/firestore-controller.js';
 // eslint-disable-next-line import/no-cycle
-
-
-
 const showMessage = (txtmessage) => {
   const showWindow = document.createElement('div');
   showWindow.classList.add('showWindow');
@@ -47,16 +44,11 @@ export const signInGoogle = () => {
   googleSignIn()
     .then((result) => {
       createUser(result.user.uid, result.user.displayName, result.user.photoURL)
-        .catch((error) => {
-          console.log(error);
-          console.log('No se actualizo usuario');
+        .catch(() => {
+          showMessage('No se actualizo usuario');
         });
       window.location.hash = '#/home';
-      console.log(result);
-      console.log('Cuenta registrada');
-    }).catch((error) => {
-      console.log(error);
-      console.log('No se registro la cuenta');
+    }).catch(() => {
     });
 };
 
@@ -64,7 +56,7 @@ export const signInFacebook = () => {
   loginFacebook().then((result) => {
     createUser(result.user.uid, result.user.displayName, 'Conociendo tu mascota');
     window.location.hash = '#/home';
-    console.log('Ingreso con facebook');
+    showMessage('Ingreso con facebook');
   })
-    .catch(() => { console.log('No se registro la cuenta'); });
+    .catch(() => { showMessage('No se registro la cuenta'); });
 };
