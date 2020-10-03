@@ -1,49 +1,719 @@
 * {
 	box-sizing: border-box;
 }
-/*header{
-    width: 100%;
-    background-color: #a8edea;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}*/
 body {
-	font-family: 'Playfair Display', serif;
-	background-image: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
-	background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+	background: #fff895;
+	background: -moz-linear-gradient(top, #fff895 0%, #fcd697 58%, #f46d6d 100%);
+	background: -webkit-linear-gradient(
+		top,
+		#fff895 0%,
+		#fcd697 58%,
+		#f46d6d 100%
+	);
+	background: linear-gradient(to bottom, #fff895 0%, #fcd697 58%, #f46d6d 100%);
 	background-attachment: fixed;
 }
-
-/*TODO  Vista: encabezado  */
+.sign {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	margin: 1rem 1rem 1rem 1rem;
+}
 header {
 	margin: 1rem 1rem 1rem 1rem;
-	width: 10%;
+	width: 100%;
+	max-width: 100%;
+	display: grid;
+	grid-template-columns: 70% 30%;
+	grid-row: none;
 }
 header h1 {
-	font-size: 800%;
-	font-family: 'Playfair Display', serif;
-	margin: 2rem 2rem;
+	font-size: 356%;
 	text-align: center;
+	grid-column: 1;
 	color: #98aebc;
 	text-shadow: 4px 3px 2px rgba(14, 6, 4, 0.59),
 		4px 3px 2px rgba(3, 14, 9, 0.59), 4px 3px 2px rgba(3, 14, 9, 0.59);
-	text-transform: capitalize;
 }
 img.logoHuella {
-	width: 8%;
+	width: 40%;
+	max-width: 40%;
+	top: 4rem;
+	left: 2rem;
+	position: relative;
+}
+.logoHeader {
+	width: 80%;
+	max-width: 80%;
 	height: auto;
-	margin: 1rem 1rem 2rem 37rem;
+	position: relative;
+	margin: -2rem 5rem;
+}
+.register-container {
+	
+	width: inherit;
+	max-width: inherit;
+	height: auto;
+	position: relative;
+	left: 0rem;
+}
+.signInForm-container {
+	box-shadow: none;
+	padding: 2%;
+	background: none;
+	height: auto;
+	margin: 2rem 0rem;
+	line-height: 3rem;
+	position: relative;
+	width: auto;
+}
+form.signIn_Form {
+	width: inherit;
+	height: auto;
+	margin: 1rem 1rem 3rem 1rem;
+	position: relative;
+	top: 0rem;
+	background: none;
+	box-shadow: none;
+}
+.signIn_Form h1 {
+	font-size: 170%;
+	text-align: center;
+	font-weight: bold;
+	font-family: 'Abel', sans-serif;
+}
+.col {
+	width: 100%;
+	max-width: 100%;
+	margin: 1rem 1rem 1rem 0rem;
+	padding: 0 0rem;
+}
+span.input-item {
+	margin: 0.5rem auto auto 18rem;
 	position: absolute;
-	bottom: 31rem;
+	max-width: 100%;
+	display: list-item;
+}
+input {
+	max-width: 100%;
+	width: 100%;
+	padding: 12px;
+	border: 2px solid #98aebc;
+	border-radius: 25px;
+	margin: 5px 0;
+	opacity: 0.85;
+	display: inline-block;
+	font-size: 100%;
+	font-family: 'Abel', sans-serif;
+	line-height: 20px;
+	text-decoration: none;
+	outline: none;
 }
 
-.logoHeader {
-	width: 33%;
-	max-width: 36%;
+section.logo-Redes {
+	width: auto;
+	margin: 1rem 1rem 1rem 1rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
 	height: auto;
-	margin: 7rem 10rem;
-	position: absolute;
-	top: 8rem;
 }
+.container_msg p {
+	font-size: 100%;
+	text-align: center;
+	font-family: 'Playfair Display', serif;
+	font-style: normal;
+	font-weight: inherit;
+	margin: 1rem 1rem 1rem 1rem;
+	width: inherit;
+	position: relative;
+}
+.container {
+	top: 2rem;
+	position: absolute;
+	border-radius: 5px;
+	padding: 1rem 1rem 1rem 1rem;
+	margin: 1rem 1rem 1rem 1rem;
+	left: 60%;
+}
+.fa {
+	padding: 20px;
+	font-size: 30px;
+	width: 26%;
+	text-align: center;
+	text-decoration: none;
+	margin: 5px 2px;
+	border-radius: 50%;
+}
+.fa:hover {
+	opacity: 0.7;
+}
+.fa-facebook {
+	background: #3b5998;
+	color: white;
+}
+.fa-google {
+	background: #dd4b39;
+	color: white;
+}
+input.btn {
+	width: 100%;
+	max-width: 100%;
+	padding: 12px;
+	border: none;
+	border-radius: 4px;
+	margin: 5px 0;
+	opacity: 0.85;
+	display: inline-block;
+	font-size: 17px;
+	font-family: 'Abel', sans-serif;
+	line-height: 20px;
+	text-decoration: none; /* remove underline from anchors */
+}
+input:hover,
+.btn:hover {
+	opacity: 1;
+}
+input[type='submit'] {
+	background-color: black;
+	color: white;
+	cursor: pointer;
+}
+input[type='submit']:hover {
+	background-color: gray;
+	color: white;
+}
+.position {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	margin: 1rem 1rem 1rem 1rem;
+}
+.registerForm-container {
+	width: auto;
+	height: auto;
+	border-radius: 40px;
+	margin: 2rem 0rem;
+	position: absolute;
+	box-shadow: none;
+	padding: 2%;
+	background: none;
+}
+.msg-Redes {
+	width: auto;
+	height: auto;
+	text-align: center;
+}
+form.form {
+	margin: 1rem 1rem 3rem 1rem;
+	width: inherit;
+}
+span.input-itemR {
+	margin: 1.5rem auto auto 18rem;
+	position: absolute;
+	max-width: inherit;
+}
+span.error-msg {
+	font-size: 75%;
+	font-family: 'Playfair Display', serif;
+	margin-left: 1rem;
+	position: relative;
+	top: 0rem;
+}
+.registerForm-container h1 {
+	font-size: 150%;
+	text-align: center;
+	font-weight: bold;
+	font-family: 'Abel', sans-serif;
+}
+.registerForm-container p {
+	font-size: 100%;
+	text-align: center;
+	font-family: 'Playfair Display', serif;
+	font-style: normal;
+	font-weight: inherit;
+}
+
+section.msg-Redes p {
+	width: auto;
+	margin: 1rem 2rem;
+	font-size: 100%;
+	font-family: 'Abel', sans-serif;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 601px) and (max-width: 767px) {
+	body {
+		background: #fff895;
+		background: -moz-linear-gradient(
+			top,
+			#fff895 0%,
+			#fcd697 58%,
+			#f46d6d 100%
+		);
+		background: -webkit-linear-gradient(
+			top,
+			#fff895 0%,
+			#fcd697 58%,
+			#f46d6d 100%
+		);
+		background: linear-gradient(
+			to bottom,
+			#fff895 0%,
+			#fcd697 58%,
+			#f46d6d 100%
+		);
+		background-attachment: fixed;
+	}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	header h1 {
+		font-size: 600%;
+	}
+	img.logoHuella {
+		width: 50%;
+		max-width: 50%;
+	}
+	.signIn_Form h1 {
+		font-size: 300%;
+	}
+	.signInForm-container {
+		line-height: 3rem;
+	}
+	input {
+		font-size: 200%;
+	}
+
+	.fa {
+		padding: 34px;
+		font-size: 30px;
+		width: 14%;
+	}
+
+	.container_msg p {
+		font-size: 200%;
+		font-family: 'Abel', sans-serif;
+	}
+	.registerForm-container {
+		position: relative;
+	}
+	.registerForm-container h1 {
+		font-size: 300%;
+	}
+	span.error-msg {
+		font-size: 100%;
+	}
+	section.msg-Redes p {
+		font-size: 200%;
+	}
+}
+
+@media only screen and (min-width: 992px) and (min-width: 1023px) {
+	body {
+		font-family: 'Playfair Display', serif;
+		background: #fff895;
+		background: -moz-linear-gradient(
+			-45deg,
+			#fff895 0%,
+			#fcd697 58%,
+			#f46d6d 100%
+		);
+		background: -webkit-linear-gradient(
+			-45deg,
+			#fff895 0%,
+			#fcd697 58%,
+			#f46d6d 100%
+		);
+		background: linear-gradient(135deg, #fff895 0%, #fcd697 58%, #f46d6d 100%);
+		background-attachment: fixed;
+	}
+	header h1 {
+		font-size: 600%;
+	}
+	img.logoHuella {
+		width: 50%;
+		max-width: 50%;
+	}
+	.signIn_Form h1 {
+		font-size: 300%;
+	}
+	.signInForm-container {
+		line-height: 3rem;
+	}
+	input {
+		font-size: 200%;
+	}
+
+	.fa {
+		padding: 34px;
+		font-size: 30px;
+		width: 14%;
+	}
+	.container_msg p {
+		font-size: 200%;
+		font-family: 'Abel', sans-serif;
+	}
+	.registerForm-container {
+		position: relative;
+	}
+	.registerForm-container h1 {
+		font-size: 300%;
+	}
+	span.error-msg {
+		font-size: 100%;
+	}
+	section.msg-Redes p {
+		font-size: 200%;
+	}
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1280px) {
+	body {
+		font-family: 'Playfair Display', serif;
+		background: #fff895;
+		background: -moz-linear-gradient(
+			-45deg,
+			#fff895 0%,
+			#fcd697 58%,
+			#f46d6d 100%
+		);
+		background: -webkit-linear-gradient(
+			-45deg,
+			#fff895 0%,
+			#fcd697 58%,
+			#f46d6d 100%
+		);
+		background: linear-gradient(135deg, #fff895 0%, #fcd697 58%, #f46d6d 100%);
+		background-attachment: fixed;
+	}
+	/*TODO  Vista: encabezado  */
+	header h1 {
+		font-size: 600%;
+		text-align: end;
+	}
+	img.logoHuella {
+		width: 30%;
+		max-width: 30%;
+		top: 6rem;
+	}
+
+	.logoHeader {
+		width: 50%;
+		max-width: 50%;
+		margin: 1rem 13rem;
+		position: absolute;
+		top: 14rem;
+	}
+	/*TODO Vista: inicio de sesion  */
+	.sign {
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		margin: 1rem 1rem 1rem 1rem;
+	}
+	.container {
+		top: 2rem;
+		position: absolute;
+		border-radius: 5px;
+		padding: 1rem 1rem 1rem 1rem;
+		margin: 1rem 1rem 1rem 1rem;
+		left: 48rem;
+	}
+	form.signIn_Form {
+		margin: 2rem 2rem;
+	}
+	.signIn-container {
+		width: auto;
+		height: auto;
+		border-radius: 40px;
+		margin: 2rem 0rem;
+		position: relative;
+		padding: 2%;
+	}
+	.signIn_Form h1 {
+		font-size: 200%;
+	}
+
+	span.input-item {
+		margin: 0.5rem auto 0rem 14.5rem;
+	}
+	.fa {
+		width: 25%;
+		max-width: 25%;
+	}
+	/*TODO Vista: registro de usuario  */
+
+	.registerForm-container {
+		width: auto;
+		height: auto;
+		border-radius: 40px;
+		margin: 2rem 0rem;
+		line-height: 3rem;
+		position: relative;
+		-webkit-box-shadow: 0px 10px 13px -7px #000000,
+			5px 5px 15px 5px rgba(0, 0, 0, 0);
+		box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+		padding: 2%;
+		background: #acc5d6;
+		background: -moz-linear-gradient(
+			left,
+			#acc5d6 0%,
+			#7bd9cf 50%,
+			#daebec 100%
+		);
+		background: -webkit-linear-gradient(
+			left,
+			#acc5d6 0%,
+			#7bd9cf 50%,
+			#daebec 100%
+		);
+		background: linear-gradient(
+			to right,
+			#acc5d6 0%,
+			#7bd9cf 50%,
+			#daebec 100%
+		);
+	}
+	.signInForm-container {
+		border-radius: 40px;
+		margin: 2rem 0rem;
+		/* line-height: 3rem; */
+		position: relative;
+		-webkit-box-shadow: 0px 10px 13px -7px #000000,
+			5px 5px 15px 5px rgba(0, 0, 0, 0);
+		box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+		padding: 2%;
+		background: #acc5d6;
+		background: -moz-linear-gradient(
+			left,
+			#acc5d6 0%,
+			#7bd9cf 50%,
+			#daebec 100%
+		);
+		background: -webkit-linear-gradient(
+			left,
+			#acc5d6 0%,
+			#7bd9cf 50%,
+			#daebec 100%
+		);
+		background: linear-gradient(
+			to right,
+			#acc5d6 0%,
+			#7bd9cf 50%,
+			#daebec 100%
+		);
+	}
+	.registerForm-container h1 {
+		font-size: 220%;
+		text-align: center;
+	}
+
+	.signUp-form {
+		margin: 0rem 0rem;
+	}
+	form.form {
+		margin: 2rem 2rem;
+		line-height: 2rem;
+	}
+	span.input-itemR {
+		background: none;
+		color: black;
+		padding: 14.5px 0px 15px 9px;
+		border-radius: 5px 0px 0px 5px;
+		position: absolute;
+		margin: 0.445rem 0.45rem 1.45rem 18.5rem;
+	}
+	span.error-msg {
+		font-size: 100%;
+		top: 0rem;
+	}
+	.register-container {
+		position: absolute;
+		top: 40rem;
+		margin: 0rem 1rem;
+		left: 13rem;
+		width: 54%;
+		max-width: 54%;
+	}
+	.container_msg p {
+		font-size: 150%;
+	}
+}
+@media only screen and (min-width: 1029px) {
+	body {
+		font-family: 'Playfair Display', serif;
+		background: #fff895;
+		background: -moz-linear-gradient(
+			-45deg,
+			#fff895 0%,
+			#fcd697 58%,
+			#f46d6d 100%
+		);
+		background: -webkit-linear-gradient(
+			-45deg,
+			#fff895 0%,
+			#fcd697 58%,
+			#f46d6d 100%
+		);
+		background: linear-gradient(135deg, #fff895 0%, #fcd697 58%, #f46d6d 100%);
+		background-attachment: fixed;
+	}
+	/*TODO  Vista: encabezado  */
+	header {
+		margin: 1rem 1rem 1rem 1rem;
+		width: 50%;
+		max-width: 50%;
+		display: grid;
+		grid-template-columns: 70% 30%;
+		grid-row: none;
+	}
+	header h1 {
+		font-size: 600%;
+		text-align: end;
+	}
+	img.logoHuella {
+		width: 40%;
+		max-width: 40%;
+		top: 6rem;
+	}
+
+	.logoHeader {
+		width: 30%;
+		max-width: 30%;
+		margin: 1rem 7rem;
+		position: absolute;
+		top: 14rem;
+	}
+	/*TODO Vista: inicio de sesion  */
+	.sign {
+		display: flex;
+		flex-direction: row;
+		align-content: center;
+		margin: 1rem 1rem 1rem 1rem;
+	}
+	.position {
+		display: flex;
+		flex-direction: row;
+		align-content: center;
+		margin: 1rem 1rem 1rem 1rem;
+	}
+
+	.container {
+		top: 2rem;
+		position: absolute;
+		border-radius: 5px;
+		padding: 1rem 1rem 1rem 1rem;
+		margin: 1rem 1rem 1rem 1rem;
+		left: 48rem;
+	}
+	form.signIn_Form {
+		margin: 2rem 2rem;
+	}
+	.signIn-container {
+		width: auto;
+		height: auto;
+		border-radius: 40px;
+		margin: 2rem 0rem;
+		position: relative;
+		padding: 2%;
+	}
+	.signIn_Form h1 {
+		font-size: 200%;
+	}
+
+	span.input-item {
+		margin: 0.5rem auto 0rem 14.5rem;
+	}
+	.fa {
+		width: 25%;
+		max-width: 25%;
+	}
+	/*TODO Vista: registro de usuario  */
+
+	.registerForm-container {
+		width: auto;
+		height: auto;
+		border-radius: 40px;
+		margin: 2rem 0rem;
+		line-height: 3rem;
+		position: relative;
+		-webkit-box-shadow: 0px 10px 13px -7px #000000,
+			5px 5px 15px 5px rgba(0, 0, 0, 0);
+		box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+		padding: 2%;
+		background: #acc5d6;
+		background: -moz-linear-gradient(
+			left,
+			#acc5d6 0%,
+			#7bd9cf 50%,
+			#daebec 100%
+		);
+		background: -webkit-linear-gradient(
+			left,
+			#acc5d6 0%,
+			#7bd9cf 50%,
+			#daebec 100%
+		);
+		background: linear-gradient(
+			to right,
+			#acc5d6 0%,
+			#7bd9cf 50%,
+			#daebec 100%
+		);
+	}
+	.signInForm-container {
+		border-radius: 40px;
+		margin: 2rem 0rem;
+		/* line-height: 3rem; */
+		position: relative;
+		-webkit-box-shadow: 0px 10px 13px -7px #000000,
+			5px 5px 15px 5px rgba(0, 0, 0, 0);
+		box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+		padding: 2%;
+		background: #ACC5D6;
+		background: -moz-linear-gradient(left, #ACC5D6 0%, #7BD9CF 71%, #DAEBEC 100%);
+		background: -webkit-linear-gradient(left, #ACC5D6 0%, #7BD9CF 71%, #DAEBEC 100%);
+		background: linear-gradient(to right, #ACC5D6 0%, #7BD9CF 71%, #DAEBEC 100%);
+	}
+	.registerForm-container h1 {
+		font-size: 220%;
+		text-align: center;
+	}
+
+	.signUp-form {
+		margin: 0rem 0rem;
+	}
+	form.form {
+		margin: 2rem 2rem;
+		line-height: 2rem;
+	}
+	span.input-itemR {
+		background: none;
+		color: black;
+		padding: 14.5px 0px 15px 9px;
+		border-radius: 5px 0px 0px 5px;
+		position: absolute;
+		margin: 0.445rem 0.45rem 1.45rem 18.5rem;
+	}
+	span.error-msg {
+		font-size: 100%;
+		top: 0rem;
+	}
+	.register-container {
+		position: relative;
+		/* top: 0rem; */
+		margin: 1rem 1rem;
+		left: 8rem;
+		width: 30%;
+		max-width: 30%;
+	}
+	.container_msg p {
+		font-size: 150%;
+	}
+	input {
+		font-size: 100%;
+	}
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
