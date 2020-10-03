@@ -56,7 +56,6 @@ export default () => {
           </div>
         </div>
       </div>
-
   </main>
   `;
   const divElemt = document.createElement('div');
