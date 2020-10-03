@@ -77,8 +77,7 @@ export default () => {
           </select>
         </div>
         <p class="time-post">29/09/2020 08:47 p.m.</p>
-        
-          
+
           <hr>
         <div class="content-post">
           <p class="text-post">

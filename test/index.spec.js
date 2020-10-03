@@ -1,5 +1,5 @@
 import {
-  signIn, signInforgoogle, createUser,
+  signIn, signInforgoogle, createUser, sendRecoverPass, sendEmail,
 } from '../src/controller/controller-firebase.js';
 
 // setting up firebase mock
@@ -39,17 +39,24 @@ describe('create new user', () => {
       expect(user.password).toBe('pruebatest');
     }));
 });
-// describe('send email verified', () => {
-//   it('Debería enviar un email de verificación', () => createUser('send@test.com', 'send123')
-//     .then(() => {
-//       sendEmail()
-//         .then((a) => { console.log(a); });
-//     }));
-// });
-// describe('Send recover password', () => {
-//   it('Deberia enviar un email para restablecer contraseña',
-// () => sendRecoverPass('test@gmail.com')
-//     .then((user) => {
-//       console.log(user);
-//     }));
-// });
+describe('send email verified', () => {
+  it('Debería enviar un email de verificación', () => {
+    const mockSendEmail = jest.fn();
+    firebase.auth().currentUser.sendEmailVerification = mockSendEmail;
+    sendEmail();
+    expect(mockSendEmail).toHaveBeenCalled();
+    expect(mockSendEmail.mock.calls).toHaveLength(1);
+  });
+});
+describe('Send recover password', () => {
+  it('Deberia enviar un email para restablecer contraseña', () => {
+    const mockSendPasswordResetEmail = jest.fn();
+    firebase.auth().sendPasswordResetEmail = mockSendPasswordResetEmail;
+    sendRecoverPass('test@gmail.com');
+    // verificar si fue llamado el metodo de firebase
+    expect(mockSendPasswordResetEmail).toHaveBeenCalled();
+    expect(mockSendPasswordResetEmail.mock.calls).toHaveLength(1);
+    // verificar si el metodo recibio como arg el email
+    expect(mockSendPasswordResetEmail).toHaveBeenCalledWith('test@gmail.com');
+  });
+});

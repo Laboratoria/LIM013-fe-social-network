@@ -140,11 +140,24 @@
         color: #46c5a5;
         background-color: white;
       }
-
+      /*Responsive profile*/
+    .edit-photo {
+      position: absolute;
+      z-index: 1; 
+      bottom: 43%; 
+      left: 57%; 
+    }
+    /*modal Profile edit*/
+    .modal-settings{
+        width: 60%;
+    }
 }
 
 /* ------------------media query small device-----------------*/
 @media screen and (max-width:576px){
+    body{
+        font-size: 12px;
+    }
     /* -----------------Responsive home--------------*/
     .container-home{
         grid-template-areas: "profile profile profile"
@@ -156,17 +169,4 @@
     }  
 }
 
-/* ------------------media query for profile view-----------------*/
-@media (max-width: 960px) {
-    .profile-content {
-      width: 100%;
-    }
 
-    /*Responsive profile*/
-    .edit-photo {
-      position: absolute;
-      z-index: 1; 
-      bottom: 43%; 
-      left: 52%; 
-    }
-  }

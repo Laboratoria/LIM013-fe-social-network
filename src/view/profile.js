@@ -20,10 +20,10 @@ export default () => {
             <span class="edit-photo"><i class="fas fa-camera edit-photo-btn"></i></span>
           </label>
           <div class="user-information">
-          <i class="fas fa-edit edit-info"></i>
+          <button class="fas fa-edit edit-info" id="btn-editProfile"></button>
           <h2 class="user-name">Username</p>
           <h3>About me</h3>
-          <p>I'm a front-end developer from Laboratoria and I love travelling.</p>
+          <p><span class="fas fa-envelope"> |</span><span> consuelo.goche@gmail.com</span></p>
           <p><i class="fas fa-map-marker-alt"></i>City, Country</p>
           </div>
         </div>
@@ -32,7 +32,46 @@ export default () => {
       <p>You have no posts yet!</p>
       </div>
     </div>
+<section class="modal-container">
+  <section class="modal-settings">
+    <header class="modalHeader">
+      <button class="btn-modalClose"><i class="fa fa-close"></i></button>
+      <h2 class="modalTitle">Edit user profile</h2>
+      <hr>
+    </header>
+    <form action="" class="editProfile">
+      <div class="grupo">
+        <label  for="usernameEdit">User name : </label>
+        <input type="text" id="usernameEdit">
+      </div>
+      <div class="grupo">
+        <label  for="emailEdit">Email : </label>
+        <input type="text" id="emailEdit" readonly>
+      </div>
+      <div class="grupo">
+        <label  for="phoneEdit">Phone number : </label>
+        <input type="text" id="phoneEdit">
+      </div>
+      <div>
+        <label  for="birthdayEdit">Birthday : </label>
+        <input type="date" id="birthdayEdit">
+      </div>
+      <div class="grupo">
+        <label  for="countryEdit">Country : </label>
+        <input type="text" id="countryEdit">
+      </div>
+      <div class="grupo">
+        <label  for="countryEdit">Description : </label>
+        <textarea></textarea>
+      </div>
+      <button type="submit" class="btn-update">UPDATE</a></button>
+      <button class="btn-cancel">CANCEL</a></button>
+    </form>
+  </section>
+</section>
+
   `;
+
   const selectCoverPage = viewProfile.querySelector('#select-cover-page');
   const coverPhoto = viewProfile.querySelector('.cover-photo');
   let coverFile = '';
@@ -61,5 +100,27 @@ export default () => {
     photoFile = e.target.files[0];
     return photoFile;
   });
+
+  /* const hamburgerMenu = viewProfile.querySelector('#hamburger-menu');
+  const navBar = viewProfile.querySelector('.toggle');
+  hamburgerMenu.addEventListener('click', () => {
+    navBar.classList.toggle('active');
+  }); */
+
+  /* -----------------Open modal edit user profile------------------ */
+  const modalContainer = viewProfile.querySelector('.modal-container');
+  const btnEditProfile = viewProfile.querySelector('#btn-editProfile');
+  btnEditProfile.addEventListener('click' || 'touch', (e) => {
+    e.preventDefault();
+    modalContainer.classList.add('showEditProfile');
+  });
+  /* -----------------close modal edit user profile------------------ */
+
+  const btnModalClose = viewProfile.querySelector('.btn-modalClose');
+  btnModalClose.addEventListener('click' || 'touch', (e) => {
+    e.preventDefault();
+    modalContainer.classList.remove('showEditProfile');
+  });
+
   return viewProfile;
 };
