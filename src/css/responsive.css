@@ -141,13 +141,6 @@
         background-color: white;
       }
 
-      /*Responsive profile*/
-    .edit-photo {
-      position: absolute;
-      z-index: 1; 
-      bottom: 43%; 
-      left: 57%; 
-    }
 }
 
 /* ------------------media query small device-----------------*/
@@ -160,14 +153,7 @@
     }
     .interest, .events, #viewall{
         display: none;
-    }
-    /*Responsive profile*/
-    .edit-photo {
-      position: absolute;
-      z-index: 1; 
-      bottom: 43%; 
-      left: 15rem; 
-    }
+    }  
 }
 
 /* ------------------media query for profile view-----------------*/
@@ -181,6 +167,6 @@
       position: absolute;
       z-index: 1; 
       bottom: 43%; 
-      left: 62%; 
+      left: 52%; 
     }
   }

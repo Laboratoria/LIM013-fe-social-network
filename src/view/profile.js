@@ -33,5 +33,33 @@ export default () => {
       </div>
     </div>
   `;
+  const selectCoverPage = viewProfile.querySelector('#select-cover-page');
+  const coverPhoto = viewProfile.querySelector('.cover-photo');
+  let coverFile = '';
+  selectCoverPage.addEventListener('change', (e) => {
+    const input = e.target;
+    const reader = new FileReader();
+    reader.onload = () => {
+      const dataURL = reader.result;
+      coverPhoto.src = dataURL;
+    };
+    reader.readAsDataURL(input.files[0]);
+    coverFile = e.target.files[0];
+    return coverFile;
+  });
+  const selectPhotoProfile = viewProfile.querySelector('#select-photo-profile');
+  const photoProfile = viewProfile.querySelector('.photo');
+  let photoFile = '';
+  selectPhotoProfile.addEventListener('change', (e) => {
+    const input = e.target;
+    const reader = new FileReader();
+    reader.onload = () => {
+      const dataURL = reader.result;
+      photoProfile.src = dataURL;
+    };
+    reader.readAsDataURL(input.files[0]);
+    photoFile = e.target.files[0];
+    return photoFile;
+  });
   return viewProfile;
 };
