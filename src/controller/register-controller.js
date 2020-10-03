@@ -23,7 +23,7 @@ export const userRegistration = () => {
         .catch((error) => {
           showMessage(error.code);
         });
-      window.location.has = '';
+      window.location.hash = '';
     })
     .catch(() => {
       showMessage('⚠️Error al auntenticar el usuario, el correo ha sido registrado anteriormente');

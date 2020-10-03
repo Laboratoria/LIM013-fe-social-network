@@ -16,7 +16,6 @@ const showMessage = (txtmessage) => {
     document.body.removeChild(showWindow);
   }, 4000);
 };
-
 export const signingIn = () => {
   const emailLogIn = document.querySelector('#SignInForm_email').value;
   const passwordLogIn = document.querySelector('#SignInForm_password').value;
@@ -51,7 +50,6 @@ export const signInGoogle = () => {
     }).catch(() => {
     });
 };
-
 export const signInFacebook = () => {
   loginFacebook().then((result) => {
     createUser(result.user.uid, result.user.displayName, 'Conociendo tu mascota');

@@ -2,7 +2,7 @@
 export const signUp = (emailSignUp, passwordSignUp) => firebase.auth()
   .createUserWithEmailAndPassword(emailSignUp, passwordSignUp);
 // Usuario corriente
-export const userCurrent = () => firebase.auth().currentUser();
+export const currentUser = () => firebase.auth().currentUser;
 // Verificación de email
 export const verifEmail = () => {
   const user = firebase.auth().currentUser();

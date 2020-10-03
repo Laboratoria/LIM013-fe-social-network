@@ -1,9 +1,11 @@
+// import { eachPost } from './post.js';
+// eslint-disable-next-line max-len
+// import { signingOut, gettingProfileInfo, savingChanges } from '../view-controller/profile-controller.js';
+import { dataProfile } from '../controller/home-controller.js';
+
 export default () => {
-  // loadingInfo();
-  /*
-  const userName = localStorage.getItem('name');
-  const userPhoto = localStorage.getItem('userphoto');
-  */
+  dataProfile();
+
   const viewHome = `
   <header id='header'>
     <nav>
@@ -31,12 +33,13 @@ export default () => {
         <div class="cover-image"></div>
         <div class="profile">
           <div class="profile-photo-name">
-            <img class="circulo-profile" src="">
+            <img class="circulo-profile" src="${localStorage.getItem('userphoto')}">
             <label id="selectProfile" for="selectPhotoProfile" class="hide">
               <input type="file" id="selectPhotoProfile" class="hide" accept="image/jpeg, image/png">
               <img class ="photo-profile" src="./img/photo.png">
             </label>
-            <p class="user-name" id="user-name-profile"></p>
+
+            <p class="user-name" id="user-name-profile">${localStorage.getItem('name')}</p>
             <input class="hide validity" id="inputName" type="text" value="" maxlength="30" pattern="([a-zA-ZÁÉÍÓÚñáéíóúÑ]{1,30}\\s*)+">
           </div>
           <h3 class="about-me">Sobre mí</h3>
@@ -58,15 +61,5 @@ export default () => {
   const divElemt = document.createElement('div');
   divElemt.classList.add('position');
   divElemt.innerHTML = viewHome;
-  const nameProfile = divElemt.querySelector('#user-name-profile');
-  const photoProfile = divElemt.querySelector('.circulo-profile');
-  const user = firebase.auth().currentUser;
-  const docRef = firebase.firestore().collection('users').doc(user.uid);
-  docRef.get()
-    .then((docUser) => {
-    // console.log(docUser.data().displayName);
-      nameProfile.innerHTML = docUser.data().displayName;
-      photoProfile.src = docUser.data().photoURL;
-    });
   return divElemt;
 };
