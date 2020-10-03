@@ -7,6 +7,25 @@
 }
 
 
+body::-webkit-scrollbar {
+    width: 1em;
+    height: 100px; 
+  }
+   
+body::-webkit-scrollbar-track {
+    background-color: rgba(247, 255, 253, 0.589); 
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #46c5a550;
+    height: 10px;
+}
+
+body::-webkit-scrollbar-scroll {
+    background-color: orange; 
+}
+ 
+
 a {
     text-decoration: none;
 }
@@ -16,7 +35,7 @@ a {
     -webkit-box-shadow: 0 4px 6px -6px #222;
     -moz-box-shadow: 0 4px 6px -6px #222;
     box-shadow: 0 4px 6px -6px #222;
-  }
+}
 
 
 .hide {

@@ -53,45 +53,93 @@
     .container-recoverPassword form{
         width: 80%;
     }
+
     /*Responsive header*/
-    .menu {
+    
+    .menu-header {
         width: 100%; 
         flex-direction: column; 
+        justify-content: center;
+        padding: 0;
       }
-    
+
+      header nav ul li {
+          width: 100%;
+          text-align: center;  
+        }
+ 
       .box:nth-child(2) {
         order: 1;
         width: 100%; 
-        margin-top: 1.5rem; 
         font-size: 2rem;
       }
-      
+     
       .box:first-child {
         order: 2;
-        width: 100%;
-        display: flex;
-        flex-flow: column nowrap; 
-        margin-top: 0.5rem;
+       
       }
-          
+
       .box:nth-child(3) {
-        order: 3;
-        width: 100%; 
-        margin-bottom: 1.3rem; 
-        justify-content: center;
-        padding: 0; 
-      }
-    
-      header nav ul li {
+        order: 3; 
+      }     
+
+      .title-header a {
+        padding: 1rem;
         width: 100%;
-        text-align: center;  
-        padding: 0; 
       }
-    
+               
       #hamburger-menu {
         display: flex;
       }
+      
+      #left-menu-header {
+        display: none; 
+      }
 
+      #left-menu-header.active{
+        display: flex; 
+        width: 100%;
+        display: flex;
+        flex-direction: column; 
+        justify-content: center;
+      }
+
+      
+      #left-menu-header a {
+        width: 100%;
+        padding: 0.5rem; 
+      }
+
+      #left-menu-header a:hover {
+        color: #46c5a5;
+        background-color: white;
+      }
+
+      .home-header i {
+        margin-left: 0;
+      }
+
+
+      #log-out-header {
+        display: none; 
+      }
+
+      #log-out-header.active{
+        display: flex; 
+        width: 100%; 
+        margin-bottom: 1rem; 
+        justify-content: center;
+        padding: 0.5rem;
+      }
+
+      #log-out-header i {
+        margin-left: 1rem;
+      }
+
+      #log-out-header:hover {
+        color: #46c5a5;
+        background-color: white;
+      }
       /*Responsive profile*/
     .edit-photo {
       position: absolute;
@@ -118,23 +166,7 @@
     }
     .interest, .events, #viewall{
         display: none;
-    }
-    /*Responsive modal profile*/
-    .edit-photo {
-      position: absolute;
-      z-index: 1; 
-      bottom: 43%; 
-      left: 15rem; 
-    }
-    .modal-settings{
-        width: 80%;
-    }
-    .modal-settings form{
-        width: 80%;
-    }
-    .grupo input , #birthdayEdit{
-        height: 30px;
-    }
-  
+    }  
 }
+
 
