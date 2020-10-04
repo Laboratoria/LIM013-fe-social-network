@@ -2,7 +2,7 @@ import { components } from '../view/index.js';
 
 const changeView = (route) => {
   const container = document.getElementById('container');
-  const headerHome = document.querySelector('.header-home');
+  const headerHome = document.querySelector('.main-header');
   container.innerHTML = '';
   switch (route) {
     case '':
@@ -25,6 +25,13 @@ const changeView = (route) => {
     default:
       break;
   }
+  const hamburgerMenu = document.querySelector('#hamburger-menu');
+  const leftMenu = document.querySelector('#left-menu-header');
+  const rightMenu = document.querySelector('#log-out-header');
+  hamburgerMenu.addEventListener('click', () => {
+    leftMenu.classList.toggle('active');
+    rightMenu.classList.toggle('active');
+  });
 };
 
 export { changeView };

@@ -2,151 +2,228 @@
 /* ------------------media query tablet-----------------*/
 @media screen and (max-width:768px){
   /*responsive view logIn*/
-  .container-logIn:before {
-      width: 1500px;
-      height: 1500px;
-      transform: translateX(-50%);
-      left: 30%;
-      bottom: 75%;
-      right: initial;
-      top: initial;
-      transition: 1s ease-in-out;
-      z-index: -1;
+.container-logIn:before {
+  width: 1500px;
+  height: 1500px;
+  transform: translateX(-50%);
+  left: 30%;
+  bottom: 75%;
+  right: initial;
+  top: initial;
+  transition: 1s ease-in-out;
+  z-index: -1;
   }
- 
-  .text-info img{
-      display: none;
-  }
-  .container-logIn , .container-signUp{
-      flex-flow: row wrap;
+.text-info img{
+  display: none;
+}
+.container-logIn , .container-signUp{
+  flex-flow: row wrap;
+}
+.section-register{
+    width: 80%;
+}
+.box-section-register{
+    width: 100%;
+}
+/*Responsive view  SignUp*/
+.container-signUp:before {
+  width: 1500px;
+  height: 1500px;
+  transform: translateX(-45%);
+  bottom: 75%;
+  right: initial;
+  top: initial;
+  transition: 1s ease-in-out;
+  z-index: -1;
+}
+.text-infoSingUp{
+  width: 90%;
+  margin-left: 12%;
+  margin-right: 5%;
+}
+.text-infoSingUp .text , .text-info .text {
+  font-size: 14px;
+}
+/*responsive recover Password*/
+.container-recoverPassword header{
+  width: 80%;
+}
+.container-recoverPassword form{
+  width: 80%;
+}
+/*Responsive header*/
+.menu {
+  width: 100%; 
+  flex-direction: column; 
   }
 
-  .section-register{
-      width: 80%;
+  .box:nth-child(2) {
+    order: 1;
+    width: 100%; 
+    margin-top: 1.5rem; 
+    font-size: 2rem;
   }
-  .box-section-register{
-      width: 100%;
+  .box:first-child {
+    order: 2;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap; 
+    margin-top: 0.5rem;
   }
-  /*Responsive view  SignUp*/
-  .container-signUp:before {
-      width: 1500px;
-      height: 1500px;
-      transform: translateX(-45%);
-      bottom: 75%;
-      right: initial;
-      top: initial;
-      transition: 1s ease-in-out;
-      z-index: -1;
+      
+  .box:nth-child(3) {
+    order: 3;
+    width: 100%; 
+    margin-bottom: 1.3rem; 
+    justify-content: center;
+    padding: 0; 
   }
-  .text-infoSingUp{
-      width: 90%;
-      margin-left: 12%;
-      margin-right: 5%;
+  header nav ul li {
+    width: 100%;
+    text-align: center;  
+    padding: 0; 
   }
-  .text-infoSingUp .text , .text-info .text {
-      font-size: 14px;
-  }
-  /*responsive recover Password*/
-  .container-recoverPassword header{
-      width: 80%;
-  }
-  .container-recoverPassword form{
-      width: 80%;
+  #hamburger-menu {
+    display: flex;
   }
   /*Responsive header*/
-  .menu {
+  .menu-header {
       width: 100%; 
       flex-direction: column; 
+      justify-content: center;
+      padding: 0;
     }
-  
+    header nav ul li {
+        width: 100%;
+        text-align: center;  
+      }
+
     .box:nth-child(2) {
       order: 1;
       width: 100%; 
-      margin-top: 1.5rem; 
       font-size: 2rem;
     }
     
     .box:first-child {
       order: 2;
-      width: 100%;
-      display: flex;
-      flex-flow: column nowrap; 
-      margin-top: 0.5rem;
+      
     }
-        
+
     .box:nth-child(3) {
-      order: 3;
-      width: 100%; 
-      margin-bottom: 1.3rem; 
-      justify-content: center;
-      padding: 0; 
-    }
-  
-    header nav ul li {
+      order: 3; 
+    }     
+
+    .title-header a {
+      padding: 1rem;
       width: 100%;
-      text-align: center;  
-      padding: 0; 
     }
-  
+              
     #hamburger-menu {
       display: flex;
     }
+    
+    #left-menu-header {
+      display: none; 
+    }
 
-    /*Responsive profile*/
-  .edit-photo {
-    position: absolute;
-    z-index: 1; 
-    bottom: 43%; 
-    left: 57%; 
-  }
-  /*modal Profile edit*/
-  .modal-settings{
-      width: 60%;
-  }
-  /*information profile*/
-  .container-grid {
-      grid-template-columns: 100%;
+    #left-menu-header.active{
+      display: flex; 
+      width: 100%;
+      display: flex;
+      flex-direction: column; 
+      justify-content: center;
     }
-    .item6 {
-      grid-column-start: 1;
-      grid-column-end: 2;
+
+    
+    #left-menu-header a {
+      width: 100%;
+      padding: 0.5rem; 
     }
+
+    #left-menu-header a:hover {
+      color: #46c5a5;
+      background-color: white;
+    }
+
+    .home-header i {
+      margin-left: 0;
+    }
+
+
+    #log-out-header {
+      display: none; 
+    }
+
+    #log-out-header.active{
+      display: flex; 
+      width: 100%; 
+      margin-bottom: 1rem; 
+      justify-content: center;
+      padding: 0.5rem;
+    }
+
+    #log-out-header i {
+      margin-left: 1rem;
+    }
+
+    #log-out-header:hover {
+      color: #46c5a5;
+      background-color: white;
+    }
+
+/*Responsive profile*/
+.edit-photo {
+  position: absolute;
+  z-index: 1; 
+  bottom: 43%; 
+  left: 57%; 
 }
-
+/*modal Profile edit*/
+.modal-settings{
+    width: 60%;
+}
+/*information profile*/
+.container-grid {
+    grid-template-columns: 100%;
+  }
+  .item6 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+}
 /* ------------------media query small device-----------------*/
 @media screen and (max-width:576px){
-  *{
-      font-size: 12px;
+*{
+    font-size: 12px;
+}
+/* -----------------Responsive home--------------*/
+.container-home{
+    grid-template-areas: "profile profile profile"
+                        "home home home"
+                        "aside aside aside";
+}
+.interest, .events, #viewall{
+    display: none;
+}
+/*Responsive profile*/
+.profile-content {
+    width: 95%;
+    margin: 0 auto; 
   }
-  /* -----------------Responsive home--------------*/
-  .container-home{
-      grid-template-areas: "profile profile profile"
-                          "home home home"
-                          "aside aside aside";
-  }
-  .interest, .events, #viewall{
-      display: none;
-  }
-  /*Responsive profile*/
-  .profile-content {
-      width: 95%;
-      margin: 0 auto; 
-    }
-  /*Responsive modal profile*/
-  .edit-photo {
-    position: absolute;
-    z-index: 1; 
-    bottom: 43%; 
-    left: 15rem; 
-  }
-  .modal-settings{
-      width: 80%;
-  }
-  .modal-settings form{
-      width: 80%;
-  }
-  .grupo input , #birthdayEdit{
-      height: 30px;
-  }
-
+/*Responsive modal profile*/
+.edit-photo {
+  position: absolute;
+  z-index: 1; 
+  bottom: 43%; 
+  left: 15rem; 
+}
+.modal-settings{
+    width: 80%;
+}
+.modal-settings form{
+    width: 80%;
+}
+.grupo input , #birthdayEdit{
+    height: 30px;
+}
 }
