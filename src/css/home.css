@@ -46,7 +46,7 @@ main > div{
 }
 hr{
     border: 0;
-    border-top: 1px solid #C4C4C4;
+    border-top: 1px solid rgba(44, 171, 146, 0.3);
     margin: 10px 0;
 }
 #viewall{
@@ -74,7 +74,7 @@ hr{
 }
 
 .user, .user-post{
-    display: inline-flex;
+    display: flex;
 }
 .avatar-post{
     width: 40px;
@@ -85,57 +85,57 @@ hr{
     resize: none;
     padding: 0.4rem;
     outline: none;
-    border: 1px solid #C4C4C4;
+    background-color:  rgba(44, 171, 146, 0.1);
+    border-color: rgba(44, 171, 146, 0.15);
     border-radius: 4px;
 }
-.div-comment textarea{
-    background: none;
-    resize: none;
-    outline: none;
-    border: none;
-    height: 2rem;
-    color: #333;
-    padding: 0 1rem;
-    width: 90%;
-}
-.div-comment textarea::placeholder{
-    color: rgba(44, 171, 146, 1);
-}
+
 .content-newpost textarea:focus{
-    background-color:  rgba(44, 171, 146, 0.15);
-    border-color: rgba(44, 171, 146, 0.15);
+    border-color: #C4C4C4;
+    background: none;
+}
+.content-newpost textarea::placeholder{
+    color: rgba(44, 171, 146, 0.8);
 }
 .content-newpost textarea:focus::placeholder{
-    color: rgba(44, 171, 146, 1);
+    color: #C4C4C4;
 }
 .post-img{
-    width: 70%;
+    width: 50%;
     display: block;
     margin: 0.3rem auto 1rem;
 }
 #remove-img{
+    color: #444;
     display: flex;
     justify-content: center;
     cursor: pointer;
 }
 #remove-img:hover{
-    color: black;
+    color: red;
 }
 
 .upload-img{
     display: none;
+}
+.buttons-bar{
+    position: relative;
 }
 .buttons-bar .fa-file-image{
     font-size: 1.35rem;
     cursor: pointer;
     margin-right: 1rem;
 }
+
 select{
     font-size: 20px;
     cursor: pointer;
     outline: none;
     border: none;
     color: #444;
+}
+.btn-post i{
+    margin-right: 0.3rem;
 }
 .btn-post{
     height: 2rem;
@@ -151,31 +151,53 @@ select{
     transition: all ease 0.5s;
 }
 .btn-post:hover{
-    background-color: #2b7a75;
-    height: 2.2rem;
-    font-weight: 900;
+    background-color: rgba(44, 171, 146, 0.5);
+    color: #2b7a75;
+    font-weight: 800;
 }
 .mainpost{
     position: relative;
 }
-.time-post, .like{
+.time-post{
     opacity: 0.6;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+    width: min-content;
+    text-align: center;
+    margin: 0 1rem 0 auto !important;
 }
+
 .mainpost .fa-ellipsis-v{
     position: absolute;
     right: 0;
     margin: 0;
+    color: #2CAB92;
 }
 .div-comment {
     max-width: 100%;
     background-color: rgba(44, 171, 146, 0.15);
     border-radius: 5px;
-    /* display: grid;
+    border: 1px solid rgba(44, 171, 146, 0.15);
+    display: grid;
     grid-template-columns: 90% 10%;
-    position: relative; */
+    position: relative;
     margin: 0.5rem 0;
     width: 100%;
+}
+.div-comment textarea{
+    background: none;
+    resize: none;
+    outline: none;
+    border: none;
+    height: 2rem;
+    color: #333;
+    padding: 0 1rem;
+}
+.div-comment textarea::placeholder{
+    color: rgba(44, 171, 146, 0.8);
+}
+.like{
+    opacity: 0.6;
+    font-size: 0.8rem;
 }
 .like-comment-container i{
     margin-right: 0.3rem;
@@ -184,19 +206,14 @@ select{
     color: #2CAB92;
     font-size: 1rem;
     cursor: pointer;
-    margin: 12px auto;
-    float: right;
+    margin: auto;
 }
+
 .logo-aside i{
     color: #2CAB92;
     margin: 0;
 }
-.github i{
-    font-size: 20px;
-    cursor: pointer;
-    color: #444;
-    transition: all ease 0.5s;
-}
+
 .div-comment i:hover{
     color: #2b7a75;
 }
@@ -212,6 +229,7 @@ select{
     transition: all ease 0.5s;
 }
 .like-comment-container button{
+    position: relative;
     height: 2rem;
     width: 30%;
     font-weight: 600;
@@ -224,6 +242,7 @@ select{
     outline: none;
     transition: all ease 0.5s;
 }
+
 .contact button{
     width: 250px;
     height: 30px;
@@ -254,6 +273,7 @@ select{
 }
 .img-aside{
     width: 100%;
+    border: 2px solid #2CAB92;
 }
 
 .aboutUs li{
@@ -280,8 +300,14 @@ select{
     font-size: 12px;
     margin: 0 auto;
     justify-items: center;
+    position: relative;
 }
-
+.github i{
+    font-size: 20px;
+    cursor: pointer;
+    color: #444;
+    transition: all ease 0.5s;
+}
 .github i:hover{
     color: #2CAB92;
 }
@@ -310,3 +336,36 @@ select{
 .contact form{
     margin-top: 5px;
 }
+/* --------Tool tip text span---------------- */
+.fa-file-image .tooltiptext,
+.fa-github .tooltiptext{
+    font-size: 12px;
+    visibility: hidden;
+    background-color:  #444;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 0.5rem;
+    position: absolute;
+    z-index: 1;
+    bottom: 130%;
+    /* left: 50%; */
+    margin-left: -60px;
+  }
+  
+  .fa-file-image .tooltiptext::after,
+  .fa-github .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #444 transparent transparent transparent;
+  }
+  
+  .fa-file-image:hover .tooltiptext,
+  .fa-github:hover .tooltiptext {
+    visibility: visible;
+  }

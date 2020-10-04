@@ -101,6 +101,33 @@
     color: #acacac;
     font-size: 16px;
   }
+  .div-input .tooltiptext {
+    font-size: 12px;
+    visibility: hidden;
+    background-color:  #444;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 0.5rem;
+    position: absolute;
+    z-index: 1;
+    bottom: 110%;
+    left: 50%;
+    margin-left: -60px;
+  }
+  .div-input .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #444 transparent transparent transparent;
+  }
+  .div-input:hover .tooltiptext {
+    visibility: visible;
+  }
 .section-register form{
     display: flex;
     flex-flow: column nowrap;

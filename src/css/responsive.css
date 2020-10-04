@@ -193,14 +193,18 @@
 }
 /* ------------------media query small device-----------------*/
 @media screen and (max-width:576px){
-*{
-    font-size: 12px;
-}
+
 /* -----------------Responsive home--------------*/
 .container-home{
     grid-template-areas: "profile profile profile"
                         "home home home"
                         "aside aside aside";
+}
+.avatar{
+  width: 100px;
+  margin: 1rem auto;
+  display: block;
+  float: left;
 }
 .interest, .events, #viewall{
     display: none;
