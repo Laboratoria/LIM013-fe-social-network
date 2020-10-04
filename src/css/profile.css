@@ -231,3 +231,23 @@ height: 44px;
   opacity: 1;
   visibility: visible;
 }
+
+/*---------------modal edit profile----------------*/
+.container-grid {
+  height: 30%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 1px;
+}
+
+.container-grid > div {
+  font-size: 16px;
+}
+.item6 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.container-grid i{
+  color: #6f7174;
+  width: 30px;
+}

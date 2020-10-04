@@ -1,140 +1,152 @@
 /******************************media query***********************************/
 /* ------------------media query tablet-----------------*/
 @media screen and (max-width:768px){
-    /*responsive view logIn*/
-    .container-logIn:before {
-        width: 1500px;
-        height: 1500px;
-        transform: translateX(-50%);
-        left: 30%;
-        bottom: 75%;
-        right: initial;
-        top: initial;
-        transition: 1s ease-in-out;
-        z-index: -1;
+  /*responsive view logIn*/
+  .container-logIn:before {
+      width: 1500px;
+      height: 1500px;
+      transform: translateX(-50%);
+      left: 30%;
+      bottom: 75%;
+      right: initial;
+      top: initial;
+      transition: 1s ease-in-out;
+      z-index: -1;
+  }
+ 
+  .text-info img{
+      display: none;
+  }
+  .container-logIn , .container-signUp{
+      flex-flow: row wrap;
+  }
+
+  .section-register{
+      width: 80%;
+  }
+  .box-section-register{
+      width: 100%;
+  }
+  /*Responsive view  SignUp*/
+  .container-signUp:before {
+      width: 1500px;
+      height: 1500px;
+      transform: translateX(-45%);
+      bottom: 75%;
+      right: initial;
+      top: initial;
+      transition: 1s ease-in-out;
+      z-index: -1;
+  }
+  .text-infoSingUp{
+      width: 90%;
+      margin-left: 12%;
+      margin-right: 5%;
+  }
+  .text-infoSingUp .text , .text-info .text {
+      font-size: 14px;
+  }
+  /*responsive recover Password*/
+  .container-recoverPassword header{
+      width: 80%;
+  }
+  .container-recoverPassword form{
+      width: 80%;
+  }
+  /*Responsive header*/
+  .menu {
+      width: 100%; 
+      flex-direction: column; 
     }
-   
-    .text-info img{
-        display: none;
+  
+    .box:nth-child(2) {
+      order: 1;
+      width: 100%; 
+      margin-top: 1.5rem; 
+      font-size: 2rem;
     }
-    .container-logIn , .container-signUp{
-        flex-flow: row wrap;
+    
+    .box:first-child {
+      order: 2;
+      width: 100%;
+      display: flex;
+      flex-flow: column nowrap; 
+      margin-top: 0.5rem;
+    }
+        
+    .box:nth-child(3) {
+      order: 3;
+      width: 100%; 
+      margin-bottom: 1.3rem; 
+      justify-content: center;
+      padding: 0; 
+    }
+  
+    header nav ul li {
+      width: 100%;
+      text-align: center;  
+      padding: 0; 
+    }
+  
+    #hamburger-menu {
+      display: flex;
     }
 
-    .section-register{
-        width: 80%;
+    /*Responsive profile*/
+  .edit-photo {
+    position: absolute;
+    z-index: 1; 
+    bottom: 43%; 
+    left: 57%; 
+  }
+  /*modal Profile edit*/
+  .modal-settings{
+      width: 60%;
+  }
+  /*information profile*/
+  .container-grid {
+      grid-template-columns: 100%;
     }
-    .box-section-register{
-        width: 100%;
-    }
-    /*Responsive view  SignUp*/
-    .container-signUp:before {
-        width: 1500px;
-        height: 1500px;
-        transform: translateX(-45%);
-        bottom: 75%;
-        right: initial;
-        top: initial;
-        transition: 1s ease-in-out;
-        z-index: -1;
-    }
-    .text-infoSingUp{
-        width: 90%;
-        margin-left: 12%;
-        margin-right: 5%;
-    }
-    .text-infoSingUp .text , .text-info .text {
-        font-size: 14px;
-    }
-    /*responsive recover Password*/
-    .container-recoverPassword header{
-        width: 80%;
-    }
-    .container-recoverPassword form{
-        width: 80%;
-    }
-    /*Responsive header*/
-    .menu {
-        width: 100%; 
-        flex-direction: column; 
-      }
-    
-      .box:nth-child(2) {
-        order: 1;
-        width: 100%; 
-        margin-top: 1.5rem; 
-        font-size: 2rem;
-      }
-      
-      .box:first-child {
-        order: 2;
-        width: 100%;
-        display: flex;
-        flex-flow: column nowrap; 
-        margin-top: 0.5rem;
-      }
-          
-      .box:nth-child(3) {
-        order: 3;
-        width: 100%; 
-        margin-bottom: 1.3rem; 
-        justify-content: center;
-        padding: 0; 
-      }
-    
-      header nav ul li {
-        width: 100%;
-        text-align: center;  
-        padding: 0; 
-      }
-    
-      #hamburger-menu {
-        display: flex;
-      }
-
-      /*Responsive profile*/
-    .edit-photo {
-      position: absolute;
-      z-index: 1; 
-      bottom: 43%; 
-      left: 57%; 
-    }
-    /*modal Profile edit*/
-    .modal-settings{
-        width: 60%;
+    .item6 {
+      grid-column-start: 1;
+      grid-column-end: 2;
     }
 }
 
 /* ------------------media query small device-----------------*/
 @media screen and (max-width:576px){
-    body{
-        font-size: 12px;
+  *{
+      font-size: 12px;
+  }
+  /* -----------------Responsive home--------------*/
+  .container-home{
+      grid-template-areas: "profile profile profile"
+                          "home home home"
+                          "aside aside aside";
+  }
+  .interest, .events, #viewall{
+      display: none;
+  }
+  /*Responsive profile*/
+  .profile-content {
+      width: 95%;
+      margin: 0 auto; 
     }
-    /* -----------------Responsive home--------------*/
-    .container-home{
-        grid-template-areas: "profile profile profile"
-                            "home home home"
-                            "aside aside aside";
-    }
-    .interest, .events, #viewall{
-        display: none;
-    }
-    /*Responsive modal profile*/
-    .edit-photo {
-      position: absolute;
-      z-index: 1; 
-      bottom: 43%; 
-      left: 15rem; 
-    }
-    .modal-settings{
-        width: 80%;
-    }
-    .modal-settings form{
-        width: 80%;
-    }
-    .grupo input , #birthdayEdit{
-        height: 30px;
-    }
-  
-}
+  /*Responsive modal profile*/
+  .edit-photo {
+    position: absolute;
+    z-index: 1; 
+    bottom: 43%; 
+    left: 15rem; 
+  }
+  .modal-settings{
+      width: 80%;
+  }
+  .modal-settings form{
+      width: 80%;
+  }
+  .grupo input , #birthdayEdit{
+      height: 30px;
+  }
 
+}
