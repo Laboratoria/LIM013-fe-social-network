@@ -98,6 +98,12 @@
                             "home home home"
                             "aside aside aside";
     }
+    .avatar{
+        width: 100px;
+        margin: 1rem auto;
+        display: block;
+        float: left;
+    }
     .interest, .events, #viewall{
         display: none;
     }

@@ -18,15 +18,18 @@ export default () => {
     <form id="signup-form" class="signup-form" >
       <div class="div-input">
         <i class="fas fa-user"></i>
-        <input type="text" id="username" placeholder="Username" required />
+        <input type="text" id="username" placeholder="Username" required  />
+        <span class="tooltiptext">Create a username</span>
       </div>
       <div class="div-input">
       <i class="fas fa-envelope"></i>
       <input type="email" id="email" placeholder="E-mail" required />
+      <span class="tooltiptext">Enter a valid email</span>
       </div>
       <div class="div-input">
       <i class="fas fa-lock"></i>
-      <input type="password" id="password" pattern="[a-zA-Z0-9]{8,20}" placeholder="Password" required />
+      <input type="password" id="password" pattern="[a-zA-Z0-9]{6,20}" placeholder="Password" required />
+      <span class="tooltiptext">Password should contain at least 6 characters</span>
       </div>
       <button type="submit" class="btn-signUp">SIGN UP</button>
       <p id = "error-message"></p>

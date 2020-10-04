@@ -20,3 +20,6 @@
     text-align: center;
     text-transform: capitalize;
 }
+.hide {
+    display:none; 
+  }
