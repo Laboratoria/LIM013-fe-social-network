@@ -5,26 +5,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/singin-up.css">
   <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/profile.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/styles.css">
   <script src="https://kit.fontawesome.com/64d58efce2.js"></script>
   <title>Travelin</title>
 </head>
 
 <body>
 
-  <header class="header-home hide">
+  <header class="main-header shadow hide">
     <nav>
-      <ul class="menu">
-        <div class="left-menu box">
-          <li class="home"><i class="fas fa-home"></i>Home</li>
-          <li class="profile"><i class="fas fa-user-circle"></i>Profile</li>
+      <ul class="menu-header">
+        <div id="left-menu-header" class= "box">
+          <li class="home-header"><a href="#/home"><i class="fas fa-home"></i>Home</a></li>
+          <li class="profile-header"><a href="#/profile"><i class="fas fa-user-circle"></i>Profile</a></li>
         </div>
-        <li class="title-header box">Travel<i class="fas fa-plane-departure"></i>n</li>
-        <li class="log-out box"><i class="fas fa-sign-out-alt"></i>Log out</li>
+        <li class="title-header box"><a href="#/home">Travel<i class="fas fa-plane-departure"></i>n</a></li>
+        <li id="log-out-header" class="box"><i class="fas fa-sign-out-alt"></i>Log out</li>
       </ul>
     </nav>
     <i id="hamburger-menu" class="fas fa-bars hide"></i>
@@ -60,3 +61,5 @@
   </script>
 </body>
 </html>
+
+
