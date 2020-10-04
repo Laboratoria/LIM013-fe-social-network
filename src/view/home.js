@@ -84,13 +84,12 @@ export default () => {
         <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
       </div>
     </div>
-
   </div>
   </main>
-
   `;
   const divElemt = document.createElement('div');
   divElemt.classList.add('position');
   divElemt.innerHTML = viewHome;
+
   return divElemt;
 };
