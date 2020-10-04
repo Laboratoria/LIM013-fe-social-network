@@ -20,11 +20,18 @@ export default () => {
             <span class="edit-photo"><i class="fas fa-camera edit-photo-btn"></i></span>
           </label>
           <div class="user-information">
-          <button class="fas fa-edit edit-info" id="btn-editProfile"></button>
-          <h2 class="user-name">Username</p>
-          <h3>About me</h3>
-          <p><span class="fas fa-envelope"> |</span><span> consuelo.goche@gmail.com</span></p>
-          <p><i class="fas fa-map-marker-alt"></i>City, Country</p>
+            <button class="fas fa-edit edit-info" id="btn-editProfile"></button>
+            <h2 class="user-name">Username</p>
+            <h3>About me</h3>
+            <div class="container-grid">
+              <div><i class="fas fa-envelope"></i><span>consuelo.goche@gmail.com</span></div>
+              <div><i class="fas fa-birthday-cake"></i><span class="birthdayProfile"></span></div>
+              <div><i class="fas fa-mobile-alt"></i><span>phone</span></div>
+              <div><i class="fas fa-map-marker-alt"></i><span>country</span></div>
+              <div class="item6"><i class="far fa-id-badge"></i><span>descripcion :</span>
+                <p></p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -39,7 +46,7 @@ export default () => {
       <h2 class="modalTitle">Edit user profile</h2>
       <hr>
     </header>
-    <form action="" class="editProfile">
+    <form class="editProfile">
       <div class="grupo">
         <label  for="usernameEdit">User name : </label>
         <input type="text" id="usernameEdit">
@@ -119,6 +126,15 @@ export default () => {
   const btnModalClose = viewProfile.querySelector('.btn-modalClose');
   btnModalClose.addEventListener('click' || 'touch', (e) => {
     e.preventDefault();
+    modalContainer.classList.remove('showEditProfile');
+  });
+  /* -----------------submit modal edit user profile------------------ */
+  const formEditProfile = viewProfile.querySelector('.editProfile');
+  formEditProfile.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const birthdayContent = viewProfile.querySelector('#birthdayEdit').value;
+    const birthdayProfile = viewProfile.querySelector('.birthdayProfile');
+    birthdayProfile.textContent = birthdayContent;
     modalContainer.classList.remove('showEditProfile');
   });
 

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 // export default () => {
 //   const viewHome = document.createElement('section');
 //   viewHome.innerHTML = `
@@ -30,7 +31,7 @@ export default () => {
     <div class = "interest">
       <p>Interests</p>
         <p>
-          <span>Friends</span>
+          <span data-title = "Friends">Friends</span>
           <span>Games</span>
           <span>Food</span>
           <span>Travel</span>
@@ -55,13 +56,13 @@ export default () => {
         <div class="buttons-bar">
           <label for="upload-img">
             <input type="file" accept="image/jpeg, image/png, image/gif" id="upload-img" class="upload-img">
-            <i class="far fa-file-image"></i>
+            <i class="far fa-file-image"><span class="tooltiptext">Upload an image</span></i>
           </label>
           <select class="fa" id="privacy-option">
-            <option class="fa" value="0">&#xf57d; </option>
-            <option class="fa" value="1">&#xf023; </option>
+            <option class="fa" value="0" title = "Public">&#xf57d; </option>
+            <option class="fa" value="1" title = "Private">&#xf023; </option>
           </select>
-          <button type="button" id="btn-post" class="btn-post" >Post</button>
+          <button type="button" id="btn-post" class="btn-post" ><i class="fas fa-paper-plane"></i> Post</button>
         </div>
       </div>
     </div>
@@ -72,12 +73,16 @@ export default () => {
           <img class="avatar-post" src="img/avatar-female.jpeg"/>
           <p class="name">User</p>
           <select class="fa" id="privacy-option">
-            <option class="fa" value="0">&#xf57d; </option>
-            <option class="fa" value="1">&#xf023; </option>
+            <option class="fa" value="0" title = "Public">&#xf57d; </option>
+            <option class="fa" value="1" title = "Private">&#xf023; </option>
           </select>
+          <p class="time-post">29/09/2020 08:47 p.m.</p>
         </div>
+<<<<<<< HEAD
+=======
         <p class="time-post">29/09/2020 08:47 p.m.</p>
 
+>>>>>>> 8b4a5a2081ad79f2a619dd2ac0255578abc0434e
           <hr>
         <div class="content-post">
           <p class="text-post">
@@ -90,9 +95,9 @@ export default () => {
             <p class="like">
               <span class="count-like">1</span> likes
             </p>
-            <button type="button" class="btn-like"><i class="fa fa-thumbs-up"></i> Like</button> 
+            <button type="button" class="btn-like"><i class="fa fa-thumbs-up"></i> Like</button>
             <button type="button" class="btn-comment"><i class="fa fa-comment"></i> Comment</button>
-            <div id= "div-comment" class="div-comment hide">
+            <div id= "div-comment" class="hide div-comment">
               <textarea class="comment" placeholder="Add a comment"></textarea>
               <i class="fas fa-paper-plane"></i>
             </div>
@@ -106,11 +111,14 @@ export default () => {
   <aside class="right-section">
     <!-- Events -->
     <div class="events">
-      <p>Upcoming Events:</p>
-      <img class="img-aside" src="img/imgLogo.png" alt="Evento">
-      <p>Holiday</p>
-      <p>Friday 15:00</p>
-      <button>Info</button>
+      <p>THE WORLD'S MOST POPULAR DESTINATIONS</p>
+      <img class="img-aside" src="img/aside-bali-indonesia.jpg" title = "indonesia" alt="Indonesia">
+      <img class="img-aside" src="img/aside-cuzco.jpg" title = "cuzco" alt="Cuzco">
+      <img class="img-aside" src="img/aside-islas-caiman.jpg" title = "islas-caiman" alt="Islas Caiman">
+      <img class="img-aside" src="img/aside-nueva-york.jpg" title = "nueva-york" alt="Nueva York">
+      <img class="img-aside" src="img/aside-paris.jpg" title = "paris" alt="Paris">
+      <p class = "img-aside-text"></p>
+      <a href="https://viajes.nationalgeographic.com.es/a/destinos-mas-populares_11415/1" target="_blank"><button>Info</button></a>
     </div>
     <!-- About us -->
     <div class="aboutUs">
@@ -123,9 +131,9 @@ export default () => {
       <p class = "copyright">Copyright © 2020 All Rights Reserved.</p>
       <table class = "github">
         <tr>
-          <th><a href="https://github.com/consuelogoche-1994" target="_blank"><i class="fab fa-github"></i></a></th>
-          <th><a href="https://github.com/emae1712" target="_blank"><i class="fab fa-github"></i></a></th>
-          <th><a href="https://github.com/MarycieloParionaBernaola" target="_blank"><i class="fab fa-github"></i></a></th>
+          <th><a href="https://github.com/consuelogoche-1994" target="_blank"><i class="fab fa-github"><span class="tooltiptext">Consuelo Goche</span></i></a></th>
+          <th><a href="https://github.com/emae1712" target="_blank"><i class="fab fa-github"><span class="tooltiptext">Melissa Arango</span></i></a></th>
+          <th><a href="https://github.com/MarycieloParionaBernaola" target="_blank"><i class="fab fa-github"><span class="tooltiptext">Marycielo Pariona</span></i></a></th>
         </tr>
         <tr>
           <td>C. Goche</td>
@@ -154,9 +162,10 @@ export default () => {
 
   const postImg = viewHome.querySelector('#post-img');
   const removeImg = viewHome.querySelector('#remove-img');
+  const uploadImg = viewHome.querySelector('#upload-img');
 
   /* ---------------- load view image to be posted ----------------------*/
-  viewHome.querySelector('#upload-img').addEventListener('change', (e) => {
+  uploadImg.addEventListener('change', (e) => {
     // Creamos el objeto de la clase FileReader
     const reader = new FileReader();
 
@@ -174,6 +183,7 @@ export default () => {
   /* ------------- Remove image post --------------------------*/
   removeImg.addEventListener('click', () => {
     postImg.src = '';
+    uploadImg.value = '';
     removeImg.style.display = 'none';
   });
 
@@ -181,6 +191,22 @@ export default () => {
   viewHome.querySelector('.btn-comment').addEventListener('click', () => {
     viewHome.querySelector('#div-comment').classList.toggle('hide');
   });
+
+  /* ----------------Slideshow images------------------- */
+  let myIndex = 0;
+
+  const carousel = () => {
+    const x = viewHome.getElementsByClassName('img-aside');
+    for (let i = 0; i < x.length; i += 1) {
+      x[i].style.display = 'none';
+    }
+    myIndex += 1;
+    if (myIndex > x.length) { myIndex = 1; }
+    x[myIndex - 1].style.display = 'block';
+    viewHome.querySelector('.img-aside-text').innerHTML = x[myIndex - 1].alt;
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+  };
+  carousel();
 
   /* ----------- Ventana Contact us emergente ------------------*/
   viewHome.querySelector('#contact-bottom').addEventListener('click', () => {
