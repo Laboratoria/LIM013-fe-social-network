@@ -78,11 +78,6 @@ export default () => {
           </select>
           <p class="time-post">29/09/2020 08:47 p.m.</p>
         </div>
-<<<<<<< HEAD
-=======
-        <p class="time-post">29/09/2020 08:47 p.m.</p>
-
->>>>>>> 8b4a5a2081ad79f2a619dd2ac0255578abc0434e
           <hr>
         <div class="content-post">
           <p class="text-post">
