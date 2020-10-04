@@ -1,5 +1,7 @@
 * {
 	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 body {
 	background: #fff895;
@@ -240,6 +242,177 @@ section.msg-Redes p {
 	font-size: 100%;
 	font-family: 'Abel', sans-serif;
 }
+#headerHome{
+    width: 100%;
+    background-color:#abecea;
+
+}
+.nav_Mobile{
+    display: flex;
+}
+.name_app{
+    display: none;
+}
+
+.btn-menu{
+    margin: 3%;
+}
+.menu_mobile{
+    display: flex;
+    visibility: hidden;
+    flex-direction: column;
+    padding-left: 0%;
+    padding: 10px;
+    margin-top: 10%;
+    list-style: none;
+    flex: auto;
+    line-height: 3;
+    position: absolute;
+    margin-left: 0%;
+    background-color:#abecea;
+}
+.menu_mobile.responsive{
+    visibility: visible;
+}
+li {
+    flex: auto;
+}
+ul li a{
+    text-decoration: none;
+}
+.body_container{
+    width:90%;
+    margin:20px auto;
+}
+.profile_section{
+    display: none;
+}
+.profile_section,.timeline_section{
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+}
+@import url('https://fonts.googleapis.com/css?family=Lato:300,700');
+
+h2, p {
+    font-family: 'Lato', serif;
+    font-size: 16px;
+}
+
+h2 {
+    color: #CF1124;
+}
+
+p {
+    color: #243B53;
+}
+
+.card {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border-radius: 5px;
+    border-top: solid 4px #CF1124;
+    height: 382px;
+    margin: 0%;
+    position: relative;
+    width: 400px;
+}
+.cover {
+    background-image: url('https://picsum.photos/480/136/?random');
+    background-size: contain;
+    background-position: center;
+    height: 136px;
+}
+
+.content {
+    padding-top:12px;
+    padding-left: 21px;
+    padding-right: 21px;
+}
+
+.profile {
+    position: absolute;
+    top: 78.5px;
+    left: 20px;
+}
+
+.profile img {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border-radius: 50%;
+    height: 115px;
+}
+
+.header {
+    text-transform: capitalize;
+    max-width: 190px;
+    width: 35%;
+    margin: 0 auto;
+}
+
+.header .name {
+    margin: 0px;
+}
+
+.header .location {
+    margin-top: 7px;
+    margin-bottom: 0px;
+}
+
+.info { 
+    margin-top: 21px;
+}
+
+.labels {
+    display: flex;
+    margin-top: 20px;
+}
+
+.labels .label {
+    flex-grow: 1;
+    word-wrap: break-word;
+    width: 0;
+}
+
+.labels .label p {
+    margin-bottom: 5px;
+    margin-top: 0px;
+}
+
+.labels .label h2 {
+    margin: 0px;
+}
+.timeline_section{
+    background-color: #f0f2f5;
+}
+.update_container{
+
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border-radius: 5px;
+    background-color: #fff;
+    padding:3%;
+}
+.update_container input{
+    background-color:#f0f2f5;
+    border: 2px solid grey;
+    border-radius: 5px;
+    width: 90%;
+    height: 20%;
+    margin:2%
+   
+}
+.user_post{
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border-radius: 5px;
+    background-color: #fff;
+    padding:3%;
+    margin-top: 2%;
+
+}
+img.user_img{
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border-radius: 50%;
+    height: 80px;
+}
+
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 601px) and (max-width: 767px) {
@@ -308,6 +481,41 @@ section.msg-Redes p {
 	section.msg-Redes p {
 		font-size: 200%;
 	}
+	/*---Main--*/
+	header label {
+        display:none;
+    }
+    .name_app{
+        display: block;
+        margin:2%;
+    }
+    .menu_mobile {
+    display: flex;
+    visibility: visible;
+    flex-direction: row;
+    text-align: center;
+    padding-left: 0%;
+    padding: 0%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    list-style: none;
+    flex: auto;
+    position: relative;
+    margin-left: 0%;
+    }
+    .body_container{
+
+        display: grid;
+        grid-gap:20px;
+        grid-template-columns: repeat(3,1fr);
+    }
+    .profile_section{
+        display: block;
+    }
+    .timeline_section{
+        grid-column: span 2;
+    }
+
 }
 
 @media only screen and (min-width: 992px) and (min-width: 1023px) {
