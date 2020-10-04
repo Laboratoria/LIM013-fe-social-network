@@ -1,6 +1,6 @@
 import { currentUser } from '../firebase/auth-controller.js';
 
-import { getUser , createPost } from '../firebase/firestore-controller.js';
+import { getUser, createPost } from '../firebase/firestore-controller.js';
 
 export const dataProfile = () => {
   const actualUser = currentUser();
@@ -15,19 +15,13 @@ export const dataProfile = () => {
   localStorage.setItem('userId', actualUser.uid);
 };
 
-export const makingPost = (file, userId, userName, userPhoto) => {
-  const newPost = document.querySelector('#newPost').value;
-  const status = document.querySelector('.privacy').value;
-  const date = new Date().toLocaleString();
+export const makingPost = (userId, userName) => {
+  const newPost = document.querySelector('#status_input').value;
+  // const status = document.querySelector('.privacy').value;
+  // const date = new Date().toLocaleString();
 
-  let imPost = '';
-  if (file) {
-    imPost = localStorage.getItem('image');
-    uploadImagePost(file, userId);
-  }
-  createPost(userId, userName, newPost, imPost,
-    date, status, userPhoto)
+  createPost(userId, userName, newPost)
     .then(() => {
-      document.querySelector('.new-post').value = '';
+      document.querySelector('#status_input').value = '';
     });
 };

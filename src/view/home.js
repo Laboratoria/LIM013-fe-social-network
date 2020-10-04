@@ -1,10 +1,14 @@
 // import { eachPost } from './post.js';
 // eslint-disable-next-line max-len
 // import { signingOut, gettingProfileInfo, savingChanges } from '../view-controller/profile-controller.js';
-import { dataProfile } from '../controller/home-controller.js';
+// eslint-disable-next-line import/named
+import { dataProfile, makingPost } from '../controller/home-controller.js';
 
 export default () => {
   dataProfile();
+  const userId = localStorage.getItem('userId');
+  const userName = localStorage.getItem('name');
+  // const userPhoto = localStorage.getItem('userphoto');
 
   const viewHome = `
   <header id='headerHome'>
@@ -66,11 +70,10 @@ export default () => {
     <div class="timeline_section">
       <div class="update_container">
         <h6 class="ask_status">¿Qué hiciste con tu mascota?</h6>
-        <input class="status_imput" placeholder="Cuéntanos las travesuras de tu mejor amigo." >
+        <input class="status_imput" id="status_input" placeholder="Cuéntanos las travesuras de tu mejor amigo." >
         <button type="button" class="Uploadphoto_buttom"><i class="fas fa-camera"></i> foto</button> 
-        <button type="button" class="post_buttom"><i class="fa fa-pencil"></i>  Post</button>
-      </div>
-    
+        <button type="button" id="bttonnewpost" class="post_buttom"><i class="fa fa-pencil"></i>Post</button>
+      </div>    
       <div class="user_post">
         <div class="user_photo">
           <img class="user_img" src="https://lh3.googleusercontent.com/a-/AOh14GhUGGtCW2PepIrJVxOIrl2jm4Q9XzDMs7tlm2TS" alt="">
@@ -90,6 +93,20 @@ export default () => {
   const divElemt = document.createElement('div');
   divElemt.classList.add('position');
   divElemt.innerHTML = viewHome;
+
+  const bttonnewpost = divElemt.querySelector('#bttonnewpost');
+  console.log(bttonnewpost);
+  bttonnewpost.addEventListener('click', (e) => {
+    e.preventDefault();
+    makingPost(userId, userName);
+    // const status = document.querySelector('.privacy').value;
+
+    // let imPost = '';
+    // if (file) {
+    //   imPost = localStorage.getItem('image');
+    //   uploadImagePost(file, userId);
+    //
+  });
 
   return divElemt;
 };
