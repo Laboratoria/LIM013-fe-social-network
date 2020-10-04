@@ -38,7 +38,6 @@ export default () => {
               <input type="file" id="selectPhotoProfile" class="hide" accept="image/jpeg, image/png">
               <img class ="photo-profile" src="./img/photo.png">
             </label>
-
             <p class="user-name" id="user-name-profile">${localStorage.getItem('name')}</p>
             <input class="hide validity" id="inputName" type="text" value="" maxlength="30" pattern="([a-zA-ZÁÉÍÓÚñáéíóúÑ]{1,30}\\s*)+">
           </div>
@@ -56,10 +55,16 @@ export default () => {
           </div>
         </div>
       </div>
+      <form>
+      <h1>Publicación de hoy:</h1>
+      <textarea id="post" name="post" rows="4" cols="50" placeholder="¿Qué pasos compartiras hoy?"></textarea>
+      <input type="submit" id="sudmitPost" value="Submit">
+      </form>
   </main>
   `;
   const divElemt = document.createElement('div');
   divElemt.classList.add('position');
   divElemt.innerHTML = viewHome;
+
   return divElemt;
 };
