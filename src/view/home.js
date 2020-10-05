@@ -8,9 +8,9 @@ export default () => {
 
   const viewHome = `
   <header id='headerHome'>
-    <nav class="nav_Mobile">
-    <p class="name_app">Petlandia</p>        
+    <nav class="nav_Mobile">   
     <label class='btn-menu'><i class="fas fa-bars"></i></label>
+    <img src="/imagenes/PET.png" class="petLogo" alt="logo" width="150px" height="auto" />  
     <ul class='menu_mobile'>
       <li class="optionMobile">
         <a class='btn-header' href='#/profile'>
@@ -92,5 +92,15 @@ export default () => {
   const divElemt = document.createElement('div');
   divElemt.classList.add('position');
   divElemt.innerHTML = viewHome;
+
+  const toggle = divElemt.querySelector('.btn-menu');
+  toggle.addEventListener('click', () => {
+    const menuLat = document.querySelector('.menu_mobile');
+    if (menuLat.className === 'menu_mobile') {
+      menuLat.className += ' responsive';
+    } else {
+      menuLat.className = 'menu_mobile';
+    }
+  });
   return divElemt;
 };

@@ -21,41 +21,43 @@ body {
 	align-content: center;
 	margin: 1rem 1rem 1rem 1rem;
 }
-header {
-	margin: 1rem 1rem 1rem 1rem;
+.header_signin,.header_register {
+
 	width: 100%;
 	max-width: 100%;
-	display: grid;
+	height: 30%;
+	/*display: grid;
 	grid-template-columns: 70% 30%;
-	grid-row: none;
+	grid-row: none;*/
 }
-header h1 {
-	font-size: 356%;
+.petLogo,.petLogoR{
+	margin-left: 4rem;
+}
+.header_signin h1 {
+	font-size: 320%;
 	text-align: center;
-	grid-column: 1;
 	color: #98aebc;
 	text-shadow: 4px 3px 2px rgba(14, 6, 4, 0.59),
 		4px 3px 2px rgba(3, 14, 9, 0.59), 4px 3px 2px rgba(3, 14, 9, 0.59);
 }
 img.logoHuella {
-	width: 40%;
+	width: 10%;
 	max-width: 40%;
 	top: 4rem;
 	left: 2rem;
 	position: relative;
 }
 .logoHeader {
-	width: 80%;
+	width: 60%;
 	max-width: 80%;
 	height: auto;
 	position: relative;
-	margin: -2rem 5rem;
+	margin-left: 4rem;
 }
 .register-container {
-	
-	width: inherit;
+	width: 100%;
 	max-width: inherit;
-	height: auto;
+	height: 50%;
 	position: relative;
 	left: 0rem;
 }
@@ -72,7 +74,7 @@ img.logoHuella {
 form.signIn_Form {
 	width: inherit;
 	height: auto;
-	margin: 1rem 1rem 3rem 1rem;
+	margin: 0rem 1rem 3rem 1rem;
 	position: relative;
 	top: 0rem;
 	background: none;
@@ -189,7 +191,6 @@ input[type='submit']:hover {
 	display: flex;
 	flex-direction: column;
 	align-content: center;
-	margin: 1rem 1rem 1rem 1rem;
 }
 .registerForm-container {
 	width: auto;
@@ -341,12 +342,12 @@ p {
     height: 115px;
 }
 
-.header {
+/*.header {
     text-transform: capitalize;
     max-width: 190px;
     width: 35%;
     margin: 0 auto;
-}
+}*/
 
 .header .name {
     margin: 0px;
@@ -442,9 +443,9 @@ img.user_img{
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-	header h1 {
+	/*header h1 {
 		font-size: 600%;
-	}
+	}*/
 	img.logoHuella {
 		width: 50%;
 		max-width: 50%;
@@ -482,9 +483,6 @@ img.user_img{
 		font-size: 200%;
 	}
 	/*---Main--*/
-	header label {
-        display:none;
-    }
     .name_app{
         display: block;
         margin:2%;
@@ -503,18 +501,7 @@ img.user_img{
     position: relative;
     margin-left: 0%;
     }
-    .body_container{
 
-        display: grid;
-        grid-gap:20px;
-        grid-template-columns: repeat(3,1fr);
-    }
-    .profile_section{
-        display: block;
-    }
-    .timeline_section{
-        grid-column: span 2;
-    }
 
 }
 
@@ -536,10 +523,11 @@ img.user_img{
 		);
 		background: linear-gradient(135deg, #fff895 0%, #fcd697 58%, #f46d6d 100%);
 		background-attachment: fixed;
+		
 	}
-	header h1 {
+	/*header h1 {
 		font-size: 600%;
-	}
+	}*/
 	img.logoHuella {
 		width: 50%;
 		max-width: 50%;
@@ -575,6 +563,19 @@ img.user_img{
 	section.msg-Redes p {
 		font-size: 200%;
 	}
+	.body_container{
+
+        display: grid;
+        grid-gap:20px;
+        grid-template-columns: repeat(3,1fr);
+    }
+    .profile_section{
+        display: block;
+    }
+    .timeline_section{
+        grid-column: span 2;
+	}
+
 }
 
 @media only screen and (min-width: 1024px) and (max-width: 1280px) {
@@ -597,10 +598,10 @@ img.user_img{
 		background-attachment: fixed;
 	}
 	/*TODO  Vista: encabezado  */
-	header h1 {
+	/*header h1 {
 		font-size: 600%;
 		text-align: end;
-	}
+	}*/
 	img.logoHuella {
 		width: 30%;
 		max-width: 30%;
@@ -769,18 +770,11 @@ img.user_img{
 		background-attachment: fixed;
 	}
 	/*TODO  Vista: encabezado  */
-	header {
-		margin: 1rem 1rem 1rem 1rem;
-		width: 50%;
-		max-width: 50%;
-		display: grid;
-		grid-template-columns: 70% 30%;
-		grid-row: none;
-	}
-	header h1 {
+
+	/*header h1 {
 		font-size: 600%;
 		text-align: end;
-	}
+	}*/
 	img.logoHuella {
 		width: 40%;
 		max-width: 40%;
