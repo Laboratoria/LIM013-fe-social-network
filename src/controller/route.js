@@ -1,22 +1,28 @@
 import { components } from '../view/index.js';
 
 const changeView = (route) => {
-  const container = document.getElementById('container');
-  const headerHome = document.querySelector('.main-header');
+  const container = document.querySelector('#container');
+  const containerHeader = document.querySelector('#container-header');
+  window.location.hash = route;
   container.innerHTML = '';
   switch (route) {
     case '':
+      containerHeader.classList.add('hide');
       container.appendChild(components.signIn());
       break;
     case '#/signUp':
       container.appendChild(components.signUp());
       break;
     case '#/home':
-      headerHome.classList.remove('hide');
+      containerHeader.removeChild(containerHeader.firstChild);
+      containerHeader.appendChild(components.header());
+      containerHeader.classList.remove('hide');
       container.appendChild(components.home());
       break;
     case '#/profile':
-      headerHome.classList.remove('hide');
+      containerHeader.removeChild(containerHeader.firstChild);
+      containerHeader.appendChild(components.header());
+      containerHeader.classList.remove('hide');
       container.appendChild(components.profile());
       break;
     case '#/recoverPassword':
@@ -25,13 +31,6 @@ const changeView = (route) => {
     default:
       break;
   }
-  const hamburgerMenu = document.querySelector('#hamburger-menu');
-  const leftMenu = document.querySelector('#left-menu-header');
-  const rightMenu = document.querySelector('#log-out-header');
-  hamburgerMenu.addEventListener('click', () => {
-    leftMenu.classList.toggle('active');
-    rightMenu.classList.toggle('active');
-  });
 };
 
 export { changeView };

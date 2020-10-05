@@ -20,7 +20,7 @@ export default () => {
             <span class="edit-photo"><i class="fas fa-camera edit-photo-btn"></i></span>
           </label>
           <div class="user-information">
-            <button class="fas fa-edit edit-info" id="btn-editProfile"></button>
+          <i class="fas fa-edit edit-info" id="btn-editProfile" ></i>
             <h2 class="user-name">Username</p>
             <h3>About me</h3>
             <div class="container-grid">
@@ -108,17 +108,10 @@ export default () => {
     return photoFile;
   });
 
-  /* const hamburgerMenu = viewProfile.querySelector('#hamburger-menu');
-  const navBar = viewProfile.querySelector('.toggle');
-  hamburgerMenu.addEventListener('click', () => {
-    navBar.classList.toggle('active');
-  }); */
-
   /* -----------------Open modal edit user profile------------------ */
   const modalContainer = viewProfile.querySelector('.modal-container');
   const btnEditProfile = viewProfile.querySelector('#btn-editProfile');
-  btnEditProfile.addEventListener('click' || 'touch', (e) => {
-    e.preventDefault();
+  btnEditProfile.addEventListener('click' || 'touch', () => {
     modalContainer.classList.add('showEditProfile');
   });
   /* -----------------close modal edit user profile------------------ */
@@ -137,6 +130,5 @@ export default () => {
     birthdayProfile.textContent = birthdayContent;
     modalContainer.classList.remove('showEditProfile');
   });
-
   return viewProfile;
 };
