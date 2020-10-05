@@ -84,15 +84,14 @@ export default () => {
         <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
       </div>
     </div>
-
   </div>
   </main>
-
   `;
   const divElemt = document.createElement('div');
   divElemt.classList.add('position');
   divElemt.innerHTML = viewHome;
 
+<<<<<<< HEAD
   const toggle = divElemt.querySelector('.btn-menu');
   toggle.addEventListener('click', () => {
     const menuLat = document.querySelector('.menu_mobile');
@@ -102,5 +101,7 @@ export default () => {
       menuLat.className = 'menu_mobile';
     }
   });
+=======
+>>>>>>> 8ba85c687e1b4c27a875fbf7a862542185529ccf
   return divElemt;
 };
