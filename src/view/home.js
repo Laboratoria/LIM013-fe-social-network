@@ -10,7 +10,7 @@ export default () => {
   <header id='headerHome'>
     <nav class="nav_Mobile">   
     <label class='btn-menu'><i class="fas fa-bars"></i></label>
-    <img src="/imagenes/PET.png" class="petLogo" alt="logo" width="150px" height="auto" />  
+    <img src="/imagenes/PET.png" class="petLogo" alt="logo" width="200px" height="auto" />  
     <ul class='menu_mobile'>
       <li class="optionMobile">
         <a class='btn-header' href='#/profile'>
@@ -80,8 +80,12 @@ export default () => {
         <div class="photo_post">
           <img src="https://i.imgur.com/vcMD5EZ.jpg" style="width:100%" alt="Northern Lights" class="photo_post_img">
         </div>
-        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fas fa-heart"></i> Like</button> 
-        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button> 
+        <hr class="w3-clear">
+        <div class='button-section'>
+          <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fas fa-heart"></i> Like</button> 
+          <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button>
+        </div>
+        <hr class="w3-clear">
       </div>
     </div>
   </div>
@@ -91,7 +95,6 @@ export default () => {
   divElemt.classList.add('position');
   divElemt.innerHTML = viewHome;
 
-<<<<<<< HEAD
   const toggle = divElemt.querySelector('.btn-menu');
   toggle.addEventListener('click', () => {
     const menuLat = document.querySelector('.menu_mobile');
@@ -101,7 +104,5 @@ export default () => {
       menuLat.className = 'menu_mobile';
     }
   });
-=======
->>>>>>> 8ba85c687e1b4c27a875fbf7a862542185529ccf
   return divElemt;
 };
