@@ -15,6 +15,7 @@ body {
 	background: linear-gradient(to bottom, #fff895 0%, #fcd697 58%, #f46d6d 100%);
 	background-attachment: fixed;
 }
+/*TODO vista sign y register*/
 .sign {
 	display: flex;
 	flex-direction: column;
@@ -242,6 +243,7 @@ section.msg-Redes p {
 	font-size: 100%;
 	font-family: 'Abel', sans-serif;
 }
+/*TODO profile*/
 #headerHome{
     width: 100%;
     background-color:#abecea;
@@ -411,6 +413,49 @@ img.user_img{
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     border-radius: 50%;
     height: 80px;
+}
+/*TODO container posts*/
+.like-picture{
+    width: 16%;
+	max-width: 16%;
+		border-radius: 50%;
+		margin-bottom: 0.5em;
+}
+.status_imput{
+    width: 100%;
+    height: 6em;
+    box-sizing: border-box;
+    border: 0.1em solid #C4C4C4;
+    resize: none;
+    position: relative;
+    margin-bottom: 1em;
+    font-family: "Noto sans", sans-serif;
+    padding: 0.4em;
+    font-size: 1.2em;
+    outline: none;
+}
+.hide{
+    display: none;
+}
+
+.upload{
+    display: none;
+}
+
+.post-new-image{
+	width: 100%;
+	max-width: 100%;
+}
+.cancel-image{
+    width: 2em;
+    height: 5em;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url(./imagenes/cancel.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+    /* outline: none; */
+    cursor: pointer;
 }
 
 

@@ -8,6 +8,7 @@ export default () => {
   dataProfile();
   const userId = localStorage.getItem('userId');
   const userName = localStorage.getItem('name');
+  const userPhoto = localStorage.getItem('');
   // const userPhoto = localStorage.getItem('userphoto');
 
   const viewHome = `
@@ -69,10 +70,20 @@ export default () => {
     </aside>
     <div class="timeline_section">
       <div class="update_container">
-        <h6 class="ask_status">¿Qué hiciste con tu mascota?</h6>
-        <input class="status_imput" id="status_input" placeholder="Cuéntanos las travesuras de tu mejor amigo." >
-        <button type="button" class="Uploadphoto_buttom"><i class="fas fa-camera"></i> foto</button> 
-        <button type="button" id="bttonnewpost" class="post_buttom"><i class="fa fa-pencil"></i>Post</button>
+      <img class="like-picture" src="${userPhoto || 'imagenes/man.png'}" alt="">
+        <h1  class="ask_status">¿Qué hiciste con tu mascota hoy?</h1>
+        <textarea name="" id="status_input" cols="30" rows="10" class="status_imput" id="status_input" placeholder="Cuéntanos las travesuras de tu mejor amigo."></textarea>
+        <img id="showPicture" class="post-new-image" src="#" alt="">
+        <button id="btnCancelImg" class="cancel-image"></button>
+        <label for="selectImage"> 
+          <input type="file" id="selectImage"  name="imagensubida" class="upload" accept="image/png, .jpeg, .jpg, image/gif">
+          <i class="fas fa-camera"></i>
+        </label>        
+        <select id="privacy" class="privacy">
+          <option value="0">Publico</option>
+          <option value="1">Privado</option>
+      </select>
+      <button type="button" id="bttonnewpost" class="post_buttom"><i class="fa fa-pencil"></i>Post</button>
       </div>    
       <div class="user_post">
         <div class="user_photo">
@@ -94,19 +105,37 @@ export default () => {
   divElemt.classList.add('position');
   divElemt.innerHTML = viewHome;
 
+  const imagenUploading = divElemt.querySelector('#selectImage');
+  const imagenUpload = divElemt.querySelector('#showPicture');
+  const bttonimagenUploadCancelling = divElemt.querySelector('#btnCancelImg');
+  
+  // eslint-disable-next-line no-unused-vars
+  let file = '';
+  imagenUploading.addEventListener('change', (e) => {
+    const input = e.target;
+    const reader = new FileReader();
+    console.log(imagenUploading);
+    reader.onload = () => {
+      const dataURL = reader.result;
+      imagenUpload.src = dataURL;
+      localStorage.setItem('image', dataURL);
+    };
+    reader.readAsDataURL(input.files[0]);
+    file = e.target.files[0];
+    bttonimagenUploadCancelling.classList.remove('hide');
+  });
+
   const bttonnewpost = divElemt.querySelector('#bttonnewpost');
   console.log(bttonnewpost);
   bttonnewpost.addEventListener('click', (e) => {
     e.preventDefault();
-    makingPost(userId, userName);
-    // const status = document.querySelector('.privacy').value;
-
-    // let imPost = '';
-    // if (file) {
-    //   imPost = localStorage.getItem('image');
-    //   uploadImagePost(file, userId);
-    //
+    makingPost(file, userId, userName, userPhoto);
   });
 
+  bttonimagenUploadCancelling.addEventListener('click', () => {
+    localStorage.removeItem('image');
+    imagenUpload.src = ' ';
+    bttonimagenUploadCancelling.classList.add('hide');
+  });
   return divElemt;
 };

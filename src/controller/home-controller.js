@@ -1,5 +1,8 @@
 import { currentUser } from '../firebase/auth-controller.js';
 
+// eslint-disable-next-line import/no-cycle
+import { uploadImgPosting } from '../firebase/storage.js';
+
 import { getUser, createPost } from '../firebase/firestore-controller.js';
 
 export const dataProfile = () => {
@@ -10,17 +13,23 @@ export const dataProfile = () => {
     localStorage.setItem('location', docUser.data().location);
   });
   localStorage.setItem('name', actualUser.displayName);
-  const userProfilePhoto = actualUser.photoURL || './img/profile-ico.png';
+  const userProfilePhoto = actualUser.photoURL || 'imagenes/man.png';
   localStorage.setItem('userphoto', userProfilePhoto);
   localStorage.setItem('userId', actualUser.uid);
 };
 
-export const makingPost = (userId, userName) => {
+export const makingPost = (file, userId, userName, userPhoto) => {
   const newPost = document.querySelector('#status_input').value;
-  // const status = document.querySelector('.privacy').value;
-  // const date = new Date().toLocaleString();
+  const status = document.querySelector('.privacy').value;
+  const date = new Date().toLocaleString();
 
-  createPost(userId, userName, newPost)
+  let imPost = '';
+  if (file) {
+    imPost = localStorage.getItem('image');
+    uploadImgPosting(file, userId);
+  }
+
+  createPost(userId, userName, newPost, imPost, date, status, userPhoto)
     .then(() => {
       document.querySelector('#status_input').value = '';
     });
