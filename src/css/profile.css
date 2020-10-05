@@ -90,7 +90,7 @@
 .edit-info {
   margin-left: 100%;
   margin-top: 1rem; 
-  cursor: pointer; 
+  cursor: pointer;
 }
 .user-information h2 {
   text-align: center;
@@ -109,6 +109,9 @@
 .user-posts p {
   padding: 2rem; 
   text-align: center;
+}
+#log-out-header{
+  cursor: pointer;
 }
 /* ---------------------view modal settings -------------------------*/
 .modal-container{
