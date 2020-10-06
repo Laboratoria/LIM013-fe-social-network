@@ -1,4 +1,5 @@
 import { dataProfile } from '../controller/home-controller.js';
+
 export default () => {
   dataProfile();
   const userId = localStorage.getItem('userId');
@@ -68,7 +69,7 @@ export default () => {
   const divElemt = document.createElement('div');
   divElemt.classList.add('profile_page');
   divElemt.innerHTML = viewProfile;
-/*----Button Toggle---*/
+  /* ----Button Toggle---*/
   const toggle = divElemt.querySelector('.btn-menu1');
   toggle.addEventListener('click', () => {
     const menuLat = document.querySelector('.menu_mobile1');
@@ -78,24 +79,24 @@ export default () => {
       menuLat.className = 'menu_mobile1';
     }
   });
-  /*----Upload images---*/
+  /* ----Upload images---*/
   const selectPhotoProfile = divElemt.querySelector('#selectPhotoProfile');
   const profilePicture = divElemt.querySelector('.profile_img');
-  selectPhotoProfile.addEventListener('change',(e)=>{
-    const file    = e.target.files[0];
+  selectPhotoProfile.addEventListener('change', (e) => {
+    const file = e.target.files[0];
     const reader = new FileReader();
 
     reader.onload = () => {
-      profilePicture.src =reader.result
+      profilePicture.src = reader.result;
     };
     if (file) {
       reader.readAsDataURL(file);
     } else {
-      preview.src = "";
+      profilePicture.src = '';
     }
   });
 
-  const edit_btn=divElemt.querySelector(".edit_btn")
+  const editBtn = divElemt.querySelector('.edit_btn');
   const name = divElemt.querySelector('.name');
   const namePet = divElemt.querySelector('.name_pet');
   const selectProfile = divElemt.querySelector('#selectProfile');
@@ -103,12 +104,12 @@ export default () => {
   const btnSave = divElemt.querySelector('#btnSave');
   const btnCancel = divElemt.querySelector('#btnCancel');
 
-  edit_btn.addEventListener('click', () => {
+  editBtn.addEventListener('click', () => {
     aboutMe.contentEditable = 'true';
     aboutMe.classList.add('input-style');
     name.classList.add('hide');
 
-    edit_btn.classList.add('hide');
+    editBtn.classList.add('hide');
     btnSave.classList.remove('hide');
     btnCancel.classList.remove('hide');
     selectProfile.classList.remove('hide');
