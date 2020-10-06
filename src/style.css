@@ -247,6 +247,13 @@ section.msg-Redes p {
     background-color:#abecea;
 
 }
+
+.btn-header{
+	color:#fff;
+}
+.btn-header i{
+	font-size: 20px;
+}
 .nav_Mobile{
     display: flex;
 }
@@ -269,7 +276,8 @@ section.msg-Redes p {
     line-height: 3;
     position: absolute;
     margin-left: 0%;
-    background-color:#abecea;
+	background-color:#abecea;
+	z-index: 1;
 }
 .menu_mobile.responsive,.menu_mobile1.responsive{
     visibility: visible;
@@ -280,6 +288,7 @@ li {
 ul li a{
     text-decoration: none;
 }
+
 .body_container{
     width:90%;
     margin:20px auto;
@@ -361,6 +370,10 @@ p {
 .hide{
 	visibility: hidden;
   }
+#selectProfile{
+	margin:0%;
+	padding:0%;
+}
   #selectProfile i{
 	visibility: visible;
 	width: 10%;

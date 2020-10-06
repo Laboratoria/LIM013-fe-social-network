@@ -20,7 +20,7 @@ export default () => {
             <i class="fas fa-user-edit"></i>Mi Perfil</a>
         </li>
         <li class="optionMobile">
-          <a href='#/home'>
+          <a class='btn-header'href='#/home'>
             <i class="fas fa-home"></i>Inicio</a>
         </li>
         <li class="optionMobile">
