@@ -16,7 +16,7 @@ body {
 	background-attachment: fixed;
 }
 /*TODO vista sign y register*/
-.sign {
+.sign ,.position {
 	display: flex;
 	flex-direction: column;
 	align-content: center;
@@ -181,11 +181,7 @@ input[type='submit']:hover {
 	background-color: gray;
 	color: white;
 }
-.position {
-	display: flex;
-	flex-direction: column;
-	align-content: center;
-}
+
 .registerForm-container {
 	width: auto;
 	height: auto;
