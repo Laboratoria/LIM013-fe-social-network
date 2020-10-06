@@ -5,7 +5,9 @@ import { dataProfile } from '../controller/home-controller.js';
 
 export default () => {
   dataProfile();
-
+  const userId = localStorage.getItem('userId');
+  const userName = localStorage.getItem('name');
+  const userPhoto = localStorage.getItem('userphoto');
   const viewHome = `
   <header id='headerHome'>
     <nav class="nav_Mobile">   
@@ -36,30 +38,23 @@ export default () => {
         </div>
         <div class="content">
           <div class="profile">
-            <img class="profile-img" src="https://lh3.googleusercontent.com/a-/AOh14GhUGGtCW2PepIrJVxOIrl2jm4Q9XzDMs7tlm2TS" alt="">
+            <img class="profile-img" src="${userPhoto}" alt="">
           </div>
-          <div class="header">
-            <h2 class="name">Lorem</h2>
+          <div class="header_name">
+            <h2 class="name">${userName}</h2>
             <p class='location'></p>
-          </div>
-          <div class="info">
-            <p class="description"></p>
           </div>
           <div class="labels">
             <div class="label">
-              <p>Phone:</p>
-              <h2 class="phone"></h2>
+              <p>Nombre de tu mascota:</p>
+              <h2 class="name_pet">Molly</h2>
             </div>
             <div class="label">
-              <p>Cell:</p>
-              <h2 class="cell"></h2>
-            </div>
-            <div class="label">
-              <p>Email:</p>
-              <h2 class="email"></h2>
+              <p class="description">Cuéntanos acerca de ti y tu mascota</p>
+              <p class="profile-text">Molly y yo </p>
             </div>
           </div>
-          <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fas fa-edit"></i>Edita tu perfil</button>
+          <button type="button" class="edit_btn"><i class="fas fa-edit"></i>Edita tu perfil</button>
         </div>
       </div>
     </aside>
@@ -77,7 +72,6 @@ export default () => {
         </div>
         <h4>John Doe</h4>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <div class="photo_post">
           <img src="https://i.imgur.com/vcMD5EZ.jpg" style="width:100%" alt="Northern Lights" class="photo_post_img">
         </div>
         <hr class="w3-clear">

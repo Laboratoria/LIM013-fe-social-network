@@ -3,10 +3,9 @@ import { userRegistration } from '../controller/register-controller.js';
 export default () => {
   const viewRegister = `
   <section class='header_register'>
-  <img src="/imagenes/PET.png" class="petLogoR" alt="logo" width="200px" height="auto" />    <img src="/imagenes/huella.png" class="logoHuella" alt="imagenHuella" width="400px" height="auto" />
-    <a href="#/">
-      <img src="/imagenes/petlandia.png" class="logoHeader" alt="imagenPetlandia" width="400px" height="auto" />
-    </a>
+    <img src="/imagenes/PET.png" class="petLogo" alt="logo" width="200px" height="auto" />    
+    <img src="/imagenes/huella.png" class="logoHuella" alt="imagenHuella" width="400px" height="auto" />
+    <img src="/imagenes/petlandia.png" class="logoHeader" alt="imagenPetlandia" width="400px" height="auto" />
   </section>
   <section class="register-container">
     <section class="registerForm-container">
@@ -40,7 +39,7 @@ export default () => {
         </section>
       </form>
     </section>
-</section>
+  </section>
 `;
   const divElemt = document.createElement('div');
   divElemt.classList.add('position');
