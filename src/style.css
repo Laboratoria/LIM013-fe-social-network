@@ -16,7 +16,7 @@ body {
 	background-attachment: fixed;
 }
 /*TODO vista sign y register*/
-.sign ,.position {
+.sign  {
 	display: flex;
 	flex-direction: column;
 	align-content: center;
@@ -181,7 +181,11 @@ input[type='submit']:hover {
 	background-color: gray;
 	color: white;
 }
-
+.position {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+}
 .registerForm-container {
 	width: auto;
 	height: auto;
@@ -232,6 +236,11 @@ section.msg-Redes p {
 	margin: 1rem 2rem;
 	font-size: 100%;
 	font-family: 'Abel', sans-serif;
+}
+/*---Header Home---*/
+.petLogoMenu{
+	width: 40%;
+    margin: 1% 30%;
 }
 #headerHome{
     width: 100%;
@@ -771,6 +780,10 @@ img.user_img{
 	#headerHome label{
 		display:none;
 	}
+	.petLogoMenu {
+		width: 15%;
+		margin: 1% 2%;
+	}
 	.menu_mobile ,.menu_mobile1{
 		display: flex;
 		visibility: visible;
@@ -835,9 +848,9 @@ img.user_img{
 		max-width: 40%;
 		top: 10rem;
 	}
-	.petLogo{
-		width: 80%;
-		margin: 9% 25%;
+	.petLogoMenu {
+		width: 15%;
+		margin: 1% 2%;
 	}
 	.logoHeader {
 		width: 30%;
@@ -853,8 +866,6 @@ img.user_img{
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
-
-
 	}
 
 	.container {

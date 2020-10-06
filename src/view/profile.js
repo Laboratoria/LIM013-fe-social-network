@@ -8,7 +8,7 @@ export default () => {
   <header id='headerHome'>
   <nav class="nav_Mobile">   
   <label class='btn-menu1'><i class="fas fa-bars"></i></label>
-  <img src="/imagenes/PET.png" class="petLogo" alt="logo" width="200px" height="auto" />  
+  <img src="/imagenes/PET.png" class="petLogoMenu" alt="logo" width="200px" height="auto" />  
   <ul class='menu_mobile1'>cd
     <li class="optionMobile">
       <a class='btn-header' href='#/profile'>
