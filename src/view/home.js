@@ -2,13 +2,14 @@
 // eslint-disable-next-line max-len
 // import { signingOut, gettingProfileInfo, savingChanges } from '../view-controller/profile-controller.js';
 // eslint-disable-next-line import/named
+// eslint-disable-next-line import/no-cycle
 import { dataProfile, makingPost } from '../controller/home-controller.js';
 
 export default () => {
   dataProfile();
   const userId = localStorage.getItem('userId');
   const userName = localStorage.getItem('name');
-  const userPhoto = localStorage.getItem('');
+  const userPhoto = localStorage.getItem('userphoto');
   // const userPhoto = localStorage.getItem('userphoto');
 
   const viewHome = `
@@ -74,16 +75,16 @@ export default () => {
         <h1  class="ask_status">¿Qué hiciste con tu mascota hoy?</h1>
         <textarea name="" id="status_input" cols="30" rows="10" class="status_imput" id="status_input" placeholder="Cuéntanos las travesuras de tu mejor amigo."></textarea>
         <img id="showPicture" class="post-new-image" src="#" alt="">
-        <button id="btnCancelImg" class="cancel-image"></button>
+        <button id="btnCancelImg" class="hide cancel-image"></button>
         <label for="selectImage"> 
           <input type="file" id="selectImage"  name="imagensubida" class="upload" accept="image/png, .jpeg, .jpg, image/gif">
-          <i class="fas fa-camera"></i>
+          <i class="fas fa-camera">Foto</i>
         </label>        
         <select id="privacy" class="privacy">
           <option value="0">Publico</option>
           <option value="1">Privado</option>
       </select>
-      <button type="button" id="bttonnewpost" class="post_buttom"><i class="fa fa-pencil"></i>Post</button>
+      <button type="button" id="bttonnewpost" class="post_buttom">Post</button>
       </div>    
       <div class="user_post">
         <div class="user_photo">
@@ -108,7 +109,6 @@ export default () => {
   const imagenUploading = divElemt.querySelector('#selectImage');
   const imagenUpload = divElemt.querySelector('#showPicture');
   const bttonimagenUploadCancelling = divElemt.querySelector('#btnCancelImg');
-  
   // eslint-disable-next-line no-unused-vars
   let file = '';
   imagenUploading.addEventListener('change', (e) => {
@@ -134,7 +134,7 @@ export default () => {
 
   bttonimagenUploadCancelling.addEventListener('click', () => {
     localStorage.removeItem('image');
-    imagenUpload.src = ' ';
+    imagenUpload.src = '';
     bttonimagenUploadCancelling.classList.add('hide');
   });
   return divElemt;

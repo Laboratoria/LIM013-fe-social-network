@@ -4,6 +4,7 @@ import Register from './register.js';
 import viewSignIn from './sigin.js';
 import viewNotFound from './404.js';
 // eslint-disable-next-line import/no-unresolved
+// eslint-disable-next-line import/no-cycle
 import Home from './home.js';
 import Profile from './profile.js';
 
