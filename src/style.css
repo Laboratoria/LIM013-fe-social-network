@@ -450,14 +450,24 @@ img.user_img{
     width: 2em;
     height: 5em;
     background-color: rgba(0, 0, 0, 0);
-    background-image: url(./imagenes/cancel.png);
+    background-image: url(./imagenes/delete.png);
     background-repeat: no-repeat;
     background-size: contain;
     border: none;
     /* outline: none; */
     cursor: pointer;
 }
-
+/*TODO vista profile posts*/
+.post_buttom {
+	width: 20%;
+    text-align: center;
+    height: 2rem;
+    /* line-height: 2rem; */
+    margin: 0rem 1rem 0rem 1rem;
+}
+i.fa.fa-pencil{
+	width: auto;
+}
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 601px) and (max-width: 767px) {
