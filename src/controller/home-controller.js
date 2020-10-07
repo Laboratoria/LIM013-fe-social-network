@@ -4,18 +4,20 @@ import { getUser, createPost } from '../firebase/firestore-controller.js';
 
 export const dataProfile = () => {
   currentUserAsync().then((actualUser) => {
-    getUser(actualUser).then((docUser) => {
-      localStorage.setItem('aboutUs', docUser.data().aboutUs);
-      localStorage.setItem('petName', docUser.data().petName);
+    localStorage.setItem('userId', actualUser.uid);
+    const getLocalUser=localStorage.getItem('userId');
+    console.log(getLocalUser);
+    getUser(getLocalUser).then((docUser) => {
+      localStorage.setItem('aboutMe', docUser.data().aboutMe);
+      localStorage.setItem('location', docUser.data().location);
     });
     localStorage.setItem('name', actualUser.displayName);
     const userProfilePhoto = actualUser.photoURL || './img/profile-ico.png';
     localStorage.setItem('userphoto', userProfilePhoto);
-    localStorage.setItem('userId', actualUser.uid);
   })
     .catch(() => {
-      console.log('error de data profile');
-    });
+      console.log("error de data profile")
+    })
 };
 export const signOut = () => {
   localStorage.clear();
