@@ -23,7 +23,7 @@ export default (dataCurrentUser) => {
             <span class="edit-photo"><i class="fas fa-camera edit-photo-btn"></i></span>
           </label>
           <div class="user-information">
-          <i class="fas fa-edit edit-info" id="btn-editProfile" ></i>
+          <span class = "edit-info" id="btn-editProfile"><i class="fas fa-edit"></i></span>
             <h2 class="user-name">${dataCurrentUser.username}</p>
             <h3>About me</h3>
             <div class="container-grid">
