@@ -7,7 +7,7 @@ import {
 
 export default () => {
   const viewSignIn = `
-  <section class='header_signin'>
+<section class='header_signin'>
   <img src="/imagenes/PET.png" class="petLogo" alt="logo" width="200px" height="auto" />
   <img src="/imagenes/huella.png" class="logoHuella" alt="imagenHuella" width="400px" height="auto" />
   <img src="/imagenes/petlandia.png" class="logoHeader" alt="imagenPetlandia" width="400px" height="auto" />

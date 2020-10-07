@@ -1,7 +1,9 @@
 
-export const createUser = (idDoc, newUserName, newUserPhoto) => firebase.firestore().collection('users').doc(idDoc).set({
+export const createUser = (idDoc, newUserName, newUserPhoto,namePet, description) => firebase.firestore().collection('users').doc(idDoc).set({
+  aboutUs: description,
   displayName: newUserName,
   photoURL: newUserPhoto,
+  petName: namePet,
 });
 export const getUser = docUser => firebase.firestore().collection('users').doc(docUser).get();
 
@@ -15,6 +17,17 @@ export const createPost = (id, userName, newPost, imagePost, date, status, userP
   privacy: status,
   likes: [],
 });
+
+/* --Profile--*/
+
+export const getProfileInfo = userId => firebase.firestore().collection('users').doc(userId).get();
+
+export const updateProfileInfo = (idDoc,newUserName, namePet, description) => firebase.firestore().collection('users').doc(idDoc).update({
+  aboutUs: description,
+  displayName: newUserName,
+  petName: namePet,
+});
+
 // eslint-disable-next-line object-shorthand
 export const updatePost = (id, newPost) => firebase.firestore().collection('posts').doc(id).update({ post: newPost });
 
@@ -32,3 +45,4 @@ export const getAllPosts = callback => firebase.firestore().collection('posts')
     });
     callback(allPosts);
   });
+
