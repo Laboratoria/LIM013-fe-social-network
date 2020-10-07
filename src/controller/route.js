@@ -13,20 +13,18 @@ const changeView = (route) => {
       container.appendChild(components.signUp());
       break;
     case '#/home':
+      container.appendChild(components.header());
       getDataCurrentUser()
         .then((doc) => {
-          console.log(doc.data());
+          container.appendChild(components.home(doc.data()));
         });
-      container.appendChild(components.header());
-      container.appendChild(components.home());
       break;
     case '#/profile':
+      container.appendChild(components.header());
       getDataCurrentUser()
         .then((doc) => {
           container.appendChild(components.profile(doc.data()));
-          console.log(doc.data());
         });
-      container.appendChild(components.header());
       break;
     case '#/recoverPassword':
       container.appendChild(components.recoverPassword());

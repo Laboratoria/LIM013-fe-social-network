@@ -50,17 +50,29 @@ export default () => {
   btnGoogle.addEventListener('click', () => {
     signInforgoogle()
       .then(() => {
-        sendDataCurrentUser()
-          .then(() => {
-            getDataCurrentUser()
-              .then((doc) => {
-                doc.data();
-                localStorage.setItem('datauser', JSON.stringify(doc.data()));
-              })
-              .then(() => {
-                window.location.hash = '#/home';
-              });
+        getDataCurrentUser()
+          .then((doc) => {
+            if (doc.exists) {
+              window.location.hash = '#/home';
+            } else {
+              sendDataCurrentUser()
+                .then(() => {
+                  window.location.hash = '#/home';
+                });
+            }
           });
+        // sendDataCurrentUser()
+        //   .then(() => {
+        //     // getDataCurrentUser()
+        //     //   .then((doc) => {
+        //     //     doc.data();
+        //     //     localStorage.setItem('datauser', JSON.stringify(doc.data()));
+        //     //   })
+        //     //   .then(() => {
+        //     //     window.location.hash = '#/home';
+        //     //   });
+        //     window.location.hash = '#/home';
+        //   });
       });
   });
   /* ----------------regarding DOM manipulation for login with created credentials-------------- */
@@ -73,15 +85,16 @@ export default () => {
     signIn(email, password)
       .then((data) => {
         if (data.user.emailVerified) {
-          sendDataCurrentUser()
-            .then(() => {
-              getDataCurrentUser()
-                .then((doc) => {
-                  localStorage.setItem('datauser', JSON.stringify(doc.data()));
-                })
-                .then(() => {
-                  window.location.hash = '#/home';
-                });
+          getDataCurrentUser()
+            .then((doc) => {
+              if (doc.exists) {
+                window.location.hash = '#/home';
+              } else {
+                sendDataCurrentUser()
+                  .then(() => {
+                    window.location.hash = '#/home';
+                  });
+              }
             });
         } else {
           error.textContent = 'Account not verified, please check your inbox';

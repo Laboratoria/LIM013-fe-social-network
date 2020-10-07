@@ -1,7 +1,7 @@
 import { updateCurrentUser, getDataCurrentUser } from '../controller/controller-cloud.js';
 
-export default () => {
-  const dataCurrentUser = JSON.parse(localStorage.getItem('datauser'));
+export default (dataCurrentUser) => {
+  /*  const dataCurrentUser = JSON.parse(localStorage.getItem('datauser')); */
   const viewProfile = document.createElement('div');
   viewProfile.classList.add('profile-container');
   viewProfile.innerHTML = `
@@ -81,8 +81,6 @@ export default () => {
 </section>
 
   `;
-  
-
   const selectCoverPage = viewProfile.querySelector('#select-cover-page');
   const coverPhoto = viewProfile.querySelector('.cover-photo');
   let coverFile = '';
