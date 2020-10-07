@@ -30,7 +30,10 @@ export default () => {
   btnSignOut.addEventListener('click', (e) => {
     e.preventDefault();
     window.location.hash = '';
-    signOut();
+    signOut()
+      .then(() => {
+        localStorage.clear();
+      });
   });
   return viewHeader;
 };
