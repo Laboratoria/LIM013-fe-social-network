@@ -1,11 +1,14 @@
-// import { eachPost } from './post.js';
+import { postLoad } from './post.js';
 // eslint-disable-next-line max-len
 // import { signingOut, gettingProfileInfo, savingChanges } from '../view-controller/profile-controller.js';
 // eslint-disable-next-line import/named
 // eslint-disable-next-line import/no-cycle
 import { dataProfile, makingPost } from '../controller/home-controller.js';
+// eslint-disable-next-line import/no-cycle
+import { cambioVista } from '../controller/router.js';
 
-export default () => {
+
+export default (notes) => {
   dataProfile();
   const userId = localStorage.getItem('userId');
   const userName = localStorage.getItem('name');
@@ -65,7 +68,7 @@ export default () => {
               <h2 class="email"></h2>
             </div>
           </div>
-          <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fas fa-edit"></i>Edita tu perfil</button>
+          <button type="button" id="btnProfile" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fas fa-edit"></i>Edita tu perfil</button>
         </div>
       </div>
     </aside>
@@ -85,7 +88,8 @@ export default () => {
           <option value="1">Privado</option>
       </select>
       <button type="button" id="bttonnewpost" class="post_buttom">Post</button>
-      </div>    
+      </div>
+      <div class="all-posts"></div>   
       <div class="user_post">
         <div class="user_photo">
           <img class="user_img" src="https://lh3.googleusercontent.com/a-/AOh14GhUGGtCW2PepIrJVxOIrl2jm4Q9XzDMs7tlm2TS" alt="">
@@ -114,7 +118,6 @@ export default () => {
   imagenUploading.addEventListener('change', (e) => {
     const input = e.target;
     const reader = new FileReader();
-    console.log(imagenUploading);
     reader.onload = () => {
       const dataURL = reader.result;
       imagenUpload.src = dataURL;
@@ -126,16 +129,25 @@ export default () => {
   });
 
   const bttonnewpost = divElemt.querySelector('#bttonnewpost');
-  console.log(bttonnewpost);
   bttonnewpost.addEventListener('click', (e) => {
     e.preventDefault();
     makingPost(file, userId, userName, userPhoto);
+  });
+
+  const elementPost = divElemt.querySelector('.all-posts');
+  notes.forEach((element) => {
+    elementPost.appendChild(postLoad(element));
   });
 
   bttonimagenUploadCancelling.addEventListener('click', () => {
     localStorage.removeItem('image');
     imagenUpload.src = '';
     bttonimagenUploadCancelling.classList.add('hide');
+  });
+
+  const buttonEditProfile = divElemt.querySelector('#btnProfile');
+  buttonEditProfile.addEventListener('click', () => {
+    cambioVista('#/profile');
   });
   return divElemt;
 };

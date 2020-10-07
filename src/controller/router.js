@@ -23,8 +23,16 @@ export const cambioVista = (route) => {
       routeSelected = sectionContainer.appendChild(components.register());
       break;
     case '#/home':
-      sectionContainer.innerHTML = '';
-      routeSelected = sectionContainer.appendChild(components.home());
+      getAllPosts((notes) => {
+        const arrNotes = [];
+        notes.forEach((note) => {
+          if (note.user === currentUser.uid) {
+            arrNotes.push(note);
+          }
+        });
+        sectionContainer.innerHTML = '';
+        routeSelected = sectionContainer.appendChild(components.home());
+      });
       break;
     case '#/profile':
       getAllPosts((notes) => {

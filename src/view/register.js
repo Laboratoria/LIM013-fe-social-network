@@ -2,13 +2,11 @@ import { userRegistration } from '../controller/register-controller.js';
 
 export default () => {
   const viewRegister = `
-  <header>
-    <h1>Petlandia</h1>
+  <section class='header_register'>
+    <img src="/imagenes/PET.png" class="petLogo" alt="logo" width="200px" height="auto" />    
     <img src="/imagenes/huella.png" class="logoHuella" alt="imagenHuella" width="400px" height="auto" />
-    <a href="#/">
-      <img src="/imagenes/petlandia.png" class="logoHeader" alt="imagenPetlandia" width="400px" height="auto" />
-    </a>
-  </header>
+    <img src="/imagenes/petlandia.png" class="logoHeader" alt="imagenPetlandia" width="400px" height="auto" />
+  </section>
   <section class="register-container">
     <section class="registerForm-container">
       <form id="signUp-form" class="form">
@@ -41,7 +39,7 @@ export default () => {
         </section>
       </form>
     </section>
-</section>
+  </section>
 `;
   const divElemt = document.createElement('div');
   divElemt.classList.add('position');

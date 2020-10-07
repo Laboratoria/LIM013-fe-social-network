@@ -3,6 +3,11 @@ export const signUp = (emailSignUp, passwordSignUp) => firebase.auth()
   .createUserWithEmailAndPassword(emailSignUp, passwordSignUp);
 // Usuario corriente
 export const currentUser = () => firebase.auth().currentUser;
+export const currentUserAsync = () => new Promise((resolve, reject) => {
+  firebase.auth().onAuthStateChanged((user) => {
+    resolve(user);
+  }, reject);
+});
 // Verificación de email
 export const verifEmail = () => {
   const user = firebase.auth().currentUser();

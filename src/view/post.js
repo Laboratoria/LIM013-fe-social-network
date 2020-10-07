@@ -28,7 +28,8 @@ const postContentText = (img, post, id) => {
 export const postLoad = (objePost) => {
   const note = document.createElement('div');
   note.classList.add('container-post');
-  const user = currentUser().uid;
+  const userId = currentUser().uid;
+  console.log(userId);
 
   note.innerHTML = `
     <div class="user_photo">
@@ -38,14 +39,14 @@ export const postLoad = (objePost) => {
     <div>
       <section>
         <p>${objePost.name} </p>
-        <select id="privacy" class="privacy ${(user === objePost.user) || 'hide'}">
+        <select id="privacy" class="privacy ${(userId === objePost.currentUser) || 'hide'}">
           <option value="0" $ { (objePost.privacy === '0') || 'selected'} >Publico</option>
           <option value="0" $ { (objePost.privacy === '1') || 'selected'} >Privado</option>
         </select>
       </section>
       ${postContentText(objePost.img, objePost.post, objePost.id)}
       <div class="container-menu-post" id="containerMenu">
-        <label id="menu-${objePost.id}" class="${(user !== objePost.user) ? 'hide' : 'label-menu-post'}"></label>
+        <label id="menu-${objePost.id}" class="${(userId !== objePost.currentUser) ? 'hide' : 'label-menu-post'}"></label>
         <nav class="nav-post hide" id="nav-${objePost.id}">
           <ul class="menu-post">
           <li class="btn-post-edit" id="edit-${objePost.id}">Editar</li>

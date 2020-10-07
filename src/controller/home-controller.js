@@ -1,4 +1,4 @@
-import { currentUser } from '../firebase/auth-controller.js';
+import { currentUserAsync } from '../firebase/auth-controller.js';
 
 // eslint-disable-next-line import/no-cycle
 import { uploadImgPosting } from '../firebase/storage.js';
@@ -6,16 +6,21 @@ import { uploadImgPosting } from '../firebase/storage.js';
 import { getUser, createPost } from '../firebase/firestore-controller.js';
 
 export const dataProfile = () => {
-  const actualUser = currentUser();
-  localStorage.setItem('uid', actualUser);
-  getUser(actualUser.uid).then((docUser) => {
-    localStorage.setItem('aboutMe', docUser.data().aboutMe);
-    localStorage.setItem('location', docUser.data().location);
-  });
-  localStorage.setItem('name', actualUser.displayName);
-  const userProfilePhoto = actualUser.photoURL || 'imagenes/man.png';
-  localStorage.setItem('userphoto', userProfilePhoto);
-  localStorage.setItem('userId', actualUser.uid);
+  currentUserAsync().then((actualUser) => {
+    localStorage.setItem('userId', actualUser.uid);
+    const getLocalUser = localStorage.getItem('userId');
+    console.log(getLocalUser);
+    getUser(getLocalUser).then((docUser) => {
+      localStorage.setItem('aboutMe', docUser.data().aboutMe);
+      localStorage.setItem('location', docUser.data().location);
+    });
+    localStorage.setItem('name', actualUser.displayName);
+    const userProfilePhoto = actualUser.photoURL || './img/profile-ico.png';
+    localStorage.setItem('userphoto', userProfilePhoto);
+  })
+    .catch(() => {
+      console.log('error de data profile');
+    });
 };
 
 export const makingPost = (file, userId, userName, userPhoto) => {

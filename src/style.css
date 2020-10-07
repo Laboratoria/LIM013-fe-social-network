@@ -22,7 +22,7 @@ body {
 	align-content: center;
 	margin: 1rem 1rem 1rem 1rem;
 }
-header {
+.header_register, .header_signin {
 	margin: 1rem 1rem 1rem 1rem;
 	width: 100%;
 	max-width: 100%;
@@ -30,19 +30,14 @@ header {
 	grid-template-columns: 70% 30%;
 	grid-row: none;
 }
-header h1 {
-	font-size: 356%;
-	text-align: center;
-	grid-column: 1;
-	color: #98aebc;
-	text-shadow: 4px 3px 2px rgba(14, 6, 4, 0.59),
-		4px 3px 2px rgba(3, 14, 9, 0.59), 4px 3px 2px rgba(3, 14, 9, 0.59);
+.petLogo{
+	width: 80%;
+	margin: 0% 10%;
 }
 img.logoHuella {
 	width: 40%;
 	max-width: 40%;
 	top: 4rem;
-	left: 2rem;
 	position: relative;
 }
 .logoHeader {
@@ -50,7 +45,7 @@ img.logoHuella {
 	max-width: 80%;
 	height: auto;
 	position: relative;
-	margin: -2rem 5rem;
+	margin: 2% 25%;
 }
 .register-container {
 	
@@ -65,7 +60,7 @@ img.logoHuella {
 	padding: 2%;
 	background: none;
 	height: auto;
-	margin: 2rem 0rem;
+	margin: 0rem 0rem;
 	line-height: 3rem;
 	position: relative;
 	width: auto;
@@ -244,10 +239,21 @@ section.msg-Redes p {
 	font-family: 'Abel', sans-serif;
 }
 /*TODO profile*/
+.petLogoMenu{
+	width: 40%;
+    margin: 1% 30%;
+}
 #headerHome{
     width: 100%;
     background-color:#abecea;
 
+}
+
+.btn-header{
+	color:#fff;
+}
+.btn-header i{
+	font-size: 20px;
 }
 .nav_Mobile{
     display: flex;
@@ -256,10 +262,10 @@ section.msg-Redes p {
     display: none;
 }
 
-.btn-menu{
+.btn-menu,.btn-menu1{
     margin: 3%;
 }
-.menu_mobile{
+.menu_mobile,.menu_mobile1{
     display: flex;
     visibility: hidden;
     flex-direction: column;
@@ -271,9 +277,10 @@ section.msg-Redes p {
     line-height: 3;
     position: absolute;
     margin-left: 0%;
-    background-color:#abecea;
+	background-color:#abecea;
+	z-index: 1;
 }
-.menu_mobile.responsive{
+.menu_mobile.responsive,.menu_mobile1.responsive{
     visibility: visible;
 }
 li {
@@ -282,6 +289,7 @@ li {
 ul li a{
     text-decoration: none;
 }
+
 .body_container{
     width:90%;
     margin:20px auto;
@@ -289,11 +297,15 @@ ul li a{
 .profile_section{
     display: none;
 }
+.profile_section1{
+	display: block;
+}
 .profile_section,.timeline_section{
-    background: #fff;
+    background: #f0f2f5;
     padding: 20px;
     border-radius: 4px;
 }
+/* Profile*/
 @import url('https://fonts.googleapis.com/css?family=Lato:300,700');
 
 h2, p {
@@ -316,7 +328,8 @@ p {
     height: 382px;
     margin: 0%;
     position: relative;
-    width: 400px;
+	width: 400px;
+	background:#fff;
 }
 .cover {
     background-image: url('https://picsum.photos/480/136/?random');
@@ -343,35 +356,39 @@ p {
     height: 115px;
 }
 
-.header {
+/*.header {
     text-transform: capitalize;
     max-width: 190px;
     width: 35%;
     margin: 0 auto;
+}*/
+.header_name{
+	margin-left:9rem;
 }
-
 .header .name {
     margin: 0px;
 }
-
-.header .location {
-    margin-top: 7px;
-    margin-bottom: 0px;
+.hide{
+	visibility: hidden;
+  }
+#selectProfile{
+	margin:0%;
+	padding:0%;
 }
-
-.info { 
-    margin-top: 21px;
-}
-
+  #selectProfile i{
+	visibility: visible;
+	width: 10%;
+	margin-left: 7rem;;
+  }
 .labels {
-    display: flex;
-    margin-top: 20px;
+    margin-top: 3.5rem;
 }
 
 .labels .label {
     flex-grow: 1;
-    word-wrap: break-word;
-    width: 0;
+	word-wrap: break-word;
+	margin-top:1rem;
+    /*width: 0;*/
 }
 
 .labels .label p {
@@ -382,8 +399,9 @@ p {
 .labels .label h2 {
     margin: 0px;
 }
-.timeline_section{
-    background-color: #f0f2f5;
+.edit_btn{
+	padding: 0.5rem;
+    margin: 1rem 0rem 1rem 14rem;
 }
 .update_container{
 
@@ -407,13 +425,13 @@ p {
     background-color: #fff;
     padding:3%;
     margin-top: 2%;
-
 }
 img.user_img{
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     border-radius: 50%;
     height: 80px;
 }
+
 /*TODO container posts*/
 .like-picture{
     width: 16%;
@@ -466,7 +484,16 @@ img.user_img{
     margin: 0rem 1rem 0rem 1rem;
 }
 i.fa.fa-pencil{
-	width: auto;
+	width: auto;}
+.button-section{
+	border-style: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.button-section button{
+	border-style:space around;
+
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -497,12 +524,16 @@ i.fa.fa-pencil{
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-	header h1 {
+	/*header h1 {
 		font-size: 600%;
-	}
+	}*/
 	img.logoHuella {
-		width: 50%;
+		width: 30%;
 		max-width: 50%;
+	}
+	.petLogo{
+		width: 70%;
+		margin: 0% 30%;
 	}
 	.signIn_Form h1 {
 		font-size: 300%;
@@ -537,43 +568,13 @@ i.fa.fa-pencil{
 		font-size: 200%;
 	}
 	/*---Main--*/
-	header label {
-        display:none;
-    }
-    .name_app{
-        display: block;
-        margin:2%;
-    }
-    .menu_mobile {
-    display: flex;
-    visibility: visible;
-    flex-direction: row;
-    text-align: center;
-    padding-left: 0%;
-    padding: 0%;
-    margin-top: 0%;
-    margin-bottom: 0%;
-    list-style: none;
-    flex: auto;
-    position: relative;
-    margin-left: 0%;
-    }
-    .body_container{
+	.menu_mobile,.menu_mobile1 {
+		margin-top: 8%;
+	}
 
-        display: grid;
-        grid-gap:20px;
-        grid-template-columns: repeat(3,1fr);
-    }
-    .profile_section{
-        display: block;
-    }
-    .timeline_section{
-        grid-column: span 2;
-    }
 
 }
-
-@media only screen and (min-width: 992px) and (min-width: 1023px) {
+@media only screen and (min-width: 992px) and (max-width: 1023px) {
 	body {
 		font-family: 'Playfair Display', serif;
 		background: #fff895;
@@ -591,13 +592,19 @@ i.fa.fa-pencil{
 		);
 		background: linear-gradient(135deg, #fff895 0%, #fcd697 58%, #f46d6d 100%);
 		background-attachment: fixed;
+		
 	}
-	header h1 {
-		font-size: 600%;
-	}
+
 	img.logoHuella {
 		width: 50%;
 		max-width: 50%;
+	}
+	.petLogo{
+		width: 70%;
+		margin: 0% 30%;
+	}
+	.logoHeader{
+		margin: 0% 22%;
 	}
 	.signIn_Form h1 {
 		font-size: 300%;
@@ -630,9 +637,39 @@ i.fa.fa-pencil{
 	section.msg-Redes p {
 		font-size: 200%;
 	}
+	#headerHome label{
+		display:none;
+	}
+	.menu_mobile,.menu_mobile1{
+		display: flex;
+		visibility: visible;
+		flex-direction: row;
+		text-align: center;
+		padding-left: 0%;
+		padding: 0%;
+		margin-top: 0%;
+		margin-bottom: 0%;
+		list-style: none;
+		flex: auto;
+		position: relative;
+		margin-left: 0%;
+	}
+	.body_container{
+
+        display: grid;
+        grid-gap:20px;
+        grid-template-columns: repeat(3,1fr);
+    }
+    .profile_section{
+        display: block;
+    }
+    .timeline_section{
+        grid-column: span 2;
+	}
+
 }
 
-@media only screen and (min-width: 1024px) and (max-width: 1280px) {
+@media only screen and (min-width: 1024px) and (max-width:1280px) {
 	body {
 		font-family: 'Playfair Display', serif;
 		background: #fff895;
@@ -652,10 +689,10 @@ i.fa.fa-pencil{
 		background-attachment: fixed;
 	}
 	/*TODO  Vista: encabezado  */
-	header h1 {
+	/*header h1 {
 		font-size: 600%;
 		text-align: end;
-	}
+	}*/
 	img.logoHuella {
 		width: 30%;
 		max-width: 30%;
@@ -665,10 +702,16 @@ i.fa.fa-pencil{
 	.logoHeader {
 		width: 50%;
 		max-width: 50%;
-		margin: 1rem 13rem;
+		margin: 0% 23%;
 		position: absolute;
-		top: 14rem;
+		top:6rem;
 	}
+	.petLogo{
+		width: 70%;
+		margin: 0% 30%;
+	}
+
+	.sig
 	/*TODO Vista: inicio de sesion  */
 	.sign {
 		display: flex;
@@ -803,8 +846,41 @@ i.fa.fa-pencil{
 	.container_msg p {
 		font-size: 150%;
 	}
+	#headerHome label{
+		display:none;
+	}
+	.petLogoMenu {
+		width: 15%;
+		margin: 1% 2%;
+	}
+	.menu_mobile ,.menu_mobile1{
+		display: flex;
+		visibility: visible;
+		flex-direction: row;
+		text-align: center;
+		padding-left: 0%;
+		padding: 0%;
+		margin-top: 0%;
+		margin-bottom: 0%;
+		list-style: none;
+		flex: auto;
+		position: relative;
+		margin-left: 0%;
+	}
+	.body_container{
+
+        display: grid;
+        grid-gap:20px;
+        grid-template-columns: repeat(3,1fr);
+    }
+    .profile_section{
+        display: block;
+    }
+    .timeline_section{
+        grid-column: span 2;
+	}
 }
-@media only screen and (min-width: 1029px) {
+@media only screen and (min-width: 1281px) {
 	body {
 		font-family: 'Playfair Display', serif;
 		background: #fff895;
@@ -824,7 +900,7 @@ i.fa.fa-pencil{
 		background-attachment: fixed;
 	}
 	/*TODO  Vista: encabezado  */
-	header {
+	.header_signin,.header_register {
 		margin: 1rem 1rem 1rem 1rem;
 		width: 50%;
 		max-width: 50%;
@@ -832,35 +908,38 @@ i.fa.fa-pencil{
 		grid-template-columns: 70% 30%;
 		grid-row: none;
 	}
-	header h1 {
+	/*header h1 {
 		font-size: 600%;
 		text-align: end;
-	}
+	}*/
 	img.logoHuella {
-		width: 40%;
+		width: 30%;
 		max-width: 40%;
-		top: 6rem;
+		top: 2rem;
+		position: relative;
+		left: 9rem;
 	}
-
+	.petLogoMenu {
+		width: 15%;
+		margin: 1% 2%;
+	}
+	.petLogo {
+		width: 100%;
+	}
 	.logoHeader {
 		width: 30%;
 		max-width: 30%;
-		margin: 1rem 7rem;
+		margin: 1rem 12rem;
 		position: absolute;
-		top: 14rem;
+		top: 22rem;
 	}
+
 	/*TODO Vista: inicio de sesion  */
-	.sign {
+
+	.position ,.sign {
 		display: flex;
 		flex-direction: row;
-		align-content: center;
-		margin: 1rem 1rem 1rem 1rem;
-	}
-	.position {
-		display: flex;
-		flex-direction: row;
-		align-content: center;
-		margin: 1rem 1rem 1rem 1rem;
+		justify-content: center;
 	}
 
 	.container {
@@ -929,7 +1008,7 @@ i.fa.fa-pencil{
 	.signInForm-container {
 		border-radius: 40px;
 		margin: 2rem 0rem;
-		/* line-height: 3rem; */
+		line-height: 3rem; 
 		position: relative;
 		-webkit-box-shadow: 0px 10px 13px -7px #000000,
 			5px 5px 15px 5px rgba(0, 0, 0, 0);
@@ -964,13 +1043,10 @@ i.fa.fa-pencil{
 		font-size: 100%;
 		top: 0rem;
 	}
-	.register-container {
-		position: relative;
-		/* top: 0rem; */
-		margin: 1rem 1rem;
-		left: 8rem;
-		width: 30%;
-		max-width: 30%;
+	.register-container  {
+
+		margin: 3rem 7rem;
+
 	}
 	.container_msg p {
 		font-size: 150%;
@@ -978,5 +1054,39 @@ i.fa.fa-pencil{
 	input {
 		font-size: 100%;
 	}
+	#headerHome label{
+		display:none;
+	}
+	#headerHome {
+		width: 100%;
+	}
+	.menu_mobile ,.menu_mobile1{
+		display: flex;
+		visibility: visible;
+		flex-direction: row;
+		text-align: center;
+		padding-left: 0%;
+		padding: 0%;
+		margin-top: 0%;
+		margin-bottom: 0%;
+		list-style: none;
+		flex: auto;
+		position: relative;
+		margin-left: 0%;
+	}
+	.body_container{
+
+        display: grid;
+        grid-gap:20px;
+        grid-template-columns: repeat(3,1fr);
+    }
+    .profile_section{
+        display: block;
+	}
+	
+    .timeline_section{
+        grid-column: span 2;
+	}
 }
+/* Extra large devices (large laptops and desktops, 1200px and up) */
 /* Extra large devices (large laptops and desktops, 1200px and up) */
