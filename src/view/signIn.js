@@ -61,18 +61,6 @@ export default () => {
                 });
             }
           });
-        // sendDataCurrentUser()
-        //   .then(() => {
-        //     // getDataCurrentUser()
-        //     //   .then((doc) => {
-        //     //     doc.data();
-        //     //     localStorage.setItem('datauser', JSON.stringify(doc.data()));
-        //     //   })
-        //     //   .then(() => {
-        //     //     window.location.hash = '#/home';
-        //     //   });
-        //     window.location.hash = '#/home';
-        //   });
       });
   });
   /* ----------------regarding DOM manipulation for login with created credentials-------------- */
