@@ -345,8 +345,8 @@ p {
 
 .profile {
     position: absolute;
-    top: 78.5px;
-    left: 20px;
+    top: 1%;
+    right: 10rem
 }
 
 .profile img {
@@ -373,12 +373,14 @@ p {
 #selectProfile{
 	margin:0%;
 	padding:0%;
+	visibility: hidden;
 }
-  #selectProfile i{
+#selectProfile i{
 	visibility: visible;
-	width: 10%;
-	margin-left: 7rem;;
-  }
+    width: 10%;
+    padding: 1rem;
+}
+
 .labels {
     margin-top: 3.5rem;
 }

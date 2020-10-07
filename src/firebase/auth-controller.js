@@ -28,15 +28,7 @@ export const loginFacebook = () => {
   const provider = new firebase.auth.FacebookAuthProvider();
   return firebase.auth().signInWithPopup(provider);
 };
-
-
-// Usuario loggeado
-
-
-// Profile
-// export const createProfileInfo = (id) => {
-//     firebase.firestore().collection('users').doc(id).set({
-//       aboutMe: 'Cuenta un poco sobre ti',
-//       location: 'Ciudad, País',
-//     });
-//   };
+// actualizar nombre y foto de usuario
+export const updatePhotoUser = photoProfile => firebase.auth().currentUser.updateProfile({
+  photoURL: photoProfile,
+});

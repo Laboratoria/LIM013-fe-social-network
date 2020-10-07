@@ -43,7 +43,6 @@ export default () => {
             </div>
             <div class="header_name">
               <h2 class="name">${userName}</h2>
-              <p class='location'></p>
             </div>
             <div class="labels">
               <div class="label">
@@ -51,8 +50,12 @@ export default () => {
                 <h2 class="name_pet">Molly</h2>
               </div>
               <div class="label">
-                <p class="description">Cuéntanos acerca de ti y tu mascota</p>
-                <p class="profile-text">Molly y yo </p>
+                <p class="profile-text">Cuéntanos algo sobre ti y tu mascota</p>
+                <p class="description">Cuéntanos la anécdota</p>
+              </div>
+              <div class="profile-btn-editions">
+                <button id="btnCancel" class="btn-profile hide">Cancelar</button>
+                <button id="btnSave" class="btn-profile hide">Guardar</button>
               </div>
             </div>
             <button type="button" class="edit_btn"><i class="fas fa-edit"></i>Edita tu perfil</button>
