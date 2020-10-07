@@ -24,3 +24,16 @@ export const getDataCurrentUser = () => {
   const db = firebase.firestore();
   return db.collection('SN-Users').doc(user.uid).get();
 };
+
+// ------------------------UPDATE USER INFORMATION TO CLUD FIRESTORE --------------------------
+export const updateCurrentUser = (a, b, c, d, e) => {
+  const user = firebase.auth().currentUser;
+  const db = firebase.firestore();
+  return db.collection('SN-Users').doc(user.uid).update({
+    username: a,
+    phone: b,
+    birthday: c,
+    country: d,
+    description: e,
+  });
+};

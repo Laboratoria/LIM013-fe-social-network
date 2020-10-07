@@ -79,6 +79,7 @@ hr{
 .avatar-post{
     width: 40px;
     height: 40px;
+    border-radius: 49px;
 }
 .content-newpost textarea{
     width: 100%;

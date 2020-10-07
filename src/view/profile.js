@@ -1,3 +1,5 @@
+import { updateCurrentUser, getDataCurrentUser } from '../controller/controller-cloud.js';
+
 export default () => {
   const dataCurrentUser = JSON.parse(localStorage.getItem('datauser'));
   const viewProfile = document.createElement('div');
@@ -70,7 +72,7 @@ export default () => {
       </div>
       <div class="grupo">
         <label  for="countryEdit">Description : </label>
-        <textarea>${dataCurrentUser.description}</textarea>
+        <textarea id = "descriptionEdit">${dataCurrentUser.description}</textarea>
       </div>
       <button type="submit" class="btn-update">UPDATE</a></button>
       <button class="btn-cancel">CANCEL</a></button>
@@ -126,10 +128,24 @@ export default () => {
   const formEditProfile = viewProfile.querySelector('.editProfile');
   formEditProfile.addEventListener('submit', (e) => {
     e.preventDefault();
-    const birthdayContent = viewProfile.querySelector('#birthdayEdit').value;
-    const birthdayProfile = viewProfile.querySelector('.birthdayProfile');
-    birthdayProfile.textContent = birthdayContent;
-    modalContainer.classList.remove('showEditProfile');
+    const usernameEdit = viewProfile.querySelector('#usernameEdit').value;
+    const phoneEdit = viewProfile.querySelector('#phoneEdit').value;
+    const birthday = viewProfile.querySelector('#birthdayEdit').value;
+    const countryEdit = viewProfile.querySelector('#countryEdit').value;
+    const descriptionEdit = viewProfile.querySelector('#descriptionEdit').value;
+    // const birthdayProfile = viewProfile.querySelector('.birthdayProfile');
+    // birthdayProfile.textContent = birthdayContent;
+    updateCurrentUser(usernameEdit, phoneEdit, birthday, countryEdit, descriptionEdit)
+      .then(() => {
+        getDataCurrentUser()
+          .then((doc) => {
+            localStorage.setItem('datauser', JSON.stringify(doc.data()));
+          })
+          .then(() => {
+            window.location.reload();
+            modalContainer.classList.remove('showEditProfile');
+          });
+      });
   });
   return viewProfile;
 };
