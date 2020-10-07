@@ -468,13 +468,14 @@ img.user_img{
     width: 2em;
     height: 5em;
     background-color: rgba(0, 0, 0, 0);
-    background-image: url(./imagenes/delete.png);
+    background-image: url(./imagenes/cancel.png);
     background-repeat: no-repeat;
     background-size: contain;
     border: none;
     /* outline: none; */
     cursor: pointer;
 }
+<<<<<<< HEAD
 /*TODO vista profile posts*/
 .post_buttom {
 	width: 20%;
@@ -495,6 +496,9 @@ i.fa.fa-pencil{
 	border-style:space around;
 
 }
+=======
+
+>>>>>>> parent of 797c7a2... crear funcion avance de post
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 601px) and (max-width: 767px) {

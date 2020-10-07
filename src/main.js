@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-cycle
 import { cambioVista } from './controller/router.js';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional

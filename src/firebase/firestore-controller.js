@@ -16,19 +16,6 @@ export const createPost = (id, userName, newPost, imagePost, date, status, userP
   likes: [],
 });
 // eslint-disable-next-line object-shorthand
-export const updatePost = (id, newPost) => firebase.firestore().collection('posts').doc(id).update({ post: newPost });
+export const updatePost = (id, post) => firebase.firestore().collection('posts').doc(id).update({ post: post });
 
-export const statusprivacy = (id, status) => firebase.firestore().collection('posts').doc(id).update({ privacy: status });
-
-// eslint-disable-next-line max-len
-export const deletePost = (collection, id) => firebase.firestore().collection(collection).doc(id).delete();
-
-export const getAllPosts = callback => firebase.firestore().collection('posts')
-  .orderBy('time', 'desc')
-  .onSnapshot((querySnapshot) => {
-    const allPosts = [];
-    querySnapshot.forEach((doc) => {
-      allPosts.push({ id: doc.id, ...doc.data() });
-    });
-    callback(allPosts);
-  });
+export const updatePrivacy = (id, status) => firebase.firestore().collection('posts').doc(id).update({ privacy: status });

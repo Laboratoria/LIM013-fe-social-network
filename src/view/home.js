@@ -2,7 +2,6 @@ import { postLoad } from './post.js';
 // eslint-disable-next-line max-len
 // import { signingOut, gettingProfileInfo, savingChanges } from '../view-controller/profile-controller.js';
 // eslint-disable-next-line import/named
-// eslint-disable-next-line import/no-cycle
 import { dataProfile, makingPost } from '../controller/home-controller.js';
 // eslint-disable-next-line import/no-cycle
 import { cambioVista } from '../controller/router.js';
@@ -12,7 +11,7 @@ export default (notes) => {
   dataProfile();
   const userId = localStorage.getItem('userId');
   const userName = localStorage.getItem('name');
-  const userPhoto = localStorage.getItem('userphoto');
+  const userPhoto = localStorage.getItem('');
   // const userPhoto = localStorage.getItem('userphoto');
 
   const viewHome = `
@@ -78,18 +77,23 @@ export default (notes) => {
         <h1  class="ask_status">¿Qué hiciste con tu mascota hoy?</h1>
         <textarea name="" id="status_input" cols="30" rows="10" class="status_imput" id="status_input" placeholder="Cuéntanos las travesuras de tu mejor amigo."></textarea>
         <img id="showPicture" class="post-new-image" src="#" alt="">
-        <button id="btnCancelImg" class="hide cancel-image"></button>
+        <button id="btnCancelImg" class="cancel-image"></button>
         <label for="selectImage"> 
           <input type="file" id="selectImage"  name="imagensubida" class="upload" accept="image/png, .jpeg, .jpg, image/gif">
-          <i class="fas fa-camera">Foto</i>
+          <i class="fas fa-camera"></i>
         </label>        
         <select id="privacy" class="privacy">
           <option value="0">Publico</option>
           <option value="1">Privado</option>
       </select>
+<<<<<<< HEAD
       <button type="button" id="bttonnewpost" class="post_buttom">Post</button>
       </div>
       <div class="all-posts"></div>   
+=======
+      <button type="button" id="bttonnewpost" class="post_buttom"><i class="fa fa-pencil"></i>Post</button>
+      </div>    
+>>>>>>> parent of 797c7a2... crear funcion avance de post
       <div class="user_post">
         <div class="user_photo">
           <img class="user_img" src="https://lh3.googleusercontent.com/a-/AOh14GhUGGtCW2PepIrJVxOIrl2jm4Q9XzDMs7tlm2TS" alt="">
@@ -113,6 +117,7 @@ export default (notes) => {
   const imagenUploading = divElemt.querySelector('#selectImage');
   const imagenUpload = divElemt.querySelector('#showPicture');
   const bttonimagenUploadCancelling = divElemt.querySelector('#btnCancelImg');
+  
   // eslint-disable-next-line no-unused-vars
   let file = '';
   imagenUploading.addEventListener('change', (e) => {
@@ -141,7 +146,7 @@ export default (notes) => {
 
   bttonimagenUploadCancelling.addEventListener('click', () => {
     localStorage.removeItem('image');
-    imagenUpload.src = '';
+    imagenUpload.src = ' ';
     bttonimagenUploadCancelling.classList.add('hide');
   });
 
