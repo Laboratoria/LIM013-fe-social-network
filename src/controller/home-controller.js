@@ -1,4 +1,5 @@
 import { currentUserAsync, logOut } from '../firebase/auth-controller.js';
+import { uploadImgPosting } from '../firebase/storage.js';
 
 import { getUser, createPost } from '../firebase/firestore-controller.js';
 
@@ -22,20 +23,21 @@ export const dataProfile = () => {
 export const signOut = () => {
   localStorage.clear();
   logOut();
+
 };
 export const makingPost = (file, userId, userName, userPhoto) => {
-  const newPost = document.querySelector('#newPost').value;
+  const newPost = document.querySelector('#status_input').value;
   const status = document.querySelector('.privacy').value;
   const date = new Date().toLocaleString();
 
   let imPost = '';
   if (file) {
     imPost = localStorage.getItem('image');
-    uploadImagePost(file, userId);
+    uploadImgPosting(file, userId);
   }
-  createPost(userId, userName, newPost, imPost,
-    date, status, userPhoto)
+
+  createPost(userId, userName, newPost, imPost, date, status, userPhoto)
     .then(() => {
-      document.querySelector('.new-post').value = '';
+      document.querySelector('#status_input').value = '';
     });
 };
