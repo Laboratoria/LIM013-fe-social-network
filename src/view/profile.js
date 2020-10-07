@@ -1,7 +1,7 @@
 import { updateCurrentUser, getDataCurrentUser } from '../controller/controller-cloud.js';
 
-export default () => {
-  const dataCurrentUser = JSON.parse(localStorage.getItem('datauser'));
+export default (dataCurrentUser) => {
+  /*  const dataCurrentUser = JSON.parse(localStorage.getItem('datauser')); */
   const viewProfile = document.createElement('div');
   viewProfile.classList.add('profile-container');
   viewProfile.innerHTML = `
@@ -23,7 +23,7 @@ export default () => {
             <span class="edit-photo"><i class="fas fa-camera edit-photo-btn"></i></span>
           </label>
           <div class="user-information">
-          <i class="fas fa-edit edit-info" id="btn-editProfile" ></i>
+          <span class = "edit-info" id="btn-editProfile"><i class="fas fa-edit"></i></span>
             <h2 class="user-name">${dataCurrentUser.username}</p>
             <h3>About me</h3>
             <div class="container-grid">
@@ -77,11 +77,10 @@ export default () => {
       <button type="submit" class="btn-update">UPDATE</a></button>
       <button class="btn-cancel">CANCEL</a></button>
     </form>
-  </section>
+  </seion>
 </section>
 
   `;
-
   const selectCoverPage = viewProfile.querySelector('#select-cover-page');
   const coverPhoto = viewProfile.querySelector('.cover-photo');
   let coverFile = '';

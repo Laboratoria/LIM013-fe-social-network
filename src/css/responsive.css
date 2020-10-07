@@ -193,7 +193,15 @@
 }
 /* ------------------media query small device-----------------*/
 @media screen and (max-width:576px){
+  *{
+    font-size: 15px;
+  }
 
+  .box:nth-child(2) {
+    order: 1;
+    width: 100%;
+    font-size: 2rem !important;
+}
 /* -----------------Responsive home--------------*/
 .container-home{
     grid-template-areas: "profile profile profile"
@@ -211,7 +219,7 @@
 }
 /*Responsive profile*/
 .profile-content {
-    width: 95%;
+    width: 100%;
     margin: 0 auto; 
   }
 /*Responsive modal profile*/
