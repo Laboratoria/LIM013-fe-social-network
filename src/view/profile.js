@@ -1,5 +1,5 @@
 import { dataProfile } from '../controller/home-controller.js';
-
+import { setProfileInfo,saveProfileInfo,} from '../controller/profile-controller.js';
 export default () => {
   dataProfile();
   const userId = localStorage.getItem('userId');
@@ -97,24 +97,31 @@ export default () => {
 
   const editBtn = divElemt.querySelector('.edit_btn');
   const nameUserProfile = divElemt.querySelector('.name');
-  const namePet = divElemt.querySelector('.name_pet');
+  const petName = divElemt.querySelector('.name_pet');
   const selectProfile = divElemt.querySelector('#selectProfile');
-  const aboutMe = divElemt.querySelector('.description');
+  const aboutUs = divElemt.querySelector('.description');
   const btnSave = divElemt.querySelector('#btnSave');
   const btnCancel = divElemt.querySelector('#btnCancel');
 
   editBtn.addEventListener('click', () => {
-    aboutMe.contentEditable = 'true';
-    aboutMe.classList.add('input-style');
+    aboutUs.contentEditable = 'true';
+    aboutUs.classList.add('input-style');
 
     nameUserProfile.contentEditable = 'true';
 
-    namePet.contentEditable = 'true';
+    petName.contentEditable = 'true';
 
     editBtn.classList.add('hide');
     btnSave.classList.remove('hide');
     btnCancel.classList.remove('hide');
     selectProfile.classList.remove('hide');
+
+    btnCancel.addEventListener('click', () => {
+      setProfileInfo();
+    });
+    btnSave.addEventListener('click', () => {
+      saveProfileInfo(file);
+    });
   });
 
   /* btnCancel.addEventListener('click', () => {

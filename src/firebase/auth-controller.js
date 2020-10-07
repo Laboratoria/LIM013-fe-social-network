@@ -32,3 +32,4 @@ export const loginFacebook = () => {
 export const updatePhotoUser = photoProfile => firebase.auth().currentUser.updateProfile({
   photoURL: photoProfile,
 });
+

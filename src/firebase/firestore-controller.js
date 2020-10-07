@@ -19,9 +19,10 @@ export const createPost = (uid, contentText, privacy, imgPost) => firebase.fires
 
 export const getProfileInfo = userId => firebase.firestore().collection('users').doc(userId).get();
 
-export const updateProfileInfo = (userId, namePet, description) => firebase.firestore().collection('users').doc(userId).update({
+export const updateProfileInfo = (userId,newUserName, namePet, description) => firebase.firestore().collection('users').doc(userId).update({
   petName: namePet,
   aboutUs: description,
+  displayName: newUserName,
 });
 export const storageRef = firebase.storage().ref();
 
