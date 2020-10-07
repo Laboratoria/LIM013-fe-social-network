@@ -5,7 +5,7 @@ import { getUser, createPost } from '../firebase/firestore-controller.js';
 export const dataProfile = () => {
   currentUserAsync().then((actualUser) => {
     localStorage.setItem('userId', actualUser.uid);
-    const getLocalUser=localStorage.getItem('userId');
+    const getLocalUser = localStorage.getItem('userId');
     console.log(getLocalUser);
     getUser(getLocalUser).then((docUser) => {
       localStorage.setItem('aboutMe', docUser.data().aboutMe);
@@ -17,7 +17,7 @@ export const dataProfile = () => {
   })
     .catch(() => {
       console.log("error de data profile")
-    })
+    });
 };
 export const signOut = () => {
   localStorage.clear();
