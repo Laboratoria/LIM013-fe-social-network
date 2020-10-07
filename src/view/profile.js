@@ -1,5 +1,7 @@
 import { dataProfile } from '../controller/home-controller.js';
-import { setProfileInfo,saveProfileInfo,} from '../controller/profile-controller.js';
+// eslint-disable-next-line import/no-cycle
+import { setProfileInfo, saveProfileInfo } from '../controller/profile-controller.js';
+
 export default () => {
   dataProfile();
   const userId = localStorage.getItem('userId');
@@ -35,11 +37,12 @@ export default () => {
           </div>
           <div class="content">
             <div class="profile">
+
+              <img class="profile_img" src="${userPhoto}" alt="">
               <label id="selectProfile" for="selectPhotoProfile" class="hide">
                 <input type="file" id="selectPhotoProfile" class="hide" accept="image/jpeg, image/png">
                 <i class="fas fa-camera"></i>
-              </label>
-              <img class="profile_img" src="${userPhoto}" alt="">
+            </label>
             </div>
             <div class="header_name">
               <h2 class="name">${userName}</h2>
@@ -94,7 +97,7 @@ export default () => {
       profilePicture.src = '';
     }
   });
-
+  const file = '';
   const editBtn = divElemt.querySelector('.edit_btn');
   const nameUserProfile = divElemt.querySelector('.name');
   const petName = divElemt.querySelector('.name_pet');
@@ -123,7 +126,6 @@ export default () => {
       saveProfileInfo(file);
     });
   });
-
   /* btnCancel.addEventListener('click', () => {
     gettingProfileInfo();
   }); */

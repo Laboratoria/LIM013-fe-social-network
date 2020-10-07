@@ -1,6 +1,10 @@
 import { currentUser, updatePhotoUser } from '../firebase/auth-controller.js';
 
-import { getUser, uploadPhotoProfile, updateProfileInfo } from '../firebase/firestore-controller.js';/* export const loadingInfo = () => {
+import { getUser,updateProfileInfo } from '../firebase/firestore-controller.js';
+
+// eslint-disable-next-line import/no-cycle
+import { uploadPhotoProfile } from '../firebase/storage-controller.js';
+/* export const loadingInfo = () => {
   const currentUser = userCurrent();
   getUser(currentUser.uid).then((doc) => {
     localStorage.setItem('aboutMe', doc.data().aboutMe);
@@ -18,7 +22,7 @@ export const editInfo = () => {
   const aboutUs1 = document.querySelector('.description');
   const btnSave1 = document.querySelector('#btnSave');
   const btnCancel1 = document.querySelector('#btnCancel');
-
+  const editBtn = document.querySelector('.edit_btn');
 
   aboutUs1.contentEditable = 'false';
   aboutUs1.classList.remove('input-style');
@@ -27,6 +31,7 @@ export const editInfo = () => {
 
   namePet1.contentEditable = 'false';
 
+  editBtn.classList.remove('hide');
   btnSave1.classList.add('hide');
   btnCancel1.classList.add('hide');
 };

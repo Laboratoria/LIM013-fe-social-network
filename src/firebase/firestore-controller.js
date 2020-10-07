@@ -24,10 +24,3 @@ export const updateProfileInfo = (userId,newUserName, namePet, description) => f
   aboutUs: description,
   displayName: newUserName,
 });
-export const storageRef = firebase.storage().ref();
-
-export const uploadPhotoProfile = (file, uid) => {
-  const refStoragePhoto = storageRef.ref(`imgPhotoProfile/${uid}/${file.name}`);
-  return refStoragePhoto.put(file).then(snapshot => snapshot.ref.getDownloadURL());
-};
-

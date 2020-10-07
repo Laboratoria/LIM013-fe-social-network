@@ -17,7 +17,6 @@ firebase.initializeApp(firebaseConfig);
 // Initialize Firestore
 export const storage = firebase.storage();
 
-
 const init = () => {
   cambioVista(window.location.hash);
   window.addEventListener('hashchange', () => cambioVista(window.location.hash));

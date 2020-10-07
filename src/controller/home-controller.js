@@ -1,4 +1,4 @@
-import { currentUserAsync } from '../firebase/auth-controller.js';
+import { currentUserAsync, logOut } from '../firebase/auth-controller.js';
 
 import { getUser, createPost } from '../firebase/firestore-controller.js';
 
@@ -17,7 +17,10 @@ export const dataProfile = () => {
       console.log('error de data profile');
     });
 };
-
+export const signOut = () => {
+  localStorage.clear();
+  logOut();
+};
 export const makingPost = (file, userId, userName, userPhoto) => {
   const newPost = document.querySelector('#newPost').value;
   const status = document.querySelector('.privacy').value;
