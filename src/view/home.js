@@ -1,5 +1,6 @@
-export default () => {
-  const dataCurrentUser = JSON.parse(localStorage.getItem('datauser'));
+export default (dataCurrentUser) => {
+  // const dataCurrentUser = JSON.parse(localStorage.getItem('datauser'));
+  // const dataCurrentUser = doc.data();
   const viewHome = document.createElement('section');
   viewHome.classList.add('container-home');
   viewHome.innerHTML = `
