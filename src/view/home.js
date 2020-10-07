@@ -1,30 +1,17 @@
-/* eslint-disable no-undef */
-// export default () => {
-//   const viewHome = document.createElement('section');
-//   viewHome.innerHTML = `
-//   <p>bienvenidos</p>
-//   `;
-//   const db = firebase.firestore();
-//   db.collection('datos').add({
-//     first: 'Ada',
-//     last: 'Lovelace',
-//     born: 1815,
-//   });
-//   return viewHome;
-// };
 export default () => {
+  const dataCurrentUser = JSON.parse(localStorage.getItem('datauser'));
   const viewHome = document.createElement('section');
   viewHome.classList.add('container-home');
   viewHome.innerHTML = `
   <!-- Left column -->
   <aside class="profile-section">
     <div class="profile">
-      <img class="avatar" src="img/avatar-female.jpeg"/>
-      <h2 id="name"> User</h2>
+      <img class="avatar" src="${dataCurrentUser.photo}"/>
+      <h2 id="name"> ${dataCurrentUser.username}</h2>
       <hr>
-      <p id="profession"><i class="fas fa-graduation-cap"></i> Front end</p>
-      <p id="city"><i class="fas fa-map-marker-alt"></i> Lima</p>
-      <p id="birthday"><i class="fas fa-birthday-cake"></i> October 7</p>
+      <p id="profession"><i class="fas fa-mobile-alt"></i> ${dataCurrentUser.phone}</p>
+      <p id="city"><i class="fas fa-map-marker-alt"></i> ${dataCurrentUser.country}</p>
+      <p id="birthday"><i class="fas fa-birthday-cake"></i> ${dataCurrentUser.birthday}</p>
       <a href="#/profile" id="viewall">View All</a>
     </div>
     <!-- Interest -->
@@ -46,8 +33,8 @@ export default () => {
     <!-- Post -->
     <div class="create-post">
       <div class="user">
-        <img class="avatar-post" src="img/avatar-female.jpeg"/>
-        <p class="name">User</p>
+        <img class="avatar-post" src="${dataCurrentUser.photo}"/>
+        <p class="name">${dataCurrentUser.username}</p>
       </div>
       <div class="content-newpost">
         <textarea class="text-newpost" placeholder="Share something"></textarea>
@@ -70,19 +57,14 @@ export default () => {
       <div class="mainpost">
         <div class="user-post">
           <i class="fas fa-ellipsis-v"></i>
-          <img class="avatar-post" src="img/avatar-female.jpeg"/>
-          <p class="name">User</p>
+          <img class="avatar-post" src="${dataCurrentUser.photo}"/>
+          <p class="name">${dataCurrentUser.username}</p>
           <select class="fa" id="privacy-option">
             <option class="fa" value="0" title = "Public">&#xf57d; </option>
             <option class="fa" value="1" title = "Private">&#xf023; </option>
           </select>
           <p class="time-post">29/09/2020 08:47 p.m.</p>
         </div>
-<<<<<<< HEAD
-=======
-        <p class="time-post">29/09/2020 08:47 p.m.</p>
-
->>>>>>> 8b4a5a2081ad79f2a619dd2ac0255578abc0434e
           <hr>
         <div class="content-post">
           <p class="text-post">

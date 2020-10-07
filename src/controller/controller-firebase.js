@@ -10,6 +10,16 @@ export const signInforgoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
   return auth.signInWithPopup(provider);
 };
+// ----------------------------CHECK SESSION ACTIVE-----------------------------
+export const checkSesionActive = ChangeView => firebase.auth().onAuthStateChanged((user) => {
+  let route = '';
+  if (window.location.hash === '#/signUp') route = '#/signUp';
+  if (window.location.hash === '#/recoverPassword') route = '#/recoverPassword';
+  if (user) {
+    route = window.location.hash;
+  }
+  return ChangeView(route);
+});
 // -----------------------------------SIGN UP------------------------------------
 // Create user
 export const createUser = (email, password) => {
@@ -21,7 +31,9 @@ export const sendEmail = () => {
   const user = firebase.auth().currentUser;
   return user.sendEmailVerification();
 };
-// --------------------------------RECOVER PASSWORD---------------------------
+// ---------------------------------SIGN OUT------------------------------------
+export const signOut = () => firebase.auth().signOut();
+// ------------------------------RECOVER PASSWORD-------------------------------
 // Send link for recover password
 export const sendRecoverPass = (emailAddress) => {
   const auth = firebase.auth();

@@ -1,8 +1,22 @@
-// Este es el punto de entrada de tu aplicacion
 import { changeView } from './controller/route.js';
+import { checkSesionActive } from './controller/controller-firebase.js';
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: 'AIzaSyAfoSuHjPJrO24TYzP35q38X4uYIJ_cANM',
+  authDomain: 'sn-laboratoria.firebaseapp.com',
+  databaseURL: 'https://sn-laboratoria.firebaseio.com',
+  projectId: 'sn-laboratoria',
+  storageBucket: 'sn-laboratoria.appspot.com',
+  messagingSenderId: '308360863060',
+  appId: '1:308360863060:web:d276699e944f85972dfcc1',
+  measurementId: 'G-KRTZTJSLC8',
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
 const init = () => {
-  changeView(window.location.hash);
-  window.addEventListener('hashchange', () => changeView(window.location.hash));
+  checkSesionActive(changeView);
 };
 window.addEventListener('load', init);
+window.addEventListener('hashchange', init);
