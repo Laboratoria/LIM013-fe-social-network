@@ -1,5 +1,6 @@
 
 import { signIn, signInforgoogle } from '../controller/controller-firebase.js';
+import { sendDataCurrentUser, getDataCurrentUser } from '../controller/controller-cloud.js';
 // import { controlerSignIn } from '../controller/signIn-controller.js';
 
 export default () => {
@@ -41,18 +42,27 @@ export default () => {
     </div>
   </section>
   `;
-  /* -----------------------handle send to Sign In--------------- */
+  /* --------------------------------------handle send to Sign In------------------------------- */
   const btnNewAccount = viewSignIn.querySelector('.newAccount');
   btnNewAccount.addEventListener('click', () => { window.location.hash = '#/signUp'; });
-  /* ----------regarding DOM manipulation for login with google------------ */
+  /* ---------------------------regarding DOM manipulation for login with google---------------- */
   const btnGoogle = viewSignIn.querySelector('#btn-google');
   btnGoogle.addEventListener('click', () => {
     signInforgoogle()
       .then(() => {
-        window.location.hash = '#/home';
+        sendDataCurrentUser()
+          .then(() => {
+            getDataCurrentUser()
+              .then((doc) => {
+                localStorage.setItem('datauser', JSON.stringify(doc.data()));
+              })
+              .then(() => {
+                window.location.hash = '#/home';
+              });
+          });
       });
   });
-  /* ------------regarding DOM manipulation for login with created credentials------------- */
+  /* ----------------regarding DOM manipulation for login with created credentials-------------- */
   const signInForm = viewSignIn.querySelector('#signIn-form');
   signInForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -62,7 +72,16 @@ export default () => {
     signIn(email, password)
       .then((data) => {
         if (data.user.emailVerified) {
-          window.location.hash = '#/home';
+          sendDataCurrentUser()
+            .then(() => {
+              getDataCurrentUser()
+                .then((doc) => {
+                  localStorage.setItem('datauser', JSON.stringify(doc.data()));
+                })
+                .then(() => {
+                  window.location.hash = '#/home';
+                });
+            });
         } else {
           error.textContent = 'Account not verified, please check your inbox';
         }
@@ -71,7 +90,7 @@ export default () => {
         error.textContent = err.message;
         setTimeout(() => {
           error.textContent = '';
-        }, 4000);
+        }, 5000);
       });
   });
   // controlerSignIn.handleSignIn(viewSignIn);
