@@ -77,10 +77,11 @@ export default () => {
       <button type="submit" class="btn-update">UPDATE</a></button>
       <button class="btn-cancel">CANCEL</a></button>
     </form>
-  </section>
+  </seion>
 </section>
 
   `;
+  
 
   const selectCoverPage = viewProfile.querySelector('#select-cover-page');
   const coverPhoto = viewProfile.querySelector('.cover-photo');

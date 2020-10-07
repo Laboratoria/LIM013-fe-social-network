@@ -193,6 +193,9 @@
 }
 /* ------------------media query small device-----------------*/
 @media screen and (max-width:576px){
+  *{
+    font-size: 12px;
+  }
 
 /* -----------------Responsive home--------------*/
 .container-home{

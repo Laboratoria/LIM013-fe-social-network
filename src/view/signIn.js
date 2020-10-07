@@ -54,6 +54,7 @@ export default () => {
           .then(() => {
             getDataCurrentUser()
               .then((doc) => {
+                doc.data();
                 localStorage.setItem('datauser', JSON.stringify(doc.data()));
               })
               .then(() => {
