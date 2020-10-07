@@ -8,15 +8,17 @@ body {
 	background: -moz-linear-gradient(top, #fff895 0%, #fcd697 58%, #f46d6d 100%);
 	background: -webkit-linear-gradient(
 		top,
-		#fff895 0%,
+		#f46d6d 0%,
 		#fcd697 58%,
-		#f46d6d 100%
+		#f4444f 100%
 	);
 	background: linear-gradient(to bottom, #fff895 0%, #fcd697 58%, #f46d6d 100%);
 	background-attachment: fixed;
 }
 /*TODO vista sign y register*/
-.sign {
+
+.sign  {
+
 	display: flex;
 	flex-direction: column;
 	align-content: center;
@@ -185,7 +187,6 @@ input[type='submit']:hover {
 	display: flex;
 	flex-direction: column;
 	align-content: center;
-	margin: 1rem 1rem 1rem 1rem;
 }
 .registerForm-container {
 	width: auto;
@@ -238,7 +239,10 @@ section.msg-Redes p {
 	font-size: 100%;
 	font-family: 'Abel', sans-serif;
 }
-/*TODO profile*/
+
+/*---Header Home---*/
+
+
 .petLogoMenu{
 	width: 40%;
     margin: 1% 30%;
@@ -346,14 +350,16 @@ p {
 
 .profile {
     position: absolute;
-    top: 78.5px;
-    left: 20px;
+    top: 1%;
+    right: 10rem
 }
 
 .profile img {
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     border-radius: 50%;
-    height: 115px;
+	height: 115px;
+	position:absolute;
+	margin: 4rem 1rem;
 }
 
 /*.header {
@@ -374,12 +380,18 @@ p {
 #selectProfile{
 	margin:0%;
 	padding:0%;
+
+	visibility: hidden;
 }
-  #selectProfile i{
+#selectProfile i{
 	visibility: visible;
-	width: 10%;
-	margin-left: 7rem;;
-  }
+    width: 10%;
+	padding-top: 6rem;
+	margin-left: 1rem;
+	font-size: 15px;
+	position:absolute;
+}
+
 .labels {
     margin-top: 3.5rem;
 }
@@ -432,6 +444,7 @@ img.user_img{
     height: 80px;
 }
 
+
 /*TODO container posts*/
 .like-picture{
     width: 16%;
@@ -475,10 +488,6 @@ img.user_img{
     /* outline: none; */
     cursor: pointer;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> b8c4c6415a1f7d1f495422d04c1013ae28531536
 /*TODO vista profile posts*/
 .post_buttom {
 	width: 20%;
@@ -488,8 +497,9 @@ img.user_img{
     margin: 0rem 1rem 0rem 1rem;
 }
 i.fa.fa-pencil{
-<<<<<<< HEAD
+
 	width: auto;}
+
 .button-section{
 	border-style: none;
 	display: flex;
@@ -498,15 +508,9 @@ i.fa.fa-pencil{
 }
 .button-section button{
 	border-style:space around;
-
-}
-=======
-
->>>>>>> parent of 797c7a2... crear funcion avance de post
-=======
 	width: auto;
 }
->>>>>>> b8c4c6415a1f7d1f495422d04c1013ae28531536
+
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 601px) and (max-width: 767px) {
@@ -1056,9 +1060,10 @@ i.fa.fa-pencil{
 		top: 0rem;
 	}
 	.register-container  {
-
+		/* top: 0rem; */
 		margin: 3rem 7rem;
-
+		width: 40%;
+		max-width: 45%;
 	}
 	.container_msg p {
 		font-size: 150%;
