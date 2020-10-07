@@ -1,9 +1,9 @@
 
-export const createUser = (idDoc, newUserName, newUserPhoto) => firebase.firestore().collection('users').doc(idDoc).set({
+export const createUser = (idDoc, newUserName, newUserPhoto,namePet, description) => firebase.firestore().collection('users').doc(idDoc).set({
+  aboutUs: description,
   displayName: newUserName,
   photoURL: newUserPhoto,
-  petName: 'Firulais',
-  aboutUs: 'Cuenta acerca de tu mascota y tu',
+  petName: namePet,
 });
 export const getUser = docUser => firebase.firestore().collection('users').doc(docUser).get();
 
@@ -19,8 +19,8 @@ export const createPost = (uid, contentText, privacy, imgPost) => firebase.fires
 
 export const getProfileInfo = userId => firebase.firestore().collection('users').doc(userId).get();
 
-export const updateProfileInfo = (userId,newUserName, namePet, description) => firebase.firestore().collection('users').doc(userId).update({
-  petName: namePet,
+export const updateProfileInfo = (idDoc,newUserName, namePet, description) => firebase.firestore().collection('users').doc(idDoc).update({
   aboutUs: description,
   displayName: newUserName,
+  petName: namePet,
 });
