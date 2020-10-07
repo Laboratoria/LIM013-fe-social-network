@@ -1,8 +1,8 @@
 import { components } from '../view/index.js';
 
 const changeView = (route) => {
-  const container = document.getElementById('container');
-  const headerHome = document.querySelector('.main-header');
+  const container = document.querySelector('#container');
+  window.location.hash = route;
   container.innerHTML = '';
   switch (route) {
     case '':
@@ -12,11 +12,11 @@ const changeView = (route) => {
       container.appendChild(components.signUp());
       break;
     case '#/home':
-      headerHome.classList.remove('hide');
+      container.appendChild(components.header());
       container.appendChild(components.home());
       break;
     case '#/profile':
-      headerHome.classList.remove('hide');
+      container.appendChild(components.header());
       container.appendChild(components.profile());
       break;
     case '#/recoverPassword':
@@ -25,13 +25,6 @@ const changeView = (route) => {
     default:
       break;
   }
-  const hamburgerMenu = document.querySelector('#hamburger-menu');
-  const leftMenu = document.querySelector('#left-menu-header');
-  const rightMenu = document.querySelector('#log-out-header');
-  hamburgerMenu.addEventListener('click', () => {
-    leftMenu.classList.toggle('active');
-    rightMenu.classList.toggle('active');
-  });
 };
 
 export { changeView };

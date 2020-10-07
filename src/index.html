@@ -16,25 +16,9 @@
 </head>
 
 <body>
-
-  <header class="main-header shadow hide">
-    <nav>
-      <ul class="menu-header">
-        <div id="left-menu-header" class= "box">
-          <li class="home-header"><a href="#/home"><i class="fas fa-home"></i>Home</a></li>
-          <li class="profile-header"><a href="#/profile"><i class="fas fa-user-circle"></i>Profile</a></li>
-        </div>
-        <li class="title-header box"><a href="#/home">Travel<i class="fas fa-plane-departure"></i>n</a></li>
-        <li id="log-out-header" class="box"><i class="fas fa-sign-out-alt"></i>Log out</li>
-      </ul>
-    </nav>
-    <i id="hamburger-menu" class="fas fa-bars hide"></i>
-  </header>
-
-  <section id="container"></section>
-  
+  <section id="container">
+  </section>
   <script type="module" src="main.js"></script>
-
   <!-- Firebase scripts -->
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
@@ -42,23 +26,6 @@
   <!-- Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
   <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script> 
   <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
-
-  <script>
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    var firebaseConfig = {
-      apiKey: "AIzaSyAfoSuHjPJrO24TYzP35q38X4uYIJ_cANM",
-      authDomain: "sn-laboratoria.firebaseapp.com",
-      databaseURL: "https://sn-laboratoria.firebaseio.com",
-      projectId: "sn-laboratoria",
-      storageBucket: "sn-laboratoria.appspot.com",
-      messagingSenderId: "308360863060",
-      appId: "1:308360863060:web:d276699e944f85972dfcc1",
-      measurementId: "G-KRTZTJSLC8"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-  </script>
 </body>
 </html>
 
