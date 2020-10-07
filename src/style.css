@@ -468,7 +468,7 @@ img.user_img{
     width: 2em;
     height: 5em;
     background-color: rgba(0, 0, 0, 0);
-    background-image: url(./imagenes/cancel.png);
+    background-image: url(./imagenes/delete.png);
     background-repeat: no-repeat;
     background-size: contain;
     border: none;
@@ -476,6 +476,9 @@ img.user_img{
     cursor: pointer;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> b8c4c6415a1f7d1f495422d04c1013ae28531536
 /*TODO vista profile posts*/
 .post_buttom {
 	width: 20%;
@@ -485,6 +488,7 @@ img.user_img{
     margin: 0rem 1rem 0rem 1rem;
 }
 i.fa.fa-pencil{
+<<<<<<< HEAD
 	width: auto;}
 .button-section{
 	border-style: none;
@@ -499,6 +503,10 @@ i.fa.fa-pencil{
 =======
 
 >>>>>>> parent of 797c7a2... crear funcion avance de post
+=======
+	width: auto;
+}
+>>>>>>> b8c4c6415a1f7d1f495422d04c1013ae28531536
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 601px) and (max-width: 767px) {

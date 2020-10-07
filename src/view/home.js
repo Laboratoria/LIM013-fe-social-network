@@ -81,7 +81,7 @@ export default () => {
         <button id="btnCancelImg" class="hide cancel-image"></button>
         <label for="selectImage"> 
           <input type="file" id="selectImage"  name="imagensubida" class="upload" accept="image/png, .jpeg, .jpg, image/gif">
-          <i class="fas fa-camera"></i>
+          <i class="fas fa-camera">Foto</i>
         </label>        
         <select id="privacy" class="privacy">
           <option value="0">Publico</option>
@@ -141,7 +141,7 @@ export default () => {
 
   bttonimagenUploadCancelling.addEventListener('click', () => {
     localStorage.removeItem('image');
-    imagenUpload.src = ' ';
+    imagenUpload.src = '';
     bttonimagenUploadCancelling.classList.add('hide');
   });
 
