@@ -51,125 +51,91 @@
 .container-recoverPassword form{
   width: 80%;
 }
-/*Responsive header*/
-.menu {
-  width: 100%; 
-  flex-direction: column; 
-  }
-
-  .box:nth-child(2) {
-    order: 1;
+  /*Responsive header*/
+.menu-header {
     width: 100%; 
-    margin-top: 1.5rem; 
-    font-size: 2rem;
-  }
-  .box:first-child {
-    order: 2;
-    width: 100%;
-    display: flex;
-    flex-flow: column nowrap; 
-    margin-top: 0.5rem;
-  }
-      
-  .box:nth-child(3) {
-    order: 3;
-    width: 100%; 
-    margin-bottom: 1.3rem; 
+    flex-direction: column; 
     justify-content: center;
-    padding: 0; 
+    padding: 0;
   }
-  header nav ul li {
+header nav ul li {
     width: 100%;
     text-align: center;  
-    padding: 0; 
   }
-  #hamburger-menu {
-    display: flex;
-  }
-  /*Responsive header*/
-  .menu-header {
-      width: 100%; 
-      flex-direction: column; 
-      justify-content: center;
-      padding: 0;
-    }
-    header nav ul li {
-        width: 100%;
-        text-align: center;  
-      }
 
-    .box:nth-child(2) {
-      order: 1;
-      width: 100%; 
-      font-size: 2rem;
-    }
-    
-    .box:first-child {
-      order: 2;
-      
-    }
+.box:nth-child(2) {
+  order: 1;
+  width: 100%; 
+  font-size: 2rem;
+}
 
-    .box:nth-child(3) {
-      order: 3; 
-    }     
+.box:first-child {
+  order: 2;
+  
+}
 
-    .title-header a {
-      padding: 1rem;
-      width: 100%;
-    }
-              
-    #hamburger-menu {
-      display: flex;
-    }
-    
-    #left-menu-header {
-      display: none; 
-    }
+.box:nth-child(3) {
+  order: 3; 
+}     
 
-    #left-menu-header.active{
-      display: flex; 
-      width: 100%;
-      display: flex;
-      flex-direction: column; 
-      justify-content: center;
-    }
+.title-header a {
+  padding: 1rem;
+  width: 100%;
+}
+          
+#hamburger-menu {
+  display: flex;
+}
 
-    
-    #left-menu-header a {
-      width: 100%;
-      padding: 0.5rem; 
-    }
+#left-menu-header {
+  width: 100%;
+  display: none; 
+}
 
-    #left-menu-header a:hover {
-      color: #46c5a5;
-      background-color: white;
-    }
-
-    .home-header i {
-      margin-left: 0;
-    }
+#left-menu-header.active{
+  display: flex; 
+  width: 100%;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+}
 
 
-    #log-out-header {
-      display: none; 
-    }
+#left-menu-header a {
+  width: 100%;
+  padding: 0.5rem; 
+}
 
-    #log-out-header.active{
-      display: flex; 
-      width: 100%; 
-      margin-bottom: 1rem; 
-      justify-content: center;
-      padding: 0.5rem;
-    }
+#left-menu-header a:hover {
+  color: #46c5a5;
+  background-color: white;
+}
 
-    #log-out-header i {
-      margin-left: 1rem;
-    }
+.home-header i {
+  margin-left: 0;
+}
 
-    #log-out-header:hover {
-      color: #46c5a5;
-      background-color: white;
-    }
+
+#log-out-header {
+  display: none; 
+}
+
+#log-out-header.active{
+  display: flex; 
+  width: 100%; 
+  margin-bottom: 1rem; 
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+#log-out-header i {
+  margin-left: 1rem;
+}
+
+#log-out-header:hover {
+  color: #46c5a5;
+  background-color: white;
+}
 
 /*Responsive profile*/
 .edit-photo {
@@ -193,7 +159,15 @@
 }
 /* ------------------media query small device-----------------*/
 @media screen and (max-width:576px){
+  /* *{
+    font-size: 15px;
+  } */
 
+  /* .box:nth-child(2) {
+    order: 1;
+    width: 100%;
+    font-size: 2rem;
+} */
 /* -----------------Responsive home--------------*/
 .container-home{
     grid-template-areas: "profile profile profile"
@@ -202,7 +176,7 @@
 }
 .avatar{
   width: 100px;
-  margin: 1rem auto;
+  margin: 1rem 1rem 1rem 0;
   display: block;
   float: left;
 }
@@ -211,7 +185,7 @@
 }
 /*Responsive profile*/
 .profile-content {
-    width: 95%;
+    width: 100%;
     margin: 0 auto; 
   }
 /*Responsive modal profile*/

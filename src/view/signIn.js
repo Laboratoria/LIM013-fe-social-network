@@ -50,15 +50,16 @@ export default () => {
   btnGoogle.addEventListener('click', () => {
     signInforgoogle()
       .then(() => {
-        sendDataCurrentUser()
-          .then(() => {
-            getDataCurrentUser()
-              .then((doc) => {
-                localStorage.setItem('datauser', JSON.stringify(doc.data()));
-              })
-              .then(() => {
-                window.location.hash = '#/home';
-              });
+        getDataCurrentUser()
+          .then((doc) => {
+            if (doc.exists) {
+              window.location.hash = '#/home';
+            } else {
+              sendDataCurrentUser()
+                .then(() => {
+                  window.location.hash = '#/home';
+                });
+            }
           });
       });
   });
@@ -72,15 +73,16 @@ export default () => {
     signIn(email, password)
       .then((data) => {
         if (data.user.emailVerified) {
-          sendDataCurrentUser()
-            .then(() => {
-              getDataCurrentUser()
-                .then((doc) => {
-                  localStorage.setItem('datauser', JSON.stringify(doc.data()));
-                })
-                .then(() => {
-                  window.location.hash = '#/home';
-                });
+          getDataCurrentUser()
+            .then((doc) => {
+              if (doc.exists) {
+                window.location.hash = '#/home';
+              } else {
+                sendDataCurrentUser()
+                  .then(() => {
+                    window.location.hash = '#/home';
+                  });
+              }
             });
         } else {
           error.textContent = 'Account not verified, please check your inbox';

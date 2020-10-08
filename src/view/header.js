@@ -11,7 +11,7 @@ export default () => {
         <li class="profile-header"><a href="#/profile"><i class="fas fa-user-circle"></i>Profile</a></li>
       </div>
         <li class="title-header box"><a href="#/home">Travel<i class="fas fa-plane-departure"></i>n</a></li>
-        <li id="log-out-header" class="box"><i id ='btn-singOut' class="fas fa-sign-out-alt"></i>Log out</li>
+        <li id="log-out-header" class="box"><span id ='btn-singOut'><i class="fas fa-sign-out-alt"></i>Log out</span></li>
     </ul>
   </nav>
   <i id="hamburger-menu" class="fas fa-bars hide"></i>

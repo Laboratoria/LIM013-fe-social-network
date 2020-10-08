@@ -81,16 +81,18 @@
 .user-information {
   width: 100%; 
   z-index: 0;
-  padding: 1rem 3rem 3rem 3rem; 
+  padding: 4.5rem 3rem 3rem 3rem; 
   background-color: white;
   color: #222; 
   border-radius: 0 0 0.5rem 0.5rem;
   border: 1px rgba(128, 128, 128, 0.226) solid; 
+  position: relative;
 }
 .edit-info {
-  margin-left: 100%;
   margin-top: 1rem; 
   cursor: pointer;
+  position: absolute;
+  right: 1rem;
 }
 .user-information h2 {
   text-align: center;

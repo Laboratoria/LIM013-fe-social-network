@@ -41,8 +41,10 @@ main > div{
 }
 .avatar{
     width: 100px;
+    height: 100px;
     margin: 0.5rem auto;
     display: block;
+    border-radius: 50%;
 }
 hr{
     border: 0;

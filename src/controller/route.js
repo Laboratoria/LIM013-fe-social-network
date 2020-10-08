@@ -1,4 +1,5 @@
 import { components } from '../view/index.js';
+import { getDataCurrentUser } from './controller-cloud.js';
 
 const changeView = (route) => {
   const container = document.querySelector('#container');
@@ -13,11 +14,17 @@ const changeView = (route) => {
       break;
     case '#/home':
       container.appendChild(components.header());
-      container.appendChild(components.home());
+      getDataCurrentUser()
+        .then((doc) => {
+          container.appendChild(components.home(doc.data()));
+        });
       break;
     case '#/profile':
       container.appendChild(components.header());
-      container.appendChild(components.profile());
+      getDataCurrentUser()
+        .then((doc) => {
+          container.appendChild(components.profile(doc.data()));
+        });
       break;
     case '#/recoverPassword':
       container.appendChild(components.recoverPassword());
