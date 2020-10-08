@@ -1,5 +1,5 @@
 import { currentUser } from '../firebase/auth-controller.js';
-import { statusprivacy, deletePost, updatePost } from '../firebase/firestore-controller.js';
+import { statusprivacy, deletePost } from '../firebase/firestore-controller.js';
 
 const postContentText = (img, post, id) => {
   let postContenido = '';
@@ -69,12 +69,12 @@ export const postLoad = (objePost) => {
   });
 
   const deletpost = note.querySelector(`#delete-${objePost.id}`);
-  deletpost.addEventListener('', () => {
+  deletpost.addEventListener('click', () => {
     deletePost('posts', objePost.id);
   });
-  const editpost = note.querySelector(`#edit-${objePost.id}`);
-  editpost.addEventListener('', () => {
-    updatePost(objePost.id, inputPost.value);
-  });
+  // const editpost = note.querySelector(`#edit-${objePost.id}`);
+  // editpost.addEventListener('', () => {
+  //   updatePost(objePost.id, inputPost.value);
+  // });
   return note;
 };

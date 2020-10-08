@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-cycle
 import { dataProfile } from '../controller/home-controller.js';
 // eslint-disable-next-line import/no-cycle
 import { setProfileInfo, saveProfileInfo } from '../controller/profile-controller.js';

@@ -488,6 +488,12 @@ img.user_img{
     /* outline: none; */
     cursor: pointer;
 }
+.post-new-image{
+	width: 20%;
+}
+.post-profile{
+	width: 20%;
+}
 /*TODO vista profile posts*/
 .post_buttom {
 	width: 20%;

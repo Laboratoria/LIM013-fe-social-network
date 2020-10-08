@@ -1,11 +1,11 @@
 /* eslint-disable import/no-cycle */
 import { components } from '../view/index.js';
 // eslint-disable-next-line import/no-unresolved
-import { getAllPosts } from '../firebase/firestore-controller.js';
-import { currentUser } from '../firebase/auth-controller.js';
+// import { getAllPosts } from '../firebase/firestore-controller.js';
+// import { currentUser } from '../firebase/auth-controller.js';
 
 export const cambioVista = (route) => {
-  const user = currentUser();
+  // const user = currentUser();
   window.location.hash = route;
   const sectionContainer = document.getElementById('container');
   sectionContainer.innerHTML = '';
@@ -35,16 +35,16 @@ export const cambioVista = (route) => {
       // });
       break;
     case '#/profile':
-      getAllPosts((notes) => {
-        const arrNotes = [];
-        notes.forEach((note) => {
-          if (note.currentUser === user.uid) {
-            arrNotes.push(note);
-          }
-        });
-        sectionContainer.innerHTML = '';
-        routeSelected = sectionContainer.appendChild(components.profile(arrNotes));
-      });
+      // getAllPosts((notes) => {
+      //   const arrNotes = [];
+      //   notes.forEach((note) => {
+      //     if (note.currentUser === user.uid) {
+      //       arrNotes.push(note);
+      //     }
+      //   });
+      sectionContainer.innerHTML = '';
+      routeSelected = sectionContainer.appendChild(components.profile());
+      // });
       break;
     default:
       routeSelected = sectionContainer.appendChild(components.notFound());

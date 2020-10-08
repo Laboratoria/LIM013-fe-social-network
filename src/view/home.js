@@ -1,4 +1,4 @@
-// import { postLoad } from './post.js';
+// TODO no quitar import { postLoad } from './post.js';
 // eslint-disable-next-line max-len
 // import { signingOut, gettingProfileInfo, savingChanges } from '../view-controller/profile-controller.js';
 // eslint-disable-next-line import/named
@@ -6,6 +6,7 @@
 import { dataProfile, makingPost } from '../controller/home-controller.js';
 // eslint-disable-next-line import/no-cycle
 import { cambioVista } from '../controller/router.js';
+// import { getAllPosts } from '../firebase/firestore-controller';
 
 
 export default () => {
@@ -75,7 +76,9 @@ export default () => {
         <h1  class="ask_status">¿Qué hiciste con tu mascota hoy?</h1>
         <textarea name="" id="status_input" cols="30" rows="10" class="status_imput" placeholder="Cuéntanos las travesuras de tu mejor amigo."></textarea>
         <img id="showPicture" class="post-new-image" src="#" alt="">
+        <div class = "img-upload-close">
         <button id="btnCancelImg" class="hide cancel-image"></button>
+        </div>
         <label for="selectImage"> 
           <input type="file" id="selectImage"  name="imagensubida" class="upload" accept="image/png, .jpeg, .jpg, image/gif">
           <i class="fas fa-camera">Foto</i>
@@ -125,6 +128,8 @@ export default () => {
     } else {
       menuLat.className = 'menu_mobile';
     }
+  });
+
 
   const imagenUploading = divElemt.querySelector('#selectImage');
   const imagenUpload = divElemt.querySelector('#showPicture');
@@ -150,7 +155,8 @@ export default () => {
     makingPost(file, userId, userName, userPhoto);
   });
 
-  // const elementPost = divElemt.querySelector('.all-posts');
+  // TODO No mover
+  //  const elementPost = divElemt.querySelector('.all-posts');
   // notes.forEach((element) => {
   //   elementPost.appendChild(postLoad(element));
   // });
@@ -165,5 +171,34 @@ export default () => {
   buttonEditProfile.addEventListener('click', () => {
     cambioVista('#/profile');
   });
+
+  const postFinal = divElemt.querySelector('.all-posts');
+  firebase.firestore().collection('posts')
+    .orderBy('time', 'desc')
+    .onSnapshot((querySnapshot) => {
+      const output = [];
+      postFinal.innerHTML = ' ';
+      querySnapshot.forEach((doc) => {
+        output.push({
+          id: doc.id,
+          name: doc.data().name,
+          post: doc.data().post,
+          user: doc.data().user,
+          photo: doc.data().photo,
+          img: doc.data().img,
+          time: doc.data().time,
+          privacy: doc.data().privacy,
+        });
+        console.log(`${doc.id} => ${doc.data()} `);
+        postFinal.innerHTML += `    
+        <section>
+        <p class="text-post" id="post">${doc.data().name}</p>
+        <p class="post-time">${doc.data().time}</p>
+        <img src="${doc.data().photo}" alt="" class="post-profile" width="50px" height ="auto">
+        <textarea class="validity input-post" name="" id="inputPost" type="text" cols="30" rows="10">${doc.data().post}</textarea>
+        <img src="${doc.data().img}" alt="" class="post-new-image" width="50px" height ="auto">
+        </section>`;
+      });
+    });
   return divElemt;
 };
