@@ -13,7 +13,7 @@ export const sendDataCurrentUser = () => {
     email: user.email,
     photo: Photo,
     phone: 'Phone',
-    birthday: 'dd/mm/aaaa',
+    birthday: 'yyyy-MM-dd',
     country: 'Country',
     description: 'Description',
   });

@@ -1,10 +1,13 @@
 /*Header view*/
 
 .main-header {
+  position: sticky;
+  top: 0;
   width: 100%;
   display: flex; 
   background-image: linear-gradient(-240deg, #3dbee9 0%, #46c5a5 100%);
   color: white; 
+  z-index: 1;
 }
 
 
