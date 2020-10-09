@@ -38,7 +38,7 @@ export const postSection = (Object) => {
     <div>
       <h4>${Object.name}</h4>
           <textarea class="validity input-post" name="" id="inputPost-${Object.user}" type="text" cols="30" rows="10">${Object.post}</textarea>
-        <img src="${Object.img}" style="width:100%" alt="Northern Lights" class="photo_post_img">
+        <img src="${Object.img}" style="width:50%" alt="Northern Lights" class="photo_post_img">
     </div>
     <hr class="w3-clear">
     <div class="container-name-privacity">
