@@ -1,8 +1,8 @@
 /* eslint-disable import/no-cycle */
 import { components } from '../view/index.js';
 // eslint-disable-next-line import/no-unresolved
-// import { getAllPosts } from '../firebase/firestore-controller.js';
-// import { currentUser } from '../firebase/auth-controller.js';
+import { allPosts } from '../firebase/firestore-controller.js';
+import { currentUser } from '../firebase/auth-controller.js';
 
 export const cambioVista = (route) => {
   // const user = currentUser();
@@ -23,28 +23,28 @@ export const cambioVista = (route) => {
       routeSelected = sectionContainer.appendChild(components.register());
       break;
     case '#/home':
-      // getAllPosts((notes) => {
-      //   const arrNotes = [];
-      //   notes.forEach((note) => {
-      //     if (note.user === currentUser.uid) {
-      //       arrNotes.push(note);
-      //     }
-      //   });
-      sectionContainer.innerHTML = '';
-      routeSelected = sectionContainer.appendChild(components.home());
-      // });
+      allPosts((notes) => {
+        const arrNotes = [];
+        notes.forEach((note) => {
+          if (note.user === currentUser.uid) {
+            arrNotes.push(note);
+          }
+        });
+        sectionContainer.innerHTML = '';
+        routeSelected = sectionContainer.appendChild(components.home(notes));
+      });
       break;
     case '#/profile':
-      // getAllPosts((notes) => {
-      //   const arrNotes = [];
-      //   notes.forEach((note) => {
-      //     if (note.currentUser === user.uid) {
-      //       arrNotes.push(note);
-      //     }
-      //   });
-      sectionContainer.innerHTML = '';
-      routeSelected = sectionContainer.appendChild(components.profile());
-      // });
+      allPosts((notes) => {
+        const arrNotes = [];
+        notes.forEach((note) => {
+          if (note.privacy === '0' || note.currentUser === currentUser.uid) {
+            arrNotes.push(note);
+          }
+        });
+        sectionContainer.innerHTML = '';
+        routeSelected = sectionContainer.appendChild(components.profile(notes));
+      });
       break;
     default:
       routeSelected = sectionContainer.appendChild(components.notFound());
