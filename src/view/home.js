@@ -61,7 +61,7 @@ export default (dataCurrentUser) => {
             <i class="fas fa-ellipsis-v btn-menu"></i>
             <div id="menu-content" class="menu-content">
               <li><i class="fas fa-edit select"></i> Edit</li>
-              <li><i class="fas fa-trash-alt select"></i> Eliminate</li>
+              <li><i class="fas fa-trash-alt select"></i> Delete</li>
             </div>
           </div>               
           <img class="avatar-post" src="${dataCurrentUser.photo}"/>
