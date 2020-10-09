@@ -1,5 +1,5 @@
 import {
-  signIn, signInforgoogle, createUser, sendRecoverPass, sendEmail,
+  signIn, signInforgoogle, createUser, sendRecoverPass, sendEmail, signOut,
 } from '../src/controller/controller-firebase.js';
 
 // setting up firebase mock
@@ -18,7 +18,7 @@ global.firebase = firebasemock.MockFirebaseSdk(
   // () => mockdatabase,
 );
 /* --------------------------funciones de test ----------------------------*/
-
+// Log in
 describe('Sign In with credentials', () => {
   it('Deberia poder iniciar sesión', () => signIn('travelin@rs.com', 'abc123')
     .then((user) => {
@@ -32,6 +32,7 @@ describe('Sing in with google', () => {
       expect(user.providerData[0].providerId).toBe('google.com');
     }));
 });
+// Sign up
 describe('create new user', () => {
   it('Debería crear un nuevo usuario', () => createUser('prueba@test.com', 'pruebatest')
     .then((user) => {
@@ -39,6 +40,7 @@ describe('create new user', () => {
       expect(user.password).toBe('pruebatest');
     }));
 });
+// Email verified
 describe('send email verified', () => {
   it('Debería enviar un email de verificación', () => {
     const mockSendEmail = jest.fn();
@@ -48,6 +50,7 @@ describe('send email verified', () => {
     expect(mockSendEmail.mock.calls).toHaveLength(1);
   });
 });
+// Recover password
 describe('Send recover password', () => {
   it('Deberia enviar un email para restablecer contraseña', () => {
     const mockSendPasswordResetEmail = jest.fn();
@@ -59,4 +62,11 @@ describe('Send recover password', () => {
     // verificar si el metodo recibio como arg el email
     expect(mockSendPasswordResetEmail).toHaveBeenCalledWith('test@gmail.com');
   });
+});
+// Log out
+describe('Log out', () => {
+  it('Deberia salir de sesión', () => signOut()
+    .then((user) => {
+      expect(user).toBe(undefined);
+    }));
 });

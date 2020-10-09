@@ -123,6 +123,12 @@ export default (dataCurrentUser) => {
     e.preventDefault();
     modalContainer.classList.remove('showEditProfile');
   });
+  // close modal click outside
+  window.addEventListener('click', (e) => {
+    if (e.target === modalContainer) {
+      modalContainer.classList.remove('showEditProfile');
+    }
+  });
   /* -----------------submit modal edit user profile------------------ */
   const formEditProfile = viewProfile.querySelector('.editProfile');
   formEditProfile.addEventListener('submit', (e) => {
