@@ -24,21 +24,3 @@ export const updateProfileInfo = (userId, newUserName, namePet, description) => 
   aboutUs: description,
   displayName: newUserName,
 });
-/* ---modularizar---*/
-export const allPost = firebase.firestore().collection('posts')
-  .orderBy('time', 'desc')
-  .onSnapshot((querySnapshot) => {
-    const output = [];
-    querySnapshot.forEach((doc) => {
-      output.push({
-        id: doc.id,
-        name: doc.data().name,
-        post: doc.data().post,
-        user: doc.data().user,
-        photo: doc.data().photo,
-        img: doc.data().img,
-        time: doc.data().time,
-        privacy: doc.data().privacy,
-      });
-    });
-  });
