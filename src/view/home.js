@@ -10,7 +10,7 @@ export default (dataCurrentUser) => {
       <img class="avatar" src="${dataCurrentUser.photo}"/>
       <h2 id="name"> ${dataCurrentUser.username}</h2>
       <hr>
-      <p id="profession"><i class="fas fa-mobile-alt"></i> ${dataCurrentUser.phone}</p>
+      <p id="phone"><i class="fas fa-mobile-alt"></i> ${dataCurrentUser.phone}</p>
       <p id="city"><i class="fas fa-map-marker-alt"></i> ${dataCurrentUser.country}</p>
       <p id="birthday"><i class="fas fa-birthday-cake"></i> ${dataCurrentUser.birthday}</p>
       <a href="#/profile" id="viewall">View All</a>
@@ -19,7 +19,7 @@ export default (dataCurrentUser) => {
     <div class = "interest">
       <p>Interests</p>
         <p>
-          <span data-title = "Friends">Friends</span>
+          <span>Friends</span>
           <span>Games</span>
           <span>Food</span>
           <span>Travel</span>
@@ -57,7 +57,13 @@ export default (dataCurrentUser) => {
     <div class="allpost">
       <div class="mainpost">
         <div class="user-post">
-          <i class="fas fa-ellipsis-v"></i>
+          <div class="menu">
+            <i class="fas fa-ellipsis-v btn-menu"></i>
+            <div id="menu-content" class="menu-content">
+              <li><i class="fas fa-edit select"></i> Edit</li>
+              <li><i class="fas fa-trash-alt select"></i> Delete</li>
+            </div>
+          </div>               
           <img class="avatar-post" src="${dataCurrentUser.photo}"/>
           <p class="name">${dataCurrentUser.username}</p>
           <select class="fa" id="privacy-option">
@@ -169,7 +175,17 @@ export default (dataCurrentUser) => {
     uploadImg.value = '';
     removeImg.style.display = 'none';
   });
-
+  const btnMenu = viewHome.querySelector('.btn-menu');
+  /* ---------------- Menu despegable --------------------------*/
+  btnMenu.addEventListener('click', () => {
+    viewHome.querySelector('#menu-content').classList.toggle('show');
+  });
+  // close menu click outside
+  window.addEventListener('click', (e) => {
+    if (e.target !== btnMenu) {
+      viewHome.querySelector('#menu-content').classList.remove('show');
+    }
+  });
   /* ------------Mostrar y ocultar comentario ------------------*/
   viewHome.querySelector('.btn-comment').addEventListener('click', () => {
     viewHome.querySelector('#div-comment').classList.toggle('hide');
@@ -194,7 +210,7 @@ export default (dataCurrentUser) => {
   /* ----------- Ventana Contact us emergente ------------------*/
   viewHome.querySelector('#contact-bottom').addEventListener('click', () => {
     viewHome.querySelector('#contact-bottom').classList.toggle('click');
-    viewHome.querySelector('#contact').classList.toggle('show');
+    viewHome.querySelector('#contact').classList.toggle('viewContact');
   });
 
   return viewHome;

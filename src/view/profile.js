@@ -1,4 +1,4 @@
-import { updateCurrentUser, getDataCurrentUser } from '../controller/controller-cloud.js';
+import { updateCurrentUser } from '../controller/controller-cloud.js';
 
 export default (dataCurrentUser) => {
   /*  const dataCurrentUser = JSON.parse(localStorage.getItem('datauser')); */
@@ -75,7 +75,7 @@ export default (dataCurrentUser) => {
         <textarea id = "descriptionEdit">${dataCurrentUser.description}</textarea>
       </div>
       <button type="submit" class="btn-update">UPDATE</a></button>
-      <button class="btn-cancel">CANCEL</a></button>
+      <button type="reset" class="btn-cancel">CANCEL</a></button>
     </form>
   </seion>
 </section>
@@ -110,6 +110,7 @@ export default (dataCurrentUser) => {
     return photoFile;
   });
 
+  const formEditProfile = viewProfile.querySelector('.editProfile');
   /* -----------------Open modal edit user profile------------------ */
   const modalContainer = viewProfile.querySelector('.modal-container');
   const btnEditProfile = viewProfile.querySelector('#btn-editProfile');
@@ -117,14 +118,20 @@ export default (dataCurrentUser) => {
     modalContainer.classList.add('showEditProfile');
   });
   /* -----------------close modal edit user profile------------------ */
-
   const btnModalClose = viewProfile.querySelector('.btn-modalClose');
   btnModalClose.addEventListener('click' || 'touch', (e) => {
     e.preventDefault();
     modalContainer.classList.remove('showEditProfile');
+    formEditProfile.reset();
+  });
+  // close modal click outside
+  window.addEventListener('click', (e) => {
+    if (e.target === modalContainer) {
+      modalContainer.classList.remove('showEditProfile');
+      formEditProfile.reset();
+    }
   });
   /* -----------------submit modal edit user profile------------------ */
-  const formEditProfile = viewProfile.querySelector('.editProfile');
   formEditProfile.addEventListener('submit', (e) => {
     e.preventDefault();
     const usernameEdit = viewProfile.querySelector('#usernameEdit').value;
@@ -136,14 +143,7 @@ export default (dataCurrentUser) => {
     // birthdayProfile.textContent = birthdayContent;
     updateCurrentUser(usernameEdit, phoneEdit, birthday, countryEdit, descriptionEdit)
       .then(() => {
-        getDataCurrentUser()
-          .then((doc) => {
-            localStorage.setItem('datauser', JSON.stringify(doc.data()));
-          })
-          .then(() => {
-            window.location.reload();
-            modalContainer.classList.remove('showEditProfile');
-          });
+        window.location.reload();
       });
   });
   return viewProfile;
