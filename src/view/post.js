@@ -1,5 +1,5 @@
 // import { currentUser } from '../firebase/auth-controller.js';
-// import { statusprivacy, deletePost } from '../firebase/firestore-controller.js';
+import { deletePost } from '../firebase/firestore-controller.js';
 
 // const postContentText = (img, post, id) => {
 //   let postContenido = '';
@@ -31,6 +31,17 @@ export const postSection = (Object) => {
   // const user = currentUser().uid;
   note.innerHTML = `
     <div class="user_post">
+      <div class='edition-section'>
+      <label><i class="fas fa-ellipsis-h"></i></label>
+        <ul class='menu-edit'>
+          <li class="btn-post-edit" id="edit-${Object.id}">
+              <i class="fas fa-user-edit"></i>Editar
+          </li>
+          <li class="btn-post-delete" id="delete-${Object.id}">
+              <i class="fas fa-home"></i>Eliminar
+          </li>
+        </ul>
+      </div>
       <div class="user_photo">
         <img class="user_img" src="${Object.photo}" alt="">
         <p class="post-time">${Object.time}</p>
@@ -71,10 +82,12 @@ export const postSection = (Object) => {
   //   statusprivacy(Object.id, optionPrivacy.value);
   // });
 
-  // const deletpost = note.querySelector(`#delete-${Object.id}`);
-  // deletpost.addEventListener('click', () => {
-  //   deletePost('posts', Object.id);
-  // });
+  const deletePostBtn = note.querySelectorAll(`#delete-${Object.id}`);
+  deletePostBtn.forEach((elemento) => {
+    elemento.addEventListener('click', () => {
+      deletePost('posts', Object.id);
+    });
+  });
   // const editpost = note.querySelector(`#edit-${objePost.id}`);
   // editpost.addEventListener('', () => {
   //   updatePost(objePost.id, inputPost.value);

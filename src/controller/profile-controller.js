@@ -58,8 +58,8 @@ export const saveProfileInfo = (file) => {
     });
   }
   editInfo();
-  updateProfileInfo(currentUser().uid, namePet3.textContent, aboutUs3.textContent,
-    nameUserProfile3.textContent);
+  updateProfileInfo(currentUser().uid, nameUserProfile3.textContent, namePet3.textContent,
+  aboutUs3.textContent);
   localStorage.setItem('namePet', namePet3.textContent);
   localStorage.setItem('aboutUs', aboutUs3.textContent);
   localStorage.setItem('nameUserProfile', nameUserProfile3.textContent);

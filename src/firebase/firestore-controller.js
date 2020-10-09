@@ -1,9 +1,7 @@
 
-export const createUser = (idDoc, newUserName, newUserPhoto, namePet, description) => firebase.firestore().collection('users').doc(idDoc).set({
-  aboutUs: description,
+export const createUser = (idDoc, newUserName, newUserPhoto) => firebase.firestore().collection('users').doc(idDoc).set({
   displayName: newUserName,
   photoURL: newUserPhoto,
-  petName: namePet,
 });
 export const getUser = docUser => firebase.firestore().collection('users').doc(docUser).get();
 
@@ -23,9 +21,9 @@ export const createPost = (id, userName, newPost, imagePost, date, status, userP
 export const getProfileInfo = userId => firebase.firestore().collection('users').doc(userId).get();
 
 export const updateProfileInfo = (idDoc, newUserName, namePet, description) => firebase.firestore().collection('users').doc(idDoc).update({
-  aboutUs: description,
   displayName: newUserName,
   petName: namePet,
+  aboutUs: description,
 });
 
 // eslint-disable-next-line object-shorthand

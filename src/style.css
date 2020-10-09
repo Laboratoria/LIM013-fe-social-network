@@ -452,7 +452,11 @@ img.user_img{
     border-radius: 50%;
     height: 80px;
 }
-
+.edition-section{
+	position: absolute;
+	margin-left: 70%;
+	color:black;
+}
 
 /*TODO container posts*/
 .like-picture{
@@ -912,6 +916,11 @@ i.fa.fa-pencil{
     	grid-column-start: 3;
     	grid-column-end: 4;
 	}
+	.edition-section {
+		position: absolute;
+		margin-left: 30%;
+		color: black;
+	}
 }
 @media only screen and (min-width: 1281px) {
 	body {
@@ -1125,6 +1134,11 @@ i.fa.fa-pencil{
     .divPost{
         grid-column: span 2;
 	}
+	.edition-section {
+		position: absolute;
+		margin-left: 30%;
+		color: black;
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 /* Extra large devices (large laptops and desktops, 1200px and up) */
+}
