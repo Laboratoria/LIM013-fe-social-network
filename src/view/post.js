@@ -27,4 +27,4 @@ export const postSection = (doc) => {
 </div>`;
 
   return eachPost;
-}
+};

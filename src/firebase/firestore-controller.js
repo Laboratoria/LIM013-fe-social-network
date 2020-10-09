@@ -19,25 +19,26 @@ export const createPost = (uid, contentText, privacy, imgPost) => firebase.fires
 
 export const getProfileInfo = userId => firebase.firestore().collection('users').doc(userId).get();
 
-export const updateProfileInfo = (userId,newUserName, namePet, description) => firebase.firestore().collection('users').doc(userId).update({
+export const updateProfileInfo = (userId, newUserName, namePet, description) => firebase.firestore().collection('users').doc(userId).update({
   petName: namePet,
   aboutUs: description,
   displayName: newUserName,
 });
-/*---modularizar---*/
+/* ---modularizar---*/
 export const allPost = firebase.firestore().collection('posts')
-.orderBy('time', 'desc')
-.onSnapshot((querySnapshot) => {
-  const output = [];
-  postFinal.innerHTML = ' ';
-  querySnapshot.forEach((doc) => {
-    output.push({
-      id: doc.id,
-      name: doc.data().name,
-      post: doc.data().post,
-      user: doc.data().user,
-      photo: doc.data().photo,
-      img: doc.data().img,
-      time: doc.data().time,
-      privacy: doc.data().privacy,
+  .orderBy('time', 'desc')
+  .onSnapshot((querySnapshot) => {
+    const output = [];
+    querySnapshot.forEach((doc) => {
+      output.push({
+        id: doc.id,
+        name: doc.data().name,
+        post: doc.data().post,
+        user: doc.data().user,
+        photo: doc.data().photo,
+        img: doc.data().img,
+        time: doc.data().time,
+        privacy: doc.data().privacy,
+      });
     });
+  });
