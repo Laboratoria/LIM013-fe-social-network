@@ -93,16 +93,6 @@ hr{
     border-radius: 4px;
 }
 
-.content-newpost textarea:focus{
-    border-color: #C4C4C4;
-    background: none;
-}
-.content-newpost textarea::placeholder{
-    color: rgba(44, 171, 146, 0.8);
-}
-.content-newpost textarea:focus::placeholder{
-    color: #C4C4C4;
-}
 .post-img{
     width: 50%;
     display: block;
@@ -198,6 +188,11 @@ select{
     z-index: 1;
     font-size: 14px;
 }
+.aboutUs li{
+    list-style: none;
+    display: inline-block;
+    padding: 3px;
+}
 .menu-content li {
     color: #2b7a75;
     padding: 5px 10px;
@@ -233,6 +228,16 @@ select{
 .div-comment textarea::placeholder{
     color: rgba(44, 171, 146, 0.8);
 }
+.content-newpost textarea:focus{
+    border-color: #C4C4C4;
+    background: none;
+}
+.content-newpost textarea::placeholder{
+    color: rgba(44, 171, 146, 0.8);
+}
+.content-newpost textarea:focus::placeholder{
+    color: #C4C4C4;
+}
 .like{
     opacity: 0.6;
     font-size: 0.8rem;
@@ -251,7 +256,12 @@ select{
     color: #2CAB92;
     margin: 0;
 }
-
+.github i{
+    font-size: 20px;
+    cursor: pointer;
+    color: #444;
+    transition: all ease 0.5s;
+}
 .div-comment i:hover{
     color: #2b7a75;
 }
@@ -313,12 +323,6 @@ select{
     width: 100%;
     border: 2px solid #2CAB92;
 }
-
-.aboutUs li{
-    list-style: none;
-    display: inline-block;
-    padding: 3px;
-}
 .aboutUs li a{
     font-size: 13px;
     color: gray;
@@ -340,12 +344,7 @@ select{
     justify-items: center;
     position: relative;
 }
-.github i{
-    font-size: 20px;
-    cursor: pointer;
-    color: #444;
-    transition: all ease 0.5s;
-}
+
 .github i:hover{
     color: #2CAB92;
 }
