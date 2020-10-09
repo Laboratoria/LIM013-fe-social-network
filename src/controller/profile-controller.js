@@ -62,5 +62,5 @@ export const saveProfileInfo = (file) => {
     nameUserProfile3.textContent);
   localStorage.setItem('namePet', namePet3.textContent);
   localStorage.setItem('aboutUs', aboutUs3.textContent);
-  localStorage.setItem('nameUserProfile',nameUserProfile3.textContent);
+  localStorage.setItem('nameUserProfile', nameUserProfile3.textContent);
 };

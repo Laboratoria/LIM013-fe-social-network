@@ -1,4 +1,6 @@
 import { currentUserAsync, logOut } from '../firebase/auth-controller.js';
+// eslint-disable-next-line import/no-cycle
+import { uploadImgPosting } from '../firebase/storage-controller.js';
 
 import { getUser, createPost } from '../firebase/firestore-controller.js';
 
@@ -24,18 +26,22 @@ export const signOut = () => {
   logOut();
 };
 export const makingPost = (file, userId, userName, userPhoto) => {
-  const newPost = document.querySelector('#newPost').value;
+  const newPost = document.querySelector('#status_input').value;
   const status = document.querySelector('.privacy').value;
   const date = new Date().toLocaleString();
 
   let imPost = '';
   if (file) {
     imPost = localStorage.getItem('image');
-    uploadImagePost(file, userId);
+    uploadImgPosting(file, userId);
   }
-  createPost(userId, userName, newPost, imPost,
-    date, status, userPhoto)
+
+  createPost(userId, userName, newPost, imPost, date, status, userPhoto)
     .then(() => {
-      document.querySelector('.new-post').value = '';
+      document.querySelector('#status_input').value = '';
+      const classImg = document.querySelector('.post-new-image');
+      classImg.classList.add('hide');
+      const bttonCancel = document.querySelector('.img-upload-close');
+      bttonCancel.classList.add('hide');
     });
 };
