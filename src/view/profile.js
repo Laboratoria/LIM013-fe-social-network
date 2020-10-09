@@ -75,7 +75,6 @@ export default (dataCurrentUser) => {
         <textarea id = "descriptionEdit">${dataCurrentUser.description}</textarea>
       </div>
       <button type="submit" class="btn-update">UPDATE</a></button>
-      <button type="reset" class="btn-cancel">CANCEL</a></button>
     </form>
   </seion>
 </section>

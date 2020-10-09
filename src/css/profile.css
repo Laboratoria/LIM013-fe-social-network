@@ -195,35 +195,24 @@ resize: none;
 #birthdayEdit{
   height: 40px;
 }
-.btn-update, .btn-cancel{
+.btn-update{
 margin-left: auto;
 margin-right: auto;
 width: 60%;
 height: 40px;
 border-radius: 55px;
+outline: none;
 }
 .btn-update{
   border: none;
   background: #2CAB92;
   color: #ffffff;
 }
-.btn-cancel{
-  border-color: #2CAB92;
-  color: #2CAB92;
-  background-color: transparent;
-  border-style: solid;
-}
 .grupo input:focus, #birthdayEdit:focus, textarea:focus{
   box-shadow: 2px 7px 10px -5px #8894a0; 
 }
 .grupo input:hover, #birthdayEdit:hover, textarea:hover{
   border: 1.6px solid #2b7a75;
-}
-.btn-cancel:hover{
-  border-color: #2b7a75;
-  color: #2b7a75;
-  width: 62%;
-  height: 44px;
 }
 .btn-update:hover{
   background: #2b7a75;
