@@ -1,5 +1,5 @@
 
-export const createUser = (idDoc, newUserName, newUserPhoto,namePet, description) => firebase.firestore().collection('users').doc(idDoc).set({
+export const createUser = (idDoc, newUserName, newUserPhoto, namePet, description) => firebase.firestore().collection('users').doc(idDoc).set({
   aboutUs: description,
   displayName: newUserName,
   photoURL: newUserPhoto,
@@ -22,7 +22,7 @@ export const createPost = (id, userName, newPost, imagePost, date, status, userP
 
 export const getProfileInfo = userId => firebase.firestore().collection('users').doc(userId).get();
 
-export const updateProfileInfo = (idDoc,newUserName, namePet, description) => firebase.firestore().collection('users').doc(idDoc).update({
+export const updateProfileInfo = (idDoc, newUserName, namePet, description) => firebase.firestore().collection('users').doc(idDoc).update({
   aboutUs: description,
   displayName: newUserName,
   petName: namePet,
@@ -36,13 +36,30 @@ export const statusprivacy = (id, status) => firebase.firestore().collection('po
 // eslint-disable-next-line max-len
 export const deletePost = (collection, id) => firebase.firestore().collection(collection).doc(id).delete();
 
-export const getAllPosts = callback => firebase.firestore().collection('posts')
+// export const getAllPosts = callback => firebase.firestore().collection('posts')
+//   .orderBy('time', 'desc')
+//   .onSnapshot((querySnapshot) => {
+//     const allPosts = [];
+//     querySnapshot.forEach((doc) => {
+//       allPosts.push({ id: doc.id, ...doc.data() });
+//     });
+//     callback(allPosts);
+//   });
+export const allPosts = callback => firebase.firestore().collection('posts')
   .orderBy('time', 'desc')
   .onSnapshot((querySnapshot) => {
-    const allPosts = [];
+    const output = [];
     querySnapshot.forEach((doc) => {
-      allPosts.push({ id: doc.id, ...doc.data() });
+      output.push({
+        id: doc.id,
+        name: doc.data().name,
+        post: doc.data().post,
+        user: doc.data().user,
+        photo: doc.data().photo,
+        img: doc.data().img,
+        time: doc.data().time,
+        privacy: doc.data().privacy,
+      });
+      callback(output);
     });
-    callback(allPosts);
   });
-

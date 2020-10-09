@@ -1,6 +1,6 @@
 import { currentUser, updatePhotoUser } from '../firebase/auth-controller.js';
 
-import { getUser , updateProfileInfo } from '../firebase/firestore-controller.js';
+import { getUser, updateProfileInfo } from '../firebase/firestore-controller.js';
 
 // eslint-disable-next-line import/no-cycle
 import { uploadPhotoProfile } from '../firebase/storage-controller.js';
@@ -62,5 +62,5 @@ export const saveProfileInfo = (file) => {
     nameUserProfile3.textContent);
   localStorage.setItem('namePet', namePet3.textContent);
   localStorage.setItem('aboutUs', aboutUs3.textContent);
-  localStorage.setItem('nameUserProfile',nameUserProfile3.textContent);
+  localStorage.setItem('nameUserProfile', nameUserProfile3.textContent);
 };
