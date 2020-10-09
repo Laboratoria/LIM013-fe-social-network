@@ -27,7 +27,7 @@
 
 export const postSection = (Object) => {
   const note = document.createElement('div');
-  note.classList.add('container-post');
+  note.classList.add('divPost');
   // const user = currentUser().uid;
   note.innerHTML = `
     <div class="user_post">
@@ -38,7 +38,6 @@ export const postSection = (Object) => {
     <div>
       <h4>${Object.name}</h4>
           <textarea class="validity input-post" name="" id="inputPost-${Object.user}" type="text" cols="30" rows="10">${Object.post}</textarea>
-        <img src="${Object.img}" style="width:50%" alt="Northern Lights" class="photo_post_img">
     </div>
     <hr class="w3-clear">
     <div class="container-name-privacity">
@@ -48,7 +47,7 @@ export const postSection = (Object) => {
         <option value="1">Privado</option>
       </select>
     </div>
-    ${(Object.img !== undefined) ? `<img class="image-post" src="${Object.img}" alt=""/>` : `<img class="hide image-post" src="${Object.img}" alt=""/>`}
+    ${(Object.img !== undefined) ? `<img class="photo_post_img" src="${Object.img}" alt=""/>` : `<img class="hide image-post" src="${Object.img}" alt=""/>`}
     <div class="container-menu-post" id="containerMenu">
       <label id="menu" class=""></label>
       <nav class="nav-post hide" id="nav">
