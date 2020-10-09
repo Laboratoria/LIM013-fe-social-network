@@ -15,8 +15,12 @@
   width: 100%;
   display: flex; 
 }
-
-
+.title-header i {
+  font-size: 1.3rem;
+}
+.home-header i {
+  margin-left: 1rem; 
+}
 #left-menu-header i {
   font-size: 20px; 
   margin-right: 0.4rem; 
@@ -25,10 +29,6 @@
 #log-out-header i {
   font-size: 20px; 
   margin-right: 0.4rem; 
-}
-
-.title-header i {
-  font-size: 1.3rem;
 }
 
 .menu-header {
@@ -57,10 +57,6 @@
   display: flex;
   flex-flow: row nowrap; 
   align-items: center;
-}
-
-.home-header i {
-  margin-left: 1rem; 
 }
 
 .title-header {

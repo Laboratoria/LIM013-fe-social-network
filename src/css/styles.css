@@ -37,12 +37,6 @@ a {
     box-shadow: 0 4px 6px -6px #222;
 }
 
-
-.hide {
-    display:none; 
-}
-
-
 /*****************************classlist for messenger alert*************************/
 .error-message{
     color: red;
@@ -61,4 +55,4 @@ a {
 
 .hide {
     display:none; 
-  }
+}
