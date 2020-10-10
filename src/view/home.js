@@ -81,13 +81,13 @@ export default (notes) => {
         </div>
         <label for="selectImage"> 
           <input type="file" id="selectImage"  name="imagensubida" class="upload" accept="image/png, .jpeg, .jpg, image/gif">
-          <i class="fas fa-camera">Foto</i>
+          <i class="fas fa-camera"></i>
         </label>        
         <select id="privacy" class="privacy">
           <option value="0">Publico</option>
           <option value="1">Privado</option>
       </select>
-      <button type="button" id="bttonnewpost" class="post_buttom">Post</button>
+      <button type="button" id="bttonnewpost" class="post_buttom"><i class="fas fa-pencil-alt"></i>Post</button>
       </div>
       <div class="all-posts"></div>   
     </div>

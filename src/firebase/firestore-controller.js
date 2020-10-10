@@ -34,7 +34,7 @@ export const updatePost = (id, newPost) => firebase.firestore().collection('post
 export const statusprivacy = (id, status) => firebase.firestore().collection('posts').doc(id).update({ privacy: status });
 
 // eslint-disable-next-line max-len
-export const deletePost = (collection, id) => firebase.firestore().collection(collection).doc(id).delete();
+export const deletePost = id => firebase.firestore().collection('posts').doc(id).delete();
 
 // export const getAllPosts = callback => firebase.firestore().collection('posts')
 //   .orderBy('time', 'desc')
