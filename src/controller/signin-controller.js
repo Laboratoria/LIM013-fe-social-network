@@ -40,7 +40,7 @@ export const signingIn = () => {
 export const signInGoogle = () => {
   googleSignIn()
     .then((result) => {
-      createUser(result.user.uid, result.user.displayName, result.user.photoURL)
+      createUser(result.user.uid, result.user.displayName, result.user.photoURL, result.user.petName, result.user.aboutUs)
         .catch(() => {
           showMessage('No se actualizo usuario');
         });
