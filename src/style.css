@@ -293,7 +293,10 @@ li {
 ul li a{
     text-decoration: none;
 }
-
+.main{
+    width:90%;
+    margin:20px auto;
+}
 .body_container{
     width:90%;
     margin:20px auto;
@@ -304,10 +307,16 @@ ul li a{
 .profile_section1{
 	display: block;
 }
-.profile_section,.timeline_section{
+.profile_section{
     background: #f0f2f5;
     padding: 20px;
     border-radius: 4px;
+}
+.divPost{
+    background: #f0f2f5;
+    padding: 20px;
+	border-radius: 4px;
+	width:100%;
 }
 /* Profile*/
 @import url('https://fonts.googleapis.com/css?family=Lato:300,700');
@@ -332,7 +341,7 @@ p {
     height: 382px;
     margin: 0%;
     position: relative;
-	width: 400px;
+	width: 100%;
 	background:#fff;
 }
 .cover {
@@ -443,7 +452,11 @@ img.user_img{
     border-radius: 50%;
     height: 80px;
 }
-
+.edition-section{
+	position: absolute;
+	margin-left: 70%;
+	color:black;
+}
 
 /*TODO container posts*/
 .like-picture{
@@ -477,7 +490,7 @@ img.user_img{
     display: none;
 }
 
-.post-new-image{
+.post-new-image,.photo_post_img{
 	width: 100%;
 	max-width: 100%;
 }
@@ -693,7 +706,7 @@ i.fa.fa-pencil{
     .profile_section{
         display: block;
     }
-    .timeline_section{
+    .divPost{
         grid-column: span 2;
 	}
 
@@ -906,8 +919,15 @@ i.fa.fa-pencil{
     .profile_section{
         display: block;
     }
-    .timeline_section{
-        grid-column: span 2;
+    .divPost{
+		padding: 0;
+    	grid-column-start: 3;
+    	grid-column-end: 4;
+	}
+	.edition-section {
+		position: absolute;
+		margin-left: 30%;
+		color: black;
 	}
 }
 @media only screen and (min-width: 1281px) {
@@ -1105,19 +1125,28 @@ i.fa.fa-pencil{
 		position: relative;
 		margin-left: 0%;
 	}
-	.body_container{
-
-        display: grid;
-        grid-gap:20px;
-        grid-template-columns: repeat(3,1fr);
-    }
+	.main {
+		width: 90%;
+		margin: 20px auto;
+		display: grid;
+		height: 100%;
+		margin: 0 auto;
+		grid-template-columns: 40% 54% 0%;
+		padding-top: 3em;
+		box-sizing: border-box;
+	}
     .profile_section{
         display: block;
 	}
 	
-    .timeline_section{
+    .divPost{
         grid-column: span 2;
 	}
+	.edition-section {
+		position: absolute;
+		margin-left: 30%;
+		color: black;
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 /* Extra large devices (large laptops and desktops, 1200px and up) */
+}

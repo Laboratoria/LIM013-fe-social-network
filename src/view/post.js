@@ -1,7 +1,4 @@
 // import { currentUser } from '../firebase/auth-controller.js';
-// import { statusprivacy, deletePost } from '../firebase/firestore-controller.js';
-// TODO borre updatepost OJO
-
 import { deletePost } from '../firebase/firestore-controller.js';
 
 // const postContentText = (img, post, id) => {
@@ -32,7 +29,7 @@ import { deletePost } from '../firebase/firestore-controller.js';
 
 export const postSection = (Object) => {
   const note = document.createElement('div');
-  note.classList.add('container-post');
+  note.classList.add('divPost');
   // const user = currentUser().uid;
   note.innerHTML = ` 
     <div class="user_post">
@@ -85,8 +82,5 @@ export const postSection = (Object) => {
   //   });
   // });
   // const editpost = note.querySelectorAll('.btn-post-edit');
-  // editpost.addEventListener('', () => {
-  //   updatePost(objePost.id, inputPost.value);
-  // });
   return note;
 };

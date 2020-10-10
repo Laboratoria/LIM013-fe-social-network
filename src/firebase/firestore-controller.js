@@ -34,9 +34,9 @@ export const crearPostPrueba = (id, userName, newPost, imagePost, date, status, 
 export const getProfileInfo = userId => firebase.firestore().collection('users').doc(userId).get();
 
 export const updateProfileInfo = (idDoc, newUserName, namePet, description) => firebase.firestore().collection('users').doc(idDoc).update({
-  aboutUs: description,
   displayName: newUserName,
   petName: namePet,
+  aboutUs: description,
 });
 
 // eslint-disable-next-line object-shorthand

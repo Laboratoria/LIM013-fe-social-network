@@ -36,7 +36,7 @@ export default (notes) => {
       </ul>
       </nav>
     </header>
-    <main>
+    <div class='main'>
       <div class="body_container">
       <aside class="profile_section">
         <div class="card">
