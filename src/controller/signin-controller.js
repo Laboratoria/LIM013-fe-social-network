@@ -20,19 +20,17 @@ export const signingIn = () => {
   const emailLogIn = document.querySelector('#SignInForm_email').value;
   const passwordLogIn = document.querySelector('#SignInForm_password').value;
   signIn(emailLogIn, passwordLogIn)
-    .then(() => {
-      firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
-          if (user.emailVerified === false) {
-            showMessage('Email no verificado, revise su correo porfavor.');
-            logOut();
-          } else {
-            showMessage('Puede ingresar');
-            window.location.hash = '#/home';
+    .then((user) => {
+      if (user) {
+        if (user.emailVerified === false) {
+          showMessage('Email no verificado, revise su correo porfavor.');
+          logOut();
+        } else {
+          showMessage('Puede ingresar');
+          window.location.hash = '#/home';
           // changeView(window.location.hash);
-          }
         }
-      });
+      }
     })
     .catch(() => {
       showMessage('No puedes ingresar');
@@ -42,7 +40,7 @@ export const signingIn = () => {
 export const signInGoogle = () => {
   googleSignIn()
     .then((result) => {
-      createUser(result.user.uid, result.user.displayName, result.user.photoURL)
+      createUser(result.user.uid, result.user.displayName, result.user.photoURL, result.user.petName, result.user.aboutUs)
         .catch(() => {
           showMessage('No se actualizo usuario');
         });
