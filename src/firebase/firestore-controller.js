@@ -24,3 +24,33 @@ export const updateProfileInfo = (userId, newUserName, namePet, description) => 
   aboutUs: description,
   displayName: newUserName,
 });
+// eslint-disable-next-line max-len
+export const deletePost = (collection, id) => firebase.firestore().collection(collection).doc(id).delete();
+
+// export const getAllPosts = callback => firebase.firestore().collection('posts')
+//   .orderBy('time', 'desc')
+//   .onSnapshot((querySnapshot) => {
+//     const allPosts = [];
+//     querySnapshot.forEach((doc) => {
+//       allPosts.push({ id: doc.id, ...doc.data() });
+//     });
+//     callback(allPosts);
+//   });
+export const allPosts = callback => firebase.firestore().collection('posts')
+  .orderBy('time', 'desc')
+  .onSnapshot((querySnapshot) => {
+    const output = [];
+    querySnapshot.forEach((doc) => {
+      output.push({
+        id: doc.id,
+        name: doc.data().name,
+        post: doc.data().post,
+        user: doc.data().user,
+        photo: doc.data().photo,
+        img: doc.data().img,
+        time: doc.data().time,
+        privacy: doc.data().privacy,
+      });
+      callback(output);
+    });
+  });

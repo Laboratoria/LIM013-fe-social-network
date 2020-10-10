@@ -1,8 +1,9 @@
 import { dataProfile } from '../controller/home-controller.js';
+import { postSection } from './post.js';
 // eslint-disable-next-line import/no-cycle
 import { setProfileInfo, saveProfileInfo } from '../controller/profile-controller.js';
 
-export default () => {
+export default (notes) => {
   dataProfile();
   const userId = localStorage.getItem('userId');
   const userName = localStorage.getItem('name');
@@ -37,7 +38,6 @@ export default () => {
           </div>
           <div class="content">
             <div class="profile">
-
               <img class="profile_img" src="${userPhoto}" alt="">
               <label id="selectProfile" for="selectPhotoProfile" class="hide">
                 <input type="file" id="selectPhotoProfile" class="hide" accept="image/jpeg, image/png">
@@ -62,9 +62,10 @@ export default () => {
               </div>
             </div>
             <button type="button" class="edit_btn"><i class="fas fa-edit"></i>Edita tu perfil</button>
-          </div>
+          </div>      
         </div>
     </aside>
+    <div class="all-posts"></div>   
     </main>
   </div>`;
 
@@ -125,6 +126,11 @@ export default () => {
     btnSave.addEventListener('click', () => {
       saveProfileInfo(file);
     });
+  });
+
+  const postFinal = divElemt.querySelector('.all-posts');
+  notes.forEach((element) => {
+    postFinal.appendChild(postSection(element));
   });
   /* btnCancel.addEventListener('click', () => {
     gettingProfileInfo();

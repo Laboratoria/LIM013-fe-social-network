@@ -1,6 +1,9 @@
 /* eslint-disable import/no-cycle */
 import { components } from '../view/index.js';
 // eslint-disable-next-line import/no-unresolved
+import { allPosts } from '../firebase/firestore-controller.js';
+
+import { currentUser } from '../firebase/auth-controller.js';
 
 export const cambioVista = (route) => {
   window.location.hash = route;
@@ -20,8 +23,16 @@ export const cambioVista = (route) => {
       routeSelected = sectionContainer.appendChild(components.register());
       break;
     case '#/home':
-      sectionContainer.innerHTML = '';
-      routeSelected = sectionContainer.appendChild(components.home());
+      allPosts((notes) => {
+        const arrNotes = [];
+        notes.forEach((note) => {
+          if (note.user === currentUser.uid) {
+            arrNotes.push(note);
+          }
+        });
+        sectionContainer.innerHTML = '';
+        routeSelected = sectionContainer.appendChild(components.home(notes));
+      });
       break;
     case '#/profile':
       sectionContainer.innerHTML = '';

@@ -21,5 +21,12 @@ export const storage = firebase.storage();
 const init = () => {
   cambioVista(window.location.hash);
   window.addEventListener('hashchange', () => cambioVista(window.location.hash));
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      console.log("signin");
+    } else {
+      console.log("signout");
+    }
+  });
 };
 window.addEventListener('load', init);
