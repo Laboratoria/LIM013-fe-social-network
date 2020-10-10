@@ -2,7 +2,7 @@ import { currentUserAsync, logOut } from '../firebase/auth-controller.js';
 // eslint-disable-next-line import/no-cycle
 import { uploadImgPosting } from '../firebase/storage-controller.js';
 
-import { getUser, createPost } from '../firebase/firestore-controller.js';
+import { getUser, crearPostPrueba } from '../firebase/firestore-controller.js';
 
 export const dataProfile = () => {
   currentUserAsync().then((actualUser) => {
@@ -36,7 +36,7 @@ export const makingPost = (file, userId, userName, userPhoto) => {
     uploadImgPosting(file, userId);
   }
 
-  createPost(userId, userName, newPost, imPost, date, status, userPhoto)
+  crearPostPrueba(userId, userName, newPost, imPost, date, status, userPhoto)
     .then(() => {
       document.querySelector('#status_input').value = '';
       const classImg = document.querySelector('.post-new-image');

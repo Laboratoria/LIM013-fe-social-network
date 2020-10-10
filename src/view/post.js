@@ -1,7 +1,8 @@
 // import { currentUser } from '../firebase/auth-controller.js';
 // import { statusprivacy, deletePost } from '../firebase/firestore-controller.js';
+// TODO borre updatepost OJO
 
-import { deletePost, updatePost } from '../firebase/firestore-controller.js';
+import { deletePost } from '../firebase/firestore-controller.js';
 
 // const postContentText = (img, post, id) => {
 //   let postContenido = '';
@@ -76,13 +77,13 @@ export const postSection = (Object) => {
     });
   });
 
-  const editpost = note.querySelectorAll('.btn-post-edit');
-  editpost.forEach((bttn) => {
-    bttn.addEventListener('click', async (e) => {
-      console.log(e.target.dataset.id);
-      await updatePost(e.target.dataset.id);
-    });
-  });
+  // const editpost = note.querySelectorAll('.btn-post-edit');
+  // editpost.forEach((bttn) => {
+  //   bttn.addEventListener('click', async (e) => {
+  //     console.log(e.target.dataset.id);
+  //     await updatePost(e.target.dataset.id);
+  //   });
+  // });
   // const editpost = note.querySelectorAll('.btn-post-edit');
   // editpost.addEventListener('', () => {
   //   updatePost(objePost.id, inputPost.value);
