@@ -361,6 +361,19 @@ p {
 	position:absolute;
 	margin: 4rem 1rem;
 }
+.showWindow{
+	position: absolute;
+    right: 7%;
+    top: 50%;
+    width: fit-content;
+    height: fit-content;
+    padding: 2%;
+    background-color: khaki;
+    color: #222;
+    border-radius: 10px;
+    border: 1px solid #FFFFFF;
+    text-align: center;
+}
 
 /*.header {
     text-transform: capitalize;

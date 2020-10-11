@@ -16,7 +16,9 @@ export const userRegistration = () => {
   const passwordLogUp = document.querySelector('#passwordSignUp').value;
 
   signUp(emailLogUp, passwordLogUp)
-    .then(() => {
+    .then((cred) => {
+      console.log(cred.user);
+      console.log(showMessage);
       showMessage(`⚠️ ${userName}, enviamos un correo para activar su cuenta.`);
       verifEmail()
         .then(() => {})
@@ -28,6 +30,7 @@ export const userRegistration = () => {
     .catch(() => {
       showMessage('⚠️Error al auntenticar el usuario, el correo ha sido registrado anteriormente');
     });
+
   logOut()
     .then(() => {})
     .catch((error) => {

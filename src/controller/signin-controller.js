@@ -33,7 +33,7 @@ export const signingIn = () => {
       }
     })
     .catch(() => {
-      showMessage('No puedes ingresar');
+      showMessage('No puedes ingresar, usuario y password incorrectos o vacios');
     });
 };
 

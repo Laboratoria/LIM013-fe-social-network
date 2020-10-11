@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-cycle
-import { dataProfile } from '../controller/home-controller.js';
+import { dataProfile, signOut } from '../controller/home-controller.js';
 import { postSection } from './post.js';
 // eslint-disable-next-line import/no-cycle
 import { setProfileInfo, saveProfileInfo } from '../controller/profile-controller.js';
@@ -25,7 +25,7 @@ export default (notes) => {
           <i class="fas fa-home"></i>Inicio</a>
       </li>
       <li class="optionMobile">
-        <a class='btn-header' href='#/notFound'>
+        <a class='btn-header' id="logout2" href='#/signIn'>
           <i class="fas fa-sign-out-alt"></i>Cerrar Sesión</a>
       </li>
     </ul>
@@ -136,5 +136,8 @@ export default (notes) => {
   /* btnCancel.addEventListener('click', () => {
     gettingProfileInfo();
   }); */
+  const logOut = divElemt.querySelector('#logout2');
+  logOut.addEventListener('click', signOut);
+  
   return divElemt;
 };

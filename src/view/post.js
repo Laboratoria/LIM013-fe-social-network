@@ -1,7 +1,7 @@
 // import { currentUser } from '../firebase/auth-controller.js';
 // TODO borre updatepost OJO
 
-import { deletePost, getPost, updatePost } from '../firebase/firestore-controller.js';
+import { deletePost, updatePost } from '../firebase/firestore-controller.js';
 
 // const postContentText = (img, post, id) => {
 //   let postContenido = '';
@@ -78,7 +78,6 @@ export const postSection = (Object) => {
     });
   });
   const editingPost = note.querySelector('.input-post');
-  console.log("hola")
   // const editionImg = note.querySelector('.photo_post_img');
   const btnSavePost = note.querySelector('.btn-post-save-edit-post');
   const btnCancelPost = note.querySelector('.btn-post-cancel-edit-post');
@@ -113,10 +112,7 @@ export const postSection = (Object) => {
 
   const bttonEditPost = note.querySelectorAll('.btn-post-edit');
   bttonEditPost.forEach((bttn) => {
-    bttn.addEventListener('click', async (e) => {
-      const doc = await getPost(e.target.dataset.id);
-      const dataPost = doc.data();
-      console.log(dataPost);
+    bttn.addEventListener('click', () => {
       editingPost.contentEditable = 'true';
       btnSavePost.classList.remove('hide-btton-post');
       btnCancelPost.classList.remove('hide-btton-post');
