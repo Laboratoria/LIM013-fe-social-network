@@ -23,10 +23,10 @@ export const signingIn = () => {
     .then((user) => {
       if (user) {
         if (user.emailVerified === false) {
-          showMessage('Email no verificado, revise su correo porfavor.');
+          console.log('Email no verificado, revise su correo porfavor.');
           logOut();
         } else {
-          showMessage('Puede ingresar');
+          console.log('Puede ingresar');
           window.location.hash = '#/home';
           // changeView(window.location.hash);
         }
@@ -40,11 +40,12 @@ export const signingIn = () => {
 export const signInGoogle = () => {
   googleSignIn()
     .then((result) => {
+      console.log('ingreso');
+      window.location.hash = '#/home';
       createUser(result.user.uid, result.user.displayName, result.user.photoURL, result.user.petName, result.user.aboutUs)
         .catch(() => {
-          showMessage('No se actualizo usuario');
+          console.log('No se actualizo usuario');
         });
-      window.location.hash = '#/home';
     }).catch(() => {
     });
 };
