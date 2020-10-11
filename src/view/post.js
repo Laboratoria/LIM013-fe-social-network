@@ -77,8 +77,8 @@ export const postSection = (Object) => {
       await deletePost(e.target.dataset.id);
     });
   });
-
   const editingPost = note.querySelector('.input-post');
+  console.log("hola")
   // const editionImg = note.querySelector('.photo_post_img');
   const btnSavePost = note.querySelector('.btn-post-save-edit-post');
   const btnCancelPost = note.querySelector('.btn-post-cancel-edit-post');
