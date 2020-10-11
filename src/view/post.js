@@ -1,8 +1,7 @@
 // import { currentUser } from '../firebase/auth-controller.js';
-// import { statusprivacy, deletePost } from '../firebase/firestore-controller.js';
 // TODO borre updatepost OJO
 
-import { deletePost } from '../firebase/firestore-controller.js';
+import { deletePost, getPost, updatePost } from '../firebase/firestore-controller.js';
 
 // const postContentText = (img, post, id) => {
 //   let postContenido = '';
@@ -48,7 +47,9 @@ export const postSection = (Object) => {
     </select>
     </div>
     <div>
-    <p class="validity input-post" name="" id="inputPost-${Object.user}" type="text" cols="30" rows="10">${Object.post}</p>
+    <p class="input-post" name="" id="inputPost-${Object.id}" type="text" cols="30" rows="10">${Object.post}</p>
+    <button class="hide-btton-post btn-post-save-edit-post" data-id="">Save</button>
+    <button class="hide-btton-post btn-post-cancel-edit-post" data-id="">Cancel</button>
     </div>
     ${(Object.img !== undefined) ? `<img class="photo_post_img" src="${Object.img}" alt=""/>` : `<img class="hide image-post" src="${Object.img}" alt=""/>`}
     <div class="container-menu-post" id="containerMenu">
@@ -77,16 +78,49 @@ export const postSection = (Object) => {
     });
   });
 
-  // const editpost = note.querySelectorAll('.btn-post-edit');
-  // editpost.forEach((bttn) => {
-  //   bttn.addEventListener('click', async (e) => {
-  //     console.log(e.target.dataset.id);
-  //     await updatePost(e.target.dataset.id);
+  const editingPost = note.querySelector('.input-post');
+  // const editionImg = note.querySelector('.photo_post_img');
+  const btnSavePost = note.querySelector('.btn-post-save-edit-post');
+  const btnCancelPost = note.querySelector('.btn-post-cancel-edit-post');
+
+  // const inputPost = note.querySelector(`#inputPost-${Object.id}`);
+
+  // const edition = bttonEditPost.addEventListener('click', () => {
+  //   editingPost.contentEditable = 'true';
+  //   btnSavePost.classList.remove('hide-btton-post');
+  //   btnCancelPost.classList.remove('hide-btton-post');
+  //   btnSavePost.addEventListener('cl ick', () => {
+  //     console.log('save post');
+  //   });
+  //   btnCancelPost.addEventListener('click', () => {
+  //     console.log('cancel post');
   //   });
   // });
-  // const editpost = note.querySelectorAll('.btn-post-edit');
-  // editpost.addEventListener('', () => {
-  //   updatePost(objePost.id, inputPost.value);
-  // });
+  const inputPost = note.querySelector(`#inputPost-${Object.id}`);
+  btnSavePost.addEventListener('click', async () => {
+    console.log('save post');
+    editingPost.contentEditable = 'false';
+    btnSavePost.classList.add('hide-btton-post');
+    btnCancelPost.classList.add('hide-btton-post');
+    await updatePost(Object.id, inputPost.textContent);
+  });
+  btnCancelPost.addEventListener('click', () => {
+    console.log('cancel post');
+    editingPost.contentEditable = 'false';
+    btnSavePost.classList.add('hide-btton-post');
+    btnCancelPost.classList.add('hide-btton-post');
+  });
+
+  const bttonEditPost = note.querySelectorAll('.btn-post-edit');
+  bttonEditPost.forEach((bttn) => {
+    bttn.addEventListener('click', async (e) => {
+      const doc = await getPost(e.target.dataset.id);
+      const dataPost = doc.data();
+      console.log(dataPost);
+      editingPost.contentEditable = 'true';
+      btnSavePost.classList.remove('hide-btton-post');
+      btnCancelPost.classList.remove('hide-btton-post');
+    });
+  });
   return note;
 };

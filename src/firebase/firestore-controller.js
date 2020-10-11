@@ -40,9 +40,9 @@ export const updateProfileInfo = (idDoc, newUserName, namePet, description) => f
 });
 
 // eslint-disable-next-line object-shorthand
-export const updatePost = (id, newPost) => firebase.firestore().collection('posts').doc(id).update({ post: newPost });
-
-export const statusprivacy = (id, status) => firebase.firestore().collection('posts').doc(id).update({ privacy: status });
+export const getPost = id => firebase.firestore().collection('publicacion').doc(id).get();
+export const updatePost = (id, upDatePost) => firebase.firestore().collection('publicacion').doc(id).update({ post: upDatePost });
+// export const statusprivacy = (id, status) => firebase.firestore().collection('posts').doc(id).update({ privacy: status });
 
 // eslint-disable-next-line max-len
 export const deletePost = id => firebase.firestore().collection('publicacion').doc(id).delete();
