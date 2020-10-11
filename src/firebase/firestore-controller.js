@@ -7,6 +7,7 @@ export const createUser = (idDoc, newUserName, newUserPhoto, namePet, descriptio
 });
 export const getUser = docUser => firebase.firestore().collection('users').doc(docUser).get();
 
+// eslint-disable-next-line max-len
 // export const createPost = (id, userName, newPost, imagePost, date, status, userPhoto) => firebase.firestore().collection('posts').add({
 //   name: userName,
 //   post: newPost,
