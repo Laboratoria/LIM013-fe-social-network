@@ -1,7 +1,7 @@
 
 // TODO se quito el currentUserAsync
 
-import { currentUser } from '../firebase/auth-controller.js';
+import { currentUser, logOut } from '../firebase/auth-controller.js';
 // eslint-disable-next-line import/no-cycle
 import { uploadImgPosting } from '../firebase/storage-controller.js';
 
@@ -19,13 +19,7 @@ export const dataProfile = () => {
   // localStorage.setItem('name', user.displayName);
   // const userProfilePhoto = user.photoURL || './img/profile-ico.png';
   // localStorage.setItem('userphoto', userProfilePhoto);
-<<<<<<< HEAD
-// export const signOut = () => {
-//   localStorage.clear();
-//   logOut();
-// };
-=======
-};
+
 
 export const signOut = () => {
   logOut()
@@ -36,7 +30,6 @@ export const signOut = () => {
       console.log(error);
     });
 };
->>>>>>> 0822be64db7fc3d03af25f23683945fe68c1ee93
 // import { logOut, userCurrent } from '../firebase/auth-controller.js';
 // import { getUser } from '../firebase/firestore-controller.js';
 
