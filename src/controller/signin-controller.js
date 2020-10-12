@@ -44,19 +44,24 @@ export const signingIn = (emailLogIn, passwordLogIn) => {
 export const signInGoogle = () => {
   googleSignIn()
     .then((result) => {
-      createUser(result.user.uid, result.user.displayName, result.user.photoURL, result.user.petName, result.user.aboutUs)
-        .catch(() => {
-          showMessage('No se actualizo usuario');
-        });
+      const user = result.user;
+      console.log(user);
+      // createUser(result.user.uid, result.user.displayName, result.user.photoURL, result.user.petName, result.user.aboutUs)
+      //   .catch(() => {
+      //     showMessage('No se actualizo usuario');
+      //   });
       window.location.hash = '#/home';
-    }).catch(() => {
+    }).catch((error) => {
+      console.log('no se actualizo');
+      console.log(error);
     });
 };
 export const signInFacebook = () => {
-  loginFacebook().then((result) => {
-    createUser(result.user.uid, result.user.displayName, 'Conociendo tu mascota');
-    window.location.hash = '#/home';
-    showMessage('Ingreso con facebook');
-  })
+  loginFacebook()
+    .then((result) => {
+      createUser(result.user.uid, result.user.displayName, result.user.photoURL, result.user.petName, result.user.aboutUs);
+      window.location.hash = '#/home';
+      showMessage('Ingreso con facebook');
+    })
     .catch(() => { showMessage('No se registro la cuenta'); });
 };
