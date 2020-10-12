@@ -24,7 +24,6 @@ import { getUser, crearPostPrueba } from '../firebase/firestore-controller.js';
 // };
 export const dataProfile = () => {
   const user = currentUser();
-  console.log(user);
   getUser(user.uid).then((doc) => {
     localStorage.setItem('aboutUs', doc.data().aboutUs);
     localStorage.setItem('petName', doc.data().petName);
@@ -34,7 +33,13 @@ export const dataProfile = () => {
   // localStorage.setItem('userphoto', userProfilePhoto);
 };
 export const signOut = () => {
-  logOut();
+  logOut()
+    .then(() => {
+      console.log('Sesion cerrada');
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 };
 export const makingPost = (file, userId, userName, userPhoto) => {
   const newPost = document.querySelector('#status_input').value;

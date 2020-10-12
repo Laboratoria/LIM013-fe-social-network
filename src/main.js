@@ -18,20 +18,25 @@ firebase.initializeApp(firebaseConfig);
 // Initialize Firestore
 export const storage = firebase.storage();
 
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    console.log(user);
+    console.log('usuario logeado');
+    if (user.emailVerified === false) {
+      console.log('email no verificado');
+    }
+    // User is signed in.
+  } else {
+    // No user is signed in.
+  }
+});
 // const init = () => {
 //   cambioVista(window.location.hash);
 //   window.addEventListener('hashchange', () => cambioVista(window.location.hash));
 // };
 // window.addEventListener('load', init);
-const init = () => {
+function init() {
   cambioVista(window.location.hash);
   window.addEventListener('hashchange', () => cambioVista(window.location.hash));
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      console.log("signin");
-    } else {
-      console.log("signout");
-    }
-  });
-};
+}
 window.addEventListener('load', init);
