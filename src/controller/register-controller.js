@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/named
 import { signUp, verifEmail, logOut } from '../firebase/auth-controller.js';
+// import { createUser } from '../firebase/firestore-controller.js';
 
 const showMessage = (txtmessage) => {
   const showWindow = document.createElement('div');
@@ -10,27 +11,34 @@ const showMessage = (txtmessage) => {
     document.body.removeChild(showWindow);
   }, 4000);
 };
-export const userRegistration = () => {
-  const userName = document.querySelector('#nameUser').value;
-  const emailLogUp = document.querySelector('#emailSignUp').value;
-  const passwordLogUp = document.querySelector('#passwordSignUp').value;
-
+export const userRegistration = (userName, emailLogUp, passwordLogUp) => {
   signUp(emailLogUp, passwordLogUp)
-    .then(() => {
-      showMessage(`⚠️ ${userName}, enviamos un correo para activar su cuenta.`);
-      verifEmail()
-        .then(() => {})
-        .catch((error) => {
-          showMessage(error.code);
-        });
-      window.location.hash = '';
-    })
     .catch(() => {
-      showMessage('⚠️Error al auntenticar el usuario, el correo ha sido registrado anteriormente');
-    });
-  logOut()
-    .then(() => {})
-    .catch((error) => {
-      showMessage('Error al cerrar sesion', error.code);
+      console.log('usuario logeado anteriormente');
+      showMessage('⚠️Email logeado anteriormente');
+      logOut();
+      window.location.hash = '';
+    }).then(() => {
+      console.log();
+      console.log('registrado');
+      showMessage(`🐱❤️🐶 ${userName} bienvenido a Petlandia`);
+      verifEmail()
+        .then(() => {
+        // Email sent.
+          console.log('Hemos enviado un email verification');
+        }).catch((error) => {
+          console.log(error);
+        });
+      // verifEmail()
+      //   .then(() => {
+      //     console.log('email verification sent');
+      //     showMessage('email verification sent');
+      //   })
+      //   .catch(() => {
+      //     console.log('error');
+      //   });
+      // // createUser(result.user.uid, userName, result.user.photoURL, result.user.petName, result.user.aboutUs);
+      logOut();
+      window.location.hash = '';
     });
 };

@@ -54,7 +54,10 @@ export default () => {
   const btonSignIn = divElem.querySelector('#submit');
   btonSignIn.addEventListener('click', (e) => {
     e.preventDefault();
-    signingIn();
+    const emailLogIn = document.querySelector('#SignInForm_email').value;
+    const passwordLogIn = document.querySelector('#SignInForm_password').value;
+    console.log(emailLogIn, passwordLogIn);
+    signingIn(emailLogIn, passwordLogIn);
   });
   // Capturar evento de boton de Google"//
   const btnGoogle = divElem.querySelector('#btnGoogle');

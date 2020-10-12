@@ -48,7 +48,11 @@ export default () => {
   // Evento para registrar usuario
   btonLogUp.addEventListener('submit', (e) => {
     e.preventDefault();
-    userRegistration();
+    const userName = divElemt.querySelector('#nameUser').value;
+    const emailLogUp = divElemt.querySelector('#emailSignUp').value;
+    const passwordLogUp = divElemt.querySelector('#passwordSignUp').value;
+    console.log(userName, emailLogUp, passwordLogUp);
+    userRegistration(userName, emailLogUp, passwordLogUp);
   });
 
   return divElemt;

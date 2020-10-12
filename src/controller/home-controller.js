@@ -1,4 +1,7 @@
 
+// TODO se quito el currentUserAsync
+
+
 //TODO se quito el currentUserAsync
 
 import { currentUser, logOut } from '../firebase/auth-controller.js';
@@ -33,9 +36,16 @@ export const dataProfile = () => {
   // localStorage.setItem('name', user.displayName);
   // const userProfilePhoto = user.photoURL || './img/profile-ico.png';
   // localStorage.setItem('userphoto', userProfilePhoto);
+};
+
 export const signOut = () => {
-  localStorage.clear();
-  logOut();
+  logOut()
+    .then(() => {
+      console.log('Sesion cerrada');
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 };
 // import { logOut, userCurrent } from '../firebase/auth-controller.js';
 // import { getUser } from '../firebase/firestore-controller.js';

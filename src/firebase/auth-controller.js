@@ -10,7 +10,7 @@ export const currentUserAsync = () => new Promise((resolve, reject) => {
 });
 // Verificación de email
 export const verifEmail = () => {
-  const user = firebase.auth().currentUser();
+  const user = firebase.auth().currentUser;
   return user.sendEmailVerification();
 };
 // Inicio de sesión con correo y contraseña
