@@ -3,7 +3,7 @@ import { postSection } from './post.js';
 // import { signingOut, gettingProfileInfo, savingChanges } from '../view-controller/profile-controller.js';
 // eslint-disable-next-line import/named
 // eslint-disable-next-line import/no-cycle
-import { dataProfile, makingPost } from '../controller/home-controller.js';
+import { dataProfile, makingPost, signOut } from '../controller/home-controller.js';
 // eslint-disable-next-line import/no-cycle
 import { cambioVista } from '../controller/router.js';
 // import { getAllPosts } from '../firebase/firestore-controller';
@@ -30,7 +30,7 @@ export default (notes) => {
             <i class="fas fa-home"></i>Inicio</a>
         </li>
         <li class="optionMobile">
-          <a class='btn-header' href='#/notFound'>
+          <a class='btn-header' id="logout" href='#/signIn'>
             <i class="fas fa-sign-out-alt"></i>Cerrar Sesión</a>
         </li>
       </ul>
@@ -176,5 +176,8 @@ export default (notes) => {
   //       </section>`;
   //     });
   //   });
+  const logOut = divElemt.querySelector('#logout');
+  logOut.addEventListener('click', signOut);
+
   return divElemt;
 };

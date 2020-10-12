@@ -19,10 +19,24 @@ export const dataProfile = () => {
   // localStorage.setItem('name', user.displayName);
   // const userProfilePhoto = user.photoURL || './img/profile-ico.png';
   // localStorage.setItem('userphoto', userProfilePhoto);
+<<<<<<< HEAD
 // export const signOut = () => {
 //   localStorage.clear();
 //   logOut();
 // };
+=======
+};
+
+export const signOut = () => {
+  logOut()
+    .then(() => {
+      console.log('Sesion cerrada');
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+>>>>>>> 0822be64db7fc3d03af25f23683945fe68c1ee93
 // import { logOut, userCurrent } from '../firebase/auth-controller.js';
 // import { getUser } from '../firebase/firestore-controller.js';
 
