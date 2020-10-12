@@ -44,26 +44,16 @@ export const signingIn = (emailLogIn, passwordLogIn) => {
 export const signInGoogle = () => {
   googleSignIn()
     .then((result) => {
-<<<<<<< HEAD
-      console.log('ingreso');
-      window.location.hash = '#/home';
-      createUser(result.user.uid, result.user.displayName, result.user.photoURL, result.user.petName, result.user.aboutUs)
-        .catch(() => {
-          console.log('No se actualizo usuario');
-        });
-    }).catch(() => {
-=======
       const user = result.user;
       console.log(user);
-      // createUser(result.user.uid, result.user.displayName, result.user.photoURL, result.user.petName, result.user.aboutUs)
-      //   .catch(() => {
-      //     showMessage('No se actualizo usuario');
-      //   });
+      createUser(result.user.uid, result.user.displayName, result.user.photoURL, result.user.petName, result.user.aboutUs)
+        .catch(() => {
+          showMessage('No se actualizo usuario');
+        });
       window.location.hash = '#/home';
     }).catch((error) => {
       console.log('no se actualizo');
       console.log(error);
->>>>>>> 0822be64db7fc3d03af25f23683945fe68c1ee93
     });
 };
 export const signInFacebook = () => {
