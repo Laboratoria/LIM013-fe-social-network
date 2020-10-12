@@ -1,5 +1,4 @@
 // import { currentUser } from '../firebase/auth-controller.js';
-// TODO borre updatepost OJO
 
 import { deletePost, updatePost } from '../firebase/firestore-controller.js';
 
@@ -31,7 +30,7 @@ import { deletePost, updatePost } from '../firebase/firestore-controller.js';
 
 export const postSection = (Object) => {
   const note = document.createElement('div');
-  note.classList.add('container-post');
+  note.classList.add('divPost');
   // const user = currentUser().uid;
   note.innerHTML = ` 
     <div class="user_post">
@@ -95,6 +94,7 @@ export const postSection = (Object) => {
   //     console.log('cancel post');
   //   });
   // });
+
   const inputPost = note.querySelector(`#inputPost-${Object.id}`);
   btnSavePost.addEventListener('click', async () => {
     console.log('save post');
@@ -118,5 +118,6 @@ export const postSection = (Object) => {
       btnCancelPost.classList.remove('hide-btton-post');
     });
   });
+
   return note;
 };

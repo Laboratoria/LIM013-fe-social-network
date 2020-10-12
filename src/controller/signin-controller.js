@@ -14,7 +14,7 @@ const showMessage = (txtmessage) => {
   document.body.appendChild(showWindow);
   setTimeout(() => {
     document.body.removeChild(showWindow);
-  }, 4000);
+  }, 2000);
 };
 export const signingIn = (emailLogIn, passwordLogIn) => {
   signIn(emailLogIn, passwordLogIn)

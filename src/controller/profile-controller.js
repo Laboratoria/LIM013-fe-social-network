@@ -1,6 +1,6 @@
 import { currentUser, updatePhotoUser } from '../firebase/auth-controller.js';
 
-import { getUser, updateProfileInfo } from '../firebase/firestore-controller.js';
+import { getUser ,updateProfileInfo } from '../firebase/firestore-controller.js';
 
 // eslint-disable-next-line import/no-cycle
 import { uploadPhotoProfile } from '../firebase/storage-controller.js';
