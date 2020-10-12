@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/named
-import { signUp, verifEmail } from '../firebase/auth-controller.js';
+import { signUp, verifEmail, logOut } from '../firebase/auth-controller.js';
 // import { createUser } from '../firebase/firestore-controller.js';
 
 const showMessage = (txtmessage) => {
@@ -16,7 +16,7 @@ export const userRegistration = (userName, emailLogUp, passwordLogUp) => {
     .catch(() => {
       console.log('usuario logeado anteriormente');
       showMessage('⚠️Email logeado anteriormente');
-      // logOut();
+      logOut();
       window.location.hash = '';
     }).then(() => {
       console.log();
@@ -38,7 +38,7 @@ export const userRegistration = (userName, emailLogUp, passwordLogUp) => {
       //     console.log('error');
       //   });
       // // createUser(result.user.uid, userName, result.user.photoURL, result.user.petName, result.user.aboutUs);
-      // logOut();
+      logOut();
       window.location.hash = '';
     });
 };
