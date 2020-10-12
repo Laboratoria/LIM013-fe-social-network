@@ -18,26 +18,39 @@ firebase.initializeApp(firebaseConfig);
 // Initialize Firestore
 export const storage = firebase.storage();
 
-firebase.auth().onAuthStateChanged((user) => {
-  if (user) {
-    console.log(user);
-    console.log('usuario logeado');
-    if (user.emailVerified === false) {
-      console.log('email no verificado');
+const onAuth = (callback) => {
+  firebase.auth().onAuthStateChanged((user) => {
+    let route = '#/signIn';
+    if (window.location.hash === '#/Register') route = '#/Register';
+    if (user) {
+      console.log(user);
+      console.log('usuario logeado');
+      if (user.emailVerified !== false) {
+        switch (window.location.hash) {
+          case '#/profile': route = '#/profile';
+            break;
+          default: route = '#/home';
+            break;
+        }
+      }
+      if (user.emailVerified === false) {
+        console.log('email no verificado');
+      }
+      // User is signed in.
+    } else {
+      // No user is signed in.
+      console.log('usuario no logeado');
     }
-    // User is signed in.
-  } else {
-    // No user is signed in.
-    console.log('usuario no logeado');
-  }
-});
+    return callback(route);
+  });
+};
 // const init = () => {
 //   cambioVista(window.location.hash);
 //   window.addEventListener('hashchange', () => cambioVista(window.location.hash));
 // };
 // window.addEventListener('load', init);
-function init() {
-  cambioVista(window.location.hash);
-  window.addEventListener('hashchange', () => cambioVista(window.location.hash));
-}
+const init = () => {
+  onAuth(cambioVista);
+};
 window.addEventListener('load', init);
+window.addEventListener('hashchange', init);
