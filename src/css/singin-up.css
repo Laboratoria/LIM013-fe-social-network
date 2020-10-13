@@ -155,6 +155,7 @@
     height: 49px;
     border-radius: 49px;
     cursor: pointer;
+    outline: none;
 }
 .backLogin i{
     font-size: 30px;

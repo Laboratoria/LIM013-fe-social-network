@@ -50,6 +50,8 @@ export default () => {
   btnGoogle.addEventListener('click', () => {
     signInforgoogle()
       .then(() => {
+        const container = document.querySelector('.loading');
+        container.appendChild(viewLoading());
         getDataCurrentUser()
           .then((doc) => {
             if (doc.exists) {
