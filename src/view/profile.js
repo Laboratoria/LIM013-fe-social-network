@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 // eslint-disable-next-line import/no-cycle
-// import { dataProfile } from '../controller/home-controller.js';
+import { signOut } from '../controller/home-controller.js';
 import { postSection } from './post.js';
 // // eslint-disable-next-line import/no-cycle
 // import { getInfoProfile} from '../controller/profile-controller.js';
@@ -24,7 +24,7 @@ export default (notes) => {
           <i class="fas fa-home"></i>Inicio</a>
       </li>
       <li class="optionMobile">
-        <a class='btn-header' href='#/notFound'>
+        <a class='btn-header' id="logout2" href='#/signIn'>
           <i class="fas fa-sign-out-alt"></i>Cerrar Sesión</a>
       </li>
     </ul>
@@ -129,6 +129,7 @@ export default (notes) => {
     });
   });
 
+
   /* ----Upload images---*/
   // const selectPhotoProfile = divElemt.querySelector('#selectPhotoProfile');
   // const profilePicture = divElemt.querySelector('.profile_img');
@@ -174,6 +175,8 @@ export default (notes) => {
   //     saveProfileInfo(file);
   //   });
   // });
+  const logOut = divElemt.querySelector('#logout2');
+  logOut.addEventListener('click', signOut);
 
   const postFinal = divElemt.querySelector('.all-posts');
   notes.forEach((element) => {
