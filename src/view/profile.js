@@ -20,7 +20,7 @@ export default (dataCurrentUser) => {
           </div>
           <label id="select-profile" for="select-photo-profile">
             <input type="file" id="select-photo-profile" class="hide" accept="image/jpeg, image/png">
-            <span class="edit-photo"><i class="fas fa-camera edit-photo-btn"></i></span>
+            <span class = "edit-info" id="btn-editProfile"><i class="fas fa-edit"><span class="tooltiptext">Edit information</span></i></span>
           </label>
           <div class="user-information">
           <span class = "edit-info" id="btn-editProfile"><i class="fas fa-edit"></i></span>
