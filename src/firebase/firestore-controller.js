@@ -1,11 +1,13 @@
 
-export const createUser = (idDoc, newUserName, newUserPhoto, namePet, description) => firebase.firestore().collection('users').doc(idDoc).set({
+export const createUser = (idDoc, newUserName, newUserPhoto) => firebase.firestore().collection('users').doc(idDoc).set({
   displayName: newUserName,
   photoURL: newUserPhoto,
-  petName: namePet,
-  aboutUs: description,
+  petName: 'Fido',
+  aboutUs: 'Somos amigos',
 });
+
 export const getUser = docUser => firebase.firestore().collection('users').doc(docUser).get();
+
 
 // eslint-disable-next-line max-len
 // export const createPost = (id, userName, newPost, imagePost, date, status, userPhoto) => firebase.firestore().collection('posts').add({
