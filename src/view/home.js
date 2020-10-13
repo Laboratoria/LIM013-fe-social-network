@@ -3,17 +3,18 @@ import { postSection } from './post.js';
 // import { signingOut, gettingProfileInfo, savingChanges } from '../view-controller/profile-controller.js';
 // eslint-disable-next-line import/named
 // eslint-disable-next-line import/no-cycle
-import { dataProfile, makingPost, signOut } from '../controller/home-controller.js';
+// import { dataProfile, makingPost, signOut } from '../controller/home-controller.js';
 // eslint-disable-next-line import/no-cycle
 import { cambioVista } from '../controller/router.js';
 // import { getAllPosts } from '../firebase/firestore-controller';
-
+import { getUser } from '../firebase/firestore-controller.js';
+import { currentUser } from '../firebase/auth-controller.js';
+// eslint-disable-next-line import/no-cycle
+import { signOut, makingPost } from '../controller/home-controller.js';
 
 export default (notes) => {
-  dataProfile();
-  const userId = localStorage.getItem('userId');
-  const userName = localStorage.getItem('name');
-  const userPhoto = localStorage.getItem('userphoto');
+  const user = currentUser();
+  console.log(user);
   const viewHome = `
   <div class='body'>
     <header id='headerHome'>
@@ -45,19 +46,19 @@ export default (notes) => {
           </div>
           <div class="content">
             <div class="profile">
-              <img class="profile-img" src="${userPhoto}" alt="">
+              <img class="profile-img" src="${user.photoURL}" alt="">
             </div>
             <div class="header_name">
-              <h2 class="name">${userName}</h2>
+              <h2 class="name1"></h2>
             </div>
             <div class="labels">
               <div class="label">
                 <p>Nombre de tu mascota:</p>
-                <h2 class="name_pet">Molly</h2>
+                <h2 class="name_pet1"></h2>
               </div>
               <div class="label">
                 <p class="profile-text">Cuéntanos algo sobre ti y tu mascota</p>
-                <p class="description">Cuéntanos la anécdota</p>
+                <p class="description1"></p>
               </div>
               <div class="profile-btn-editions">
                 <button id="btnCancel" class="btn-profile hide">Cancelar</button>
@@ -72,7 +73,7 @@ export default (notes) => {
     </aside>
     <div class="timeline_section">
       <div class="update_container">
-      <img class="like-picture" src="${userPhoto || 'imagenes/man.png'}" alt="">
+      <img class="like-picture" src="${user.photoURL || 'imagenes/man.png'}" alt="">
         <h1  class="ask_status">¿Qué hiciste con tu mascota hoy?</h1>
         <textarea name="" id="status_input" cols="30" rows="10" class="status_imput" placeholder="Cuéntanos las travesuras de tu mejor amigo."></textarea>
         <img id="showPicture" class="post-new-image" src="#" alt="">
@@ -95,7 +96,7 @@ export default (notes) => {
   </div>
   `;
   const divElemt = document.createElement('div');
-  divElemt.classList.add('position');
+  divElemt.classList.add('menuDiv');
   divElemt.innerHTML = viewHome;
 
 
@@ -108,7 +109,18 @@ export default (notes) => {
       menuLat.className = 'menu_mobile';
     }
   });
+  const nameUserProfile = divElemt.querySelector('.name1');
+  const petName = divElemt.querySelector('.name_pet1');
+  const aboutYou = divElemt.querySelector('.description1');
 
+  const infoProfile = () => {
+    getUser(currentUser().uid).then((doc) => {
+      nameUserProfile.textContent = doc.data().displayName;
+      aboutYou.textContent = doc.data().aboutUs;
+      petName.textContent = doc.data().petName;
+    });
+  };
+  infoProfile();
 
   const imagenUploading = divElemt.querySelector('#selectImage');
   const imagenUpload = divElemt.querySelector('#showPicture');
@@ -131,7 +143,7 @@ export default (notes) => {
   const bttonnewpost = divElemt.querySelector('#bttonnewpost');
   bttonnewpost.addEventListener('click', (e) => {
     e.preventDefault();
-    makingPost(file, userId, userName, userPhoto);
+    makingPost(file, user.uid, user.displayName, user.photoURL);
   });
 
   bttonimagenUploadCancelling.addEventListener('click', () => {

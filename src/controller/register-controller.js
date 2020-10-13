@@ -1,6 +1,7 @@
 // eslint-disable-next-line import/named
 import { signUp, verifEmail, logOut } from '../firebase/auth-controller.js';
 // import { createUser } from '../firebase/firestore-controller.js';
+import { createUser } from '../firebase/firestore-controller.js';
 
 const showMessage = (txtmessage) => {
   const showWindow = document.createElement('div');
@@ -18,8 +19,8 @@ export const userRegistration = (userName, emailLogUp, passwordLogUp) => {
       showMessage('⚠️Email logeado anteriormente');
       logOut();
       window.location.hash = '';
-    }).then(() => {
-      console.log();
+    }).then((result) => {
+      createUser(result.user.uid, result.user.displayName, result.user.photoURL);
       console.log('registrado');
       showMessage(`🐱❤️🐶 ${userName} bienvenido a Petlandia`);
       verifEmail()
