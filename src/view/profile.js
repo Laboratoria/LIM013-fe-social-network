@@ -82,6 +82,7 @@ export default (notes) => {
       menuLat.className = 'menu_mobile1';
     }
   });
+  /* ----crud profile---*/
   const editBtn = divElemt.querySelector('.edit_btn');
   const nameUserProfile = divElemt.querySelector('.name');
   const petName = divElemt.querySelector('.name_pet');
