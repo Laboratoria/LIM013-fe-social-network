@@ -2,12 +2,8 @@
 // eslint-disable-next-line import/no-cycle
 import { signOut } from '../controller/home-controller.js';
 import { postSection } from './post.js';
-// // eslint-disable-next-line import/no-cycle
-// import { getInfoProfile} from '../controller/profile-controller.js';
-import { getUser, updateProfileInfo } from '../firebase/firestore-controller.js';
-import { currentUser } from '../firebase/auth-controller.js';
-// eslint-disable-next-line import/no-self-import
-import { infoProfile } from '../controller/profile-controller.js';
+import { infoProfile, updateProfile } from '../controller/profile-controller.js';
+
 
 export default (notes) => {
   const viewProfile = `
@@ -85,42 +81,36 @@ export default (notes) => {
     }
   });
   /* ----crud profile---*/
-  const editBtn = divElemt.querySelector('.edit_btn');
-  const btnSave = divElemt.querySelector('#btnSave');
-  const btnCancel = divElemt.querySelector('#btnCancel');
-
   infoProfile(divElemt);
 
+
+  const editBtn = divElemt.querySelector('.edit_btn');
+  const nameUserProfile = divElemt.querySelector('.name');
+  const petName = divElemt.querySelector('.name_pet');
+  const aboutYou = divElemt.querySelector('.description');
+  const btnSave = divElemt.querySelector('#btnSave');
+  const btnCancel = divElemt.querySelector('#btnCancel');
   editBtn.addEventListener('click', () => {
-    getUser(currentUser().uid).then((doc) => {
-      if (doc.exists) {
-        aboutYou.contentEditable = 'true';
-        aboutYou.classList.add('input-style');
-
-        nameUserProfile.contentEditable = 'true';
-
-        petName.contentEditable = 'true';
-
-        editBtn.classList.add('hide');
-        btnSave.classList.remove('hide');
-        btnCancel.classList.remove('hide');
-
-        btnCancel.addEventListener('click', () => {
-          infoProfile();
-          btnSave.classList.add('hide');
-          btnCancel.classList.add('hide');
-          editBtn.classList.remove('hide');
-        });
-        btnSave.addEventListener('click', () => {
-          updateProfileInfo(currentUser().uid, nameUserProfile.textContent, petName.textContent, aboutYou.textContent);
-          btnSave.classList.add('hide');
-          btnCancel.classList.add('hide');
-          editBtn.classList.remove('hide');
-        });
-      }
-    });
+    aboutYou.contentEditable = 'true';
+    aboutYou.classList.add('input-style');
+    nameUserProfile.contentEditable = 'true';
+    petName.contentEditable = 'true';
+    editBtn.classList.add('hide');
+    btnSave.classList.remove('hide');
+    btnCancel.classList.remove('hide');
   });
-
+  btnCancel.addEventListener('click', () => {
+    infoProfile(divElemt);
+    btnSave.classList.add('hide');
+    btnCancel.classList.add('hide');
+    editBtn.classList.remove('hide');
+  });
+  btnSave.addEventListener('click', () => {
+    updateProfile();
+    btnSave.classList.add('hide');
+    btnCancel.classList.add('hide');
+    editBtn.classList.remove('hide');
+  });
 
   /* ----Upload images---*/
   // const selectPhotoProfile = divElemt.querySelector('#selectPhotoProfile');
