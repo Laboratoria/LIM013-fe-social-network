@@ -49,10 +49,10 @@ export default () => {
   /* ---------------------------regarding DOM manipulation for login with google---------------- */
   const btnGoogle = viewSignIn.querySelector('#btn-google');
   btnGoogle.addEventListener('click', () => {
-    const container = document.querySelector('#container');
-    container.appendChild(viewLoading());
     signInforgoogle()
       .then(() => {
+        const container = document.querySelector('.loading');
+        container.appendChild(viewLoading());
         getDataCurrentUser()
           .then((doc) => {
             if (doc.exists) {
