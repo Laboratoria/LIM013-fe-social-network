@@ -23,7 +23,7 @@ export default (dataCurrentUser) => {
             <span class="edit-photo"><i class="fas fa-camera edit-photo-btn"></i></span>
           </label>
           <div class="user-information">
-          <span class = "edit-info" id="btn-editProfile"><i class="fas fa-edit"></i></span>
+          <span class = "edit-info" id="btn-editProfile"><i class="fas fa-edit"><span class="tooltiptext">Edit information</span></i></span>
             <h2 class="user-name">${dataCurrentUser.username}</p>
             <h3>About me</h3>
             <div class="container-grid">
@@ -76,7 +76,7 @@ export default (dataCurrentUser) => {
       </div>
       <button type="submit" class="btn-update">UPDATE</a></button>
     </form>
-  </seion>
+  </section>
 </section>
 
   `;

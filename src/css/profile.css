@@ -129,6 +129,8 @@
   opacity: 0;
   visibility: hidden;
   z-index: 2;
+  transition: 600ms ease all;
+  transform: scale(0);
 }
 .modal-settings{
   width: 40%;
@@ -196,17 +198,15 @@ resize: none;
   height: 40px;
 }
 .btn-update{
-margin-left: auto;
-margin-right: auto;
-width: 60%;
-height: 40px;
-border-radius: 55px;
-outline: none;
-}
-.btn-update{
   border: none;
   background: #2CAB92;
   color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  height: 40px;
+  border-radius: 55px;
+  outline: none;
 }
 .grupo input:focus, #birthdayEdit:focus, textarea:focus{
   box-shadow: 2px 7px 10px -5px #8894a0; 
@@ -228,8 +228,8 @@ height: 44px;
 .showEditProfile{
   opacity: 1;
   visibility: visible;
+  transform: scale(1);
 }
-
 /*---------------modal edit profile----------------*/
 .container-grid {
   height: 30%;

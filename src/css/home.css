@@ -83,7 +83,10 @@ hr{
     height: 40px;
     border-radius: 49px;
 }
-.content-newpost textarea{
+.content-newpost textarea,
+.edit-text-post textarea{
+    height: 70px;
+    text-align: justify;
     width: 100%;
     resize: none;
     padding: 0.4rem;
@@ -158,17 +161,17 @@ select{
     text-align: center;
     margin: 0 1rem 0 auto !important;
 }
-.menu {
+.menu-post {
     position: absolute;
     right: 0;
 }
-.btn-menu {
+.btn-menu-post {
     color: #2CAB92;
     font-size: 1rem;
     border: none;
     cursor: pointer;
 }
-.btn-menu:hover, .btn-menu:focus {
+.btn-menu-post:hover, .btn-menu-post:focus {
     background-color: rgba(44, 171, 146, 0.5);
     color: #2b7a75;
     border-radius: 50%;
@@ -177,7 +180,7 @@ select{
     line-height: 1.3rem;
     width: 1.2rem;
 }
-.menu-content {
+.menu-post-content {
     display: none;
     position: absolute;
     background-color:  #E6FFFF;
@@ -193,18 +196,39 @@ select{
     display: inline-block;
     padding: 3px;
 }
-.menu-content li {
+.menu-post-content li {
     color: #2b7a75;
     padding: 5px 10px;
     display: block;
     cursor: pointer;
 }
-.menu li:hover {
+.menu-post li:hover {
     background-color: rgba(44, 171, 146, 0.5);
     font-weight: 600;
 }
 .show {display: block;}
-
+.text-post{
+    text-align: justify;
+    font-size: 15px;
+}
+.edit-text-btns{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+}
+.edit-text-post button{
+    height: 1.5rem;
+    width: 15%;
+    font-weight: 600;
+    color: #fff;
+    background-color: #2CAB92;
+    border-style: none;
+    border-radius: 0.3rem;
+    margin-right: 2rem;
+    cursor: pointer;
+    outline: none;
+}
 .div-comment {
     max-width: 100%;
     background-color: rgba(44, 171, 146, 0.15);
@@ -228,14 +252,17 @@ select{
 .div-comment textarea::placeholder{
     color: rgba(44, 171, 146, 0.8);
 }
-.content-newpost textarea:focus{
+.content-newpost textarea:focus,
+.edit-text-post textarea:focus{
     border-color: #C4C4C4;
     background: none;
 }
-.content-newpost textarea::placeholder{
+.content-newpost textarea::placeholder,
+.edit-text-post textarea::placeholder{
     color: rgba(44, 171, 146, 0.8);
 }
-.content-newpost textarea:focus::placeholder{
+.content-newpost textarea:focus::placeholder,
+.edit-text-post textarea:focus::placeholder{
     color: #C4C4C4;
 }
 .like{
@@ -302,7 +329,8 @@ select{
     font-weight: bold;
     cursor: pointer;
 }
-.like-comment-container button:hover{
+.like-comment-container button:hover,
+.edit-text-post button:hover{
     background-color: rgba(44, 171, 146, 0.5);
     color: #2b7a75;
     font-weight: 800;
@@ -375,7 +403,8 @@ select{
 }
 /* --------Tool tip text span---------------- */
 .fa-file-image .tooltiptext,
-.fa-github .tooltiptext{
+.fa-github .tooltiptext,
+.fa-edit .tooltiptext{
     font-size: 12px;
     visibility: hidden;
     background-color:  #444;
@@ -391,7 +420,8 @@ select{
   }
   
   .fa-file-image .tooltiptext::after,
-  .fa-github .tooltiptext::after {
+  .fa-github .tooltiptext::after,
+  .fa-edit .tooltiptext::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -403,6 +433,7 @@ select{
   }
   
   .fa-file-image:hover .tooltiptext,
-  .fa-github:hover .tooltiptext {
+  .fa-github:hover .tooltiptext,
+  .fa-edit:hover .tooltiptext {
     visibility: visible;
   }
