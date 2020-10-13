@@ -57,11 +57,11 @@ export default (dataCurrentUser) => {
     <div class="allpost">
       <div class="mainpost">
         <div class="user-post">
-          <div class="menu">
-            <i class="fas fa-ellipsis-v btn-menu"></i>
-            <div id="menu-content" class="menu-content">
-              <li><i class="fas fa-edit select"></i> Edit</li>
-              <li><i class="fas fa-trash-alt select"></i> Delete</li>
+          <div class="menu-post">
+            <i class="fas fa-ellipsis-v btn-menu-post"></i>
+            <div id="menu-post-content" class="menu-post-content">
+              <li id="edit-post"><i class="fas fa-edit select"></i> Edit</li>
+              <li id="delete-post"><i class="fas fa-trash-alt select"></i> Delete</li>
             </div>
           </div>               
           <img class="avatar-post" src="${dataCurrentUser.photo}"/>
@@ -79,6 +79,13 @@ export default (dataCurrentUser) => {
             illum possimus tempora, labore culpa ut, laborum corporis, reprehenderit beatae 
             omnis vitae neque iste maxime nihil harum. Aliquid, autem.
           </p>
+          <div class = "hide edit-text-post">
+            <textarea class="edit-text">Debe contener lo mismo que el párrafo</textarea>
+            <div class = "edit-text-btns">
+              <button type="button" class="btn-save-edit">Save</button>
+              <button type="button" class="btn-cancel-edit">Cancel</button>
+            </div>
+          </div>
           <img id="post-img" class="post-img" src="img/imgLogo.png"/>
           <div class="like-comment-container">
             <p class="like">
@@ -175,17 +182,31 @@ export default (dataCurrentUser) => {
     uploadImg.value = '';
     removeImg.style.display = 'none';
   });
-  const btnMenu = viewHome.querySelector('.btn-menu');
+  const btnMenu = viewHome.querySelector('.btn-menu-post');
   /* ---------------- Menu despegable --------------------------*/
   btnMenu.addEventListener('click', () => {
-    viewHome.querySelector('#menu-content').classList.toggle('show');
+    viewHome.querySelector('#menu-post-content').classList.toggle('show');
   });
   // close menu click outside
   window.addEventListener('click', (e) => {
     if (e.target !== btnMenu) {
-      viewHome.querySelector('#menu-content').classList.remove('show');
+      viewHome.querySelector('#menu-post-content').classList.remove('show');
     }
   });
+  /* -------------- edit and delete menu -------------------*/
+  const editPost = viewHome.querySelector('#edit-post');
+  const btnCancelEdit = viewHome.querySelector('.btn-cancel-edit');
+  // edit post
+  editPost.addEventListener('click', () => {
+    viewHome.querySelector('.edit-text-post').classList.remove('hide');
+    viewHome.querySelector('.text-post').classList.add('hide');
+  });
+  // cancel edit post
+  btnCancelEdit.addEventListener('click', () => {
+    viewHome.querySelector('.edit-text-post').classList.add('hide');
+    viewHome.querySelector('.text-post').classList.remove('hide');
+  });
+
   /* ------------Mostrar y ocultar comentario ------------------*/
   viewHome.querySelector('.btn-comment').addEventListener('click', () => {
     viewHome.querySelector('#div-comment').classList.toggle('hide');
