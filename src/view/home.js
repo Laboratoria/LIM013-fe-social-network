@@ -182,8 +182,8 @@ export default (dataCurrentUser) => {
     uploadImg.value = '';
     removeImg.style.display = 'none';
   });
-  const btnMenu = viewHome.querySelector('.btn-menu-post');
   /* ---------------- Menu despegable --------------------------*/
+  const btnMenu = viewHome.querySelector('.btn-menu-post');
   btnMenu.addEventListener('click', () => {
     viewHome.querySelector('#menu-post-content').classList.toggle('show');
   });
@@ -214,7 +214,6 @@ export default (dataCurrentUser) => {
 
   /* ----------------Slideshow images------------------- */
   let myIndex = 0;
-
   const carousel = () => {
     const x = viewHome.getElementsByClassName('img-aside');
     for (let i = 0; i < x.length; i += 1) {
@@ -233,6 +232,6 @@ export default (dataCurrentUser) => {
     viewHome.querySelector('#contact-bottom').classList.toggle('click');
     viewHome.querySelector('#contact').classList.toggle('viewContact');
   });
-
+  /* ---------------------- ADD POST (CLOUD FIRESTORE SN-Post)------------------*/
   return viewHome;
 };

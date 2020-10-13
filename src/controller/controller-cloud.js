@@ -54,3 +54,15 @@ export const updatephotoCover = (value) => {
     photoCover: value,
   });
 };
+// ----------------------- CREATE BD POST --------------------------
+export const addpost = (date, state, publication, postimg) => {
+  const user = firebase.auth().currentUser;
+  const db = firebase.firestore();
+  return db.collection('SN-Post').add({
+    idAssociated: user.uid,
+    Date: date,
+    State: state,
+    Publication: publication,
+    Postimg: postimg,
+  });
+};
