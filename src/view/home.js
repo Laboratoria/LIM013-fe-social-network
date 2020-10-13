@@ -54,11 +54,11 @@ export default (notes) => {
             <div class="labels">
               <div class="label">
                 <p>Nombre de tu mascota:</p>
-                <h2 class="name_pet1">Molly</h2>
+                <h2 class="name_pet1"></h2>
               </div>
               <div class="label">
                 <p class="profile-text">Cuéntanos algo sobre ti y tu mascota</p>
-                <p class="description1">Cuéntanos la anécdota</p>
+                <p class="description1"></p>
               </div>
               <div class="profile-btn-editions">
                 <button id="btnCancel" class="btn-profile hide">Cancelar</button>

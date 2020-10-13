@@ -3,11 +3,12 @@ export const createUser = (idDoc, newUserName, newUserPhoto) => firebase.firesto
   displayName: newUserName,
   photoURL: newUserPhoto,
   petName: 'Fido',
-  aboutUs: 'Somos amigos',
+  aboutUs: 'Somos',
 });
 
 export const getUser = docUser => firebase.firestore().collection('users').doc(docUser).get();
 
+// export const getProfileInfo = docUser => firebase.firestore().collection('info').doc(docUser).get();
 
 // eslint-disable-next-line max-len
 // export const createPost = (id, userName, newPost, imagePost, date, status, userPhoto) => firebase.firestore().collection('posts').add({
