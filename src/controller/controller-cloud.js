@@ -12,6 +12,7 @@ export const sendDataCurrentUser = () => {
     username: user.displayName,
     email: user.email,
     photo: Photo,
+    photoCover: Photo,
     phone: 'Phone',
     birthday: 'yyyy-MM-dd',
     country: 'Country',

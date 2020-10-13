@@ -12,7 +12,7 @@ export default (dataCurrentUser) => {
       <div class="profile-background">
         <div class="profile-information shadow">
           <div class="cover-page">
-            <img class="cover-photo" src="${dataCurrentUser.photo}">
+            <img class="cover-photo" src="${dataCurrentUser.photoCover}">
           </div>
           <label id="select-cover" for="select-cover-page">
             <input type="file" id="select-cover-page" class="hide" accept="image/jpeg, image/png">
