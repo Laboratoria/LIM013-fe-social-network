@@ -6,6 +6,8 @@ import { postSection } from './post.js';
 // import { getInfoProfile} from '../controller/profile-controller.js';
 import { getUser, updateProfileInfo } from '../firebase/firestore-controller.js';
 import { currentUser } from '../firebase/auth-controller.js';
+// eslint-disable-next-line import/no-self-import
+import { infoProfile } from '../controller/profile-controller.js';
 
 export default (notes) => {
   const viewProfile = `
@@ -84,20 +86,10 @@ export default (notes) => {
   });
   /* ----crud profile---*/
   const editBtn = divElemt.querySelector('.edit_btn');
-  const nameUserProfile = divElemt.querySelector('.name');
-  const petName = divElemt.querySelector('.name_pet');
-  const aboutYou = divElemt.querySelector('.description');
   const btnSave = divElemt.querySelector('#btnSave');
   const btnCancel = divElemt.querySelector('#btnCancel');
 
-  const infoProfile = () => {
-    getUser(currentUser().uid).then((doc) => {
-      nameUserProfile.textContent = doc.data().displayName;
-      aboutYou.textContent = doc.data().aboutUs;
-      petName.textContent = doc.data().petName;
-    });
-  };
-  infoProfile();
+  infoProfile(divElemt);
 
   editBtn.addEventListener('click', () => {
     getUser(currentUser().uid).then((doc) => {
