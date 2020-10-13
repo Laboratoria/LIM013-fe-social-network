@@ -37,3 +37,19 @@ export const updateCurrentUser = (a, b, c, d, e) => {
     description: e,
   });
 };
+// ------------------------UPDATE PHOTO PROFILE--------------------------
+export const updatephotoProfile = (value) => {
+  const user = firebase.auth().currentUser;
+  const db = firebase.firestore();
+  return db.collection('SN-Users').doc(user.uid).update({
+    photo: value,
+  });
+};
+// ------------------------UPDATE PHOTO COVER --------------------------
+export const updatephotoCover = (value) => {
+  const user = firebase.auth().currentUser;
+  const db = firebase.firestore();
+  return db.collection('SN-Users').doc(user.uid).update({
+    photoCover: value,
+  });
+};
