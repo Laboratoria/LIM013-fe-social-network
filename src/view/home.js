@@ -31,7 +31,7 @@ const itemPost = (objPost) => {
               <button type="button" class="btn-cancel-edit">Cancel</button>
             </div>
           </div>
-          <img id="post-img" class="post-img" src="img/imgLogo.png"/>
+          <img id="post-img" class="post-img" src='${objPost.photo}'/>
           <div class="like-comment-container">
             <p class="like">
               <span class="count-like">1</span> likes
@@ -249,11 +249,11 @@ export default (dataCurrentUser) => {
   viewHome.querySelector('#btn-post').addEventListener('click', (e) => {
     e.preventDefault();
     const privacy = viewHome.querySelector('#privacy-option').value;
-    const textPost = viewHome.querySelector('.text-newpost').value;
+    const textPost = viewHome.querySelector('.text-newpost');
     const dateAct = new Date().toLocaleString();
-    addPost(dataCurrentUser.username, dataCurrentUser.photo, dateAct, privacy, textPost)
+    addPost(dataCurrentUser.username, dataCurrentUser.photo, dateAct, privacy, textPost.value)
       .then(() => {
-        console.log(`${privacy}   exito`);
+        textPost.value = '';
       });
   });
   return viewHome;
