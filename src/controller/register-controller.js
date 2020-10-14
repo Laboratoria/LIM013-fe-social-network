@@ -22,13 +22,14 @@ export const userRegistration = (userName, emailLogUp, passwordLogUp) => {
     }).then((result) => {
       createUser(result.user.uid, result.user.email, 'https://imgur.com/9v3u7Pp');
       console.log('registrado');
-      showMessage(`🐱❤️🐶 ${userName} bienvenido a Petlandia`);
       verifEmail()
         .then(() => {
         // Email sent.
+          showMessage(`🐱❤️🐶 ${userName} bienvenido a Petlandia. Hemos enviado un email verification`);
           console.log('Hemos enviado un email verification');
         }).catch((error) => {
           console.log(error);
+          showMessage('Verifica tu correo por favor');
         });
       // verifEmail()
       //   .then(() => {
