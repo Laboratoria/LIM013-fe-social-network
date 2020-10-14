@@ -55,14 +55,26 @@ export const updatephotoCover = (value) => {
   });
 };
 // ----------------------- CREATE BD POST --------------------------
-export const addpost = (date, state, publication, postimg) => {
-  const user = firebase.auth().currentUser;
+export const addPost = (Username, Photo, Date, Privacy, Publication) => {
   const db = firebase.firestore();
   return db.collection('SN-Post').add({
-    idAssociated: user.uid,
-    Date: date,
-    State: state,
-    Publication: publication,
-    Postimg: postimg,
+    username: Username,
+    photo: Photo,
+    date: Date,
+    privacy: Privacy,
+    publication: Publication,
   });
+};
+
+// ----------------------- GET ALL BD POST --------------------------
+export const getPost = (callback) => {
+  const db = firebase.firestore();
+  db.collection('SN-Post').orderBy('date', 'desc')
+    .onSnapshot((querySnapshot) => {
+      const post = [];
+      querySnapshot.forEach((doc) => {
+        post.push(doc.data());
+      });
+      callback(post);
+    });
 };

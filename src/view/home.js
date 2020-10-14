@@ -1,3 +1,84 @@
+import { addPost, getPost } from '../controller/controller-cloud.js';
+
+const itemPost = (objPost) => {
+  const postElement = document.createElement('div');
+  postElement.classList.add('allpost');
+  postElement.innerHTML = `
+  <div class="mainpost">
+        <div class="user-post">
+          <div class="menu-post">
+            <i class="fas fa-ellipsis-v btn-menu-post"></i>
+            <div id="menu-post-content" class="menu-post-content">
+              <li id="edit-post"><i class="fas fa-edit select"></i> Edit</li>
+              <li id="delete-post"><i class="fas fa-trash-alt select"></i> Delete</li>
+            </div>
+          </div>               
+          <img class="avatar-post" src="${objPost.photo}"/>
+          <p class="name">${objPost.username}</p>
+          <select class="fa" id="privacy-option">
+            <option class="fa" value="public" title = "Public">&#xf57d; </option>
+            <option class="fa" value="private" title = "Private">&#xf023; </option>
+          </select>
+          <p class="time-post">${objPost.date}</p>
+        </div>
+          <hr>
+        <div class="content-post">
+          <p class="text-post">${objPost.publication}</p>
+          <div class = "hide edit-text-post">
+            <textarea class="edit-text">Debe contener lo mismo que el párrafo</textarea>
+            <div class = "edit-text-btns">
+              <button type="button" class="btn-save-edit">Save</button>
+              <button type="button" class="btn-cancel-edit">Cancel</button>
+            </div>
+          </div>
+          <img id="post-img" class="post-img" src="img/imgLogo.png"/>
+          <div class="like-comment-container">
+            <p class="like">
+              <span class="count-like">1</span> likes
+            </p>
+            <button type="button" class="btn-like"><i class="fa fa-thumbs-up"></i> Like</button>
+            <button type="button" class="btn-comment"><i class="fa fa-comment"></i> Comment</button>
+            <div id= "div-comment" class="hide div-comment">
+              <textarea class="comment" placeholder="Add a comment"></textarea>
+              <i class="fas fa-paper-plane"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+  `;
+
+  /* ---------------- Menu despegable --------------------------*/
+  const btnMenu = postElement.querySelector('.btn-menu-post');
+  btnMenu.addEventListener('click', () => {
+    postElement.querySelector('#menu-post-content').classList.toggle('show');
+  });
+  // close menu click outside
+  window.addEventListener('click', (e) => {
+    if (e.target !== btnMenu) {
+      postElement.querySelector('#menu-post-content').classList.remove('show');
+    }
+  });
+  /* -------------- edit and delete menu -------------------*/
+  const editPost = postElement.querySelector('#edit-post');
+  const btnCancelEdit = postElement.querySelector('.btn-cancel-edit');
+  // edit post
+  editPost.addEventListener('click', () => {
+    postElement.querySelector('.edit-text-post').classList.remove('hide');
+    postElement.querySelector('.text-post').classList.add('hide');
+  });
+  // cancel edit post
+  btnCancelEdit.addEventListener('click', () => {
+    postElement.querySelector('.edit-text-post').classList.add('hide');
+    postElement.querySelector('.text-post').classList.remove('hide');
+  });
+
+  /* ------------Mostrar y ocultar comentario ------------------*/
+  postElement.querySelector('.btn-comment').addEventListener('click', () => {
+    postElement.querySelector('#div-comment').classList.toggle('hide');
+  });
+  return postElement;
+};
+
 export default (dataCurrentUser) => {
   // const dataCurrentUser = JSON.parse(localStorage.getItem('datauser'));
   // const dataCurrentUser = doc.data();
@@ -47,60 +128,14 @@ export default (dataCurrentUser) => {
             <i class="far fa-file-image"><span class="tooltiptext">Upload an image</span></i>
           </label>
           <select class="fa" id="privacy-option">
-            <option class="fa" value="0" title = "Public">&#xf57d; </option>
-            <option class="fa" value="1" title = "Private">&#xf023; </option>
+            <option class="fa" value="public" title = "Public">&#xf57d; </option>
+            <option class="fa" value="private" title = "Private">&#xf023; </option>
           </select>
           <button type="button" id="btn-post" class="btn-post" ><i class="fas fa-paper-plane"></i> Post</button>
         </div>
       </div>
     </div>
-    <div class="allpost">
-      <div class="mainpost">
-        <div class="user-post">
-          <div class="menu-post">
-            <i class="fas fa-ellipsis-v btn-menu-post"></i>
-            <div id="menu-post-content" class="menu-post-content">
-              <li id="edit-post"><i class="fas fa-edit select"></i> Edit</li>
-              <li id="delete-post"><i class="fas fa-trash-alt select"></i> Delete</li>
-            </div>
-          </div>               
-          <img class="avatar-post" src="${dataCurrentUser.photo}"/>
-          <p class="name">${dataCurrentUser.username}</p>
-          <select class="fa" id="privacy-option">
-            <option class="fa" value="0" title = "Public">&#xf57d; </option>
-            <option class="fa" value="1" title = "Private">&#xf023; </option>
-          </select>
-          <p class="time-post">29/09/2020 08:47 p.m.</p>
-        </div>
-          <hr>
-        <div class="content-post">
-          <p class="text-post">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo quidem tenetur 
-            illum possimus tempora, labore culpa ut, laborum corporis, reprehenderit beatae 
-            omnis vitae neque iste maxime nihil harum. Aliquid, autem.
-          </p>
-          <div class = "hide edit-text-post">
-            <textarea class="edit-text">Debe contener lo mismo que el párrafo</textarea>
-            <div class = "edit-text-btns">
-              <button type="button" class="btn-save-edit">Save</button>
-              <button type="button" class="btn-cancel-edit">Cancel</button>
-            </div>
-          </div>
-          <img id="post-img" class="post-img" src="img/imgLogo.png"/>
-          <div class="like-comment-container">
-            <p class="like">
-              <span class="count-like">1</span> likes
-            </p>
-            <button type="button" class="btn-like"><i class="fa fa-thumbs-up"></i> Like</button>
-            <button type="button" class="btn-comment"><i class="fa fa-comment"></i> Comment</button>
-            <div id= "div-comment" class="hide div-comment">
-              <textarea class="comment" placeholder="Add a comment"></textarea>
-              <i class="fas fa-paper-plane"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <setion id="container-post"></setion>
   </main>
 
   <!-- right column -->
@@ -182,36 +217,6 @@ export default (dataCurrentUser) => {
     uploadImg.value = '';
     removeImg.style.display = 'none';
   });
-  /* ---------------- Menu despegable --------------------------*/
-  const btnMenu = viewHome.querySelector('.btn-menu-post');
-  btnMenu.addEventListener('click', () => {
-    viewHome.querySelector('#menu-post-content').classList.toggle('show');
-  });
-  // close menu click outside
-  window.addEventListener('click', (e) => {
-    if (e.target !== btnMenu) {
-      viewHome.querySelector('#menu-post-content').classList.remove('show');
-    }
-  });
-  /* -------------- edit and delete menu -------------------*/
-  const editPost = viewHome.querySelector('#edit-post');
-  const btnCancelEdit = viewHome.querySelector('.btn-cancel-edit');
-  // edit post
-  editPost.addEventListener('click', () => {
-    viewHome.querySelector('.edit-text-post').classList.remove('hide');
-    viewHome.querySelector('.text-post').classList.add('hide');
-  });
-  // cancel edit post
-  btnCancelEdit.addEventListener('click', () => {
-    viewHome.querySelector('.edit-text-post').classList.add('hide');
-    viewHome.querySelector('.text-post').classList.remove('hide');
-  });
-
-  /* ------------Mostrar y ocultar comentario ------------------*/
-  viewHome.querySelector('.btn-comment').addEventListener('click', () => {
-    viewHome.querySelector('#div-comment').classList.toggle('hide');
-  });
-
   /* ----------------Slideshow images------------------- */
   let myIndex = 0;
   const carousel = () => {
@@ -232,6 +237,24 @@ export default (dataCurrentUser) => {
     viewHome.querySelector('#contact-bottom').classList.toggle('click');
     viewHome.querySelector('#contact').classList.toggle('viewContact');
   });
+  /* ---------------------- ADD POST (CONTAINER-POST)------------------*/
+  const containerPost = viewHome.querySelector('#container-post');
+  getPost((post) => {
+    containerPost.innerHTML = '';
+    post.forEach((objPost) => {
+      containerPost.appendChild(itemPost(objPost));
+    });
+  });
   /* ---------------------- ADD POST (CLOUD FIRESTORE SN-Post)------------------*/
+  viewHome.querySelector('#btn-post').addEventListener('click', (e) => {
+    e.preventDefault();
+    const privacy = viewHome.querySelector('#privacy-option').value;
+    const textPost = viewHome.querySelector('.text-newpost').value;
+    const dateAct = new Date().toLocaleString();
+    addPost(dataCurrentUser.username, dataCurrentUser.photo, dateAct, privacy, textPost)
+      .then(() => {
+        console.log(`${privacy}   exito`);
+      });
+  });
   return viewHome;
 };
