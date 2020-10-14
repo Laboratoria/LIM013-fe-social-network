@@ -73,8 +73,22 @@ export const getPost = (callback) => {
     .onSnapshot((querySnapshot) => {
       const post = [];
       querySnapshot.forEach((doc) => {
-        post.push(doc.data());
+        post.push({ id: doc.id, ...doc.data() });
       });
       callback(post);
     });
+};
+
+// ----------------------- UPDATE POST --------------------------
+export const updatePost = (id, updatePublication) => {
+  const db = firebase.firestore();
+  return db.collection('SN-Post').doc(id).update({
+    publication: updatePublication,
+  });
+};
+
+// ----------------------- DELETE POST --------------------------
+export const deletePost = (idPost) => {
+  const db = firebase.firestore();
+  db.collection('SN-Post').doc(idPost).delete();
 };
