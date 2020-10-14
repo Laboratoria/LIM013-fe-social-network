@@ -1,7 +1,7 @@
 import {
   updateCurrentUser, updatephotoProfile, updatephotoCover,
 } from '../controller/controller-cloud.js';
-import { sendPhotoProfile } from '../controller/controller-storage.js';
+import { sendImgToStorage } from '../controller/controller-storage.js';
 
 export default (dataCurrentUser) => {
   /*  const dataCurrentUser = JSON.parse(localStorage.getItem('datauser')); */
@@ -87,7 +87,7 @@ export default (dataCurrentUser) => {
   const selectPhotoProfile = viewProfile.querySelector('#select-photo-profile');
   selectPhotoProfile.addEventListener('change', (e) => {
     const file = e.target.files[0];
-    const uploadTask = sendPhotoProfile(file, 'SN-imgProfile');
+    const uploadTask = sendImgToStorage(file, 'SN-imgProfile');
     uploadTask.on('state_changed', (snapshot) => {
       // Handle progress
       const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
@@ -109,7 +109,7 @@ export default (dataCurrentUser) => {
   const selectCoverPage = viewProfile.querySelector('#select-cover-page');
   selectCoverPage.addEventListener('change', (e) => {
     const file = e.target.files[0];
-    const uploadTask = sendPhotoProfile(file, 'SN-imgCover');
+    const uploadTask = sendImgToStorage(file, 'SN-imgCover');
     uploadTask.on('state_changed', (snapshot) => {
       // Handle progress
       const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;

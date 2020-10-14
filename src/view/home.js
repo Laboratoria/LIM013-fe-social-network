@@ -1,6 +1,7 @@
 import {
   addPost, getPost, deletePost, updatePost,
 } from '../controller/controller-cloud.js';
+import { sendImgToStorage } from '../controller/controller-storage.js';
 
 const itemPost = (objPost) => {
   const postElement = document.createElement('div');
@@ -33,7 +34,7 @@ const itemPost = (objPost) => {
               <button type="button" class="btn-cancel-edit">Cancel</button>
             </div>
           </div>
-          <img id="post-img" class="post-img" src='${objPost.photo}'/>
+          <img id="post-img" class="post-img" src='${objPost.urlimg}'/>
           <div class="like-comment-container">
             <p class="like">
               <span class="count-like">1</span> likes
@@ -133,20 +134,26 @@ export default (dataCurrentUser) => {
         <p class="name">${dataCurrentUser.username}</p>
       </div>
       <div class="content-newpost">
+        <form id = "form-post">
         <textarea class="text-newpost" placeholder="Share something"></textarea>
         <i id = "remove-img" style="display: none" class="fas fa-times-circle"></i>
         <img id="post-img" class="post-img" src=""/>
         <div class="buttons-bar">
+          
           <label for="upload-img">
+          
             <input type="file" accept="image/jpeg, image/png, image/gif" id="upload-img" class="upload-img">
             <i class="far fa-file-image"><span class="tooltiptext">Upload an image</span></i>
+            
           </label>
+          
           <select class="fa" id="privacy-option">
             <option class="fa" value="public" title = "Public">&#xf57d; </option>
             <option class="fa" value="private" title = "Private">&#xf023; </option>
           </select>
           <button type="button" id="btn-post" class="btn-post" ><i class="fas fa-paper-plane"></i> Post</button>
         </div>
+        </form>
       </div>
     </div>
     <setion id="container-post"></setion>
@@ -255,6 +262,7 @@ export default (dataCurrentUser) => {
   const containerPost = viewHome.querySelector('#container-post');
   getPost((post) => {
     containerPost.innerHTML = '';
+    postImg.src = '';
     post.forEach((objPost) => {
       containerPost.appendChild(itemPost(objPost));
     });
@@ -262,13 +270,30 @@ export default (dataCurrentUser) => {
   /* ---------------------- ADD POST (CLOUD FIRESTORE SN-Post)------------------*/
   viewHome.querySelector('#btn-post').addEventListener('click', (e) => {
     e.preventDefault();
-    const privacy = viewHome.querySelector('#privacy-option').value;
-    const textPost = viewHome.querySelector('.text-newpost');
-    const dateAct = new Date().toLocaleString();
-    addPost(dataCurrentUser.username, dataCurrentUser.photo, dateAct, privacy, textPost.value)
-      .then(() => {
-        textPost.value = '';
-      });
+    // llamar a storage
+    const fileImg = e.target.closest('#form-post').querySelector('input').files[0];
+    const uploadTask = sendImgToStorage(fileImg, 'SN-imgPost');
+    uploadTask.on('state_changed', (snapshot) => {
+      // Handle progress
+      const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      console.log(`Upload is ${progress}% done`);
+    }, (error) => {
+      // Handle unsuccessful uploads
+      console.log(error);
+    }, () => {
+      // Handle successful uploads on complete
+      uploadTask.snapshot.ref.getDownloadURL()
+        .then((downloadURL) => {
+          const privacy = viewHome.querySelector('#privacy-option').value;
+          const textPost = viewHome.querySelector('.text-newpost');
+          const dateAct = new Date().toLocaleString();
+          addPost(dataCurrentUser.username, dataCurrentUser.photo, dateAct, privacy,
+            textPost.value, downloadURL)
+            .then(() => {
+              textPost.value = '';
+            });
+        });
+    });
   });
   return viewHome;
 };
