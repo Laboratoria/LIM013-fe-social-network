@@ -46,7 +46,7 @@ export default (notes) => {
           </div>
           <div class="content">
             <div class="profile">
-              <img class="profile-img" src="${user.photoURL}" alt="">
+              <img class="profile-img" src="${user.photoURL || 'imagenes/man.png'}" alt="">
             </div>
             <div class="header_name">
               <h2 class="name1"></h2>

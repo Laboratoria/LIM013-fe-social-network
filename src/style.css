@@ -1157,6 +1157,12 @@ i.fa.fa-pencil{
     .profile_section{
         display: block;
 	}
+
+	.profile_section1{
+		background: #f0f2f5;
+		padding: 20px;
+		border-radius: 4px;
+	}
 	
     .divPost{
         grid-column: span 2;

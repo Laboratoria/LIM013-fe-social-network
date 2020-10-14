@@ -3,9 +3,12 @@
 import { signOut } from '../controller/home-controller.js';
 import { postSection } from './post.js';
 import { infoProfile, updateProfile } from '../controller/profile-controller.js';
+import { currentUser } from '../firebase/auth-controller.js';
+
 
 
 export default (notes) => {
+  const user = currentUser();
   const viewProfile = `
   <div>
     <header id='headerHome'>
@@ -28,7 +31,8 @@ export default (notes) => {
     </ul>
     </nav>
   </header>
-    <main>
+  <main>
+  <div class = "main"> 
       <aside class="profile_section1">
         <div class="card">
           <div class="cover">
@@ -36,7 +40,8 @@ export default (notes) => {
           </div>
           <div class="content">
             <div class="profile">
-              <img class="profile_img" src="" alt="">
+              <img class="profile-img" src="${user.photoURL || 'imagenes/man.png'}" alt="">
+              
               <label id="selectProfile" for="selectPhotoProfile" class="hide">
                 <input type="file" id="selectPhotoProfile" class="hide" accept="image/jpeg, image/png">
                 <i class="fas fa-camera"></i>
@@ -64,12 +69,17 @@ export default (notes) => {
         </div>
     </aside>
     <div class="all-posts"></div>   
+    </div> 
     </main>
   </div>`;
 
   const divElemt = document.createElement('div');
   divElemt.classList.add('homePage');
   divElemt.innerHTML = viewProfile;
+
+  /* ----crud profile---*/
+  infoProfile(divElemt);
+
   /* ----Button Toggle---*/
   const toggle = divElemt.querySelector('.btn-menu1');
   toggle.addEventListener('click', () => {
@@ -80,9 +90,6 @@ export default (notes) => {
       menuLat.className = 'menu_mobile1';
     }
   });
-  /* ----crud profile---*/
-  infoProfile(divElemt);
-
 
   const editBtn = divElemt.querySelector('.edit_btn');
   const nameUserProfile = divElemt.querySelector('.name');

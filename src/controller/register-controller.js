@@ -20,7 +20,7 @@ export const userRegistration = (userName, emailLogUp, passwordLogUp) => {
       logOut();
       window.location.hash = '';
     }).then((result) => {
-      createUser(result.user.uid, userName, 'https://imgur.com/9v3u7Pp');
+      createUser(result.user.uid, result.user.email, 'https://imgur.com/9v3u7Pp');
       console.log('registrado');
       showMessage(`🐱❤️🐶 ${userName} bienvenido a Petlandia`);
       verifEmail()
