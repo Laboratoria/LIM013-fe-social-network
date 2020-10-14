@@ -135,24 +135,20 @@ export default (dataCurrentUser) => {
       </div>
       <div class="content-newpost">
         <form id = "form-post">
-        <textarea class="text-newpost" placeholder="Share something"></textarea>
-        <i id = "remove-img" style="display: none" class="fas fa-times-circle"></i>
-        <img id="post-img" class="post-img" src=""/>
-        <div class="buttons-bar">
-          
-          <label for="upload-img">
-          
-            <input type="file" accept="image/jpeg, image/png, image/gif" id="upload-img" class="upload-img">
-            <i class="far fa-file-image"><span class="tooltiptext">Upload an image</span></i>
-            
-          </label>
-          
-          <select class="fa" id="privacy-option">
-            <option class="fa" value="public" title = "Public">&#xf57d; </option>
-            <option class="fa" value="private" title = "Private">&#xf023; </option>
-          </select>
-          <button type="button" id="btn-post" class="btn-post" ><i class="fas fa-paper-plane"></i> Post</button>
-        </div>
+          <textarea class="text-newpost" placeholder="Share something"></textarea>
+          <i id = "remove-img" style="display: none" class="fas fa-times-circle"></i>
+          <img id="post-img" class="post-img" src=""/>
+          <div class="buttons-bar">
+            <label for="upload-img">
+              <input type="file" accept="image/jpeg, image/png, image/gif" id="upload-img" class="upload-img">
+              <i class="far fa-file-image"><span class="tooltiptext">Upload an image</span></i>
+            </label>
+            <select class="fa" id="privacy-option">
+              <option class="fa" value="public" title = "Public">&#xf57d; </option>
+              <option class="fa" value="private" title = "Private">&#xf023; </option>
+            </select>
+            <button type="button" id="btn-post" class="btn-post" ><i class="fas fa-paper-plane"></i> Post</button>
+          </div>
         </form>
       </div>
     </div>
