@@ -12,6 +12,7 @@ export const sendDataCurrentUser = () => {
     username: user.displayName,
     email: user.email,
     photo: Photo,
+    photoCover: Photo,
     phone: 'Phone',
     birthday: 'yyyy-MM-dd',
     country: 'Country',
@@ -36,4 +37,44 @@ export const updateCurrentUser = (a, b, c, d, e) => {
     country: d,
     description: e,
   });
+};
+// ------------------------UPDATE PHOTO PROFILE--------------------------
+export const updatephotoProfile = (value) => {
+  const user = firebase.auth().currentUser;
+  const db = firebase.firestore();
+  return db.collection('SN-Users').doc(user.uid).update({
+    photo: value,
+  });
+};
+// ------------------------UPDATE PHOTO COVER --------------------------
+export const updatephotoCover = (value) => {
+  const user = firebase.auth().currentUser;
+  const db = firebase.firestore();
+  return db.collection('SN-Users').doc(user.uid).update({
+    photoCover: value,
+  });
+};
+// ----------------------- CREATE BD POST --------------------------
+export const addPost = (Username, Photo, Date, Privacy, Publication) => {
+  const db = firebase.firestore();
+  return db.collection('SN-Post').add({
+    username: Username,
+    photo: Photo,
+    date: Date,
+    privacy: Privacy,
+    publication: Publication,
+  });
+};
+
+// ----------------------- GET ALL BD POST --------------------------
+export const getPost = (callback) => {
+  const db = firebase.firestore();
+  db.collection('SN-Post').orderBy('date', 'desc')
+    .onSnapshot((querySnapshot) => {
+      const post = [];
+      querySnapshot.forEach((doc) => {
+        post.push(doc.data());
+      });
+      callback(post);
+    });
 };

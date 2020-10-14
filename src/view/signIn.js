@@ -1,7 +1,6 @@
 
 import { signIn, signInforgoogle } from '../controller/controller-firebase.js';
 import { sendDataCurrentUser, getDataCurrentUser } from '../controller/controller-cloud.js';
-import viewLoading from './loading.js';
 // import { controlerSignIn } from '../controller/signIn-controller.js';
 
 export default () => {
@@ -51,8 +50,6 @@ export default () => {
   btnGoogle.addEventListener('click', () => {
     signInforgoogle()
       .then(() => {
-        const container = document.querySelector('.loading');
-        container.appendChild(viewLoading());
         getDataCurrentUser()
           .then((doc) => {
             if (doc.exists) {
