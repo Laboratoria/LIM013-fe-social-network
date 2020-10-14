@@ -112,12 +112,14 @@ export default (notes) => {
   const nameUserProfile = divElemt.querySelector('.name1');
   const petName = divElemt.querySelector('.name_pet1');
   const aboutYou = divElemt.querySelector('.description1');
+  const photoProfile = divElemt.querySelector('.profile-img');
 
   const infoProfile = () => {
     getUser(currentUser().uid).then((doc) => {
       nameUserProfile.textContent = doc.data().displayName;
       aboutYou.textContent = doc.data().aboutUs;
       petName.textContent = doc.data().petName;
+      photoProfile.innerHTML = doc.data().photoURL;
     });
   };
   infoProfile();
@@ -143,7 +145,7 @@ export default (notes) => {
   const bttonnewpost = divElemt.querySelector('#bttonnewpost');
   bttonnewpost.addEventListener('click', (e) => {
     e.preventDefault();
-    makingPost(file, user.uid, user.displayName, user.photoURL);
+    makingPost(file, user.uid, nameUserProfile.textContent, photoProfile.innerHTML);
   });
 
   bttonimagenUploadCancelling.addEventListener('click', () => {

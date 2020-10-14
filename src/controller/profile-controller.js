@@ -7,10 +7,10 @@ export const infoProfile = (divElemt) => {
   const nameUserProfile = divElemt.querySelector('.name');
   const petName = divElemt.querySelector('.name_pet');
   const aboutYou = divElemt.querySelector('.description');
-  const photoProfile = divElemt.querySelector('.profile_img');
+  const photoProfile = divElemt.querySelector('.profile-img');
   getUser(currentUser().uid).then((doc) => {
     nameUserProfile.textContent = doc.data().displayName;
-    photoProfile.src = doc.data().photoURL;
+    photoProfile.innerHTML = doc.data().photoURL;
     aboutYou.textContent = doc.data().aboutUs;
     petName.textContent = doc.data().petName;
   });
