@@ -1,4 +1,6 @@
-import { addPost, getPost } from '../controller/controller-cloud.js';
+import {
+  addPost, getPost, deletePost, updatePost,
+} from '../controller/controller-cloud.js';
 
 const itemPost = (objPost) => {
   const postElement = document.createElement('div');
@@ -10,7 +12,7 @@ const itemPost = (objPost) => {
             <i class="fas fa-ellipsis-v btn-menu-post"></i>
             <div id="menu-post-content" class="menu-post-content">
               <li id="edit-post"><i class="fas fa-edit select"></i> Edit</li>
-              <li id="delete-post"><i class="fas fa-trash-alt select"></i> Delete</li>
+              <li id="delete-post-${objPost.id}"><i class="fas fa-trash-alt select"></i> Delete</li>
             </div>
           </div>               
           <img class="avatar-post" src="${objPost.photo}"/>
@@ -25,9 +27,9 @@ const itemPost = (objPost) => {
         <div class="content-post">
           <p class="text-post">${objPost.publication}</p>
           <div class = "hide edit-text-post">
-            <textarea class="edit-text">Debe contener lo mismo que el párrafo</textarea>
+            <textarea class="edit-text">${objPost.publication}</textarea>
             <div class = "edit-text-btns">
-              <button type="button" class="btn-save-edit">Save</button>
+              <button type="button" class="btn-save-edit-${objPost.id}">Save</button>
               <button type="button" class="btn-cancel-edit">Cancel</button>
             </div>
           </div>
@@ -60,8 +62,10 @@ const itemPost = (objPost) => {
   });
   /* -------------- edit and delete menu -------------------*/
   const editPost = postElement.querySelector('#edit-post');
+  const editPublication = postElement.querySelector('.edit-text');
+  const btnSaveEdit = postElement.querySelector(`.btn-save-edit-${objPost.id}`);
   const btnCancelEdit = postElement.querySelector('.btn-cancel-edit');
-  // edit post
+  // edit post menu
   editPost.addEventListener('click', () => {
     postElement.querySelector('.edit-text-post').classList.remove('hide');
     postElement.querySelector('.text-post').classList.add('hide');
@@ -70,8 +74,18 @@ const itemPost = (objPost) => {
   btnCancelEdit.addEventListener('click', () => {
     postElement.querySelector('.edit-text-post').classList.add('hide');
     postElement.querySelector('.text-post').classList.remove('hide');
+    editPublication.value = objPost.publication;
   });
 
+  // update post
+  btnSaveEdit.addEventListener('click', () => {
+    updatePost(objPost.id, editPublication.value);
+  });
+  // delete post
+  postElement.querySelector(`#delete-post-${objPost.id}`)
+    .addEventListener('click', () => {
+      deletePost(objPost.id);
+    });
   /* ------------Mostrar y ocultar comentario ------------------*/
   postElement.querySelector('.btn-comment').addEventListener('click', () => {
     postElement.querySelector('#div-comment').classList.toggle('hide');
