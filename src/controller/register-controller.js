@@ -1,5 +1,7 @@
 // eslint-disable-next-line import/named
-import { signUp, verifEmail, logOut } from '../firebase/auth-controller.js';
+import {
+  signUp, verifEmail, logOut, updateUserName, currentUser,
+} from '../firebase/auth-controller.js';
 // import { createUser } from '../firebase/firestore-controller.js';
 import { createUser } from '../firebase/firestore-controller.js';
 
@@ -19,17 +21,23 @@ export const userRegistration = (userName, emailLogUp, passwordLogUp) => {
       showMessage('⚠️Email logeado anteriormente');
       logOut();
       window.location.hash = '';
-    }).then((result) => {
-      createUser(result.user.uid, result.user.email, 'https://imgur.com/9v3u7Pp');
+    }).then((userdata) => {
+      console.log(userdata);
+      createUser(userdata.user.uid);
       console.log('registrado');
       verifEmail()
         .then(() => {
         // Email sent.
-          showMessage(`🐱❤️🐶 ${userName} bienvenido a Petlandia. Hemos enviado un email verification`);
-          console.log('Hemos enviado un email verification');
+          const objetcUser = currentUser();
+          console.log(objetcUser);
+          updateUserName(objetcUser, userName);
+          showMessage(`🐱❤️🐶 ${userName} bienvenido a Petlandia`);
+          // console.log('Hemos enviado un email verification');
         }).catch((error) => {
           console.log(error);
-          showMessage('Verifica tu correo por favor');
+          // showMessage('Verifica tu correo por favor');
+          showMessage(`🐱❤️🐶 ${userName} bienvenido a Petlandia. Hemos enviado un email verification`);
+          console.log('Hemos enviado un email verification');
         });
       // verifEmail()
       //   .then(() => {

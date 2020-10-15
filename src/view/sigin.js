@@ -2,7 +2,6 @@
 import {
   signingIn,
   signInGoogle,
-  signInFacebook,
 } from '../controller/signin-controller.js';
 
 export default () => {
@@ -65,11 +64,11 @@ export default () => {
     e.preventDefault();
     signInGoogle();
   });
-  // Capturar evento de boton de Facebook"//
-  const btnFacebook = divElem.querySelector('#btnFacebook');
-  btnFacebook.addEventListener('click', (e) => {
-    e.preventDefault();
-    signInFacebook();
-  });
+  // // Capturar evento de boton de Facebook"//
+  // const btnFacebook = divElem.querySelector('#btnFacebook');
+  // btnFacebook.addEventListener('click', (e) => {
+  //   e.preventDefault();
+  //   signInFacebook();
+  // });
   return divElem;
 };

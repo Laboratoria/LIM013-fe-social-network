@@ -69,7 +69,8 @@ export const postSection = (Object) => {
       alt=""
     />` : `<img class="hide image-post" src="${Object.img}" alt="" />`}
     <div class="container-menu-post" id="containerMenu">
-      <button class="btn-post-edit" data-id="${Object.id}">Editar</button>
+      
+    <button class="btn-post-edit" data-id="${Object.id}">Editar</button>
       <button class="btn-post-delete" data-id="${Object.id}">Eliminar</button>
     </div>
     <hr class="w3-clear" />

@@ -14,7 +14,6 @@ import { signOut, makingPost } from '../controller/home-controller.js';
 
 export default (notes) => {
   const user = currentUser();
-  console.log(user);
   const viewHome = `
   <div class='body'>
     <header id='headerHome'>

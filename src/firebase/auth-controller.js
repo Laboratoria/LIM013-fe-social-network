@@ -29,6 +29,18 @@ export const loginFacebook = () => {
   return firebase.auth().signInWithPopup(provider);
 };
 // actualizar nombre y foto de usuario
-export const updatePhotoUser = photoProfile => firebase.auth().currentUser.updateProfile({
-  photoURL: photoProfile,
-});
+// export const updatePhotoUser = photoProfile => firebase.auth().currentUser.updateProfile({
+//   photoURL: photoProfile,
+// });
+
+export const updatePhotoAuth = (userData, photoProfile) => {
+  userData.updateProfileInfo({
+    photoURL: photoProfile,
+  });
+};
+
+export const updateUserName = (userData, userName) => {
+  userData.updateProfileInfo({
+    displayName: userName,
+  });
+};
