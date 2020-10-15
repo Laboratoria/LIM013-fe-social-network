@@ -54,15 +54,21 @@ export const updatephotoCover = (value) => {
     photoCover: value,
   });
 };
+
+// db.colleciton('SN-users').doc(post.userId).get().then((u) => u.photoUrl)
+
 // ----------------------- CREATE BD POST --------------------------
-export const addPost = (Username, Photo, Date, Privacy, Publication) => {
+export const addPost = (Username, Photo, Date, Privacy, Publication, URLimg) => {
+  // const user = firebase.auth().currentUser;
   const db = firebase.firestore();
   return db.collection('SN-Post').add({
+    // userId: user.uid,
     username: Username,
     photo: Photo,
     date: Date,
     privacy: Privacy,
     publication: Publication,
+    urlimg: URLimg,
   });
 };
 
