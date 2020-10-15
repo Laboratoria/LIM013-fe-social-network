@@ -33,14 +33,15 @@ export const loginFacebook = () => {
 //   photoURL: photoProfile,
 // });
 
-export const updatePhotoAuth = (userData, photoProfile) => {
-  userData.updateProfileInfo({
-    photoURL: photoProfile,
-  });
-};
+// export const updatePhotoAuth = (userData, photoProfile) => {
+//   userData.updateProfileInfo({
+//     photoURL: photoProfile,
+//   });
+// };
 
-export const updateUserName = (userData, userName) => {
-  userData.updateProfileInfo({
-    displayName: userName,
-  });
-};
+// export const updateUserName = (userData, userName, photoProfile) => {
+//   userData.updateProfile({
+//     displayName: userName,
+//     photoURL: photoProfile,
+//   });
+// };

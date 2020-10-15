@@ -7,7 +7,7 @@ import { postSection } from './post.js';
 // eslint-disable-next-line import/no-cycle
 import { cambioVista } from '../controller/router.js';
 // import { getAllPosts } from '../firebase/firestore-controller';
-import { getUser } from '../firebase/firestore-controller.js';
+// import { getUser } from '../firebase/firestore-controller.js';
 import { currentUser } from '../firebase/auth-controller.js';
 // eslint-disable-next-line import/no-cycle
 import { signOut, makingPost } from '../controller/home-controller.js';
@@ -45,10 +45,10 @@ export default (notes) => {
           </div>
           <div class="content">
             <div class="profile">
-              <img class="profile-img" src="${user.photoURL || 'imagenes/man.png'}" alt="">
+              <img class="profile-img" src="${user.photoURL}" alt="">
             </div>
             <div class="header_name">
-              <h2 class="name1"></h2>
+              <h2 class="name1">${user.displayName}</h2>
             </div>
             <div class="labels">
               <div class="label">
@@ -72,7 +72,7 @@ export default (notes) => {
     </aside>
     <div class="timeline_section">
       <div class="update_container">
-      <img class="like-picture" src="${user.photoURL || 'imagenes/man.png'}" alt="">
+      <img class="like-picture" src="${user.photoURL}" alt="">
         <h1  class="ask_status">¿Qué hiciste con tu mascota hoy?</h1>
         <textarea name="" id="status_input" cols="30" rows="10" class="status_imput" placeholder="Cuéntanos las travesuras de tu mejor amigo."></textarea>
         <img id="showPicture" class="post-new-image" src="#" alt="">
@@ -108,20 +108,20 @@ export default (notes) => {
       menuLat.className = 'menu_mobile';
     }
   });
-  const nameUserProfile = divElemt.querySelector('.name1');
-  const petName = divElemt.querySelector('.name_pet1');
-  const aboutYou = divElemt.querySelector('.description1');
-  const photoProfile = divElemt.querySelector('.profile-img');
+  // const nameUserProfile = divElemt.querySelector('.name1');
+  // const petName = divElemt.querySelector('.name_pet1');
+  // const aboutYou = divElemt.querySelector('.description1');
+  // const photoProfile = divElemt.querySelector('.profile-img');
 
-  const infoProfile = () => {
-    getUser(currentUser().uid).then((doc) => {
-      nameUserProfile.textContent = doc.data().displayName;
-      aboutYou.textContent = doc.data().aboutUs;
-      petName.textContent = doc.data().petName;
-      photoProfile.innerHTML = doc.data().photoURL;
-    });
-  };
-  infoProfile();
+  // const infoProfile = () => {
+  //   getUser(currentUser().uid).then((doc) => {
+  //     nameUserProfile.textContent = doc.data().displayName;
+  //     aboutYou.textContent = doc.data().aboutUs;
+  //     petName.textContent = doc.data().petName;
+  //     photoProfile.innerHTML = doc.data().photoURL;
+  //   });
+  // };
+  // infoProfile();
 
   const imagenUploading = divElemt.querySelector('#selectImage');
   const imagenUpload = divElemt.querySelector('#showPicture');
@@ -144,7 +144,7 @@ export default (notes) => {
   const bttonnewpost = divElemt.querySelector('#bttonnewpost');
   bttonnewpost.addEventListener('click', (e) => {
     e.preventDefault();
-    makingPost(file, user.uid, nameUserProfile.textContent, photoProfile.innerHTML);
+    makingPost(file, user.uid, user.displayName, user.photoURL);
   });
 
   bttonimagenUploadCancelling.addEventListener('click', () => {

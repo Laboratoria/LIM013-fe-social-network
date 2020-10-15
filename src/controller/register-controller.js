@@ -1,9 +1,8 @@
 // eslint-disable-next-line import/named
 import {
-  signUp, verifEmail, logOut, updateUserName, currentUser,
+  signUp, verifEmail, logOut,
 } from '../firebase/auth-controller.js';
 // import { createUser } from '../firebase/firestore-controller.js';
-import { createUser } from '../firebase/firestore-controller.js';
 
 const showMessage = (txtmessage) => {
   const showWindow = document.createElement('div');
@@ -14,7 +13,7 @@ const showMessage = (txtmessage) => {
     document.body.removeChild(showWindow);
   }, 4000);
 };
-export const userRegistration = (userName, emailLogUp, passwordLogUp) => {
+export const userRegistration = (userName, photoProfile, emailLogUp, passwordLogUp) => {
   signUp(emailLogUp, passwordLogUp)
     .catch(() => {
       console.log('usuario logeado anteriormente');
@@ -23,21 +22,30 @@ export const userRegistration = (userName, emailLogUp, passwordLogUp) => {
       window.location.hash = '';
     }).then((userdata) => {
       console.log(userdata);
-      createUser(userdata.user.uid);
+      // createUser(userdata.user.uid);
       console.log('registrado');
+      const objetcUser = firebase.auth().currentUser;
+      console.log(objetcUser);
+      objetcUser.updateProfile({
+        displayName: userName,
+        photoURL: photoProfile,
+      }).then(() => {
+        // Update successful.
+        console.log('se actualizo');
+      }).catch(() => {
+        // An error happened.
+        console.log('no se actualizo');
+      });
+      showMessage(`🐱❤️🐶 ${userName} bienvenido a Petlandia`);
+      // console.log('Hemos enviado un email verification');
       verifEmail()
         .then(() => {
         // Email sent.
-          const objetcUser = currentUser();
-          console.log(objetcUser);
-          updateUserName(objetcUser, userName);
-          showMessage(`🐱❤️🐶 ${userName} bienvenido a Petlandia`);
-          // console.log('Hemos enviado un email verification');
+          showMessage(`🐱❤️🐶 ${userName} bienvenido a Petlandia. Hemos enviado un email verification`);
+          console.log('Hemos enviado un email verification');
         }).catch((error) => {
           console.log(error);
           // showMessage('Verifica tu correo por favor');
-          showMessage(`🐱❤️🐶 ${userName} bienvenido a Petlandia. Hemos enviado un email verification`);
-          console.log('Hemos enviado un email verification');
         });
       // verifEmail()
       //   .then(() => {

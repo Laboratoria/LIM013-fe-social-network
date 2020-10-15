@@ -23,7 +23,7 @@ const onAuth = (callback) => {
     let route = '#/signIn';
     if (window.location.hash === '#/Register') route = '#/Register';
     if (user) {
-      // console.log(user);
+      console.log(user);
       console.log('usuario logeado');
       if (user.emailVerified !== false) {
         switch (window.location.hash) {

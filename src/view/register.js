@@ -51,8 +51,9 @@ export default () => {
     const userName = divElemt.querySelector('#nameUser').value;
     const emailLogUp = divElemt.querySelector('#emailSignUp').value;
     const passwordLogUp = divElemt.querySelector('#passwordSignUp').value;
-    console.log(userName, emailLogUp, passwordLogUp);
-    userRegistration(userName, emailLogUp, passwordLogUp);
+    const photoProfile = 'https://media.giphy.com/media/Tgg0jXMRGgXWDuIKrC/giphy.gif';
+    console.log(userName, photoProfile, emailLogUp, passwordLogUp);
+    userRegistration(userName, photoProfile, emailLogUp, passwordLogUp);
   });
 
   return divElemt;
