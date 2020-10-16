@@ -84,7 +84,8 @@ hr{
     border-radius: 49px;
 }
 .content-newpost textarea,
-.edit-text-post textarea{
+.edit-text-post textarea,
+.edit-comment-text-btns textarea{
     height: 70px;
     text-align: justify;
     width: 100%;
@@ -162,17 +163,20 @@ select{
     text-align: center;
     margin: 0 1rem 0 auto !important;
 }
-.menu-post {
+.menu-post,
+.menu-comment {
     position: absolute;
     right: 0;
 }
-.btn-menu-post {
+.btn-menu-post,
+.btn-menu-comment {
     color: #2CAB92;
     font-size: 1rem;
     border: none;
     cursor: pointer;
 }
-.btn-menu-post:hover, .btn-menu-post:focus {
+.btn-menu-post:hover, .btn-menu-post:focus,
+.btn-menu-comment:hover, .btn-menu-comment:focus {
     background-color: rgba(44, 171, 146, 0.5);
     color: #2b7a75;
     border-radius: 50%;
@@ -181,7 +185,8 @@ select{
     line-height: 1.3rem;
     width: 1.2rem;
 }
-.menu-post-content {
+.menu-post-content,
+.menu-comment-content {
     display: none;
     position: absolute;
     background-color:  #E6FFFF;
@@ -197,13 +202,15 @@ select{
     display: inline-block;
     padding: 3px;
 }
-.menu-post-content li {
+.menu-post-content li,
+.menu-comment-content li {
     color: #2b7a75;
     padding: 5px 10px;
     display: block;
     cursor: pointer;
 }
-.menu-post li:hover {
+.menu-post li:hover,
+.menu-comment li:hover {
     background-color: rgba(44, 171, 146, 0.5);
     font-weight: 600;
 }
@@ -212,13 +219,15 @@ select{
     text-align: justify;
     font-size: 15px;
 }
-.edit-text-btns{
+.edit-text-btns,
+.edit-comment-btns{
     margin-left: auto;
     margin-right: auto;
     display: flex;
     justify-content: center;
 }
-.edit-text-post button{
+.edit-text-post button,
+.edit-comment-btns button{
     height: 1.5rem;
     width: 15%;
     font-weight: 600;
@@ -254,16 +263,15 @@ select{
     color: rgba(44, 171, 146, 0.8);
 }
 .content-newpost textarea:focus,
-.edit-text-post textarea:focus{
+.edit-text-post textarea:focus,
+.edit-comment-text-btns textarea:focus{
     border-color: #C4C4C4;
-    background: none;
+    background: white;
 }
-.content-newpost textarea::placeholder,
-.edit-text-post textarea::placeholder{
+.content-newpost textarea::placeholder{
     color: rgba(44, 171, 146, 0.8);
 }
-.content-newpost textarea:focus::placeholder,
-.edit-text-post textarea:focus::placeholder{
+.content-newpost textarea:focus::placeholder{
     color: #C4C4C4;
 }
 .like{
@@ -279,7 +287,33 @@ select{
     cursor: pointer;
     margin: auto;
 }
-
+.photo-comment-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1em;
+}
+.name-comment{
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #2CAB92;
+}
+.comment-text{
+    font-size: 0.9rem;
+}
+.time-comment{
+    opacity: 0.6;
+    font-size: 0.7rem;
+    margin: auto !important;
+    text-align: right;
+}
+.comment-container{
+    width: 100%;
+    background-color: rgba(44, 171, 146, 0.15);
+    border-radius: 0.5em;
+    padding: 0 0.8rem;
+    margin-left: 0.8rem;
+    box-sizing: border-box;
+}
 .logo-aside i{
     color: #2CAB92;
     margin: 0;
@@ -331,7 +365,8 @@ select{
     cursor: pointer;
 }
 .like-comment-container button:hover,
-.edit-text-post button:hover{
+.edit-text-post button:hover,
+.edit-comment-btns button:hover{
     background-color: rgba(44, 171, 146, 0.5);
     color: #2b7a75;
     font-weight: 800;
