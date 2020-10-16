@@ -24,6 +24,7 @@ export const userRegistration = (userName, photoProfile, emailLogUp, passwordLog
       console.log(userdata);
       createUser(userdata.user.uid);
       console.log('registrado');
+      console.log(userdata.user.uid);
       updateUserData(userName, photoProfile)
       // const objetcUser = firebase.auth().currentUser;
       // console.log(objetcUser);

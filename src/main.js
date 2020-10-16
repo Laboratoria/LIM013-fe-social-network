@@ -38,8 +38,9 @@ const onAuth = () => {
     } else {
       // No user is signed in.
       route = '#/signIn';
+      console.log(route);
+      console.log('usuario no logeado');
     }
-    console.log(route);
     // window.location.hash = route;
     cambioVista(route);
   });

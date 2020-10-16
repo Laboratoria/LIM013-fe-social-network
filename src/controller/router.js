@@ -22,8 +22,12 @@ export const cambioVista = (route) => {
       break;
     case '#/home':
       getUser(currentUser().uid).then((doc) => {
+        console.log(currentUser().uid);
+        console.log(doc);
         const dataUser = doc.data();
+        console.log(doc.data());
         allPosts((notes) => {
+          console.log(notes);
           const arrNotes = [];
           notes.forEach((note) => {
             // if (note.user === currentUser.uid) {
@@ -37,9 +41,11 @@ export const cambioVista = (route) => {
       break;
     case '#/profile':
       allPosts((notes) => {
+        console.log(notes);
         const arrNotes = [];
         notes.forEach((note) => {
           const dataDeUsuarioActual = currentUser();
+          console.log(dataDeUsuarioActual);
           if (note.user === dataDeUsuarioActual.uid) {
             arrNotes.push(note);
           }
