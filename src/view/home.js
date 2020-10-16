@@ -4,27 +4,28 @@ import {
 import { sendImgToStorage } from '../controller/controller-storage.js';
 
 const itemPost = (objPost) => {
+  const userId = firebase.auth().currentUser.uid;
   const postElement = document.createElement('div');
   postElement.classList.add('allpost');
   postElement.innerHTML = `
   <div class="mainpost">
         <div class="user-post">
-          <div class="menu-post">
+          <div class="${(userId === objPost.userId) ? 'show menu-post' : 'hide'}">
             <i class="fas fa-ellipsis-v btn-menu-post"></i>
-            <div id="menu-post-content" class="menu-post-content">
+            <ul id="menu-post-content" class="menu-post-content">
               <li id="edit-post"><i class="fas fa-edit select"></i> Edit</li>
               <li id="delete-post-${objPost.id}"><i class="fas fa-trash-alt select"></i> Delete</li>
-            </div>
+            </ul>
           </div>               
           <img class="avatar-post" src="${objPost.photo}"/>
           <p class="name">${objPost.username}</p>
-          <select class="fa" id="privacy-option">
-            <option class="fa" value="public" title = "Public">&#xf57d; </option>
-            <option class="fa" value="private" title = "Private">&#xf023; </option>
+          <select id="privacy-option" class="${(userId === objPost.userId) ? 'show fa' : 'hide'}">
+            <option class="fa" value="public" ${(objPost.privacy === 'private') || 'selected'} title = "Public">&#xf57d; </option>
+            <option class="fa" value="private" ${(objPost.privacy === 'public') || 'selected'} title = "Private">&#xf023; </option>
           </select>
           <p class="time-post">${objPost.date}</p>
         </div>
-          <hr>
+          <hr>        
         <div class="content-post">
           <p class="text-post">${objPost.publication}</p>
           <div class = "hide edit-text-post">
@@ -357,8 +358,7 @@ export default (dataCurrentUser) => {
           const privacy = viewHome.querySelector('#privacy-option').value;
           const textPost = viewHome.querySelector('.text-newpost');
           const dateAct = new Date().toLocaleString();
-          addPost(dataCurrentUser.username, dataCurrentUser.photo, dateAct, privacy,
-            textPost.value, downloadURL)
+          addPost(dateAct, privacy, textPost.value, downloadURL)
             .then(() => {
               modalProgress.classList.remove('showModal');
               textPost.value = '';
