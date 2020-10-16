@@ -4,27 +4,28 @@ import {
 import { sendImgToStorage } from '../controller/controller-storage.js';
 
 const itemPost = (objPost) => {
+  const userId = firebase.auth().currentUser.uid;
   const postElement = document.createElement('div');
   postElement.classList.add('allpost');
   postElement.innerHTML = `
   <div class="mainpost">
         <div class="user-post">
-          <div class="menu-post">
+          <div class="${(userId === objPost.userId) ? 'show menu-post' : 'hide'}">
             <i class="fas fa-ellipsis-v btn-menu-post"></i>
-            <div id="menu-post-content" class="menu-post-content">
+            <ul id="menu-post-content" class="menu-post-content">
               <li id="edit-post"><i class="fas fa-edit select"></i> Edit</li>
               <li id="delete-post-${objPost.id}"><i class="fas fa-trash-alt select"></i> Delete</li>
-            </div>
+            </ul>
           </div>               
           <img class="avatar-post" src="${objPost.photo}"/>
           <p class="name">${objPost.username}</p>
-          <select class="fa" id="privacy-option">
-            <option class="fa" value="public" title = "Public">&#xf57d; </option>
-            <option class="fa" value="private" title = "Private">&#xf023; </option>
+          <select id="privacy-option" class="${(userId === objPost.userId) ? 'show fa' : 'hide'}">
+            <option class="fa" value="public" ${(objPost.privacy === 'private') || 'selected'} title = "Public">&#xf57d; </option>
+            <option class="fa" value="private" ${(objPost.privacy === 'public') || 'selected'} title = "Private">&#xf023; </option>
           </select>
           <p class="time-post">${objPost.date}</p>
         </div>
-          <hr>
+          <hr>        
         <div class="content-post">
           <p class="text-post">${objPost.publication}</p>
           <div class = "hide edit-text-post">
@@ -41,9 +42,33 @@ const itemPost = (objPost) => {
             </p>
             <button type="button" class="btn-like"><i class="fa fa-thumbs-up"></i> Like</button>
             <button type="button" class="btn-comment"><i class="fa fa-comment"></i> Comment</button>
-            <div id= "div-comment" class="hide div-comment">
-              <textarea class="comment" placeholder="Add a comment"></textarea>
-              <i class="fas fa-paper-plane"></i>
+          </div>
+          <div id= "div-comment" class="hide div-comment">
+            <textarea class="comment" placeholder="Add a comment"></textarea>
+            <i class="fas fa-paper-plane"></i>
+          </div>
+          <div class = "hide all-comments">
+            <div class="menu-comment">
+              <i class="fas fa-ellipsis-v btn-menu-comment"></i>
+              <div id="menu-comment-content" class="menu-comment-content">
+                <li id="edit-comment"><i class="fas fa-edit select"></i> Edit</li>
+                <li id="delete-comment-${objPost.id}"><i class="fas fa-trash-alt select"></i> Delete</li>
+              </div>
+            </div> 
+            <div class = "photo-comment-container">
+              <img class="avatar-post" src="${objPost.photo}"/>
+              <div class = "comment-container">
+                <p class="name-comment">${objPost.username}</p>
+                <p class = "comment-text">Hola</p>
+                <div class = "hide edit-comment-text-btns">
+                  <textarea class = "edit-comment-text">Hola</textarea>
+                  <div class = "edit-comment-btns">
+                    <button type="button" class="btn-save-comment">Save</button>
+                    <button type="button" class="btn-cancel-comment">Cancel</button>
+                  </div>
+                </div>
+                <p class="time-comment">${objPost.date}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -90,6 +115,34 @@ const itemPost = (objPost) => {
   /* ------------Mostrar y ocultar comentario ------------------*/
   postElement.querySelector('.btn-comment').addEventListener('click', () => {
     postElement.querySelector('#div-comment').classList.toggle('hide');
+    postElement.querySelector('.all-comments').classList.toggle('hide');
+  });
+  /* ---------------- Menu despegable comment --------------------------*/
+  const btnMenuComment = postElement.querySelector('.btn-menu-comment');
+  btnMenuComment.addEventListener('click', () => {
+    postElement.querySelector('#menu-comment-content').classList.toggle('show');
+  });
+  // close menu click outside
+  window.addEventListener('click', (e) => {
+    if (e.target !== btnMenuComment) {
+      postElement.querySelector('#menu-comment-content').classList.remove('show');
+    }
+  });
+  /* -------------- edit and delete menu comment -------------------*/
+  const editComment = postElement.querySelector('#edit-comment');
+  // const commentText = postElement.querySelector('.comment-text');
+  // const btnSaveComment = postElement.querySelector(`.btn-save-comment`);
+  const btnCancelComment = postElement.querySelector('.btn-cancel-comment');
+  // edit comment menu
+  editComment.addEventListener('click', () => {
+    postElement.querySelector('.edit-comment-text-btns').classList.remove('hide');
+    postElement.querySelector('.comment-text').classList.add('hide');
+  });
+  // cancel edit comment
+  btnCancelComment.addEventListener('click', () => {
+    postElement.querySelector('.edit-comment-text-btns').classList.add('hide');
+    postElement.querySelector('.comment-text').classList.remove('hide');
+    // commentText.value = objPost.publication;
   });
   return postElement;
 };
@@ -282,6 +335,8 @@ export default (dataCurrentUser) => {
   /* ---------------------- ADD POST (CLOUD FIRESTORE SN-Post)------------------*/
   viewHome.querySelector('#btn-post').addEventListener('click', (e) => {
     e.preventDefault();
+    postImg.src = '';
+    removeImg.style.display = 'none';
     // llamar a storage
     const fileImg = e.target.closest('#form-post').querySelector('input').files[0];
     const messageProgress = viewHome.querySelector('#messageProgress');
@@ -303,8 +358,7 @@ export default (dataCurrentUser) => {
           const privacy = viewHome.querySelector('#privacy-option').value;
           const textPost = viewHome.querySelector('.text-newpost');
           const dateAct = new Date().toLocaleString();
-          addPost(dataCurrentUser.username, dataCurrentUser.photo, dateAct, privacy,
-            textPost.value, downloadURL)
+          addPost(dateAct, privacy, textPost.value, downloadURL)
             .then(() => {
               modalProgress.classList.remove('showModal');
               textPost.value = '';
