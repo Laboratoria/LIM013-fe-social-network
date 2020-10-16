@@ -63,8 +63,6 @@ export const addPost = (Username, Photo, Date, Privacy, Publication, URLimg) => 
   const db = firebase.firestore();
   return db.collection('SN-Post').add({
     userId: user.uid,
-    // username: Username,
-    // photo: Photo,
     date: Date,
     privacy: Privacy,
     publication: Publication,

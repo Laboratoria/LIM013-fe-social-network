@@ -266,15 +266,17 @@ export default (dataCurrentUser) => {
       getDataUserPost(objPost.userId)
         .then((doc) => {
           postUser.push({ username: doc.data().username, photo: doc.data().photo, ...objPost });
-          console.log(postUser);
-        })
-        .then(() => {
           containerPost.innerHTML = '';
-          postImg.src = '';
           postUser.forEach((objPostUser) => {
             containerPost.appendChild(itemPost(objPostUser));
           });
         });
+      // .then(() => {
+      //   containerPost.innerHTML = '';
+      //   postUser.forEach((objPostUser) => {
+      //     containerPost.appendChild(itemPost(objPostUser));
+      //   });
+      // });
     });
   });
   /* ---------------------- ADD POST (CLOUD FIRESTORE SN-Post)------------------*/
@@ -306,6 +308,7 @@ export default (dataCurrentUser) => {
             .then(() => {
               modalProgress.classList.remove('showModal');
               textPost.value = '';
+              postImg.src = '';
               removeImg.style.display = 'none';
             });
         });
