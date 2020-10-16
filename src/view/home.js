@@ -261,23 +261,14 @@ export default (dataCurrentUser) => {
   /* ---------------------- ADD POST (CONTAINER-POST)------------------*/
   const containerPost = viewHome.querySelector('#container-post');
   getPost((post) => {
-    const postUser = [];
     post.forEach((objPost) => {
       getDataUserPost(objPost.userId)
         .then((doc) => {
-          postUser.push({ username: doc.data().username, photo: doc.data().photo, ...objPost });
-          containerPost.innerHTML = '';
-          postUser.forEach((objPostUser) => {
-            containerPost.appendChild(itemPost(objPostUser));
-          });
+          const obj = ({ username: doc.data().username, photo: doc.data().photo, ...objPost });
+          containerPost.appendChild(itemPost(obj));
         });
-      // .then(() => {
-      //   containerPost.innerHTML = '';
-      //   postUser.forEach((objPostUser) => {
-      //     containerPost.appendChild(itemPost(objPostUser));
-      //   });
-      // });
     });
+    containerPost.innerHTML = '';
   });
   /* ---------------------- ADD POST (CLOUD FIRESTORE SN-Post)------------------*/
   viewHome.querySelector('#btn-post').addEventListener('click', (e) => {
