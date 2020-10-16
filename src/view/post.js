@@ -32,7 +32,7 @@ import { currentUser } from '../firebase/auth-controller.js';
 export const postSection = (Object) => {
   const note = document.createElement('div');
   note.classList.add('divPost');
-  // const user = currentUser().uid;
+  const user = currentUser().uid;
   note.innerHTML = ` 
   <div class="user_post">
     <div class="user_photo">
@@ -68,9 +68,8 @@ export const postSection = (Object) => {
       src="${Object.img}"
       alt=""
     />` : `<img class="hide image-post" src="${Object.img}" alt="" />`}
-    <div class="container-menu-post" id="containerMenu">
-      
-    <button class="btn-post-edit" data-id="${Object.id}">Editar</button>
+    <div class="${(user !== Object.user) ? 'hide' : 'label-menu-post'}" id="containerMenu">
+      <button class="btn-post-edit" data-id="${Object.id}">Editar</button>
       <button class="btn-post-delete" data-id="${Object.id}">Eliminar</button>
     </div>
     <hr class="w3-clear" />
