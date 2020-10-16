@@ -1,5 +1,5 @@
 import {
-  addPost, getPost, deletePost, updatePost,
+  addPost, getPost, deletePost, updatePost, getDataUserPost,
 } from '../controller/controller-cloud.js';
 import { sendImgToStorage } from '../controller/controller-storage.js';
 
@@ -95,8 +95,6 @@ const itemPost = (objPost) => {
 };
 
 export default (dataCurrentUser) => {
-  // const dataCurrentUser = JSON.parse(localStorage.getItem('datauser'));
-  // const dataCurrentUser = doc.data();
   const viewHome = document.createElement('section');
   viewHome.classList.add('container-home');
   viewHome.innerHTML = `
@@ -206,6 +204,12 @@ export default (dataCurrentUser) => {
       </form>
     </div>
   </aside>
+  <section class="modal-progress">
+    <div class="progress">
+      <progress value="0" max="100" id="uploader">0%</progress>
+      <p id="messageProgress">0%</p>
+    </div>
+  </section>
   `;
 
   const postImg = viewHome.querySelector('#post-img');
@@ -257,10 +261,22 @@ export default (dataCurrentUser) => {
   /* ---------------------- ADD POST (CONTAINER-POST)------------------*/
   const containerPost = viewHome.querySelector('#container-post');
   getPost((post) => {
-    containerPost.innerHTML = '';
-    postImg.src = '';
+    const postUser = [];
     post.forEach((objPost) => {
-      containerPost.appendChild(itemPost(objPost));
+      getDataUserPost(objPost.userId)
+        .then((doc) => {
+          postUser.push({ username: doc.data().username, photo: doc.data().photo, ...objPost });
+          containerPost.innerHTML = '';
+          postUser.forEach((objPostUser) => {
+            containerPost.appendChild(itemPost(objPostUser));
+          });
+        });
+      // .then(() => {
+      //   containerPost.innerHTML = '';
+      //   postUser.forEach((objPostUser) => {
+      //     containerPost.appendChild(itemPost(objPostUser));
+      //   });
+      // });
     });
   });
   /* ---------------------- ADD POST (CLOUD FIRESTORE SN-Post)------------------*/
@@ -268,14 +284,18 @@ export default (dataCurrentUser) => {
     e.preventDefault();
     // llamar a storage
     const fileImg = e.target.closest('#form-post').querySelector('input').files[0];
+    const messageProgress = viewHome.querySelector('#messageProgress');
+    const modalProgress = viewHome.querySelector('.modal-progress');
+    const uploader = viewHome.querySelector('#uploader');
     const uploadTask = sendImgToStorage(fileImg, 'SN-imgPost');
     uploadTask.on('state_changed', (snapshot) => {
       // Handle progress
       const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-      console.log(`Upload is ${progress}% done`);
-    }, (error) => {
+      modalProgress.classList.add('showModal');
+      messageProgress.textContent = 'Its publication was successful';
+      uploader.value = progress;
+    }, () => {
       // Handle unsuccessful uploads
-      console.log(error);
     }, () => {
       // Handle successful uploads on complete
       uploadTask.snapshot.ref.getDownloadURL()
@@ -286,7 +306,10 @@ export default (dataCurrentUser) => {
           addPost(dataCurrentUser.username, dataCurrentUser.photo, dateAct, privacy,
             textPost.value, downloadURL)
             .then(() => {
+              modalProgress.classList.remove('showModal');
               textPost.value = '';
+              postImg.src = '';
+              removeImg.style.display = 'none';
             });
         });
     });
