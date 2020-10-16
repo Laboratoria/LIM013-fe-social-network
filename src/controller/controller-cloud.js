@@ -58,12 +58,14 @@ export const updatephotoCover = (value) => {
 // db.colleciton('SN-users').doc(post.userId).get().then((u) => u.photoUrl)
 
 // ----------------------- CREATE BD POST --------------------------
-export const addPost = (Username, Photo, Date, Privacy, Publication, URLimg) => {
+export const addPost = (DatePost, Privacy, Publication, URLimg) => {
   const user = firebase.auth().currentUser;
   const db = firebase.firestore();
   return db.collection('SN-Post').add({
     userId: user.uid,
-    date: Date,
+    /* username: Username,
+    photo: Photo, */
+    date: DatePost,
     privacy: Privacy,
     publication: Publication,
     urlimg: URLimg,
@@ -87,7 +89,6 @@ export const getDataUserPost = (id) => {
   const db = firebase.firestore();
   return db.collection('SN-Users').doc(id).get();
 };
-
 // ----------------------- UPDATE POST --------------------------
 export const updatePost = (id, updatePublication) => {
   const db = firebase.firestore();
@@ -100,4 +101,11 @@ export const updatePost = (id, updatePublication) => {
 export const deletePost = (idPost) => {
   const db = firebase.firestore();
   db.collection('SN-Post').doc(idPost).delete();
+};
+// ----------------------- UPDATE PRIVACY --------------------------
+export const updatePrivacy = (id, updateStatus) => {
+  const db = firebase.firestore();
+  db.collection('SN-Post').doc(id).update({
+    privacy: updateStatus,
+  });
 };
