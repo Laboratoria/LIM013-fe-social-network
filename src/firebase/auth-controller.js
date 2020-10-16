@@ -28,6 +28,12 @@ export const loginFacebook = () => {
   const provider = new firebase.auth.FacebookAuthProvider();
   return firebase.auth().signInWithPopup(provider);
 };
+
+// eslint-disable-next-line max-len
+export const updateUserData = (userName, photoProfile) => firebase.auth().currentUser.updateProfile({
+  displayName: userName,
+  photoURL: photoProfile,
+});
 // actualizar nombre y foto de usuario
 // export const updatePhotoUser = photoProfile => firebase.auth().currentUser.updateProfile({
 //   photoURL: photoProfile,

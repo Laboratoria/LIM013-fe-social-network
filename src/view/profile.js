@@ -2,7 +2,7 @@
 // eslint-disable-next-line import/no-cycle
 import { signOut } from '../controller/home-controller.js';
 import { postSection } from './post.js';
-// import { infoProfile, updateProfile } from '../controller/profile-controller.js';
+import { infoProfile, updateProfile } from '../controller/profile-controller.js';
 import { currentUser } from '../firebase/auth-controller.js';
 
 
@@ -78,7 +78,7 @@ export default (notes) => {
   divElemt.innerHTML = viewProfile;
 
   /* ----crud profile---*/
-  // infoProfile(divElemt);
+  infoProfile(divElemt);
 
   /* ----Button Toggle---*/
   const toggle = divElemt.querySelector('.btn-menu1');
@@ -107,13 +107,13 @@ export default (notes) => {
     btnCancel.classList.remove('hide');
   });
   btnCancel.addEventListener('click', () => {
-    // infoProfile(divElemt);
+    infoProfile(divElemt);
     btnSave.classList.add('hide');
     btnCancel.classList.add('hide');
     editBtn.classList.remove('hide');
   });
   btnSave.addEventListener('click', () => {
-    // updateProfile();
+    updateProfile(divElemt);
     btnSave.classList.add('hide');
     btnCancel.classList.add('hide');
     editBtn.classList.remove('hide');

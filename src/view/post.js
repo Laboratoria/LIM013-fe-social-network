@@ -30,7 +30,6 @@ import { currentUser } from '../firebase/auth-controller.js';
 
 
 export const postSection = (Object) => {
-  console.log(Object);
   const note = document.createElement('div');
   note.classList.add('divPost');
   // const user = currentUser().uid;

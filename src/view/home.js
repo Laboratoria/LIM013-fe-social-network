@@ -7,7 +7,7 @@ import { postSection } from './post.js';
 // eslint-disable-next-line import/no-cycle
 import { cambioVista } from '../controller/router.js';
 // import { getAllPosts } from '../firebase/firestore-controller';
-// import { getUser } from '../firebase/firestore-controller.js';
+import { getUser } from '../firebase/firestore-controller.js';
 import { currentUser } from '../firebase/auth-controller.js';
 // eslint-disable-next-line import/no-cycle
 import { signOut, makingPost } from '../controller/home-controller.js';
@@ -109,19 +109,17 @@ export default (notes) => {
     }
   });
   // const nameUserProfile = divElemt.querySelector('.name1');
-  // const petName = divElemt.querySelector('.name_pet1');
-  // const aboutYou = divElemt.querySelector('.description1');
+  const petName = divElemt.querySelector('.name_pet1');
+  const aboutYou = divElemt.querySelector('.description1');
   // const photoProfile = divElemt.querySelector('.profile-img');
 
-  // const infoProfile = () => {
-  //   getUser(currentUser().uid).then((doc) => {
-  //     nameUserProfile.textContent = doc.data().displayName;
-  //     aboutYou.textContent = doc.data().aboutUs;
-  //     petName.textContent = doc.data().petName;
-  //     photoProfile.innerHTML = doc.data().photoURL;
-  //   });
-  // };
-  // infoProfile();
+  const infoProfile = () => {
+    getUser(currentUser().uid).then((doc) => {
+      aboutYou.textContent = doc.data().aboutUs;
+      petName.textContent = doc.data().petName;
+    });
+  };
+  infoProfile();
 
   const imagenUploading = divElemt.querySelector('#selectImage');
   const imagenUpload = divElemt.querySelector('#showPicture');
