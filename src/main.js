@@ -18,19 +18,17 @@ firebase.initializeApp(firebaseConfig);
 // Initialize Firestore
 export const storage = firebase.storage();
 
-const onAuth = (callback) => {
+const onAuth = () => {
   firebase.auth().onAuthStateChanged((user) => {
-    let route = '#/signIn';
-    if (window.location.hash === '#/Register') route = '#/Register';
+    let route = null;
     if (user) {
       console.log(user);
       console.log('usuario logeado');
       if (user.emailVerified !== false) {
-        switch (window.location.hash) {
-          case '#/profile': route = '#/profile';
-            break;
-          default: route = '#/home';
-            break;
+        if (window.location.hash !== '#/signIn') {
+          route = window.location.hash;
+        } else {
+          route = '#/home';
         }
       }
       if (user.emailVerified === false) {
@@ -39,9 +37,11 @@ const onAuth = (callback) => {
       // User is signed in.
     } else {
       // No user is signed in.
-      console.log('usuario no logeado');
+      route = '#/signIn';
     }
-    return callback(route);
+    console.log(route);
+    // window.location.hash = route;
+    cambioVista(route);
   });
 };
 // const init = () => {
@@ -50,7 +50,9 @@ const onAuth = (callback) => {
 // };
 // window.addEventListener('load', init);
 const init = () => {
-  onAuth(cambioVista);
+  onAuth();
 };
 window.addEventListener('load', init);
-window.addEventListener('hashchange', init);
+window.addEventListener('hashchange', () => {
+  cambioVista(window.location.hash);
+});

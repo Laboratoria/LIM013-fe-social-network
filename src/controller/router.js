@@ -1,7 +1,5 @@
-/* eslint-disable import/no-cycle */
 import { components } from '../view/index.js';
-// eslint-disable-next-line import/no-unresolved
-import { allPosts } from '../firebase/firestore-controller.js';
+import { allPosts, getUser } from '../firebase/firestore-controller.js';
 import { currentUser } from '../firebase/auth-controller.js';
 
 export const cambioVista = (route) => {
@@ -23,27 +21,31 @@ export const cambioVista = (route) => {
       routeSelected = sectionContainer.appendChild(components.register());
       break;
     case '#/home':
-      allPosts((notes) => {
-        const arrNotes = [];
-        notes.forEach((note) => {
-          if (note.user === currentUser.uid) {
+      getUser(currentUser().uid).then((doc) => {
+        const dataUser = doc.data();
+        allPosts((notes) => {
+          const arrNotes = [];
+          notes.forEach((note) => {
+            // if (note.user === currentUser.uid) {
             arrNotes.push(note);
-          }
+            // }
+          });
+          sectionContainer.innerHTML = '';
+          routeSelected = sectionContainer.appendChild(components.home(notes, dataUser));
         });
-        sectionContainer.innerHTML = '';
-        routeSelected = sectionContainer.appendChild(components.home(notes));
       });
       break;
     case '#/profile':
       allPosts((notes) => {
         const arrNotes = [];
         notes.forEach((note) => {
-          if (note.privacy === '0' || note.currentUser === currentUser.uid) {
+          const dataDeUsuarioActual = currentUser();
+          if (note.user === dataDeUsuarioActual.uid) {
             arrNotes.push(note);
           }
         });
         sectionContainer.innerHTML = '';
-        routeSelected = sectionContainer.appendChild(components.profile(notes));
+        routeSelected = sectionContainer.appendChild(components.profile(arrNotes));
       });
       break;
     default:

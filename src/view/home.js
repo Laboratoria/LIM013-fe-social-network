@@ -4,15 +4,14 @@ import { postSection } from './post.js';
 // eslint-disable-next-line import/named
 // eslint-disable-next-line import/no-cycle
 // import { dataProfile, makingPost, signOut } from '../controller/home-controller.js';
-// eslint-disable-next-line import/no-cycle
-import { cambioVista } from '../controller/router.js';
+
 // import { getAllPosts } from '../firebase/firestore-controller';
-import { getUser } from '../firebase/firestore-controller.js';
+// import { getUser } from '../firebase/firestore-controller.js';
 import { currentUser } from '../firebase/auth-controller.js';
 // eslint-disable-next-line import/no-cycle
 import { signOut, makingPost } from '../controller/home-controller.js';
 
-export default (notes) => {
+export default (notes, dataUser) => {
   const user = currentUser();
   const viewHome = `
   <div class='body'>
@@ -53,11 +52,11 @@ export default (notes) => {
             <div class="labels">
               <div class="label">
                 <p>Nombre de tu mascota:</p>
-                <h2 class="name_pet1"></h2>
+                <h2 class="name_pet1">${dataUser.petName}</h2>
               </div>
               <div class="label">
                 <p class="profile-text">Cuéntanos algo sobre ti y tu mascota</p>
-                <p class="description1"></p>
+                <p class="description1">${dataUser.aboutUs}</p>
               </div>
               <div class="profile-btn-editions">
                 <button id="btnCancel" class="btn-profile hide">Cancelar</button>
@@ -109,17 +108,17 @@ export default (notes) => {
     }
   });
   // const nameUserProfile = divElemt.querySelector('.name1');
-  const petName = divElemt.querySelector('.name_pet1');
-  const aboutYou = divElemt.querySelector('.description1');
+  // const petName = divElemt.querySelector('.name_pet1');
+  // const aboutYou = divElemt.querySelector('.description1');
   // const photoProfile = divElemt.querySelector('.profile-img');
 
-  const infoProfile = () => {
-    getUser(currentUser().uid).then((doc) => {
-      aboutYou.textContent = doc.data().aboutUs;
-      petName.textContent = doc.data().petName;
-    });
-  };
-  infoProfile();
+  // const infoProfile = () => {
+  //   getUser(currentUser().uid).then((doc) => {
+  //     aboutYou.textContent = doc.data().aboutUs;
+  //     petName.textContent = doc.data().petName;
+  //   });
+  // };
+  // infoProfile();
 
   const imagenUploading = divElemt.querySelector('#selectImage');
   const imagenUpload = divElemt.querySelector('#showPicture');
@@ -153,7 +152,7 @@ export default (notes) => {
 
   const buttonEditProfile = divElemt.querySelector('#btnProfile');
   buttonEditProfile.addEventListener('click', () => {
-    cambioVista('#/profile');
+    window.location.hash = '#/profile';
   });
 
   // TODO No mover
