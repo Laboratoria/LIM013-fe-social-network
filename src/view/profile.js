@@ -1,27 +1,14 @@
-<<<<<<< HEAD
-import { dataProfile } from '../controller/home-controller.js';
-import { postSection } from './post.js';
-=======
 /* eslint-disable max-len */
->>>>>>> 70bfd8922a60f26728a5ff96d133b6b14d6d8134
 // eslint-disable-next-line import/no-cycle
 import { signOut } from '../controller/home-controller.js';
 import { postSection } from './post.js';
 import { infoProfile, updateProfile } from '../controller/profile-controller.js';
 import { currentUser } from '../firebase/auth-controller.js';
 
-<<<<<<< HEAD
-export default (notes) => {
-  dataProfile();
-  const userId = localStorage.getItem('userId');
-  const userName = localStorage.getItem('name');
-  const userPhoto = localStorage.getItem('userphoto');
-=======
 
 
 export default (notes) => {
   const user = currentUser();
->>>>>>> 70bfd8922a60f26728a5ff96d133b6b14d6d8134
   const viewProfile = `
   <div>
     <header id='headerHome'>
@@ -53,12 +40,8 @@ export default (notes) => {
           </div>
           <div class="content">
             <div class="profile">
-<<<<<<< HEAD
-              <img class="profile_img" src="${userPhoto}" alt="">
-=======
               <img class="profile-img" src="${user.photoURL}" alt="">
               
->>>>>>> 70bfd8922a60f26728a5ff96d133b6b14d6d8134
               <label id="selectProfile" for="selectPhotoProfile" class="hide">
                 <input type="file" id="selectPhotoProfile" class="hide" accept="image/jpeg, image/png">
                 <i class="fas fa-camera"></i>
@@ -86,10 +69,7 @@ export default (notes) => {
         </div>
     </aside>
     <div class="all-posts"></div>   
-<<<<<<< HEAD
-=======
     </div> 
->>>>>>> 70bfd8922a60f26728a5ff96d133b6b14d6d8134
     </main>
   </div>`;
 

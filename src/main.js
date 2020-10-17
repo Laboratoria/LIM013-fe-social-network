@@ -51,19 +51,7 @@ const onAuth = () => {
 // };
 // window.addEventListener('load', init);
 const init = () => {
-<<<<<<< HEAD
-  cambioVista(window.location.hash);
-  window.addEventListener('hashchange', () => cambioVista(window.location.hash));
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      console.log("signin");
-    } else {
-      console.log("signout");
-    }
-  });
-=======
   onAuth();
->>>>>>> 70bfd8922a60f26728a5ff96d133b6b14d6d8134
 };
 window.addEventListener('load', init);
 window.addEventListener('hashchange', () => {
