@@ -20,8 +20,8 @@ const itemPost = (objPost) => {
           <img class="avatar-post" src="${objPost.photo}"/>
           <p class="name">${objPost.username}</p>
           <select id="privacy-option" class="${(userId === objPost.userId) ? 'show fa' : 'hide'}">
-            <option class="fa" value="public" ${(objPost.privacy === 'private') || 'selected'} title = "Public">&#xf57d; </option>
-            <option class="fa" value="private" ${(objPost.privacy === 'public') || 'selected'} title = "Private">&#xf023; </option>
+            <option class="fa" value="public" ${(objPost.privacy === 'public') ? 'selected' : ''} title = "Public">&#xf57d; </option>
+            <option class="fa" value="private" ${(objPost.privacy === 'private') ? 'selected' : ''} title = "Private">&#xf023; </option>
           </select>
           <p class="time-post">${objPost.date}</p>
         </div>
@@ -319,23 +319,14 @@ export default (dataCurrentUser) => {
   /* ---------------------- ADD POST (CONTAINER-POST)------------------*/
   const containerPost = viewHome.querySelector('#container-post');
   getPost((post) => {
-    const postUser = [];
     post.forEach((objPost) => {
       getDataUserPost(objPost.userId)
         .then((doc) => {
-          postUser.push({ username: doc.data().username, photo: doc.data().photo, ...objPost });
-          containerPost.innerHTML = '';
-          postUser.forEach((objPostUser) => {
-            containerPost.appendChild(itemPost(objPostUser));
-          });
+          const obj = ({ username: doc.data().username, photo: doc.data().photo, ...objPost });
+          containerPost.appendChild(itemPost(obj));
         });
-      // .then(() => {
-      //   containerPost.innerHTML = '';
-      //   postUser.forEach((objPostUser) => {
-      //     containerPost.appendChild(itemPost(objPostUser));
-      //   });
-      // });
     });
+    containerPost.innerHTML = '';
   });
   /* ---------------------- ADD POST (CLOUD FIRESTORE SN-Post)------------------*/
   viewHome.querySelector('#btn-post').addEventListener('click', (e) => {
