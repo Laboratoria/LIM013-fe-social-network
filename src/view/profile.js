@@ -172,10 +172,6 @@ export default (notes) => {
     postFinal.appendChild(postSection(element));
   });
 
-  const postFinal = divElemt.querySelector('.all-posts');
-  notes.forEach((element) => {
-    postFinal.appendChild(postSection(element));
-  });
   /* btnCancel.addEventListener('click', () => {
     gettingProfileInfo();
   }); */
