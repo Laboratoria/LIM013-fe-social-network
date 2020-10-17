@@ -1,18 +1,18 @@
-// import { postLoad } from './post.js';
+import { postSection } from './post.js';
 // eslint-disable-next-line max-len
 // import { signingOut, gettingProfileInfo, savingChanges } from '../view-controller/profile-controller.js';
 // eslint-disable-next-line import/named
 // eslint-disable-next-line import/no-cycle
-import { dataProfile, makingPost } from '../controller/home-controller.js';
+// import { dataProfile, makingPost, signOut } from '../controller/home-controller.js';
+
+// import { getAllPosts } from '../firebase/firestore-controller';
+// import { getUser } from '../firebase/firestore-controller.js';
+import { currentUser } from '../firebase/auth-controller.js';
 // eslint-disable-next-line import/no-cycle
-import { cambioVista } from '../controller/router.js';
+import { signOut, makingPost } from '../controller/home-controller.js';
 
-
-export default () => {
-  dataProfile();
-  const userId = localStorage.getItem('userId');
-  const userName = localStorage.getItem('name');
-  const userPhoto = localStorage.getItem('userphoto');
+export default (notes, dataUser) => {
+  const user = currentUser();
   const viewHome = `
   <div class='body'>
     <header id='headerHome'>
@@ -29,13 +29,13 @@ export default () => {
             <i class="fas fa-home"></i>Inicio</a>
         </li>
         <li class="optionMobile">
-          <a class='btn-header' href='#/notFound'>
+          <a class='btn-header' id="logout" href='#/signIn'>
             <i class="fas fa-sign-out-alt"></i>Cerrar Sesión</a>
         </li>
       </ul>
       </nav>
     </header>
-    <main>
+    <div class='main'>
       <div class="body_container">
       <aside class="profile_section">
         <div class="card">
@@ -44,19 +44,19 @@ export default () => {
           </div>
           <div class="content">
             <div class="profile">
-              <img class="profile-img" src="${userPhoto}" alt="">
+              <img class="profile-img" src="${user.photoURL}" alt="">
             </div>
             <div class="header_name">
-              <h2 class="name">${userName}</h2>
+              <h2 class="name1">${user.displayName}</h2>
             </div>
             <div class="labels">
               <div class="label">
                 <p>Nombre de tu mascota:</p>
-                <h2 class="name_pet">Molly</h2>
+                <h2 class="name_pet1">${dataUser.petName}</h2>
               </div>
               <div class="label">
                 <p class="profile-text">Cuéntanos algo sobre ti y tu mascota</p>
-                <p class="description">Cuéntanos la anécdota</p>
+                <p class="description1">${dataUser.aboutUs}</p>
               </div>
               <div class="profile-btn-editions">
                 <button id="btnCancel" class="btn-profile hide">Cancelar</button>
@@ -71,49 +71,30 @@ export default () => {
     </aside>
     <div class="timeline_section">
       <div class="update_container">
-      <img class="like-picture" src="${userPhoto || 'imagenes/man.png'}" alt="">
+      <img class="like-picture" src="${user.photoURL}" alt="">
         <h1  class="ask_status">¿Qué hiciste con tu mascota hoy?</h1>
         <textarea name="" id="status_input" cols="30" rows="10" class="status_imput" placeholder="Cuéntanos las travesuras de tu mejor amigo."></textarea>
         <img id="showPicture" class="post-new-image" src="#" alt="">
+        <div class = "img-upload-close">
         <button id="btnCancelImg" class="hide cancel-image"></button>
+        </div>
         <label for="selectImage"> 
           <input type="file" id="selectImage"  name="imagensubida" class="upload" accept="image/png, .jpeg, .jpg, image/gif">
-          <i class="fas fa-camera">Foto</i>
+          <i class="fas fa-camera"></i>
         </label>        
         <select id="privacy" class="privacy">
           <option value="0">Publico</option>
           <option value="1">Privado</option>
       </select>
-      <button type="button" id="bttonnewpost" class="post_buttom">Post</button>
+      <button type="button" id="bttonnewpost" class="post_buttom"><i class="fas fa-pencil-alt"></i>Post</button>
       </div>
       <div class="all-posts"></div>   
-      <div class="user_post">
-        <div class="user_photo">
-          <img class="user_img" src="https://lh3.googleusercontent.com/a-/AOh14GhUGGtCW2PepIrJVxOIrl2jm4Q9XzDMs7tlm2TS" alt="">
-        </div>
-      
-        <div class="user_post">
-          <div class="user_photo">
-            <img class="user_img" src="https://lh3.googleusercontent.com/a-/AOh14GhUGGtCW2PepIrJVxOIrl2jm4Q9XzDMs7tlm2TS" alt="">
-          </div>
-          <h4>John Doe</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <img src="https://i.imgur.com/vcMD5EZ.jpg" style="width:100%" alt="Northern Lights" class="photo_post_img">
-          </div>
-          <hr class="w3-clear">
-          <div class='button-section'>
-            <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fas fa-heart"></i> Like</button> 
-            <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button>
-          </div>
-          <hr class="w3-clear">
-        </div>
-      </div>
     </div>
     </main>
   </div>
   `;
   const divElemt = document.createElement('div');
-  divElemt.classList.add('position');
+  divElemt.classList.add('menuDiv');
   divElemt.innerHTML = viewHome;
 
 
@@ -125,6 +106,19 @@ export default () => {
     } else {
       menuLat.className = 'menu_mobile';
     }
+  });
+  // const nameUserProfile = divElemt.querySelector('.name1');
+  // const petName = divElemt.querySelector('.name_pet1');
+  // const aboutYou = divElemt.querySelector('.description1');
+  // const photoProfile = divElemt.querySelector('.profile-img');
+
+  // const infoProfile = () => {
+  //   getUser(currentUser().uid).then((doc) => {
+  //     aboutYou.textContent = doc.data().aboutUs;
+  //     petName.textContent = doc.data().petName;
+  //   });
+  // };
+  // infoProfile();
 
   const imagenUploading = divElemt.querySelector('#selectImage');
   const imagenUpload = divElemt.querySelector('#showPicture');
@@ -147,13 +141,8 @@ export default () => {
   const bttonnewpost = divElemt.querySelector('#bttonnewpost');
   bttonnewpost.addEventListener('click', (e) => {
     e.preventDefault();
-    makingPost(file, userId, userName, userPhoto);
+    makingPost(file, user.uid, user.displayName, user.photoURL);
   });
-
-  // const elementPost = divElemt.querySelector('.all-posts');
-  // notes.forEach((element) => {
-  //   elementPost.appendChild(postLoad(element));
-  // });
 
   bttonimagenUploadCancelling.addEventListener('click', () => {
     localStorage.removeItem('image');
@@ -163,7 +152,42 @@ export default () => {
 
   const buttonEditProfile = divElemt.querySelector('#btnProfile');
   buttonEditProfile.addEventListener('click', () => {
-    cambioVista('#/profile');
+    window.location.hash = '#/profile';
   });
+
+  // TODO No mover
+  const postFinal = divElemt.querySelector('.all-posts');
+  notes.forEach((element) => {
+    postFinal.appendChild(postSection(element));
+  });
+  // firebase.firestore().collection('posts')
+  //   .orderBy('time', 'desc')
+  //   .onSnapshot((querySnapshot) => {
+  //     const output = [];
+  //     postFinal.innerHTML = ' ';
+  //     querySnapshot.forEach((doc) => {
+  //       output.push({
+  //         id: doc.id,
+  //         name: doc.data().name,
+  //         post: doc.data().post,
+  //         user: doc.data().user,
+  //         photo: doc.data().photo,
+  //         img: doc.data().img,
+  //         time: doc.data().time,
+  //         privacy: doc.data().privacy,
+  //       });
+  //       console.log(`${doc.id} => ${doc.data()} `);
+  //       postFinal.innerHTML += `
+  //       <section>
+  //       <p class="text-post" id="post">${doc.data().name}</p>
+  //       <img src="${doc.data().photo}" alt="" class="post-profile" width="50px" height ="auto">
+  //       <textarea class="validity input-post" name="" id="inputPost" type="text" cols="30" rows="10">${doc.data().post}</textarea>
+  //       <img src="${doc.data().img}" alt="" class="post-new-image" width="50px" height ="auto">
+  //       </section>`;
+  //     });
+  //   });
+  const logOut = divElemt.querySelector('#logout');
+  logOut.addEventListener('click', signOut);
+
   return divElemt;
 };

@@ -48,7 +48,12 @@ export default () => {
   // Evento para registrar usuario
   btonLogUp.addEventListener('submit', (e) => {
     e.preventDefault();
-    userRegistration();
+    const userName = divElemt.querySelector('#nameUser').value;
+    const emailLogUp = divElemt.querySelector('#emailSignUp').value;
+    const passwordLogUp = divElemt.querySelector('#passwordSignUp').value;
+    const photoProfile = 'https://media.giphy.com/media/Tgg0jXMRGgXWDuIKrC/giphy.gif';
+    console.log(userName, photoProfile, emailLogUp, passwordLogUp);
+    userRegistration(userName, photoProfile, emailLogUp, passwordLogUp);
   });
 
   return divElemt;

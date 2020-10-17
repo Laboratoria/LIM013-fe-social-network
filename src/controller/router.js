@@ -1,11 +1,9 @@
-/* eslint-disable import/no-cycle */
 import { components } from '../view/index.js';
-// eslint-disable-next-line import/no-unresolved
-import { getAllPosts } from '../firebase/firestore-controller.js';
+import { allPosts, getUser } from '../firebase/firestore-controller.js';
 import { currentUser } from '../firebase/auth-controller.js';
 
 export const cambioVista = (route) => {
-  const user = currentUser();
+  // const user = currentUser();
   window.location.hash = route;
   const sectionContainer = document.getElementById('container');
   sectionContainer.innerHTML = '';
@@ -23,22 +21,32 @@ export const cambioVista = (route) => {
       routeSelected = sectionContainer.appendChild(components.register());
       break;
     case '#/home':
-      // getAllPosts((notes) => {
-      //   const arrNotes = [];
-      //   notes.forEach((note) => {
-      //     if (note.user === currentUser.uid) {
-      //       arrNotes.push(note);
-      //     }
-      //   });
-      sectionContainer.innerHTML = '';
-      routeSelected = sectionContainer.appendChild(components.home());
-      // });
+      getUser(currentUser().uid).then((doc) => {
+        console.log(currentUser().uid);
+        console.log(doc);
+        const dataUser = doc.data();
+        console.log(doc.data());
+        allPosts((notes) => {
+          console.log(notes);
+          const arrNotes = [];
+          notes.forEach((note) => {
+            // if (note.user === currentUser.uid) {
+            arrNotes.push(note);
+            // }
+          });
+          sectionContainer.innerHTML = '';
+          routeSelected = sectionContainer.appendChild(components.home(notes, dataUser));
+        });
+      });
       break;
     case '#/profile':
-      getAllPosts((notes) => {
+      allPosts((notes) => {
+        console.log(notes);
         const arrNotes = [];
         notes.forEach((note) => {
-          if (note.currentUser === user.uid) {
+          const dataDeUsuarioActual = currentUser();
+          console.log(dataDeUsuarioActual);
+          if (note.user === dataDeUsuarioActual.uid) {
             arrNotes.push(note);
           }
         });

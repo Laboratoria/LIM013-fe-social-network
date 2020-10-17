@@ -1,12 +1,14 @@
-import { dataProfile } from '../controller/home-controller.js';
+/* eslint-disable max-len */
 // eslint-disable-next-line import/no-cycle
-import { setProfileInfo, saveProfileInfo } from '../controller/profile-controller.js';
+import { signOut } from '../controller/home-controller.js';
+import { postSection } from './post.js';
+import { infoProfile, updateProfile } from '../controller/profile-controller.js';
+import { currentUser } from '../firebase/auth-controller.js';
 
-export default () => {
-  dataProfile();
-  const userId = localStorage.getItem('userId');
-  const userName = localStorage.getItem('name');
-  const userPhoto = localStorage.getItem('userphoto');
+
+
+export default (notes) => {
+  const user = currentUser();
   const viewProfile = `
   <div>
     <header id='headerHome'>
@@ -23,13 +25,14 @@ export default () => {
           <i class="fas fa-home"></i>Inicio</a>
       </li>
       <li class="optionMobile">
-        <a class='btn-header' href='#/notFound'>
+        <a class='btn-header' id="logout2" href='#/signIn'>
           <i class="fas fa-sign-out-alt"></i>Cerrar Sesión</a>
       </li>
     </ul>
     </nav>
   </header>
-    <main>
+  <main>
+  <div class = "main"> 
       <aside class="profile_section1">
         <div class="card">
           <div class="cover">
@@ -37,24 +40,24 @@ export default () => {
           </div>
           <div class="content">
             <div class="profile">
-
-              <img class="profile_img" src="${userPhoto}" alt="">
+              <img class="profile-img" src="${user.photoURL}" alt="">
+              
               <label id="selectProfile" for="selectPhotoProfile" class="hide">
                 <input type="file" id="selectPhotoProfile" class="hide" accept="image/jpeg, image/png">
                 <i class="fas fa-camera"></i>
             </label>
             </div>
             <div class="header_name">
-              <h2 class="name">${userName}</h2>
+              <h2 class="name">${user.displayName}</h2>
             </div>
             <div class="labels">
               <div class="label">
                 <p>Nombre de tu mascota:</p>
-                <h2 class="name_pet">Molly</h2>
+                <h2 class="name_pet"></h2>
               </div>
               <div class="label">
                 <p class="profile-text">Cuéntanos algo sobre ti y tu mascota</p>
-                <p class="description">Cuéntanos la anécdota</p>
+                <p class="description"></p>
               </div>
               <div class="profile-btn-editions">
                 <button id="btnCancel" class="btn-profile hide">Cancelar</button>
@@ -62,15 +65,21 @@ export default () => {
               </div>
             </div>
             <button type="button" class="edit_btn"><i class="fas fa-edit"></i>Edita tu perfil</button>
-          </div>
+          </div>      
         </div>
     </aside>
+    <div class="all-posts"></div>   
+    </div> 
     </main>
   </div>`;
 
   const divElemt = document.createElement('div');
-  divElemt.classList.add('profile_page');
+  divElemt.classList.add('homePage');
   divElemt.innerHTML = viewProfile;
+
+  /* ----crud profile---*/
+  infoProfile(divElemt);
+
   /* ----Button Toggle---*/
   const toggle = divElemt.querySelector('.btn-menu1');
   toggle.addEventListener('click', () => {
@@ -81,50 +90,86 @@ export default () => {
       menuLat.className = 'menu_mobile1';
     }
   });
-  /* ----Upload images---*/
-  const selectPhotoProfile = divElemt.querySelector('#selectPhotoProfile');
-  const profilePicture = divElemt.querySelector('.profile_img');
-  selectPhotoProfile.addEventListener('change', (e) => {
-    const file = e.target.files[0];
-    const reader = new FileReader();
 
-    reader.onload = () => {
-      profilePicture.src = reader.result;
-    };
-    if (file) {
-      reader.readAsDataURL(file);
-    } else {
-      profilePicture.src = '';
-    }
-  });
-  const file = '';
   const editBtn = divElemt.querySelector('.edit_btn');
   const nameUserProfile = divElemt.querySelector('.name');
   const petName = divElemt.querySelector('.name_pet');
-  const selectProfile = divElemt.querySelector('#selectProfile');
-  const aboutUs = divElemt.querySelector('.description');
+  const aboutYou = divElemt.querySelector('.description');
   const btnSave = divElemt.querySelector('#btnSave');
   const btnCancel = divElemt.querySelector('#btnCancel');
-
   editBtn.addEventListener('click', () => {
-    aboutUs.contentEditable = 'true';
-    aboutUs.classList.add('input-style');
-
+    aboutYou.contentEditable = 'true';
+    aboutYou.classList.add('input-style');
     nameUserProfile.contentEditable = 'true';
-
     petName.contentEditable = 'true';
-
     editBtn.classList.add('hide');
     btnSave.classList.remove('hide');
     btnCancel.classList.remove('hide');
-    selectProfile.classList.remove('hide');
+  });
+  btnCancel.addEventListener('click', () => {
+    infoProfile(divElemt);
+    btnSave.classList.add('hide');
+    btnCancel.classList.add('hide');
+    editBtn.classList.remove('hide');
+  });
+  btnSave.addEventListener('click', () => {
+    updateProfile(divElemt);
+    btnSave.classList.add('hide');
+    btnCancel.classList.add('hide');
+    editBtn.classList.remove('hide');
+  });
 
-    btnCancel.addEventListener('click', () => {
-      setProfileInfo();
-    });
-    btnSave.addEventListener('click', () => {
-      saveProfileInfo(file);
-    });
+  /* ----Upload images---*/
+  // const selectPhotoProfile = divElemt.querySelector('#selectPhotoProfile');
+  // const profilePicture = divElemt.querySelector('.profile_img');
+  // selectPhotoProfile.addEventListener('change', (e) => {
+  //   const file = e.target.files[0];
+  //   const reader = new FileReader();
+
+  //   reader.onload = () => {
+  //     profilePicture.src = reader.result;
+  //   };
+  //   if (file) {
+  //     reader.readAsDataURL(file);
+  //   } else {
+  //     profilePicture.src = '';
+  //   }
+  // });
+  // const file = '';
+  // const editBtn = divElemt.querySelector('.edit_btn');
+  // const nameUserProfile = divElemt.querySelector('.name');
+  // const petName = divElemt.querySelector('.name_pet');
+  // const selectProfile = divElemt.querySelector('#selectProfile');
+  // const aboutUs = divElemt.querySelector('.description');
+  // const btnSave = divElemt.querySelector('#btnSave');
+  // const btnCancel = divElemt.querySelector('#btnCancel');
+
+  // editBtn.addEventListener('click', () => {
+  //   aboutUs.contentEditable = 'true';
+  //   aboutUs.classList.add('input-style');
+
+  //   nameUserProfile.contentEditable = 'true';
+
+  //   petName.contentEditable = 'true';
+
+  //   editBtn.classList.add('hide');
+  //   btnSave.classList.remove('hide');
+  //   btnCancel.classList.remove('hide');
+  //   selectProfile.classList.remove('hide');
+
+  //   btnCancel.addEventListener('click', () => {
+  //     setProfileInfo();
+  //   });
+  //   btnSave.addEventListener('click', () => {
+  //     saveProfileInfo(file);
+  //   });
+  // });
+  const logOut = divElemt.querySelector('#logout2');
+  logOut.addEventListener('click', signOut);
+
+  const postFinal = divElemt.querySelector('.all-posts');
+  notes.forEach((element) => {
+    postFinal.appendChild(postSection(element));
   });
   /* btnCancel.addEventListener('click', () => {
     gettingProfileInfo();

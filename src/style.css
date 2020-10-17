@@ -137,7 +137,7 @@ section.logo-Redes {
 	left: 60%;
 }
 .fa {
-	padding: 20px;
+	padding: 2px;
 	font-size: 30px;
 	width: 26%;
 	text-align: center;
@@ -293,7 +293,10 @@ li {
 ul li a{
     text-decoration: none;
 }
-
+.main{
+    width:90%;
+    margin:20px auto;
+}
 .body_container{
     width:90%;
     margin:20px auto;
@@ -304,10 +307,16 @@ ul li a{
 .profile_section1{
 	display: block;
 }
-.profile_section,.timeline_section{
+.profile_section{
     background: #f0f2f5;
     padding: 20px;
     border-radius: 4px;
+}
+.divPost{
+    background: #f0f2f5;
+    padding: 20px;
+	border-radius: 4px;
+	width:100%;
 }
 /* Profile*/
 @import url('https://fonts.googleapis.com/css?family=Lato:300,700');
@@ -332,7 +341,7 @@ p {
     height: 382px;
     margin: 0%;
     position: relative;
-	width: 400px;
+	width: 100%;
 	background:#fff;
 }
 .cover {
@@ -360,6 +369,19 @@ p {
 	height: 115px;
 	position:absolute;
 	margin: 4rem 1rem;
+}
+.showWindow{
+	position: absolute;
+    right: 7%;
+    top: 50%;
+    width: fit-content;
+    height: fit-content;
+    padding: 2%;
+    background-color: khaki;
+    color: #222;
+    border-radius: 10px;
+    border: 1px solid #FFFFFF;
+    text-align: center;
 }
 
 /*.header {
@@ -443,7 +465,11 @@ img.user_img{
     border-radius: 50%;
     height: 80px;
 }
-
+.edition-section{
+	position: absolute;
+	margin-left: 70%;
+	color:black;
+}
 
 /*TODO container posts*/
 .like-picture{
@@ -452,7 +478,7 @@ img.user_img{
 		border-radius: 50%;
 		margin-bottom: 0.5em;
 }
-.status_imput{
+.status_imput, .input-comment {
     width: 100%;
     height: 6em;
     box-sizing: border-box;
@@ -465,15 +491,21 @@ img.user_img{
     font-size: 1.2em;
     outline: none;
 }
-.hide{
+.input-post{
+	width: 100%;
+	height: 6em;
+}
+.hide-post{
     display: none;
 }
-
+.hide-post-img, .hide-post-btton {
+	display: none;
+}
 .upload{
     display: none;
 }
 
-.post-new-image{
+.post-new-image,.photo_post_img{
 	width: 100%;
 	max-width: 100%;
 }
@@ -487,6 +519,19 @@ img.user_img{
     border: none;
     /* outline: none; */
     cursor: pointer;
+}
+.post-new-image{
+	width: 20%;
+}
+.post-profile{
+	width: 20%;
+}
+.photo_post_img {
+	width: 40%;
+}
+/*TODO editar */
+.hide-btton-post{
+	display: none;
 }
 /*TODO vista profile posts*/
 .post_buttom {
@@ -508,7 +553,8 @@ i.fa.fa-pencil{
 }
 .button-section button{
 	border-style:space around;
-	width: auto;
+	width: 30%;
+    height: 2rem;
 }
 
 
@@ -679,7 +725,7 @@ i.fa.fa-pencil{
     .profile_section{
         display: block;
     }
-    .timeline_section{
+    .divPost{
         grid-column: span 2;
 	}
 
@@ -892,8 +938,15 @@ i.fa.fa-pencil{
     .profile_section{
         display: block;
     }
-    .timeline_section{
-        grid-column: span 2;
+    .divPost{
+		padding: 0;
+    	grid-column-start: 3;
+    	grid-column-end: 4;
+	}
+	.edition-section {
+		position: absolute;
+		margin-left: 30%;
+		color: black;
 	}
 }
 @media only screen and (min-width: 1281px) {
@@ -1091,19 +1144,34 @@ i.fa.fa-pencil{
 		position: relative;
 		margin-left: 0%;
 	}
-	.body_container{
-
-        display: grid;
-        grid-gap:20px;
-        grid-template-columns: repeat(3,1fr);
-    }
+	.main {
+		width: 90%;
+		margin: 20px auto;
+		display: grid;
+		height: 100%;
+		margin: 0 auto;
+		grid-template-columns: 40% 54% 0%;
+		padding-top: 3em;
+		box-sizing: border-box;
+	}
     .profile_section{
         display: block;
 	}
+
+	.profile_section1{
+		background: #f0f2f5;
+		padding: 20px;
+		border-radius: 4px;
+	}
 	
-    .timeline_section{
+    .divPost{
         grid-column: span 2;
 	}
+	.edition-section {
+		position: absolute;
+		margin-left: 30%;
+		color: black;
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 /* Extra large devices (large laptops and desktops, 1200px and up) */
+}

@@ -16,10 +16,44 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 // Initialize Firestore
-export const storagefuncion = firebase.storage();
+export const storage = firebase.storage();
 
+const onAuth = () => {
+  firebase.auth().onAuthStateChanged((user) => {
+    let route = null;
+    if (user) {
+      console.log(user);
+      console.log('usuario logeado');
+      if (user.emailVerified !== false) {
+        if (window.location.hash !== '#/signIn') {
+          route = window.location.hash;
+        } else {
+          route = '#/home';
+        }
+      }
+      if (user.emailVerified === false) {
+        console.log('usuario logeado pero email no verificado');
+      }
+      // User is signed in.
+    } else {
+      // No user is signed in.
+      route = '#/signIn';
+      console.log(route);
+      console.log('usuario no logeado');
+    }
+    // window.location.hash = route;
+    cambioVista(route);
+  });
+};
+// const init = () => {
+//   cambioVista(window.location.hash);
+//   window.addEventListener('hashchange', () => cambioVista(window.location.hash));
+// };
+// window.addEventListener('load', init);
 const init = () => {
-  cambioVista(window.location.hash);
-  window.addEventListener('hashchange', () => cambioVista(window.location.hash));
+  onAuth();
 };
 window.addEventListener('load', init);
+window.addEventListener('hashchange', () => {
+  cambioVista(window.location.hash);
+});
