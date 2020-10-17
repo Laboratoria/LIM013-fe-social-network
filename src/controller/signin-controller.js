@@ -1,11 +1,11 @@
 
 // eslint-disable-next-line import/named
 import {
-  signIn, googleSignIn, loginFacebook, logOut,
+  signIn, googleSignIn,
 // eslint-disable-next-line import/no-unresolved
 } from '../firebase/auth-controller.js';
 // eslint-disable-next-line import/no-unresolved
-import { createUser } from '../firebase/firestore-controller.js';
+import { createUser, getUser } from '../firebase/firestore-controller.js';
 // eslint-disable-next-line import/no-cycle
 const showMessage = (txtmessage) => {
   const showWindow = document.createElement('div');
@@ -14,47 +14,53 @@ const showMessage = (txtmessage) => {
   document.body.appendChild(showWindow);
   setTimeout(() => {
     document.body.removeChild(showWindow);
-  }, 4000);
+  }, 2000);
 };
-export const signingIn = () => {
-  const emailLogIn = document.querySelector('#SignInForm_email').value;
-  const passwordLogIn = document.querySelector('#SignInForm_password').value;
+export const signingIn = (emailLogIn, passwordLogIn) => {
   signIn(emailLogIn, passwordLogIn)
-    .then(() => {
-      firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
-          if (user.emailVerified === false) {
-            showMessage('Email no verificado, revise su correo porfavor.');
-            logOut();
-          } else {
-            showMessage('Puede ingresar');
-            window.location.hash = '#/home';
-          // changeView(window.location.hash);
-          }
-        }
-      });
+    .then((result) => {
+      // const user = result.user;
+      console.log(result);
+      // getUser(result.user.uid).then((doc) => {
+      //   if (!doc.exists) {
+      //     createUser(result.user.uid, result.user.displayName, result.user.photoURL);
+      //   }
+      window.location.hash = '#/home';
+      // })
+      //   .catch((error) => {
+      //     console.log('no se actualizo');
+      //     console.log(error);
+      //   });
     })
     .catch(() => {
-      showMessage('No puedes ingresar');
+      showMessage('⚠️ Cuenta o clave no coinciden verifique o pulse click en REGISTRATE.');
     });
 };
 
 export const signInGoogle = () => {
   googleSignIn()
     .then((result) => {
-      createUser(result.user.uid, result.user.displayName, result.user.photoURL)
-        .catch(() => {
-          showMessage('No se actualizo usuario');
+      // const user = result.user;
+      // console.log(user);
+      console.log(result);
+      getUser(result.user.uid).then((doc) => {
+        if (!doc.exists) {
+          createUser(result.user.uid);
+        }
+        window.location.hash = '#/home';
+      })
+        .catch((error) => {
+          console.log('no se actualizo');
+          console.log(error);
         });
-      window.location.hash = '#/home';
-    }).catch(() => {
     });
 };
-export const signInFacebook = () => {
-  loginFacebook().then((result) => {
-    createUser(result.user.uid, result.user.displayName, 'Conociendo tu mascota');
-    window.location.hash = '#/home';
-    showMessage('Ingreso con facebook');
-  })
-    .catch(() => { showMessage('No se registro la cuenta'); });
-};
+// export const signInFacebook = () => {
+//   loginFacebook()
+//     .then((result) => {
+//       createUser(result.user.uid, result.user.displayName, result.user.photoURL, result.user.petName, result.user.aboutUs);
+//       window.location.hash = '#/home';
+//       showMessage('Ingreso con facebook');
+//     })
+//     .catch(() => { showMessage('No se registro la cuenta'); });
+// };

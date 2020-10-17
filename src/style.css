@@ -170,7 +170,7 @@ section.logo-Redes {
 	left: 60%;
 }
 .fa {
-	padding: 20px;
+	padding: 2px;
 	font-size: 30px;
 	width: 26%;
 	text-align: center;
@@ -403,6 +403,19 @@ p {
 	position:absolute;
 	margin: 4rem 1rem;
 }
+.showWindow{
+	position: absolute;
+    right: 7%;
+    top: 50%;
+    width: fit-content;
+    height: fit-content;
+    padding: 2%;
+    background-color: khaki;
+    color: #222;
+    border-radius: 10px;
+    border: 1px solid #FFFFFF;
+    text-align: center;
+}
 
 /*.header {
     text-transform: capitalize;
@@ -498,7 +511,11 @@ img.user_img{
 		border-radius: 50%;
 		margin-bottom: 0.5em;
 }
+<<<<<<< HEAD
 .status_imput{
+=======
+.status_imput, .input-comment {
+>>>>>>> 70bfd8922a60f26728a5ff96d133b6b14d6d8134
     width: 100%;
     height: 6em;
     box-sizing: border-box;
@@ -511,10 +528,23 @@ img.user_img{
     font-size: 1.2em;
     outline: none;
 }
+<<<<<<< HEAD
 .hide{
     display: none;
 }
 
+=======
+.input-post{
+	width: 100%;
+	height: 6em;
+}
+.hide-post{
+    display: none;
+}
+.hide-post-img, .hide-post-btton {
+	display: none;
+}
+>>>>>>> 70bfd8922a60f26728a5ff96d133b6b14d6d8134
 .upload{
     display: none;
 }
@@ -540,6 +570,16 @@ img.user_img{
 .post-profile{
 	width: 20%;
 }
+<<<<<<< HEAD
+=======
+.photo_post_img {
+	width: 40%;
+}
+/*TODO editar */
+.hide-btton-post{
+	display: none;
+}
+>>>>>>> 70bfd8922a60f26728a5ff96d133b6b14d6d8134
 /*TODO vista profile posts*/
 .post_buttom {
 	width: 20%;
@@ -560,7 +600,12 @@ i.fa.fa-pencil{
 }
 .button-section button{
 	border-style:space around;
+<<<<<<< HEAD
 	width: auto;
+=======
+	width: 30%;
+    height: 2rem;
+>>>>>>> 70bfd8922a60f26728a5ff96d133b6b14d6d8134
 }
 
 
@@ -1163,6 +1208,12 @@ i.fa.fa-pencil{
     .profile_section{
         display: block;
 	}
+
+	.profile_section1{
+		background: #f0f2f5;
+		padding: 20px;
+		border-radius: 4px;
+	}
 	
     .divPost{
         grid-column: span 2;
@@ -1171,6 +1222,13 @@ i.fa.fa-pencil{
 		position: absolute;
 		margin-left: 30%;
 		color: black;
+<<<<<<< HEAD
 	}
 }
 
+=======
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+}
+>>>>>>> 70bfd8922a60f26728a5ff96d133b6b14d6d8134
