@@ -1,11 +1,7 @@
-/* eslint-disable max-len */
-// eslint-disable-next-line import/no-cycle
 import { signOut } from '../controller/home-controller.js';
 import { postSection } from './post.js';
 import { infoProfile, updateProfile } from '../controller/profile-controller.js';
 import { currentUser } from '../firebase/auth-controller.js';
-
-
 
 export default (notes) => {
   const user = currentUser();
@@ -77,10 +73,10 @@ export default (notes) => {
   divElemt.classList.add('homePage');
   divElemt.innerHTML = viewProfile;
 
-  /* ----crud profile---*/
+  // TODO infoProfile---*/
   infoProfile(divElemt);
 
-  /* ----Button Toggle---*/
+  // TODO Button Toggle
   const toggle = divElemt.querySelector('.btn-menu1');
   toggle.addEventListener('click', () => {
     const menuLat = document.querySelector('.menu_mobile1');
@@ -97,6 +93,8 @@ export default (notes) => {
   const aboutYou = divElemt.querySelector('.description');
   const btnSave = divElemt.querySelector('#btnSave');
   const btnCancel = divElemt.querySelector('#btnCancel');
+
+  // TODO Edit profile
   editBtn.addEventListener('click', () => {
     aboutYou.contentEditable = 'true';
     aboutYou.classList.add('input-style');
@@ -164,15 +162,14 @@ export default (notes) => {
   //     saveProfileInfo(file);
   //   });
   // });
+  // TODO LogOut
   const logOut = divElemt.querySelector('#logout2');
   logOut.addEventListener('click', signOut);
-
+  // TODO Post All
   const postFinal = divElemt.querySelector('.all-posts');
   notes.forEach((element) => {
     postFinal.appendChild(postSection(element));
   });
-  /* btnCancel.addEventListener('click', () => {
-    gettingProfileInfo();
-  }); */
+
   return divElemt;
 };

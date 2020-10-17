@@ -1,14 +1,15 @@
+// eslint-disable-next-line import/no-cycle
 import { components } from '../view/index.js';
 import { allPosts, getUser } from '../firebase/firestore-controller.js';
 import { currentUser } from '../firebase/auth-controller.js';
 
+// TODO router app with view
 export const cambioVista = (route) => {
   // const user = currentUser();
   window.location.hash = route;
   const sectionContainer = document.getElementById('container');
   sectionContainer.innerHTML = '';
   let routeSelected = '';
-
   switch (route) {
     case '':
     case '#/':
@@ -22,17 +23,16 @@ export const cambioVista = (route) => {
       break;
     case '#/home':
       getUser(currentUser().uid).then((doc) => {
-        console.log(currentUser().uid);
-        console.log(doc);
+        // console.log(currentUser().uid);
+        // console.log(doc);
         const dataUser = doc.data();
-        console.log(doc.data());
+        // console.log(doc.data());
         allPosts((notes) => {
-          console.log(notes);
+          // console.log(notes);
           const arrNotes = [];
           notes.forEach((note) => {
-            // if (note.user === currentUser.uid) {
+            // console.log(note);
             arrNotes.push(note);
-            // }
           });
           sectionContainer.innerHTML = '';
           routeSelected = sectionContainer.appendChild(components.home(notes, dataUser));
