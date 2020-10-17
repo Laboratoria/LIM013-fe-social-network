@@ -1,9 +1,8 @@
-// eslint-disable-next-line import/named
 import {
   signUp, verifEmail, logOut, updateUserData,
 } from '../firebase/auth-controller.js';
 import { createUser } from '../firebase/firestore-controller.js';
-
+// TODO showMessage
 const showMessage = (txtmessage) => {
   const showWindow = document.createElement('div');
   showWindow.classList.add('showWindow');
@@ -13,6 +12,7 @@ const showMessage = (txtmessage) => {
     document.body.removeChild(showWindow);
   }, 4000);
 };
+// TODO registration users
 export const userRegistration = (userName, photoProfile, emailLogUp, passwordLogUp) => {
   signUp(emailLogUp, passwordLogUp)
     .catch(() => {
@@ -26,40 +26,18 @@ export const userRegistration = (userName, photoProfile, emailLogUp, passwordLog
       console.log('registrado');
       console.log(userdata.user.uid);
       updateUserData(userName, photoProfile)
-      // const objetcUser = firebase.auth().currentUser;
-      // console.log(objetcUser);
-      // objetcUser.updateProfile({
-      //   displayName: userName,
-      //   photoURL: photoProfile,
-      // })
         .then(() => {
-        // Update successful.
           console.log('se actualizo');
         }).catch(() => {
-        // An error happened.
           console.log('no se actualizo');
         });
-      showMessage(`🐱❤️🐶 ${userName} bienvenido a Petlandia`);
-      // console.log('Hemos enviado un email verification');
       verifEmail()
         .then(() => {
-        // Email sent.
-          // createUser(userdata.user.uid);
-          showMessage(`🐱❤️🐶 ${userName} bienvenido a Petlandia. Hemos enviado un email verification`);
+          showMessage(`🐱❤️🐶 ${userName} bienvenid@ a Petlandia. Hemos enviado un email de verificación`);
           console.log('Hemos enviado un email verification');
         }).catch((error) => {
           console.log(error);
-          // showMessage('Verifica tu correo por favor');
         });
-      // verifEmail()
-      //   .then(() => {
-      //     console.log('email verification sent');
-      //     showMessage('email verification sent');
-      //   })
-      //   .catch(() => {
-      //     console.log('error');
-      //   });
-      // // createUser(result.user.uid, userName, result.user.photoURL, result.user.petName, result.user.aboutUs);
       logOut();
       window.location.hash = '';
     });

@@ -1,53 +1,26 @@
+// TODO create user
 // eslint-disable-next-line max-len
-export const signUp = (emailSignUp, passwordSignUp) => firebase.auth()
-  .createUserWithEmailAndPassword(emailSignUp, passwordSignUp);
-// Usuario corriente
+export const signUp = (emailSignUp, passwordSignUp) => firebase.auth().createUserWithEmailAndPassword(emailSignUp, passwordSignUp);
+// TODO user current data
 export const currentUser = () => firebase.auth().currentUser;
-// export const currentUserAsync = () => new Promise((resolve, reject) => {
-//   firebase.auth().onAuthStateChanged((user) => {
-//     resolve(user);
-//   }, reject);
-// });
-// Verificación de email
+// TODO email verification
 export const verifEmail = () => {
   const user = firebase.auth().currentUser;
   return user.sendEmailVerification();
 };
-// Inicio de sesión con correo y contraseña
-export const signIn = (emailSignIn, passwordSignIn) => firebase.auth()
-  .signInWithEmailAndPassword(emailSignIn, passwordSignIn);
-// Cerrar de sesión
+// TODO sigIn with mail and password
+// eslint-disable-next-line max-len
+export const signIn = (emailSignIn, passwordSignIn) => firebase.auth().signInWithEmailAndPassword(emailSignIn, passwordSignIn);
+// TODO SingOut
 export const logOut = () => firebase.auth().signOut();
-// Inicio de sesión con Gmail
+// TODO SigIn with Google account
 export const googleSignIn = () => {
   const base = new firebase.auth.GoogleAuthProvider();
   return firebase.auth().signInWithPopup(base);
 };
-// Inicio de sesión con Facebook
-export const loginFacebook = () => {
-  const provider = new firebase.auth.FacebookAuthProvider();
-  return firebase.auth().signInWithPopup(provider);
-};
-
+// TODO update data user
 // eslint-disable-next-line max-len
 export const updateUserData = (userName, photoProfile) => firebase.auth().currentUser.updateProfile({
   displayName: userName,
   photoURL: photoProfile,
 });
-// actualizar nombre y foto de usuario
-// export const updatePhotoUser = photoProfile => firebase.auth().currentUser.updateProfile({
-//   photoURL: photoProfile,
-// });
-
-// export const updatePhotoAuth = (userData, photoProfile) => {
-//   userData.updateProfileInfo({
-//     photoURL: photoProfile,
-//   });
-// };
-
-// export const updateUserName = (userData, userName, photoProfile) => {
-//   userData.updateProfile({
-//     displayName: userName,
-//     photoURL: photoProfile,
-//   });
-// };
