@@ -30,6 +30,7 @@ export const cambioVista = (route) => {
           console.log(notes);
           const arrNotes = [];
           notes.forEach((note) => {
+            console.log(note);
             // if (note.user === currentUser.uid) {
             arrNotes.push(note);
             // }
