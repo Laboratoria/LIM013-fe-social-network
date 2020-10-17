@@ -1,5 +1,5 @@
 import {
-  addPost, getPost, deletePost, updatePost, getDataUserPost,
+  addPost, getPost, deletePost, updatePost, getDataUserPost, updatePrivacy,
 } from '../controller/controller-cloud.js';
 import { sendImgToStorage } from '../controller/controller-storage.js';
 
@@ -10,7 +10,7 @@ const itemPost = (objPost) => {
   postElement.innerHTML = `
   <div class="mainpost">
         <div class="user-post">
-          <div class="${(userId === objPost.userId) ? 'show menu-post' : 'hide'}">
+          <div class="${(userId !== objPost.userId) ? 'hide' : 'show menu-post'}">
             <i class="fas fa-ellipsis-v btn-menu-post"></i>
             <ul id="menu-post-content" class="menu-post-content">
               <li id="edit-post"><i class="fas fa-edit select"></i> Edit</li>
@@ -112,6 +112,11 @@ const itemPost = (objPost) => {
     .addEventListener('click', () => {
       deletePost(objPost.id);
     });
+  // update privacy status
+  const privacyStatus = postElement.querySelector('#privacy-option');
+  privacyStatus.addEventListener('change', () => {
+    updatePrivacy(objPost.id, privacyStatus.value);
+  });
   /* ------------Mostrar y ocultar comentario ------------------*/
   postElement.querySelector('.btn-comment').addEventListener('click', () => {
     postElement.querySelector('#div-comment').classList.toggle('hide');
