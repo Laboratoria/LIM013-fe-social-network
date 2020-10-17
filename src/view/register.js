@@ -45,7 +45,7 @@ export default () => {
   divElemt.classList.add('position');
   divElemt.innerHTML = viewRegister;
   const btonLogUp = divElemt.querySelector('#signUp-form');
-  // Evento para registrar usuario
+  // TODO event to register user
   btonLogUp.addEventListener('submit', (e) => {
     e.preventDefault();
     const userName = divElemt.querySelector('#nameUser').value;
