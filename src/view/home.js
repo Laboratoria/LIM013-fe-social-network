@@ -20,8 +20,8 @@ const itemPost = (objPost) => {
           <img class="avatar-post" src="${objPost.photo}"/>
           <p class="name">${objPost.username}</p>
           <select id="privacy-option" class="${(userId === objPost.userId) ? 'show fa' : 'hide'}">
-            <option class="fa" value="public" ${(objPost.privacy === 'private') || 'selected'} title = "Public">&#xf57d; </option>
-            <option class="fa" value="private" ${(objPost.privacy === 'public') || 'selected'} title = "Private">&#xf023; </option>
+            <option class="fa" value="public" ${(objPost.privacy === 'public') ? 'selected' : ''} title = "Public">&#xf57d; </option>
+            <option class="fa" value="private" ${(objPost.privacy === 'private') ? 'selected' : ''} title = "Private">&#xf023; </option>
           </select>
           <p class="time-post">${objPost.date}</p>
         </div>

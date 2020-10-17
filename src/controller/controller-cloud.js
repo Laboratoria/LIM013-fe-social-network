@@ -73,7 +73,7 @@ export const addPost = (DatePost, Privacy, Publication, URLimg) => {
 // ----------------------- GET ALL BD POST --------------------------
 export const getPost = (callback) => {
   const db = firebase.firestore();
-  db.collection('SN-Post').where('privacy', '==', 'public').orderBy('date', 'desc')
+  db.collection('SN-Post').orderBy('date', 'desc')
     .onSnapshot((querySnapshot) => {
       const post = [];
       querySnapshot.forEach((doc) => {
