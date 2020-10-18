@@ -14,7 +14,7 @@ export const postSection = (Object) => {
       <h4>${Object.name}</h4>
       <p class="post-time">${Object.time}</p>
     </div>
-    <section class="container-name-privacity">
+    <section class="${(user !== Object.user) ? 'hide' : 'privacy'}">
         <select class="privacy">
           <option value="0">Publico</option>
           <option value="1">Privado</option>
@@ -54,15 +54,23 @@ export const postSection = (Object) => {
         placeholder="Escribe un comentario"
       ></textarea>
     <section class="button-section">
-        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom">
-          <i class="fas fa-heart"></i> Like
+        <button type="button" class="button">
+        <img class="like-btton" src="imagenes/like.png" alt="" />
+        <input class = "likes-counter" type=number value=0 name="" >Likes</input>
         </button>
-        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom">
-          <i class="fas fa-comment"></i> Comment
+        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom">        
+        <i class="fas fa-comment"></i> Comment
         </button>
     </section>
   </section>`;
 
+
+  const likePost = note.querySelector('.like-btton');
+  const likes = note.querySelector('.likes-counter');
+  likePost.addEventListener('click', () => {
+    // eslint-disable-next-line radix
+    likes.value = parseInt(likes.value) + 1;
+  });
   // const optionPrivacy = note.querySelector('.privacy');
   // optionPrivacy.addEventListener('change', () => {
   //   statusprivacy(Object.id, optionPrivacy.value);
