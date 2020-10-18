@@ -101,14 +101,14 @@
 .user-information p {
   text-align: left; 
 }
-.user-posts {
-  width: 90%;
+.container-user-post {
+  width: 80%;
   margin: 2rem auto; 
   background-color: white; 
   border-radius: 0.5rem; 
   border: 1px rgba(128, 128, 128, 0.226) solid; 
 }
-.user-posts p {
+.container-user-post p {
   padding: 2rem; 
   text-align: center;
 }
