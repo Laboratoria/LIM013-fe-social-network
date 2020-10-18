@@ -6,7 +6,7 @@ import { sendImgToStorage } from '../controller/controller-storage.js';
 const itemPost = (objPost) => {
   const userId = firebase.auth().currentUser.uid;
   const postElement = document.createElement('div');
-  postElement.classList.add('allpost');
+  postElement.classList.add(`${(objPost.privacy === 'private' && objPost.userId !== userId) ? 'hide' : 'allpost'}`);
   postElement.innerHTML = `
   <div class="mainpost">
         <div class="user-post">
@@ -191,7 +191,7 @@ export default (dataCurrentUser) => {
       </div>
       <div class="content-newpost">
         <form id = "form-post">
-          <textarea class="text-newpost" placeholder="Share something"></textarea>
+          <textarea class="text-newpost" placeholder="Share something" required></textarea>
           <i id = "remove-img" style="display: none" class="fas fa-times-circle"></i>
           <img id="post-img" class="post-img" src=""/>
           <div class="buttons-bar">
@@ -203,7 +203,7 @@ export default (dataCurrentUser) => {
               <option class="fa" value="public" title = "Public">&#xf57d; </option>
               <option class="fa" value="private" title = "Private">&#xf023; </option>
             </select>
-            <button type="button" id="btn-post" class="btn-post" ><i class="fas fa-paper-plane"></i> Post</button>
+            <button type="submit" id="btn-post" class="btn-post" ><i class="fas fa-paper-plane"></i> Post</button>
           </div>
         </form>
       </div>
@@ -329,7 +329,7 @@ export default (dataCurrentUser) => {
     containerPost.innerHTML = '';
   });
   /* ---------------------- ADD POST (CLOUD FIRESTORE SN-Post)------------------*/
-  viewHome.querySelector('#btn-post').addEventListener('click', (e) => {
+  viewHome.querySelector('#form-post').addEventListener('submit', (e) => {
     e.preventDefault();
     postImg.src = '';
     removeImg.style.display = 'none';
@@ -338,31 +338,40 @@ export default (dataCurrentUser) => {
     const messageProgress = viewHome.querySelector('#messageProgress');
     const modalProgress = viewHome.querySelector('.modal-progress');
     const uploader = viewHome.querySelector('#uploader');
-    const uploadTask = sendImgToStorage(fileImg, 'SN-imgPost');
-    uploadTask.on('state_changed', (snapshot) => {
+    const privacy = viewHome.querySelector('#privacy-option').value;
+    const textPost = viewHome.querySelector('.text-newpost');
+    if (fileImg) {
+      const uploadTask = sendImgToStorage(fileImg, 'SN-imgPost');
+      uploadTask.on('state_changed', (snapshot) => {
       // Handle progress
-      const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-      modalProgress.classList.add('showModal');
-      messageProgress.textContent = 'Its publication was successful';
-      uploader.value = progress;
-    }, () => {
+        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        modalProgress.classList.add('showModal');
+        messageProgress.textContent = 'Its publication was successful';
+        uploader.value = progress;
+      }, () => {
       // Handle unsuccessful uploads
-    }, () => {
+      }, () => {
       // Handle successful uploads on complete
-      uploadTask.snapshot.ref.getDownloadURL()
-        .then((downloadURL) => {
-          const privacy = viewHome.querySelector('#privacy-option').value;
-          const textPost = viewHome.querySelector('.text-newpost');
-          const dateAct = new Date().toLocaleString();
-          addPost(dateAct, privacy, textPost.value, downloadURL)
-            .then(() => {
-              modalProgress.classList.remove('showModal');
-              textPost.value = '';
-              postImg.src = '';
-              removeImg.style.display = 'none';
-            });
+        uploadTask.snapshot.ref.getDownloadURL()
+          .then((downloadURL) => {
+            addPost(privacy, textPost.value, downloadURL)
+              .then(() => {
+                modalProgress.classList.remove('showModal');
+                textPost.value = '';
+                postImg.src = '';
+                removeImg.style.display = 'none';
+              });
+          });
+      });
+    } else {
+      addPost(privacy, textPost.value, '')
+        .then(() => {
+          modalProgress.classList.remove('showModal');
+          textPost.value = '';
+          postImg.src = '';
+          removeImg.style.display = 'none';
         });
-    });
+    }
   });
   return viewHome;
 };
