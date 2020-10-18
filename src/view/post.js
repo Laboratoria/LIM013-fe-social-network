@@ -17,7 +17,14 @@ export const itemPost = (objPost) => {
             </ul>
           </div>               
           <img class="avatar-post" src="${objPost.photo}"/>
-          <p class="name">${objPost.username}</p>
+          <p class="name">${objPost.username}
+            <span class = "tooltiptext">
+            <img class="tooltipimg" src="${objPost.photo}"/>
+            <strong>${objPost.username.toUpperCase()}</strong> <br>
+            ${objPost.birthday} <br>
+            ${objPost.country}
+            </span>
+          </p>
           <select id="privacy-option" class="${(userId === objPost.userId) ? 'show fa' : 'hide'}">
             <option class="fa" value="public" ${(objPost.privacy === 'public') ? 'selected' : ''} title = "Public">&#xf57d; </option>
             <option class="fa" value="private" ${(objPost.privacy === 'private') ? 'selected' : ''} title = "Private">&#xf023; </option>
