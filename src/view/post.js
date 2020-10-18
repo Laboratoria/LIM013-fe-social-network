@@ -5,7 +5,7 @@ import {
 export const itemPost = (objPost) => {
   const userId = firebase.auth().currentUser.uid;
   // Counter likes + planes
-  const counterReactions = objPost.likes.length + objPost.planes.length;
+  const reactionCounter = objPost.likes.length + objPost.planes.length;
   const postElement = document.createElement('div');
   postElement.classList.add(`${(objPost.privacy === 'private' && objPost.userId !== userId) ? 'hide' : 'allpost'}`);
   postElement.innerHTML = `
@@ -38,12 +38,12 @@ export const itemPost = (objPost) => {
           <img id="post-img" class="post-img" src='${objPost.urlimg}'/>
           <div class="like-comment-container">
             <p class="like">
-              <span class="${(counterReactions === 0) ? 'hide' : 'count-like'}">${counterReactions} reactions</span> 
+              <span class="${(reactionCounter === 0) ? 'hide' : 'count-like'}">${reactionCounter} reactions</span> 
             </p>
             <hr>
-            <button type="button" id="btn-like" class="btn-like-comment ${(objPost.likes.indexOf(userId) === -1) ? 'unliked' : 'liked'}"><i class="fa fa-thumbs-up"></i> Like</button>
-            <button type="button" id="btn-plane" class="btn-like-comment ${(objPost.planes.indexOf(userId) === -1) ? 'unliked' : 'liked'}"><i class="fas fa-plane-departure"></i> Let's go!</button>
-            <button type="button" id="btn-comment" class="btn-like-comment"><i class="fa fa-comment"></i> Comment</button>
+            <button type="button" id="btn-like" class="btn-like-comment ${(objPost.likes.indexOf(userId) === -1) ? 'inactive' : 'active'}"><i class="fa fa-thumbs-up"></i> Like</button>
+            <button type="button" id="btn-plane" class="btn-like-comment ${(objPost.planes.indexOf(userId) === -1) ? 'inactive' : 'active'}"><i class="fas fa-plane-departure"></i> Let's go!</button>
+            <button type="button" id="btn-comment" class="btn-post-comment"><i class="fa fa-comment"></i> Comment</button>
           </div>
           <div id= "div-comment" class="hide div-comment">
             <textarea class="comment" placeholder="Add a comment"></textarea>

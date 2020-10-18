@@ -23,7 +23,7 @@ export default (dataCurrentUser) => {
           <img class="photo" src="${dataCurrentUser.photo}">
         </div>
         <label id="select-profile" for="select-photo-profile">
-          <input type="file" id="select-photo-profile" class="hide" accept="image/jpeg, image/png">
+          <input type="file" id="select-photo-profile" class="hide" accept="image/jpeg, image/png, image/gif">
           <span class="edit-photo"><i class="fas fa-camera edit-photo-btn"></i></span>
         </label>
         <div class="user-information">
@@ -101,7 +101,7 @@ export default (dataCurrentUser) => {
       // Handle progress
       const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
       modalProgress.classList.add('showModal');
-      messageProgress.textContent = 'The photo change has been updated successfully';
+      messageProgress.textContent = 'The profile photo has been updated successfully';
       uploader.value = progress;
     }, () => {
       // Handle unsuccessful uploads
@@ -126,7 +126,7 @@ export default (dataCurrentUser) => {
       // Handle progress
       const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
       modalProgress.classList.add('showModal');
-      messageProgress.textContent = 'The photo change has been updated successfully';
+      messageProgress.textContent = 'The cover photo has been updated successfully';
       uploader.value = progress;
     }, () => {
       // Handle unsuccessful uploads
