@@ -1,7 +1,8 @@
 import {
-  updateCurrentUser, updatephotoProfile, updatephotoCover,
+  updateCurrentUser, updatephotoProfile, updatephotoCover, getPost, getDataUserPost,
 } from '../controller/controller-cloud.js';
 import { sendImgToStorage } from '../controller/controller-storage.js';
+import { itemPost } from './post.js';
 
 export default (dataCurrentUser) => {
   /*  const dataCurrentUser = JSON.parse(localStorage.getItem('datauser')); */
@@ -41,10 +42,10 @@ export default (dataCurrentUser) => {
         </div>
       </div>
     </div>
-    <div class="user-posts shadow">
-    <p>You have no posts yet!</p>
-    </div>
   </div>
+  <section class ="container-user-post">
+    <p> You have not posts yet! </p>
+  </section>
   <section class="modal-container">
     <section class="modal-settings">
       <header class="modalHeader">
@@ -87,9 +88,6 @@ export default (dataCurrentUser) => {
       <p id="messageProgress">0%</p>
     </div>
   </section>
-
-
-
   `;
   /* -----------------change photo profile------------------ */
   const selectPhotoProfile = viewProfile.querySelector('#select-photo-profile');
@@ -177,6 +175,22 @@ export default (dataCurrentUser) => {
       .then(() => {
         window.location.reload();
       });
+  });
+
+  /* ---------------------- ADD POST (CONTAINER-POST)------------------*/
+  const containerUserPost = viewProfile.querySelector('.container-user-post');
+  const userId = firebase.auth().currentUser.uid;
+  getPost((post) => {
+    post.forEach((objPost) => {
+      if (userId === objPost.userId) {
+        getDataUserPost(objPost.userId)
+          .then((doc) => {
+            const obj = ({ username: doc.data().username, photo: doc.data().photo, ...objPost });
+            containerUserPost.appendChild(itemPost(obj));
+          });
+      }
+    });
+    containerUserPost.innerHTML = '';
   });
   return viewProfile;
 };

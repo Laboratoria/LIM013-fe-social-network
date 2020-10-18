@@ -101,16 +101,15 @@
 .user-information p {
   text-align: left; 
 }
-.user-posts {
-  width: 90%;
+.container-user-post {
+  width: 50%;
   margin: 2rem auto; 
   background-color: white; 
   border-radius: 0.5rem; 
   border: 1px rgba(128, 128, 128, 0.226) solid; 
 }
-.user-posts p {
-  padding: 2rem; 
-  text-align: center;
+.container-user-post p{
+  margin: 0.5rem 0.5rem;
 }
 #log-out-header{
   cursor: pointer;
