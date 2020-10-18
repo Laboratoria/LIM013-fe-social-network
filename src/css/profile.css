@@ -102,15 +102,14 @@
   text-align: left; 
 }
 .container-user-post {
-  width: 80%;
+  width: 50%;
   margin: 2rem auto; 
   background-color: white; 
   border-radius: 0.5rem; 
   border: 1px rgba(128, 128, 128, 0.226) solid; 
 }
-.container-user-post p {
-  padding: 2rem; 
-  text-align: center;
+.container-user-post p{
+  margin: 0.5rem 0.5rem;
 }
 #log-out-header{
   cursor: pointer;

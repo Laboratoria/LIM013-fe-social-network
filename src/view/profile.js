@@ -42,10 +42,10 @@ export default (dataCurrentUser) => {
         </div>
       </div>
     </div>
-    <section class ="container-user-post">
-      <p> You have not posts yet! </p>
-    </section>
   </div>
+  <section class ="container-user-post">
+    <p> You have not posts yet! </p>
+  </section>
   <section class="modal-container">
     <section class="modal-settings">
       <header class="modalHeader">
