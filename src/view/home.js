@@ -329,7 +329,8 @@ export default (dataCurrentUser) => {
     containerPost.innerHTML = '';
   });
   /* ---------------------- ADD POST (CLOUD FIRESTORE SN-Post)------------------*/
-  viewHome.querySelector('#form-post').addEventListener('submit', (e) => {
+  const formPost = viewHome.querySelector('#form-post');
+  formPost.addEventListener('submit', (e) => {
     e.preventDefault();
     postImg.src = '';
     removeImg.style.display = 'none';
@@ -357,9 +358,7 @@ export default (dataCurrentUser) => {
             addPost(privacy, textPost.value, downloadURL)
               .then(() => {
                 modalProgress.classList.remove('showModal');
-                textPost.value = '';
-                postImg.src = '';
-                removeImg.style.display = 'none';
+                formPost.reset();
               });
           });
       });
@@ -367,9 +366,7 @@ export default (dataCurrentUser) => {
       addPost(privacy, textPost.value, '')
         .then(() => {
           modalProgress.classList.remove('showModal');
-          textPost.value = '';
-          postImg.src = '';
-          removeImg.style.display = 'none';
+          formPost.reset();
         });
     }
   });

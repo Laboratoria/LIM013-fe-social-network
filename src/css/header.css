@@ -50,6 +50,9 @@
   color: white; 
   padding: 1rem;
 }
+.menu-header a:hover{
+background: #ce26b2;
+}
 
 
 #left-menu-header {
