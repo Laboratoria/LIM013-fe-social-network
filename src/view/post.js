@@ -44,14 +44,12 @@ export const itemPost = (objPost) => {
           </div>
           <img id="post-img" class="post-img" src='${objPost.urlimg}'/>
           <div class="like-comment-container">
-            <p class="like">
-              <span class="${(reactionCounter === 0) ? 'hide' : 'count-like'}">${reactionCounter} reactions</span> 
+            <p class="${(reactionCounter === 0) ? 'hide' : 'count-like'}" > ${reactionCounter} reactions
+              <span class = "tooltiptext"><i class="fa fa-thumbs-up like"></i> ${objPost.likes.length} &nbsp <i class="fas fa-plane-departure plane"></i> ${objPost.planes.length}</span>
             </p>
             <hr>
-            <button type="button" id="btn-like" class="btn-like-comment ${(objPost.likes.indexOf(userId) === -1) ? 'inactive-reaction' : 'active-reaction'}"><i class="fa fa-thumbs-up"></i> 
-              Like <span class = "tooltiptext"><i class="fas fa-heart"></i> ${objPost.likes.length}</span></button>
-            <button type="button" id="btn-plane" class="btn-like-comment ${(objPost.planes.indexOf(userId) === -1) ? 'inactive-reaction' : 'active-reaction'}"><i class="fas fa-plane-departure"></i> 
-              Let's go! <span class = "tooltiptext"><i class="fas fa-globe-americas"></i> ${objPost.planes.length}</span></button>
+            <button type="button" id="btn-like" class="btn-like-comment ${(objPost.likes.indexOf(userId) === -1) ? 'inactive-reaction' : 'active-reaction'}"><i class="fa fa-thumbs-up"></i> Like </button>
+            <button type="button" id="btn-plane" class="btn-like-comment ${(objPost.planes.indexOf(userId) === -1) ? 'inactive-reaction' : 'active-reaction'}"><i class="fas fa-plane-departure"></i> Let's go!</button>
             <button type="button" id="btn-comment" class="btn-post-comment"><i class="fa fa-comment"></i> Comment</button>
           </div>
           <div id= "div-comment" class="hide div-comment">

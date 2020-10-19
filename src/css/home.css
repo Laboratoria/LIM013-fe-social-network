@@ -279,8 +279,10 @@ select{
 .content-newpost textarea:focus::placeholder{
     color: #C4C4C4;
 }
-.like{
-    opacity: 0.6;
+.count-like{
+    /* opacity: 0.6; */
+    position: relative;
+    color: #2CAB92;
     font-size: 0.9rem;
 }
 .like-comment-container i{
@@ -455,7 +457,7 @@ select{
 .fa-github .tooltiptext,
 .fa-edit .tooltiptext,
 .btn-like .tooltiptext,
-.btn-like-comment .tooltiptext{
+.count-like .tooltiptext{
     font-size: 12px;
     visibility: hidden;
     background-color:  #444;
@@ -495,7 +497,7 @@ select{
   .fa-edit .tooltiptext::after,
   .name .tooltiptext::after,
   .btn-like .tooltiptext::after,
-  .btn-like-comment .tooltiptext::after {
+  .count-like .tooltiptext::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -511,7 +513,12 @@ select{
   .fa-edit:hover .tooltiptext,
   .name:hover .tooltiptext,
   .btn-like:hover .tooltiptext,
-  .btn-like-comment:hover .tooltiptext {
+  .count-like:hover .tooltiptext {
     visibility: visible;
   }
-  
+  .tooltiptext .like{
+    color: #3dbee9;
+  }
+  .tooltiptext .plane{
+    color: rgba(44, 171, 146, 0.7);
+  }
