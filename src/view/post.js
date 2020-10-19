@@ -1,10 +1,13 @@
 import {
-  deletePost, updatePost, updatePrivacy, addComment, getComment, getDataUserPost,
+  deletePost, updatePost, updatePrivacy, addComment, getComment,
+  getDataUserPost, updateLike, updatePlane,
 } from '../controller/controller-cloud.js';
 import { itemComment } from './comment.js';
 
 export const itemPost = (objPost) => {
   const userId = firebase.auth().currentUser.uid;
+  // Counter likes + planes
+  const reactionCounter = objPost.likes.length + objPost.planes.length;
   const postElement = document.createElement('div');
   postElement.classList.add(`${(objPost.privacy === 'private' && objPost.userId !== userId) ? 'hide' : 'allpost'}`);
   postElement.innerHTML = `
@@ -18,14 +21,20 @@ export const itemPost = (objPost) => {
             </ul>
           </div>               
           <img class="avatar-post" src="${objPost.photo}"/>
-          <p class="name">${objPost.username}</p>
+          <p class="name">${objPost.username}
+            <span class = "tooltiptext">
+            <img class="tooltipimg" src="${objPost.photo}"/>
+            <strong>${objPost.username.toUpperCase()}</strong> <br>
+            ${objPost.birthday} <br>
+            ${objPost.country}
+            </span>
+          </p>
           <select id="privacy-option" class="${(userId === objPost.userId) ? 'show fa' : 'hide'}">
             <option class="fa" value="public" ${(objPost.privacy === 'public') ? 'selected' : ''} title = "Public">&#xf57d; </option>
             <option class="fa" value="private" ${(objPost.privacy === 'private') ? 'selected' : ''} title = "Private">&#xf023; </option>
           </select>
           <p class="time-post">${objPost.date}</p>
-        </div>
-          <hr>        
+        </div>       
         <div class="content-post">
           <p class="text-post">${objPost.publication}</p>
           <div class = "hide edit-text-post">
@@ -37,18 +46,20 @@ export const itemPost = (objPost) => {
           </div>
           <img id="post-img" class="post-img" src='${objPost.urlimg}'/>
           <div class="like-comment-container">
-            <p class="like">
-              <span class="count-like">1</span> likes
+            <p class="${(reactionCounter === 0) ? 'hide' : 'count-like'}" > ${reactionCounter} reactions
+              <span class = "tooltiptext"><i class="fa fa-thumbs-up like"></i> ${objPost.likes.length} &nbsp <i class="fas fa-plane-departure plane"></i> ${objPost.planes.length}</span>
             </p>
-            <button type="button" class="btn-like"><i class="fa fa-thumbs-up"></i> Like</button>
-            <button type="button" class="btn-comment"><i class="fa fa-comment"></i> Comment</button>
+            <hr>
+            <button type="button" id="btn-like" class="btn-like-comment ${(objPost.likes.indexOf(userId) === -1) ? 'inactive-reaction' : 'active-reaction'}"><i class="fa fa-thumbs-up"></i> Like </button>
+            <button type="button" id="btn-plane" class="btn-like-comment ${(objPost.planes.indexOf(userId) === -1) ? 'inactive-reaction' : 'active-reaction'}"><i class="fas fa-plane-departure"></i> Let's go!</button>
+            <button type="button" id="btn-comment" class="btn-post-comment"><i class="fa fa-comment"></i>Comment <span id="counterComment"></span></button>
           </div>
           <section id ="container-comment" class="hide">
-            <form id= "formComment-${objPost.id}" class="div-comment">
-              <textarea class="comment-${objPost.id}" placeholder="Add a comment" required></textarea>
+            <form id= "formComment" class="div-comment">
+              <textarea class="comment" placeholder="Add a comment" required></textarea>
               <button type="submit" class="fas fa-paper-plane"></button>
             </form>
-            <div id = "container-AllComment-${objPost.id}"></div>
+            <div id = "container-AllComment"></div>
           </section>  
         </div>
       </div>
@@ -96,16 +107,39 @@ export const itemPost = (objPost) => {
   privacyStatus.addEventListener('change', () => {
     updatePrivacy(objPost.id, privacyStatus.value);
   });
+  // update likes
+  const likes = postElement.querySelector('#btn-like');
+  likes.addEventListener('click', () => {
+    const result = objPost.likes.indexOf(userId);
+    if (result === -1) {
+      objPost.likes.push(userId);
+      updateLike(objPost.id, objPost.likes);
+    } else {
+      objPost.likes.splice(result, 1);
+      updateLike(objPost.id, objPost.likes);
+    }
+  });
+  // update Let's go reaction (planes)
+  const planes = postElement.querySelector('#btn-plane');
+  planes.addEventListener('click', () => {
+    const result = objPost.planes.indexOf(userId);
+    if (result === -1) {
+      objPost.planes.push(userId);
+      updatePlane(objPost.id, objPost.planes);
+    } else {
+      objPost.planes.splice(result, 1);
+      updatePlane(objPost.id, objPost.planes);
+    }
+  });
   /* ------------Mostrar y ocultar comentario ------------------*/
-  postElement.querySelector('.btn-comment').addEventListener('click', () => {
+  postElement.querySelector('#btn-comment').addEventListener('click', () => {
     postElement.querySelector('#container-comment').classList.toggle('hide');
-    // postElement.querySelector('.all-comments').classList.toggle('hide');
   });
 
   /* ---------------------- ADD POST (CLOUD FIRESTORE SN-Post)------------------*/
-  const formComment = postElement.querySelector(`#formComment-${objPost.id}`);
+  const formComment = postElement.querySelector('#formComment');
   formComment.addEventListener('submit', (e) => {
-    const comment = postElement.querySelector(`.comment-${objPost.id}`).value;
+    const comment = postElement.querySelector('.comment').value;
     e.preventDefault();
     addComment(comment, objPost.id)
       .then(() => {
@@ -113,7 +147,8 @@ export const itemPost = (objPost) => {
       });
   });
   /* ---------------------- GET (CONTAINER-COMMENT)------------------*/
-  const containerAllComment = postElement.querySelector(`#container-AllComment-${objPost.id}`);
+  const containerAllComment = postElement.querySelector('#container-AllComment');
+  const counterComment = postElement.querySelector('#counterComment');
   getComment(objPost.id, (comment) => {
     comment.forEach((objComment) => {
       getDataUserPost(objComment.userId)
@@ -121,6 +156,7 @@ export const itemPost = (objPost) => {
           const obj = ({ username: doc.data().username, photo: doc.data().photo, ...objComment });
           containerAllComment.appendChild(itemComment(obj));
         });
+      counterComment.textContent = `${(comment.length !== 0) ? comment.length : ''}`;
       containerAllComment.innerHTML = '';
     });
   });

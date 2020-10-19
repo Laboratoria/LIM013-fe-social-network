@@ -67,6 +67,8 @@ export const addPost = (Privacy, Publication, URLimg) => {
     privacy: Privacy,
     publication: Publication,
     urlimg: URLimg,
+    likes: [],
+    planes: [],
   });
 };
 
@@ -120,7 +122,7 @@ export const addComment = (Comment, idPost) => {
 // ----------------------- GET ALL BD COMMENT --------------------------
 export const getComment = (idPost, callback) => {
   const db = firebase.firestore();
-  db.collection('SN-Post').doc(idPost).collection('SN-Comment').orderBy('date', 'desc')
+  db.collection(`SN-Post/${idPost}/SN-Comment`).orderBy('date', 'desc')
     .onSnapshot((querySnapshot) => {
       const comment = [];
       querySnapshot.forEach((doc) => {
@@ -128,4 +130,14 @@ export const getComment = (idPost, callback) => {
       });
       callback(comment);
     });
+};
+// ----------------------- UPDATE LIKES ----------------------------
+export const updateLike = (id, likes) => {
+  const db = firebase.firestore();
+  db.collection('SN-Post').doc(id).update({ likes });
+};
+// ----------------------- UPDATE PLANES ----------------------------
+export const updatePlane = (id, planes) => {
+  const db = firebase.firestore();
+  db.collection('SN-Post').doc(id).update({ planes });
 };
