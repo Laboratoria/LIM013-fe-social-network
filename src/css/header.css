@@ -7,7 +7,8 @@
   display: flex; 
   background-image: linear-gradient(-240deg, #3dbee9 0%, #46c5a5 100%);
   color: white; 
-  z-index: 1;
+  z-index: 2;
+  border: none; 
 }
 
 
@@ -83,4 +84,14 @@
   font-size: 1.8rem; 
   left: 2rem;
   cursor: pointer; 
+}
+.scrollUp {
+  font-size: 2.5rem;
+  color: #2CAB92;
+  position: fixed;
+  bottom: 20px;
+  right: 1rem;
+  transition: all 300ms ease;
+  transform: scale(0);
+  cursor: pointer;
 }

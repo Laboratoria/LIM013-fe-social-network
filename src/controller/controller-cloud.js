@@ -67,6 +67,8 @@ export const addPost = (Privacy, Publication, URLimg) => {
     privacy: Privacy,
     publication: Publication,
     urlimg: URLimg,
+    likes: [],
+    planes: [],
   });
 };
 
@@ -106,4 +108,14 @@ export const updatePrivacy = (id, updateStatus) => {
   db.collection('SN-Post').doc(id).update({
     privacy: updateStatus,
   });
+};
+// ----------------------- UPDATE LIKES ----------------------------
+export const updateLike = (id, likes) => {
+  const db = firebase.firestore();
+  db.collection('SN-Post').doc(id).update({ likes });
+};
+// ----------------------- UPDATE PLANES ----------------------------
+export const updatePlane = (id, planes) => {
+  const db = firebase.firestore();
+  db.collection('SN-Post').doc(id).update({ planes });
 };
