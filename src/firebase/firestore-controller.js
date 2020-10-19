@@ -49,7 +49,32 @@ export const allPosts = callback => firebase.firestore().collection('publicacion
   });
 // TODO get data collection posts
 export const getPost = id => firebase.firestore().collection('publicacion').doc(id).get();
+
+export const createComments = (userName, userComment, userPhoto, postId, date, userId) => firebase.firestore().collection('comments').add({
+  name: userName,
+  comment: userComment,
+  photo: userPhoto,
+  postID: postId,
+  time: date,
+  userID: userId,
+});
+export const getComments = (callback, id) => firebase.firestore().collection('comments')
+  .where('postID', '==', id)
+  .orderBy('time', 'asc')
+  .onSnapshot((querySnapshot) => {
+    const allComments = [];
+    console.log(allComments);
+    querySnapshot.forEach((doc) => {
+      allComments.push({ id: doc.id, ...doc.data() });
+    });
+    callback(allComments);
+  });
+export const updateComment = (id, changedComment) => firebase.firestore().collection('comments').doc(id).update({ comment: changedComment });
+
+export const deleteComment = id => firebase.firestore().collection('comments').doc(id).delete();
+
 // TODO upDate likes
 export const updateLike = (id, likes) => firebase.firestore().collection('publicacion').doc(id).update({ likes });
 // TODO upDate privacy
 export const updatePrivacy = (id, status) => firebase.firestore().collection('publicacion').doc(id).update({ privacy: status });
+

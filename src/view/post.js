@@ -1,7 +1,10 @@
 import {
-  deletePost, updatePost, updateLike, updatePrivacy,
+
+  deletePost, updatePost, createComments, getComments, updateLike, updatePrivacy,
+
 } from '../firebase/firestore-controller.js';
 import { currentUser } from '../firebase/auth-controller.js';
+import { eachComment } from './comments.js';
 
 export const postSection = (Object) => {
   // console.log(Object.likes.length);
@@ -49,12 +52,6 @@ export const postSection = (Object) => {
         <button class="btn-post-delete" data-id="${Object.id}">Eliminar</button>
     </section>
       <hr class="w3-clear" />
-      <div id="allComments"></div>
-      <textarea
-        class="input-comment"
-        id="newComment"
-        placeholder="Escribe un comentario"
-      ></textarea>
     <section class="button-section">
         <div class="button-like">
         <img class="like-btton" id="like-btton-${Object.id}" src="imagenes/like.png" alt="" />
@@ -64,6 +61,16 @@ export const postSection = (Object) => {
         <i class="fas fa-comment"></i> Comment
         </button>
     </section>
+    <section>
+    <div class="container-new-comment">
+      <p class="new-comment-title">Comentarios</p>
+      <div class="go-comment">
+        <textarea class="input-comment" id="newComment-${Object.id}" placeholder="Escribe un comentario"></textarea>
+        <button id="comment-${Object.id}" class="btn-comment"><i class="fas fa-angle-double-right"></i></button>
+      </div>
+    </div>
+    <div id="showAllComments-${Object.id}"></div>
+  </section>
   </section>`;
 
   // TODO LikePost
@@ -136,6 +143,26 @@ export const postSection = (Object) => {
       btnCancelPost.classList.remove('hide-btton-post');
     });
   });
+
+  // Commment section
+  const allComments = note.querySelector(`#showAllComments-${Object.id}`);
+  const btnNewComment = note.querySelector(`#comment-${Object.id}`);
+  btnNewComment.addEventListener('click', (e) => {
+    e.preventDefault();
+    const inputComment = note.querySelector(`#newComment-${Object.id}`).value;
+    allComments.innerHTML = '';
+    const time = new Date().toLocaleString();
+    createComments(currentUser().displayName, inputComment, currentUser().photoURL, Object.id, time, user)
+      .then(() => {
+        note.querySelector(`#newComment-${Object.id}`).value = '';
+      });
+  });
+  getComments((comments) => {
+    allComments.innerHTML = '';
+    comments.forEach((doc) => {
+      allComments.appendChild(eachComment(doc));
+    });
+  }, Object.id);
 
   return note;
 };
