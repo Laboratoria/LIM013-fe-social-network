@@ -46,7 +46,7 @@ export const itemPost = (objPost) => {
             <p class="like">
               <span class="count-like">1</span> likes
             </p>
-            <button type="button" class="btn-like"><i class="fa fa-thumbs-up"></i> Like</button>
+            <button type="button" class="btn-like"><i class="fa fa-thumbs-up"></i> Like<span class = "tooltiptext"><i class="fas fa-heart"></i>hola</span></button>
             <button type="button" class="btn-comment"><i class="fa fa-comment"></i> Comment</button>
           </div>
           <div id= "div-comment" class="hide div-comment">

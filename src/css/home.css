@@ -455,7 +455,8 @@ select{
 /* --------Tool tip text span---------------- */
 .fa-file-image .tooltiptext,
 .fa-github .tooltiptext,
-.fa-edit .tooltiptext{
+.fa-edit .tooltiptext,
+.btn-like .tooltiptext{
     font-size: 12px;
     visibility: hidden;
     background-color:  #444;
@@ -493,7 +494,8 @@ select{
   .fa-file-image .tooltiptext::after,
   .fa-github .tooltiptext::after,
   .fa-edit .tooltiptext::after,
-  .name .tooltiptext::after {
+  .name .tooltiptext::after,
+  .btn-like .tooltiptext::after {
     content: "";
     position: absolute;
     top: 100%;
@@ -507,7 +509,8 @@ select{
   .fa-file-image:hover .tooltiptext,
   .fa-github:hover .tooltiptext,
   .fa-edit:hover .tooltiptext,
-  .name:hover .tooltiptext {
+  .name:hover .tooltiptext,
+  .btn-like:hover .tooltiptext {
     visibility: visible;
   }
   

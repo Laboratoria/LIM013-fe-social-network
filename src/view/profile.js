@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import {
   updateCurrentUser, updatephotoProfile, updatephotoCover, getPost, getDataUserPost,
 } from '../controller/controller-cloud.js';
