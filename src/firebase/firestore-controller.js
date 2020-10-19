@@ -42,6 +42,7 @@ export const allPosts = callback => firebase.firestore().collection('publicacion
         img: doc.data().img,
         time: doc.data().time,
         privacy: doc.data().privacy,
+        likes: doc.data().likes,
       });
       callback(output);
     });
@@ -71,3 +72,9 @@ export const getComments = (callback, id) => firebase.firestore().collection('co
 export const updateComment = (id, changedComment) => firebase.firestore().collection('comments').doc(id).update({ comment: changedComment });
 
 export const deleteComment = id => firebase.firestore().collection('comments').doc(id).delete();
+
+// TODO upDate likes
+export const updateLike = (id, likes) => firebase.firestore().collection('publicacion').doc(id).update({ likes });
+// TODO upDate privacy
+export const updatePrivacy = (id, status) => firebase.firestore().collection('publicacion').doc(id).update({ privacy: status });
+
