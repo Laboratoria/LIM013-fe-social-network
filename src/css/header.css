@@ -1,5 +1,4 @@
 /*Header view*/
-
 .main-header {
   position: sticky;
   top: 0;
@@ -9,8 +8,6 @@
   color: white; 
   z-index: 1;
 }
-
-
 .main-header nav {
   width: 100%;
   display: flex; 
@@ -25,12 +22,10 @@
   font-size: 20px; 
   margin-right: 0.4rem; 
 }
-
 #log-out-header i {
   font-size: 20px; 
   margin-right: 0.4rem; 
 }
-
 .menu-header {
   width: 100%; 
   display: flex; 
@@ -40,8 +35,6 @@
   list-style: none; 
   font-size: 1.35rem;
 }
-
-
 .menu-header a {
   display: flex; 
   width: 100%; 
@@ -50,26 +43,18 @@
   color: white; 
   padding: 1rem;
 }
-.menu-header a:hover{
-background: #ce26b2;
-}
-
-
 #left-menu-header {
   width: 33%;
   display: flex;
   flex-flow: row nowrap; 
   align-items: center;
 }
-
 .title-header {
   width: 34%; 
   text-align: center;
   font-size: 1.8rem;
   font-weight: bold;
 }
-
-
 #log-out-header {
   width: 33%;
   display: flex; 
@@ -77,8 +62,6 @@ background: #ce26b2;
   align-items: center;
   padding: 0 2rem 0 0; 
 }
-
-
 #hamburger-menu {
   display: none;
   position: absolute; 
@@ -86,4 +69,14 @@ background: #ce26b2;
   font-size: 1.8rem; 
   left: 2rem;
   cursor: pointer; 
+}
+.scrollUp {
+  font-size: 2.5rem;
+  color: #2CAB92;
+  position: fixed;
+  bottom: 20px;
+  right: 1rem;
+  transition: all 300ms ease;
+  transform: scale(0);
+  cursor: pointer;
 }

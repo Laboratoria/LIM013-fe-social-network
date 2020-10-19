@@ -1,6 +1,7 @@
 import {
-  deletePost, updatePost, updatePrivacy,
+  deletePost, updatePost, updatePrivacy, addComment, getComment, getDataUserPost,
 } from '../controller/controller-cloud.js';
+import { itemComment } from './comment.js';
 
 export const itemPost = (objPost) => {
   const userId = firebase.auth().currentUser.uid;
@@ -42,34 +43,13 @@ export const itemPost = (objPost) => {
             <button type="button" class="btn-like"><i class="fa fa-thumbs-up"></i> Like</button>
             <button type="button" class="btn-comment"><i class="fa fa-comment"></i> Comment</button>
           </div>
-          <div id= "div-comment" class="hide div-comment">
-            <textarea class="comment" placeholder="Add a comment"></textarea>
-            <i class="fas fa-paper-plane"></i>
-          </div>
-          <div class = "hide all-comments">
-            <div class="menu-comment">
-              <i class="fas fa-ellipsis-v btn-menu-comment"></i>
-              <div id="menu-comment-content" class="menu-comment-content">
-                <li id="edit-comment"><i class="fas fa-edit select"></i> Edit</li>
-                <li id="delete-comment-${objPost.id}"><i class="fas fa-trash-alt select"></i> Delete</li>
-              </div>
-            </div> 
-            <div class = "photo-comment-container">
-              <img class="avatar-post" src="${objPost.photo}"/>
-              <div class = "comment-container">
-                <p class="name-comment">${objPost.username}</p>
-                <p class = "comment-text">Hola</p>
-                <div class = "hide edit-comment-text-btns">
-                  <textarea class = "edit-comment-text">Hola</textarea>
-                  <div class = "edit-comment-btns">
-                    <button type="button" class="btn-save-comment">Save</button>
-                    <button type="button" class="btn-cancel-comment">Cancel</button>
-                  </div>
-                </div>
-                <p class="time-comment">${objPost.date}</p>
-              </div>
-            </div>
-          </div>
+          <section id ="container-comment" class="hide">
+            <form id= "formComment-${objPost.id}" class="div-comment">
+              <textarea class="comment-${objPost.id}" placeholder="Add a comment" required></textarea>
+              <button type="submit" class="fas fa-paper-plane"></button>
+            </form>
+            <div id = "container-AllComment-${objPost.id}"></div>
+          </section>  
         </div>
       </div>
   `;
@@ -118,35 +98,31 @@ export const itemPost = (objPost) => {
   });
   /* ------------Mostrar y ocultar comentario ------------------*/
   postElement.querySelector('.btn-comment').addEventListener('click', () => {
-    postElement.querySelector('#div-comment').classList.toggle('hide');
-    postElement.querySelector('.all-comments').classList.toggle('hide');
+    postElement.querySelector('#container-comment').classList.toggle('hide');
+    // postElement.querySelector('.all-comments').classList.toggle('hide');
   });
-  /* ---------------- Menu despegable comment --------------------------*/
-  const btnMenuComment = postElement.querySelector('.btn-menu-comment');
-  btnMenuComment.addEventListener('click', () => {
-    postElement.querySelector('#menu-comment-content').classList.toggle('show');
+
+  /* ---------------------- ADD POST (CLOUD FIRESTORE SN-Post)------------------*/
+  const formComment = postElement.querySelector(`#formComment-${objPost.id}`);
+  formComment.addEventListener('submit', (e) => {
+    const comment = postElement.querySelector(`.comment-${objPost.id}`).value;
+    e.preventDefault();
+    addComment(comment, objPost.id)
+      .then(() => {
+        formComment.reset();
+      });
   });
-  // close menu click outside
-  window.addEventListener('click', (e) => {
-    if (e.target !== btnMenuComment) {
-      postElement.querySelector('#menu-comment-content').classList.remove('show');
-    }
-  });
-  /* -------------- edit and delete menu comment -------------------*/
-  const editComment = postElement.querySelector('#edit-comment');
-  // const commentText = postElement.querySelector('.comment-text');
-  // const btnSaveComment = postElement.querySelector(`.btn-save-comment`);
-  const btnCancelComment = postElement.querySelector('.btn-cancel-comment');
-  // edit comment menu
-  editComment.addEventListener('click', () => {
-    postElement.querySelector('.edit-comment-text-btns').classList.remove('hide');
-    postElement.querySelector('.comment-text').classList.add('hide');
-  });
-  // cancel edit comment
-  btnCancelComment.addEventListener('click', () => {
-    postElement.querySelector('.edit-comment-text-btns').classList.add('hide');
-    postElement.querySelector('.comment-text').classList.remove('hide');
-    // commentText.value = objPost.publication;
+  /* ---------------------- GET (CONTAINER-COMMENT)------------------*/
+  const containerAllComment = postElement.querySelector(`#container-AllComment-${objPost.id}`);
+  getComment(objPost.id, (comment) => {
+    comment.forEach((objComment) => {
+      getDataUserPost(objComment.userId)
+        .then((doc) => {
+          const obj = ({ username: doc.data().username, photo: doc.data().photo, ...objComment });
+          containerAllComment.appendChild(itemComment(obj));
+        });
+      containerAllComment.innerHTML = '';
+    });
   });
   return postElement;
 };

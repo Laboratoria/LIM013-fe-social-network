@@ -120,7 +120,6 @@ export default (dataCurrentUser) => {
       <p id="messageProgress">0%</p>
     </div>
   </section>
-  <i class="fas fa-arrow-alt-circle-up scrollUp"></i>
   `;
 
   const postImg = viewHome.querySelector('#post-img');
@@ -223,23 +222,6 @@ export default (dataCurrentUser) => {
         });
     }
   });
-  /* ----------------- Efecto Scroll up--------------------------------*/
-  window.onscroll = () => {
-    const currentScroll = document.documentElement.scrollTop;
-    // desplazamiento desde la parte superior de la pagina
-    if (currentScroll > 300) { // desplazamiento mayor a 300px mostrar botón
-      viewHome.querySelector('.scrollUp').style.transform = 'scale(1)';
-    } else { // desaparecer boton en menos de 300px
-      viewHome.querySelector('.scrollUp').style.transform = 'scale(0)';
-    }
-  };
-  // evento que me permite ir a top con click
-  viewHome.querySelector('.scrollUp').addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth',
-    });
-  });
+
   return viewHome;
 };
