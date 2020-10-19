@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import {
   addPost, getPost, getDataUserPost,
 } from '../controller/controller-cloud.js';
@@ -43,7 +44,7 @@ export default (dataCurrentUser) => {
       </div>
       <div class="content-newpost">
         <form id = "form-post">
-          <textarea class="text-newpost" placeholder="Share something" required></textarea>
+          <textarea class="text-newpost" placeholder="Share something" spellcheck="false" required></textarea>
           <i id = "remove-img" style="display: none" class="fas fa-times-circle"></i>
           <img id="post-img" class="post-img" src=""/>
           <div class="buttons-bar">
@@ -55,7 +56,7 @@ export default (dataCurrentUser) => {
               <option class="fa" value="public" title = "Public">&#xf57d; </option>
               <option class="fa" value="private" title = "Private">&#xf023; </option>
             </select>
-            <button type="submit" id="btn-post" class="btn-post" ><i class="fas fa-paper-plane"></i> Post</button>
+            <button type="submit" id="btn-post" class="btn-post-comment" ><i class="fas fa-paper-plane"></i> Post</button>
           </div>
         </form>
       </div>
@@ -120,7 +121,6 @@ export default (dataCurrentUser) => {
       <p id="messageProgress">0%</p>
     </div>
   </section>
-  <i class="fas fa-arrow-alt-circle-up scrollUp"></i>
   `;
 
   const postImg = viewHome.querySelector('#post-img');
@@ -175,14 +175,17 @@ export default (dataCurrentUser) => {
     post.forEach((objPost) => {
       getDataUserPost(objPost.userId)
         .then((doc) => {
-          const obj = ({ username: doc.data().username, photo: doc.data().photo, ...objPost });
+          const obj = ({
+            username: doc.data().username, photo: doc.data().photo, country: doc.data().country, birthday: doc.data().birthday, ...objPost,
+          });
           containerPost.appendChild(itemPost(obj));
         });
     });
     containerPost.innerHTML = '';
   });
   /* ---------------------- ADD POST (CLOUD FIRESTORE SN-Post)------------------*/
-  viewHome.querySelector('#form-post').addEventListener('submit', (e) => {
+  const formPost = viewHome.querySelector('#form-post');
+  formPost.addEventListener('submit', (e) => {
     e.preventDefault();
     postImg.src = '';
     removeImg.style.display = 'none';
@@ -199,7 +202,7 @@ export default (dataCurrentUser) => {
       // Handle progress
         const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         modalProgress.classList.add('showModal');
-        messageProgress.textContent = 'Its publication was successful';
+        messageProgress.textContent = 'Your publication was successful';
         uploader.value = progress;
       }, () => {
       // Handle unsuccessful uploads
@@ -210,9 +213,7 @@ export default (dataCurrentUser) => {
             addPost(privacy, textPost.value, downloadURL)
               .then(() => {
                 modalProgress.classList.remove('showModal');
-                textPost.value = '';
-                postImg.src = '';
-                removeImg.style.display = 'none';
+                formPost.reset();
               });
           });
       });
@@ -220,29 +221,9 @@ export default (dataCurrentUser) => {
       addPost(privacy, textPost.value, '')
         .then(() => {
           modalProgress.classList.remove('showModal');
-          textPost.value = '';
-          postImg.src = '';
-          removeImg.style.display = 'none';
+          formPost.reset();
         });
     }
-  });
-  /* ----------------- Efecto Scroll up--------------------------------*/
-  window.onscroll = () => {
-    const currentScroll = document.documentElement.scrollTop;
-    // desplazamiento desde la parte superior de la pagina
-    if (currentScroll > 300) { // desplazamiento mayor a 300px mostrar botón
-      viewHome.querySelector('.scrollUp').style.transform = 'scale(1)';
-    } else { // desaparecer boton en menos de 300px
-      viewHome.querySelector('.scrollUp').style.transform = 'scale(0)';
-    }
-  };
-  // evento que me permite ir a top con click
-  viewHome.querySelector('.scrollUp').addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth',
-    });
   });
   return viewHome;
 };
