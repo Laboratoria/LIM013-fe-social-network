@@ -31,9 +31,9 @@ export default () => {
         <section class="msg-Redes">
           <p>O ingresa con ...</p>
         </section>
-        <section class="logo-Redes">
-          <a href="#" class="fa fa-facebook" id="btnFacebook"></a>
-          <a href="#" class="fa fa-google" id="btnGoogle"></a>
+        <section class="logo-Redes">         
+          <a href="#" id="btnGoogle">
+          <img border="0" alt="google" src="/imagenes/google-plus.png" width="20%" height="auto"></a>
         </section>
         <section class="container_msg">
           <p>
