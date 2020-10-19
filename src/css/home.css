@@ -359,11 +359,11 @@ select{
 .btn-like-comment:hover{
     background-color: #efefef;
 }
-.active {
+.active-reaction {
     color: #2CAB92;
     font-weight: 800;
 }
-.inactive {
+.inactive-reaction {
     color: #666;
 }
 .contact button{

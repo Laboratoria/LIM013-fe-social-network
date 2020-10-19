@@ -48,8 +48,8 @@ export const itemPost = (objPost) => {
               <span class="${(reactionCounter === 0) ? 'hide' : 'count-like'}">${reactionCounter} reactions</span> 
             </p>
             <hr>
-            <button type="button" id="btn-like" class="btn-like-comment ${(objPost.likes.indexOf(userId) === -1) ? 'inactive' : 'active'}"><i class="fa fa-thumbs-up"></i> Like</button>
-            <button type="button" id="btn-plane" class="btn-like-comment ${(objPost.planes.indexOf(userId) === -1) ? 'inactive' : 'active'}"><i class="fas fa-plane-departure"></i> Let's go!</button>
+            <button type="button" id="btn-like" class="btn-like-comment ${(objPost.likes.indexOf(userId) === -1) ? 'inactive-reaction' : 'active-reaction'}"><i class="fa fa-thumbs-up"></i> Like</button>
+            <button type="button" id="btn-plane" class="btn-like-comment ${(objPost.planes.indexOf(userId) === -1) ? 'inactive-reaction' : 'active-reaction'}"><i class="fas fa-plane-departure"></i> Let's go!</button>
             <button type="button" id="btn-comment" class="btn-post-comment"><i class="fa fa-comment"></i> Comment</button>
           </div>
           <div id= "div-comment" class="hide div-comment">
