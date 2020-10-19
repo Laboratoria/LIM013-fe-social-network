@@ -42,9 +42,14 @@ export const allPosts = callback => firebase.firestore().collection('publicacion
         img: doc.data().img,
         time: doc.data().time,
         privacy: doc.data().privacy,
+        likes: doc.data().likes,
       });
       callback(output);
     });
   });
 // TODO get data collection posts
 export const getPost = id => firebase.firestore().collection('publicacion').doc(id).get();
+// TODO upDate likes
+export const updateLike = (id, likes) => firebase.firestore().collection('publicacion').doc(id).update({ likes });
+// TODO upDate privacy
+export const updatePrivacy = (id, status) => firebase.firestore().collection('publicacion').doc(id).update({ privacy: status });

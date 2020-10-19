@@ -549,7 +549,7 @@ i.fa.fa-pencil{
 	flex-direction: row;
 	justify-content: space-between;
 }
-.button-section button{
+.button-like{
 	border-style:space around;
 	width: 30%;
 	background-color: white;
@@ -562,7 +562,7 @@ i.fa.fa-pencil{
 }
 /*TODO liked posts*/
 .like-btton{
-	width: 15%;
+	width: 30%;
 }
 .likes-counter{
     outline: none;
