@@ -100,9 +100,13 @@ header nav ul li {
 }
 
 
-#left-menu-header a {
-  width: 100%;
-  padding: 0.5rem; 
+#left-menu-header li {
+  width: 100%; 
+  margin-bottom: 0.25rem;
+}
+
+#left-menu-header li a {
+  padding: 0.25rem;
 }
 
 #left-menu-header a:hover {
@@ -114,9 +118,13 @@ header nav ul li {
   margin-left: 0;
 }
 
+.profile-header {
+  margin-bottom: 0; 
+}
 
 #log-out-header {
   display: none; 
+  padding: 0; 
 }
 
 #log-out-header.active{
@@ -124,14 +132,20 @@ header nav ul li {
   width: 100%; 
   margin-bottom: 1rem; 
   justify-content: center;
-  padding: 0.5rem;
+  color: white; 
 }
 
-#log-out-header i {
+#btn-singOut {
+  width: 100%; 
+  text-align: center; 
+  padding: 0.25rem;
+}
+
+#btn-singOut i {
   margin-left: 1rem;
 }
 
-#log-out-header:hover {
+#btn-singOut:hover {
   color: #46c5a5;
   background-color: white;
 }
