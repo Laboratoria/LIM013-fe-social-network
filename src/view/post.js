@@ -93,7 +93,7 @@ export const postSection = (Object) => {
     } else {
       Object.likes.splice(arrayLikes, 1);
       updateLike(Object.id, Object.likes);
-      console.log('unliked post');
+      console.log('unliked posted');
     }
   });
   // TODO Privacy status
