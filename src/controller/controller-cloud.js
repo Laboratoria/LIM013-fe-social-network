@@ -127,6 +127,19 @@ export const getComment = (idPost, callback) => {
       callback(comment);
     });
 };
+// ----------------------- UPDATE COMMENT --------------------------
+export const updateComment = (idPost, idComment, Comment) => {
+  const db = firebase.firestore();
+  return db.collection(`SN-Post/${idPost}/SN-Comment`).doc(idComment)
+    .update({
+      comment: Comment,
+    });
+};
+// ----------------------- DELETE COMMENT --------------------------
+export const deleteComment = (idPost, idComment) => {
+  const db = firebase.firestore();
+  return db.collection(`SN-Post/${idPost}/SN-Comment`).doc(idComment).delete();
+};
 // ----------------------- UPDATE LIKES ----------------------------
 export const updateLike = (id, likes) => {
   const db = firebase.firestore();
