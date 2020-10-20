@@ -14,15 +14,16 @@ export default (notes) => {
     <ul class='menu_mobile1'>
       <li class="optionMobile">
         <a class='btn-header' href='#/profile'>
-          <i class="fas fa-user-edit"></i>Mi Perfil</a>
+        <img src="/imagenes/032-wanted.png" class="" alt="logo" width="8%" height="auto" />Mi Perfil</a>
       </li>
       <li class="optionMobile">
-        <a class='btn-header' href='#/home'>
-          <i class="fas fa-home"></i>Inicio</a>
+        <a class='btn-header'href='#/home'>
+        <img src="/imagenes/042-Doghouse.png" class="" alt="logo" width="8%" height="auto" />Home 
+        </a>
       </li>
       <li class="optionMobile">
         <a class='btn-header' id="logout2" href='#/signIn'>
-          <i class="fas fa-sign-out-alt"></i>Cerrar Sesión</a>
+        <img src="/imagenes/logout.png" class="" alt="logo" width="8%" height="auto" />Cerrar Sesión</a>
       </li>
     </ul>
     </nav>

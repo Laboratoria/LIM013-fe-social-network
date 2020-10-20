@@ -41,11 +41,11 @@ export const cambioVista = (route) => {
       break;
     case '#/profile':
       allPosts((notes) => {
-        console.log(notes);
+        // console.log(notes);
         const arrNotes = [];
         notes.forEach((note) => {
           const dataDeUsuarioActual = currentUser();
-          console.log(dataDeUsuarioActual);
+          // console.log(dataDeUsuarioActual);
           if (note.user === dataDeUsuarioActual.uid) {
             arrNotes.push(note);
           }

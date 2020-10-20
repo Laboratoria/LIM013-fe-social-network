@@ -16,27 +16,27 @@ const showMessage = (txtmessage) => {
 export const userRegistration = (userName, photoProfile, emailLogUp, passwordLogUp) => {
   signUp(emailLogUp, passwordLogUp)
     .catch(() => {
-      console.log('usuario logeado anteriormente');
+      // console.log('usuario logeado anteriormente');
       showMessage('⚠️Email logeado anteriormente');
       logOut();
       window.location.hash = '';
     }).then((userdata) => {
-      console.log(userdata);
+      // console.log(userdata);
       createUser(userdata.user.uid);
-      console.log('registrado');
-      console.log(userdata.user.uid);
+      // console.log('registrado');
+      // console.log(userdata.user.uid);
       updateUserData(userName, photoProfile)
         .then(() => {
-          console.log('se actualizo');
+          // console.log('se actualizo');
         }).catch(() => {
-          console.log('no se actualizo');
+          // console.log('no se actualizo');
         });
       verifEmail()
         .then(() => {
           showMessage(`🐱❤️🐶 ${userName} bienvenid@ a Petlandia. Hemos enviado un email de verificación`);
-          console.log('Hemos enviado un email verification');
-        }).catch((error) => {
-          console.log(error);
+          // console.log('Hemos enviado un email verification');
+        }).catch(() => {
+          // console.log();
         });
       logOut();
       window.location.hash = '';

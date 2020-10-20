@@ -34,6 +34,9 @@ export default () => {
         <section class="logo-Redes">         
           <a href="#" id="btnGoogle">
           <img border="0" alt="google" src="/imagenes/google-plus.png" width="20%" height="auto"></a>
+          <a href="#" class="google btn"><i class="fa fa-google fa-fw">
+          </i> Login with Google+
+        </a>
         </section>
         <section class="container_msg">
           <p>
@@ -55,7 +58,7 @@ export default () => {
     e.preventDefault();
     const emailLogIn = document.querySelector('#SignInForm_email').value;
     const passwordLogIn = document.querySelector('#SignInForm_password').value;
-    console.log(emailLogIn, passwordLogIn);
+    // console.log(emailLogIn, passwordLogIn);
     signingIn(emailLogIn, passwordLogIn);
   });
   // TODO Event to signIn user by google
