@@ -154,7 +154,7 @@ export const itemPost = (objPost) => {
       getDataUserPost(objComment.userId)
         .then((doc) => {
           const obj = ({ username: doc.data().username, photo: doc.data().photo, ...objComment });
-          containerAllComment.appendChild(itemComment(obj));
+          containerAllComment.appendChild(itemComment(obj, objPost.id));
         });
       counterComment.textContent = `${(comment.length !== 0) ? comment.length : ''}`;
       containerAllComment.innerHTML = '';
