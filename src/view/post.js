@@ -9,7 +9,7 @@ export const itemPost = (objPost) => {
   // Counter likes + planes
   const reactionCounter = objPost.likes.length + objPost.planes.length;
   const postElement = document.createElement('div');
-  postElement.classList.add(`${(objPost.privacy === 'private' && objPost.userId !== userId) ? 'hide' : 'allpost'}`);
+  postElement.classList.add('allpost');
   postElement.innerHTML = `
   <div class="mainpost">
         <div class="user-post">

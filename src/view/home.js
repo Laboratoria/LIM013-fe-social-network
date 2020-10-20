@@ -170,16 +170,19 @@ export default (dataCurrentUser) => {
     viewHome.querySelector('#contact').classList.toggle('viewContact');
   });
   /* ---------------------- ADD POST (CONTAINER-POST)------------------*/
+  const userId = firebase.auth().currentUser.uid;
   const containerPost = viewHome.querySelector('#container-post');
   getPost((post) => {
     post.forEach((objPost) => {
-      getDataUserPost(objPost.userId)
-        .then((doc) => {
-          const obj = ({
-            username: doc.data().username, photo: doc.data().photo, country: doc.data().country, birthday: doc.data().birthday, ...objPost,
+      if (objPost.privacy === 'public' || (objPost.privacy === 'private' && objPost.userId === userId)) {
+        getDataUserPost(objPost.userId)
+          .then((doc) => {
+            const obj = ({
+              username: doc.data().username, photo: doc.data().photo, country: doc.data().country, birthday: doc.data().birthday, ...objPost,
+            });
+            containerPost.appendChild(itemPost(obj));
           });
-          containerPost.appendChild(itemPost(obj));
-        });
+      }
     });
     containerPost.innerHTML = '';
   });
