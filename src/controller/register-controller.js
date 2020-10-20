@@ -35,6 +35,8 @@ export const userRegistration = (userName, photoProfile, emailLogUp, passwordLog
         .then(() => {
           showMessage(`🐱❤️🐶 ${userName} bienvenid@ a Petlandia. Hemos enviado un email de verificación`);
           // console.log('Hemos enviado un email verification');
+        }).catch(() => {
+          // console.log();
         });
       logOut();
       window.location.hash = '';

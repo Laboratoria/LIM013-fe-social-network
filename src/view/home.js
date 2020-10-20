@@ -12,18 +12,19 @@ export default (notes, dataUser) => {
       <label class='btn-menu'><i class="fas fa-bars"></i></label>
       <img src="/imagenes/PET.png" class="petLogoMenu" alt="logo" width="200px" height="auto" />  
       <ul class='menu_mobile'>
-      <li class="optionMobile">
-        <a class='btn-header' href='#/profile'>
-        <i class="fas fa-user-edit"></i>Mi Perfil</a>
-      </li>
-      <li class="optionMobile">
-        <a class='btn-header'href='#/home'>
-        <i class="fas fa-home"></i>Inicio</a>
-      </li>
-      <li class="optionMobile">
-        <a class='btn-header' id="logout" href='#/signIn'>
-        <i class="fas fa-sign-out-alt"></i>Cerrar Sesión</a>
-      </li>
+        <li class="optionMobile">
+          <a class='btn-header' href='#/profile'>
+          <img src="/imagenes/032-wanted.png" class="" alt="logo" width="8%" height="auto" />Mi Perfil</a>
+        </li>
+        <li class="optionMobile">
+          <a class='btn-header'href='#/home'>
+          <img src="/imagenes/042-Doghouse.png" class="" alt="logo" width="8%" height="auto" />Home 
+          </a>
+        </li>
+        <li class="optionMobile">
+          <a class='btn-header' id="logout" href='#/signIn'>
+          <img src="/imagenes/logout.png" class="" alt="logo" width="8%" height="auto" />Cerrar Sesión</a>
+        </li>
       </ul>
       </nav>
     </header>
@@ -56,11 +57,39 @@ export default (notes, dataUser) => {
                     <button id="btnSave" class="btn-profile hide">Guardar</button>
                   </div>
                 </div>
-                <button type="button" class="edit_btn"><i class="fas fa-edit"></i>Edita tu perfil</button>
               </section>
               <button type="button" id="btnProfile" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fas fa-edit"></i>Edita tu perfil</button>
             </article>
           </aside>
+          <aside class="profile_section">
+          <article class="card">
+            <section class="content">
+              <div class="">
+              <figure class="">
+                <img class="comunidades-figures" src="/imagenes/team.png" alt="">
+              </figure>
+                <h1 class="">Grupos de interes</h1>
+                <h2 class="name1">${user.displayName}, conoce los siguientes grupos de interes para tu mascota</h2>
+              </div>
+              <div class="labels">
+                  <div class="label">
+                  <ul>
+                    <li><a href="https://www.facebook.com/groups/1433700173348010/" target="_blank" rel="noopener noreferrer">Animales en adopción Lima</a></li>
+                    <li><a href="https://www.facebook.com/mascotasfacilisimo/" target="_blank" rel="noopener noreferrer">Facilísimo para tu mascota</a></li>
+                    <li><a href="https://www.facebook.com/mascotaclubperu" target="_blank" rel="noopener noreferrer">Mascota Club del Perú</a></li>
+                  </ul>
+                  </div>
+                <div class="label">
+                  <p class="profile-text">¿Te animas para socializar con tu mascota?</p>
+                  <h2 class="name_pet1">${dataUser.petName} estará muy feliz de socializar</h2>
+                  <figure class="">
+                  <img class="comunidades-gif" src="/imagenes/puppy-avengers.gif" width="20%" height="auto" alt="">
+                </figure>
+                </div>
+              </div>
+            </section>
+          </article>
+        </aside>
         </section>
         <section class="timeline_section">
           <article class="update_container">
@@ -78,13 +107,16 @@ export default (notes, dataUser) => {
             </div>
             <label for="selectImage"> 
               <input type="file" id="selectImage"  name="imagensubida" class="upload" accept="image/png, .jpeg, .jpg, image/gif">
-              <i class="fas fa-camera"></i>
+              <img class="" src="/imagenes/camera.png" width="5%" height="auto" alt="">       
             </label>        
-            <select id="privacy" class="privacy">
-              <option value="0">Publico</option>
-              <option value="1">Privado</option>
+            <select id="privacy" class="privacy" style='color: gray; height: 25%; font-family:Arial, FontAwesome;'>
+              <option value="0" style='color: gray;'>&#xf57d;</option>
+              <option value="1" style='color:gray;'>&#xf023;</option>
             </select>
-            <button type="button" id="bttonnewpost" class="post_buttom"><i class="fas fa-pencil-alt"></i>Post</button>
+            <i></i>
+            <button type="button" id="bttonnewpost" class="post_buttom">
+            <img class="" src="/imagenes/pencil.png" width="10%" height="auto" alt="">       
+            Post</button>
           </article>
           <div class="all-posts"></div>   
         </section>

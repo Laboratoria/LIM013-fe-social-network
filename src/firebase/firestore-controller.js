@@ -63,7 +63,7 @@ export const getComments = (callback, id) => firebase.firestore().collection('co
   .orderBy('time', 'asc')
   .onSnapshot((querySnapshot) => {
     const allComments = [];
-    console.log(allComments);
+    // console.log(allComments);
     querySnapshot.forEach((doc) => {
       allComments.push({ id: doc.id, ...doc.data() });
     });

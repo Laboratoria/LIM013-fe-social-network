@@ -28,15 +28,16 @@ export const signingIn = (emailLogIn, passwordLogIn) => {
 export const signInGoogle = () => {
   googleSignIn()
     .then((result) => {
+      // console.log();
       getUser(result.user.uid).then((doc) => {
         if (!doc.exists) {
           createUser(result.user.uid);
         }
         window.location.hash = '#/home';
       })
-        .catch((error) => {
-          console.log('no se actualizo');
-          // console.log(error);
+        .catch(() => {
+          // console.log('no se actualizo');
+          // console.log();
         });
     });
 };

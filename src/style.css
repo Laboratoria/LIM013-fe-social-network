@@ -16,6 +16,57 @@ body {
 	background: linear-gradient(to bottom, #fff895 0%, #fcd697 58%, #f46d6d 100%);
 	background-attachment: fixed;
 }
+
+/* Profile*/
+@import url('https://fonts.googleapis.com/css?family=Lato:300,700');
+
+h2, p {
+    font-family: 'Lato', serif;
+    font-size: 16px;
+}
+
+h2 {
+    color: #CF1124;
+}
+
+p {
+    color: #243B53;
+}
+
+.card {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border-radius: 5px;
+    border-top: solid 4px #CF1124;
+    height: 382px;
+    margin: 0%;
+    position: relative;
+	width: 100%;
+	background:#fff;
+}
+.cover {
+    background-image: url('https://picsum.photos/480/136/?random');
+    background-size: contain;
+    background-position: center;
+    height: 136px;
+}
+
+.content {
+    padding-top:12px;
+    padding-left: 21px;
+    padding-right: 21px;
+}
+
+.profile {
+    position: absolute;
+    top: 1%;
+    right: 10rem
+}
+.comunidades-figures{
+	width: 20%;
+}
+.comunidades-gif{
+	width: 50%;
+}
 /*TODO vista sign y register*/
 
 .sign  {
@@ -119,16 +170,7 @@ section.logo-Redes {
 	justify-content: space-evenly;
 	height: auto;
 }
-.container_msg p {
-	font-size: 100%;
-	text-align: center;
-	font-family: 'Playfair Display', serif;
-	font-style: normal;
-	font-weight: inherit;
-	margin: 1rem 1rem 1rem 1rem;
-	width: inherit;
-	position: relative;
-}
+
 .container {
 	top: 2rem;
 	position: absolute;
@@ -234,12 +276,6 @@ span.error-msg {
 	font-weight: inherit;
 }
 
-section.msg-Redes p {
-	width: auto;
-	margin: 1rem 2rem;
-	font-size: 100%;
-	font-family: 'Abel', sans-serif;
-}
 
 /*---Header Home---*/
 .petLogoMenu{
@@ -272,8 +308,8 @@ section.msg-Redes p {
     display: flex;
     visibility: hidden;
     flex-direction: column;
-    padding-left: 0%;
-    padding: 10px;
+	padding: 10px;
+	padding-left: 0%;
     margin-top: 10%;
     list-style: none;
     flex: auto;
@@ -301,15 +337,13 @@ ul li a{
     margin:20px auto;
 }
 .profile_section{
-    display: none;
+	display: none;
+	background: #f0f2f5;
+    padding: 20px;
+    border-radius: 4px;
 }
 .profile_section1{
 	display: block;
-}
-.profile_section{
-    background: #f0f2f5;
-    padding: 20px;
-    border-radius: 4px;
 }
 .divPost{
     background: #f0f2f5;
@@ -317,49 +351,17 @@ ul li a{
 	border-radius: 4px;
 	width:100%;
 }
-/* Profile*/
-@import url('https://fonts.googleapis.com/css?family=Lato:300,700');
 
-h2, p {
-    font-family: 'Lato', serif;
-    font-size: 16px;
-}
 
-h2 {
-    color: #CF1124;
-}
-
-p {
-    color: #243B53;
-}
-
-.card {
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    border-radius: 5px;
-    border-top: solid 4px #CF1124;
-    height: 382px;
-    margin: 0%;
-    position: relative;
-	width: 100%;
-	background:#fff;
-}
-.cover {
-    background-image: url('https://picsum.photos/480/136/?random');
-    background-size: contain;
-    background-position: center;
-    height: 136px;
-}
-
-.content {
-    padding-top:12px;
-    padding-left: 21px;
-    padding-right: 21px;
-}
-
-.profile {
-    position: absolute;
-    top: 1%;
-    right: 10rem
+.container_msg p {
+	font-size: 100%;
+	text-align: center;
+	font-family: 'Playfair Display', serif;
+	font-style: normal;
+	font-weight: inherit;
+	margin: 1rem 1rem 1rem 1rem;
+	width: inherit;
+	position: relative;
 }
 
 .profile img {
@@ -424,13 +426,47 @@ p {
     /*width: 0;*/
 }
 
-.labels .label p {
-    margin-bottom: 5px;
-    margin-top: 0px;
+.privacy{
+	outline: none;
+	cursor: pointer;
+	border: none;
+
 }
 
-.labels .label h2 {
-    margin: 0px;
+.btn-post-edit, .btn-post-delete {
+	position: relative;
+    width: 136%;
+    text-align: center;
+    height: 2rem;
+    margin: 1rem 1rem 0rem 1rem;
+    border-radius: 9px;
+    border: none;
+}
+.btn-post-cancel-edit-post, .btn-post-save-edit-post {
+	position: relative;
+    width: 30%;
+    text-align: center;
+    height: 2rem;
+    margin: 1rem 1rem 0rem 1rem;
+    border-radius: 14px;
+    border: none;
+}
+
+.label-menu-post{
+    width: 3em;
+    height: auto;
+    background-image: url(imagenes/review.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.nav-post{
+    position: relative;
+    top: 4em;
+    right: 0;
+    z-index: 4;
 }
 .edit_btn{
 	padding: 0.5rem;
@@ -441,7 +477,8 @@ p {
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     border-radius: 5px;
     background-color: #fff;
-    padding:3%;
+	padding:3%;
+	margin: 0rem 0rem 1rem 0rem;
 }
 .update_container input{
     background-color:#f0f2f5;
@@ -470,6 +507,8 @@ img.user_img{
 	color:black;
 }
 
+
+
 /*TODO container posts*/
 .like-picture{
     width: 16%;
@@ -481,7 +520,8 @@ img.user_img{
     width: 100%;
     height: 6em;
     box-sizing: border-box;
-    border: 0.1em solid #C4C4C4;
+	border: 0.1em solid #C4C4C4;
+	border-radius: 10px;
     resize: none;
     position: relative;
     margin-bottom: 1em;
@@ -534,11 +574,12 @@ img.user_img{
 }
 /*TODO vista profile posts*/
 .post_buttom {
-	width: 20%;
+    width: 20%;
     text-align: center;
     height: 2rem;
-    /* line-height: 2rem; */
     margin: 0rem 1rem 0rem 1rem;
+	border-radius: 50px;
+	border: none;
 }
 i.fa.fa-pencil{
 
@@ -580,6 +621,21 @@ i.fa.fa-pencil{
     margin: auto;
 }
 
+section.msg-Redes p {
+	width: auto;
+	margin: 1rem 2rem;
+	font-size: 100%;
+	font-family: 'Abel', sans-serif;
+}
+
+.labels .label p {
+    margin-bottom: 5px;
+    margin-top: 0px;
+}
+
+.labels .label h2 {
+    margin: 0px;
+}
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 601px) and (max-width: 767px) {
@@ -730,8 +786,9 @@ i.fa.fa-pencil{
 		visibility: visible;
 		flex-direction: row;
 		text-align: center;
-		padding-left: 0%;
 		padding: 0%;
+		padding-left: 0%;
+	
 		margin-top: 0%;
 		margin-bottom: 0%;
 		list-style: none;
@@ -943,8 +1000,9 @@ i.fa.fa-pencil{
 		visibility: visible;
 		flex-direction: row;
 		text-align: center;
-		padding-left: 0%;
 		padding: 0%;
+		padding-left: 0%;
+
 		margin-top: 0%;
 		margin-bottom: 0%;
 		list-style: none;
@@ -1158,8 +1216,9 @@ i.fa.fa-pencil{
 		visibility: visible;
 		flex-direction: row;
 		text-align: center;
-		padding-left: 0%;
 		padding: 0%;
+		padding-left: 0%;
+	
 		margin-top: 0%;
 		margin-bottom: 0%;
 		list-style: none;
@@ -1172,7 +1231,6 @@ i.fa.fa-pencil{
 		margin: 20px auto;
 		display: grid;
 		height: 100%;
-		margin: 0 auto;
 		grid-template-columns: 40% 54% 0%;
 		padding-top: 3em;
 		box-sizing: border-box;

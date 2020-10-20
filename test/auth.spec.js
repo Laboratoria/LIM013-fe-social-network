@@ -4,16 +4,22 @@ import {
   signUp,
   logOut,
   verifEmail,
+  currentUser,
 } from '../src/firebase/auth-controller.js';
 
 const firebasemock = require('firebase-mock');
 
 const mockauth = new firebasemock.MockFirebase();
+const mockfirestore = new firebasemock.MockFirestore();
+
 mockauth.autoFlush();
+mockfirestore.autoFlush();
+
 global.firebase = firebasemock.MockFirebaseSdk(
   // use null if your code does not use RTDB
   () => null,
   () => mockauth,
+  () => mockfirestore,
 );
 
 describe('Sign In', () => {
@@ -36,13 +42,14 @@ describe('Sign Up', () => {
       done();
     }));
 });
-/*
+
 describe('currentUser', () => {
   it('Must identify current user', () => currentUser()
     .then((user) => {
       expect(user).toBe('undefined');
     }));
-}); */
+});
+
 describe('loginUser with Google', () => {
   it('debería ser una función', () => {
     expect(typeof googleSignIn).toBe('function');
@@ -60,18 +67,6 @@ describe('logOut', () => {
     .then((user) => {
       expect(user).toBe(undefined);
     }));
-});
-describe('Facebook', () => {
-  it('debería ser una función', () => {
-    expect(typeof loginFacebook).toBe('function');
-  });
-  it('Login with Google', (done) => {
-    loginFacebook().then((userFb) => {
-      expect(userFb.isAnonymous).toBe(false);
-      expect(userFb.providerData).toEqual([{ providerId: 'facebook.com' }]);
-      done();
-    });
-  });
 });
 describe('verificationEmail', () => {
   it('Debería enviar un mail de verificación', () => {
