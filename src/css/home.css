@@ -83,7 +83,7 @@ hr{
 .user, .user-post{
     display: flex;
 }
-.avatar-post{
+.avatar-post, .avatar-comment{
     width: 40px;
     height: 40px;
     border-radius: 49px;
@@ -288,11 +288,13 @@ select{
 .like-comment-container i{
     margin-right: 0.3rem;
 }
-.div-comment i {
+.div-comment button {
     color: #2CAB92;
     font-size: 1rem;
     cursor: pointer;
     margin: auto;
+    background: none;
+    border: none;
 }
 .photo-comment-container{
     display: flex;

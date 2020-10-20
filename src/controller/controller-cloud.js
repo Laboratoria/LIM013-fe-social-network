@@ -109,6 +109,41 @@ export const updatePrivacy = (id, updateStatus) => {
     privacy: updateStatus,
   });
 };
+// ----------------------- CREATE BD COMMENT --------------------------
+export const addComment = (Comment, idPost) => {
+  const user = firebase.auth().currentUser;
+  const db = firebase.firestore();
+  return db.collection('SN-Post').doc(idPost).collection('SN-Comment').add({
+    userId: user.uid,
+    date: new Date().toLocaleString(),
+    comment: Comment,
+  });
+};
+// ----------------------- GET ALL BD COMMENT --------------------------
+export const getComment = (idPost, callback) => {
+  const db = firebase.firestore();
+  db.collection(`SN-Post/${idPost}/SN-Comment`).orderBy('date', 'desc')
+    .onSnapshot((querySnapshot) => {
+      const comment = [];
+      querySnapshot.forEach((doc) => {
+        comment.push({ id: doc.id, ...doc.data() });
+      });
+      callback(comment);
+    });
+};
+// ----------------------- UPDATE COMMENT --------------------------
+export const updateComment = (idPost, idComment, Comment) => {
+  const db = firebase.firestore();
+  return db.collection(`SN-Post/${idPost}/SN-Comment`).doc(idComment)
+    .update({
+      comment: Comment,
+    });
+};
+// ----------------------- DELETE COMMENT --------------------------
+export const deleteComment = (idPost, idComment) => {
+  const db = firebase.firestore();
+  return db.collection(`SN-Post/${idPost}/SN-Comment`).doc(idComment).delete();
+};
 // ----------------------- UPDATE LIKES ----------------------------
 export const updateLike = (id, likes) => {
   const db = firebase.firestore();
