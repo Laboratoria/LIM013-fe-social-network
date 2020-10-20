@@ -17,7 +17,7 @@ const showMessage = (txtmessage) => {
 export const signingIn = (emailLogIn, passwordLogIn) => {
   signIn(emailLogIn, passwordLogIn)
     .then(() => {
-      // console.log();
+      // console.log(result);
       window.location.hash = '#/home';
     })
     .catch(() => {

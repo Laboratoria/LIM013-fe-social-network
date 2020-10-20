@@ -2,6 +2,7 @@ import { signOut } from '../controller/home-controller.js';
 import { postSection } from './post.js';
 import { infoProfile, updateProfile } from '../controller/profile-controller.js';
 import { currentUser } from '../firebase/auth-controller.js';
+import { uploadPhotoProfile } from '../firebase/storage-controller.js';
 
 export default (notes) => {
   const user = currentUser();
@@ -95,6 +96,22 @@ export default (notes) => {
   const btnSave = divElemt.querySelector('#btnSave');
   const btnCancel = divElemt.querySelector('#btnCancel');
 
+
+  /* ----Upload images---*/
+  const selectPhotoProfile = divElemt.querySelector('#selectPhotoProfile');
+  const profilePicture = divElemt.querySelector('.profile-img');
+  console.log(profilePicture);
+  selectPhotoProfile.addEventListener('change', (e) => {
+    e.preventDefault();
+    if (selectPhotoProfile.files.length !== 0) {
+      const file = selectPhotoProfile.files[0];
+      console.log(file);
+      uploadPhotoProfile(file, user.uid).then((url) => {
+        console.log(url);
+        profilePicture.src = url;
+      });
+    }
+  });
   // TODO Edit profile
   editBtn.addEventListener('click', () => {
     aboutYou.contentEditable = 'true';
@@ -112,28 +129,12 @@ export default (notes) => {
     editBtn.classList.remove('hide');
   });
   btnSave.addEventListener('click', () => {
-    updateProfile(divElemt);
+    
     btnSave.classList.add('hide');
     btnCancel.classList.add('hide');
     editBtn.classList.remove('hide');
+    updateProfile(divElemt);
   });
-
-  /* ----Upload images---*/
-  // const selectPhotoProfile = divElemt.querySelector('#selectPhotoProfile');
-  // const profilePicture = divElemt.querySelector('.profile_img');
-  // selectPhotoProfile.addEventListener('change', (e) => {
-  //   const file = e.target.files[0];
-  //   const reader = new FileReader();
-
-  //   reader.onload = () => {
-  //     profilePicture.src = reader.result;
-  //   };
-  //   if (file) {
-  //     reader.readAsDataURL(file);
-  //   } else {
-  //     profilePicture.src = '';
-  //   }
-  // });
   // const file = '';
   // const editBtn = divElemt.querySelector('.edit_btn');
   // const nameUserProfile = divElemt.querySelector('.name');
