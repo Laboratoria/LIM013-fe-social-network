@@ -2,7 +2,6 @@ import {
   googleSignIn,
   signIn,
   signUp,
-  loginFacebook,
   logOut,
   verifEmail,
 } from '../src/firebase/auth-controller.js';

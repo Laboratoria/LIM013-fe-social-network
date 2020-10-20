@@ -16,8 +16,8 @@ const showMessage = (txtmessage) => {
 // TODO signIn with mail y passwoord
 export const signingIn = (emailLogIn, passwordLogIn) => {
   signIn(emailLogIn, passwordLogIn)
-    .then((result) => {
-      console.log(result);
+    .then(() => {
+      // console.log(result);
       window.location.hash = '#/home';
     })
     .catch(() => {
@@ -28,7 +28,6 @@ export const signingIn = (emailLogIn, passwordLogIn) => {
 export const signInGoogle = () => {
   googleSignIn()
     .then((result) => {
-      console.log(result);
       getUser(result.user.uid).then((doc) => {
         if (!doc.exists) {
           createUser(result.user.uid);
@@ -37,7 +36,7 @@ export const signInGoogle = () => {
       })
         .catch((error) => {
           console.log('no se actualizo');
-          console.log(error);
+          // console.log(error);
         });
     });
 };
