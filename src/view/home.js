@@ -56,7 +56,7 @@ export default (dataCurrentUser) => {
               <option class="fa" value="public" title = "Public">&#xf57d; </option>
               <option class="fa" value="private" title = "Private">&#xf023; </option>
             </select>
-            <button type="submit" id="btn-post" class="btn-post-comment" ><i class="fas fa-paper-plane"></i> Post</button>
+            <button type="submit" id="btn-post" class="btn-post" ><i class="fas fa-paper-plane"></i> Post</button>
           </div>
         </form>
       </div>

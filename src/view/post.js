@@ -25,8 +25,8 @@ export const itemPost = (objPost) => {
             <span class = "tooltiptext">
             <img class="tooltipimg" src="${objPost.photo}"/>
             <strong>${objPost.username.toUpperCase()}</strong> <br>
-            ${objPost.birthday} <br>
-            ${objPost.country}
+            <i class="fas fa-birthday-cake"></i> &nbsp ${objPost.birthday} <br>
+            <i class="fas fa-map-marker-alt"></i> &nbsp ${objPost.country}
             </span>
           </p>
           <select id="privacy-option" class="${(userId === objPost.userId) ? 'show fa' : 'hide'}">
@@ -49,10 +49,11 @@ export const itemPost = (objPost) => {
             <p class="${(reactionCounter === 0) ? 'hide' : 'count-like'}" > ${reactionCounter} reactions
               <span class = "tooltiptext"><i class="fa fa-thumbs-up like"></i> ${objPost.likes.length} &nbsp <i class="fas fa-plane-departure plane"></i> ${objPost.planes.length}</span>
             </p>
+            <p id = "count-comment" class="${(reactionCounter === 0) ? 'count-comment' : 'count-comment-right'}"></p>     
             <hr>
             <button type="button" id="btn-like" class="btn-like-comment ${(objPost.likes.indexOf(userId) === -1) ? 'inactive-reaction' : 'active-reaction'}"><i class="fa fa-thumbs-up"></i> Like </button>
             <button type="button" id="btn-plane" class="btn-like-comment ${(objPost.planes.indexOf(userId) === -1) ? 'inactive-reaction' : 'active-reaction'}"><i class="fas fa-plane-departure"></i> Let's go!</button>
-            <button type="button" id="btn-comment" class="btn-post-comment"><i class="fa fa-comment"></i>Comment <span id="counterComment"></span></button>
+            <button type="button" id="btn-comment" class="btn-comment"><i class="fa fa-comment"></i>Comment </button>
           </div>
           <section id ="container-comment" class="hide">
             <form id= "formComment" class="div-comment">
@@ -133,6 +134,7 @@ export const itemPost = (objPost) => {
   });
   /* ------------Mostrar y ocultar comentario ------------------*/
   postElement.querySelector('#btn-comment').addEventListener('click', () => {
+    postElement.querySelector('#btn-comment').classList.toggle('btn-comment-active');
     postElement.querySelector('#container-comment').classList.toggle('hide');
   });
 
@@ -148,7 +150,7 @@ export const itemPost = (objPost) => {
   });
   /* ---------------------- GET (CONTAINER-COMMENT)------------------*/
   const containerAllComment = postElement.querySelector('#container-AllComment');
-  const counterComment = postElement.querySelector('#counterComment');
+  const counterComment = postElement.querySelector('#count-comment');
   getComment(objPost.id, (comment) => {
     comment.forEach((objComment) => {
       getDataUserPost(objComment.userId)
@@ -156,7 +158,7 @@ export const itemPost = (objPost) => {
           const obj = ({ username: doc.data().username, photo: doc.data().photo, ...objComment });
           containerAllComment.appendChild(itemComment(obj, objPost.id));
         });
-      counterComment.textContent = `${(comment.length !== 0) ? comment.length : ''}`;
+      counterComment.textContent = `${(comment.length !== 0) ? comment.length : ''} comments`;
       containerAllComment.innerHTML = '';
     });
   });

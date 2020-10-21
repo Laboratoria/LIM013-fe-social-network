@@ -90,9 +90,9 @@ export const getDataUserPost = (id) => {
   return db.collection('SN-Users').doc(id).get();
 };
 // ----------------------- UPDATE POST --------------------------
-export const updatePost = (id, updatePublication) => {
+export const updatePost = (idPost, updatePublication) => {
   const db = firebase.firestore();
-  return db.collection('SN-Post').doc(id).update({
+  return db.collection('SN-Post').doc(idPost).update({
     publication: updatePublication,
   });
 };
