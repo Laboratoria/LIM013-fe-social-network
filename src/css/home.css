@@ -155,6 +155,9 @@ select{
     float: right;
     transition: all ease 0.5s;
 }
+.btn-post{
+    width: 20% !important;
+}
 .btn-post:hover,
 .btn-comment:hover,
 .btn-comment-active{
@@ -362,25 +365,23 @@ select{
     cursor: pointer;
     transition: all ease 0.5s;
 }
-.btn-like-comment {
+.btn-like-plane {
     position: relative;
     height: 2rem;
-    width: 90px;
+    width: 100px;
     border-style: none;
     border-radius: 0.3rem;
     margin: 0 0.5rem 0 0;
     cursor: pointer;
     outline: none;
     transition: all ease 0.5s;
-    background-color: white;
+    background-color: #dfe5e8;
     color: #666; 
 }
-.btn-like-comment:hover{
-    background-color: rgba(44, 171, 146, 0.2);
-}
-.active-reaction {
+.btn-like-plane:hover, .active-reaction {
     color: #2CAB92;
     font-weight: 800;
+    background-color: rgba(44, 171, 146, 0.2);
 }
 .inactive-reaction {
     color: #666;
