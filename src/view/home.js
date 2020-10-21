@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import {
-  addPost, getPost, getDataUserPost,
+  addPost, getPosts, getDataUserPost,
 } from '../controller/controller-cloud.js';
 import { sendImgToStorage } from '../controller/controller-storage.js';
 import { itemPost } from './post.js';
@@ -172,7 +172,7 @@ export default (dataCurrentUser) => {
   /* ---------------------- ADD POST (CONTAINER-POST)------------------*/
   const userId = firebase.auth().currentUser.uid;
   const containerPost = viewHome.querySelector('#container-post');
-  getPost((post) => {
+  getPosts((post) => {
     post.forEach((objPost) => {
       if (objPost.privacy === 'public' || (objPost.privacy === 'private' && objPost.userId === userId)) {
         getDataUserPost(objPost.userId)

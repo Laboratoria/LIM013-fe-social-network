@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import {
-  updateCurrentUser, updatephotoProfile, updatephotoCover, getPost, getDataUserPost,
+  updateCurrentUser, updatephotoProfile, updatephotoCover, getPosts, getDataUserPost,
 } from '../controller/controller-cloud.js';
 import { sendImgToStorage } from '../controller/controller-storage.js';
 import { itemPost } from './post.js';
@@ -181,7 +181,7 @@ export default (dataCurrentUser) => {
   /* ---------------------- ADD POST (CONTAINER-POST)------------------*/
   const containerUserPost = viewProfile.querySelector('.container-user-post');
   const userId = firebase.auth().currentUser.uid;
-  getPost((post) => {
+  getPosts((post) => {
     post.forEach((objPost) => {
       if (userId === objPost.userId) {
         getDataUserPost(objPost.userId)

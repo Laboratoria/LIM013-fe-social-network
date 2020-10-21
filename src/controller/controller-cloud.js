@@ -69,15 +69,16 @@ export const addPost = (Privacy, Publication, URLimg) => {
   });
 };
 // ---------------------------------GET POST INFORMATION TO SN-USERS------------------------------
-export const getPost = (callback) => {
+export const getPosts = (callback) => {
   const db = firebase.firestore();
   db.collection('SN-Post').orderBy('date', 'desc')
     .onSnapshot((querySnapshot) => {
-      const post = [];
+      const posts = [];
       querySnapshot.forEach((doc) => {
-        post.push({ id: doc.id, ...doc.data() });
+        posts.push({ id: doc.id, ...doc.data() });
       });
-      callback(post);
+      console.log(posts);
+      callback(posts);
     });
 };
 // ------------------- GET BD USERNAME AND PHOTO (POST) ----------
