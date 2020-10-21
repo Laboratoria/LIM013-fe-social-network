@@ -1,10 +1,11 @@
 import { updateComment, deleteComment } from '../controller/controller-cloud.js';
 
 export const itemComment = (objComment, idPost) => {
+  const userId = firebase.auth().currentUser.uid;
   const commentElement = document.createElement('div');
   commentElement.classList.add('all-comments');
   commentElement.innerHTML = `
-  <div class="menu-comment">
+  <div class="${(userId !== objComment.userId) ? 'hide' : 'show menu-comment'}">
     <i class="fas fa-ellipsis-v btn-menu-comment"></i>
     <div id="menu-comment-content" class="menu-comment-content">
       <li id="edit-comment"><i class="fas fa-edit select"></i> Edit</li>

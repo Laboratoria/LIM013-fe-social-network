@@ -14,6 +14,7 @@ const changeView = (route) => {
       break;
     case '#/home':
       container.appendChild(components.header());
+      document.querySelector('.home-header').style.textDecoration = 'underline';
       getDataCurrentUser()
         .then((doc) => {
           container.appendChild(components.home(doc.data()));
@@ -21,6 +22,7 @@ const changeView = (route) => {
       break;
     case '#/profile':
       container.appendChild(components.header());
+      document.querySelector('.profile-header').style.textDecoration = 'underline';
       getDataCurrentUser()
         .then((doc) => {
           container.appendChild(components.profile(doc.data()));
