@@ -7,6 +7,7 @@ import { itemPost } from './post.js';
 
 export default (dataCurrentUser) => {
   const viewHome = document.createElement('section');
+  const userId = firebase.auth().currentUser.uid;
   viewHome.classList.add('container-home');
   viewHome.innerHTML = `
   <!-- Left column -->
@@ -210,7 +211,7 @@ export default (dataCurrentUser) => {
       // Handle successful uploads on complete
         uploadTask.snapshot.ref.getDownloadURL()
           .then((downloadURL) => {
-            addPost(privacy, textPost.value, downloadURL)
+            addPost(userId, privacy, textPost.value, downloadURL)
               .then(() => {
                 modalProgress.classList.remove('showModal');
                 formPost.reset();
@@ -218,7 +219,7 @@ export default (dataCurrentUser) => {
           });
       });
     } else {
-      addPost(privacy, textPost.value, '')
+      addPost(userId, privacy, textPost.value, '')
         .then(() => {
           modalProgress.classList.remove('showModal');
           formPost.reset();

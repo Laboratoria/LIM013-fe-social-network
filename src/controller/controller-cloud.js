@@ -58,11 +58,10 @@ export const updatephotoCover = (value) => {
 // db.colleciton('SN-users').doc(post.userId).get().then((u) => u.photoUrl)
 
 // ----------------------- CREATE BD POST --------------------------
-export const addPost = (Privacy, Publication, URLimg) => {
-  const user = firebase.auth().currentUser;
+export const addPost = (UserId, Privacy, Publication, URLimg) => {
   const db = firebase.firestore();
   return db.collection('SN-Post').add({
-    userId: user.uid,
+    userId: UserId,
     date: new Date().toLocaleString(),
     privacy: Privacy,
     publication: Publication,
