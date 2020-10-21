@@ -30,12 +30,13 @@ export const signInGoogle = () => {
     .then((result) => {
       getUser(result.user.uid).then((doc) => {
         if (!doc.exists) {
+
           createUser(result.user.uid);
         }
         window.location.hash = '#/home';
+
       })
-        .catch((error) => {
-          console.log('no se actualizo');
+        .catch(() => {
           // console.log(error);
         });
     });

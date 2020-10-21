@@ -300,16 +300,15 @@ ul li a{
     width:90%;
     margin:20px auto;
 }
-.profile_section{
-    display: none;
-}
+
 .profile_section1{
 	display: block;
 }
 .profile_section{
     background: #f0f2f5;
     padding: 20px;
-    border-radius: 4px;
+	border-radius: 4px;
+	display: none;
 }
 .divPost{
     background: #f0f2f5;
@@ -320,7 +319,7 @@ ul li a{
 /* Profile*/
 @import url('https://fonts.googleapis.com/css?family=Lato:300,700');
 
-h2, p {
+/* h2, p {
     font-family: 'Lato', serif;
     font-size: 16px;
 }
@@ -331,7 +330,7 @@ h2 {
 
 p {
     color: #243B53;
-}
+} */
 
 .card {
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -1172,7 +1171,6 @@ i.fa.fa-pencil{
 		margin: 20px auto;
 		display: grid;
 		height: 100%;
-		margin: 0 auto;
 		grid-template-columns: 40% 54% 0%;
 		padding-top: 3em;
 		box-sizing: border-box;

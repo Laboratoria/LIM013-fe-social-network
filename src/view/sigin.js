@@ -55,7 +55,7 @@ export default () => {
     e.preventDefault();
     const emailLogIn = document.querySelector('#SignInForm_email').value;
     const passwordLogIn = document.querySelector('#SignInForm_password').value;
-    console.log(emailLogIn, passwordLogIn);
+
     signingIn(emailLogIn, passwordLogIn);
   });
   // TODO Event to signIn user by google

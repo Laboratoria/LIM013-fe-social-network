@@ -61,18 +61,6 @@ describe('logOut', () => {
       expect(user).toBe(undefined);
     }));
 });
-describe('Facebook', () => {
-  it('debería ser una función', () => {
-    expect(typeof loginFacebook).toBe('function');
-  });
-  it('Login with Google', (done) => {
-    loginFacebook().then((userFb) => {
-      expect(userFb.isAnonymous).toBe(false);
-      expect(userFb.providerData).toEqual([{ providerId: 'facebook.com' }]);
-      done();
-    });
-  });
-});
 describe('verificationEmail', () => {
   it('Debería enviar un mail de verificación', () => {
     const myMock = jest.fn();

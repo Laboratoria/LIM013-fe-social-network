@@ -11,7 +11,8 @@ export const postSection = (Object) => {
   const note = document.createElement('div');
   note.classList.add('divPost');
   const user = currentUser().uid;
-  console.log(user);
+
+  // console.log(user);
   note.innerHTML = ` 
   <section class="user_post" id="user_post">
     <figure class="user_photo">
@@ -75,7 +76,7 @@ export const postSection = (Object) => {
 
   // TODO LikePost
   const likePost = note.querySelector(`#like-btton-${Object.id}`);
-  console.log(likePost);
+  // console.log(likePost);
   // const likes = note.querySelector('.likes-counter');
   likePost.addEventListener('click', (e) => {
     e.preventDefault();
@@ -89,19 +90,19 @@ export const postSection = (Object) => {
       Object.likes.push(user);
       // console.log(Object.likes.push(user));
       updateLike(Object.id, Object.likes);
-      console.log('liked');
+      // console.log('liked');
     } else {
       Object.likes.splice(arrayLikes, 1);
       updateLike(Object.id, Object.likes);
-      console.log('unliked posted');
+      // console.log('unliked posted');
     }
   });
   // TODO Privacy status
   const optionPrivacy = note.querySelector('.privacy');
   optionPrivacy.addEventListener('change', () => {
-    console.log((Object.id, optionPrivacy.value));
+    // console.log((Object.id, optionPrivacy.value));
     updatePrivacy(Object.id, optionPrivacy.value);
-    console.log('status actualizado');
+    // console.log('status actualizado');
   });
 
   const editingPost = note.querySelector('.input-post');
@@ -114,9 +115,9 @@ export const postSection = (Object) => {
   const deletpost = note.querySelectorAll('.btn-post-delete');
   deletpost.forEach((bttn) => {
     bttn.addEventListener('click', async (e) => {
-      console.log(e.target.dataset.id);
+      // console.log(e.target.dataset.id);
       await deletePost(e.target.dataset.id);
-      console.log('post eliminado');
+      // console.log('post eliminado');
     });
   });
   // TODO save post edited
@@ -125,14 +126,14 @@ export const postSection = (Object) => {
     btnSavePost.classList.add('hide-btton-post');
     btnCancelPost.classList.add('hide-btton-post');
     await updatePost(Object.id, inputPost.textContent);
-    console.log('save post');
+    // console.log('save post');
   });
   // TODO cancel post edited
   btnCancelPost.addEventListener('click', () => {
     editingPost.contentEditable = 'false';
     btnSavePost.classList.add('hide-btton-post');
     btnCancelPost.classList.add('hide-btton-post');
-    console.log('cancel post');
+    // console.log('cancel post');
   });
   // TODO edit post
   const bttonEditPost = note.querySelectorAll('.btn-post-edit');
@@ -152,7 +153,8 @@ export const postSection = (Object) => {
     const inputComment = note.querySelector(`#newComment-${Object.id}`).value;
     allComments.innerHTML = '';
     const time = new Date().toLocaleString();
-    createComments(currentUser().displayName, inputComment, currentUser().photoURL, Object.id, time, user)
+    createComments(currentUser().displayName, inputComment, currentUser()
+      .photoURL, Object.id, time, user)
       .then(() => {
         note.querySelector(`#newComment-${Object.id}`).value = '';
       });
