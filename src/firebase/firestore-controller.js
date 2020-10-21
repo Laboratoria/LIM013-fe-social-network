@@ -47,9 +47,7 @@ export const allPosts = callback => firebase.firestore().collection('publicacion
       callback(output);
     });
   });
-// TODO get data collection posts
-export const getPost = id => firebase.firestore().collection('publicacion').doc(id).get();
-
+// TODO get createComments
 export const createComments = (userName, userComment, userPhoto, postId, date, userId) => firebase.firestore().collection('comments').add({
   name: userName,
   comment: userComment,

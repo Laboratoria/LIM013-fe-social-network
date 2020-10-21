@@ -32,9 +32,8 @@ export default () => {
           <p>O ingresa con ...</p>
         </section>
         <section class="logo-Redes">         
-          <a href="#" id="btnGoogle">
-          <img border="0" alt="google" src="/imagenes/google-plus.png" width="20%" height="auto"></a>
-          <a href="#" class="google btn"><i class="fa fa-google fa-fw">
+ 
+          <a href="#" id="btnGoogle" class="google btn-google"><i class="fa fa-google fa-fw">
           </i> Login with Google+
         </a>
         </section>

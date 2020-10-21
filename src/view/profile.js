@@ -100,14 +100,14 @@ export default (notes) => {
   /* ----Upload images---*/
   const selectPhotoProfile = divElemt.querySelector('#selectPhotoProfile');
   const profilePicture = divElemt.querySelector('.profile-img');
-  console.log(profilePicture);
+  // console.log(profilePicture);
   selectPhotoProfile.addEventListener('change', (e) => {
     e.preventDefault();
     if (selectPhotoProfile.files.length !== 0) {
       const file = selectPhotoProfile.files[0];
-      console.log(file);
+      // console.log(file);
       uploadPhotoProfile(file, user.uid).then((url) => {
-        console.log(url);
+        // console.log(url);
         profilePicture.src = url;
       });
     }
@@ -129,7 +129,6 @@ export default (notes) => {
     editBtn.classList.remove('hide');
   });
   btnSave.addEventListener('click', () => {
-    
     btnSave.classList.add('hide');
     btnCancel.classList.add('hide');
     editBtn.classList.remove('hide');
