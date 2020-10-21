@@ -7,6 +7,7 @@ import { itemPost } from './post.js';
 
 export default (dataCurrentUser) => {
   const viewHome = document.createElement('section');
+  const userId = firebase.auth().currentUser.uid;
   viewHome.classList.add('container-home');
   viewHome.innerHTML = `
   <!-- Left column -->
@@ -56,7 +57,7 @@ export default (dataCurrentUser) => {
               <option class="fa" value="public" title = "Public">&#xf57d; </option>
               <option class="fa" value="private" title = "Private">&#xf023; </option>
             </select>
-            <button type="submit" id="btn-post" class="btn-post-comment" ><i class="fas fa-paper-plane"></i> Post</button>
+            <button type="submit" id="btn-post" class="btn-post" ><i class="fas fa-paper-plane"></i> Post</button>
           </div>
         </form>
       </div>
@@ -210,7 +211,7 @@ export default (dataCurrentUser) => {
       // Handle successful uploads on complete
         uploadTask.snapshot.ref.getDownloadURL()
           .then((downloadURL) => {
-            addPost(privacy, textPost.value, downloadURL)
+            addPost(userId, privacy, textPost.value, downloadURL)
               .then(() => {
                 modalProgress.classList.remove('showModal');
                 formPost.reset();
@@ -218,7 +219,7 @@ export default (dataCurrentUser) => {
           });
       });
     } else {
-      addPost(privacy, textPost.value, '')
+      addPost(userId, privacy, textPost.value, '')
         .then(() => {
           modalProgress.classList.remove('showModal');
           formPost.reset();
