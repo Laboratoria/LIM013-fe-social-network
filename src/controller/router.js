@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-cycle
 import { components } from '../view/index.js';
 import { allPosts, getUser } from '../firebase/firestore-controller.js';
 import { currentUser } from '../firebase/auth-controller.js';
@@ -28,11 +27,14 @@ export const cambioVista = (route) => {
         const dataUser = doc.data();
         // console.log(doc.data());
         allPosts((notes) => {
-          // console.log(notes);
+        // console.log(notes);
           const arrNotes = [];
           notes.forEach((note) => {
+            // const dataDeUsuarioActual = currentUser();
             // console.log(note);
+            // if (note.privacy === '0' && note.userId === dataDeUsuarioActual) {
             arrNotes.push(note);
+            // }
           });
           sectionContainer.innerHTML = '';
           routeSelected = sectionContainer.appendChild(components.home(notes, dataUser));

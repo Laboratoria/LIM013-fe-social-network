@@ -13,7 +13,7 @@ export const updateProfileInfo = (idDoc, namePet, description) => firebase.fires
   aboutUs: description,
 });
 // TODO crear collection firestore posts
-export const crearPostPrueba = (id, userName, newPost, imagePost, date, status, userPhoto) => firebase.firestore().collection('publicacion').add({
+export const crearPostPrueba = (id, userName, newPost, imagePost, date, status, userPhoto) => firebase.firestore().collection('publicaciones').add({
   name: userName,
   post: newPost,
   user: id,
@@ -24,11 +24,11 @@ export const crearPostPrueba = (id, userName, newPost, imagePost, date, status, 
   likes: [],
 });
 // TODO update post
-export const updatePost = (id, upDatePost) => firebase.firestore().collection('publicacion').doc(id).update({ post: upDatePost });
+export const updatePost = (id, upDatePost) => firebase.firestore().collection('publicaciones').doc(id).update({ post: upDatePost });
 // TODO delete post
-export const deletePost = id => firebase.firestore().collection('publicacion').doc(id).delete();
+export const deletePost = id => firebase.firestore().collection('publicaciones').doc(id).delete();
 // TODO create collection post with order desc and time
-export const allPosts = callback => firebase.firestore().collection('publicacion')
+export const allPosts = callback => firebase.firestore().collection('publicaciones')
   .orderBy('time', 'desc')
   .onSnapshot((querySnapshot) => {
     const output = [];
@@ -72,6 +72,6 @@ export const updateComment = (id, changedComment) => firebase.firestore().collec
 export const deleteComment = id => firebase.firestore().collection('comments').doc(id).delete();
 
 // TODO upDate likes
-export const updateLike = (id, likes) => firebase.firestore().collection('publicacion').doc(id).update({ likes });
+export const updateLike = (id, likes) => firebase.firestore().collection('publicaciones').doc(id).update({ likes });
 // TODO upDate privacy
-export const updatePrivacy = (id, status) => firebase.firestore().collection('publicacion').doc(id).update({ privacy: status });
+export const updatePrivacy = (id, status) => firebase.firestore().collection('publicaciones').doc(id).update({ privacy: status });

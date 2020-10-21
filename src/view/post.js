@@ -11,9 +11,9 @@ import { eachComment } from './comments.js';
 
 export const postSection = (Object) => {
   // console.log(Object.likes.length);
-  const note = document.createElement('div');
-  note.classList.add('divPost');
   const user = currentUser().uid;
+  const note = document.createElement('div');
+  note.classList.add(`${(Object.privacy === '1' && Object.user !== user) ? 'hide-post' : 'allpost'}`);
   // console.log(user);
   note.innerHTML = ` 
   <section class="user_post" id="user_post">
