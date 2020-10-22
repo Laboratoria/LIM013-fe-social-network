@@ -158,9 +158,9 @@ export const itemPost = (objPost) => {
           const obj = ({ username: doc.data().username, photo: doc.data().photo, ...objComment });
           containerAllComment.appendChild(itemComment(obj, objPost.id));
         });
-      counterComment.textContent = `${(comment.length !== 0) ? comment.length : ''} comments`;
-      containerAllComment.innerHTML = '';
     });
+    counterComment.textContent = `${(comment.length !== 0) ? `${comment.length} comments` : ''}`;
+    containerAllComment.innerHTML = '';
   });
   return postElement;
 };
