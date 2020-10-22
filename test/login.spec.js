@@ -29,39 +29,40 @@ const fixtureData = {
           likes: '',
         },
       },
-      comments: {
-        _doc_: {
-          comment1: {
-            name: 'userName',
-            comment: 'holi amiguitos',
-            photo: 'userPhoto',
-            postID: 'postId',
-            time: 'date',
-            userID: 'userId',
-          },
-          comment2: {
-            name: 'userName',
-            comment: 'hello friends',
-            photo: 'userPhoto',
-            postID: 'postId',
-            time: 'date',
-            userID: 'userId',
-          },
+    },
+    comments: {
+      _doc_: {
+        comment1: {
+          name: 'userName',
+          comment: 'holi amiguitos',
+          photo: 'userPhoto',
+          postID: 'postId',
+          time: 'date',
+          userID: 'userId',
+        },
+        comment2: {
+          name: 'userName',
+          comment: 'hello friends',
+          photo: 'userPhoto',
+          postID: 'postId',
+          time: 'date',
+          userID: 'userId',
         },
       },
     },
   },
 };
+
 global.firebase = new MockFirebase(fixtureData, { isNaiveSnapshotListenerEnabled: true });
 
 
 describe('create post', () => {
-  it('Deberia de poder agregar un post', done => crearPostPrueba('user 3', 'Hola Mundo Pet', '003', '', '', '', '', '')
+  it('Deberia de poder agregar  post', done => crearPostPrueba('', '', 'Hola Mundo Pet', '', '', '', '', '')
     .then(() => {
       const callback = (post) => {
         console.log(post);
         const result = post.find(element => element.post === 'Hola Mundo Pet');
-        expect(result).toEqual('Hola Mundo Pet');
+        expect(result.post).toEqual('Hola Mundo Pet');
         done();
       };
       allPosts(callback);
@@ -69,26 +70,29 @@ describe('create post', () => {
 });
 describe('update post', () => {
   it('Deberia de poder actualizar post ', done => updatePost('post001', 'vamos a jugar')
-    .then(() => allPosts(
-      (arrayPost) => {
-        const result = arrayPost.find(element => element.post === 'vamos a jugar');
+    .then(() => {
+      const callback = (post) => {
+        const result = post.find(element => element.id === 'post001');
         expect(result.post).toBe('vamos a jugar');
         done();
-      },
-    )));
+      };
+      allPosts(callback);
+    }));
 });
 describe('delete post', () => {
-  it('Deberia de poder eliminar un post', done => deletePost('post001')
-    .then(() => allPosts(
-      (arrayPost) => {
-        const result = arrayPost.find(element => element.id === 'post001');
+  it('Deberia de poder eliminar un post', done => deletePost('post002')
+    .then(() => {
+      const callback = (post) => {
+        console.log(post);
+        const result = post.find(element => element.id === 'post002');
         expect(result).toBe(undefined);
         done();
-      },
-    )));
+      };
+      allPosts(callback);
+    }));
 });
 describe('create comments', () => {
-  it('Deberia de poder agregar comentarios según post', done => createComments('user 4', 'Que lindo  gatito', '', '', '', '')
+  it('Deberia de poder agregar comentarios según post', done => createComments('', 'Que lindo  gatito', '', '', '', '')
     .then(() => {
       const callback = (docs) => {
         console.log(docs);
@@ -96,7 +100,7 @@ describe('create comments', () => {
         expect(result.comment).toEqual('Que lindo  gatito');
         done();
       };
-      getComments(callback, 'idPost');
+      getComments(callback, '');
     }));
 });
 describe('update comments', () => {
