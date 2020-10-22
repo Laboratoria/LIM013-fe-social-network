@@ -30,11 +30,10 @@ export const signInGoogle = () => {
     .then((result) => {
       getUser(result.user.uid).then((doc) => {
         if (!doc.exists) {
-
           createUser(result.user.uid);
+        } else {
+          window.location.hash = '#/home';
         }
-        window.location.hash = '#/home';
-
       })
         .catch(() => {
           // console.log(error);

@@ -271,9 +271,9 @@ section.msg-Redes p {
 .menu_mobile,.menu_mobile1{
     display: flex;
     visibility: hidden;
-    flex-direction: column;
+	flex-direction: column;
+	padding: 10px;
     padding-left: 0%;
-    padding: 10px;
     margin-top: 10%;
     list-style: none;
     flex: auto;
@@ -729,8 +729,8 @@ i.fa.fa-pencil{
 		visibility: visible;
 		flex-direction: row;
 		text-align: center;
-		padding-left: 0%;
 		padding: 0%;
+		padding-left: 0%;
 		margin-top: 0%;
 		margin-bottom: 0%;
 		list-style: none;
@@ -942,8 +942,8 @@ i.fa.fa-pencil{
 		visibility: visible;
 		flex-direction: row;
 		text-align: center;
-		padding-left: 0%;
 		padding: 0%;
+		padding-left: 0%;
 		margin-top: 0%;
 		margin-bottom: 0%;
 		list-style: none;
@@ -1157,8 +1157,8 @@ i.fa.fa-pencil{
 		visibility: visible;
 		flex-direction: row;
 		text-align: center;
-		padding-left: 0%;
 		padding: 0%;
+		padding-left: 0%;
 		margin-top: 0%;
 		margin-bottom: 0%;
 		list-style: none;

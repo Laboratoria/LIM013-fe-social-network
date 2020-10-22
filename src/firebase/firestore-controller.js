@@ -3,6 +3,7 @@ export const createUser = idDoc => firebase.firestore().collection('usuario').do
   petName: 'Fido',
   aboutUs: 'Somos',
 });
+// export const create = idDoc => firebase.firestore().collection('usuario').doc(idDoc);
 // TODO get data collection users
 export const getUser = docUser => firebase.firestore().collection('usuario').doc(docUser).get();
 // TODO get data collection users
@@ -25,7 +26,7 @@ export const crearPostPrueba = (id, userName, newPost, imagePost, date, status, 
 });
 // TODO update post
 export const updatePost = (id, upDatePost) => firebase.firestore().collection('publicacion').doc(id).update({ post: upDatePost });
-// TODO delete post
+// TODO delete post'
 export const deletePost = id => firebase.firestore().collection('publicacion').doc(id).delete();
 // TODO create collection post with order desc and time
 export const allPosts = callback => firebase.firestore().collection('publicacion')
@@ -63,7 +64,7 @@ export const getComments = (callback, id) => firebase.firestore().collection('co
   .orderBy('time', 'asc')
   .onSnapshot((querySnapshot) => {
     const allComments = [];
-    console.log(allComments);
+    // console.log(allComments);
     querySnapshot.forEach((doc) => {
       allComments.push({ id: doc.id, ...doc.data() });
     });

@@ -3,7 +3,7 @@ import {
   signIn,
   signUp,
   logOut,
-  verifEmail,
+
 } from '../src/firebase/auth-controller.js';
 
 const firebasemock = require('firebase-mock');
@@ -61,11 +61,11 @@ describe('logOut', () => {
       expect(user).toBe(undefined);
     }));
 });
-describe('verificationEmail', () => {
-  it('Debería enviar un mail de verificación', () => {
-    const myMock = jest.fn();
-    firebase.auth().currentUser.sendEmailVerification = myMock;
-    verifEmail();
-    expect(myMock.mock.calls).toHaveLength(1);
-  });
-});
+// describe('verificationEmail', () => {
+//   it('Debería enviar un mail de verificación', () => {
+//     const myMock = jest.fn();
+//     firebase.auth().currentUser.sendEmailVerification = myMock;
+//     verifEmail();
+//     expect(myMock.mock.calls).toHaveLength(1);
+//   });
+// });
