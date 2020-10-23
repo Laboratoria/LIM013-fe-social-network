@@ -53,12 +53,14 @@ const fixtureData = {
   },
 };
 
+
 global.firebase = new MockFirebase(fixtureData, { isNaiveSnapshotListenerEnabled: true });
 
 
 describe('create post', () => {
   it('Deberia de poder agregar  post', done => crearPostPrueba('', '', 'Hola Mundo Pet', '', '', '', '', '')
-    .then(() => {
+    .then((objetos) => {
+      console.log(objetos);
       const callback = (post) => {
         console.log(post);
         const result = post.find(element => element.post === 'Hola Mundo Pet');
