@@ -1,7 +1,7 @@
 import {
   signUp, verifEmail, logOut, updateUserData,
-} from '../firebase/auth-controller.js';
-import { createUser } from '../firebase/firestore-controller.js';
+} from '../firebase/auth.js';
+import { createUser } from '../firebase/firestore.js';
 // TODO showMessage
 const showMessage = (txtmessage) => {
   const showWindow = document.createElement('div');

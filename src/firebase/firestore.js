@@ -13,10 +13,10 @@ export const updateProfileInfo = (idDoc, namePet, description) => firebase.fires
   aboutUs: description,
 });
 // TODO crear collection firestore posts
-export const crearPostPrueba = (id, userName, newPost, imagePost, date, status, userPhoto) => firebase.firestore().collection('publicaciones').add({
+export const crearPostPrueba = (id, userName, newPost, userPhoto, imagePost, date, status) => firebase.firestore().collection('publicaciones').add({
+  user: id,
   name: userName,
   post: newPost,
-  user: id,
   photo: userPhoto,
   img: imagePost,
   time: date,
@@ -33,19 +33,9 @@ export const allPosts = callback => firebase.firestore().collection('publicacion
   .onSnapshot((querySnapshot) => {
     const output = [];
     querySnapshot.forEach((doc) => {
-      output.push({
-        id: doc.id,
-        name: doc.data().name,
-        post: doc.data().post,
-        user: doc.data().user,
-        photo: doc.data().photo,
-        img: doc.data().img,
-        time: doc.data().time,
-        privacy: doc.data().privacy,
-        likes: doc.data().likes,
-      });
-      callback(output);
+      output.push({ id: doc.id, ...doc.data() });
     });
+    callback(output);
   });
 // TODO get createComments
 export const createComments = (userName, userComment, userPhoto, postId, date, userId) => firebase.firestore().collection('comments').add({

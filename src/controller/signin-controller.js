@@ -1,7 +1,7 @@
 import {
   signIn, googleSignIn,
-} from '../firebase/auth-controller.js';
-import { createUser, getUser } from '../firebase/firestore-controller.js';
+} from '../firebase/auth.js';
+import { createUser, getUser } from '../firebase/firestore.js';
 
 // TODO showMessage mode
 const showMessage = (txtmessage) => {

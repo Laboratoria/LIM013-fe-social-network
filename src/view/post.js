@@ -5,12 +5,13 @@ import {
   getComments,
   updateLike,
   updatePrivacy,
-} from '../firebase/firestore-controller.js';
-import { currentUser } from '../firebase/auth-controller.js';
+} from '../firebase/firestore.js';
+import { currentUser } from '../firebase/auth.js';
 import { eachComment } from './comments.js';
 
 export const postSection = (Object) => {
   // console.log(Object.likes.length);
+  console.log(Object.id);
   const user = currentUser().uid;
   const note = document.createElement('div');
   note.classList.add(`${(Object.privacy === '1' && Object.user !== user) ? 'hide-post' : 'allpost'}`);
@@ -169,7 +170,7 @@ export const postSection = (Object) => {
     });
   });
 
-  // Commment section
+  // TODO Commment section
   const allComments = note.querySelector(`#showAllComments-${Object.id}`);
   const btnNewComment = note.querySelector(`#comment-${Object.id}`);
   btnNewComment.addEventListener('click', (e) => {
@@ -186,6 +187,7 @@ export const postSection = (Object) => {
       user,
     ).then(() => {
       note.querySelector(`#newComment-${Object.id}`).value = '';
+      console.log('comentario creado');
     });
   });
   getComments((comments) => {

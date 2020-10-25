@@ -1,5 +1,5 @@
 import { postSection } from './post.js';
-import { currentUser } from '../firebase/auth-controller.js';
+import { currentUser } from '../firebase/auth.js';
 import { signOut } from '../controller/home-controller.js';
 import { makingPost } from '../controller/post-controller.js';
 

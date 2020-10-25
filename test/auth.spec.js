@@ -1,13 +1,11 @@
-import firebasemock from 'firebase-mock';
-
 import {
   googleSignIn,
   signIn,
   signUp,
   logOut,
-  verifEmail,
-} from '../src/firebase/auth-controller.js';
+} from '../src/firebase/auth.js';
 
+const firebasemock = require('firebase-mock');
 
 const mockauth = new firebasemock.MockFirebase();
 const mockfirestore = new firebasemock.MockFirestore();
@@ -43,6 +41,13 @@ describe('Sign Up', () => {
     }));
 });
 
+// describe('currentUser', () => {
+//   it('Must identify current user', () => currentUser()
+//     .then((user) => {
+//       expect(user).toBe('undefined');
+//     }));
+// });
+
 describe('loginUser with Google', () => {
   it('debería ser una función', () => {
     expect(typeof googleSignIn).toBe('function');
@@ -61,10 +66,11 @@ describe('logOut', () => {
       expect(user).toBe(undefined);
     }));
 });
-describe('verificationEmail', () => {
-  it('Debería enviar un mail de verificación', () => {
-    verifEmail().then((vericatemail) => {
-      expect(vericatemail).toBe(undefined);
-    });
-  });
-});
+// describe('verificationEmail', () => {
+//   it('Debería enviar un mail de verificación', () => {
+//     const myMock = jest.fn();
+//     firebase.auth().currentUser.sendEmailVerification = myMock;
+//     verifEmail();
+//     expect(myMock.mock.calls).toHaveLength(1);
+//   });
+// });

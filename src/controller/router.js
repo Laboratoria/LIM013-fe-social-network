@@ -1,6 +1,6 @@
 import { components } from '../view/index.js';
-import { allPosts, getUser } from '../firebase/firestore-controller.js';
-import { currentUser } from '../firebase/auth-controller.js';
+import { allPosts, getUser } from '../firebase/firestore.js';
+import { currentUser } from '../firebase/auth.js';
 
 // TODO router app with view
 export const cambioVista = (route) => {
