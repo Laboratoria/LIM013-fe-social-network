@@ -55,11 +55,16 @@ export const updatephotoCover = (value) => {
   });
 };
 // ---------------------CREATE BD SN-POST INFORMATION TO CLOUD FIRESTORE------------------------
-export const addPost = (Privacy, Publication, URLimg) => {
-  const user = firebase.auth().currentUser;
+// export const addPost = (Privacy, Publication, URLimg) => {
+//   const user = firebase.auth().currentUser;
+
+// db.colleciton('SN-users').doc(post.userId).get().then((u) => u.photoUrl)
+
+// ----------------------- CREATE BD POST --------------------------
+export const addPost = (UserId, Privacy, Publication, URLimg) => {
   const db = firebase.firestore();
   return db.collection('SN-Post').add({
-    userId: user.uid,
+    userId: UserId,
     date: new Date().toLocaleString(),
     privacy: Privacy,
     publication: Publication,
@@ -87,9 +92,9 @@ export const getDataUserPost = (id) => {
   return db.collection('SN-Users').doc(id).get();
 };
 // ----------------------- UPDATE POST --------------------------
-export const updatePost = (id, updatePublication) => {
+export const updatePost = (idPost, updatePublication) => {
   const db = firebase.firestore();
-  return db.collection('SN-Post').doc(id).update({
+  return db.collection('SN-Post').doc(idPost).update({
     publication: updatePublication,
   });
 };
