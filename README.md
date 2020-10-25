@@ -1,7 +1,32 @@
-# Creando una Red Social
-
+<p align="center">
+<a title="TravelIn" href= "https://emae1712.github.io/LIM013-fe-social-network/src/" target="_blank"><img width="90%" src="https://i.ibb.co/Y2TYb6y/TravelIn.jpg" alt="TravelIn">
+  </p>
+ 
+# Travel In
+### C. Goche, E. Arango & M. Pariona
+>Social Network project
 ## Índice
 
+* [1. Resumen del proyecto](#1-resumen-del-proyecto)
+* [2. Definición del producto](#2-definición-del-producto)
+* [3. Historias de usuario](#3-historias-de-usuario)
+* [4. Diseño de Interfaz de Usuario](#4-diseño-de-interfaz-de-usuario)
+* [5. Test de usabilidad](#5-Test-de-usabilidad)
+
+## 1. 🧐Resumen del proyecto
+El presente proyecto, **_TRAVEL IN_**, es una Red social destinada a personas interesadas en compartir sus experiencias de viajes, tips, recomendaciones y demás que puedan ser de utilidad para otros amantes de los viajes o que quieran iniciar en esta actividad. Esta red social te permitirá crear una cuenta de acceso y loguearse con ella; crear, editar, borrar, comentar y "likear" publicacciones, todo de forma dinámica.
+
+## 2. 👩‍💻Definición del producto
+
+El proyecto se inspiró en las redes sociales actuales, tales como Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. Estas redes
+sociales han invadido nuestras vidas, las cuales amamos u odiamos, y muchos no podemos vivir sin ellas.
+
+A raiz de esto, decidimos crear una red social destinada a un objetivo en común, **viajes**. Si bien es cierto, actualmente existen diversos tipos de redes sociales, como equipo quisimos concentrarnos en usuarios interesados en los viajes como criterio de elección de usuarios, procuramos que sean de edades que representen a los distintos usuarios del juego, siendo el rango de edad escogido de 10 a 30 años. Elaboramos encuestas para saber que datos priorizan en el juego y entrevistas para analizar sus necesidades e iterar nuestros prototipos. 
+
+De las encuestas y las entrevistas realizadas concluimos que nuestros usuarios querían una página que les brindara información clave antes de **iniciar una batalla Pokemon**, mas que informativo (que en un principio pensamos hacer), los usuarios querían datos puntuales para armar sus estrategias. Es por ello, que nuestra página web se ajusta a los requerimientos del usuario y lo ayuda de una forma intuitiva y eficaz a la lectura de datos, *mostrando la data de 251 pokemon* de las regiones Kanto y Johto, con una sección de *búsqueda*, aplicación de *filtros por tipo de pokemon y puntos de combate*, y un *cálculo* rápido de cuántos pokemon representan cada tipo seleccionado.
+
+Como valor agregado, en pantallas desktop, desarollamos una interfaz mucho más interactiva. Brindándole al usuario la misma información, pero con el plus de poder sentirse parte del mundo de las batallas Pokemon de manera personalizada y sin la necesidad de estar en la propia app del juego(sólo disponible para movil).Brindándoles una experiencia completa, promoviendo la descarga del juego y fidelizando usuarios. 
+ 
 * [1. Preámbulo](#1-preámbulo)
 * [2. Resumen del proyecto](#2-resumen-del-proyecto)
 * [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
