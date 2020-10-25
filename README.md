@@ -1,7 +1,7 @@
 <p align="center">
-<a title="TravelIn" href= "https://emae1712.github.io/LIM013-fe-social-network/src/" target="_blank"><img width="90%" src="https://i.ibb.co/Y2TYb6y/TravelIn.jpg" alt="TravelIn">
+<a title="Travel-In" href= "https://emae1712.github.io/LIM013-fe-social-network/src/" target="_blank"><img width="90%" src="https://i.ibb.co/Hg33dxR/Travel-In.jpg" alt="Travel-In">
   </p>
- 
+  
 # Travel In
 ### C. Goche, E. Arango & M. Pariona
 >Social Network project
