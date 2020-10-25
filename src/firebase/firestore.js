@@ -25,15 +25,9 @@ export const crearPostPrueba = (id, userName, newPost, userPhoto, imagePost, dat
   likes: [],
 });
 // TODO update post
-<<<<<<< HEAD:src/firebase/firestore-controller.js
-export const updatePost = (id, upDatePost) => firebase.firestore().collection('publicacion').doc(id).update({ post: upDatePost });
-// TODO delete post'
-export const deletePost = id => firebase.firestore().collection('publicacion').doc(id).delete();
-=======
 export const updatePost = (id, upDatePost) => firebase.firestore().collection('publicaciones').doc(id).update({ post: upDatePost });
 // TODO delete post
 export const deletePost = id => firebase.firestore().collection('publicaciones').doc(id).delete();
->>>>>>> 77d8ccd2c35a8aa343c8f4953e04976130efeec1:src/firebase/firestore.js
 // TODO create collection post with order desc and time
 export const allPosts = callback => firebase.firestore().collection('publicaciones')
   .orderBy('time', 'desc')
