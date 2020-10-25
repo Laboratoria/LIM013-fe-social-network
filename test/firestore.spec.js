@@ -26,7 +26,6 @@ describe('get post data', () => {
   it('Deberia obtener data', done => addPost('002', 'Public', 'Publicación mostrada', '', '', '')
     .then(() => getPost(
       (data) => {
-        console.log(data);
         const result = data.find(post => post.publication === 'Publicación mostrada');
         expect(result.publication).toBe('Publicación mostrada');
         done();

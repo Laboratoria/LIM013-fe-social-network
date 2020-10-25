@@ -34,7 +34,6 @@ export default () => {
         <p class="text">or enter with ...</p>
         <div class="option">
           <img src="img/gmail.png" class="gmail" id="btn-google">
-          <img src="img/facebook.png" class="facebook" id="btn-facebook">
         </div>
         <p class="text">New to TravelIn ?</p>
         <button class="newAccount">Create an account</button>
