@@ -1,7 +1,7 @@
 import {
   signUp, verifEmail, logOut, updateUserData,
-} from '../firebase/auth-controller.js';
-import { createUser } from '../firebase/firestore-controller.js';
+} from '../firebase/auth.js';
+import { createUser } from '../firebase/firestore.js';
 // TODO showMessage
 const showMessage = (txtmessage) => {
   const showWindow = document.createElement('div');
@@ -35,6 +35,8 @@ export const userRegistration = (userName, photoProfile, emailLogUp, passwordLog
         .then(() => {
           showMessage(`🐱❤️🐶 ${userName} bienvenid@ a Petlandia. Hemos enviado un email de verificación`);
           // console.log('Hemos enviado un email verification');
+        }).catch(() => {
+          // console.log();
         });
       logOut();
       window.location.hash = '';

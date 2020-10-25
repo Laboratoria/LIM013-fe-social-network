@@ -14,10 +14,10 @@ export const updateProfileInfo = (idDoc, namePet, description) => firebase.fires
   aboutUs: description,
 });
 // TODO crear collection firestore posts
-export const crearPostPrueba = (id, userName, newPost, imagePost, date, status, userPhoto) => firebase.firestore().collection('publicacion').add({
+export const crearPostPrueba = (id, userName, newPost, userPhoto, imagePost, date, status) => firebase.firestore().collection('publicaciones').add({
+  user: id,
   name: userName,
   post: newPost,
-  user: id,
   photo: userPhoto,
   img: imagePost,
   time: date,
@@ -25,32 +25,26 @@ export const crearPostPrueba = (id, userName, newPost, imagePost, date, status, 
   likes: [],
 });
 // TODO update post
+<<<<<<< HEAD:src/firebase/firestore-controller.js
 export const updatePost = (id, upDatePost) => firebase.firestore().collection('publicacion').doc(id).update({ post: upDatePost });
 // TODO delete post'
 export const deletePost = id => firebase.firestore().collection('publicacion').doc(id).delete();
+=======
+export const updatePost = (id, upDatePost) => firebase.firestore().collection('publicaciones').doc(id).update({ post: upDatePost });
+// TODO delete post
+export const deletePost = id => firebase.firestore().collection('publicaciones').doc(id).delete();
+>>>>>>> 77d8ccd2c35a8aa343c8f4953e04976130efeec1:src/firebase/firestore.js
 // TODO create collection post with order desc and time
-export const allPosts = callback => firebase.firestore().collection('publicacion')
+export const allPosts = callback => firebase.firestore().collection('publicaciones')
   .orderBy('time', 'desc')
   .onSnapshot((querySnapshot) => {
     const output = [];
     querySnapshot.forEach((doc) => {
-      output.push({
-        id: doc.id,
-        name: doc.data().name,
-        post: doc.data().post,
-        user: doc.data().user,
-        photo: doc.data().photo,
-        img: doc.data().img,
-        time: doc.data().time,
-        privacy: doc.data().privacy,
-        likes: doc.data().likes,
-      });
-      callback(output);
+      output.push({ id: doc.id, ...doc.data() });
     });
+    callback(output);
   });
-// TODO get data collection posts
-export const getPost = id => firebase.firestore().collection('publicacion').doc(id).get();
-
+// TODO get createComments
 export const createComments = (userName, userComment, userPhoto, postId, date, userId) => firebase.firestore().collection('comments').add({
   name: userName,
   comment: userComment,
@@ -75,6 +69,6 @@ export const updateComment = (id, changedComment) => firebase.firestore().collec
 export const deleteComment = id => firebase.firestore().collection('comments').doc(id).delete();
 
 // TODO upDate likes
-export const updateLike = (id, likes) => firebase.firestore().collection('publicacion').doc(id).update({ likes });
+export const updateLike = (id, likes) => firebase.firestore().collection('publicaciones').doc(id).update({ likes });
 // TODO upDate privacy
-export const updatePrivacy = (id, status) => firebase.firestore().collection('publicacion').doc(id).update({ privacy: status });
+export const updatePrivacy = (id, status) => firebase.firestore().collection('publicaciones').doc(id).update({ privacy: status });

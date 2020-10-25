@@ -4,13 +4,11 @@ export default () => {
   const viewRegister = `
   <section class='header_register'>
     <img src="/imagenes/PET.png" class="petLogo" alt="logo" width="200px" height="auto" />    
-    <img src="/imagenes/huella.png" class="logoHuella" alt="imagenHuella" width="400px" height="auto" />
     <img src="/imagenes/petlandia.png" class="logoHeader" alt="imagenPetlandia" width="400px" height="auto" />
   </section>
   <section class="register-container">
     <section class="registerForm-container">
       <form id="signUp-form" class="form">
-        <h1>Regístrate</h1>
         <section class="col">
           <input class="input-register validity" id="nameUser" type="text"
             pattern="([a-zA-ZÁÉÍÓÚñáéíóúÑ]{1,30}\\s*)+" placeholder="Nombre de usuario" required />
@@ -20,7 +18,7 @@ export default () => {
           <input class="input-register validity" id="emailSignUp" type="email"
             pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"
             placeholder="Email" autocomplete="on" required />
-          <span class="error-msg">Ingrese un e-mail valido</span>
+          <span class="error-msg">Ingrese un e-mail válido</span>
         </section>
         <section class="col">
           <input class="input-register validity" id="passwordSignUp" type="password" placeholder="Password"
@@ -28,7 +26,7 @@ export default () => {
           <span class="error-msg">Tamaño mínimo de 6 caracteres</span>
         </section>
         <section class="col">
-          <input type="submit" class="bttonSudmitt" id="submit-buttomRegister" value="Crear Cuenta" />
+          <input type="submit" class="bttonSudmitt" id="submit-buttomRegister" value="register" />
         </section>
         <section class="container_msg">
           <p>
@@ -52,6 +50,7 @@ export default () => {
     const emailLogUp = divElemt.querySelector('#emailSignUp').value;
     const passwordLogUp = divElemt.querySelector('#passwordSignUp').value;
     const photoProfile = 'https://media.giphy.com/media/Tgg0jXMRGgXWDuIKrC/giphy.gif';
+    // console.log(userName, photoProfile, emailLogUp, passwordLogUp);
     userRegistration(userName, photoProfile, emailLogUp, passwordLogUp);
   });
 

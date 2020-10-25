@@ -1,8 +1,8 @@
 import { signOut } from '../controller/home-controller.js';
 import { postSection } from './post.js';
 import { infoProfile, updateProfile } from '../controller/profile-controller.js';
-import { currentUser } from '../firebase/auth-controller.js';
-import { uploadPhotoProfile } from '../firebase/storage-controller.js';
+import { currentUser } from '../firebase/auth.js';
+import { uploadPhotoProfile } from '../firebase/storage.js';
 
 export default (notes) => {
   const user = currentUser();
@@ -15,15 +15,16 @@ export default (notes) => {
     <ul class='menu_mobile1'>
       <li class="optionMobile">
         <a class='btn-header' href='#/profile'>
-          <i class="fas fa-user-edit"></i>Mi Perfil</a>
+        <img src="/imagenes/032-wanted.png" class="" alt="logo" width="8%" height="auto" />Mi Perfil</a>
       </li>
       <li class="optionMobile">
-        <a class='btn-header' href='#/home'>
-          <i class="fas fa-home"></i>Inicio</a>
+        <a class='btn-header'href='#/home'>
+        <img src="/imagenes/042-Doghouse.png" class="" alt="logo" width="8%" height="auto" />Home 
+        </a>
       </li>
       <li class="optionMobile">
         <a class='btn-header' id="logout2" href='#/signIn'>
-          <i class="fas fa-sign-out-alt"></i>Cerrar Sesión</a>
+        <img src="/imagenes/logout.png" class="" alt="logo" width="8%" height="auto" />Cerrar Sesión</a>
       </li>
     </ul>
     </nav>
@@ -99,7 +100,7 @@ export default (notes) => {
   /* ----Upload images---*/
   const selectPhotoProfile = divElemt.querySelector('#selectPhotoProfile');
   const profilePicture = divElemt.querySelector('.profile-img');
-
+  // console.log(profilePicture);
   selectPhotoProfile.addEventListener('change', (e) => {
     e.preventDefault();
     if (selectPhotoProfile.files.length !== 0) {

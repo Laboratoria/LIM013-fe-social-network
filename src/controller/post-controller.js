@@ -1,5 +1,5 @@
-import { uploadImgPosting } from '../firebase/storage-controller.js';
-import { crearPostPrueba } from '../firebase/firestore-controller.js';
+import { uploadImgPosting } from '../firebase/storage.js';
+import { crearPostPrueba } from '../firebase/firestore.js';
 
 // TODO makingPost
 export const makingPost = (file, userId, userName, userPhoto) => {
@@ -12,7 +12,7 @@ export const makingPost = (file, userId, userName, userPhoto) => {
     imPost = localStorage.getItem('image');
     uploadImgPosting(file, userId);
   }
-  crearPostPrueba(userId, userName, newPost, imPost, date, status, userPhoto)
+  crearPostPrueba(userId, userName, newPost, userPhoto, imPost, date, status)
     .then(() => {
       document.querySelector('#status_input').value = '';
       const classImg = document.querySelector('.post-new-image');

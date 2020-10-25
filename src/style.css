@@ -5,16 +5,68 @@
 	padding: 0;
 }
 body {
-	background: #fff895;
-	background: -moz-linear-gradient(top, #fff895 0%, #fcd697 58%, #f46d6d 100%);
-	background: -webkit-linear-gradient(
-		top,
-		#f46d6d 0%,
-		#fcd697 58%,
-		#f4444f 100%
-	);
-	background: linear-gradient(to bottom, #fff895 0%, #fcd697 58%, #f46d6d 100%);
-	background-attachment: fixed;
+    background-attachment: fixed;
+    background-image: url(imagenes/background.png);
+    background-color: orange;
+    height: 500px;
+    background-position: inherit;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/* Profile*/
+@import url('https://fonts.googleapis.com/css?family=Lato:300,700');
+
+h2, p {
+    font-family: 'Abel', serif;
+	font-size: 16px;
+	text-shadow: 0 0 15px rgba(255,255,255,.5), 0 0 10px 
+}
+
+h2 {
+	color: #CF1124;
+	text-shadow: 0 0 15px rgba(255,255,255,.5), 0 0 10px 
+}
+
+p {
+	color: #000000;
+	text-shadow: 0 0 15px rgba(255,255,255,.5), 0 0 10px 
+}
+
+.card {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    border-radius: 5px;
+    border-top: solid 4px #CF1124;
+    height: 382px;
+    margin: 0%;
+    position: relative;
+	width: 100%;
+	background:#fff;
+}
+.cover {
+    background-image: url('https://picsum.photos/480/136/?random');
+    background-size: contain;
+    background-position: center;
+    height: 136px;
+}
+
+.content {
+    padding-top:12px;
+    padding-left: 21px;
+    padding-right: 21px;
+}
+
+.profile {
+    position: absolute;
+    top: 1%;
+    right: 10rem
+}
+.comunidades-figures{
+	width: 20%;
+}
+.comunidades-gif{
+	width: 50%;
 }
 /*TODO vista sign y register*/
 
@@ -26,12 +78,12 @@ body {
 	margin: 1rem 1rem 1rem 1rem;
 }
 .header_register, .header_signin {
-	margin: 1rem 1rem 1rem 1rem;
-	width: 100%;
-	max-width: 100%;
-	display: grid;
-	grid-template-columns: 70% 30%;
-	grid-row: none;
+	margin: 1rem 0rem 1rem 0rem;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 .petLogo{
 	width: 80%;
@@ -44,11 +96,11 @@ img.logoHuella {
 	position: relative;
 }
 .logoHeader {
-	width: 80%;
-	max-width: 80%;
-	height: auto;
-	position: relative;
-	margin: 2% 25%;
+    width: 80%;
+    max-width: 80%;
+    height: auto;
+    position: relative;
+    margin: 2% 2%;
 }
 .register-container {
 	
@@ -104,13 +156,27 @@ input {
 	margin: 5px 0;
 	opacity: 0.85;
 	display: inline-block;
+	outline: none;
 	font-size: 100%;
 	font-family: 'Abel', sans-serif;
+	text-transform: uppercase;
 	line-height: 20px;
 	text-decoration: none;
-	outline: none;
 }
-
+#SignInForm_email, #SignInForm_password {
+	text-decoration: none;
+	font-size: 100%;
+	font-family:  'Abel', sans-serif;
+	text-transform: uppercase;
+	line-height: 20px;
+}
+#submit, #submit-buttomRegister{
+	text-decoration: none;
+	font-size: 100%;
+	font-family: 'Playfair Display', serif;
+	text-transform: uppercase;
+	line-height: 20px;
+}
 section.logo-Redes {
 	width: auto;
 	margin: 1rem 1rem 1rem 1rem;
@@ -119,16 +185,7 @@ section.logo-Redes {
 	justify-content: space-evenly;
 	height: auto;
 }
-.container_msg p {
-	font-size: 100%;
-	text-align: center;
-	font-family: 'Playfair Display', serif;
-	font-style: normal;
-	font-weight: inherit;
-	margin: 1rem 1rem 1rem 1rem;
-	width: inherit;
-	position: relative;
-}
+
 .container {
 	top: 2rem;
 	position: absolute;
@@ -137,6 +194,32 @@ section.logo-Redes {
 	margin: 1rem 1rem 1rem 1rem;
 	left: 60%;
 }
+
+.google {
+    width: auto;
+    padding: 1%;
+    border: none;
+    border-radius: 39px;
+    margin: 1em 0;
+    opacity: 0.85;
+    display: inline-block;
+    font-size: 17px;
+    /* line-height: 9px; */
+    text-decoration: none;
+	font-family: 'Abel', sans-serif;
+	-webkit-box-shadow: 1px 5px 9px -2px #000000; 
+	box-shadow: 1px 5px 9px -2px #000000;
+}
+
+.btn-google{
+	background-color: #dd4b39;
+	color: white;
+}
+
+.google:hover {
+  opacity: 1;
+}
+
 .fa {
 	padding: 2px;
 	font-size: 30px;
@@ -144,14 +227,9 @@ section.logo-Redes {
 	text-align: center;
 	text-decoration: none;
 	margin: 5px 2px;
-	border-radius: 50%;
 }
 .fa:hover {
 	opacity: 0.7;
-}
-.fa-facebook {
-	background: #3b5998;
-	color: white;
 }
 .fa-google {
 	background: #dd4b39;
@@ -179,6 +257,9 @@ input[type='submit'] {
 	background-color: black;
 	color: white;
 	cursor: pointer;
+	-webkit-box-shadow: 1px 5px 9px -2px #000000; 
+	box-shadow: 1px 5px 9px -2px #000000;
+	border: none;
 }
 input[type='submit']:hover {
 	background-color: gray;
@@ -234,21 +315,33 @@ span.error-msg {
 	font-weight: inherit;
 }
 
-section.msg-Redes p {
-	width: auto;
-	margin: 1rem 2rem;
-	font-size: 100%;
-	font-family: 'Abel', sans-serif;
-}
 
 /*---Header Home---*/
 .petLogoMenu{
-	width: 40%;
-    margin: 1% 30%;
+    width: 40%;
+    margin: 0rem 0rem 0rem 5rem;
 }
 #headerHome{
     width: 100%;
-    background-color:#abecea;
+	background: #acc5d6;
+	background: -moz-linear-gradient(
+		left,
+		#acc5d6 0%,
+		#7bd9cf 50%,
+		#daebec 100%
+	);
+	background: -webkit-linear-gradient(
+		left,
+		#acc5d6 0%,
+		#7bd9cf 50%,
+		#daebec 100%
+	);
+	background: linear-gradient(
+		to right,
+		#acc5d6 0%,
+		#7bd9cf 50%,
+		#daebec 100%
+	);
 
 }
 
@@ -260,6 +353,12 @@ section.msg-Redes p {
 }
 .nav_Mobile{
     display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.logoHeader-nav{
+	width: 15%;
+    margin: 0 1rem;
 }
 .name_app{
     display: none;
@@ -271,106 +370,9 @@ section.msg-Redes p {
 .menu_mobile,.menu_mobile1{
     display: flex;
     visibility: hidden;
-	flex-direction: column;
-	padding: 10px;
-    padding-left: 0%;
-    margin-top: 10%;
-    list-style: none;
-    flex: auto;
-    line-height: 3;
-    position: absolute;
-    margin-left: 0%;
-	background-color:#abecea;
-	z-index: 1;
-}
-.menu_mobile.responsive,.menu_mobile1.responsive{
-    visibility: visible;
-}
-li {
-    flex: auto;
-}
-ul li a{
-    text-decoration: none;
-}
-.main{
-    width:90%;
-    margin:20px auto;
-}
-.body_container{
-    width:90%;
-    margin:20px auto;
-}
-
-.profile_section1{
-	display: block;
-}
-.profile_section{
-    background: #f0f2f5;
-    padding: 20px;
-	border-radius: 4px;
-	display: none;
-}
-.divPost{
-    background: #f0f2f5;
-    padding: 20px;
-	border-radius: 4px;
-	width:100%;
-}
-/* Profile*/
-@import url('https://fonts.googleapis.com/css?family=Lato:300,700');
-
-/* h2, p {
-    font-family: 'Lato', serif;
-    font-size: 16px;
-}
-
-h2 {
-    color: #CF1124;
-}
-
-p {
-    color: #243B53;
-} */
-
-.card {
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    border-radius: 5px;
-    border-top: solid 4px #CF1124;
-    height: 382px;
-    margin: 0%;
-    position: relative;
-	width: 100%;
-	background:#fff;
-}
-.cover {
-    background-image: url('https://picsum.photos/480/136/?random');
-    background-size: contain;
-    background-position: center;
-    height: 136px;
-}
-
-.content {
-    padding-top:12px;
-    padding-left: 21px;
-    padding-right: 21px;
-}
-
-.profile {
-    position: absolute;
-    top: 1%;
-    right: 10rem
-}
-
-.profile img {
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    border-radius: 50%;
-	height: 115px;
-	position:absolute;
-	margin: 4rem 1rem;
 }
 .showWindow{
 	position: absolute;
-    right: 7%;
     top: 50%;
     width: fit-content;
     height: fit-content;
@@ -423,13 +425,47 @@ p {
     /*width: 0;*/
 }
 
-.labels .label p {
-    margin-bottom: 5px;
-    margin-top: 0px;
+.privacy{
+	outline: none;
+	cursor: pointer;
+	border: none;
+
 }
 
-.labels .label h2 {
-    margin: 0px;
+.btn-post-edit, .btn-post-delete {
+	position: relative;
+    width: 136%;
+    text-align: center;
+    height: 2rem;
+    margin: 1rem 1rem 0rem 1rem;
+    border-radius: 9px;
+    border: none;
+}
+.btn-post-cancel-edit-post, .btn-post-save-edit-post {
+	position: relative;
+    width: 30%;
+    text-align: center;
+    height: 2rem;
+    margin: 1rem 1rem 0rem 1rem;
+    border-radius: 14px;
+    border: none;
+}
+
+.label-menu-post{
+    width: 3em;
+    height: auto;
+    background-image: url(imagenes/review.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.nav-post{
+    position: relative;
+    top: 4em;
+    right: 0;
+    z-index: 4;
 }
 .edit_btn{
 	padding: 0.5rem;
@@ -440,7 +476,8 @@ p {
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     border-radius: 5px;
     background-color: #fff;
-    padding:3%;
+	padding:3%;
+	margin: 0rem 0rem 1rem 0rem;
 }
 .update_container input{
     background-color:#f0f2f5;
@@ -469,6 +506,8 @@ img.user_img{
 	color:black;
 }
 
+
+
 /*TODO container posts*/
 .like-picture{
     width: 16%;
@@ -480,7 +519,8 @@ img.user_img{
     width: 100%;
     height: 6em;
     box-sizing: border-box;
-    border: 0.1em solid #C4C4C4;
+	border: 0.1em solid #C4C4C4;
+	border-radius: 10px;
     resize: none;
     position: relative;
     margin-bottom: 1em;
@@ -533,11 +573,12 @@ img.user_img{
 }
 /*TODO vista profile posts*/
 .post_buttom {
-	width: 20%;
+    width: 20%;
     text-align: center;
     height: 2rem;
-    /* line-height: 2rem; */
     margin: 0rem 1rem 0rem 1rem;
+	border-radius: 50px;
+	border: none;
 }
 i.fa.fa-pencil{
 
@@ -579,6 +620,21 @@ i.fa.fa-pencil{
     margin: auto;
 }
 
+section.msg-Redes p {
+	width: auto;
+	margin: 1rem 2rem;
+	font-size: 100%;
+	font-family: 'Abel', sans-serif;
+}
+
+.labels .label p {
+    margin-bottom: 5px;
+    margin-top: 0px;
+}
+
+.labels .label h2 {
+    margin: 0px;
+}
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 601px) and (max-width: 767px) {
@@ -731,6 +787,7 @@ i.fa.fa-pencil{
 		text-align: center;
 		padding: 0%;
 		padding-left: 0%;
+	
 		margin-top: 0%;
 		margin-bottom: 0%;
 		list-style: none;
@@ -974,30 +1031,21 @@ i.fa.fa-pencil{
 @media only screen and (min-width: 1281px) {
 	body {
 		font-family: 'Playfair Display', serif;
-		background: #fff895;
-		background: -moz-linear-gradient(
-			-45deg,
-			#fff895 0%,
-			#fcd697 58%,
-			#f46d6d 100%
-		);
-		background: -webkit-linear-gradient(
-			-45deg,
-			#fff895 0%,
-			#fcd697 58%,
-			#f46d6d 100%
-		);
-		background: linear-gradient(135deg, #fff895 0%, #fcd697 58%, #f46d6d 100%);
 		background-attachment: fixed;
+		background-image: url(imagenes/background.png);
+		background-color: #fff895;
+		height: 500px;
+		background-position: inherit;
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: relative;
 	}
 	/*TODO  Vista: encabezado  */
 	.header_signin,.header_register {
 		margin: 1rem 1rem 1rem 1rem;
 		width: 50%;
 		max-width: 50%;
-		display: grid;
-		grid-template-columns: 70% 30%;
-		grid-row: none;
+		display: flex;
 	}
 	/*header h1 {
 		font-size: 600%;
@@ -1159,6 +1207,7 @@ i.fa.fa-pencil{
 		text-align: center;
 		padding: 0%;
 		padding-left: 0%;
+	
 		margin-top: 0%;
 		margin-bottom: 0%;
 		list-style: none;

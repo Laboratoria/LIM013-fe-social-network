@@ -1,5 +1,5 @@
-import { currentUser } from '../firebase/auth-controller.js';
-import { updateComment, deleteComment } from '../firebase/firestore-controller.js';
+import { currentUser } from '../firebase/auth.js';
+import { updateComment, deleteComment } from '../firebase/firestore.js';
 
 export const eachComment = (dataComment) => {
   const userId = currentUser().uid;
@@ -43,14 +43,16 @@ export const eachComment = (dataComment) => {
     saveComment.classList.add('hide');
     editComment.classList.remove('hide');
   });
-  saveComment.addEventListener('click', () => {
+  saveComment.addEventListener('click', async () => {
     cancelComment.classList.add('hide');
     saveComment.classList.add('hide');
     editComment.classList.add('hide');
-    updateComment(dataComment.id, inputComment.textContent);
+    await updateComment(dataComment.id, inputComment.textContent);
+    console.log('actualizar comentarios');
   });
-  deleteCommentBtn.addEventListener('click', () => {
-    deleteComment(dataComment.id);
+  deleteCommentBtn.addEventListener('click', async () => {
+    await deleteComment(dataComment.id);
+    console.log('borrar comentarios');
   });
   return newComment;
 };

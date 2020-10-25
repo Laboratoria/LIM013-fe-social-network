@@ -1,7 +1,7 @@
 import {
   signIn, googleSignIn,
-} from '../firebase/auth-controller.js';
-import { createUser, getUser } from '../firebase/firestore-controller.js';
+} from '../firebase/auth.js';
+import { createUser, getUser } from '../firebase/firestore.js';
 
 // TODO showMessage mode
 const showMessage = (txtmessage) => {
@@ -28,15 +28,24 @@ export const signingIn = (emailLogIn, passwordLogIn) => {
 export const signInGoogle = () => {
   googleSignIn()
     .then((result) => {
+      // console.log(result);
       getUser(result.user.uid).then((doc) => {
+        //   console.log(doc);
+        //   console.log('se entro a coleccion de user');
+        //   window.location.hash = '#/home';
         if (!doc.exists) {
-          createUser(result.user.uid);
+          createUser(result.user.uid).then(() => {
+            window.location.hash = '#/home';
+          });
+          console.log('crear usuario');
         } else {
           window.location.hash = '#/home';
         }
-      })
-        .catch(() => {
-          // console.log(error);
-        });
+        //   console.log(' entrar a vista');
+      });
+      // .catch(() => {
+      //   console.log('no se actualizo');
+      //   // console.log();
+      // });
     });
 };
