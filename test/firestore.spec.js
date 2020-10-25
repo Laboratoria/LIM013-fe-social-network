@@ -103,9 +103,9 @@ describe('create comments', () => {
     const callback = (comment) => {
       console.log(comment);
       const result = comment.find(
-        element => element.comment === 'Que lindo  gatito',
+        element => element.comment === ('Que lindo  gatito'),
       );
-      expect(result.comment).toEqual('Que lindo  gatito');
+      expect(result.comment).toBe('Que lindo  gatito');
       done();
     };
     getComments(callback, 'post001');

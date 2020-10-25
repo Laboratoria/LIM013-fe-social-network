@@ -10,7 +10,8 @@ export default (notes, dataUser) => {
     <header id='headerHome'>
       <nav class="nav_Mobile">   
       <label class='btn-menu'><i class="fas fa-bars"></i></label>
-      <img src="/imagenes/PET.png" class="petLogoMenu" alt="logo" width="200px" height="auto" />  
+      <img src="/imagenes/PET.png" class="petLogoMenu" alt="logo" width="10%" height="auto" />
+      <img src="/imagenes/petlandia.png" class="logoHeader-nav" alt="imagenPetlandia" width="10%" height="auto" /> 
       <ul class='menu_mobile'>
         <li class="optionMobile">
           <a class='btn-header' href='#/profile'>

@@ -189,13 +189,14 @@ export const postSection = (Object) => {
       note.querySelector(`#newComment-${Object.id}`).value = '';
       console.log('comentario creado');
     });
+    getComments((comments) => {
+      allComments.innerHTML = '';
+      comments.forEach((doc) => {
+        allComments.appendChild(eachComment(doc));
+      });
+    }, Object.id);
   });
-  getComments((comments) => {
-    allComments.innerHTML = '';
-    comments.forEach((doc) => {
-      allComments.appendChild(eachComment(doc));
-    });
-  }, Object.id);
+
 
   return note;
 };
