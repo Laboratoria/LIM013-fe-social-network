@@ -511,8 +511,8 @@ select{
     width: 150px;
     height: 150px;
     margin: 0.5rem auto;
-		display: block;
-		object-fit: cover;
+	display: block;
+	object-fit: cover;
   }
   .fa-file-image .tooltiptext::after,
   .fa-github .tooltiptext::after,
