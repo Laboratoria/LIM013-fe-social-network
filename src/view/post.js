@@ -22,11 +22,12 @@ export const itemPost = (objPost) => {
           </div>               
           <img class="avatar-post" src=""/>
           <p class="name">
+            <span class = "username"></span>
             <span class = "tooltiptext">
-            <img class="tooltipimg" src=""/>
-            <strong class="nametooltip"></strong> <br>
-            <i class="fas fa-birthday-cake" id="birthdayTooltip"></i> &nbsp <br>
-            <i class="fas fa-map-marker-alt" id="countryTooltip"></i> &nbsp
+              <img class="tooltipimg" src=""/>
+              <strong class="nametooltip"></strong> <br>
+              <i class="fas fa-birthday-cake" id="birthdayTooltip"></i> &nbsp <br>
+              <i class="fas fa-map-marker-alt" id="countryTooltip"></i> &nbsp
             </span>
           </p>
           <select id="privacy-option" class="${(userId === objPost.userId) ? 'show fa' : 'hide'}">
@@ -69,7 +70,7 @@ export const itemPost = (objPost) => {
   getDataUserPost(objPost.userId)
     .then((doc) => {
       const avatarPhoto = postElement.querySelector('.avatar-post');
-      const name = postElement.querySelector('.name');
+      const name = postElement.querySelector('.username');
       const nametooltip = postElement.querySelector('.nametooltip');
       const tooltipimg = postElement.querySelector('.tooltipimg');
       const birthdayTooltip = postElement.querySelector('#birthdayTooltip');
