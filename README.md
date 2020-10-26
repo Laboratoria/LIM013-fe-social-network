@@ -15,11 +15,14 @@
 * [6. Objetivos de aprendizaje](#6-Objetivos-de-aprendizaje)
 
 ## 1. 🧐Resumen del proyecto
+
+<p >
+<img align="right" src="https://i.ibb.co/wNH1hVb/ezgif-com-gif-maker.gif" alt="Travel-In">
+  </p>
+  
 El presente proyecto, **_TRAVEL IN_**, es una Red social destinada a personas interesadas en compartir sus experiencias de viajes, tips, recomendaciones y demás que puedan ser de utilidad para otros amantes de los viajes o que quieran iniciar en esta actividad. Esta red social te permitirá crear una cuenta de acceso y loguearse con ella; crear, editar, borrar, comentar y "likear" publicacciones, todo de forma dinámica.
 
-<p align="center">
-<a title="Travel-In" href= "https://emae1712.github.io/LIM013-fe-social-network/src/" target="_blank"><img  src="https://i.ibb.co/wNH1hVb/ezgif-com-gif-maker.gif" alt="Travel-In">
-  </p>
+
 
 ## 2. 👩‍💻Definición del producto
 El proyecto se inspiró en las redes sociales actuales, tales como Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. Estas redes
