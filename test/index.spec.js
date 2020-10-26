@@ -1,5 +1,5 @@
 import {
-  signIn, signInforgoogle, createUser, sendRecoverPass, sendEmail, signOut,
+  signIn, signInForGoogle, createUser, sendRecoverPass, sendEmail, signOut,
 } from '../src/controller/controller-firebase.js';
 
 // setting up firebase mock
@@ -29,7 +29,7 @@ describe('Sign In with credentials', () => {
     }));
 });
 describe('Sing in with google', () => {
-  it('Deberia iniciar sesión con google', () => signInforgoogle()
+  it('Deberia iniciar sesión con google', () => signInForGoogle()
     .then((user) => {
       expect(user.isAnonymous).toBe(false);
       expect(user.providerData[0].providerId).toBe('google.com');

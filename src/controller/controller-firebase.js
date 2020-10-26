@@ -5,7 +5,7 @@ export const signIn = (email, password) => {
   return auth.signInWithEmailAndPassword(email, password);
 };
 // Sign in with google
-export const signInforgoogle = () => {
+export const signInForGoogle = () => {
   const auth = firebase.auth();
   const provider = new firebase.auth.GoogleAuthProvider();
   return auth.signInWithPopup(provider);

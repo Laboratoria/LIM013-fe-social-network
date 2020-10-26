@@ -45,7 +45,7 @@ Las siguientes historias de usuario se han organizado de acuerdo a órdenes de p
 1- Como usuario nuevo debo poder crear una cuenta con email y password válidos para ingresar
 a la red social.
 
-2- Como usuario nuevo debo poder iniciar sesión con mi cuenta de Google o Facebook para ingresar a la red social (sin necesidad de crear una cuenta de email válido).
+2- Como usuario nuevo debo poder iniciar sesión con mi cuenta de Google para ingresar a la red social (sin necesidad de crear una cuenta de email válido).
 
 3- Como usuario registrado debo poder iniciar sesión con email y password válidos para ingresar
 a la red social.
@@ -75,12 +75,12 @@ fidelidad.
  ## 5. 📈Test de usabilidad
 Gracias al Feedback recibido por parte de nuestros usuarios, compañeras y coaches, pudimos iterar varias veces antes de llegar a nuestra versión final. Tomándose en cuenta principalmente:
 
-* En la sección de **Profile**, acomodar las fotos de perfil de usuario y portada como la red social deFacebook, para que los usuarios se sientan familiarizados con nuestra red social.
-* Implementar un botón *Scroll up* para que el usuario pueda desplazarse hacia arriba luego de revisar publicaciones de usuarios, tanto en la sección de **Home** como **Profile**.
-* Subrayar las pestañas de **Home** y **Profile** para que el usuario sepa la sección en la que se encuentra.
-* Colocar una ventana emergente en cada nombre de usuario que haga una publicación, para ver su foto de perfil más grande con algunos de sus datos, con la finalidad de que los usuarios editen su información.
+* En la sección de **Profile**, se diseñaron la fotos de perfil y portada del usuario similares a las empleadas por Facebook, para que los usuarios se sientan familiarizados con nuestra red social.
+* Se implementó un botón *Scroll up* tanto en la sección de **Home** como **Profile** para que el usuario pueda desplazarse rápidamente hacia la parte superior de la página luego de revisar las diversas publicaciones.
+* Se subrayaron las pestañas de **Home** y **Profile** para que el usuario sepa la sección en la que se encuentra.
+* En la sección **Home** al colocar el puntero del mouse en el nombre de un usuario que ha publicado, aparecerá una ventana emergente con información extra de dicho usuario, datos como país y cumpleaños, así también se apreciará de un mayor tamaño la foto de perfil, ello con la finalidad que los usuarios editen su información en la sección profile.
 * Paleta de colores que vincule a viajes.
-* Diseño interactivo en todas sus presentaciones 
+* Diseño interactivo en todas sus presentaciones. 
 
 ## 6. Objetivos de aprendizaje
 
