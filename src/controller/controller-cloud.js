@@ -75,7 +75,7 @@ export const addPost = (UserId, Privacy, Publication, URLimg) => {
 };
 
 // ----------------------- GET ALL BD POST --------------------------
-export const getPost = (callback) => {
+export const getPosts = (callback) => {
   const db = firebase.firestore();
   db.collection('SN-Post').orderBy('date', 'desc')
     .onSnapshot((querySnapshot) => {

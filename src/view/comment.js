@@ -1,4 +1,4 @@
-import { updateComment, deleteComment } from '../controller/controller-cloud.js';
+import { updateComment, deleteComment, getDataUserPost } from '../controller/controller-cloud.js';
 
 export const itemComment = (objComment, idPost) => {
   const userId = firebase.auth().currentUser.uid;
@@ -13,9 +13,9 @@ export const itemComment = (objComment, idPost) => {
     </div>
   </div> 
   <div class = "photo-comment-container">
-    <img class="avatar-comment" src="${objComment.photo}"/>
+    <img class="avatar-comment" src=""/>
     <div class = "comment-container">
-      <p class="name-comment">${objComment.username}</p>
+      <p class="name-comment"></p>
       <p class = "comment-text">${objComment.comment}</p>
       <div class = "hide edit-comment-text-btns">
         <textarea class = "edit-comment-text">${objComment.comment}</textarea>
@@ -28,6 +28,16 @@ export const itemComment = (objComment, idPost) => {
     </div>
   </div>
     `;
+
+  getDataUserPost(objComment.userId)
+    .then((doc) => {
+      const avatarComment = commentElement.querySelector('.avatar-comment');
+      const nameComment = commentElement.querySelector('.name-comment');
+
+      avatarComment.src = doc.data().photo;
+      nameComment.textContent = doc.data().username;
+    });
+
   /* ---------------- Menu despegable comment --------------------------*/
   const btnMenuComment = commentElement.querySelector('.btn-menu-comment');
   btnMenuComment.addEventListener('click', () => {

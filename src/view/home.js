@@ -1,6 +1,5 @@
-/* eslint-disable max-len */
 import {
-  addPost, getPost, getDataUserPost,
+  addPost, getPosts,
 } from '../controller/controller-cloud.js';
 import { sendImgToStorage } from '../controller/controller-storage.js';
 import { itemPost } from './post.js';
@@ -168,20 +167,6 @@ export default (dataCurrentUser) => {
     viewHome.querySelector('#contact-bottom').classList.toggle('click');
     viewHome.querySelector('#contact').classList.toggle('viewContact');
   });
-  /* ---------------------- ADD POST (CONTAINER-POST)------------------*/
-  const containerPost = viewHome.querySelector('#container-post');
-  getPost((post) => {
-    containerPost.innerHTML = '';
-    post.forEach((objPost) => {
-      getDataUserPost(objPost.userId)
-        .then((doc) => {
-          const obj = ({
-            username: doc.data().username, photo: doc.data().photo, country: doc.data().country, birthday: doc.data().birthday, ...objPost,
-          });
-          containerPost.appendChild(itemPost(obj));
-        });
-    });
-  });
   /* ---------------------- ADD POST (CLOUD FIRESTORE SN-Post)------------------*/
   const formPost = viewHome.querySelector('#form-post');
   formPost.addEventListener('submit', (e) => {
@@ -223,6 +208,16 @@ export default (dataCurrentUser) => {
           formPost.reset();
         });
     }
+  });
+  /* -------------------------- ADD POST (CONTAINER-POST)----------------------*/
+  const containerPost = viewHome.querySelector('#container-post');
+  getPosts((post) => {
+    containerPost.innerHTML = '';
+    post.forEach((objPost) => {
+      if (objPost.privacy === 'public' || (objPost.privacy === 'private' && objPost.userId === userId)) {
+        containerPost.appendChild(itemPost(objPost));
+      }
+    });
   });
   return viewHome;
 };
