@@ -22,14 +22,14 @@
 El presente proyecto, **_TRAVEL IN_**, es una Red social destinada a personas interesadas en compartir sus experiencias de viajes, tips, recomendaciones y demás que puedan ser de utilidad para otros amantes de los viajes o que quieran iniciar en esta actividad. Esta red social te permitirá crear una cuenta de acceso y loguearse con ella; crear, editar, borrar, comentar y "likear" publicacciones, todo de forma dinámica.
 
 ## 2. 👩‍💻Definición del producto
-<p >
-<img align="right" src="https://i.ibb.co/BwSJcpB/Travelin-celular.gif" alt="Travelin-celular">
-  </p>
-
 El proyecto se inspiró en las redes sociales actuales, tales como Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. Estas redes
 sociales han invadido nuestras vidas, las cuales amamos u odiamos, y muchos no podemos vivir sin ellas. 
 
 A raiz de esto, decidimos crear una red social destinada a un objetivo en común, **viajes**. Las redes sociales ya mencionadas, se concentran en captar personas con diferentes intereses. Es por ello, que la red social que hemos realizado se centra en un público usuario que quiera compartir sus experiencias o motivar a otros usuarios a viajar. Hoy en día, diferentes estudios recomiendan viajar, no solo porque es una actividad placentera, sino por los múltiples beneficios tanto para la _salud física_ como para la _salud mental_.
+
+<p >
+<img align="right" height="500px" src="https://i.ibb.co/BwSJcpB/Travelin-celular.gif" alt="Travelin-celular">
+  </p>
 
 El proyecto se basó en un sistema de cuentas de usuario, siendo lo que las redes sociales actuales utilizan para garantizar la seguridad y la organización en un sistema con muchos usuarios. Ajustándonos a los requerimientos, contamos con las siguientes secciones: 
 * **_Sign In_**
