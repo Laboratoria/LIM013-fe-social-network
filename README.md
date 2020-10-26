@@ -52,13 +52,7 @@ a la red social.
 8- Yo como usuario loggeado debo poder escribir, guardar, editar o eliminar un comentario en una publicación para poder compartir mi opinión o hacer preguntas.
 
 ## 4. 🚀Diseño de Interfaz de Usuario
-Debes definir cuál será el flujo que seguirá el usuario dentro de tu aplicación
-y, con eso, diseñar la Interfaz de Usuario (UI por sus siglas en inglés) que
-siga este flujo.
-
-A continuación te proporcionamos un layout (diseño) de la vista mobile y desktop que puedes
-elegir replicar visualmente y cuyo contenido, colores y fuentes de texto, dejaremos a tu elección.
-En caso de elegir trabajar con este layaout (diseño) ya no deberás de crear un prototipo de baja
+A continuación presentamos un layout (diseño) de la vista mobile y desktop de baja
 fidelidad.
 
 * Vista mobile
@@ -68,6 +62,14 @@ fidelidad.
 * Vista Desktop
 
     ![desktop](https://user-images.githubusercontent.com/32286663/56174626-fcb74080-5fb8-11e9-8854-26e8d9c4e25f.png)
+    
+ ## 5. 📈Test de usabilidad
+Gracias al Feedback recibido por parte de nuestros usuarios, compañeras y coaches, pudimos iterar varias veces antes de llegar a nuestra versión final. Tomándose en cuenta principalmente:
+
+* En la sección de **Profile**, acomodar las fotos de perfil de usuario y portada como Facebook, para que los usuarios se sientan familiarizados con nuestra red social.
+* Implementar un botón *Scroll up* para que el usuario pueda desplazarse hacia arriba luego de revisar publicaciones de usuarios, tanto en la sección de **Home** como **Profile**.
+* Paleta de colores que vincule a viajes.
+* Diseño interactivo en todas sus presentaciones 
 
 * [1. Preámbulo](#1-preámbulo)
 * [2. Resumen del proyecto](#2-resumen-del-proyecto)
