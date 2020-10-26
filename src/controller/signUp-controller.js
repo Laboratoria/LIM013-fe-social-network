@@ -31,14 +31,6 @@ const controlerSignUp = {
             error.textContent = '';
           }, 4000);
         });
-      /* ------------regarding DOM manipulation database------------- */
-      // const db = firebase.firestore();
-      // db.collection('users').add({
-      //   User: username,
-      //   Email: email,
-      //   Password: password,
-      // })
-      //   .then();
     });
   },
   /* -----------------------handle send to Sign In--------------- */

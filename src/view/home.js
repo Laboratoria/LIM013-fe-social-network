@@ -132,10 +132,8 @@ export default (dataCurrentUser) => {
   uploadImg.addEventListener('change', (e) => {
     // Creamos el objeto de la clase FileReader
     const reader = new FileReader();
-
     // Leemos el archivo subido y se lo pasamos a nuestro fileReader
     reader.readAsDataURL(e.target.files[0]);
-
     // Le decimos que cuando este listo ejecute el código interno
     reader.onload = () => {
       postImg.src = reader.result;
@@ -173,6 +171,7 @@ export default (dataCurrentUser) => {
   /* ---------------------- ADD POST (CONTAINER-POST)------------------*/
   const containerPost = viewHome.querySelector('#container-post');
   getPost((post) => {
+    containerPost.innerHTML = '';
     post.forEach((objPost) => {
       getDataUserPost(objPost.userId)
         .then((doc) => {
@@ -182,7 +181,6 @@ export default (dataCurrentUser) => {
           containerPost.appendChild(itemPost(obj));
         });
     });
-    containerPost.innerHTML = '';
   });
   /* ---------------------- ADD POST (CLOUD FIRESTORE SN-Post)------------------*/
   const formPost = viewHome.querySelector('#form-post');

@@ -1,19 +1,22 @@
 import {
-  signIn, signInforgoogle, createUser, sendRecoverPass, sendEmail, signOut,
+  signIn, signInForGoogle, createUser, sendRecoverPass, sendEmail, signOut,
 } from '../src/controller/controller-firebase.js';
 
 // setting up firebase mock
 const firebasemock = require('firebase-mock');
 
 const mockauth = new firebasemock.MockAuthentication();
+const mockstorage = new firebasemock.MockStorage();
 // const mockfirestore = new firebasemock.MockFirestore();
 // const mockdatabase = new firebasemock.MockFirebase();
 mockauth.autoFlush();
+mockstorage.ref('location/file');
 
 global.firebase = firebasemock.MockFirebaseSdk(
   // use null if your code does not use RTDB
   () => null,
   () => mockauth,
+  () => mockstorage,
   // () => mockfirestore,
   // () => mockdatabase,
 );
@@ -26,7 +29,7 @@ describe('Sign In with credentials', () => {
     }));
 });
 describe('Sing in with google', () => {
-  it('Deberia iniciar sesión con google', () => signInforgoogle()
+  it('Deberia iniciar sesión con google', () => signInForGoogle()
     .then((user) => {
       expect(user.isAnonymous).toBe(false);
       expect(user.providerData[0].providerId).toBe('google.com');

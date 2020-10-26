@@ -50,6 +50,7 @@ main > div,.allpost{
     margin: 0.5rem auto;
     display: block;
     border-radius: 50%;
+    object-fit: cover;
 }
 hr{
     border: 0;
@@ -87,6 +88,7 @@ hr{
     width: 40px;
     height: 40px;
     border-radius: 49px;
+    object-fit: cover;
 }
 .content-newpost textarea,
 .edit-text-post textarea,
@@ -368,7 +370,7 @@ select{
 .btn-like-plane {
     position: relative;
     height: 2rem;
-    width: 100px;
+    width: 90px;
     border-style: none;
     border-radius: 0.3rem;
     margin: 0 0.5rem 0 0;
@@ -508,10 +510,11 @@ select{
     margin-left: -60px;
   }
   .tooltipimg{
-      width: 150px;
-      height: 150px;
-      margin: 0.5rem auto;
-    display: block;
+    width: 150px;
+    height: 150px;
+    margin: 0.5rem auto;
+	display: block;
+	object-fit: cover;
   }
   .fa-file-image .tooltiptext::after,
   .fa-github .tooltiptext::after,
