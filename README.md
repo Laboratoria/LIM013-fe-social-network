@@ -1,12 +1,12 @@
 <p align="center">
-  <a title="Travel-In" href= "https://emae1712.github.io/LIM013-fe-social-network/src/" target="_blank">
+  <a title="Travel-In" target="_blank" href= "https://emae1712.github.io/LIM013-fe-social-network/src/">
     <img  src="https://i.ibb.co/Y2TYb6y/TravelIn.jpg" alt="Travel-In">
   </a>
 </p>
 
 
 # Travel In ✈️
-### Made by Arango M., Goche C. & Pariona M.
+### Made by [Arango M.](https://github.com/emae1712), [Goche C.](https://github.com/consuelogoche-1994) & [Pariona M.](https://github.com/MarycieloParionaBernaola)
 >Social Network project
 ## Índice
 
@@ -76,7 +76,7 @@ fidelidad.
 
     ![desktop](https://user-images.githubusercontent.com/32286663/56174626-fcb74080-5fb8-11e9-8854-26e8d9c4e25f.png)
     
- ## 5. 📈Test de usabilidad
+## 5. 📈Test de usabilidad
 Gracias al Feedback recibido por parte de nuestros usuarios, compañeras y coaches, pudimos iterar varias veces antes de llegar a nuestra versión final. Tomándose en cuenta principalmente:
 
 * En la sección de **Profile**, se diseñaron la fotos de perfil y portada del usuario similares a las empleadas por Facebook, para que los usuarios se sientan familiarizados con nuestra red social.
