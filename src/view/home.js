@@ -10,21 +10,22 @@ export default (notes, dataUser) => {
     <header id='headerHome'>
       <nav class="nav_Mobile">   
       <label class='btn-menu'><i class="fas fa-bars"></i></label>
-      <img src="/imagenes/PET.png" class="petLogoMenu" alt="logo" width="10%" height="auto" />
       <img src="/imagenes/petlandia.png" class="logoHeader-nav" alt="imagenPetlandia" width="10%" height="auto" /> 
+      <img src="/imagenes/PET.png" class="petLogoMenu" alt="logo" width="10%" height="auto" />
+      
       <ul class='menu_mobile'>
         <li class="optionMobile">
           <a class='btn-header' href='#/profile'>
-          <img src="/imagenes/032-wanted.png" class="" alt="logo" width="8%" height="auto" />Mi Perfil</a>
+          <img src="/imagenes/032-wanted.png" class="img-nav" alt="logo" width="8%" height="auto" />Mi Perfil</a>
         </li>
         <li class="optionMobile">
           <a class='btn-header'href='#/home'>
-          <img src="/imagenes/042-Doghouse.png" class="" alt="logo" width="8%" height="auto" />Home 
+          <img src="/imagenes/042-Doghouse.png" class="img-nav" alt="logo" width="8%" height="auto" />Home 
           </a>
         </li>
         <li class="optionMobile">
           <a class='btn-header' id="logout" href='#/signIn'>
-          <img src="/imagenes/logout.png" class="" alt="logo" width="8%" height="auto" />Cerrar Sesión</a>
+          <img src="/imagenes/logout.png" class="img-nav" alt="logo" width="8%" height="auto" />Cerrar Sesión</a>
         </li>
       </ul>
       </nav>
@@ -62,53 +63,26 @@ export default (notes, dataUser) => {
               <button type="button" id="btnProfile" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fas fa-edit"></i>Edita tu perfil</button>
             </article>
           </aside>
-          <aside class="profile_section">
-          <article class="card">
-            <section class="content">
-              <div class="">
-              <figure class="">
-                <img class="comunidades-figures" src="/imagenes/team.png" alt="">
-              </figure>
-                <h1 class="">Grupos de interes</h1>
-                <h2 class="name1">${user.displayName}, conoce los siguientes grupos de interes para tu mascota</h2>
-              </div>
-              <div class="labels">
-                  <div class="label">
-                  <ul>
-                    <li><a href="https://www.facebook.com/groups/1433700173348010/" target="_blank" rel="noopener noreferrer">Animales en adopción Lima</a></li>
-                    <li><a href="https://www.facebook.com/mascotasfacilisimo/" target="_blank" rel="noopener noreferrer">Facilísimo para tu mascota</a></li>
-                    <li><a href="https://www.facebook.com/mascotaclubperu" target="_blank" rel="noopener noreferrer">Mascota Club del Perú</a></li>
-                  </ul>
-                  </div>
-                <div class="label">
-                  <p class="profile-text">¿Te animas para socializar con tu mascota?</p>
-                  <h2 class="name_pet1">${dataUser.petName} estará muy feliz de socializar</h2>
-                  <figure class="">
-                  <img class="comunidades-gif" src="/imagenes/puppy-avengers.gif" width="20%" height="auto" alt="">
-                </figure>
-                </div>
-              </div>
-            </section>
-          </article>
-        </aside>
         </section>
         <section class="timeline_section">
           <article class="update_container">
-            <figure>
+            <figure class="foto-name-card">
               <img class="like-picture" src="${user.photoURL}" alt="">
               <h3 class="name1">${user.displayName}</h3>
             </figure>
-            <h1  class="ask_status">¿Qué hiciste con tu mascota hoy?</h1>
-            <textarea name="" id="status_input" cols="30" rows="10" class="status_imput" placeholder="Cuéntanos las travesuras de tu mejor amigo."></textarea>
+            <textarea name="" id="status_input" cols="30" rows="10" class="status_imput" placeholder="¿Qué hiciste con tu mascota hoy?"></textarea>
+            <div class="imagen-upload">
             <figure>
               <img id="showPicture" class="post-new-image" src="#" alt="">
             </figure>
             <div class = "img-upload-close">
               <button id="btnCancelImg" class="hide cancel-image"></button>
             </div>
-            <label for="selectImage"> 
+            </div>
+            <div class="menu-post-options">
+            <label for="selectImage" class="selectImage"> 
               <input type="file" id="selectImage"  name="imagensubida" class="upload" accept="image/png, .jpeg, .jpg, image/gif">
-              <img class="" src="/imagenes/camera.png" width="5%" height="auto" alt="">       
+              <img class="cam-post" src="/imagenes/camera.png" width="5%" height="auto" alt="">       
             </label>        
             <select id="privacy" class="privacy" style='color: gray; height: 25%; font-family:Arial, FontAwesome;'>
               <option value="0" style='color: gray;'>&#xf57d;</option>
@@ -118,7 +92,38 @@ export default (notes, dataUser) => {
             <button type="button" id="bttonnewpost" class="post_buttom">
             <img class="" src="/imagenes/pencil.png" width="10%" height="auto" alt="">       
             Post</button>
+            </div>
           </article>
+          <section class="">
+          <article class="card-group">
+            <section class="content">
+              <div class="grupo-nombre">
+              
+                <img class="comunidades-figures" src="/imagenes/team.png" alt="">
+             
+                <h1>Grupos de interes</h1>
+                </div>
+                <h2 class="name-grupo-comunidades"><strong>${user.displayName}</strong>, conoce los siguientes grupos de interes para tu mascota</h2>
+              
+              <div class="labels-comunidades">
+                  <div class="label-comunidades-in">
+                  <ul class="label-comunidades">
+
+                    <li><img src="/imagenes/facilismo-pets.png" class="img-facilismo" alt="logo" width="8%" height="auto" /><a href="https://www.facebook.com/mascotasfacilisimo/" target="_blank" rel="noopener noreferrer">Facilísimo para tu mascota</a></li>
+                    <li><img src="/imagenes/mascota.png" class="img-mascota" alt="logo" width="8%" height="auto" /><a href="https://www.facebook.com/mascotaclubperu" target="_blank" rel="noopener noreferrer">Mascota Club del Perú</a></li>
+                  </ul>
+                  </div>
+                <div class="label-comunidades-text">
+                  <p class="profile-text">¿Te animas para socializar con tu mascota?</p>
+                  <h2 class="name_pet1">${dataUser.petName} estará muy feliz de socializar</h2>
+                  <figure class="">
+                  <img class="comunidades-gif" src="/imagenes/puppy-avengers.gif" width="20%" height="auto" alt="">
+                </figure>
+                </div>
+              </div>
+            </section>
+          </article>
+        </section>
           <div class="all-posts"></div>   
         </section>
       </div>

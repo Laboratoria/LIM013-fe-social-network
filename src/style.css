@@ -7,7 +7,7 @@
 body {
     background-attachment: fixed;
     background-image: url(imagenes/background.png);
-    background-color: orange;
+    background-color: #ffac00;
     height: 500px;
     background-position: inherit;
     background-repeat: no-repeat;
@@ -34,15 +34,50 @@ p {
 	text-shadow: 0 0 15px rgba(255,255,255,.5), 0 0 10px 
 }
 
-.card {
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    border-radius: 5px;
-    border-top: solid 4px #CF1124;
-    height: 382px;
-    margin: 0%;
-    position: relative;
-	width: 100%;
-	background:#fff;
+.card-group {
+	border-radius: 13px;
+	border-style: solid;
+	border-color: #9E9999;
+    background-color: #E5E5E5;
+	padding:3%;
+	margin: 0rem 0rem 1rem 0rem;
+	-webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px -8px rgba(0,0,0,0); 
+box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px -8px rgba(0,0,0,0);
+}
+.grupo-nombre{
+ display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.grupo-nombre h1{
+	font-size: 100%;
+	font-family: 'Playfair Display', serif;
+    font-style: normal;
+    font-weight: inherit;
+}
+.labels-comunidades {
+    margin-top: 0.5rem;
+}
+.labels-comunidades ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.label-comunidades-in{
+	margin-top: 0.5rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+}
+.img-adopta{
+	width: 30%;
+}
+.img-facilismo{
+	width: 77%;
+}
+.img-mascota{
+	width: 96%;
 }
 .cover {
     background-image: url('https://picsum.photos/480/136/?random');
@@ -64,6 +99,7 @@ p {
 }
 .comunidades-figures{
 	width: 20%;
+    margin: 0 1rem 1rem 0;
 }
 .comunidades-gif{
 	width: 50%;
@@ -318,35 +354,23 @@ span.error-msg {
 
 /*---Header Home---*/
 .petLogoMenu{
-    width: 40%;
-    margin: 0rem 0rem 0rem 5rem;
+	width: 26%;
+    height: 1rem;
+    margin: 1rem 1rem 1rem 1rem;
 }
 #headerHome{
     width: 100%;
-	background: #acc5d6;
-	background: -moz-linear-gradient(
-		left,
-		#acc5d6 0%,
-		#7bd9cf 50%,
-		#daebec 100%
-	);
-	background: -webkit-linear-gradient(
-		left,
-		#acc5d6 0%,
-		#7bd9cf 50%,
-		#daebec 100%
-	);
-	background: linear-gradient(
-		to right,
-		#acc5d6 0%,
-		#7bd9cf 50%,
-		#daebec 100%
-	);
-
+	background: #F79787;
+	background: -moz-linear-gradient(45deg, #F79787 0%, #FBCFA9 100%);
+	background: -webkit-linear-gradient(45deg, #F79787 0%, #FBCFA9 100%);
+	background: linear-gradient(45deg, #F79787 0%, #FBCFA9 100%);
 }
 
 .btn-header{
-	color:#fff;
+	color: black;
+}
+.btn-header:hover{
+	color: gray;
 }
 .btn-header i{
 	font-size: 20px;
@@ -357,8 +381,15 @@ span.error-msg {
 	justify-content: space-between;
 }
 .logoHeader-nav{
-	width: 15%;
-    margin: 0 1rem;
+	width: 10%;
+    margin: 0.5rem 0rem 0.5rem 10rem;
+    height: 2rem;
+
+
+}
+.img-nav{
+    margin: 0rem;
+    width: 10%;
 }
 .name_app{
     display: none;
@@ -379,25 +410,10 @@ span.error-msg {
     line-height: 2;
     position: absolute;
     margin-left: 0%;
-	background: #acc5d6;
-	background: -moz-linear-gradient(
-		left,
-		#acc5d6 0%,
-		#7bd9cf 50%,
-		#daebec 100%
-	);
-	background: -webkit-linear-gradient(
-		left,
-		#acc5d6 0%,
-		#7bd9cf 50%,
-		#daebec 100%
-	);
-	background: linear-gradient(
-		to right,
-		#acc5d6 0%,
-		#7bd9cf 50%,
-		#daebec 100%
-	);
+	background: #F54F54;
+	background: -moz-linear-gradient(left, #F54F54 0%, #FED691 100%);
+	background: -webkit-linear-gradient(left, #F54F54 0%, #FED691 100%);
+	background: linear-gradient(to right, #F54F54 0%, #FED691 100%);
     z-index: 1;
 
 }
@@ -405,10 +421,17 @@ span.error-msg {
     visibility: visible;
 }
 li {
-    flex: auto;
+	flex: auto;
+	font-size: 80%;
+	text-align: left;
+	font-family: 'Playfair Display', serif;
+	font-style: normal;
+	font-weight: inherit;
+	text-decoration: none;
 }
 ul li a{
-    text-decoration: none;
+	text-decoration: none;
+
 }
 .main{
     width:90%;
@@ -417,6 +440,9 @@ ul li a{
 .body_container{
     width:90%;
     margin:20px auto;
+}
+.body{
+	background: #f0f2f5;
 }
 .profile_section{
 	display: none;
@@ -514,7 +540,11 @@ ul li a{
 	outline: none;
 	cursor: pointer;
 	border: none;
-
+}
+#privacy{
+	outline: none;
+	cursor: pointer;
+	border: none;	
 }
 
 .btn-post-edit, .btn-post-delete {
@@ -558,20 +588,64 @@ ul li a{
 }
 .update_container{
 
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    border-radius: 5px;
+	border-radius: 13px;
+	border-style: solid;
+	border-color: #F46D6D;
     background-color: #fff;
 	padding:3%;
 	margin: 0rem 0rem 1rem 0rem;
+	-webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px -8px rgba(0,0,0,0); 
+box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px -8px rgba(0,0,0,0);
 }
-.update_container input{
-    background-color:#f0f2f5;
-    border: 2px solid grey;
-    border-radius: 5px;
-    width: 90%;
-    height: 20%;
-    margin:2%
-   
+.name1{
+    font-size: 100%;
+    text-align: left;
+    font-family: 'Playfair Display', serif;
+    font-style: normal;
+    font-weight: inherit;
+    margin: 0rem 1rem 1rem 1rem;
+    width: inherit;
+    position: relative;
+}
+.name-grupo-comunidades {
+    font-size: 80%;
+    text-align: left;
+    font-family: 'Playfair Display', serif;
+    font-style: normal;
+    font-weight: inherit;
+    margin: 0rem 0rem 1rem 0rem;
+    width: inherit;
+	position: relative;
+	color: black;
+	text-shadow: none;
+}
+strong{
+	color: #dd4b39;
+}
+.cam-post{
+    width: 40%;
+}
+label.selectImage{
+	width: fit-content;
+    margin: 0rem;
+    position: relative;
+}
+.label-comunidades{
+	display: flex;
+	flex-direction: row;
+	align-self: center;
+	justify-content: space-around;
+}
+.label-comunidades-text{
+	margin: 0rem;
+}
+.label-comunidades li{
+	text-decoration: none;
+}
+.foto-name-card{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
 }
 .user_post{
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -595,28 +669,55 @@ img.user_img{
 
 /*TODO container posts*/
 .like-picture{
-    width: 16%;
-	max-width: 16%;
-		border-radius: 50%;
-		margin-bottom: 0.5em;
+	width: 16%;
+    max-width: 16%;
+    border-radius: 50%;
+    /* margin-bottom: 0.5em; */
+    margin: 1rem 0rem 0rem 1rem;
 }
-.status_imput, .input-comment {
+.input-comment {
     width: 100%;
     height: 6em;
-    box-sizing: border-box;
-	border: 0.1em solid #C4C4C4;
+	box-sizing: border-box;
+	background-color: #F9B88E;
+	opacity: 0.4;
+	border: none;
 	border-radius: 10px;
     resize: none;
     position: relative;
     margin-bottom: 1em;
-    font-family: "Noto sans", sans-serif;
+    font-family: "Abel", sans-serif;
     padding: 0.4em;
     font-size: 1.2em;
     outline: none;
 }
+.status_imput {
+	width: 90%;
+    height: 4em;
+    box-sizing: border-box;
+    background-color: #fbebe1;
+    border: none;
+    border-radius: 10px;
+    resize: none;
+    position: relative;
+    font-family: "Abel", sans-serif;
+    padding: 0.4em;
+    font-size: 84%;
+    outline: none;
+    text-align: center;
+    margin: 0 1rem;
+}
 .input-post{
 	width: 100%;
 	height: 6em;
+}
+.menu-post-options{
+    display: flex;
+    flex-direction: row;
+    align-content: start;
+    justify-content: start;
+    margin: 0.5rem 0.5rem;
+
 }
 .hide-post{
     display: none;
@@ -627,14 +728,17 @@ img.user_img{
 .upload{
     display: none;
 }
+.imagen-upload{
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 
-.post-new-image,.photo_post_img{
-	width: 100%;
-	max-width: 100%;
 }
 .cancel-image{
     width: 2em;
-    height: 5em;
+    height: 2em;
     background-color: rgba(0, 0, 0, 0);
     background-image: url(./imagenes/delete.png);
     background-repeat: no-repeat;
@@ -644,7 +748,11 @@ img.user_img{
     cursor: pointer;
 }
 .post-new-image{
-	width: 20%;
+	width: 30%;
+    margin: 0rem 5rem;
+}
+.img-upload-close{
+	width: 30%;
 }
 .post-profile{
 	width: 20%;
@@ -658,12 +766,21 @@ img.user_img{
 }
 /*TODO vista profile posts*/
 .post_buttom {
-    width: 20%;
+    margin: 0rem 0rem 0rem 8rem;
+    border-radius: 50px;
+    border: none;
+    background-color: #F46D6D;
+    font-size: 89%;
     text-align: center;
-    height: 2rem;
-    margin: 0rem 1rem 0rem 1rem;
-	border-radius: 50px;
-	border: none;
+    font-family: 'Abel', sans-serif;
+    color: cornsilk;
+    -webkit-box-shadow: 2px 8px 13px -3px rgba(0,0,0,0.59);
+    box-shadow: 2px 8px 13px -3px rgba(0,0,0,0.59);
+    outline: none;
+}
+.post_buttom:hover{
+	background-color: #f3c1c1;
+	color: black;
 }
 i.fa.fa-pencil{
 

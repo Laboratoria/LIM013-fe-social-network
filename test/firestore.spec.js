@@ -48,9 +48,9 @@ const fixtureData = {
         },
         comment002: {
           name: 'user 1',
-          comment: 'holi amiguitos del user 1 al post002',
+          comment: 'holi amiguitos del user 1 al post001',
           photo: '',
-          postID: 'post002',
+          postID: 'post001',
           time: '',
           userID: 'user002',
         },
