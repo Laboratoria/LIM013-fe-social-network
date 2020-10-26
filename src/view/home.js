@@ -80,9 +80,9 @@ export default (dataCurrentUser) => {
     <!-- About us -->
     <div class="aboutUs">
       <ul>
-        <li><a href="#">About</a></li>
+        <li><a href="https://consuelogoche-1994.github.io/LIM013-fe-social-network/">About</a></li>
         <li><a href="#">Privacy and Policy</a></li>
-        <li><a href="#">Help</a></li>
+        <li><a href="https://n9.cl/zwen0">Help</a></li>
       </ul>
       <p class="logo-aside">Travel <i class="fab fa-avianex"></i>n</p>
       <p class = "copyright">Copyright © 2020 All Rights Reserved.</p>
