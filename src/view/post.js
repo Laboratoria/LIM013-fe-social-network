@@ -20,13 +20,13 @@ export const itemPost = (objPost) => {
               <li id="delete-post-${objPost.id}"><i class="fas fa-trash-alt select"></i> Delete</li>
             </ul>
           </div>               
-          <img class="avatar-post" src="${objPost.photo}"/>
-          <p class="name">${objPost.username}
+          <img class="avatar-post" src=""/>
+          <p class="name">
             <span class = "tooltiptext">
-            <img class="tooltipimg" src="${objPost.photo}"/>
-            <strong>${objPost.username.toUpperCase()}</strong> <br>
-            <i class="fas fa-birthday-cake"></i> &nbsp ${objPost.birthday} <br>
-            <i class="fas fa-map-marker-alt"></i> &nbsp ${objPost.country}
+            <img class="tooltipimg" src=""/>
+            <strong class="nametooltip"></strong> <br>
+            <i class="fas fa-birthday-cake" id="birthdayTooltip"></i> &nbsp <br>
+            <i class="fas fa-map-marker-alt" id="countryTooltip"></i> &nbsp
             </span>
           </p>
           <select id="privacy-option" class="${(userId === objPost.userId) ? 'show fa' : 'hide'}">
@@ -65,6 +65,22 @@ export const itemPost = (objPost) => {
         </div>
       </div>
   `;
+
+  getDataUserPost(objPost.userId)
+    .then((doc) => {
+      const avatarPhoto = postElement.querySelector('.avatar-post');
+      const name = postElement.querySelector('.name');
+      const nametooltip = postElement.querySelector('.nametooltip');
+      const tooltipimg = postElement.querySelector('.tooltipimg');
+      const birthdayTooltip = postElement.querySelector('#birthdayTooltip');
+      const countryTooltip = postElement.querySelector('#countryTooltip');
+      avatarPhoto.src = doc.data().photo;
+      tooltipimg.src = doc.data().photo;
+      name.textContent = doc.data().username;
+      nametooltip.textContent = doc.data().username.toUpperCase();
+      birthdayTooltip.textContent = doc.data().birthday;
+      countryTooltip.textContent = doc.data().country;
+    });
 
   /* ---------------- Menu despegable --------------------------*/
   const btnMenu = postElement.querySelector('.btn-menu-post');
@@ -152,15 +168,11 @@ export const itemPost = (objPost) => {
   const containerAllComment = postElement.querySelector('#container-AllComment');
   const counterComment = postElement.querySelector('#count-comment');
   getComment(objPost.id, (comment) => {
+    containerAllComment.innerHTML = '';
     comment.forEach((objComment) => {
-      getDataUserPost(objComment.userId)
-        .then((doc) => {
-          const obj = ({ username: doc.data().username, photo: doc.data().photo, ...objComment });
-          containerAllComment.appendChild(itemComment(obj, objPost.id));
-        });
+      containerAllComment.appendChild(itemComment(objComment, objPost.id));
     });
     counterComment.textContent = `${(comment.length !== 0) ? `${comment.length} comments` : ''}`;
-    containerAllComment.innerHTML = '';
   });
   return postElement;
 };

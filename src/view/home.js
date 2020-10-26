@@ -1,5 +1,5 @@
 import {
-  addPost, getPosts, getDataUserPost,
+  addPost, getPosts,
 } from '../controller/controller-cloud.js';
 import { sendImgToStorage } from '../controller/controller-storage.js';
 import { itemPost } from './post.js';
@@ -131,10 +131,8 @@ export default (dataCurrentUser) => {
   uploadImg.addEventListener('change', (e) => {
     // Creamos el objeto de la clase FileReader
     const reader = new FileReader();
-
     // Leemos el archivo subido y se lo pasamos a nuestro fileReader
     reader.readAsDataURL(e.target.files[0]);
-
     // Le decimos que cuando este listo ejecute el código interno
     reader.onload = () => {
       postImg.src = reader.result;
@@ -214,22 +212,12 @@ export default (dataCurrentUser) => {
   /* -------------------------- ADD POST (CONTAINER-POST)----------------------*/
   const containerPost = viewHome.querySelector('#container-post');
   getPosts((post) => {
+    containerPost.innerHTML = '';
     post.forEach((objPost) => {
       if (objPost.privacy === 'public' || (objPost.privacy === 'private' && objPost.userId === userId)) {
-        getDataUserPost(objPost.userId)
-          .then((doc) => {
-            const obj = ({
-              username: doc.data().username,
-              photo: doc.data().photo,
-              country: doc.data().country,
-              birthday: doc.data().birthday,
-              ...objPost,
-            });
-            containerPost.appendChild(itemPost(obj));
-          });
+        containerPost.appendChild(itemPost(objPost));
       }
     });
-    containerPost.innerHTML = '';
   });
   return viewHome;
 };

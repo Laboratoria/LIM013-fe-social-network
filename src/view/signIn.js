@@ -1,5 +1,5 @@
 
-import { signIn, signInforgoogle } from '../controller/controller-firebase.js';
+import { signIn, signInForGoogle } from '../controller/controller-firebase.js';
 import { sendDataCurrentUser, getDataCurrentUser } from '../controller/controller-cloud.js';
 // import { controlerSignIn } from '../controller/signIn-controller.js';
 
@@ -26,7 +26,7 @@ export default () => {
         </div>
         <div class="div-input">
         <i class="fas fa-lock"></i>
-        <input type="password" id="password" pattern="[a-zA-Z0-9]{8,20}" placeholder="Password" required />
+        <input type="password" id="password" pattern="[a-zA-Z0-9]{6,20}" placeholder="Password" required />
         </div>
         <button type="submit" class="btn-logIn">SIGN IN</a></button>
         <p id = "error-message" class = "error-message"></p>
@@ -34,7 +34,6 @@ export default () => {
         <p class="text">or enter with ...</p>
         <div class="option">
           <img src="img/gmail.png" class="gmail" id="btn-google">
-          <img src="img/facebook.png" class="facebook" id="btn-facebook">
         </div>
         <p class="text">New to TravelIn ?</p>
         <button class="newAccount">Create an account</button>
@@ -48,7 +47,7 @@ export default () => {
   /* ---------------------------regarding DOM manipulation for login with google---------------- */
   const btnGoogle = viewSignIn.querySelector('#btn-google');
   btnGoogle.addEventListener('click', () => {
-    signInforgoogle()
+    signInForGoogle()
       .then(() => {
         getDataCurrentUser()
           .then((doc) => {

@@ -3,13 +3,16 @@ export const sendDataCurrentUser = () => {
   const user = firebase.auth().currentUser;
   const db = firebase.firestore();
   let Photo;
-  if (user.photoURL != null) {
+  let Name;
+  if (user.photoURL != null || user.displayName != null) {
     Photo = user.photoURL;
+    Name = user.displayName;
   } else {
     Photo = 'img/travelling.jpg';
+    Name = 'User';
   }
   return db.collection('SN-Users').doc(user.uid).set({
-    username: user.displayName,
+    username: Name,
     email: user.email,
     photo: Photo,
     photoCover: Photo,
