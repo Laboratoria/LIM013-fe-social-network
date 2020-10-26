@@ -2,7 +2,8 @@
   <a title="Travel-In" href= "https://emae1712.github.io/LIM013-fe-social-network/src/" target="_blank"></a>
   <img  src="https://i.ibb.co/Y2TYb6y/TravelIn.jpg" alt="Travel-In">
 </p>
-  
+
+
 # Travel In ✈️
 ### Made by Arango M., Goche C. & Pariona M.
 >Social Network project
