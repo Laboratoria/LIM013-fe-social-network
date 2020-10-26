@@ -1,4 +1,4 @@
-// ---------------------CREATE BD SN-USERS INFORMATION TO CLOUD FIRESTORE -----------------
+// ------------------------SEND USER INFORMATION TO CLUD FIRESTORE --------------------------
 export const sendDataCurrentUser = () => {
   const user = firebase.auth().currentUser;
   const db = firebase.firestore();
@@ -19,14 +19,14 @@ export const sendDataCurrentUser = () => {
     description: 'Description',
   });
 };
-// -----------------------------GET USER INFORMATION TO SN-USERS ---------------------------
+// ------------------------GET USER INFORMATION TO CLUD FIRESTORE --------------------------
 export const getDataCurrentUser = () => {
   const user = firebase.auth().currentUser;
   const db = firebase.firestore();
   return db.collection('SN-Users').doc(user.uid).get();
 };
 
-// -----------------------------UPDATE USER INFORMATION TO SN-USERS -------------------------
+// ------------------------UPDATE USER INFORMATION TO CLUD FIRESTORE --------------------------
 export const updateCurrentUser = (a, b, c, d, e) => {
   const user = firebase.auth().currentUser;
   const db = firebase.firestore();
@@ -38,7 +38,7 @@ export const updateCurrentUser = (a, b, c, d, e) => {
     description: e,
   });
 };
-// ------------------------------UPDATE PHOTO PROFILE TO SN-USERS-------------------------------
+// ------------------------UPDATE PHOTO PROFILE--------------------------
 export const updatephotoProfile = (value) => {
   const user = firebase.auth().currentUser;
   const db = firebase.firestore();
@@ -46,7 +46,7 @@ export const updatephotoProfile = (value) => {
     photo: value,
   });
 };
-// ------------------------------UPDATE PHOTO COVER TO SN-USERS---------------------------------
+// ------------------------UPDATE PHOTO COVER --------------------------
 export const updatephotoCover = (value) => {
   const user = firebase.auth().currentUser;
   const db = firebase.firestore();
@@ -54,9 +54,6 @@ export const updatephotoCover = (value) => {
     photoCover: value,
   });
 };
-// ---------------------CREATE BD SN-POST INFORMATION TO CLOUD FIRESTORE------------------------
-// export const addPost = (Privacy, Publication, URLimg) => {
-//   const user = firebase.auth().currentUser;
 
 // db.colleciton('SN-users').doc(post.userId).get().then((u) => u.photoUrl)
 
@@ -73,17 +70,17 @@ export const addPost = (UserId, Privacy, Publication, URLimg) => {
     planes: [],
   });
 };
-// ---------------------------------GET POST INFORMATION TO SN-USERS------------------------------
+
+// ----------------------- GET ALL BD POST --------------------------
 export const getPosts = (callback) => {
   const db = firebase.firestore();
   db.collection('SN-Post').orderBy('date', 'desc')
     .onSnapshot((querySnapshot) => {
-      const posts = [];
+      const post = [];
       querySnapshot.forEach((doc) => {
-        posts.push({ id: doc.id, ...doc.data() });
+        post.push({ id: doc.id, ...doc.data() });
       });
-      console.log(posts);
-      callback(posts);
+      callback(post);
     });
 };
 // ------------------- GET BD USERNAME AND PHOTO (POST) ----------

@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import {
   addPost, getPosts, getDataUserPost,
 } from '../controller/controller-cloud.js';
@@ -220,7 +219,11 @@ export default (dataCurrentUser) => {
         getDataUserPost(objPost.userId)
           .then((doc) => {
             const obj = ({
-              username: doc.data().username, photo: doc.data().photo, country: doc.data().country, birthday: doc.data().birthday, ...objPost,
+              username: doc.data().username,
+              photo: doc.data().photo,
+              country: doc.data().country,
+              birthday: doc.data().birthday,
+              ...objPost,
             });
             containerPost.appendChild(itemPost(obj));
           });
