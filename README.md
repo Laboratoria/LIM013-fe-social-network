@@ -17,15 +17,58 @@
 El presente proyecto, **_TRAVEL IN_**, es una Red social destinada a personas interesadas en compartir sus experiencias de viajes, tips, recomendaciones y demás que puedan ser de utilidad para otros amantes de los viajes o que quieran iniciar en esta actividad. Esta red social te permitirá crear una cuenta de acceso y loguearse con ella; crear, editar, borrar, comentar y "likear" publicacciones, todo de forma dinámica.
 
 ## 2. 👩‍💻Definición del producto
-
 El proyecto se inspiró en las redes sociales actuales, tales como Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. Estas redes
 sociales han invadido nuestras vidas, las cuales amamos u odiamos, y muchos no podemos vivir sin ellas. 
 
 A raiz de esto, decidimos crear una red social destinada a un objetivo en común, **viajes**. Las redes sociales ya mencionadas, se concentran en captar personas con diferentes intereses. Es por ello, que la red social que hemos realizado se centra en un público usuario que quiera compartir sus experiencias o motivar a otros usuarios a viajar. Hoy en día, diferentes estudios recomiendan viajar, no solo porque es una actividad placentera, sino por los múltiples beneficios tanto para la _salud física_ como para la _salud mental_.
 
-El proyecto se basó en un sistema de cuentas de usuario, siendo lo que las redes sociales actuales utilizan para garantizar la seguridad y la organización en un sistema con muchos usuarios. Ajustándonos a los requerimientos, tenemos una sección de **_Sign In**_, **_Sign Up**_, **_Recover Password**_, **_Home**_ dónde el usuario podrá crear, editar, comentar eliminar y reaccionar (*Like* o *Let's go!*) publicaciones tanto suyas como de otros usuarios, **_Profile**_ que es el perfil del usuario y dónde verá sus propias publicaciones, sean públicas o privadas y también editarlas, por último **_Log out**_ con el que cerrará sesión. 
+El proyecto se basó en un sistema de cuentas de usuario, siendo lo que las redes sociales actuales utilizan para garantizar la seguridad y la organización en un sistema con muchos usuarios. Ajustándonos a los requerimientos, contamos con las siguientes secciones: 
+* **_Sign In_**
+* **_Sign Up_**
+* **_Recover Password_**
+* **_Home_** dónde el usuario podrá crear, editar, comentar eliminar y reaccionar (*Like* o *Let's go!*) publicaciones tanto suyas como de otros usuarios
+* **_Profile_** que es el perfil del usuario y dónde verá sus propias publicaciones, sean públicas o privadas y también editarlas, y
+* **_Log out_** con el que cerrará sesión. 
 
- 
+## 3. 📝Historias de usuario
+Las siguientes historias de usuario se han organizado de acuerdo a órdenes de prioridad, siendo 1 el más importante.
+
+1- Como usuario nuevo debo poder crear una cuenta con email y password válidos para ingresar
+a la red social.
+
+2- Como usuario nuevo debo poder iniciar sesión con mi cuenta de Google o Facebook para ingresar a la red social (sin necesidad de crear una cuenta de email válido).
+
+3- Como usuario registrado debo poder iniciar sesión con email y password válidos para ingresar
+a la red social.
+
+4- Yo como usuario loggeado debo poder visualizar los datos de mi perfil creado y editarlos para actualizar mi información.
+
+5- Como usuario loggeado debo poder crear, guardar, modificar en el mismo lugar (in place) y eliminar una publicación (post) privada o pública, que puede ser una frase o una imagen.
+
+6- Como usuario loggeado debo poder ver todos los posts públicos y privados que he creado hasta ese momento, desde el más reciente hasta el más antiguo, así como la opción de poder cambiar la configuración de privacidad de mis posts para poder elegir la privacidad de mis publicaciones.
+
+7- Yo como usuario loggeado, puedo dar like y llevar un conteo de likes en las publicaciones para poder indicar que me gusta una publicación.
+
+8- Yo como usuario loggeado debo poder escribir, guardar, editar o eliminar un comentario en una publicación para poder compartir mi opinión o hacer preguntas.
+
+## 4. 🚀Diseño de Interfaz de Usuario
+Debes definir cuál será el flujo que seguirá el usuario dentro de tu aplicación
+y, con eso, diseñar la Interfaz de Usuario (UI por sus siglas en inglés) que
+siga este flujo.
+
+A continuación te proporcionamos un layout (diseño) de la vista mobile y desktop que puedes
+elegir replicar visualmente y cuyo contenido, colores y fuentes de texto, dejaremos a tu elección.
+En caso de elegir trabajar con este layaout (diseño) ya no deberás de crear un prototipo de baja
+fidelidad.
+
+* Vista mobile
+
+    ![mobile](https://user-images.githubusercontent.com/32286663/56174616-ec9f6100-5fb8-11e9-9edb-d5ef7c251d9c.png)
+
+* Vista Desktop
+
+    ![desktop](https://user-images.githubusercontent.com/32286663/56174626-fcb74080-5fb8-11e9-8854-26e8d9c4e25f.png)
+
 * [1. Preámbulo](#1-preámbulo)
 * [2. Resumen del proyecto](#2-resumen-del-proyecto)
 * [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
