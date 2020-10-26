@@ -2,7 +2,7 @@
 <a title="Travel-In" href= "https://emae1712.github.io/LIM013-fe-social-network/src/" target="_blank"><img width="90%" src="https://i.ibb.co/Hg33dxR/Travel-In.jpg" alt="Travel-In">
   </p>
   
-# Travel In
+# Travel In ✈️
 ### C. Goche, E. Arango & M. Pariona
 >Social Network project
 ## Índice
