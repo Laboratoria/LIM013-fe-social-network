@@ -15,9 +15,9 @@ export default () => {
   <section class="section-register">
     <div class="box-section-register">
       <header>
-        <h1 class="title">TravelIn</h1>
-        <p class="text">¡ welcome to travelin !</p>
-        <p class="text-title">Sign in</p>
+        <h1 class="title">Travel<i class="fab fa-avianex"></i>n</h1>
+        <p class="text">¡Welcome to travelIn!</p>
+        <p class="text-title">Sign In</p>
       </header>
       <form id="signIn-form"">
         <div class="div-input">

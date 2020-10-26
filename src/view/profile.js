@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import {
-  updateCurrentUser, updatephotoProfile, updatephotoCover, getPosts, getDataUserPost,
+  updateCurrentUser, updatephotoProfile, updatephotoCover, getPosts,
 } from '../controller/controller-cloud.js';
 import { sendImgToStorage } from '../controller/controller-storage.js';
 import { itemPost } from './post.js';
@@ -182,18 +182,18 @@ export default (dataCurrentUser) => {
   const containerUserPost = viewProfile.querySelector('.container-user-post');
   const userId = firebase.auth().currentUser.uid;
   getPosts((post) => {
+    containerUserPost.innerHTML = '';
     post.forEach((objPost) => {
       if (userId === objPost.userId) {
-        getDataUserPost(objPost.userId)
-          .then((doc) => {
-            const obj = ({
-              username: doc.data().username, photo: doc.data().photo, country: doc.data().country, birthday: doc.data().birthday, ...objPost,
-            });
-            containerUserPost.appendChild(itemPost(obj));
-          });
+        // getDataUserPost(objPost.userId)
+        //   .then((doc) => {
+        //     const obj = ({
+        //       username: doc.data().username, photo: doc.data().photo, country: doc.data().country, birthday: doc.data().birthday, ...objPost,
+        //     });
+        containerUserPost.appendChild(itemPost(objPost));
+        // });
       }
     });
-    containerUserPost.innerHTML = '';
   });
   return viewProfile;
 };
