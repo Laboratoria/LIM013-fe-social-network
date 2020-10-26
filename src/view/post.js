@@ -22,12 +22,16 @@ export const itemPost = (objPost) => {
           </div>               
           <img class="avatar-post" src=""/>
           <p class="name">
+<<<<<<< HEAD
             <span class="names"></span>
+=======
+            <span class = "username"></span>
+>>>>>>> fdbe4aeb30e73956972cc9f7cd3798f42ed22980
             <span class = "tooltiptext">
-            <img class="tooltipimg" src=""/>
-            <strong class="nametooltip"></strong> <br>
-            <i class="fas fa-birthday-cake" id="birthdayTooltip"></i> &nbsp <br>
-            <i class="fas fa-map-marker-alt" id="countryTooltip"></i> &nbsp
+              <img class="tooltipimg" src=""/>
+              <strong class="nametooltip"></strong> <br>
+              <i class="fas fa-birthday-cake"></i> &nbsp <span id="birthdayTooltip"></span><br>
+              <i class="fas fa-map-marker-alt"></i> &nbsp <span id="countryTooltip"></span>
             </span>
           </p>
           <select id="privacy-option" class="${(userId === objPost.userId) ? 'show fa' : 'hide'}">
@@ -70,14 +74,18 @@ export const itemPost = (objPost) => {
   getDataUserPost(objPost.userId)
     .then((doc) => {
       const avatarPhoto = postElement.querySelector('.avatar-post');
+<<<<<<< HEAD
       const name = postElement.querySelector('.names');
+=======
+      const username = postElement.querySelector('.username');
+>>>>>>> fdbe4aeb30e73956972cc9f7cd3798f42ed22980
       const nametooltip = postElement.querySelector('.nametooltip');
       const tooltipimg = postElement.querySelector('.tooltipimg');
       const birthdayTooltip = postElement.querySelector('#birthdayTooltip');
       const countryTooltip = postElement.querySelector('#countryTooltip');
       avatarPhoto.src = doc.data().photo;
       tooltipimg.src = doc.data().photo;
-      name.textContent = doc.data().username;
+      username.textContent = doc.data().username;
       nametooltip.textContent = doc.data().username.toUpperCase();
       birthdayTooltip.textContent = doc.data().birthday;
       countryTooltip.textContent = doc.data().country;
