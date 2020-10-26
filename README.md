@@ -71,6 +71,7 @@ Gracias al Feedback recibido por parte de nuestros usuarios, compañeras y coach
 * Paleta de colores que vincule a viajes.
 * Diseño interactivo en todas sus presentaciones 
 
+---------------------
 * [1. Preámbulo](#1-preámbulo)
 * [2. Resumen del proyecto](#2-resumen-del-proyecto)
 * [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
