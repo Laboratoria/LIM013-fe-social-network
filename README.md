@@ -3,7 +3,7 @@
   </p>
   
 # Travel In ✈️
-### Made by C. Goche, E. Arango & M. Pariona
+### Made by Arango M., Goche C. & Pariona M.
 >Social Network project
 ## Índice
 
