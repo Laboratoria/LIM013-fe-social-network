@@ -74,8 +74,6 @@ Gracias al Feedback recibido por parte de nuestros usuarios, compañeras y coach
 * Paleta de colores que vincule a viajes.
 * Diseño interactivo en todas sus presentaciones 
 
----------------------
-
 ## 6. Objetivos de aprendizaje
 
 El objetivo principal de aprendizaje de este proyecto es construir una
