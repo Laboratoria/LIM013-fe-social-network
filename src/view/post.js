@@ -22,6 +22,7 @@ export const itemPost = (objPost) => {
           </div>               
           <img class="avatar-post" src=""/>
           <p class="name">
+            <span class="names"></span>
             <span class = "tooltiptext">
             <img class="tooltipimg" src=""/>
             <strong class="nametooltip"></strong> <br>
@@ -69,7 +70,7 @@ export const itemPost = (objPost) => {
   getDataUserPost(objPost.userId)
     .then((doc) => {
       const avatarPhoto = postElement.querySelector('.avatar-post');
-      const name = postElement.querySelector('.name');
+      const name = postElement.querySelector('.names');
       const nametooltip = postElement.querySelector('.nametooltip');
       const tooltipimg = postElement.querySelector('.tooltipimg');
       const birthdayTooltip = postElement.querySelector('#birthdayTooltip');
