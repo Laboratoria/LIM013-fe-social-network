@@ -10,7 +10,6 @@ export default () => {
   <section class="text-info">
     <p class="text-infoTitle">What is TravelIn?</p>
     <p class="text">Travelin is a social network that unites people who share the same passion for travel.</p>
-    <img src="img/imgLogo.png">
   </section>
   <section class="section-register">
     <div class="box-section-register">

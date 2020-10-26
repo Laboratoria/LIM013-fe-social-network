@@ -1,4 +1,4 @@
-import { signIn, signInforgoogle } from './controller-firebase.js';
+import { signIn, signInForGoogle } from './controller-firebase.js';
 
 const controlerSignIn = {
 /* ------------regarding DOM manipulation for login with created credentials------------- */
@@ -29,7 +29,7 @@ const controlerSignIn = {
   handleSignInForGoogle: (viewLogIn) => {
     const btnGoogle = viewLogIn.querySelector('#btn-google');
     btnGoogle.addEventListener('click', () => {
-      signInforgoogle()
+      signInForGoogle()
         .then(() => {
           window.location.hash = '#/home';
         });
