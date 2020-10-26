@@ -67,9 +67,10 @@ fidelidad.
  ## 5. 📈Test de usabilidad
 Gracias al Feedback recibido por parte de nuestros usuarios, compañeras y coaches, pudimos iterar varias veces antes de llegar a nuestra versión final. Tomándose en cuenta principalmente:
 
-* En la sección de **Profile**, acomodar las fotos de perfil de usuario y portada como Facebook, para que los usuarios se sientan familiarizados con nuestra red social.
+* En la sección de **Profile**, acomodar las fotos de perfil de usuario y portada como la red social deFacebook, para que los usuarios se sientan familiarizados con nuestra red social.
 * Implementar un botón *Scroll up* para que el usuario pueda desplazarse hacia arriba luego de revisar publicaciones de usuarios, tanto en la sección de **Home** como **Profile**.
 * Subrayar las pestañas de **Home** y **Profile** para que el usuario sepa la sección en la que se encuentra.
+* Colocar una ventana emergente en cada nombre de usuario que haga una publicación, para ver su foto de perfil más grande con algunos de sus datos, con la finalidad de que los usuarios editen su información.
 * Paleta de colores que vincule a viajes.
 * Diseño interactivo en todas sus presentaciones 
 
