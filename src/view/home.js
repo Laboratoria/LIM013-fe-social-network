@@ -9,7 +9,7 @@ export default (notes, dataUser) => {
     <div class='body'>
     <header id='headerHome'>
       <nav class="nav_Mobile">   
-      <label class='btn-menu'><i class="fas fa-bars"></i></label>
+      <label class='btn-menu'><i class="fas fa-bars" style="color:#04BFBF; font-size:30px;"></i></label>
       <img src="/imagenes/petlandia.png" class="logoHeader-nav" alt="imagenPetlandia" width="10%" height="auto" /> 
       <img src="/imagenes/PET.png" class="petLogoMenu" alt="logo" width="10%" height="auto" />
       
@@ -84,9 +84,9 @@ export default (notes, dataUser) => {
               <input type="file" id="selectImage"  name="imagensubida" class="upload" accept="image/png, .jpeg, .jpg, image/gif">
               <img class="cam-post" src="/imagenes/camera.png" width="5%" height="auto" alt="">       
             </label>        
-            <select id="privacy" class="privacy" style='color: gray; height: 25%; font-family:Arial, FontAwesome;'>
-              <option value="0" style='color: gray;'>&#xf57d;</option>
-              <option value="1" style='color:gray;'>&#xf023;</option>
+            <select id="privacy" class="privacy" style='color:#04BFBF; font-size:30px; font-family:Arial, FontAwesome;'>
+              <option value="0" style='color:#04BFBF;'>&#xf57d;</option>
+              <option value="1" style='color:#04BFBF;'>&#xf023;</option>
             </select>
             <i></i>
             <button type="button" id="bttonnewpost" class="post_buttom">
@@ -96,31 +96,20 @@ export default (notes, dataUser) => {
           </article>
           <section class="">
           <article class="card-group">
-            <section class="content">
-              <div class="grupo-nombre">
-              
-                <img class="comunidades-figures" src="/imagenes/team.png" alt="">
-             
-                <h1>Grupos de interes</h1>
-                </div>
-                <h2 class="name-grupo-comunidades"><strong>${user.displayName}</strong>, conoce los siguientes grupos de interes para tu mascota</h2>
-              
-              <div class="labels-comunidades">
-                  <div class="label-comunidades-in">
-                  <ul class="label-comunidades">
-
-                    <li><img src="/imagenes/facilismo-pets.png" class="img-facilismo" alt="logo" width="8%" height="auto" /><a href="https://www.facebook.com/mascotasfacilisimo/" target="_blank" rel="noopener noreferrer">Facilísimo para tu mascota</a></li>
-                    <li><img src="/imagenes/mascota.png" class="img-mascota" alt="logo" width="8%" height="auto" /><a href="https://www.facebook.com/mascotaclubperu" target="_blank" rel="noopener noreferrer">Mascota Club del Perú</a></li>
-                  </ul>
-                  </div>
-                <div class="label-comunidades-text">
-                  <p class="profile-text">¿Te animas para socializar con tu mascota?</p>
-                  <h2 class="name_pet1">${dataUser.petName} estará muy feliz de socializar</h2>
-                  <figure class="">
+            <section class="content-home">
+              <div class="grupo-nombre">              
+                <img class="comunidades-figures" src="/imagenes/team.png" alt="">            
+                <h1>Grupos públicos</h1>
+              </div>             
+                <div class="label-comunidades-in">
+                  <a href="https://www.facebook.com/groups/1433700173348010/" target="_blank" class="a-enlace"><img src="/imagenes/adopta.png" class="img-adopta" alt="logo" width="8%" height="auto" /></a>
+                  <a href="https://www.facebook.com/mascotasfacilisimo/" target="_blank" class="a-enlace"><img src="/imagenes/facilismo-pets.png" class="img-facilismo" alt="logo" width="8%" height="auto"/></a>
+                  <a href="https://www.facebook.com/mascotaclubperu" target="_blank" class="a-enlace"><img src="/imagenes/mascota.png" class="img-mascota" alt="logo" width="8%" height="auto" /></a>
+                  <div class="label-msg">
+                  <h2 class="name_pet1">¡A<strong> ${dataUser.petName} </strong>le va a gustar!</h2>                 
                   <img class="comunidades-gif" src="/imagenes/puppy-avengers.gif" width="20%" height="auto" alt="">
-                </figure>
+                  </div>              
                 </div>
-              </div>
             </section>
           </article>
         </section>

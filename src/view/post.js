@@ -18,31 +18,35 @@ export const postSection = (Object) => {
   // console.log(user);
   note.innerHTML = ` 
   <section class="user_post" id="user_post">
+  <div class="menu-post">  
     <figure class="user_photo">
-      <img class="user_img" src="${Object.photo}" alt="" />
+        <img class="user_img" src="${Object.photo}" alt="" />
     </figure>
-    <div>
-      <h4>${Object.name}</h4>
+    <div class="data-user"> 
+      <h4 class="name-user">${Object.name}</h4>
       <p class="post-time">${Object.time}</p>
     </div>
+    <div class="menu-privacy"> 
     <select id = "privacy" class="privacy ${
   user === Object.user || 'hide'
-}" style='color: gray; height: 25%; font-family:Arial, FontAwesome;'>
-          <option value="0" ${
+}" style='color: #F25F29; font-size:25px; font-family:Arial, FontAwesome;'>
+                      <option value="0" ${
   Object.privacy === '1' || 'selected'
-} style='color: gray;' >&#xf57d;</option>
-          <option value="1" ${
+} style='color: #F25F29; font-size:25px' >&#xf57d;</option>
+                      <option value="1" ${
   Object.privacy === '0' || 'selected'
-} style='color: gray;'>&#xf023;</option>
-    </select>
-    <section class="${
+} style='color: #F25F29; font-size:25px'>&#xf023;</option>
+                </select>
+                </div>
+                <div class="${
   user !== Object.user ? 'hide' : 'label-menu-post'
 }" id="containerMenu-${Object.id}">
           <nav class="nav-post hide" id="nav-${Object.id}">
             <button class="btn-post-edit" data-id="${Object.id}">Editar</button>
             <button class="btn-post-delete" data-id="${Object.id}">Eliminar</button>
             </nav>
-        </section>
+        </div>
+        </div>
     <section>
         <p
           class="input-post"
@@ -53,12 +57,14 @@ export const postSection = (Object) => {
           rows="10"
         >
           ${Object.post} </p>
+        <div class="bttons-select">
         <button class="hide-btton-post btn-post-save-edit-post" data-id="">
           Guardar
         </button>
         <button class="hide-btton-post btn-post-cancel-edit-post" data-id="">
           Cancel
         </button>
+        </div>
     </section>
       ${
   Object.img !== undefined
@@ -76,20 +82,18 @@ export const postSection = (Object) => {
 }" src="imagenes/like.png" alt="" />
         <p class = "likes-counter">${Object.likes.length} Likes</p>
         </div>
-        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom">        
-        <i class="fas fa-comment"></i> Comment
+        <button type="button"id="comment-${
+  Object.id
+}" class="btton-comment">        
+        <i class="fas fa-comment"style='color: #F25F29; font-size:25px; font-family:Arial, FontAwesome;'></i> 
         </button>
     </section>
     <section>
     <div class="container-new-comment">
-      <p class="new-comment-title">Comentarios</p>
       <div class="go-comment">
         <textarea class="input-comment" id="newComment-${
   Object.id
 }" placeholder="Escribe un comentario"></textarea>
-        <button id="comment-${
-  Object.id
-}" class="btn-comment"><i class="fas fa-angle-double-right"></i></button>
       </div>
     </div>
     <div id="showAllComments-${Object.id}"></div>
