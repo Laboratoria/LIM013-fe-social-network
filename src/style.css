@@ -6,7 +6,7 @@
 }
 body {
     background-attachment: fixed;
-    background-image: url(imagenes/background.png);
+    background-image: url(imagenes/mobileBG.png);
     background-color: orange;
     height: 500px;
     background-position: inherit;
@@ -110,6 +110,11 @@ img.logoHuella {
 	position: relative;
 	left: 0rem;
 }
+.headerForm-span{
+	font-family: 'Abel', sans-serif;
+	font-size: 50px;
+	line-height: 64px;
+}
 .signInForm-container {
 	box-shadow: none;
 	padding: 2%;
@@ -175,7 +180,7 @@ input {
 	font-size: 100%;
 	font-family: 'Playfair Display', serif;
 	text-transform: uppercase;
-	line-height: 20px;
+	line-height: 24px;
 }
 section.logo-Redes {
 	width: auto;
@@ -196,7 +201,7 @@ section.logo-Redes {
 }
 
 .google {
-    width: auto;
+    width: 100%;
     padding: 1%;
     border: none;
     border-radius: 39px;
@@ -214,6 +219,7 @@ section.logo-Redes {
 .btn-google{
 	background-color: #dd4b39;
 	color: white;
+	text-align: center;
 }
 
 .google:hover {
@@ -254,7 +260,7 @@ input:hover,
 	opacity: 1;
 }
 input[type='submit'] {
-	background-color: black;
+	background-color: #04BFBF;
 	color: white;
 	cursor: pointer;
 	-webkit-box-shadow: 1px 5px 9px -2px #000000; 
@@ -681,6 +687,7 @@ section.msg-Redes p {
 	.signInForm-container {
 		line-height: 3rem;
 	}
+
 	input {
 		font-size: 200%;
 	}
@@ -690,10 +697,14 @@ section.msg-Redes p {
 		font-size: 30px;
 		width: 14%;
 	}
+	#SignInForm_email, #SignInForm_password {
 
+		line-height: 35px;
+	}
 	.container_msg p {
 		font-size: 200%;
 		font-family: 'Abel', sans-serif;
+		text-align: center;
 	}
 	.registerForm-container {
 		position: relative;
@@ -755,7 +766,9 @@ section.msg-Redes p {
 	input {
 		font-size: 200%;
 	}
-
+	#SignInForm_email, #SignInForm_password {
+		line-height: 35px;
+	}
 	.fa {
 		padding: 34px;
 		font-size: 30px;
@@ -764,6 +777,7 @@ section.msg-Redes p {
 	.container_msg p {
 		font-size: 200%;
 		font-family: 'Abel', sans-serif;
+		text-align: center;
 	}
 	.registerForm-container {
 		position: relative;
@@ -813,21 +827,14 @@ section.msg-Redes p {
 @media only screen and (min-width: 1024px) and (max-width:1280px) {
 	body {
 		font-family: 'Playfair Display', serif;
-		background: #fff895;
-		background: -moz-linear-gradient(
-			-45deg,
-			#fff895 0%,
-			#fcd697 58%,
-			#f46d6d 100%
-		);
-		background: -webkit-linear-gradient(
-			-45deg,
-			#fff895 0%,
-			#fcd697 58%,
-			#f46d6d 100%
-		);
-		background: linear-gradient(135deg, #fff895 0%, #fcd697 58%, #f46d6d 100%);
 		background-attachment: fixed;
+		background-image: url(imagenes/desktopBG.png);
+		background-color: #fff895;
+		height: 500px;
+		background-position: inherit;
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: relative;
 	}
 	/*TODO  Vista: encabezado  */
 	/*header h1 {
@@ -841,14 +848,14 @@ section.msg-Redes p {
 	}
 
 	.logoHeader {
-		width: 50%;
+		width: 30%;
 		max-width: 50%;
 		margin: 0% 23%;
 		position: absolute;
-		top:6rem;
+		top:13rem;
 	}
 	.petLogo{
-		width: 70%;
+		width: 50%;
 		margin: 0% 30%;
 	}
 
@@ -903,25 +910,7 @@ section.msg-Redes p {
 			5px 5px 15px 5px rgba(0, 0, 0, 0);
 		box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 		padding: 2%;
-		background: #acc5d6;
-		background: -moz-linear-gradient(
-			left,
-			#acc5d6 0%,
-			#7bd9cf 50%,
-			#daebec 100%
-		);
-		background: -webkit-linear-gradient(
-			left,
-			#acc5d6 0%,
-			#7bd9cf 50%,
-			#daebec 100%
-		);
-		background: linear-gradient(
-			to right,
-			#acc5d6 0%,
-			#7bd9cf 50%,
-			#daebec 100%
-		);
+		background: linear-gradient(to top, #fcfbfb 0%, #fff895 100%);
 	}
 	.signInForm-container {
 		border-radius: 40px;
@@ -932,25 +921,7 @@ section.msg-Redes p {
 			5px 5px 15px 5px rgba(0, 0, 0, 0);
 		box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 		padding: 2%;
-		background: #acc5d6;
-		background: -moz-linear-gradient(
-			left,
-			#acc5d6 0%,
-			#7bd9cf 50%,
-			#daebec 100%
-		);
-		background: -webkit-linear-gradient(
-			left,
-			#acc5d6 0%,
-			#7bd9cf 50%,
-			#daebec 100%
-		);
-		background: linear-gradient(
-			to right,
-			#acc5d6 0%,
-			#7bd9cf 50%,
-			#daebec 100%
-		);
+		background: linear-gradient(to top, #fcfbfb 0%, #fff895 100%);
 	}
 	.registerForm-container h1 {
 		font-size: 220%;
@@ -978,7 +949,7 @@ section.msg-Redes p {
 	}
 	.register-container {
 		position: absolute;
-		top: 40rem;
+		top: 30rem;
 		margin: 0rem 1rem;
 		left: 13rem;
 		width: 54%;
@@ -1032,7 +1003,7 @@ section.msg-Redes p {
 	body {
 		font-family: 'Playfair Display', serif;
 		background-attachment: fixed;
-		background-image: url(imagenes/background.png);
+		background-image: url(imagenes/desktopBG.png);
 		background-color: #fff895;
 		height: 500px;
 		background-position: inherit;
@@ -1063,12 +1034,12 @@ section.msg-Redes p {
 		margin: 1% 2%;
 	}
 	.petLogo {
-		width: 100%;
+		width: 50%;
 	}
 	.logoHeader {
-		width: 30%;
+		width: 25%;
 		max-width: 30%;
-		margin: 1rem 12rem;
+		margin: 7rem 12rem;
 		position: absolute;
 		top: 22rem;
 	}
@@ -1090,7 +1061,7 @@ section.msg-Redes p {
 		left: 48rem;
 	}
 	form.signIn_Form {
-		margin: 2rem 2rem;
+		margin: 10rem 2rem;
 	}
 	.signIn-container {
 		width: auto;
@@ -1103,7 +1074,12 @@ section.msg-Redes p {
 	.signIn_Form h1 {
 		font-size: 200%;
 	}
+	#SignInForm_email, #SignInForm_password {
 
+		line-height: 70px;
+		font-size: 40px;
+		margin-bottom: 30px;
+	}
 	span.input-item {
 		margin: 0.5rem auto 0rem 14.5rem;
 	}
@@ -1117,32 +1093,14 @@ section.msg-Redes p {
 		width: auto;
 		height: auto;
 		border-radius: 40px;
-		margin: 2rem 0rem;
+		margin: 4rem 0rem;
 		line-height: 3rem;
 		position: relative;
 		-webkit-box-shadow: 0px 10px 13px -7px #000000,
 			5px 5px 15px 5px rgba(0, 0, 0, 0);
 		box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 		padding: 2%;
-		background: #acc5d6;
-		background: -moz-linear-gradient(
-			left,
-			#acc5d6 0%,
-			#7bd9cf 50%,
-			#daebec 100%
-		);
-		background: -webkit-linear-gradient(
-			left,
-			#acc5d6 0%,
-			#7bd9cf 50%,
-			#daebec 100%
-		);
-		background: linear-gradient(
-			to right,
-			#acc5d6 0%,
-			#7bd9cf 50%,
-			#daebec 100%
-		);
+		background: linear-gradient(to top, #fcfbfb 0%, #fff895 100%);
 	}
 	.signInForm-container {
 		border-radius: 40px;
@@ -1153,10 +1111,7 @@ section.msg-Redes p {
 			5px 5px 15px 5px rgba(0, 0, 0, 0);
 		box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 		padding: 2%;
-		background: #ACC5D6;
-		background: -moz-linear-gradient(left, #ACC5D6 0%, #7BD9CF 71%, #DAEBEC 100%);
-		background: -webkit-linear-gradient(left, #ACC5D6 0%, #7BD9CF 71%, #DAEBEC 100%);
-		background: linear-gradient(to right, #ACC5D6 0%, #7BD9CF 71%, #DAEBEC 100%);
+		background: linear-gradient(to top, #fcfbfb 0%, #fff895 100%);
 	}
 	.registerForm-container h1 {
 		font-size: 220%;
@@ -1167,7 +1122,7 @@ section.msg-Redes p {
 		margin: 0rem 0rem;
 	}
 	form.form {
-		margin: 2rem 2rem;
+		margin: 7rem 2rem;
 		line-height: 2rem;
 	}
 	span.input-itemR {
@@ -1185,15 +1140,27 @@ section.msg-Redes p {
 	.register-container  {
 		/* top: 0rem; */
 		margin: 3rem 7rem;
-		width: 40%;
+		width: 35%;
 		max-width: 45%;
 	}
 	.container_msg p {
-		font-size: 150%;
+		font-size: 40px;
+		text-align: center;
 	}
 	input {
-		font-size: 100%;
+		line-height: 70px;
+		font-size: 40px;
+		margin-bottom: 30px;
 	}
+	#submit, #submit-buttomRegister{
+		font-size: 40px;
+		margin-bottom: 20px;
+		line-height: 60px;
+	}
+	.btn-google {
+		font-size: 50px;
+	}
+
 	#headerHome label{
 		display:none;
 	}
@@ -1207,7 +1174,6 @@ section.msg-Redes p {
 		text-align: center;
 		padding: 0%;
 		padding-left: 0%;
-	
 		margin-top: 0%;
 		margin-bottom: 0%;
 		list-style: none;
