@@ -1,6 +1,6 @@
 
-import { signIn, signInForGoogle } from '../controller/controller-firebase.js';
-import { sendDataCurrentUser, getDataCurrentUser } from '../controller/controller-cloud.js';
+import { signIn, signInForGoogle, currentUser } from '../controller/controller-auth.js';
+import { sendDataCurrentUser, getDataCurrentUser } from '../controller/controller-firestore.js';
 // import { controlerSignIn } from '../controller/signIn-controller.js';
 
 export default () => {
@@ -44,17 +44,18 @@ export default () => {
   /* --------------------------------------handle send to Sign In------------------------------- */
   const btnNewAccount = viewSignIn.querySelector('.newAccount');
   btnNewAccount.addEventListener('click', () => { window.location.hash = '#/signUp'; });
+  const userId = currentUser().uid;
   /* ---------------------------regarding DOM manipulation for login with google---------------- */
   const btnGoogle = viewSignIn.querySelector('#btn-google');
   btnGoogle.addEventListener('click', () => {
     signInForGoogle()
       .then(() => {
-        getDataCurrentUser()
+        getDataCurrentUser(userId)
           .then((doc) => {
             if (doc.exists) {
               window.location.hash = '#/home';
             } else {
-              sendDataCurrentUser()
+              sendDataCurrentUser(currentUser())
                 .then(() => {
                   window.location.hash = '#/home';
                 });
@@ -72,12 +73,12 @@ export default () => {
     signIn(email, password)
       .then((data) => {
         if (data.user.emailVerified) {
-          getDataCurrentUser()
+          getDataCurrentUser(userId)
             .then((doc) => {
               if (doc.exists) {
                 window.location.hash = '#/home';
               } else {
-                sendDataCurrentUser()
+                sendDataCurrentUser(currentUser())
                   .then(() => {
                     window.location.hash = '#/home';
                   });
