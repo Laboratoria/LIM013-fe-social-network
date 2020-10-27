@@ -202,7 +202,5 @@ export const postSection = (Object) => {
       }, Object.id);
     }
   });
-
-
   return note;
 };

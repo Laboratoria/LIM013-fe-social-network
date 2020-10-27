@@ -7,65 +7,60 @@ import { uploadPhotoProfile } from '../firebase/storage.js';
 export default (notes) => {
   const user = currentUser();
   const viewProfile = `
-  <div>
+  <div class='body'>
     <header id='headerHome'>
     <nav class="nav_Mobile">   
     <label class='btn-menu1'><i class="fas fa-bars" style="color:#04BFBF; font-size:30px;"></i></label>
-    <img src="/imagenes/nombre2.png" class="petLogoMenu" alt="logo" width="200px" height="auto" />  
-    <ul class='menu_mobile1'>
+    <img src="/imagenes/petlandia.png" class="logoHeader-nav" alt="imagenPetlandia" width="10%" height="auto" /> 
+    <img src="/imagenes/nombre2.png" class="petLogoMenu" alt="logo" width="10%" height="auto" />    <ul class='menu_mobile1'>
       <li class="optionMobile">
         <a class='btn-header' href='#/profile'>
-        <img src="/imagenes/032-wanted.png" class="" alt="logo" width="8%" height="auto" />Mi Perfil</a>
+        <img src="/imagenes/032-wanted.png" class="img-nav" alt="logo" width="8%" height="auto" />Mi Perfil</a>
       </li>
       <li class="optionMobile">
         <a class='btn-header'href='#/home'>
-        <img src="/imagenes/042-Doghouse.png" class="" alt="logo" width="8%" height="auto" />Home 
+        <img src="/imagenes/042-Doghouse.png" class="img-nav" alt="logo" width="8%" height="auto" />Home 
         </a>
       </li>
       <li class="optionMobile">
         <a class='btn-header' id="logout2" href='#/signIn'>
-        <img src="/imagenes/logout.png" class="" alt="logo" width="8%" height="auto" />Cerrar Sesión</a>
+        <img src="/imagenes/logout.png" class="img-nav" alt="logo" width="8%" height="auto" />Cerrar Sesión</a>
       </li>
     </ul>
     </nav>
-  </header>
-  <main>
-  <div class = "main"> 
-      <aside class="profile_section1">
+    </header>
+    <main>
+    <div class = "main"> 
+      <aside class="profile_section1">   
         <div class="card">
           <div class="cover">
             <img class="cover-img" src="" alt="">
           </div>
-          <div class="content">
-            <div class="profile">
-              <img class="profile-img" src="${user.photoURL}" alt="">
-              
-              <label id="selectProfile" for="selectPhotoProfile" class="hide">
-                <input type="file" id="selectPhotoProfile" class="hide" accept="image/jpeg, image/png">
-                <i class="fas fa-camera"></i>
-            </label>
-            </div>
-            <div class="header_name">
-              <h2 class="name">${user.displayName}</h2>
-            </div>
-            <div class="labels">
-              <div class="label">
-                <p>Nombre de tu mascota:</p>
-                <h2 class="name_pet"></h2>
-              </div>
-              <div class="label">
-                <p class="profile-text">Cuéntanos algo sobre ti y tu mascota</p>
-                <p class="description"></p>
-              </div>
-              <div class="profile-btn-editions">
-                <button id="btnCancel" class="btn-profile hide">Cancelar</button>
-                <button id="btnSave" class="btn-profile hide">Guardar</button>
-              </div>
-            </div>
-            <button type="button" class="edit_btn"><i class="fas fa-edit"></i>Edita tu perfil</button>
-          </div>      
+          <div class="profile">
+          <img class="profile-img" src="${user.photoURL}" alt="">         
+          <label id="selectProfile" for="selectPhotoProfile" class="hide">
+            <input type="file" id="selectPhotoProfile" class="hide" accept="image/jpeg, image/png">
+            <i class="fas fa-camera" style="color:#04BFBF; font-size:15px;"></i>
+          </label>
+           <h2 class="name">${user.displayName}</h2>         
         </div>
-    </aside>
+        </div>
+          <div class="content">
+              <div class="labels-profile">
+                <div class="label-profile">
+                  <p>Nombre de tu mascota:</p>
+                  <h2 class="name_pet"></h2>
+                  <p class="profile-text">Cuéntanos algo sobre ti y tu mascota</p>
+                  <h2 class="description"></h2>
+                </div>
+                <div class="profile-btn-editions">
+                  <button id="btnCancel" class="btn-profile hide">Cancelar</button>
+                  <button id="btnSave" class="btn-profile hide">Guardar</button>
+                </div>
+              </div>
+            <button type="button" class="edit_btn"><i class="fas fa-edit"></i>Editar</button>          
+          </div>            
+      </aside>
     <div class="all-posts"></div>   
     </div> 
     </main>

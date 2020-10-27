@@ -56,7 +56,7 @@ export const eachComment = (dataComment) => {
   });
   deleteCommentBtn.addEventListener('click', async () => {
     await deleteComment(dataComment.id);
-    console.log('borrar comentarios');
+    console.log('borrar comentarios de la BD');
   });
   return newComment;
 };
