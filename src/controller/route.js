@@ -1,7 +1,9 @@
 import { components } from '../view/index.js';
-import { getDataCurrentUser } from './controller-cloud.js';
+import { getDataCurrentUser } from './controller-firestore.js';
+// import { currentUser } from './controller-auth.js';
 
 const changeView = (route) => {
+  // const userId = currentUser().uid;
   const container = document.querySelector('#container');
   window.location.hash = route;
   container.innerHTML = '';

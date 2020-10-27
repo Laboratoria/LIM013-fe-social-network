@@ -1,4 +1,4 @@
-import { updateComment, deleteComment, getDataUserPost } from '../controller/controller-cloud.js';
+import { updateComment, deleteComment, getDataUserPost } from '../controller/controller-firestore.js';
 
 export const itemComment = (objComment, idPost) => {
   const userId = firebase.auth().currentUser.uid;

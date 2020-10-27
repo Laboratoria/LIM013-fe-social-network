@@ -1,6 +1,6 @@
 import {
   signIn, signInForGoogle, createUser, sendRecoverPass, sendEmail, signOut,
-} from '../src/controller/controller-firebase.js';
+} from '../src/controller/controller-auth.js';
 
 // setting up firebase mock
 const firebasemock = require('firebase-mock');
@@ -10,7 +10,6 @@ const mockstorage = new firebasemock.MockStorage();
 // const mockfirestore = new firebasemock.MockFirestore();
 // const mockdatabase = new firebasemock.MockFirebase();
 mockauth.autoFlush();
-mockstorage.ref('location/file');
 
 global.firebase = firebasemock.MockFirebaseSdk(
   // use null if your code does not use RTDB

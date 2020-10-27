@@ -1,7 +1,7 @@
 import {
   deletePost, updatePost, updatePrivacy, addComment, getComment,
   getDataUserPost, updateLike, updatePlane,
-} from '../controller/controller-cloud.js';
+} from '../controller/controller-firestore.js';
 import { itemComment } from './comment.js';
 
 export const itemPost = (objPost) => {
@@ -57,7 +57,7 @@ export const itemPost = (objPost) => {
             <button type="button" id="btn-comment" class="btn-comment"><i class="fa fa-comment"></i>Comment </button>
           </div>
           <section id ="container-comment" class="hide">
-            <form id= "formComment" class="div-comment">
+            <form class="div-comment formComment">
               <textarea class="comment" placeholder="Add a comment" required></textarea>
               <button type="submit" class="fas fa-paper-plane"></button>
             </form>
@@ -156,7 +156,7 @@ export const itemPost = (objPost) => {
   });
 
   /* ---------------------- ADD POST (CLOUD FIRESTORE SN-Post)------------------*/
-  const formComment = postElement.querySelector('#formComment');
+  const formComment = postElement.querySelector('.formComment');
   formComment.addEventListener('submit', (e) => {
     const comment = postElement.querySelector('.comment').value;
     e.preventDefault();

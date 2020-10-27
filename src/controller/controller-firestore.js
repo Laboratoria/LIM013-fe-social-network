@@ -1,6 +1,5 @@
 // ------------------------SEND USER INFORMATION TO CLUD FIRESTORE --------------------------
-export const sendDataCurrentUser = () => {
-  const user = firebase.auth().currentUser;
+export const sendDataCurrentUser = (user) => {
   const db = firebase.firestore();
   let Photo;
   let Name;
@@ -30,15 +29,14 @@ export const getDataCurrentUser = () => {
 };
 
 // ------------------------UPDATE USER INFORMATION TO CLUD FIRESTORE --------------------------
-export const updateCurrentUser = (a, b, c, d, e) => {
-  const user = firebase.auth().currentUser;
+export const updateCurrentUser = (userId, Username, Phone, Birthday, Country, Description) => {
   const db = firebase.firestore();
-  return db.collection('SN-Users').doc(user.uid).update({
-    username: a,
-    phone: b,
-    birthday: c,
-    country: d,
-    description: e,
+  return db.collection('SN-Users').doc(userId).update({
+    username: Username,
+    phone: Phone,
+    birthday: Birthday,
+    country: Country,
+    description: Description,
   });
 };
 // ------------------------UPDATE PHOTO PROFILE--------------------------

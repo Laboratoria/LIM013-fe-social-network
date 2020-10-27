@@ -1,4 +1,4 @@
-import { createUser, sendEmail } from '../controller/controller-firebase.js';
+import { createUser, sendEmail } from '../controller/controller-auth.js';
 
 export default () => {
   const viewSignUp = document.createElement('section');

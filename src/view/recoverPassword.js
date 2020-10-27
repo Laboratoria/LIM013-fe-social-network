@@ -1,4 +1,4 @@
-import { sendRecoverPass } from '../controller/controller-firebase.js';
+import { sendRecoverPass } from '../controller/controller-auth.js';
 
 export default () => {
   const viewRecoverPass = document.createElement('section');

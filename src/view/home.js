@@ -1,6 +1,6 @@
 import {
   addPost, getPosts,
-} from '../controller/controller-cloud.js';
+} from '../controller/controller-firestore.js';
 import { sendImgToStorage } from '../controller/controller-storage.js';
 import { itemPost } from './post.js';
 
@@ -105,11 +105,11 @@ export default (dataCurrentUser) => {
       <form >
         <div>
         <label for="nombre">Nombre</label><br>
-        <input type="text" name="" id="">
+        <input type="text">
         </div>
         <div>
         <p>Comment</p>
-        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <textarea cols="30" rows="10"></textarea>
         </div>
         <input type="submit" value="Submit">
       </form>
