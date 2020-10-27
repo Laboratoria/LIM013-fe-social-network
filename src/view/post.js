@@ -182,25 +182,25 @@ export const postSection = (Object) => {
     const inputComment = note.querySelector(`#newComment-${Object.id}`).value;
     allComments.innerHTML = '';
     const time = new Date().toLocaleString();
-    createComments(
-      currentUser().displayName,
-      inputComment,
-      currentUser().photoURL,
-      Object.id,
-      time,
-      user,
-    ).then(() => {
-      note.querySelector(`#newComment-${Object.id}`).value = '';
-      console.log('comentario creado');
-    });
-    getComments((comments) => {
-      allComments.innerHTML = '';
-      comments.forEach((doc) => {
-        allComments.appendChild(eachComment(doc));
+    if (inputComment.length !== 0) {
+      createComments(
+        currentUser().displayName,
+        inputComment,
+        currentUser().photoURL,
+        Object.id,
+        time,
+        user,
+      ).then(() => {
+        note.querySelector(`#newComment-${Object.id}`).value = '';
+        console.log('comentario creado');
       });
-    }, Object.id);
+      getComments((comments) => {
+        allComments.innerHTML = '';
+        comments.forEach((doc) => {
+          allComments.appendChild(eachComment(doc));
+        });
+      }, Object.id);
+    }
   });
-
-
   return note;
 };

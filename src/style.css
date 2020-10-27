@@ -119,25 +119,43 @@ p {
 	margin: 0.5rem 0.25rem 0rem 0.25rem;
 }
 .cover {
-	background-image: url('https://picsum.photos/480/136/?random');
-	background-size: contain;
-	background-position: center;
-	height: 136px;
+
+    background-image: url(https://picsum.photos/480/136/?random);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 5.5rem;
+
 }
 
 .content {
-	padding-top: 12px;
-	padding-left: 21px;
-	padding-right: 21px;
+	padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
 }
+.card-profile{
+	background-color: green;
+}
+
 .content-home {
 	padding: 2%;
 }
 .profile {
-	position: relative;
-	top: 1%;
-	right: 10rem;
-	
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    bottom: 2rem;
+
+}
+.profile-btn-editions{
+    display: flex;
+	flex-direction: column;
+	position: absolute;
+    top: 12rem;
+
 }
 .comunidades-figures {
 	width: 10%;
@@ -240,6 +258,22 @@ input {
 	text-transform: uppercase;
 	line-height: 20px;
 	text-decoration: none;
+}
+#selectPhotoProfile{
+    width: 1%;
+    margin: 0rem;
+    z-index: 1;
+    height: 0;
+    position: relative;
+}
+.name{
+	font-family: 'Playfair Display', serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 100%;
+    color: #A94824;
+    margin-left: 0.5rem;
+    margin-top: 2rem;
 }
 #SignInForm_email,
 #SignInForm_password {
@@ -485,7 +519,14 @@ span.error-msg {
 	border-radius: 4px;
 }
 .profile_section1 {
-	display: block;
+    display: flex;
+	flex-direction: column;
+	background: #FFAC00;
+    border-radius: 15px;
+    padding: 3%;
+    margin: 0rem 0rem 1rem 0rem;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px -8px rgba(0, 0, 0, 0);
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px -8px rgba(0, 0, 0, 0);
 }
 .divPost {
 	background: #f0f2f5;
@@ -509,11 +550,12 @@ span.error-msg {
 }
 
 .profile img {
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-	border-radius: 50%;
-	height: 115px;
-	position: absolute;
-	margin: 4rem 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    border-radius: 50%;
+    height: 3rem;
+	position: relative;
+	
+    
 }
 .showWindow {
 	position: absolute;
@@ -545,29 +587,45 @@ span.error-msg {
 	visibility: hidden;
 }
 #selectProfile {
-	margin: 0%;
-	padding: 0%;
-
-	visibility: hidden;
+    margin: 0%;
+    padding: 0%;
+    visibility: hidden;
+    width: 9%;
 }
 #selectProfile i {
-	visibility: visible;
-	width: 10%;
-	padding-top: 6rem;
-	margin-left: 1rem;
-	font-size: 15px;
-	position: absolute;
+    visibility: visible;
+    position: absolute;
 }
 
-.labels {
-	margin-top: 3.5rem;
-}
+.label-profile{
+    display: block;
 
-.labels .label {
-	flex-grow: 1;
-	word-wrap: break-word;
-	margin-top: 1rem;
-	/*width: 0;*/
+
+}
+.labels-profile{
+
+    display: block;
+
+    margin-top: 1.5rem;
+    height: 0rem;
+
+}   
+.label-profile p {
+	text-shadow: none;
+	color: black;
+	font-family: 'Playfair Display', serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 70%;
+}
+.name_pet, .description{
+    color: #A94824;
+    font-family: 'Playfair Display', serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 90%;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 10px;
+
 }
 
 .privacy {
@@ -649,6 +707,35 @@ span.error-msg {
 .edit_btn {
 	padding: 0.5rem;
 	margin: 1rem 0rem 1rem 14rem;
+	height: 2rem;
+	border-radius: 15px;
+	border: none;
+	background-color: #04BFAD;
+	color: white;
+	font-family: 'Abel', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 65%;
+	-webkit-box-shadow: 2px 8px 13px -3px rgba(0, 0, 0, 0.59);
+	box-shadow: 2px 8px 13px -3px rgba(0, 0, 0, 0.59);
+	outline: none;
+}
+.btn-profile {
+    padding: 0rem;
+    margin: 0.5rem 0rem 0.5rem 14rem;
+    height: 1.5rem;
+    border-radius: 15px;
+    border: none;
+    background-color: #04BFAD;
+    color: white;
+    font-family: 'Abel', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 65%;
+    -webkit-box-shadow: 2px 8px 13px -3px rgba(0, 0, 0, 0.59);
+    box-shadow: 2px 8px 13px -3px rgba(0, 0, 0, 0.59);
+    outline: none;
+    width: 25%;
 }
 .update_container {
 	/* Rectangle 10 */
@@ -1008,7 +1095,9 @@ section.msg-Redes p {
 	margin: 0px;
 }
 .card{
-	padding: 1rem;
+	display: block;
+    height: 5.5rem;
+
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
