@@ -11,7 +11,7 @@ export default (notes) => {
     <header id='headerHome'>
     <nav class="nav_Mobile">   
     <label class='btn-menu1'><i class="fas fa-bars" style="color:#04BFBF; font-size:30px;"></i></label>
-    <img src="/imagenes/PET.png" class="petLogoMenu" alt="logo" width="200px" height="auto" />  
+    <img src="/imagenes/nombre2.png" class="petLogoMenu" alt="logo" width="200px" height="auto" />  
     <ul class='menu_mobile1'>
       <li class="optionMobile">
         <a class='btn-header' href='#/profile'>
