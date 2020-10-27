@@ -1,6 +1,6 @@
 import MockFirebase from 'mock-cloud-firestore';
 
-import { addPost, getPost } from '../src/controller/controller-cloud.js';
+import { addPost, getPosts } from '../src/controller/controller-cloud.js';
 
 const fixtureData = {
   __collection__: {
@@ -24,7 +24,7 @@ global.firebase = new MockFirebase(fixtureData, { isNaiveSnapshotListenerEnabled
 
 describe('get post data', () => {
   it('Deberia obtener data', done => addPost('002', 'Public', 'Publicación mostrada', '', '', '')
-    .then(() => getPost(
+    .then(() => getPosts(
       (data) => {
         const result = data.find(post => post.publication === 'Publicación mostrada');
         expect(result.publication).toBe('Publicación mostrada');
