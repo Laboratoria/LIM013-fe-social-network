@@ -1,4 +1,4 @@
-// --------------------------------SIGN IN-------------------------------------
+// ---------------------------------------------SIGN IN----------------------------------------
 // Sign in with created credentials
 export const signIn = (email, password) => {
   const auth = firebase.auth();
@@ -10,7 +10,7 @@ export const signInForGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
   return auth.signInWithPopup(provider);
 };
-// ----------------------------CHECK SESSION ACTIVE-----------------------------
+// -------------------------------------CHECK SESSION ACTIVE----------------------------------
 export const checkSesionActive = ChangeView => firebase.auth().onAuthStateChanged((user) => {
   let route = '';
   if (window.location.hash === '#/signUp') route = '#/signUp';
@@ -20,7 +20,7 @@ export const checkSesionActive = ChangeView => firebase.auth().onAuthStateChange
   }
   return ChangeView(route);
 });
-// -----------------------------------SIGN UP------------------------------------
+// ---------------------------------------------SIGN UP---------------------------------------
 // Create user
 export const createUser = (email, password) => {
   const auth = firebase.auth();
@@ -31,13 +31,13 @@ export const sendEmail = () => {
   const user = firebase.auth().currentUser;
   return user.sendEmailVerification();
 };
-// ---------------------------------SIGN OUT------------------------------------
+// -------------------------------------------SIGN OUT----------------------------------------
 export const signOut = () => firebase.auth().signOut();
-// ------------------------------RECOVER PASSWORD-------------------------------
+// --------------------------------------RECOVER PASSWORD-------------------------------------
 // Send link for recover password
 export const sendRecoverPass = (emailAddress) => {
   const auth = firebase.auth();
   return auth.sendPasswordResetEmail(emailAddress);
 };
-// ------------------------------GET CURRENT USER-------------------------------
+// --------------------------------------GET CURRENT USER------------------------------------
 export const currentUser = () => firebase.auth().currentUser;
