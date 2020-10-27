@@ -217,7 +217,8 @@ form.signIn_Form {
 .header-form{
 	color: #F25F29;
     font-size: 30px;
-    text-align: center;
+	text-align: center;
+	font-family: 'Playfair Display', serif;
 }
 .signIn_Form h1 {
 	font-size: 170%;
@@ -268,6 +269,7 @@ input {
 	font-family: 'Playfair Display', serif;
 	text-transform: uppercase;
 	line-height: 24px;
+
 }
 section.logo-Redes {
 	width: auto;
@@ -1447,8 +1449,8 @@ section.msg-Redes p {
 		position: relative;
 		padding: 2%;
 	}
-	.signIn_Form h1 {
-		font-size: 200%;
+	.header-form{
+		font-size: 50px;
 	}
 	#SignInForm_email, #SignInForm_password {
 
@@ -1476,7 +1478,7 @@ section.msg-Redes p {
 			5px 5px 15px 5px rgba(0, 0, 0, 0);
 		box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 		padding: 2%;
-		background: linear-gradient(to top, #fcfbfb 0%, #fff895 100%);
+		background: linear-gradient(to top, #fcfbfb 0%, #fcfbfb 100%);
 	}
 	.signInForm-container {
 		border-radius: 40px;
