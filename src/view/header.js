@@ -33,7 +33,6 @@ export default () => {
     window.location.hash = '';
     signOut()
       .then(() => {
-        localStorage.clear();
       });
   });
   /* ----------------- Efecto Scroll up--------------------------------*/

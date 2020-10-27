@@ -1,6 +1,7 @@
 import {
   signIn, signInForGoogle, createUser, sendRecoverPass, sendEmail, signOut,
-} from '../src/controller/controller-firebase.js';
+  currentUser, checkSesionActive,
+} from '../src/controller/controller-auth.js';
 
 // setting up firebase mock
 const firebasemock = require('firebase-mock');
@@ -21,13 +22,14 @@ global.firebase = firebasemock.MockFirebaseSdk(
   // () => mockdatabase,
 );
 /* --------------------------funciones de test ----------------------------*/
-// Log in
+// Sign In for credentials
 describe('Sign In with credentials', () => {
   it('Deberia poder iniciar sesión', () => signIn('travelin@rs.com', 'abc123')
     .then((user) => {
       expect(user.email).toBe('travelin@rs.com');
     }));
 });
+// Sign In for google
 describe('Sing in with google', () => {
   it('Deberia iniciar sesión con google', () => signInForGoogle()
     .then((user) => {
@@ -35,7 +37,7 @@ describe('Sing in with google', () => {
       expect(user.providerData[0].providerId).toBe('google.com');
     }));
 });
-// Sign up
+// Create user
 describe('create new user', () => {
   it('Debería crear un nuevo usuario', () => createUser('prueba@test.com', 'pruebatest')
     .then((user) => {
@@ -43,7 +45,7 @@ describe('create new user', () => {
       expect(user.password).toBe('pruebatest');
     }));
 });
-// Email verified
+// Send email to verify created account
 describe('send email verified', () => {
   it('Debería enviar un email de verificación', () => {
     const mockSendEmail = jest.fn();
@@ -72,4 +74,20 @@ describe('Log out', () => {
     .then((user) => {
       expect(user).toBe(undefined);
     }));
+});
+// current User
+describe('Verify current user ', () => {
+  it('Deberia extraer a usuario logeado', () => {
+    const user = currentUser();
+    if (user) { console.log(user); } else {
+      console.log('fallido');
+    }
+  });
+});
+// observador
+describe('Verify sesion active ', () => {
+  it('Deberia limitar acceso', () => {
+    const chan = () => {};
+    console.log(checkSesionActive(chan));
+  });
 });

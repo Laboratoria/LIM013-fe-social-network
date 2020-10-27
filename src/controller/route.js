@@ -1,9 +1,8 @@
 import { components } from '../view/index.js';
-import { getDataCurrentUser } from './controller-firestore.js';
-// import { currentUser } from './controller-auth.js';
+import { getDataUser } from './controller-firestore.js';
+import { currentUser } from './controller-auth.js';
 
 const changeView = (route) => {
-  // const userId = currentUser().uid;
   const container = document.querySelector('#container');
   window.location.hash = route;
   container.innerHTML = '';
@@ -17,7 +16,7 @@ const changeView = (route) => {
     case '#/home':
       container.appendChild(components.header());
       document.querySelector('.home-header').style.textDecoration = 'underline';
-      getDataCurrentUser()
+      getDataUser(currentUser().uid)
         .then((doc) => {
           container.appendChild(components.home(doc.data()));
         });
@@ -25,7 +24,7 @@ const changeView = (route) => {
     case '#/profile':
       container.appendChild(components.header());
       document.querySelector('.profile-header').style.textDecoration = 'underline';
-      getDataCurrentUser()
+      getDataUser(currentUser().uid)
         .then((doc) => {
           container.appendChild(components.profile(doc.data()));
         });

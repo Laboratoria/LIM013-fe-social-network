@@ -1,4 +1,4 @@
-import { updateComment, deleteComment, getDataUserPost } from '../controller/controller-firestore.js';
+import { updateComment, deleteComment, getDataUser } from '../controller/controller-firestore.js';
 
 export const itemComment = (objComment, idPost) => {
   const userId = firebase.auth().currentUser.uid;
@@ -29,7 +29,7 @@ export const itemComment = (objComment, idPost) => {
   </div>
     `;
 
-  getDataUserPost(objComment.userId)
+  getDataUser(objComment.userId)
     .then((doc) => {
       const avatarComment = commentElement.querySelector('.avatar-comment');
       const nameComment = commentElement.querySelector('.name-comment');

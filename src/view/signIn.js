@@ -1,6 +1,6 @@
 
 import { signIn, signInForGoogle, currentUser } from '../controller/controller-auth.js';
-import { sendDataCurrentUser, getDataCurrentUser } from '../controller/controller-firestore.js';
+import { sendDataCurrentUser, getDataUser } from '../controller/controller-firestore.js';
 // import { controlerSignIn } from '../controller/signIn-controller.js';
 
 export default () => {
@@ -44,13 +44,12 @@ export default () => {
   /* --------------------------------------handle send to Sign In------------------------------- */
   const btnNewAccount = viewSignIn.querySelector('.newAccount');
   btnNewAccount.addEventListener('click', () => { window.location.hash = '#/signUp'; });
-  const userId = currentUser().uid;
   /* ---------------------------regarding DOM manipulation for login with google---------------- */
   const btnGoogle = viewSignIn.querySelector('#btn-google');
   btnGoogle.addEventListener('click', () => {
     signInForGoogle()
       .then(() => {
-        getDataCurrentUser(userId)
+        getDataUser(currentUser().uid)
           .then((doc) => {
             if (doc.exists) {
               window.location.hash = '#/home';
@@ -73,7 +72,7 @@ export default () => {
     signIn(email, password)
       .then((data) => {
         if (data.user.emailVerified) {
-          getDataCurrentUser(userId)
+          getDataUser(currentUser().uid)
             .then((doc) => {
               if (doc.exists) {
                 window.location.hash = '#/home';
