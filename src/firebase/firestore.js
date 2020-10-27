@@ -3,6 +3,7 @@ export const createUser = idDoc => firebase.firestore().collection('usuario').do
   petName: 'Fido',
   aboutUs: 'Somos',
 });
+// export const create = idDoc => firebase.firestore().collection('usuario').doc(idDoc);
 // TODO get data collection users
 export const getUser = docUser => firebase.firestore().collection('usuario').doc(docUser).get();
 // TODO get data collection users
