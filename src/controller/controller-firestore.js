@@ -112,7 +112,6 @@ export const updatePrivacy = (id, updateStatus) => {
 // ----------------------- CREATE BD COMMENT --------------------------
 export const addComment = (Comment, idPost) => {
   const user = firebase.auth().currentUser;
-  console.log(user.uid);
   const db = firebase.firestore();
   return db.collection('SN-Post').doc(idPost).collection('SN-Comment').add({
     userId: user.uid,
