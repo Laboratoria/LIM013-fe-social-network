@@ -1,4 +1,4 @@
-import { signOut } from '../controller/controller-firebase.js';
+import { signOut } from '../controller/controller-auth.js';
 
 export default () => {
   const viewHeader = document.createElement('section');

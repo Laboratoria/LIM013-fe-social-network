@@ -39,3 +39,5 @@ export const sendRecoverPass = (emailAddress) => {
   const auth = firebase.auth();
   return auth.sendPasswordResetEmail(emailAddress);
 };
+// ------------------------------GET CURRENT USER-------------------------------
+export const currentUser = () => firebase.auth().currentUser;

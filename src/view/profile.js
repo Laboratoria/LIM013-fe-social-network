@@ -1,7 +1,8 @@
 /* eslint-disable max-len */
 import {
   updateCurrentUser, updatephotoProfile, updatephotoCover, getPosts,
-} from '../controller/controller-cloud.js';
+} from '../controller/controller-firestore.js';
+import { currentUser } from '../controller/controller-auth.js';
 import { sendImgToStorage } from '../controller/controller-storage.js';
 import { itemPost } from './post.js';
 
@@ -164,15 +165,14 @@ export default (dataCurrentUser) => {
   });
   /* -----------------submit modal edit user profile------------------ */
   formEditProfile.addEventListener('submit', (e) => {
+    const userId = currentUser().uid;
     e.preventDefault();
     const usernameEdit = viewProfile.querySelector('#usernameEdit').value;
     const phoneEdit = viewProfile.querySelector('#phoneEdit').value;
     const birthday = viewProfile.querySelector('#birthdayEdit').value;
     const countryEdit = viewProfile.querySelector('#countryEdit').value;
     const descriptionEdit = viewProfile.querySelector('#descriptionEdit').value;
-    // const birthdayProfile = viewProfile.querySelector('.birthdayProfile');
-    // birthdayProfile.textContent = birthdayContent;
-    updateCurrentUser(usernameEdit, phoneEdit, birthday, countryEdit, descriptionEdit)
+    updateCurrentUser(userId, usernameEdit, phoneEdit, birthday, countryEdit, descriptionEdit)
       .then(() => {
         window.location.reload();
       });
@@ -185,13 +185,7 @@ export default (dataCurrentUser) => {
     containerUserPost.innerHTML = '';
     post.forEach((objPost) => {
       if (userId === objPost.userId) {
-        // getDataUserPost(objPost.userId)
-        //   .then((doc) => {
-        //     const obj = ({
-        //       username: doc.data().username, photo: doc.data().photo, country: doc.data().country, birthday: doc.data().birthday, ...objPost,
-        //     });
         containerUserPost.appendChild(itemPost(objPost));
-        // });
       }
     });
   });

@@ -1,7 +1,7 @@
 import {
   deletePost, updatePost, updatePrivacy, addComment, getComment,
   getDataUserPost, updateLike, updatePlane,
-} from '../controller/controller-cloud.js';
+} from '../controller/controller-firestore.js';
 import { itemComment } from './comment.js';
 
 export const itemPost = (objPost) => {
@@ -22,11 +22,7 @@ export const itemPost = (objPost) => {
           </div>               
           <img class="avatar-post" src=""/>
           <p class="name">
-<<<<<<< HEAD
-            <span class="names"></span>
-=======
             <span class = "username"></span>
->>>>>>> fdbe4aeb30e73956972cc9f7cd3798f42ed22980
             <span class = "tooltiptext">
               <img class="tooltipimg" src=""/>
               <strong class="nametooltip"></strong> <br>
@@ -61,7 +57,7 @@ export const itemPost = (objPost) => {
             <button type="button" id="btn-comment" class="btn-comment"><i class="fa fa-comment"></i>Comment </button>
           </div>
           <section id ="container-comment" class="hide">
-            <form id= "formComment" class="div-comment">
+            <form class="div-comment formComment">
               <textarea class="comment" placeholder="Add a comment" required></textarea>
               <button type="submit" class="fas fa-paper-plane"></button>
             </form>
@@ -74,11 +70,7 @@ export const itemPost = (objPost) => {
   getDataUserPost(objPost.userId)
     .then((doc) => {
       const avatarPhoto = postElement.querySelector('.avatar-post');
-<<<<<<< HEAD
-      const name = postElement.querySelector('.names');
-=======
       const username = postElement.querySelector('.username');
->>>>>>> fdbe4aeb30e73956972cc9f7cd3798f42ed22980
       const nametooltip = postElement.querySelector('.nametooltip');
       const tooltipimg = postElement.querySelector('.tooltipimg');
       const birthdayTooltip = postElement.querySelector('#birthdayTooltip');
@@ -164,7 +156,7 @@ export const itemPost = (objPost) => {
   });
 
   /* ---------------------- ADD POST (CLOUD FIRESTORE SN-Post)------------------*/
-  const formComment = postElement.querySelector('#formComment');
+  const formComment = postElement.querySelector('.formComment');
   formComment.addEventListener('submit', (e) => {
     const comment = postElement.querySelector('.comment').value;
     e.preventDefault();
