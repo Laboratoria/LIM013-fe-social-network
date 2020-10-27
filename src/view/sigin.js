@@ -1,4 +1,3 @@
-
 import {
   signingIn,
   signInGoogle,
@@ -7,13 +6,16 @@ import {
 export default () => {
   const viewSignIn = `
 <section class='header_signin'>
-  <img src="/imagenes/PET.png" class="petLogo" alt="logo" width="200px" height="auto" />
-  <img src="/imagenes/petlandia.png" class="logoHeader" alt="imagenPetlandia" width="400px" height="auto" />
+  <img src="/imagenes/nombre2.png" class="petLogo" alt="logo" width="200px" height="auto" />
+  <img src="/imagenes/logoPrueba.png" class="logoHeader" alt="imagenPetlandia" width="400px" height="auto" />
 </section>
 <section class="register-container">
   <section class="signInForm-container">
-  <section class="left">  
+  <section class="left">
       <form id="signIn-form" class="signIn_Form">
+        <section class="col">
+          <p class='header-form'>Iniciar Sesión</p>
+        </section>
         <section class="col">
           <input type="email" id="SignInForm_email" name="email" placeholder="Email" autocomplete="on"
             pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"
@@ -24,7 +26,7 @@ export default () => {
             pattern="[A-Za-z0-9]{6,30}$" autocomplete="on" required />
         </section>
         <section class="col">
-          <input type="submit" id="submit" class="submit_signIn" value="LogIn" />
+          <input type="submit" id="submit" class="submit_signIn" value="Inicia sesión" />
         </section>
         <section class="logo-Redes">         
  
