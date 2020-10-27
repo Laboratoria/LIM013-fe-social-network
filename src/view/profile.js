@@ -10,7 +10,7 @@ export default (notes) => {
   <div>
     <header id='headerHome'>
     <nav class="nav_Mobile">   
-    <label class='btn-menu1'><i class="fas fa-bars"></i></label>
+    <label class='btn-menu1'><i class="fas fa-bars" style="color:#04BFBF; font-size:30px;"></i></label>
     <img src="/imagenes/PET.png" class="petLogoMenu" alt="logo" width="200px" height="auto" />  
     <ul class='menu_mobile1'>
       <li class="optionMobile">
