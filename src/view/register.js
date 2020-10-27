@@ -10,6 +10,9 @@ export default () => {
     <section class="registerForm-container">
       <form id="signUp-form" class="form">
         <section class="col">
+          <p class='header-form'>Regístrate</p>
+        </section>
+        <section class="col">
           <input class="input-register validity" id="nameUser" type="text"
             pattern="([a-zA-ZÁÉÍÓÚñáéíóúÑ]{1,30}\\s*)+" placeholder="Nombre de usuario" required />
         </section>
@@ -23,7 +26,7 @@ export default () => {
             minlength="6" maxlength="15" pattern="[A-Za-z0-9]{6,15}$" autocomplete="on" required />
         </section>
         <section class="col">
-          <input type="submit" class="bttonSudmitt" id="submit-buttomRegister" value="register" />
+          <input type="submit" class="bttonSudmitt" id="submit-buttomRegister" value="Crear cuenta" />
         </section>
         <section class="container_msg">
           <p>

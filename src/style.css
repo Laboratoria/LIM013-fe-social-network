@@ -134,6 +134,11 @@ form.signIn_Form {
 	background: none;
 	box-shadow: none;
 }
+.header-form{
+	color: #F25F29;
+    font-size: 30px;
+    text-align: center;
+}
 .signIn_Form h1 {
 	font-size: 170%;
 	text-align: center;
@@ -280,8 +285,6 @@ input[type='submit']:hover {
 	width: auto;
 	height: auto;
 	border-radius: 40px;
-	margin: 2rem 0rem;
-	position: absolute;
 	box-shadow: none;
 	padding: 2%;
 	background: none;
@@ -307,14 +310,7 @@ span.error-msg {
 	position: relative;
 	top: 0rem;
 }
-.registerForm-container h1 {
-	font-size: 150%;
-	text-align: center;
-	font-weight: bold;
-	font-family: 'Abel', sans-serif;
-}
 .registerForm-container p {
-	font-size: 100%;
 	text-align: center;
 	font-family: 'Playfair Display', serif;
 	font-style: normal;

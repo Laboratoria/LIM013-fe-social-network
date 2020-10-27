@@ -14,6 +14,9 @@ export default () => {
   <section class="left">
       <form id="signIn-form" class="signIn_Form">
         <section class="col">
+          <p class='header-form'>Iniciar Sesión</p>
+        </section>
+        <section class="col">
           <input type="email" id="SignInForm_email" name="email" placeholder="Email" autocomplete="on"
             pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"
             required />
@@ -23,7 +26,7 @@ export default () => {
             pattern="[A-Za-z0-9]{6,30}$" autocomplete="on" required />
         </section>
         <section class="col">
-          <input type="submit" id="submit" class="submit_signIn" value="LogIn" />
+          <input type="submit" id="submit" class="submit_signIn" value="Inicia sesión" />
         </section>
         <section class="logo-Redes">         
  
