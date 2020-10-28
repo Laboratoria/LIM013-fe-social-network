@@ -10,7 +10,7 @@ export const sendDataCurrentUser = (user) => {
     Photo = 'img/travelling.jpg';
     Name = 'User';
   }
-  return db.collection('SN-Users').doc(user.uid).set({
+  return db.collection('SN_Users').doc(user.uid).set({
     username: Name,
     email: user.email,
     photo: Photo,
@@ -24,12 +24,12 @@ export const sendDataCurrentUser = (user) => {
 // ------------------------GET USER INFORMATION TO CLUD FIRESTORE --------------------------
 export const getDataUser = (userId) => {
   const db = firebase.firestore();
-  return db.collection('SN-Users').doc(userId).get();
+  return db.collection('SN_Users').doc(userId).get();
 };
 // ------------------------UPDATE USER INFORMATION TO CLUD FIRESTORE -----------------------
 export const updateCurrentUser = (userId, Username, Phone, Birthday, Country, Description) => {
   const db = firebase.firestore();
-  return db.collection('SN-Users').doc(userId).update({
+  return db.collection('SN_Users').doc(userId).update({
     username: Username,
     phone: Phone,
     birthday: Birthday,
