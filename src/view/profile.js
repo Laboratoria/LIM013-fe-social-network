@@ -10,9 +10,9 @@ export default (notes) => {
   <div class="body">
     <header id='headerHome'>
     <nav class="nav_Mobile">   
-    <label class='btn-menu1'><i class="fas fa-bars"></i></label>
-    <img src="/imagenes/petlandia.png" class="logoHeader-nav" alt="imagenPetlandia" width="10%" height="auto" /> 
-    <img src="/imagenes/nombre2.png" class="petLogoMenu" alt="logo" width="10%" height="auto" />    <ul class='menu_mobile1'>
+    <label class='btn-menu1'><i class="fas fa-bars" style="color:#04BFBF; font-size:30px;"></i></label>
+    <img src="/imagenes/nombre2.png" class="petLogoMenu" alt="logo" width="10%" height="auto" />    
+    <ul class='menu_mobile1'>
       <li class="optionMobile">
         <a class='btn-header' href='#/profile'>
         <img src="/imagenes/032-wanted.png" class="img-nav" alt="logo" width="8%" height="auto" />Mi Perfil</a>
@@ -30,7 +30,7 @@ export default (notes) => {
     </nav>
     </header>
     <main>
-    <div class = "main"> 
+    <div class = "main-profile"> 
       <aside class="profile_section1">   
         <div class="card">
           <div class="cover">
@@ -58,7 +58,8 @@ export default (notes) => {
                   <button id="btnSave" class="btn-profile hide">Guardar</button>
                 </div>
               </div>
-            <button type="button" class="edit_btn"><i class="fas fa-edit"></i>Editar</button>          
+              <button type="button" class="edit_btn"><i class="fas fa-edit"></i>Editar</button>
+                      
           </div>            
       </aside>
     <div class="all-posts"></div>   
