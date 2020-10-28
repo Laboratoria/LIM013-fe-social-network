@@ -1137,6 +1137,7 @@ section.msg-Redes p {
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 601px) and (max-width: 767px) {
+
 	.cam-post {
 		width: 22%;
 		-webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
@@ -1195,6 +1196,7 @@ section.msg-Redes p {
 		height: 3rem;
 		padding: 2%;
 		font-size: 100%;
+
 
 	}
 	.label-menu-post {
@@ -1430,29 +1432,7 @@ padding: 2rem;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1023px) {
-	body {
-		font-family: 'Playfair Display', serif;
-		background: #fff895;
-		background: -moz-linear-gradient(
-			-45deg,
-			#fff895 0%,
-			#fcd697 58%,
-			#f46d6d 100%
-		);
-		background: -webkit-linear-gradient(
-			-45deg,
-			#fff895 0%,
-			#fcd697 58%,
-			#f46d6d 100%
-		);
-		background: linear-gradient(135deg, #fff895 0%, #fcd697 58%, #f46d6d 100%);
-		background-attachment: fixed;
-	}
 
-	img.logoHuella {
-		width: 50%;
-		max-width: 50%;
-	}
 	.petLogo {
 		width: 70%;
 		margin: 0% 30%;
