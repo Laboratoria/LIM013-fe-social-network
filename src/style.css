@@ -40,7 +40,7 @@ p {
 	.fa { 
 		font-size:25px; 
 	} 
-	.fa-heart, .fa-paper-plane { 
+	.fa-heart, .fa-paper-plane, .fa-comment { 
 		font-size: 2rem;
 		color: #F25F29;
 	}
@@ -93,8 +93,10 @@ p {
 }
 .label-msg {
 	display: flex;
-	flex-direction: column;
-	width: 50%;
+    flex-direction: column;
+    width: 50%;
+    position: relative;
+    bottom: 1rem;
 }
 .img-adopta {
 	width: 100%;
@@ -643,14 +645,15 @@ span.error-msg {
 }
 
 .privacy {
-	outline: none;
-	cursor: pointer;
-	user-select: none;
-	border: 1px solid transparent;
-	background-color: transparent;
-    font-size: 1.5rem;
-	text-shadow:2px 4px 6px #000000;
-}
+
+		outline: none;
+		cursor: pointer;
+		user-select: none;
+		border: 1px solid transparent;
+		background-color: transparent;
+		font-size: 1.75rem;
+		text-shadow: 2px 4px 6px #000000;
+	}
 #privacy {
 	outline: none;
 	cursor: pointer;
@@ -1096,16 +1099,17 @@ i.fa.fa-pencil {
 .like-btton {
 	margin: 0 0.75rem;
     background: transparent;
-    border: none;
+	border: none;
+	outline: none;
 }
 
 .likes-counter {
-	font-size: 85%;
-	font-family: 'Abel', sans-serif;
-	line-height: initial;
-	/* pointer-events: none; */
-	text-align: center;
-	text-shadow: none;
+		font-size: 34%;
+		font-family: 'Abel', sans-serif;
+		line-height: initial;
+		margin-top: 0.5rem;
+		text-align: center;
+		text-shadow: none;
 }
 
 section.msg-Redes p {
@@ -1126,6 +1130,9 @@ section.msg-Redes p {
 .card {
 	display: block;
 	height: 5.5rem;
+}
+.menuDiv{
+	background-color: #f0f2f5;
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -1337,7 +1344,7 @@ padding: 2rem;
 		font-size: 3rem;
 	}
 	.likes-counter {
-		font-size: 130%;
+		font-size: 50%;
 		margin-top: 0.5rem;
 	}
 	.input-comment {

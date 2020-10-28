@@ -74,13 +74,13 @@ export const postSection = (Object) => {
         <div class="button-like">
         <button class="like-btton" id="like-btton-${
   Object.id
-}"><i class="fas fa-heart"></i> <p class = "likes-counter">${Object.likes.length} Likes</p>
+}"><i class="fas fa-heart"><p class = "likes-counter">${Object.likes.length} Likes</p></i> 
         </button>
         </div>
         <button type="button"id="comment-${
   Object.id
 }" class="btton-comment">        
-        <i class="fas fa-paper-plane" style='font-family:Arial, FontAwesome;'></i> 
+        <i class="fas fa-comment" style='color:#F25F29;'><p class = "likes-counter">Comment</p></i> 
         </button>
     </section>
     <section>
