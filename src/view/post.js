@@ -18,6 +18,7 @@ export const postSection = (Object) => {
   // console.log(user);
   note.innerHTML = ` 
   <section class="user_post" id="user_post">
+  <div class="content-post">
   <div class="menu-post">  
     <figure class="user_photo">
         <img class="user_img" src="${Object.photo}" alt="" />
@@ -27,15 +28,9 @@ export const postSection = (Object) => {
       <p class="post-time">${Object.time}</p>
     </div>
     <div class="menu-privacy"> 
-    <select id = "privacy" class="privacy ${
-  user === Object.user || 'hide'
-}" style='color: #F25F29; font-size:25px; font-family:Arial, FontAwesome;'>
-                      <option value="0" ${
-  Object.privacy === '1' || 'selected'
-} style='color: #F25F29; font-size:25px' >&#xf57d;</option>
-                      <option value="1" ${
-  Object.privacy === '0' || 'selected'
-} style='color: #F25F29; font-size:25px'>&#xf023;</option>
+    <select id = "privacy" class="privacy ${user === Object.user || 'hide'}" style='color: #F25F29; font-family:Arial, FontAwesome;'>
+                      <option value="0" ${Object.privacy === '1' || 'selected'} style='color: #F25F29; '>&#xf57d;</option>
+                      <option value="1" ${Object.privacy === '0' || 'selected'} style='color: #F25F29; '>&#xf023;</option>
                 </select>
                 </div>
                 <div class="${
@@ -77,15 +72,15 @@ export const postSection = (Object) => {
 }
     <section class="button-section">
         <div class="button-like">
-        <img class="like-btton" id="like-btton-${
+        <button class="like-btton" id="like-btton-${
   Object.id
-}" src="imagenes/like.png" alt="" />
-        <p class = "likes-counter">${Object.likes.length} Likes</p>
+}"><i class="fas fa-heart"><p class = "likes-counter">${Object.likes.length} Likes</p></i> 
+        </button>
         </div>
         <button type="button"id="comment-${
   Object.id
 }" class="btton-comment">        
-        <i class="fas fa-comment"style='color: #F25F29; font-size:25px; font-family:Arial, FontAwesome;'></i> 
+        <i class="fas fa-comment" style='color:#F25F29;'><p class = "likes-counter">Comment</p></i> 
         </button>
     </section>
     <section>
@@ -98,6 +93,7 @@ export const postSection = (Object) => {
     </div>
     <div id="showAllComments-${Object.id}"></div>
   </section>
+  </div>
   </section>`;
 
   // TODO LikePost

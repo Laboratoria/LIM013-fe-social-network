@@ -34,6 +34,25 @@ p {
 	text-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 10px;
 }
 
+	i { 
+		text-shadow:2px 4px 6px #000000;
+	} 
+	.fa { 
+		font-size:25px; 
+	} 
+	.fa-heart, .fa-paper-plane, .fa-comment { 
+		font-size: 2rem;
+		color: #F25F29;
+	}
+	.fa-bars {
+		color:#04BFBF; 
+		font-size:30px;
+	}
+	.fa-camera{
+		color:#04BFBF; 
+		font-size:15px;
+	}
+
 .card-group {
 	border-radius: 15px;
 	background-color: #ffac00;
@@ -74,8 +93,10 @@ p {
 }
 .label-msg {
 	display: flex;
-	flex-direction: column;
-	width: 50%;
+    flex-direction: column;
+    width: 50%;
+    position: relative;
+    bottom: 1rem;
 }
 .img-adopta {
 	width: 100%;
@@ -129,6 +150,12 @@ p {
 .content {
 	padding: 1rem;
 
+}
+
+.content-post{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
 }
 .card-profile {
 	background-color: green;
@@ -341,15 +368,6 @@ section.logo-Redes {
 .google:hover {
 	opacity: 1;
 }
-
-.fa {
-	padding: 2px;
-	font-size: 30px;
-	width: 26%;
-	text-align: center;
-	text-decoration: none;
-	margin: 5px 2px;
-}
 .fa:hover {
 	opacity: 0.7;
 }
@@ -515,7 +533,10 @@ li.optionMobile{
 	margin: 20px auto;
 }
 .body {
-	background: #f0f2f5;
+	background-color: #E5E5E5;
+	background-position: inherit;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 .profile_section {
 	display: none;
@@ -631,12 +652,15 @@ li.optionMobile{
 }
 
 .privacy {
-	outline: none;
-	cursor: pointer;
-	user-select: none;
-	border: 1px solid transparent;
-	background-color: transparent;
-}
+
+		outline: none;
+		cursor: pointer;
+		user-select: none;
+		border: 1px solid transparent;
+		background-color: transparent;
+		font-size: 1.75rem;
+		text-shadow: 2px 4px 6px #000000;
+	}
 #privacy {
 	outline: none;
 	cursor: pointer;
@@ -691,15 +715,17 @@ li.optionMobile{
 }
 
 .label-menu-post {
-	height: 3rem;
-	background-image: url(imagenes/copywriting.png);
-	background-repeat: no-repeat;
-	background-size: contain;
-	border: none;
-	outline: none;
-	cursor: pointer;
-	margin: 0rem 0rem 0rem 2rem;
-	position: relative;
+    height: 2rem;
+    background-image: url(imagenes/copywriting.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin: 0rem 0rem 0rem 0rem;
+    position: relative;
+    /* right: -1rem; */
+    left: 1.5rem;
 }
 .nav-post {
 	position: relative;
@@ -915,20 +941,20 @@ img.user_img {
 }
 .text-name {
 	font-family: 'Playfair Display', serif;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 100%;
-	color: black;
-	text-shadow: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 76%;
+    color: black;
+    text-shadow: none;
 }
 
 .date-comment {
-	font-family: 'Abel', sans-serif;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 100%;
-	color: gray;
-	text-shadow: none;
+    font-family: 'Abel', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 73%;
+    color: gray;
+    text-shadow: none;
 }
 .text-comment {
 	text-align: left;
@@ -953,31 +979,31 @@ img.user_img {
 
 .status_imput {
 	width: 90%;
-	height: 6em;
-	box-sizing: border-box;
-	background-color: #fbebe1;
-	border: none;
-	border-radius: 15px;
-	position: relative;
-	font-family: 'Abel', sans-serif;
-	padding: 2.4em;
-	font-size: 84%;
-	outline: none;
-	text-align: center;
-	margin: 0 1rem;
-	resize: both;
-	overflow-y: hidden;
+    height: 4em;
+    box-sizing: border-box;
+    background-color: #fbebe1;
+    border: none;
+    border-radius: 15px;
+    position: relative;
+    font-family: 'Abel', sans-serif;
+    padding: 1.5em;
+    font-size: 84%;
+    outline: none;
+    text-align: center;
+    margin: 0 1rem;
+    resize: both;
+    overflow-y: hidden;
 }
 .input-post {
 	width: 100%;
-	height: 4em;
-	background: #e5e5e5;
-	border-radius: 15px;
-	text-align: center;
-	vertical-align: center;
-	margin: 1rem 0;
-	text-shadow: none;
-	padding-top: 1.5rem;
+    /* height: 3em; */
+    background: #E5E5E5;
+    border-radius: 15px;
+    text-align: center;
+    vertical-align: center;
+    margin: 0.5rem 0;
+    text-shadow: none;
+    padding: 1rem;
 }
 .bttons-select {
 	display: flex;
@@ -1066,28 +1092,31 @@ i.fa.fa-pencil {
 	border-style: none;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: space-around;
 }
 .button-like {
-	padding: 1%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	width: 20%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 /*TODO liked posts*/
 .like-btton {
-	width: 50%;
 	margin: 0 0.75rem;
+    background: transparent;
+	border: none;
+	outline: none;
 }
 
 .likes-counter {
-	font-size: 85%;
-	font-family: 'Abel', sans-serif;
-	line-height: initial;
-	/* pointer-events: none; */
-	text-align: center;
-	text-shadow: none;
+		font-size: 34%;
+		font-family: 'Abel', sans-serif;
+		line-height: initial;
+		margin-top: 0.5rem;
+		text-align: center;
+		text-shadow: none;
 }
 
 section.msg-Redes p {
@@ -1109,96 +1138,306 @@ section.msg-Redes p {
 	display: block;
 	height: 5.5rem;
 }
+.menuDiv{
+	background-color: #f0f2f5;
+}
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 601px) and (max-width: 767px) {
-	/* body {
-		background: #fff895;
-		background: -moz-linear-gradient(
-			top,
-			#fff895 0%,
-			#fcd697 58%,
-			#f46d6d 100%
-		);
-		background: -webkit-linear-gradient(
-			top,
-			#fff895 0%,
-			#fcd697 58%,
-			#f46d6d 100%
-		);
-		background: linear-gradient(
-			to bottom,
-			#fff895 0%,
-			#fcd697 58%,
-			#f46d6d 100%
-		);
-		background-attachment: fixed;
-	} */
-}
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-	/*header h1 {
-		font-size: 600%;
-	}*/
-	img.logoHuella {
-		width: 30%;
-		max-width: 50%;
+	.cam-post {
+		width: 22%;
+		-webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+		box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 	}
-	.petLogo {
+	.like-picture {
+		width: 12%;
+		max-width: 12%;
+	}
+	.name1 {
+		font-size: 2rem;
+		margin: 0rem 1rem 0rem 1.5rem;
+	}
+	.status_imput {
+		font-size: 1rem;
+	}
+	.grupo-nombre h1 {
+		font-size: 1.5rem;
+	}
+	.img-adopta, .img-facilismo, .img-mascota {
 		width: 70%;
-		margin: 0% 30%;
 	}
-	.signIn_Form h1 {
-		font-size: 300%;
+	img.user_img {
+		height: 4.5rem;
 	}
-	.signInForm-container {
-		line-height: 3rem;
-	}
+	.menu-post {
+		height: auto;
 
-	input {
-		font-size: 200%;
 	}
+	.user_post{
+		-webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px -8px rgba(0, 0, 0, 0);
+		box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px -8px rgba(0, 0, 0, 0);
+	}
+	.name-user {
+		font-size: 138%;
 
-	input:focus,
-	select:focus,
-	textarea:focus,
-	button:focus {
-		outline: none;
 	}
+	.post-time{
+		font-size: 100%;
+    line-height: 2rem;
+	}
+	.input-post{
+		font-size: 130%;
+	}
+	.data-user {
+		margin-left: 1rem;
+	}
+	.fa-heart, .fa-paper-plane {
+		font-size: 3rem;
+	}
+	.likes-counter {
+		font-size: 130%;
+		margin-top: 0.5rem;
+	}
+	.input-comment {
+		height: 3rem;
+		padding: 2%;
+		font-size: 100%;
 
-	.fa {
-		padding: 34px;
-		font-size: 30px;
-		width: 14%;
+
 	}
-	#SignInForm_email,
-	#SignInForm_password {
-		line-height: 35px;
+	.label-menu-post {
+		height: 4rem;
 	}
-	.container_msg p {
-		font-size: 200%;
-		font-family: 'Abel', sans-serif;
-		text-align: center;
-	}
-	.registerForm-container {
+	.label-msg {
+		width: 50%;
 		position: relative;
+		bottom: 2rem;
 	}
-	.registerForm-container h1 {
-		font-size: 300%;
+	.name_pet1 {
+		font-size: 1rem;
 	}
-	span.error-msg {
+	.btn-post-edit, .btn-post-delete {
+		width: 100%;
+		font-size: 100%;
+		top: 1rem;
+	}
+	.btn-post-cancel-edit-post, .btn-post-save-edit-post, .btn-save-comment, .btn-cancel-comment, .btn-comment-edit, .btn-comment-delete {
+		font-size: 100%;
+		margin: 1rem 0rem 1rem 0rem;
+	}
+	.btn-post-cancel-edit-post:hover, .btn-post-save-edit-post:hover, .btn-save-comment:hover, .btn-cancel-comment:hover, .btn-comment-edit:hover, .btn-comment-delete:hover {
+		background-color: #983d1c;
+		color: white;
+	}
+	.photo_post_img {
+		margin: 0 9.5rem;
+	}
+	.cover {
+		height: 8.5rem;
+	}
+	.card {
+		height: 9.5rem;
+	}
+	.profile {
+		margin-left: 1rem;
+		margin-bottom: 1rem;
+	}
+	.profile img {
+		height: 6rem;
+		bottom: 2rem;
+	}
+	.name {
+		font-size: 1.5rem;
+		margin-top: 1rem;
+	}
+	.label-profile p {
 		font-size: 100%;
 	}
-	section.msg-Redes p {
-		font-size: 200%;
+	.name_pet, .description {
+		font-size: 100%;
 	}
-	/*---Main--*/
-	.menu_mobile,
-	.menu_mobile1 {
-		margin-top: 8%;
+	.labels-profile {
+		height: 1rem;
+
+	}
+	.edit_btn {
+		margin: 1rem 0rem 1rem 23rem;
+		font-size: 100%;
+		width: 22%;
+	}
+	.privacy {
+		font-size: 2.5rem;
+	}
+	.btn-profile {
+		padding: 0rem;
+		margin: 0.5rem 0rem 0.5rem 24rem;
+		font-size: 100%;
+		width: 25%;
 	}
 }
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.logoHeader-nav {
+		width: 10%;
+		margin: 1rem 0rem 0.5rem 19rem;
+		height: 4rem;
+	}
+	.petLogoMenu {
+		width: 26%;
+		/* height: 3rem; */
+		margin: 0rem 2rem 0rem 1rem;
+	}
+	.cam-post {
+		width: 20%;
+	}
+	.like-picture {
+		width: 12%;
+		max-width: 12%;
+	}
+	.name1 {
+
+		font-size: 200%;
+	
+		margin: 0rem 1rem 0rem 1.5rem;
+	}
+	.privacy {
+		font-size: 2.5rem;
+
+	}
+	.post_buttom {
+		font-size: 2rem;
+		width: 50%;
+	}
+	.status_imput {
+		font-size: 1rem;
+		width: 90%;
+		margin: 0 2rem;
+	}
+	.grupo-nombre h1 {
+		font-size: 2rem;
+	}
+	.img-adopta, .img-facilismo, .img-mascota {
+		width: 70%;
+	}
+	img.user_img {
+		height: 4.5rem;
+	}
+	.menu-post {
+		height: auto;
+	}
+	.content-post{
+padding: 2rem;
+	}
+	.user_post{
+		-webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px -8px rgba(0, 0, 0, 0);
+		box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px -8px rgba(0, 0, 0, 0);
+	}
+	.name-user {
+		font-size: 138%;
+
+	}
+	.post-time{
+		font-size: 100%;
+    line-height: 2rem;
+	}
+	.input-post{
+		font-size: 130%;
+		height: 4em;
+		padding: 2rem;
+	}
+	.data-user {
+		margin-left: 1rem;
+	}
+	.fa-heart, .fa-paper-plane {
+		font-size: 3rem;
+	}
+	.likes-counter {
+		font-size: 50%;
+		margin-top: 0.5rem;
+	}
+	.input-comment {
+		height: 3rem;
+		padding: 2%;
+		font-size: 100%;
+
+	}
+	.label-menu-post {
+		margin: 0rem 0rem 0rem 33rem;
+		position: absolute;
+		height: 4rem;
+	}
+	.label-msg {
+		position: relative;
+		bottom: 2rem;
+	}
+	.name_pet1 {
+		font-size: 140%;
+	}
+	.btn-post-edit, .btn-post-delete {
+		width: 100%;
+		font-size: 100%;
+		top: 1rem;
+	}
+	.btn-post-cancel-edit-post, .btn-post-save-edit-post, .btn-save-comment, .btn-cancel-comment, .btn-comment-edit, .btn-comment-delete {
+		font-size: 100%;
+		margin: 1rem 0rem 1rem 0rem;
+	}
+	.btn-post-cancel-edit-post:hover, .btn-post-save-edit-post:hover, .btn-save-comment:hover, .btn-cancel-comment:hover, .btn-comment-edit:hover, .btn-comment-delete:hover {
+		background-color: #983d1c;
+		color: white;
+	}
+	.photo_post_img {
+		margin: 0 9.5rem;
+	}
+	.cover {
+		height: 8.5rem;
+		background-size: cover;
+	}
+	.card {
+		height: 9.5rem;
+	}
+	.profile {
+		margin-left: 1rem;
+		margin-bottom: 1rem;
+	}
+	.profile img {
+		height: 6rem;
+		bottom: 2rem;
+	}
+	.name {
+		font-size: 1.5rem;
+		margin-top: 1rem;
+		margin-left: 2rem;
+	}
+	.label-profile p {
+		font-size: 120%;
+	}
+	.name_pet, .description {
+		font-size: 120%;
+	}
+	.labels-profile {
+		height: 1rem;
+
+	}
+	.edit_btn {
+		margin: 1rem 0rem 1rem 29rem;
+		font-size: 120%;
+		width: 23%;
+		padding: 0rem;
+	}
+	.fa-camera {
+		font-size: 2rem;
+	}
+	.btn-profile {
+		padding: 0rem;
+		margin: 0.5rem 0rem 0.5rem 31rem;
+		height: 2.5rem;
+		font-size: 100%;
+		width: 25%;
+	}
+}
+
 @media only screen and (min-width: 992px) and (max-width: 1023px) {
 
 	.petLogo {

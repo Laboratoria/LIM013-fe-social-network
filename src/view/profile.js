@@ -7,11 +7,10 @@ import { uploadPhotoProfile } from '../firebase/storage.js';
 export default (notes) => {
   const user = currentUser();
   const viewProfile = `
-  <div class='body'>
+  <div class="body">
     <header id='headerHome'>
     <nav class="nav_Mobile">   
     <label class='btn-menu1'><i class="fas fa-bars" style="color:#04BFBF; font-size:30px;"></i></label>
-
     <img src="/imagenes/nombre2.png" class="petLogoMenu" alt="logo" width="10%" height="auto" />    
     <ul class='menu_mobile1'>
       <li class="optionMobile">
@@ -41,7 +40,7 @@ export default (notes) => {
           <img class="profile-img" src="${user.photoURL}" alt="">         
           <label id="selectProfile" for="selectPhotoProfile" class="hide">
             <input type="file" id="selectPhotoProfile" class="hide" accept="image/jpeg, image/png">
-            <i class="fas fa-camera" style="color:#04BFBF; font-size:15px;"></i>
+            <i class="fas fa-camera"></i>
           </label>
            <h2 class="name">${user.displayName}</h2>         
         </div>
