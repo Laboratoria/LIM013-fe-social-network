@@ -6,10 +6,10 @@ import { makingPost } from '../controller/post-controller.js';
 export default (notes, dataUser) => {
   const user = currentUser();
   const viewHome = `
-    <div class='body'>
+  <div class="body">
     <header id='headerHome'>
       <nav class="nav_Mobile">   
-      <label class='btn-menu'><i class="fas fa-bars" style="color:#04BFBF; font-size:30px;"></i></label>
+      <label class='btn-menu'><i class="fas fa-bars"></i></label>
       <img src="/imagenes/petlandia.png" class="logoHeader-nav" alt="imagenPetlandia" width="10%" height="auto" /> 
       <img src="/imagenes/nombre2.png" class="petLogoMenu" alt="logo" width="10%" height="auto" />
       
@@ -84,7 +84,7 @@ export default (notes, dataUser) => {
               <input type="file" id="selectImage"  name="imagensubida" class="upload" accept="image/png, .jpeg, .jpg, image/gif">
               <img class="cam-post" src="/imagenes/camera.png" width="5%" height="auto" alt="">       
             </label>        
-            <select id="privacy" class="privacy" style='color:#04BFBF; font-size:30px; font-family:Arial, FontAwesome;'>
+            <select id="privacy" class="privacy" style='color:#04BFBF; font-family:Arial, FontAwesome;'>
               <option value="0" style='color:#04BFBF;'>&#xf57d;</option>
               <option value="1" style='color:#04BFBF;'>&#xf023;</option>
             </select>
