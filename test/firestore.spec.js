@@ -1,8 +1,9 @@
-/* eslint-disable max-len */
 import MockFirebase from 'mock-cloud-firestore';
 
 import {
-  addPost, getPosts, sendDataCurrentUser, updateCurrentUser, getDataUser, addComment, getComment,
+  addPost, getPosts, sendDataCurrentUser, updateCurrentUser, getDataUser, addComment,
+  getComment, updatephotoProfile, updatephotoCover, updatePost, deletePost, updateComment,
+  updatePrivacy, updateLike, updatePlane, deleteComment,
 } from '../src/controller/controller-firestore.js';
 
 const fixtureData = {
@@ -21,7 +22,7 @@ const fixtureData = {
         },
       },
     },
-    posts: {
+    SN_Post: {
       __doc__: {
         id_001: {
           userId: '001',
@@ -33,7 +34,7 @@ const fixtureData = {
           planes: '',
 
           __collection__: {
-            comments: {
+            SN_Comment: {
               __doc__: {
                 cid_001: {
                   userId: '001',
@@ -58,19 +59,34 @@ global.firebase = new MockFirebase(fixtureData, { isNaiveSnapshotListenerEnabled
 describe('set new user', () => {
   it('Deberia crear un nuevo usuario', () => {
     const currentUser = {
-      uid: 'uid_001',
-      username: 'Fulana',
+      uid: 'uid_005',
+      displayName: 'Fulana',
+      photoURL: 'prueba.jpg',
+      email: 'fulanita@gmail.com',
+    };
+    const current = {
+      uid: 'uid_006',
+      displayName: null,
+      photoURL: null,
       email: 'fulanita@gmail.com',
     };
     sendDataCurrentUser(currentUser)
       .then(() => {
-        getDataUser('uid_001')
+        getDataUser('uid_005')
           .then((doc) => {
-            console.log(doc.data());
             expect(doc.data().email).toEqual('fulanita@gmail.com');
+            expect(doc.data().username).toEqual('Fulana');
+            expect(doc.data().photo).toEqual('prueba.jpg');
           });
       });
-    // expect(currentUser.username).toBe('Fulana');
+    sendDataCurrentUser(current)
+      .then(() => {
+        getDataUser('uid_006')
+          .then((doc) => {
+            expect(doc.data().username).toEqual('User');
+            expect(doc.data().photo).toEqual('img/travelling.jpg');
+          });
+      });
   });
 });
 // Update user profile
@@ -87,12 +103,11 @@ describe('update user profile', () => {
 // --------------------------SN-POST COLLECTION-----------------------------------
 // Add new post
 describe('add new post', () => {
-  it('Deberia agregar una nueva publicación', done => addPost('002', 'Public', 'Publicación mostrada', '', '', '')
+  it('Deberia agregar una nueva publicación', done => addPost('uid_003', 'Public', 'Added post to SN-post', '', '', '')
     .then(() => getPosts(
       (data) => {
-        // console.log(data);
-        const result = data.find(post => post.publication === 'Publicación mostrada');
-        expect(result.publication).toBe('Publicación mostrada');
+        const result = data.find(post => post.publication === 'Added post to SN-post');
+        expect(result.publication).toBe('Added post to SN-post');
         done();
       },
     )));
@@ -100,22 +115,105 @@ describe('add new post', () => {
 // --------------------------SN-COMMENTS SUBCOLLECTION-----------------------------------
 // Add new comment
 describe('add new comment', () => {
-  it('Deberia agregar una nuevo comentario', done => addComment('001', 'id_001', 'I like it!')
+  it('Deberia agregar una nuevo comentario', done => addComment('uid_001', 'id_001', 'I like it!')
     .then(() => getComment('id_001',
       (data) => {
-        console.log(data);
         const result = data.find(comment => comment.comment === 'I like it!');
         expect(result.comment).toBe('I like it!');
         done();
       })));
 });
 
-
-describe('delete post', () => {
-  it('Deberia eliminar data', done => addPost('002', 'Public', 'Publicación eliminada', '', '', '')
+// Update user profile
+describe('update photo profile', () => {
+  it('Deberia actualizar la foto del usuario', done => updatephotoProfile('uid_002', 'profile.jpg')
     .then(() => {
-      done();
-      deletePost('002');
+      getDataUser('uid_002')
+        .then((doc) => {
+          expect(doc.data().photo).toBe('profile.jpg');
+          done();
+        });
     }));
-
 });
+// Update user photo cover
+describe('update photo cover', () => {
+  it('Deberia actualizar la foto de portada del usuario', done => updatephotoCover('uid_002', 'photoCover.jpg')
+    .then(() => {
+      getDataUser('uid_002')
+        .then((doc) => {
+          expect(doc.data().photoCover).toBe('photoCover.jpg');
+          done();
+        });
+    }));
+});
+// Update post
+describe('update Post', () => {
+  it('Deberia actualizar información del post', done => updatePost('id_001', 'post editado')
+    .then(() => getPosts(
+      (data) => {
+        const result = data.find(post => post.publication === 'post editado');
+        expect(result.publication).toBe('post editado');
+        done();
+      },
+    )));
+});
+// Update privacy
+describe('update Privacy', () => {
+  it('Deberia actualizar información de la privacidad', done => updatePrivacy('id_001', 'Private')
+    .then(() => getPosts(
+      (data) => {
+        const result = data.find(post => post.privacy === 'Private');
+        expect(result.privacy).toBe('Private');
+        done();
+      },
+    )));
+});
+// Update Comment
+describe('update Comment', () => {
+  it('Deberia actualizar un comentario', done => updateComment('id_001', 'cid_001', 'Edited Comment')
+    .then(() => getComment('id_001',
+      (data) => {
+        const result = data.find(comment => comment.comment === 'Edited Comment');
+        expect(result.comment).toBe('Edited Comment');
+        done();
+      })));
+});
+// Update like
+describe('update Like', () => {
+  it('Deberia  reaccionar Like a Post', done => updateLike('id_001', 'like')
+    .then(() => getPosts(
+      (data) => {
+        const result = data.find(post => post.likes === 'like');
+        expect(result.likes).toBe('like');
+        done();
+      },
+    )));
+});
+// Update plane
+describe('update Plane', () => {
+  it('Deberia reaccionar Lets Go a Post', done => updatePlane('id_001', 'Plane')
+    .then(() => getPosts(
+      (data) => {
+        const result = data.find(post => post.planes === 'Plane');
+        expect(result.planes).toBe('Plane');
+        done();
+      },
+    )));
+});
+// Delete Post
+it('Debería poder eliminar un post', done => deletePost('id_001')
+  .then(() => getPosts(
+    (data) => {
+      const result = data.find(post => post.id === 'id_001');
+      expect(result).toBe(undefined);
+      done();
+    },
+  )));
+// Delete Comment
+it('Debería poder eliminar un comentario', done => deleteComment('id_001', 'cid_001')
+  .then(() => getComment('id_001',
+    (data) => {
+      const result = data.find(comment => comment.id === 'cid_001');
+      expect(result).toBe(undefined);
+      done();
+    })));

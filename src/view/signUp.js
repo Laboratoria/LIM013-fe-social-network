@@ -53,7 +53,6 @@ export default () => {
       .then(() => {
         sendEmail()
           .then(() => {
-            console.log('enviando');
             error.classList.add('successful-message');
             error.textContent = 'Please check your inbox to verify your account';
           })
