@@ -111,7 +111,7 @@ export default (dataCurrentUser) => {
       // Handle successful uploads on complete
       uploadTask.snapshot.ref.getDownloadURL()
         .then((downloadURL) => {
-          updatephotoProfile(downloadURL)
+          updatephotoProfile(currentUser().uid, downloadURL)
             .then(() => window.location.reload());
         });
     });
@@ -136,7 +136,7 @@ export default (dataCurrentUser) => {
       // Handle successful uploads on complete
       uploadTask.snapshot.ref.getDownloadURL()
         .then((downloadURL) => {
-          updatephotoCover(downloadURL)
+          updatephotoCover(currentUser().uid, downloadURL)
             .then(() => window.location.reload());
         });
     });

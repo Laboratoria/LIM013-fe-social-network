@@ -1,32 +1,34 @@
 import {
   signIn, signInForGoogle, createUser, sendRecoverPass, sendEmail, signOut,
+  currentUser,
 } from '../src/controller/controller-auth.js';
-
 // setting up firebase mock
 const firebasemock = require('firebase-mock');
 
 const mockauth = new firebasemock.MockAuthentication();
 const mockstorage = new firebasemock.MockStorage();
-// const mockfirestore = new firebasemock.MockFirestore();
+const mockfirestore = new firebasemock.MockFirestore();
 // const mockdatabase = new firebasemock.MockFirebase();
 mockauth.autoFlush();
+mockfirestore.autoFlush();
 
 global.firebase = firebasemock.MockFirebaseSdk(
   // use null if your code does not use RTDB
   () => null,
   () => mockauth,
   () => mockstorage,
-  // () => mockfirestore,
+  () => mockfirestore,
   // () => mockdatabase,
 );
 /* --------------------------funciones de test ----------------------------*/
-// Log in
+// Sign In for credentials
 describe('Sign In with credentials', () => {
   it('Deberia poder iniciar sesión', () => signIn('travelin@rs.com', 'abc123')
     .then((user) => {
       expect(user.email).toBe('travelin@rs.com');
     }));
 });
+// Sign In for google
 describe('Sing in with google', () => {
   it('Deberia iniciar sesión con google', () => signInForGoogle()
     .then((user) => {
@@ -34,7 +36,7 @@ describe('Sing in with google', () => {
       expect(user.providerData[0].providerId).toBe('google.com');
     }));
 });
-// Sign up
+// Create user
 describe('create new user', () => {
   it('Debería crear un nuevo usuario', () => createUser('prueba@test.com', 'pruebatest')
     .then((user) => {
@@ -42,7 +44,7 @@ describe('create new user', () => {
       expect(user.password).toBe('pruebatest');
     }));
 });
-// Email verified
+// Send email to verify created account
 describe('send email verified', () => {
   it('Debería enviar un email de verificación', () => {
     const mockSendEmail = jest.fn();
@@ -71,4 +73,15 @@ describe('Log out', () => {
     .then((user) => {
       expect(user).toBe(undefined);
     }));
+});
+
+// current User
+describe('Verify current user ', () => {
+  it('Deberia extraer a usuario logeado', () => {
+    const mockUser = {
+      currentUser: { uid: '001' },
+    };
+    firebase.auth().currentUser = mockUser.currentUser;
+    expect(currentUser().uid).toEqual('001');
+  });
 });

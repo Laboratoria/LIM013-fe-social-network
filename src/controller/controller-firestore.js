@@ -10,7 +10,7 @@ export const sendDataCurrentUser = (user) => {
     Photo = 'img/travelling.jpg';
     Name = 'User';
   }
-  return db.collection('SN-Users').doc(user.uid).set({
+  return db.collection('SN_Users').doc(user.uid).set({
     username: Name,
     email: user.email,
     photo: Photo,
@@ -22,16 +22,14 @@ export const sendDataCurrentUser = (user) => {
   });
 };
 // ------------------------GET USER INFORMATION TO CLUD FIRESTORE --------------------------
-export const getDataCurrentUser = () => {
-  const user = firebase.auth().currentUser;
+export const getDataUser = (userId) => {
   const db = firebase.firestore();
-  return db.collection('SN-Users').doc(user.uid).get();
+  return db.collection('SN_Users').doc(userId).get();
 };
-
-// ------------------------UPDATE USER INFORMATION TO CLUD FIRESTORE --------------------------
+// ------------------------UPDATE USER INFORMATION TO CLUD FIRESTORE -----------------------
 export const updateCurrentUser = (userId, Username, Phone, Birthday, Country, Description) => {
   const db = firebase.firestore();
-  return db.collection('SN-Users').doc(userId).update({
+  return db.collection('SN_Users').doc(userId).update({
     username: Username,
     phone: Phone,
     birthday: Birthday,
@@ -39,26 +37,7 @@ export const updateCurrentUser = (userId, Username, Phone, Birthday, Country, De
     description: Description,
   });
 };
-// ------------------------UPDATE PHOTO PROFILE--------------------------
-export const updatephotoProfile = (value) => {
-  const user = firebase.auth().currentUser;
-  const db = firebase.firestore();
-  return db.collection('SN-Users').doc(user.uid).update({
-    photo: value,
-  });
-};
-// ------------------------UPDATE PHOTO COVER --------------------------
-export const updatephotoCover = (value) => {
-  const user = firebase.auth().currentUser;
-  const db = firebase.firestore();
-  return db.collection('SN-Users').doc(user.uid).update({
-    photoCover: value,
-  });
-};
-
-// db.colleciton('SN-users').doc(post.userId).get().then((u) => u.photoUrl)
-
-// ----------------------- CREATE BD POST --------------------------
+// ----------------------------------- CREATE BD POST --------------------------------------
 export const addPost = (UserId, Privacy, Publication, URLimg) => {
   const db = firebase.firestore();
   return db.collection('SN-Post').add({
@@ -71,8 +50,16 @@ export const addPost = (UserId, Privacy, Publication, URLimg) => {
     planes: [],
   });
 };
-
-// ----------------------- GET ALL BD POST --------------------------
+// --------------------------------------- CREATE BD COMMENT -------------------------------
+export const addComment = (UserId, idPost, Comment) => {
+  const db = firebase.firestore();
+  return db.collection('SN-Post').doc(idPost).collection('SN-Comment').add({
+    userId: UserId,
+    date: new Date().toLocaleString(),
+    comment: Comment,
+  });
+};
+// ------------------------------------- GET ALL BD POST -----------------------------------
 export const getPosts = (callback) => {
   const db = firebase.firestore();
   db.collection('SN-Post').orderBy('date', 'desc')
@@ -84,42 +71,7 @@ export const getPosts = (callback) => {
       callback(post);
     });
 };
-// ------------------- GET BD USERNAME AND PHOTO (POST) ----------
-export const getDataUserPost = (id) => {
-  const db = firebase.firestore();
-  return db.collection('SN-Users').doc(id).get();
-};
-// ----------------------- UPDATE POST --------------------------
-export const updatePost = (idPost, updatePublication) => {
-  const db = firebase.firestore();
-  return db.collection('SN-Post').doc(idPost).update({
-    publication: updatePublication,
-  });
-};
-
-// ----------------------- DELETE POST --------------------------
-export const deletePost = (idPost) => {
-  const db = firebase.firestore();
-  db.collection('SN-Post').doc(idPost).delete();
-};
-// ----------------------- UPDATE PRIVACY --------------------------
-export const updatePrivacy = (id, updateStatus) => {
-  const db = firebase.firestore();
-  db.collection('SN-Post').doc(id).update({
-    privacy: updateStatus,
-  });
-};
-// ----------------------- CREATE BD COMMENT --------------------------
-export const addComment = (Comment, idPost) => {
-  const user = firebase.auth().currentUser;
-  const db = firebase.firestore();
-  return db.collection('SN-Post').doc(idPost).collection('SN-Comment').add({
-    userId: user.uid,
-    date: new Date().toLocaleString(),
-    comment: Comment,
-  });
-};
-// ----------------------- GET ALL BD COMMENT --------------------------
+// ----------------------------------- GET ALL BD COMMENT ----------------------------------
 export const getComment = (idPost, callback) => {
   const db = firebase.firestore();
   db.collection(`SN-Post/${idPost}/SN-Comment`).orderBy('date', 'desc')
@@ -131,7 +83,41 @@ export const getComment = (idPost, callback) => {
       callback(comment);
     });
 };
-// ----------------------- UPDATE COMMENT --------------------------
+// --------------------------------------- DELETE POST -------------------------------------
+export const deletePost = (idPost) => {
+  const db = firebase.firestore();
+  db.collection('SN-Post').doc(idPost).delete();
+};
+// ------------------------------------- DELETE COMMENT ------------------------------------
+export const deleteComment = (idPost, idComment) => {
+  const db = firebase.firestore();
+  return db.collection(`SN-Post/${idPost}/SN-Comment`).doc(idComment).delete();
+};
+// ---------------------------------UPDATE PHOTO PROFILE------------------------------------
+export const updatephotoProfile = (userId, photo) => {
+  const db = firebase.firestore();
+  return db.collection('SN-Users').doc(userId).update({ photo });
+};
+// ----------------------------------UPDATE PHOTO COVER ------------------------------------
+export const updatephotoCover = (userId, value) => {
+  const db = firebase.firestore();
+  return db.collection('SN-Users').doc(userId).update({ photoCover: value });
+};
+// -------------------------------------- UPDATE POST --------------------------------------
+export const updatePost = (idPost, updatePublication) => {
+  const db = firebase.firestore();
+  return db.collection('SN-Post').doc(idPost).update({
+    publication: updatePublication,
+  });
+};
+// ---------------------------------------- UPDATE PRIVACY ---------------------------------
+export const updatePrivacy = (id, updateStatus) => {
+  const db = firebase.firestore();
+  db.collection('SN-Post').doc(id).update({
+    privacy: updateStatus,
+  });
+};
+// ---------------------------------------- UPDATE COMMENT ---------------------------------
 export const updateComment = (idPost, idComment, Comment) => {
   const db = firebase.firestore();
   return db.collection(`SN-Post/${idPost}/SN-Comment`).doc(idComment)
@@ -139,17 +125,12 @@ export const updateComment = (idPost, idComment, Comment) => {
       comment: Comment,
     });
 };
-// ----------------------- DELETE COMMENT --------------------------
-export const deleteComment = (idPost, idComment) => {
-  const db = firebase.firestore();
-  return db.collection(`SN-Post/${idPost}/SN-Comment`).doc(idComment).delete();
-};
-// ----------------------- UPDATE LIKES ----------------------------
+// ----------------------------------------- UPDATE LIKES -----------------------------------
 export const updateLike = (id, likes) => {
   const db = firebase.firestore();
   db.collection('SN-Post').doc(id).update({ likes });
 };
-// ----------------------- UPDATE PLANES ----------------------------
+// ---------------------------------------- UPDATE PLANES ----------------------------------
 export const updatePlane = (id, planes) => {
   const db = firebase.firestore();
   db.collection('SN-Post').doc(id).update({ planes });

@@ -1,7 +1,8 @@
 import {
   deletePost, updatePost, updatePrivacy, addComment, getComment,
-  getDataUserPost, updateLike, updatePlane,
+  getDataUser, updateLike, updatePlane,
 } from '../controller/controller-firestore.js';
+import { currentUser } from '../controller/controller-auth.js';
 import { itemComment } from './comment.js';
 
 export const itemPost = (objPost) => {
@@ -67,7 +68,7 @@ export const itemPost = (objPost) => {
       </div>
   `;
 
-  getDataUserPost(objPost.userId)
+  getDataUser(objPost.userId)
     .then((doc) => {
       const avatarPhoto = postElement.querySelector('.avatar-post');
       const username = postElement.querySelector('.username');
@@ -160,7 +161,7 @@ export const itemPost = (objPost) => {
   formComment.addEventListener('submit', (e) => {
     const comment = postElement.querySelector('.comment').value;
     e.preventDefault();
-    addComment(comment, objPost.id)
+    addComment(currentUser().uid, objPost.id, comment)
       .then(() => {
         formComment.reset();
       });
