@@ -53,7 +53,8 @@ const fixtureData = {
 
 global.firebase = new MockFirebase(fixtureData, { isNaiveSnapshotListenerEnabled: true });
 
-// SN-User collection
+// --------------------------SN-USER COLLECTION-----------------------------------
+// Set user
 describe('set new user', () => {
   it('Deberia crear un nuevo usuario', () => {
     const currentUser = {
@@ -72,7 +73,7 @@ describe('set new user', () => {
     // expect(currentUser.username).toBe('Fulana');
   });
 });
-
+// Update user profile
 describe('update user profile', () => {
   it('Deberia actualizar los datos del usuario', done => updateCurrentUser('uid_002', 'Travelin', '999999999', 'yyyy-MM-dd', '', '')
     .then(() => {
@@ -83,8 +84,8 @@ describe('update user profile', () => {
         });
     }));
 });
-
-// SN-Post collection
+// --------------------------SN-POST COLLECTION-----------------------------------
+// Add new post
 describe('add new post', () => {
   it('Deberia agregar una nueva publicación', done => addPost('002', 'Public', 'Publicación mostrada', '', '', '')
     .then(() => getPosts(
@@ -96,8 +97,8 @@ describe('add new post', () => {
       },
     )));
 });
-
-// SN-comments subcollection
+// --------------------------SN-COMMENTS SUBCOLLECTION-----------------------------------
+// Add new comment
 describe('add new comment', () => {
   it('Deberia agregar una nuevo comentario', done => addComment('001', 'id_001', 'I like it!')
     .then(() => getComment('id_001',
