@@ -122,14 +122,13 @@ p {
 	background-image: url(https://picsum.photos/480/136/?random);
 	background-size: contain;
 	background-position: center;
-	background-repeat: no-repeat;
+	/* background-repeat: no-repeat; */
 	height: 5.5rem;
 }
 
 .content {
-	padding: 0.5rem;
-	display: flex;
-	flex-direction: column;
+	padding: 1rem;
+
 }
 .card-profile {
 	background-color: green;
@@ -435,15 +434,16 @@ span.error-msg {
 	/* height: 3rem; */
 	margin: 0rem 1rem 0rem 1rem;
 }
+
 #headerHome {
 	width: 100%;
 	background: #ffac00;
 }
 
 .btn-header {
-	color: black;
+	color:#f0f2f5;
 	text-decoration: none;
-	font-size: 100%;
+	font-size: 20px;
 	font-family: 'Playfair Display', serif;
 	font-style: normal;
 	font-weight: normal;
@@ -467,6 +467,9 @@ span.error-msg {
 .img-nav {
 	margin: 0rem;
 	width: 10%;
+}
+img.img-nav{
+	padding-top: 1.5rem;
 }
 .name_app {
 	display: none;
@@ -500,8 +503,10 @@ span.error-msg {
 	visibility: visible;
 	background: #ffac00;
 }
-
-.main {
+li.optionMobile{
+	padding:0% 3% 0% 3%;
+}
+.main ,.main-profile{
 	width: 90%;
 	margin: 20px auto;
 }
@@ -517,11 +522,13 @@ span.error-msg {
 	background: #f0f2f5;
 	padding: 20px;
 	border-radius: 4px;
+	height:230px;
 }
 .profile_section1 {
 	display: flex;
 	flex-direction: column;
 	background: #ffac00;
+	height:230px;
 	border-radius: 15px;
 	padding: 3%;
 	margin: 0rem 0rem 1rem 0rem;
@@ -1255,6 +1262,9 @@ section.msg-Redes p {
 		position: relative;
 		margin-left: 0%;
 	}
+	.content button.edit_btn{
+		width: 20%;
+	}
 	.body_container {
 		display: grid;
 		grid-gap: 20px;
@@ -1262,6 +1272,14 @@ section.msg-Redes p {
 	}
 	.profile_section {
 		display: block;
+	}
+	.main {
+		width: 90%;
+		margin: 20px auto;
+		display: grid;
+		height: 100%;
+		grid-template-columns: 40% 54% 0%;
+		padding-top: 3em;
 	}
 	.divPost {
 		grid-column: span 2;
@@ -1406,7 +1424,7 @@ section.msg-Redes p {
 		display: none;
 	}
 	.petLogoMenu {
-		width: 15%;
+		width: 10%;
 		margin: 1% 2%;
 	}
 	.menu_mobile,
@@ -1432,6 +1450,24 @@ section.msg-Redes p {
 	.profile_section {
 		display: block;
 	}
+	.main {
+		width: 90%;
+		margin: 20px auto;
+		display: grid;
+		height: 100%;
+		grid-template-columns: 40% 54% 0%;
+		padding-top: 3em;
+	}
+	.main-profile{
+		width: 75%;
+	}
+	.card{
+		height: 8rem;
+	}
+	.cover {
+		/* background-repeat: no-repeat; */
+		height: 8rem;
+	}
 	.divPost {
 		padding: 0;
 		grid-column-start: 3;
@@ -1442,6 +1478,7 @@ section.msg-Redes p {
 		margin-left: 30%;
 		color: black;
 	}
+
 }
 @media only screen and (min-width: 1281px) {
 	body {
@@ -1475,7 +1512,7 @@ section.msg-Redes p {
 		left: 9rem;
 	}
 	.petLogoMenu {
-		width: 15%;
+		width: 10%;
 		margin: 1% 2%;
 	}
 	.petLogo {
@@ -1638,6 +1675,22 @@ section.msg-Redes p {
 		grid-template-columns: 40% 54% 0%;
 		padding-top: 3em;
 		box-sizing: border-box;
+	}
+	.main-profile{
+		width: 70%;
+		margin: 20px auto;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		padding-top: 3em;
+		box-sizing: border-box;
+	}
+	.card{
+		height: 8rem;
+	}
+	.cover {
+		/* background-repeat: no-repeat; */
+		height: 8rem;
 	}
 	.profile_section {
 		display: block;
