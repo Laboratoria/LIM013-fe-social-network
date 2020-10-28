@@ -1,6 +1,6 @@
 import {
   signIn, signInForGoogle, createUser, sendRecoverPass, sendEmail, signOut,
-  currentUser, checkSesionActive,
+  currentUser,
 } from '../src/controller/controller-auth.js';
 // setting up firebase mock
 const firebasemock = require('firebase-mock');
@@ -84,18 +84,4 @@ describe('Verify current user ', () => {
     firebase.auth().currentUser = mockUser.currentUser;
     expect(currentUser().uid).toEqual('001');
   });
-});
-
-// Add new comment
-describe('add new comment', () => {
-  it('Deberia agregar una nuevo comentario', done => signIn('travelin@rs.com', 'abc123')
-    .then(() => checkSesionActive(
-      (data) => {
-        console.log(data);
-        // const route = '#/signUp';
-        // const result = data.find(comment => comment.comment === 'I like it!');
-        // expect(result.comment).toBe('I like it!');
-        done();
-      },
-    )));
 });

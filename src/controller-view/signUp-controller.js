@@ -1,5 +1,5 @@
 
-import { createUser, sendEmail } from './controller-auth.js';
+import { createUser, sendEmail } from '../controller/controller-auth.js';
 
 const controlerSignUp = {
   /* ------------regarding DOM manipulation to create users------------- */

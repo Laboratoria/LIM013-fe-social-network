@@ -1,5 +1,5 @@
 import { changeView } from './controller/route.js';
-import { checkSesionActive } from './controller/controller-auth.js';
+import { checkSesionActive } from './controller/controller-route.js';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
