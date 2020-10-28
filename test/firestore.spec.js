@@ -109,3 +109,13 @@ describe('add new comment', () => {
         done();
       })));
 });
+
+
+describe('delete post', () => {
+  it('Deberia eliminar data', done => addPost('002', 'Public', 'Publicación eliminada', '', '', '')
+    .then(() => {
+      done();
+      deletePost('002');
+    }));
+
+});

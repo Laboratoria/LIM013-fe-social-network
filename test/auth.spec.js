@@ -85,3 +85,30 @@ describe('Verify current user ', () => {
     expect(currentUser().uid).toEqual('001');
   });
 });
+
+// const changeView = (route) => {
+//   switch (route) {
+//     case '':
+//       break;
+//     case '#/signUp':
+//       break;
+//     case '#/home':
+//       break;
+//     case '#/profile':
+//       break;
+//     case '#/recoverPassword':
+//       break;
+//     default:
+//       break;
+//   }
+// };
+
+// window.location = '#/signUp';
+
+
+// // observador
+// describe('Verify sesion active ', () => {
+//   it('Deberia limitar acceso', () => {
+//     // console.log(checkSesionActive(changeView));
+//   });
+// });
