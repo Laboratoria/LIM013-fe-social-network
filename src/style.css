@@ -1468,6 +1468,26 @@ section.msg-Redes p {
 		/* background-repeat: no-repeat; */
 		height: 8rem;
 	}
+	.profile img {
+		height: 10rem;
+	}
+	.profile_section1{
+		height:500px;
+	}
+	.label-profile {
+		padding-bottom: 0px;
+		padding-top: 6rem;
+	}
+	.name {
+		font-size: 30px;
+		margin-left: 5rem;
+	}
+	.name_pet, .description {
+		font-size: 20px;
+	}
+	.label-profile p {
+		font-size: %;
+	}
 	.divPost {
 		padding: 0;
 		grid-column-start: 3;
@@ -1686,22 +1706,37 @@ section.msg-Redes p {
 		box-sizing: border-box;
 	}
 	.card{
-		height: 8rem;
+		height: 12rem;
 	}
 	.cover {
 		/* background-repeat: no-repeat; */
-		height: 8rem;
+		height: 12rem;
+	}
+	.profile img {
+		height: 10rem;
 	}
 	.profile_section {
 		display: block;
 	}
-
-	.profile_section1 {
-		background: #f0f2f5;
-		padding: 20px;
-		border-radius: 4px;
+	.profile_section1{
+		height:500px;
 	}
+	.label-profile p {
+		font-size: 70%;
+	}
+	.name {
+		font-size: 30px;
+		margin-left: 5rem;
+	}
+	.name_pet, .description {
 
+		font-size: 20px;
+	
+	}
+	.label-profile {
+		padding-bottom: 0px;
+		padding-top: 6rem;
+	}
 	.divPost {
 		grid-column: span 2;
 	}

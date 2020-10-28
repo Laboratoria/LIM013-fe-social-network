@@ -54,13 +54,12 @@ export default (notes) => {
                   <p class="profile-text">Cuéntanos algo sobre ti y tu mascota</p>
                   <h2 class="description"></h2>
                 </div>
-                <button type="button" class="edit_btn"><i class="fas fa-edit"></i>Editar</button>
                 <div class="profile-btn-editions">
                   <button id="btnCancel" class="btn-profile hide">Cancelar</button>
                   <button id="btnSave" class="btn-profile hide">Guardar</button>
                 </div>
-
               </div>
+              <button type="button" class="edit_btn"><i class="fas fa-edit"></i>Editar</button>
                       
           </div>            
       </aside>
