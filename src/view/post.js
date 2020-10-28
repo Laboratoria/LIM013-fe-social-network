@@ -145,7 +145,6 @@ export const itemPost = (objPost) => {
     if (result === -1) {
       objPost.planes.push(userId);
       updatePlane(objPost.id, objPost.planes);
-      console.log(objPost.planes);
     } else {
       objPost.planes.splice(result, 1);
       updatePlane(objPost.id, objPost.planes);

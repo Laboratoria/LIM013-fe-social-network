@@ -1,6 +1,6 @@
 import {
   signIn, signInForGoogle, createUser, sendRecoverPass, sendEmail, signOut,
-  currentUser, checkSesionActive,
+  currentUser,
 } from '../src/controller/controller-auth.js';
 
 // setting up firebase mock
@@ -78,16 +78,37 @@ describe('Log out', () => {
 // current User
 describe('Verify current user ', () => {
   it('Deberia extraer a usuario logeado', () => {
-    const user = currentUser();
-    if (user) { console.log(user); } else {
-      console.log('fallido');
-    }
+    const mockCurrentUser = {
+      currentUser: { uid: '001' },
+    };
+    firebase.auth().currentUser = mockCurrentUser.currentUser;
+    expect(currentUser().uid).toEqual('001');
   });
 });
-// observador
-describe('Verify sesion active ', () => {
-  it('Deberia limitar acceso', () => {
-    const chan = () => {};
-    console.log(checkSesionActive(chan));
-  });
-});
+
+// const changeView = (route) => {
+//   switch (route) {
+//     case '':
+//       break;
+//     case '#/signUp':
+//       break;
+//     case '#/home':
+//       break;
+//     case '#/profile':
+//       break;
+//     case '#/recoverPassword':
+//       break;
+//     default:
+//       break;
+//   }
+// };
+
+// window.location = '#/signUp';
+
+
+// // observador
+// describe('Verify sesion active ', () => {
+//   it('Deberia limitar acceso', () => {
+//     // console.log(checkSesionActive(changeView));
+//   });
+// });
