@@ -42,13 +42,12 @@ Como producto de las entrevistas , desarrollamos los prototipos de baja y alta f
 
 ### Vista mobile
 
-    ![mobile](https://i.imgur.com/t2ypsqZ.png)
+  ![mobile](https://user-images.githubusercontent.com/68167686/97643081-bf889700-1a14-11eb-9156-1aecd1a39ab2.png)
 
 ### Vista Desktop
 
-    ![desktop](https://i.imgur.com/4FUQKSA.png)
-    ![desktop](https://i.imgur.com/4FUQKSA.png)
-    [Imgur](https://i.imgur.com/xSwUP2D.png)
+  ![desktop1](https://user-images.githubusercontent.com/68167686/97643080-bef00080-1a14-11eb-9b6d-c24d399d47f6.png)
+  ![desktop2](https://user-images.githubusercontent.com/68167686/97643074-bd263d00-1a14-11eb-9fc6-897cf38b7d80.png)
 
 ## 3. Creando la Red Social
 
