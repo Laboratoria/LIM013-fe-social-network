@@ -34,24 +34,26 @@ p {
 	text-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 10px;
 }
 
-	i { 
-		text-shadow:2px 4px 6px #000000;
-	} 
-	.fa { 
-		font-size:25px; 
-	} 
-	.fa-heart, .fa-paper-plane, .fa-comment { 
-		font-size: 2rem;
-		color: #F25F29;
-	}
-	.fa-bars {
-		color:#04BFBF; 
-		font-size:30px;
-	}
-	.fa-camera{
-		color:#04BFBF; 
-		font-size:15px;
-	}
+i {
+	text-shadow: 2px 4px 6px #000000;
+}
+.fa {
+	font-size: 25px;
+}
+.fa-heart,
+.fa-paper-plane,
+.fa-comment {
+	font-size: 2rem;
+	color: #f25f29;
+}
+.fa-bars {
+	color: #04bfbf;
+	font-size: 30px;
+}
+.fa-camera {
+	color: #04bfbf;
+	font-size: 15px;
+}
 
 .card-group {
 	border-radius: 15px;
@@ -68,10 +70,11 @@ p {
 	align-items: center;
 }
 .grupo-nombre h1 {
-	font-size: 80%;
+	font-size: 1rem;
 	font-family: 'Playfair Display', serif;
 	font-style: normal;
 	font-weight: bold;
+	text-transform: capitalize;
 }
 
 .labels-comunidades {
@@ -93,34 +96,34 @@ p {
 }
 .label-msg {
 	display: flex;
-    flex-direction: column;
-    width: 50%;
-    position: relative;
-    bottom: 1rem;
+	flex-direction: column;
+	width: 50%;
+	position: relative;
+	bottom: 1rem;
 }
 .img-adopta {
-	width: 100%;
+	width: 80%;
 	border-radius: 50px;
 	-webkit-box-shadow: 0px 10px 13px -7px #000000,
 		5px 5px 15px 5px rgba(0, 0, 0, 0);
 	box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 .img-facilismo {
-	width: 100%;
+	width: 80%;
 	border-radius: 50px;
 	-webkit-box-shadow: 0px 10px 13px -7px #000000,
 		5px 5px 15px 5px rgba(0, 0, 0, 0);
 	box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 .img-mascota {
-	width: 100%;
+	width: 80%;
 	border-radius: 50px;
 	-webkit-box-shadow: 0px 10px 13px -7px #000000,
 		5px 5px 15px 5px rgba(0, 0, 0, 0);
 	box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 .name_pet1 {
-	font-size: 62%;
+	font-size: 74%;
 	font-family: 'Playfair Display', serif;
 	font-style: normal;
 	font-weight: normal;
@@ -130,6 +133,7 @@ p {
 	/* margin: 0rem 0rem; */
 	text-align: center;
 }
+
 .a-enlace {
 	text-align: center;
 	/* margin: 0.5rem; */
@@ -149,14 +153,14 @@ p {
 
 .content {
 	padding: 1rem;
-
 }
 
-.content-post{
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 1rem;
+.content-post {
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 1rem;
 }
+
 .card-profile {
 	background-color: green;
 }
@@ -459,7 +463,7 @@ span.error-msg {
 }
 
 .btn-header {
-	color:#f0f2f5;
+	color: #f0f2f5;
 	text-decoration: none;
 	font-size: 20px;
 	font-family: 'Playfair Display', serif;
@@ -519,8 +523,8 @@ img.img-nav{
 	visibility: visible;
 	background: #ffac00;
 }
-li.optionMobile{
-	padding:0% 3% 0% 3%;
+li.optionMobile {
+	padding: 0% 3% 0% 3%;
 }
 .main {
 	width: 90%;
@@ -538,17 +542,30 @@ li.optionMobile{
 	margin: 20px auto;
 }
 .body {
-	background-color: #E5E5E5;
+	background-color: #e5e5e5;
 	background-position: inherit;
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+.profile_section-home {
+	display: none;
+	height: 20rem;
+	position: relative;
+	bottom: 1rem;
+	background: #ffac00;
+	border-radius: 15px;
+	padding: 3%;
+	margin: 0rem 0rem 1rem 0rem;
+	-webkit-box-shadow: 0px 10px 13px -7px #000000,
+		5px 5px 15px -8px rgba(0, 0, 0, 0);
+	box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px -8px rgba(0, 0, 0, 0);
 }
 .profile_section {
 	display: none;
 	background: #f0f2f5;
 	padding: 20px;
 	border-radius: 4px;
-	height:230px;
+	height: 230px;
 }
 .profile_section1 {
 	display: flex;
@@ -631,12 +648,13 @@ li.optionMobile{
 
 .label-profile {
 	display: block;
+	background-color: darkcyan;
 }
+
 .labels-profile {
 	display: block;
-
-	margin-top: 1.5rem;
-	height: 0rem;
+	margin-top: 0.5rem;
+	height: 11rem;
 }
 .label-profile p {
 	text-shadow: none;
@@ -657,34 +675,43 @@ li.optionMobile{
 }
 
 .privacy {
-
-		outline: none;
-		cursor: pointer;
-		user-select: none;
-		border: 1px solid transparent;
-		background-color: transparent;
-		font-size: 1.75rem;
-		text-shadow: 2px 4px 6px #000000;
-	}
+	outline: none;
+	cursor: pointer;
+	user-select: none;
+	border: 1px solid transparent;
+	background-color: transparent;
+	font-size: 1.5rem;
+	text-shadow: 1px 2px 0px #000000;
+}
 #privacy {
 	outline: none;
 	cursor: pointer;
 	border: none;
 }
-.select:hover::after {
-	background-color: #048e8e;
+.privacy:hover::after {
+	background-color: transparent;
+	border: none;
+	outline: none;
 }
-
+.privacy:focus {
+	outline: none;
+	border: none;
+	background-color: transparent;
+}
+.privacy option {
+	border: none;
+	outline: none;
+}
 .btn-post-edit,
 .btn-post-delete {
 	position: relative;
-	width: 100%;
+	width: 95%;
 	text-align: center;
 	height: 1.5rem;
 	margin: 0.5rem 0rem 0rem 0rem;
 	border-radius: 10px;
 	border: none;
-	font-size: 51%;
+	font-size: 0.75rem;
 	background: #f25f29;
 	color: white;
 	font-family: 'Abel', sans-serif;
@@ -695,9 +722,7 @@ li.optionMobile{
 .btn-cancel-comment,
 .btn-comment-edit,
 .btn-comment-delete {
-	/* position: relative; */
-	width: 20%;
-	/* text-align: center; */
+	width: 30%;
 	height: 1.5rem;
 	margin: 0rem 0rem 0.5rem 0rem;
 	border-radius: 15px;
@@ -720,17 +745,17 @@ li.optionMobile{
 }
 
 .label-menu-post {
-    height: 2rem;
-    background-image: url(imagenes/copywriting.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    margin: 0rem 0rem 0rem 0rem;
-    position: relative;
-    /* right: -1rem; */
-    left: 1.5rem;
+	height: 2rem;
+	background-image: url(imagenes/copywriting.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	margin: 0rem 0rem 0rem 0rem;
+	position: relative;
+	/* right: -1rem; */
+	left: 1.5rem;
 }
 .nav-post {
 	position: relative;
@@ -783,18 +808,20 @@ li.optionMobile{
 		5px 5px 15px -8px rgba(0, 0, 0, 0);
 	box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px -8px rgba(0, 0, 0, 0);
 }
-.name1 {
+.name1,
+.name-home {
 	position: relative;
 	width: auto;
 	height: auto;
 	font-family: 'Playfair Display', serif;
 	font-style: normal;
-	font-weight: normal;
-	font-size: 100%;
-	line-height: 1rem;
-	color: #ffffff;
-	margin: 0rem 1rem 0rem 0.5rem;
+	font-size: 126%;
+	line-height: normal;
+	color: #000000;
+	margin: 0rem 1rem 0rem 1.5rem;
+	text-transform: capitalize;
 }
+
 .name-grupo-comunidades {
 	font-size: 80%;
 	text-align: left;
@@ -811,10 +838,13 @@ strong {
 	color: #dd4b39;
 }
 .cam-post {
-	width: 84%;
+	width: 2rem;
 	-webkit-box-shadow: 0px 10px 13px -7px #000000,
 		5px 5px 15px 5px rgba(0, 0, 0, 0);
 	box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+.pencil-btton-post {
+	width: 1rem;
 }
 label.selectImage {
 	width: fit-content;
@@ -862,8 +892,11 @@ img.user_img {
 .menu-post {
 	display: flex;
 	flex-direction: row;
-	height: 3rem;
+	/* height: 3rem; */
 	align-items: center;
+	/* padding: 1rem; */
+	margin: 0rem 0rem 0.5rem 0rem;
+	justify-content: space-evenly;
 }
 .user_photo {
 	margin: 0rem 0.25rem 0rem 0.25rem;
@@ -871,7 +904,8 @@ img.user_img {
 .name-user {
 	font-family: 'Playfair Display', serif;
 	font-style: normal;
-	font-weight: normal;
+	font-weight: bolder;
+	text-transform: capitalize;
 	font-size: 70%;
 	line-height: 1rem;
 	color: black;
@@ -893,11 +927,9 @@ img.user_img {
 
 /*TODO container posts*/
 .like-picture {
-	width: 16%;
-	max-width: 16%;
+	height: 4rem;
 	border-radius: 50%;
-	/* margin-bottom: 0.5em; */
-	margin: 0rem 0rem 0rem 1rem;
+	margin: 0.5rem 0rem 0rem 1rem;
 	-webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
 		5px 5px 0px 5px rgba(0, 0, 0, 0);
 	box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
@@ -919,16 +951,10 @@ img.user_img {
 	text-align: center;
 }
 .btton-comment {
-	margin: 0rem 1rem 0rem 0rem;
 	border: none;
 	background-color: transparent;
-	font-size: 85%;
-	font-family: 'Abel', sans-serif;
+
 	outline: none;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	box-shadow: none;
 }
 .user-photo {
 	-webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
@@ -948,20 +974,20 @@ img.user_img {
 }
 .text-name {
 	font-family: 'Playfair Display', serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 76%;
-    color: black;
-    text-shadow: none;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 76%;
+	color: black;
+	text-shadow: none;
 }
 
 .date-comment {
-    font-family: 'Abel', sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 73%;
-    color: gray;
-    text-shadow: none;
+	font-family: 'Abel', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 73%;
+	color: gray;
+	text-shadow: none;
 }
 .text-comment {
 	text-align: left;
@@ -986,31 +1012,31 @@ img.user_img {
 
 .status_imput {
 	width: 90%;
-    height: 4em;
-    box-sizing: border-box;
-    background-color: #fbebe1;
-    border: none;
-    border-radius: 15px;
-    position: relative;
-    font-family: 'Abel', sans-serif;
-    padding: 1.5em;
-    font-size: 84%;
-    outline: none;
-    text-align: center;
-    margin: 0 1rem;
-    resize: both;
-    overflow-y: hidden;
+	height: 4em;
+	box-sizing: border-box;
+	background-color: #fbebe1;
+	border: none;
+	border-radius: 15px;
+	position: relative;
+	font-family: 'Abel', sans-serif;
+	padding: 1.5em;
+	font-size: 84%;
+	outline: none;
+	text-align: center;
+	margin: 0 1rem;
+	resize: both;
+	overflow-y: hidden;
 }
 .input-post {
 	width: 100%;
-    /* height: 3em; */
-    background: #E5E5E5;
-    border-radius: 15px;
-    text-align: center;
-    vertical-align: center;
-    margin: 0.5rem 0;
-    text-shadow: none;
-    padding: 1rem;
+	/* height: 3em; */
+	background: #e5e5e5;
+	border-radius: 15px;
+	text-align: center;
+	vertical-align: center;
+	margin: 0.5rem 0;
+	text-shadow: none;
+	padding: 1rem;
 }
 .bttons-select {
 	display: flex;
@@ -1083,6 +1109,7 @@ img.user_img {
 	-webkit-box-shadow: 2px 8px 13px -3px rgba(0, 0, 0, 0.59);
 	box-shadow: 2px 8px 13px -3px rgba(0, 0, 0, 0.59);
 	outline: none;
+	width: 4rem;
 }
 .post_buttom:hover {
 	background-color: #f3c1c1;
@@ -1102,29 +1129,27 @@ i.fa.fa-pencil {
 	justify-content: space-around;
 }
 .button-like {
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 /*TODO liked posts*/
 .like-btton {
-	margin: 0 0.75rem;
-    background: transparent;
+	background: transparent;
 	border: none;
+	cursor: pointer;
 	outline: none;
 }
 
 .likes-counter {
-		font-size: 34%;
-		font-family: 'Abel', sans-serif;
-		line-height: initial;
-		margin-top: 0.5rem;
-		text-align: center;
-		text-shadow: none;
+	font-size: 34%;
+	font-family: 'Abel', sans-serif;
+	line-height: initial;
+	margin-top: 0.5rem;
+	text-align: center;
+	text-shadow: none;
 }
 
 section.msg-Redes p {
@@ -1146,7 +1171,7 @@ section.msg-Redes p {
 	display: block;
 	height: 5.5rem;
 }
-.menuDiv{
+.menuDiv {
 	background-color: #f0f2f5;
 }
 
@@ -1155,26 +1180,42 @@ section.msg-Redes p {
 	.profile_section1 {
 		height: 350px;
 	}
+	/* TODO view home */
 	.cam-post {
-		width: 22%;
-		-webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-		box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+		width: 3rem;
+	}
+	label.selectImage {
+		width: 4rem;
+		margin: 0rem;
+		position: relative;
+	}
+	.status_imput {
+		width: 30rem;
+		font-size: 1rem;
 	}
 	.like-picture {
 		width: 12%;
 		max-width: 12%;
 	}
+	.menu-post-options {
+		justify-content: start;
+		margin: 0.5rem 1rem;
+	}
+	.post_buttom {
+		margin: 0rem 0rem 0rem 17rem;
+		font-size: 1.5rem;
+		width: 6rem;
+	}
 	.name1 {
 		font-size: 2rem;
 		margin: 0rem 1rem 0rem 1.5rem;
 	}
-	.status_imput {
-		font-size: 1rem;
-	}
 	.grupo-nombre h1 {
 		font-size: 1.5rem;
 	}
-	.img-adopta, .img-facilismo, .img-mascota {
+	.img-adopta,
+	.img-facilismo,
+	.img-mascota {
 		width: 70%;
 	}
 	img.user_img {
@@ -1182,39 +1223,42 @@ section.msg-Redes p {
 	}
 	.menu-post {
 		height: auto;
-
 	}
-	.user_post{
-		-webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px -8px rgba(0, 0, 0, 0);
+	.user_post {
+		-webkit-box-shadow: 0px 10px 13px -7px #000000,
+			5px 5px 15px -8px rgba(0, 0, 0, 0);
 		box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px -8px rgba(0, 0, 0, 0);
+	}
+	.text-name {
+		font-size: 1rem;
 	}
 	.name-user {
 		font-size: 138%;
-
+		line-height: 1.5rem;
 	}
-	.post-time{
+	.post-time {
 		font-size: 100%;
-    line-height: 2rem;
+		line-height: 2rem;
 	}
-	.input-post{
+	.input-post {
 		font-size: 130%;
 	}
 	.data-user {
 		margin-left: 1rem;
 	}
-	.fa-heart, .fa-paper-plane {
+	.fa-heart,
+	.fa-paper-plane,
+	.fa-comment {
 		font-size: 3rem;
 	}
 	.likes-counter {
-		font-size: 130%;
+		font-size: 32%;
 		margin-top: 0.5rem;
 	}
 	.input-comment {
 		height: 3rem;
 		padding: 2%;
 		font-size: 100%;
-
-
 	}
 	.label-menu-post {
 		height: 4rem;
@@ -1225,51 +1269,63 @@ section.msg-Redes p {
 		bottom: 2rem;
 	}
 	.name_pet1 {
-		font-size: 1rem;
+		font-size: 113%;
 	}
-	.btn-post-edit, .btn-post-delete {
+	.btn-post-edit,
+	.btn-post-delete {
 		width: 100%;
 		font-size: 100%;
 		top: 1rem;
 	}
-	.btn-post-cancel-edit-post, .btn-post-save-edit-post, .btn-save-comment, .btn-cancel-comment, .btn-comment-edit, .btn-comment-delete {
+	.btn-post-cancel-edit-post,
+	.btn-post-save-edit-post,
+	.btn-save-comment,
+	.btn-cancel-comment,
+	.btn-comment-edit,
+	.btn-comment-delete {
 		font-size: 100%;
 		margin: 1rem 0rem 1rem 0rem;
 	}
-	.btn-post-cancel-edit-post:hover, .btn-post-save-edit-post:hover, .btn-save-comment:hover, .btn-cancel-comment:hover, .btn-comment-edit:hover, .btn-comment-delete:hover {
+	.btn-post-cancel-edit-post:hover,
+	.btn-post-save-edit-post:hover,
+	.btn-save-comment:hover,
+	.btn-cancel-comment:hover,
+	.btn-comment-edit:hover,
+	.btn-comment-delete:hover {
 		background-color: #983d1c;
 		color: white;
 	}
 	.photo_post_img {
 		margin: 0 9.5rem;
 	}
-	.cover {
+	.cover-home {
 		height: 8.5rem;
 	}
-	.card {
+	.card-home {
 		height: 9.5rem;
 	}
-	.profile {
+	.profile-home {
 		margin-left: 1rem;
 		margin-bottom: 1rem;
 	}
-	.profile img {
+	.profile-img-home {
 		height: 6rem;
 		bottom: 2rem;
+		border-radius: 50px;
 	}
-	.name {
+	.name-home {
 		font-size: 1.5rem;
 		margin-top: 1rem;
 	}
-	.label-profile p {
+	.label-profile-home p {
 		font-size: 100%;
 	}
-	.name_pet, .description {
+	.name_pet1,
+	.description1 {
 		font-size: 100%;
 	}
-	.labels-profile {
+	.labels-profile-home {
 		height: 1rem;
-
 	}
 	.edit_btn {
 		margin: 1rem 0rem 1rem 23rem;
@@ -1287,6 +1343,7 @@ section.msg-Redes p {
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+	/* TODO view home */
 	.logoHeader-nav {
 		width: 10%;
 		margin: 1rem 0rem 0.5rem 19rem;
@@ -1301,25 +1358,33 @@ section.msg-Redes p {
 		font-size: 200%;
 	}
 	.cam-post {
-		width: 20%;
+		width: 3rem;
+	}
+	.menu-post-options {
+		justify-content: flex-start;
+		margin: 0.5rem 2.5rem;
 	}
 	.like-picture {
-		width: 12%;
-		max-width: 12%;
+		height: 5rem;
+	}
+	.fa-heart,
+	.fa-paper-plane,
+	.fa-comment {
+		font-size: 3rem;
+		color: #f25f29;
 	}
 	.name1 {
-
 		font-size: 200%;
-	
+
 		margin: 0rem 1rem 0rem 1.5rem;
 	}
 	.privacy {
-		font-size: 2.5rem;
-
+		font-size: 3rem;
 	}
 	.post_buttom {
-		font-size: 2rem;
-		width: 50%;
+		font-size: 1.5rem;
+		width: 19%;
+		margin: 0rem 0rem 0rem 21rem;
 	}
 	.status_imput {
 		font-size: 1rem;
@@ -1329,11 +1394,13 @@ section.msg-Redes p {
 	.grupo-nombre h1 {
 		font-size: 2rem;
 	}
-	.img-adopta, .img-facilismo, .img-mascota {
+	.img-adopta,
+	.img-facilismo,
+	.img-mascota {
 		width: 70%;
 	}
 	img.user_img {
-		height: 4.5rem;
+		height: 6.5rem;
 	}
 	.menu-post {
 		height: auto;
@@ -1341,42 +1408,47 @@ section.msg-Redes p {
 	.content-post{
 		padding: 2rem;
 	}
-	.user_post{
-		-webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px -8px rgba(0, 0, 0, 0);
+	.user_post {
+		-webkit-box-shadow: 0px 10px 13px -7px #000000,
+			5px 5px 15px -8px rgba(0, 0, 0, 0);
 		box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px -8px rgba(0, 0, 0, 0);
 	}
 	.name-user {
 		font-size: 138%;
-
 	}
-	.post-time{
+	.post-time {
 		font-size: 100%;
-    line-height: 2rem;
+		line-height: 2rem;
 	}
-	.input-post{
+	.post-new-image {
+		margin: 0rem 15rem;
+	}
+	.input-post {
 		font-size: 130%;
-		height: 4em;
-		padding: 2rem;
+		height: 6em;
+		padding: 3rem;
 	}
 	.data-user {
 		margin-left: 1rem;
 	}
-	.fa-heart, .fa-paper-plane {
+	.fa-heart,
+	.fa-paper-plane {
 		font-size: 3rem;
 	}
 	.likes-counter {
-		font-size: 50%;
 		margin-top: 0.5rem;
+	}
+	label.selectImage {
+		width: 4rem;
 	}
 	.input-comment {
 		height: 3rem;
 		padding: 2%;
 		font-size: 100%;
-
 	}
 	.label-menu-post {
-		margin: 0rem 0rem 0rem 33rem;
-		position: absolute;
+		margin: 0rem 0rem 0rem 4rem;
+		position: relative;
 		height: 4rem;
 	}
 	.label-msg {
@@ -1393,14 +1465,24 @@ section.msg-Redes p {
 	}
 	.btn-post-edit, .btn-post-delete {
 		width: 100%;
-		font-size: 100%;
+		font-size: 1rem;
 		top: 1rem;
 	}
-	.btn-post-cancel-edit-post, .btn-post-save-edit-post, .btn-save-comment, .btn-cancel-comment, .btn-comment-edit, .btn-comment-delete {
+	.btn-post-cancel-edit-post,
+	.btn-post-save-edit-post,
+	.btn-save-comment,
+	.btn-cancel-comment,
+	.btn-comment-edit,
+	.btn-comment-delete {
 		font-size: 100%;
 		margin: 1rem 0rem 1rem 0rem;
 	}
-	.btn-post-cancel-edit-post:hover, .btn-post-save-edit-post:hover, .btn-save-comment:hover, .btn-cancel-comment:hover, .btn-comment-edit:hover, .btn-comment-delete:hover {
+	.btn-post-cancel-edit-post:hover,
+	.btn-post-save-edit-post:hover,
+	.btn-save-comment:hover,
+	.btn-cancel-comment:hover,
+	.btn-comment-edit:hover,
+	.btn-comment-delete:hover {
 		background-color: #983d1c;
 		color: white;
 	}
@@ -1434,12 +1516,12 @@ section.msg-Redes p {
 	.label-profile p {
 		font-size: 120%;
 	}
-	.name_pet, .description {
+	.name_pet,
+	.description {
 		font-size: 120%;
 	}
 	.labels-profile {
 		height: 1rem;
-
 	}
 	 .edit_btn {
 		font-size: 120%;
@@ -1461,9 +1543,8 @@ section.msg-Redes p {
 	}
 	
 }
-
 @media only screen and (min-width: 992px) and (max-width: 1023px) {
-
+	/* TODO view home */
 	.petLogo {
 		width: 70%;
 		margin: 0% 30%;
@@ -1539,13 +1620,57 @@ section.msg-Redes p {
 		width: 20%;
 		font-size: 120%;
 	}
+	.content button.edit_btn {
+		width: 20%;
+	}
+	.contend-profile {
+		display: flex;
+		flex-direction: row;
+		/* justify-content: center; */
+		align-items: center;
+	}
 	.body_container {
 		display: grid;
 		grid-gap: 20px;
-		grid-template-columns: repeat(3, 1fr);
 	}
-	.profile_section {
+	.cover-home {
+		background-image: url(https://picsum.photos/480/136/?random);
+		background-size: contain;
+		background-position: center;
+		/* background-repeat: no-repeat; */
+		height: 5.5rem;
+	}
+	.profile-img-home {
+		height: 4rem;
+		border-radius: 50%;
+	}
+	.label-profile-home p {
+		font-size: 110%;
+		text-shadow: none;
+	}
+	.description1 {
+		font-size: 130%;
+		text-shadow: none;
+		color: #a94824;
+	}
+	.label-profile-home {
+		padding: 1rem;
+	}
+	.profile_section-home {
 		display: block;
+		height: 20rem;
+		position: relative;
+		bottom: 1rem;
+		background: #ffac00;
+		border-radius: 15px;
+		padding: 3%;
+		margin: 0rem 0rem 1rem 0rem;
+		-webkit-box-shadow: 0px 10px 13px -7px #000000,
+			5px 5px 15px -8px rgba(0, 0, 0, 0);
+		box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px -8px rgba(0, 0, 0, 0);
+	}
+	.profile-btn-editions {
+		padding: 1rem;
 	}
 	.btn-profile {
 		font-size: 120%;
@@ -1606,134 +1731,130 @@ section.msg-Redes p {
 		background-size: cover;
 		position: relative;
 	}
-	/*TODO  Vista: encabezado  */
-	/*header h1 {
-		font-size: 600%;
-		text-align: end;
-	}*/
-	img.logoHuella {
-		width: 30%;
-		max-width: 30%;
-		top: 6rem;
+	.profile img {
+		height: 5rem;
 	}
-
-	.logoHeader {
-		width: 30%;
-		max-width: 50%;
-		margin: 0% 23%;
-		position: absolute;
-		top: 13rem;
+	.name-home {
+		font-size: 131%;
+		margin: 0 1rem;
+		text-shadow: none;
+		color: #a94824;
 	}
-	.petLogo {
-		width: 50%;
-		margin: 0% 30%;
+	.name1,
+	.name-home {
+		font-size: 170%;
 	}
-
-	.sig
-	/*TODO Vista: inicio de sesion  */
-	.sign {
-		display: flex;
-		flex-direction: column;
-		align-content: center;
-		margin: 1rem 1rem 1rem 1rem;
+	.status_imput {
+		font-size: 144%;
 	}
-	.container {
-		top: 2rem;
-		position: absolute;
-		border-radius: 5px;
-		padding: 1rem 1rem 1rem 1rem;
-		margin: 1rem 1rem 1rem 1rem;
-		left: 48rem;
+	.menu-post-options {
+		justify-content: start;
 	}
-	form.signIn_Form {
-		margin: 2rem 2rem;
+	.cam-post {
+		width: 3rem;
 	}
-	.signIn-container {
-		width: auto;
-		height: auto;
-		border-radius: 40px;
-		margin: 2rem 0rem;
-		position: relative;
-		padding: 2%;
-	}
-	.signIn_Form h1 {
+	.privacy {
 		font-size: 200%;
+		margin-left: 0.5rem;
 	}
-
-	span.input-item {
-		margin: 0.5rem auto 0rem 14.5rem;
+	.post_buttom {
+		margin: 0rem 0rem 0rem 12rem;
+		font-size: 150%;
+		width: 6rem;
 	}
-	.fa {
-		width: 25%;
-		max-width: 25%;
+	.grupo-nombre h1 {
+		font-size: 1.5rem;
 	}
-	/*TODO Vista: registro de usuario  */
-
-	.registerForm-container {
-		width: auto;
-		height: auto;
-		border-radius: 40px;
-		margin: 2rem 0rem;
-		line-height: 3rem;
-		position: relative;
-		-webkit-box-shadow: 0px 10px 13px -7px #000000,
-			5px 5px 15px 5px rgba(0, 0, 0, 0);
-		box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-		padding: 2%;
-		background: linear-gradient(to top, #fcfbfb 0%, #fff895 100%);
+	.name_pet1 {
+		font-size: 100%;
 	}
-	.signInForm-container {
-		border-radius: 40px;
-		margin: 2rem 0rem;
-		/* line-height: 3rem; */
-		position: relative;
-		-webkit-box-shadow: 0px 10px 13px -7px #000000,
-			5px 5px 15px 5px rgba(0, 0, 0, 0);
-		box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-		padding: 2%;
-		background: linear-gradient(to top, #fcfbfb 0%, #fff895 100%);
+	img.user_img {
+		height: 4.5rem;
 	}
-	.registerForm-container h1 {
-		font-size: 220%;
-		text-align: center;
+	.name-user {
+		font-size: 123%;
+		line-height: 1.25rem;
 	}
-
-	.signUp-form {
-		margin: 0rem 0rem;
-	}
-	form.form {
-		margin: 2rem 2rem;
+	.post-time {
+		font-size: 96%;
 		line-height: 2rem;
 	}
-	span.input-itemR {
-		background: none;
-		color: black;
-		padding: 14.5px 0px 15px 9px;
-		border-radius: 5px 0px 0px 5px;
-		position: absolute;
-		margin: 0.445rem 0.45rem 1.45rem 18.5rem;
+	.btn-post-edit,
+	.btn-post-delete {
+		width: 121%;
+		font-size: 100%;
+	}
+	label-menu-post {
+		height: 3rem;
+	}
+	.input-post {
+		padding: 2rem;
+		font-size: 128%;
+	}
+	.likes-counter {
+		font-size: 60%;
+	}
+	.input-comment {
+		width: 100%;
+		height: 3rem;
+		padding: 3%;
+		font-size: 100%;
+	}
+	.btn-post-cancel-edit-post,
+	.btn-post-save-edit-post,
+	.btn-save-comment,
+	.btn-cancel-comment,
+	.btn-comment-edit,
+	.btn-comment-delete {
+		font-size: 100%;
+	}
+}
+@media only screen and (min-width: 1024px) and (max-width: 1280px) {
+	/* TODO view home */
+	.petLogo {
+		width: 70%;
+		margin: 0% 30%;
+	}
+	.logoHeader {
+		margin: 0% 22%;
+	}
+	.signIn_Form h1 {
+		font-size: 300%;
+	}
+	.signInForm-container {
+		line-height: 3rem;
+	}
+	input {
+		font-size: 200%;
+	}
+	#SignInForm_email,
+	#SignInForm_password {
+		line-height: 35px;
+	}
+	.fa {
+		padding: 34px;
+		font-size: 30px;
+		width: 14%;
+	}
+	.container_msg p {
+		font-size: 200%;
+		font-family: 'Abel', sans-serif;
+		text-align: center;
+	}
+	.registerForm-container {
+		position: relative;
+	}
+	.registerForm-container h1 {
+		font-size: 300%;
 	}
 	span.error-msg {
 		font-size: 100%;
-		top: 0rem;
 	}
-	.register-container {
-		position: absolute;
-		top: 30rem;
-		margin: 0rem 1rem;
-		left: 13rem;
-		width: 54%;
-		max-width: 54%;
-	}
-	.container_msg p {
-		font-size: 150%;
+	section.msg-Redes p {
+		font-size: 200%;
 	}
 	#headerHome label {
 		display: none;
-	}
-	.petLogoMenu {
-		width: 10%;
-		margin: 1% 2%;
 	}
 	.menu_mobile,
 	.menu_mobile1 {
@@ -1743,6 +1864,7 @@ section.msg-Redes p {
 		text-align: center;
 		padding: 0%;
 		padding-left: 0%;
+
 		margin-top: 0%;
 		margin-bottom: 0%;
 		list-style: none;
@@ -1750,13 +1872,57 @@ section.msg-Redes p {
 		position: relative;
 		margin-left: 0%;
 	}
+	.content button.edit_btn {
+		width: 20%;
+	}
+	.contend-profile {
+		display: flex;
+		flex-direction: row;
+		/* justify-content: center; */
+		align-items: center;
+	}
 	.body_container {
 		display: grid;
 		grid-gap: 20px;
-		grid-template-columns: repeat(3, 1fr);
 	}
-	.profile_section {
+	.cover-home {
+		background-image: url(https://picsum.photos/480/136/?random);
+		background-size: contain;
+		background-position: center;
+		/* background-repeat: no-repeat; */
+		height: 5.5rem;
+	}
+	.profile-img-home {
+		height: 4rem;
+		border-radius: 50%;
+	}
+	.label-profile-home p {
+		font-size: 110%;
+		text-shadow: none;
+	}
+	.description1 {
+		font-size: 130%;
+		text-shadow: none;
+		color: #a94824;
+	}
+	.label-profile-home {
+		padding: 1rem;
+	}
+	.profile_section-home {
 		display: block;
+		height: 20rem;
+		position: relative;
+		bottom: 1rem;
+		background: #ffac00;
+		border-radius: 15px;
+		padding: 3%;
+		margin: 0rem 0rem 1rem 0rem;
+		-webkit-box-shadow: 0px 10px 13px -7px #000000,
+			5px 5px 15px -8px rgba(0, 0, 0, 0);
+		box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px -8px rgba(0, 0, 0, 0);
+	}
+	.profile-btn-editions {
+		padding: 1rem;
 	}
 	.btn-profile {
 		font-size: 120%;
@@ -1779,19 +1945,26 @@ section.msg-Redes p {
 	.card{
 		height: 8rem;
 	}
-	.cover {
-		/* background-repeat: no-repeat; */
-		height: 8rem;
+	.content {
+		padding: 0rem;
+		display: flex;
+		flex-direction: column;
 	}
 	.profile img {
-		height: 10rem;
+		height: 5rem;
 	}
 	.profile_section1{
 		height:450px;
 	}
-	.label-profile {
-		padding-bottom: 0px;
-		padding-top: 6rem;
+	.name-home {
+		font-size: 131%;
+		margin: 0 1rem;
+		text-shadow: none;
+		color: #a94824;
+	}
+	.name1,
+	.name-home {
+		font-size: 170%;
 	}
 	.edit_btn{
 		width: 20%;
@@ -1802,21 +1975,26 @@ section.msg-Redes p {
 		margin-left: 20%;
 		margin-top:0rem;
 	}
-	.name_pet, .description {
-		font-size: 20px;
+	.status_imput {
+		font-size: 144%;
+	}
+	.menu-post-options {
+		justify-content: start;
 	}
 	.label-profile p {
 		font-size: 120%;
 	}
-	.divPost {
-		padding: 0;
-		grid-column-start: 3;
-		grid-column-end: 4;
+	.cam-post {
+		width: 3rem;
 	}
-	.edition-section {
-		position: absolute;
-		margin-left: 30%;
-		color: black;
+	.privacy {
+		font-size: 200%;
+		margin-left: 0.5rem;
+	}
+	.post_buttom {
+		margin: 0rem 0rem 0rem 12rem;
+		font-size: 150%;
+		width: 6rem;
 	}
 	.allpost {
 		width: 70%;
@@ -1862,165 +2040,99 @@ section.msg-Redes p {
 		background-size: cover;
 		position: relative;
 	}
-	/*TODO  Vista: encabezado  */
-	.header_signin,
-	.header_register {
-		margin: 1rem 1rem 1rem 1rem;
-		width: 50%;
-		max-width: 50%;
-		display: flex;
+	.grupo-nombre h1 {
+		font-size: 1.5rem;
 	}
-	/*header h1 {
-		font-size: 600%;
-		text-align: end;
-	}*/
-	img.logoHuella {
-		width: 30%;
-		max-width: 40%;
-		top: 2rem;
-		position: relative;
-		left: 9rem;
+	.name_pet1 {
+		font-size: 100%;
 	}
-	.petLogoMenu {
-		width: 10%;
-		margin: 1% 2%;
+	img.user_img {
+		height: 4.5rem;
 	}
+	.name-user {
+		font-size: 123%;
+		line-height: 1.25rem;
+	}
+	.post-time {
+		font-size: 96%;
+		line-height: 2rem;
+	}
+	.btn-post-edit,
+	.btn-post-delete {
+		width: 121%;
+		font-size: 100%;
+	}
+	label-menu-post {
+		height: 3rem;
+	}
+	.input-post {
+		padding: 2rem;
+		font-size: 128%;
+	}
+	.likes-counter {
+		font-size: 60%;
+	}
+	.input-comment {
+		width: 100%;
+		height: 3rem;
+		padding: 3%;
+		font-size: 100%;
+	}
+	.btn-post-cancel-edit-post,
+	.btn-post-save-edit-post,
+	.btn-save-comment,
+	.btn-cancel-comment,
+	.btn-comment-edit,
+	.btn-comment-delete {
+		font-size: 100%;
+	}
+}
+@media only screen and (min-width: 1281px) {
+	/* TODO view home */
 	.petLogo {
-		width: 50%;
+		width: 70%;
+		margin: 0% 30%;
 	}
 	.logoHeader {
-		width: 25%;
-		max-width: 30%;
-		margin: 7rem 12rem;
-		position: absolute;
-		top: 22rem;
+		margin: 0% 22%;
 	}
-
-	/*TODO Vista: inicio de sesion  */
-
-	.position,
-	.sign {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
+	.signIn_Form h1 {
+		font-size: 300%;
 	}
-
-	.container {
-		top: 2rem;
-		position: absolute;
-		border-radius: 5px;
-		padding: 1rem 1rem 1rem 1rem;
-		margin: 1rem 1rem 1rem 1rem;
-		left: 48rem;
+	.signInForm-container {
+		line-height: 3rem;
 	}
-	form.signIn_Form {
-		margin: 10rem 2rem;
-	}
-	.signIn-container {
-		width: auto;
-		height: auto;
-		border-radius: 40px;
-		margin: 2rem 0rem;
-		position: relative;
-		padding: 2%;
-	}
-	.header-form {
-		font-size: 50px;
+	input {
+		font-size: 200%;
 	}
 	#SignInForm_email,
 	#SignInForm_password {
-		line-height: 70px;
-		font-size: 40px;
-		margin-bottom: 30px;
-	}
-	span.input-item {
-		margin: 0.5rem auto 0rem 14.5rem;
+		line-height: 35px;
 	}
 	.fa {
-		width: 25%;
-		max-width: 25%;
+		padding: 34px;
+		font-size: 30px;
+		width: 14%;
 	}
-	/*TODO Vista: registro de usuario  */
-
-	.registerForm-container {
-		width: auto;
-		height: auto;
-		border-radius: 40px;
-		margin: 4rem 0rem;
-		line-height: 3rem;
-		position: relative;
-		-webkit-box-shadow: 0px 10px 13px -7px #000000,
-			5px 5px 15px 5px rgba(0, 0, 0, 0);
-		box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-		padding: 2%;
-		background: linear-gradient(to top, #fcfbfb 0%, #fcfbfb 100%);
-	}
-	.signInForm-container {
-		border-radius: 40px;
-		margin: 2rem 0rem;
-		line-height: 3rem;
-		position: relative;
-		-webkit-box-shadow: 0px 10px 13px -7px #000000,
-			5px 5px 15px 5px rgba(0, 0, 0, 0);
-		box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-		padding: 2%;
-		background: linear-gradient(to top, #fcfbfb 0%, #fcfbfb 100%);
-	}
-	.registerForm-container h1 {
-		font-size: 220%;
+	.container_msg p {
+		font-size: 200%;
+		font-family: 'Abel', sans-serif;
 		text-align: center;
 	}
-
-	.signUp-form {
-		margin: 0rem 0rem;
+	.registerForm-container {
+		position: relative;
 	}
-	form.form {
-		margin: 7rem 2rem;
-		line-height: 2rem;
-	}
-	span.input-itemR {
-		background: none;
-		color: black;
-		padding: 14.5px 0px 15px 9px;
-		border-radius: 5px 0px 0px 5px;
-		position: absolute;
-		margin: 0.445rem 0.45rem 1.45rem 18.5rem;
+	.registerForm-container h1 {
+		font-size: 300%;
 	}
 	span.error-msg {
 		font-size: 100%;
-		top: 0rem;
 	}
-	.register-container {
-		/* top: 0rem; */
-		margin: 3rem 7rem;
-		width: 35%;
-		max-width: 45%;
+	section.msg-Redes p {
+		font-size: 200%;
 	}
-	.container_msg p {
-		font-size: 40px;
-		text-align: center;
-	}
-	input {
-		line-height: 70px;
-		font-size: 40px;
-		margin-bottom: 30px;
-	}
-	#submit,
-	#submit-buttomRegister {
-		font-size: 40px;
-		margin-bottom: 20px;
-		line-height: 60px;
-	}
-
-	.btn-google {
-		font-size: 50px;
-	}
-
 	#headerHome label {
 		display: none;
-	}
-	#headerHome {
-		width: 100%;
 	}
 	.menu_mobile,
 	.menu_mobile1 {
@@ -2030,12 +2142,65 @@ section.msg-Redes p {
 		text-align: center;
 		padding: 0%;
 		padding-left: 0%;
+
 		margin-top: 0%;
 		margin-bottom: 0%;
 		list-style: none;
 		flex: auto;
 		position: relative;
 		margin-left: 0%;
+	}
+	.content button.edit_btn {
+		width: 20%;
+	}
+	.contend-profile {
+		display: flex;
+		flex-direction: row;
+		/* justify-content: center; */
+		align-items: center;
+	}
+	.body_container {
+		display: grid;
+		grid-gap: 20px;
+	}
+	.cover-home {
+		background-image: url(https://picsum.photos/480/136/?random);
+		background-size: contain;
+		background-position: center;
+		/* background-repeat: no-repeat; */
+		height: 5.5rem;
+	}
+	.profile-img-home {
+		height: 7rem;
+		border-radius: 50%;
+	}
+	.label-profile-home p {
+		font-size: 110%;
+		text-shadow: none;
+	}
+	.description1 {
+		font-size: 130%;
+		text-shadow: none;
+		color: #a94824;
+	}
+	.label-profile-home {
+		padding: 1rem;
+	}
+	.profile_section-home {
+		display: block;
+		height: 23rem;
+		position: relative;
+		bottom: 1rem;
+		background: #ffac00;
+		border-radius: 15px;
+		padding: 3%;
+		margin: 0rem 0rem 1rem 0rem;
+		-webkit-box-shadow: 0px 10px 13px -7px #000000,
+			5px 5px 15px -8px rgba(0, 0, 0, 0);
+		box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px -8px rgba(0, 0, 0, 0);
+	}
+	.profile-btn-editions {
+		padding: 1rem;
 	}
 	.main {
 		width: 90%;
@@ -2044,16 +2209,14 @@ section.msg-Redes p {
 		height: 100%;
 		grid-template-columns: 40% 54% 0%;
 		padding-top: 3em;
-		box-sizing: border-box;
 	}
-	.main-profile{
-		width: 70%;
-		margin: 20px auto;
+	.divPost {
+		grid-column: span 2;
+	}
+	.content {
+		padding: 0rem;
 		display: flex;
 		flex-direction: column;
-		height: 100%;
-		padding-top: 3em;
-		box-sizing: border-box;
 	}
 	.btn-profile {
 		font-size: 180%;
@@ -2071,9 +2234,21 @@ section.msg-Redes p {
 	}
 	.profile img {
 		height: 11rem;
+
 	}
-	.profile_section {
-		display: block;
+	.name-home {
+		font-size: 131%;
+		margin: 0 1rem;
+		text-shadow: none;
+		color: #a94824;
+	}
+	.name1,
+	.name-home {
+		font-size: 170%;
+	}
+	.status_imput {
+		font-size: 144%;
+		width: 95%;
 	}
 	.profile_section1{
 		height:600px;
@@ -2095,19 +2270,80 @@ section.msg-Redes p {
 	.name_pet, .description {
 
 		font-size: 30px;
-	
 	}
-	.label-profile {
-		padding-bottom: 0px;
-		padding-top: 6rem;
+	.menu-post-options {
+		justify-content: start;
 	}
-	.divPost {
-		grid-column: span 2;
+	.cam-post {
+		width: 3rem;
 	}
-	.edition-section {
-		position: absolute;
-		margin-left: 30%;
-		color: black;
+	.privacy {
+		font-size: 292%;
+		margin-left: 0.5rem;
+	}
+	.post_buttom {
+		margin: 0rem 0rem 0rem 33rem;
+		font-size: 150%;
+		width: 6rem;
+	}
+	.fa-heart,
+	.fa-paper-plane,
+	.fa-comment {
+		font-size: 3rem;
+	}
+	.grupo-nombre h1 {
+		font-size: 1.5rem;
+	}
+	.name_pet1 {
+		font-size: 100%;
+	}
+	img.user_img {
+		height: 6.5rem;
+	}
+	.name-user {
+		font-size: 170%;
+		line-height: 1.25rem;
+	}
+	.post-time {
+		font-size: 134%;
+		line-height: 2rem;
+	}
+	.btn-post-edit,
+	.btn-post-delete {
+		font-size: 119%;
+		height: 2.5rem;
+	}
+	label-menu-post {
+		height: 3rem;
+	}
+	.input-post {
+		padding: 2rem;
+		font-size: 128%;
+	}
+	.likes-counter {
+		font-size: 50%;
+	}
+	.input-comment {
+		width: 100%;
+		height: 4rem;
+		padding: 3%;
+		font-size: 140%;
+		overflow: hidden;
+	}
+	.btn-post-cancel-edit-post,
+	.btn-post-save-edit-post,
+	.btn-save-comment,
+	.btn-cancel-comment,
+	.btn-comment-edit,
+	.btn-comment-delete {
+		font-size: 100%;
+		height: 2.5rem;
+	}
+	.label-menu-post {
+		height: 3rem;
+	}
+	.text-name {
+		font-size: 113%;
 	}
 	.allpost {
 		width: 60%;

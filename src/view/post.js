@@ -14,7 +14,11 @@ export const postSection = (Object) => {
   console.log(Object.id);
   const user = currentUser().uid;
   const note = document.createElement('div');
-  note.classList.add(`${(Object.privacy === '1' && Object.user !== user) ? 'hide-post' : 'allpost'}`);
+  note.classList.add(
+    `${
+      Object.privacy === '1' && Object.user !== user ? 'hide-post' : 'allpost'
+    }`,
+  );
   // console.log(user);
   note.innerHTML = ` 
   <section class="user_post" id="user_post">
@@ -28,9 +32,15 @@ export const postSection = (Object) => {
       <p class="post-time">${Object.time}</p>
     </div>
     <div class="menu-privacy"> 
-    <select id = "privacy" class="privacy ${user === Object.user || 'hide'}" style='color: #F25F29; font-family:Arial, FontAwesome;'>
-                      <option value="0" ${Object.privacy === '1' || 'selected'} style='color: #F25F29; '>&#xf57d;</option>
-                      <option value="1" ${Object.privacy === '0' || 'selected'} style='color: #F25F29; '>&#xf023;</option>
+    <select id = "privacy" class="privacy ${
+  user === Object.user || 'hide'
+}" style='color: #F25F29; font-family:Arial, FontAwesome;'>
+                      <option value="0" ${
+  Object.privacy === '1' || 'selected'
+} style='color: #F25F29; '>&#xf57d;</option>
+                      <option value="1" ${
+  Object.privacy === '0' || 'selected'
+} style='color: #F25F29; '>&#xf023;</option>
                 </select>
                 </div>
                 <div class="${
@@ -38,7 +48,9 @@ export const postSection = (Object) => {
 }" id="containerMenu-${Object.id}">
           <nav class="nav-post hide" id="nav-${Object.id}">
             <button class="btn-post-edit" data-id="${Object.id}">Editar</button>
-            <button class="btn-post-delete" data-id="${Object.id}">Eliminar</button>
+            <button class="btn-post-delete" data-id="${
+  Object.id
+}">Eliminar</button>
             </nav>
         </div>
         </div>
@@ -74,7 +86,9 @@ export const postSection = (Object) => {
 
         <button class="like-btton" id="like-btton-${
   Object.id
-}"><i class="fas fa-heart"><p class = "likes-counter">${Object.likes.length}Likes</p></i> 
+}"><i class="fas fa-heart"><p class = "likes-counter">${
+  Object.likes.length
+} Likes</p></i> 
         </button>
 
         <button type="button"id="comment-${
