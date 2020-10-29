@@ -32,34 +32,27 @@ export default (notes, dataUser) => {
     <main>
       <div class='main'>
         <section class="body_container">
-          <aside class="profile_section">
-            <article class="card">
-              <figure class="cover">
-                <img class="cover-img" src="" alt="">
+          <aside class="profile_section-home">
+            <article class="card-home">
+              <figure class="cover-home">
+                <img class="cover-img-home" src="" alt="">
               </figure>
-              <section class="content">
-                <figure class="profile">
-                  <img class="profile-img" src="${user.photoURL}" alt="">
+              <section class="content-home">
+              <div class='contend-profile'>
+                <figure class="profile-home">
+                  <img class="profile-img-home" src="${user.photoURL}" alt="">
                 </figure>
-                <div class="header_name">
-                  <h2 class="name1">${user.displayName}</h2>
-                </div>
-                <div class="labels">
-                  <div class="label">
-                    <p>Nombre de tu mascota:</p>
-                    <h2 class="name_pet1">${dataUser.petName}</h2>
-                  </div>
-                  <div class="label">
-                    <p class="profile-text">Cuéntanos algo sobre ti y tu mascota</p>
-                    <p class="description1">${dataUser.aboutUs}</p>
-                  </div>
-                  <div class="profile-btn-editions">
-                    <button id="btnCancel" class="btn-profile hide">Cancelar</button>
-                    <button id="btnSave" class="btn-profile hide">Guardar</button>
+                  <h2 class="name-home">${user.displayName}</h2>
+              </div>
+                <div class="labels-profile-home">
+                  <div class="label-profile-home">
+                    <p class="profile-text-home">Nombre de tu mascota:</p>
+                    <h2 class="description1">${dataUser.petName}</h2>
+                    <p class="profile-text-home">Cuéntanos algo sobre ti y tu mascota</p>
+                    <h2 class="description1">${dataUser.aboutUs}</h2>
                   </div>
                 </div>
               </section>
-              <button type="button" id="btnProfile" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fas fa-edit"></i>Edita tu perfil</button>
             </article>
           </aside>
         </section>
@@ -89,7 +82,7 @@ export default (notes, dataUser) => {
             </select>
             <i></i>
             <button type="button" id="bttonnewpost" class="post_buttom">
-            <img class="" src="/imagenes/pencil.png" width="10%" height="auto" alt="">       
+            <img class="pencil-btton-post" src="/imagenes/pencil.png" width="10%" height="auto" alt="">       
             Post</button>
             </div>
           </article>
@@ -165,11 +158,11 @@ export default (notes, dataUser) => {
   notes.forEach((element) => {
     postFinal.appendChild(postSection(element));
   });
-  // TODO Profile view changed
-  const buttonEditProfile = divElemt.querySelector('#btnProfile');
-  buttonEditProfile.addEventListener('click', () => {
-    window.location.hash = '#/profile';
-  });
+  // // TODO Profile view changed
+  // const buttonEditProfile = divElemt.querySelector('#btnProfile');
+  // buttonEditProfile.addEventListener('click', () => {
+  //   window.location.hash = '#/profile';
+  // });
   // TODO LogOut
   const logOut = divElemt.querySelector('#logout');
   logOut.addEventListener('click', signOut);
