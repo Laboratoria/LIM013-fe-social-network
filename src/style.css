@@ -1170,6 +1170,7 @@ section.msg-Redes p {
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 601px) and (max-width: 767px) {
+	/* TODO view home */
 	.cam-post {
 		width: 3rem;
 	}
@@ -1333,6 +1334,7 @@ section.msg-Redes p {
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+	/* TODO view home */
 	.logoHeader-nav {
 		width: 10%;
 		margin: 1rem 0rem 0.5rem 19rem;
@@ -1518,8 +1520,8 @@ section.msg-Redes p {
 		width: 25%;
 	}
 }
-
 @media only screen and (min-width: 992px) and (max-width: 1023px) {
+	/* TODO view home */
 	.petLogo {
 		width: 70%;
 		margin: 0% 30%;
@@ -1727,8 +1729,8 @@ section.msg-Redes p {
 		font-size: 100%;
 	}
 }
-
 @media only screen and (min-width: 1024px) and (max-width: 1280px) {
+	/* TODO view home */
 	.petLogo {
 		width: 70%;
 		margin: 0% 30%;
@@ -1937,6 +1939,7 @@ section.msg-Redes p {
 	}
 }
 @media only screen and (min-width: 1281px) {
+	/* TODO view home */
 	.petLogo {
 		width: 70%;
 		margin: 0% 30%;
@@ -2019,7 +2022,7 @@ section.msg-Redes p {
 		height: 5.5rem;
 	}
 	.profile-img-home {
-		height: 4rem;
+		height: 7rem;
 		border-radius: 50%;
 	}
 	.label-profile-home p {
@@ -2036,7 +2039,7 @@ section.msg-Redes p {
 	}
 	.profile_section-home {
 		display: block;
-		height: 20rem;
+		height: 23rem;
 		position: relative;
 		bottom: 1rem;
 		background: #ffac00;
@@ -2081,6 +2084,7 @@ section.msg-Redes p {
 	}
 	.status_imput {
 		font-size: 144%;
+		width: 95%;
 	}
 	.menu-post-options {
 		justify-content: start;
@@ -2089,15 +2093,17 @@ section.msg-Redes p {
 		width: 3rem;
 	}
 	.privacy {
-		font-size: 236%;
+		font-size: 292%;
 		margin-left: 0.5rem;
 	}
 	.post_buttom {
-		margin: 0rem 0rem 0rem 21rem;
+		margin: 0rem 0rem 0rem 33rem;
 		font-size: 150%;
 		width: 6rem;
 	}
-	.fa-heart, .fa-paper-plane, .fa-comment {
+	.fa-heart,
+	.fa-paper-plane,
+	.fa-comment {
 		font-size: 3rem;
 	}
 	.grupo-nombre h1 {
@@ -2107,14 +2113,14 @@ section.msg-Redes p {
 		font-size: 100%;
 	}
 	img.user_img {
-		height: 4.5rem;
+		height: 6.5rem;
 	}
 	.name-user {
-		font-size: 123%;
+		font-size: 170%;
 		line-height: 1.25rem;
 	}
 	.post-time {
-		font-size: 96%;
+		font-size: 134%;
 		line-height: 2rem;
 	}
 	.btn-post-edit,
@@ -2134,9 +2140,10 @@ section.msg-Redes p {
 	}
 	.input-comment {
 		width: 100%;
-		height: 3rem;
+		height: 4rem;
 		padding: 3%;
-		font-size: 100%;
+		font-size: 140%;
+		overflow: hidden;
 	}
 	.btn-post-cancel-edit-post,
 	.btn-post-save-edit-post,
@@ -2145,9 +2152,12 @@ section.msg-Redes p {
 	.btn-comment-edit,
 	.btn-comment-delete {
 		font-size: 100%;
+		height: 2.5rem;
 	}
 	.label-menu-post {
 		height: 3rem;
-
+	}
+	.text-name {
+		font-size: 113%;
 	}
 }
