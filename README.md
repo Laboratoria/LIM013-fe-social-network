@@ -1,15 +1,5 @@
 # Creando una Red Social
 
-## Índice
-
-* [1. Preámbulo](#1-preámbulo)
-* [2. Resumen del proyecto](#2-resumen-del-proyecto)
-* [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
-* [4. Consideraciones generales](#4-consideraciones-generales)
-* [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
-* [6. Entrega](#6-entrega)
-* [7. Pistas, tips y lecturas complementarias](#7-pistas-tips-y-lecturas-complementarias)
-
 ## 1. ¿En qué consiste el producto?
 Petlandia es una red social de entretenimiento para los amantes de las mascotas , 
 en cuál podran compartir a través de fotos o estados los momentos más divertidos junto a ellos. 
@@ -48,6 +38,14 @@ Como producto de las entrevistas , desarrollamos los prototipos de baja y alta f
 
   ![desktop1](https://user-images.githubusercontent.com/68167686/97643080-bef00080-1a14-11eb-9b6d-c24d399d47f6.png)
   ![desktop2](https://user-images.githubusercontent.com/68167686/97643074-bd263d00-1a14-11eb-9fc6-897cf38b7d80.png)
+
+### 2.3 Test de Usabilidad
+
+Resultados del test de usabilidad :
+
+* Mostrar el prototipo de alta fidelidad.
+* Modificar la pregunta planteada en el input del post.
+* Añadir el botón para eliminar las fotos antes de realizarse las publicaciones.
 
 ## 3. Creando la Red Social
 
