@@ -175,9 +175,9 @@ p {
 }
 .profile-btn-editions {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	position: absolute;
-	top: 12rem;
+
 }
 .comunidades-figures {
 	width: 10%;
@@ -487,7 +487,8 @@ span.error-msg {
 	width: 10%;
 }
 img.img-nav{
-	padding-top: 1.5rem;
+	padding-top: 1.0rem;
+    margin-right: 1rem;
 }
 .name_app {
 	display: none;
@@ -510,10 +511,7 @@ img.img-nav{
 	line-height: 2;
 	position: absolute;
 	margin-left: 0%;
-	background: #f54f54;
-	background: -moz-linear-gradient(left, #f54f54 0%, #fed691 100%);
-	background: -webkit-linear-gradient(left, #f54f54 0%, #fed691 100%);
-	background: linear-gradient(to right, #f54f54 0%, #fed691 100%);
+	background: #ffac00;
 	z-index: 1;
 }
 .menu_mobile.responsive,
@@ -524,7 +522,14 @@ img.img-nav{
 li.optionMobile{
 	padding:0% 3% 0% 3%;
 }
-.main ,.main-profile{
+.main {
+	width: 90%;
+	margin: 20px auto;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.main-profile{
 	width: 90%;
 	margin: 20px auto;
 }
@@ -549,7 +554,7 @@ li.optionMobile{
 	display: flex;
 	flex-direction: column;
 	background: #ffac00;
-	height:230px;
+	height:250px;
 	border-radius: 15px;
 	padding: 3%;
 	margin: 0rem 0rem 1rem 0rem;
@@ -734,8 +739,10 @@ li.optionMobile{
 	z-index: 1;
 }
 .edit_btn {
+	position:relative;
+	width:30%;
 	padding: 0.5rem;
-	margin: 1rem 0rem 1rem 14rem;
+	margin: 0% 0% 1% 70%;
 	height: 2rem;
 	border-radius: 15px;
 	border: none;
@@ -750,9 +757,9 @@ li.optionMobile{
 	outline: none;
 }
 .btn-profile {
-	padding: 0rem;
-	margin: 0.5rem 0rem 0.5rem 14rem;
-	height: 1.5rem;
+	padding: 5%;
+	margin: 0.5% 0% 0.5% 14%;
+
 	border-radius: 15px;
 	border: none;
 	background-color: #04bfad;
@@ -764,7 +771,7 @@ li.optionMobile{
 	-webkit-box-shadow: 2px 8px 13px -3px rgba(0, 0, 0, 0.59);
 	box-shadow: 2px 8px 13px -3px rgba(0, 0, 0, 0.59);
 	outline: none;
-	width: 25%;
+	width: 120%;
 }
 .update_container {
 	/* Rectangle 10 */
@@ -1102,6 +1109,7 @@ i.fa.fa-pencil {
     align-items: center;
 
 }
+
 /*TODO liked posts*/
 .like-btton {
 	margin: 0 0.75rem;
@@ -1144,7 +1152,9 @@ section.msg-Redes p {
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 601px) and (max-width: 767px) {
-
+	.profile_section1 {
+		height: 350px;
+	}
 	.cam-post {
 		width: 22%;
 		-webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
@@ -1266,15 +1276,14 @@ section.msg-Redes p {
 		font-size: 100%;
 		width: 22%;
 	}
+	.btn-profile {
+		font-size: 100%;
+		padding:0%;
+	}
 	.privacy {
 		font-size: 2.5rem;
 	}
-	.btn-profile {
-		padding: 0rem;
-		margin: 0.5rem 0rem 0.5rem 24rem;
-		font-size: 100%;
-		width: 25%;
-	}
+
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -1287,6 +1296,9 @@ section.msg-Redes p {
 		width: 26%;
 		/* height: 3rem; */
 		margin: 0rem 2rem 0rem 1rem;
+	}
+	#selectProfile i {
+		font-size: 200%;
 	}
 	.cam-post {
 		width: 20%;
@@ -1327,7 +1339,7 @@ section.msg-Redes p {
 		height: auto;
 	}
 	.content-post{
-padding: 2rem;
+		padding: 2rem;
 	}
 	.user_post{
 		-webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px -8px rgba(0, 0, 0, 0);
@@ -1374,6 +1386,11 @@ padding: 2rem;
 	.name_pet1 {
 		font-size: 140%;
 	}
+	.profile_section1 {
+
+		height: 400px;
+
+	}
 	.btn-post-edit, .btn-post-delete {
 		width: 100%;
 		font-size: 100%;
@@ -1397,6 +1414,10 @@ padding: 2rem;
 	.card {
 		height: 9.5rem;
 	}
+	.edit_btn{
+		width: 20%;
+		font-size: 100%;
+	}
 	.profile {
 		margin-left: 1rem;
 		margin-bottom: 1rem;
@@ -1407,8 +1428,8 @@ padding: 2rem;
 	}
 	.name {
 		font-size: 1.5rem;
-		margin-top: 1rem;
-		margin-left: 2rem;
+		margin-top: 0rem;
+		margin-left: 20%;
 	}
 	.label-profile p {
 		font-size: 120%;
@@ -1420,22 +1441,25 @@ padding: 2rem;
 		height: 1rem;
 
 	}
-	.edit_btn {
-		margin: 1rem 0rem 1rem 29rem;
+	 .edit_btn {
 		font-size: 120%;
 		width: 23%;
-		padding: 0rem;
-	}
+	} 
 	.fa-camera {
 		font-size: 2rem;
 	}
 	.btn-profile {
-		padding: 0rem;
-		margin: 0.5rem 0rem 0.5rem 31rem;
-		height: 2.5rem;
 		font-size: 100%;
-		width: 25%;
+		width: 150%;
 	}
+	.allpost {
+		width: 80%;
+		margin: 1% 10% 1% 10%;
+	}
+	.label-menu-post{
+		margin: 0% 1% 0% 66%;
+	}
+	
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1023px) {
@@ -1501,8 +1525,19 @@ padding: 2rem;
 		position: relative;
 		margin-left: 0%;
 	}
-	.content button.edit_btn{
+	.profile img {
+		height: 5rem;
+		bottom: 2rem;
+	}
+	.content button{
 		width: 20%;
+	}
+	#selectProfile i {
+		font-size: 200%;
+	}
+	.edit_btn{
+		width: 20%;
+		font-size: 120%;
 	}
 	.body_container {
 		display: grid;
@@ -1511,6 +1546,10 @@ padding: 2rem;
 	}
 	.profile_section {
 		display: block;
+	}
+	.btn-profile {
+		font-size: 120%;
+		width: 150%;
 	}
 	.main {
 		width: 90%;
@@ -1523,6 +1562,36 @@ padding: 2rem;
 	.divPost {
 		grid-column: span 2;
 	}
+	.allpost {
+		width: 70%;
+		margin: 1% 15% 1% 15%;
+	}
+	.name-user {
+		font-size: 150%;
+	}
+	img.user_img {
+		height: 5rem;
+	}
+	.post-time{
+		font-size: 110%;
+    	line-height: 2rem;
+	}
+	.label-menu-post {
+	margin: 4% 1% 0% 66%;
+    position: absolute;
+    height: 6rem;
+	}
+	.input-post {
+    font-size: 150%;
+    height: 6em;
+	padding: 2rem;
+	margin-top: 5%;
+	}
+	.privacy {
+		font-size: 2.0rem;
+		margin: 0% 2% 3% 20%;
+	}
+
 }
 
 @media only screen and (min-width: 1024px) and (max-width: 1280px) {
@@ -1689,6 +1758,10 @@ padding: 2rem;
 	.profile_section {
 		display: block;
 	}
+	.btn-profile {
+		font-size: 120%;
+		width: 150%;
+	}
 	.main {
 		width: 90%;
 		margin: 20px auto;
@@ -1699,6 +1772,9 @@ padding: 2rem;
 	}
 	.main-profile{
 		width: 75%;
+	}
+	#selectProfile i {
+		font-size: 200%;
 	}
 	.card{
 		height: 8rem;
@@ -1711,21 +1787,26 @@ padding: 2rem;
 		height: 10rem;
 	}
 	.profile_section1{
-		height:500px;
+		height:450px;
 	}
 	.label-profile {
 		padding-bottom: 0px;
 		padding-top: 6rem;
 	}
+	.edit_btn{
+		width: 20%;
+		font-size: 120%;
+	}
 	.name {
 		font-size: 30px;
-		margin-left: 5rem;
+		margin-left: 20%;
+		margin-top:0rem;
 	}
 	.name_pet, .description {
 		font-size: 20px;
 	}
 	.label-profile p {
-		font-size: %;
+		font-size: 120%;
 	}
 	.divPost {
 		padding: 0;
@@ -1736,6 +1817,36 @@ padding: 2rem;
 		position: absolute;
 		margin-left: 30%;
 		color: black;
+	}
+	.allpost {
+		width: 70%;
+		margin: 1% 15% 1% 15%;
+	}
+	.name-user {
+		font-size: 160%;
+	}
+	img.user_img {
+		height: 6rem;
+	}
+	.post-time{
+		font-size: 120%;
+    	line-height: 2rem;
+	}
+	.label-menu-post {
+		margin: 0% 1% 0% 66%;
+		position: absolute;
+		width: 5%;
+		height: auto;
+	}
+	.input-post {
+		font-size: 160%;
+		height: 4rem;
+		margin-top: 6%;
+
+	}
+	.privacy {
+		font-size: 2.5rem;
+		margin: 0% 2% 3% 20%;
 	}
 
 }
@@ -1944,32 +2055,46 @@ padding: 2rem;
 		padding-top: 3em;
 		box-sizing: border-box;
 	}
+	.btn-profile {
+		font-size: 180%;
+		width: 200%;
+	}
 	.card{
 		height: 12rem;
+	}
+	#selectProfile i {
+		font-size: 200%;
 	}
 	.cover {
 		/* background-repeat: no-repeat; */
 		height: 12rem;
 	}
 	.profile img {
-		height: 10rem;
+		height: 11rem;
 	}
 	.profile_section {
 		display: block;
 	}
 	.profile_section1{
-		height:500px;
+		height:600px;
 	}
-	.label-profile p {
-		font-size: 70%;
+
+	.edit_btn{
+		width: 15%;
+		font-size: 120%;
+		padding: 0rem;
 	}
 	.name {
 		font-size: 30px;
-		margin-left: 5rem;
+		margin-left: 20%;
+		margin-top:0rem;
+	}
+	.label-profile p {
+		font-size: 150%;
 	}
 	.name_pet, .description {
 
-		font-size: 20px;
+		font-size: 30px;
 	
 	}
 	.label-profile {
@@ -1983,6 +2108,37 @@ padding: 2rem;
 		position: absolute;
 		margin-left: 30%;
 		color: black;
+	}
+	.allpost {
+		width: 60%;
+		margin: 1% 20% 1% 20%;
+	}
+	.name-user {
+		font-size: 170%;
+	}
+	img.user_img {
+		height: 6rem;
+	}
+	.post-time{
+		font-size: 120%;
+		line-height: 2rem;
+		margin-top: 1rem;
+	}
+	.label-menu-post {
+		margin: 0% 0% 0% 66%;
+		position: absolute;
+		width: 5%;
+		height: auto;
+	}
+	.input-post {
+		font-size: 160%;
+		height: 4rem;
+		padding: 2%;
+		margin-top: 6%;
+	}
+	.privacy {
+		font-size: 3rem;
+		margin: 0% 2% 3% 20%;
 	}
 	/* Extra large devices (large laptops and desktops, 1200px and up) */
 	/* Extra large devices (large laptops and desktops, 1200px and up) */

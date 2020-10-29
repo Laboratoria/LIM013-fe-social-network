@@ -71,12 +71,12 @@ export const postSection = (Object) => {
     : `<img class="hide image-post" src="${Object.img}" alt="" />`
 }
     <section class="button-section">
-        <div class="button-like">
+
         <button class="like-btton" id="like-btton-${
   Object.id
-}"><i class="fas fa-heart"><p class = "likes-counter">${Object.likes.length} Likes</p></i> 
+}"><i class="fas fa-heart"><p class = "likes-counter">${Object.likes.length}Likes</p></i> 
         </button>
-        </div>
+
         <button type="button"id="comment-${
   Object.id
 }" class="btton-comment">        
