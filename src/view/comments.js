@@ -11,14 +11,12 @@ export const eachComment = (dataComment) => {
       <p class="date-comment">${dataComment.time}</p>
       </div>
       </div>
-      <div class="container-comment">
-        
+      <div class="container-comment">        
         <p class="text-comment" id="textComment">${dataComment.comment}</p>
         <div class="buttons-comments">
           <button class="hide btn-save-comment" id="btnSaveComment">Guardar</button>
           <button class="hide btn-cancel-comment" id="btnCancelComment">Cancelar</button>
-        </div>
-        
+        </div>       
         <section id="menu-${dataComment.id}" class="${(userId !== dataComment.userID) ? 'hide' : 'label-menu-comment'}">
           <div class="menu-comment" id="nav-${dataComment.id}">
               <button class="btn-comment-edit" id="edit-${dataComment.id}">Editar</button>
@@ -38,6 +36,7 @@ export const eachComment = (dataComment) => {
   editComment.addEventListener('click', (e) => {
     e.preventDefault();
     editComment.classList.add('hide');
+    deleteCommentBtn.classList.add('hide');
     inputComment.contentEditable = 'true';
     cancelComment.classList.remove('hide');
     saveComment.classList.remove('hide');
@@ -46,6 +45,7 @@ export const eachComment = (dataComment) => {
     cancelComment.classList.add('hide');
     saveComment.classList.add('hide');
     editComment.classList.remove('hide');
+    deleteCommentBtn.classList.remove('hide');
   });
   saveComment.addEventListener('click', async () => {
     cancelComment.classList.add('hide');
@@ -53,6 +53,8 @@ export const eachComment = (dataComment) => {
     editComment.classList.add('hide');
     await updateComment(dataComment.id, inputComment.textContent);
     console.log('actualizar comentarios');
+    editComment.classList.remove('hide');
+    deleteCommentBtn.classList.remove('hide');
   });
   deleteCommentBtn.addEventListener('click', async () => {
     await deleteComment(dataComment.id);

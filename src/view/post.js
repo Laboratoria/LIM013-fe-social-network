@@ -15,8 +15,7 @@ export const postSection = (Object) => {
   const user = currentUser().uid;
   const note = document.createElement('div');
   note.classList.add(
-    `${
-      Object.privacy === '1' && Object.user !== user ? 'hide-post' : 'allpost'
+    `${Object.privacy === '1' && Object.user !== user ? 'hide-post' : 'allpost'
     }`,
   );
   // console.log(user);
@@ -32,24 +31,19 @@ export const postSection = (Object) => {
       <p class="post-time">${Object.time}</p>
     </div>
     <div class="menu-privacy"> 
-    <select id = "privacy" class="privacy ${
-  user === Object.user || 'hide'
+    <select id = "privacy" class="privacy ${user === Object.user || 'hide'
 }" style='color: #F25F29; font-family:Arial, FontAwesome;'>
-                      <option value="0" ${
-  Object.privacy === '1' || 'selected'
+                      <option value="0" ${Object.privacy === '1' || 'selected'
 } style='color: #F25F29; '>&#xf57d;</option>
-                      <option value="1" ${
-  Object.privacy === '0' || 'selected'
+                      <option value="1" ${Object.privacy === '0' || 'selected'
 } style='color: #F25F29; '>&#xf023;</option>
                 </select>
                 </div>
-                <div class="${
-  user !== Object.user ? 'hide' : 'label-menu-post'
+                <div class="${user !== Object.user ? 'hide' : 'label-menu-post'
 }" id="containerMenu-${Object.id}">
           <nav class="nav-post hide" id="nav-${Object.id}">
             <button class="btn-post-edit" data-id="${Object.id}">Editar</button>
-            <button class="btn-post-delete" data-id="${
-  Object.id
+            <button class="btn-post-delete" data-id="${Object.id
 }">Eliminar</button>
             </nav>
         </div>
@@ -73,8 +67,7 @@ export const postSection = (Object) => {
         </button>
         </div>
     </section>
-      ${
-  Object.img !== undefined
+      ${Object.img !== undefined
     ? `<img
         class="photo_post_img"
         src="${Object.img}"
@@ -84,28 +77,25 @@ export const postSection = (Object) => {
 }
     <section class="button-section">
         <div class="button-like">
-        <button class="like-btton" id="like-btton-${
-  Object.id
-}"><i class="fas fa-heart"><p class = "likes-counter">${
-  Object.likes.length
+        <button class="like-btton" id="like-btton-${Object.id
+}"><i class="fas fa-heart"><p class = "likes-counter">${Object.likes.length
 } Likes</p></i> 
         </button>
         </div>
-        <button type="button"id="comment-${
-  Object.id
-}" class="btton-comment">        
+        <button type="button"id="" class="btton-desplegar-comment">        
         <i class="fas fa-comment" style='color:#F25F29;'><p class = "likes-counter">Comment</p></i> 
         </button>
     </section>
     <section>
     <div class="container-new-comment">
       <div class="go-comment">
-        <textarea class="input-comment" id="newComment-${
-  Object.id
-}" placeholder="Escribe un comentario"></textarea>
+        <textarea class="input-comment" id="newComment-${Object.id}" placeholder="Escribe un comentario"></textarea>
+        <button type="button"id="comment-${Object.id}" class="btton-comment"> 
+          <i class="fas fa-paper-plane"style='color:#F25F29;'></i>       
+        </button>
       </div>
+      <div id="showAllComments-${Object.id}"></div>
     </div>
-    <div id="showAllComments-${Object.id}"></div>
   </section>
   </div>
   </section>`;
@@ -185,32 +175,39 @@ export const postSection = (Object) => {
   });
 
   // TODO Commment section
-  const allComments = note.querySelector(`#showAllComments-${Object.id}`);
-  const btnNewComment = note.querySelector(`#comment-${Object.id}`);
-  btnNewComment.addEventListener('click', (e) => {
-    e.preventDefault();
-    const inputComment = note.querySelector(`#newComment-${Object.id}`).value;
-    allComments.innerHTML = '';
-    const time = new Date().toLocaleString();
-    if (inputComment.length !== 0) {
-      createComments(
-        currentUser().displayName,
-        inputComment,
-        currentUser().photoURL,
-        Object.id,
-        time,
-        user,
-      ).then(() => {
-        note.querySelector(`#newComment-${Object.id}`).value = '';
-        console.log('comentario creado');
-      });
-      getComments((comments) => {
-        allComments.innerHTML = '';
-        comments.forEach((doc) => {
-          allComments.appendChild(eachComment(doc));
+  const desplegarComment = note.querySelector('.btton-desplegar-comment');
+  const displayContendComment = note.querySelector('.container-new-comment');
+  console.log(displayContendComment);
+  desplegarComment.addEventListener('click', () => {
+    displayContendComment.style.display = 'block';
+    const allComments = note.querySelector(`#showAllComments-${Object.id}`);
+    const btnNewComment = note.querySelector(`#comment-${Object.id}`);
+    btnNewComment.addEventListener('click', (e) => {
+      e.preventDefault();
+      const inputComment = note.querySelector(`#newComment-${Object.id}`).value;
+      allComments.innerHTML = '';
+      const time = new Date().toLocaleString();
+      if (inputComment.length !== 0) {
+        createComments(
+          currentUser().displayName,
+          inputComment,
+          currentUser().photoURL,
+          Object.id,
+          time,
+          user,
+        ).then(() => {
+          note.querySelector(`#newComment-${Object.id}`).value = '';
+          console.log('comentario creado');
         });
-      }, Object.id);
-    }
+        getComments((comments) => {
+          allComments.innerHTML = '';
+          comments.forEach((doc) => {
+            allComments.appendChild(eachComment(doc));
+          });
+        }, Object.id);
+      }
+    });
   });
+
   return note;
 };
