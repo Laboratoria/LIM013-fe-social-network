@@ -636,6 +636,17 @@ li.optionMobile {
 .hide {
 	visibility: hidden;
 }
+.none{
+	display:none;
+}
+.label-menu-comment{
+	background-image: url(imagenes/copywriting.png);
+	background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
 #selectProfile {
 	margin: 0%;
 	padding: 0%;

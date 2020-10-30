@@ -16,18 +16,26 @@ export const eachComment = (dataComment) => {
         <div class="buttons-comments">
           <button class="hide btn-save-comment" id="btnSaveComment">Guardar</button>
           <button class="hide btn-cancel-comment" id="btnCancelComment">Cancelar</button>
-        </div>       
-        <section id="menu-${dataComment.id}" class="${(userId !== dataComment.userID) ? 'hide' : 'label-menu-comment'}">
-          <div class="menu-comment" id="nav-${dataComment.id}">
-              <button class="btn-comment-edit" id="edit-${dataComment.id}">Editar</button>
-              <button class="btn-comment-delete" id="delete-${dataComment.id}">Eliminar</button>
+        </div>
+          <div>      
+            <button id="menu-${dataComment.id}" class="${(userId !== dataComment.userID) ? 'hide' : 'label-menu-comment'}"><i class="fas fa-ellipsis-h"></i></button>
+              <nav class="nav-comment none" id="nav-${dataComment.id}">
+                <button class="btn-comment-edit" id="edit-${dataComment.id}">Editar</button>
+                <button class="btn-comment-delete" id="delete-${dataComment.id}">Eliminar</button>
+              </nav>
           </div>
-        </section>
+
       </div>
       `;
   const newComment = document.createElement('div');
   newComment.classList.add('container-newComment');
   newComment.innerHTML = viewComments;
+  const ellipsisComment = newComment.querySelector('.label-menu-comment');
+  const navComment = newComment.querySelector('.nav-comment');
+  ellipsisComment.addEventListener('click', () => {
+    navComment.classList.toggle('none');
+  });
+
   const editComment = newComment.querySelector(`#edit-${dataComment.id}`);
   const deleteCommentBtn = newComment.querySelector(`#delete-${dataComment.id}`);
   const inputComment = newComment.querySelector('#textComment');
