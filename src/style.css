@@ -642,7 +642,7 @@ li.optionMobile {
 .comment-edition{
 	display: flex;
     flex-direction: column;
-    margin-left: 0%;
+    margin-left: 35%;
 }
 .label-menu-comment{
 	border: none;
@@ -735,9 +735,7 @@ li.optionMobile {
 .btn-post-cancel-edit-post,
 .btn-post-save-edit-post,
 .btn-save-comment,
-.btn-cancel-comment,
-.btn-comment-edit,
-.btn-comment-delete {
+.btn-cancel-comment{
 	width: 30%;
 	height: 1.5rem;
 	margin: 0rem 0rem 0.5rem 0rem;
@@ -780,10 +778,10 @@ li.optionMobile {
 	z-index: 1;
 }
 .edit_btn {
-	position: relative;
+	position: absolute;
 	width: 30%;
 	padding: 0.5rem;
-	margin: 0% 0% 1% 70%;
+	margin: 0% 0% 1% 45%;
 	height: 2rem;
 	border-radius: 15px;
 	border: none;
@@ -913,7 +911,6 @@ img.user_img {
 	align-items: center;
 	/* padding: 1rem; */
 	margin: 0rem 0rem 0.5rem 0rem;
-	justify-content: space-evenly;
 }
 .user_photo {
 	margin: 0rem 0.25rem 0rem 0.25rem;
@@ -957,7 +954,7 @@ img.user_img {
 	height: 2rem;
 	opacity: 0.5;
 	border: none;
-	border-radius: 15px;
+	border-radius: 10px;
 	resize: none;
 	position: relative;
 	font-family: 'Abel', sans-serif;
@@ -977,7 +974,7 @@ img.user_img {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
-	margin: 1rem 1rem;
+	margin: 0.5rem 0rem;
 }
 .buttons-comments{
     display: flex;
@@ -1019,7 +1016,8 @@ img.user_img {
 }
 .text-comment {
 	text-align: left;
-	padding: 1rem;
+	padding: 0.5rem;
+	margin-bottom: 2%;
 }
 .user-comments-head {
 	display: flex;
@@ -1118,7 +1116,7 @@ img.user_img {
 }
 .photo_post_img {
 	width: 40%;
-	margin: 0 5.5rem;
+	margin: 0 30%;
 }
 /*TODO editar */
 .hide-btton-post {
@@ -1202,8 +1200,23 @@ section.msg-Redes p {
 .menuDiv {
 	background-color: #f0f2f5;
 }
-.container-new-comment {
-	display: none;
+
+.nav-comment{
+	position: absolute;
+    margin-top: 5%;
+}
+.list-option{
+	list-style: none;
+}
+.btn-comment-edit,
+.btn-comment-delete {
+	margin: 0% 0% 12% 0%;
+    border-radius: 15px;
+    border: none;
+    background-color: #f25f29;
+    color: white;
+	font-family: 'Abel', sans-serif;
+	font-size: 65%;
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -1311,9 +1324,7 @@ section.msg-Redes p {
 	.btn-post-cancel-edit-post,
 	.btn-post-save-edit-post,
 	.btn-save-comment,
-	.btn-cancel-comment,
-	.btn-comment-edit,
-	.btn-comment-delete {
+	.btn-cancel-comment {
 		font-size: 100%;
 		margin: 1rem 0rem 1rem 0rem;
 	}
@@ -1398,12 +1409,17 @@ section.msg-Redes p {
 	}
 	.btn-profile {
 		font-size: 100%;
-		padding:0%;
+		padding:2%;
 	}
-	.container-new-comment {
-		display: none;
-		background-color: darkmagenta;
+	.label-menu-comment{
+		font-size: 20px;
+		position: absolute;
 	}
+	.btn-comment-edit, .btn-comment-delete {
+		font-size: 100%;
+	}
+	
+
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -1488,9 +1504,7 @@ section.msg-Redes p {
 		margin: 0rem 15rem;
 	}
 	.input-post {
-		font-size: 130%;
-		height: 6em;
-		padding: 3rem;
+		font-size: 150%;
 	}
 	.data-user {
 		margin-left: 1rem;
@@ -1532,24 +1546,7 @@ section.msg-Redes p {
 		font-size: 1rem;
 		top: 1rem;
 	}
-	.btn-post-cancel-edit-post,
-	.btn-post-save-edit-post,
-	.btn-save-comment,
-	.btn-cancel-comment,
-	.btn-comment-edit,
-	.btn-comment-delete {
-		font-size: 100%;
-		margin: 1rem 0rem 1rem 0rem;
-	}
-	.btn-post-cancel-edit-post:hover,
-	.btn-post-save-edit-post:hover,
-	.btn-save-comment:hover,
-	.btn-cancel-comment:hover,
-	.btn-comment-edit:hover,
-	.btn-comment-delete:hover {
-		background-color: #983d1c;
-		color: white;
-	}
+
 	.photo_post_img {
 		margin: 0 9.5rem;
 	}
@@ -1596,24 +1593,41 @@ section.msg-Redes p {
 	}
 	.btn-profile {
 		font-size: 100%;
-		width: 150%;
 	}
-	.allpost {
-		width: 80%;
-		margin: 1% 10% 1% 10%;
-	}
-	.container-new-comment {
-		display: none;
-		background-color: darkmagenta;
+	.btn-profile {
+		padding: 2%;
+		margin: 0% 0% 1% 0%;
 	}
 	.allpost {
 		width: 80%;
 		margin: 1% 10% 1% 10%;
 	}
 	.label-menu-post{
-		margin: 0% 1% 0% 66%;
+		margin: 0rem 1rem 0rem 0rem;
 	}
-	
+	.btn-post-cancel-edit-post,
+	.btn-post-save-edit-post,
+	.btn-save-comment,
+	.btn-cancel-comment{
+		font-size: 100%;
+		margin: 1rem 0rem 1rem 0rem;
+	}
+	.btn-post-cancel-edit-post:hover,
+	.btn-post-save-edit-post:hover,
+	.btn-save-comment:hover,
+	.btn-cancel-comment:hover,
+	.btn-comment-edit:hover,
+	.btn-comment-delete:hover {
+		background-color: #983d1c;
+		color: white;
+	}
+	.btn-comment-edit, .btn-comment-delete {
+		font-size: 100%;
+	}
+	.label-menu-comment{
+		font-size: 20px;
+		position: absolute;
+	}
 }
 @media only screen and (min-width: 992px) and (max-width: 1023px) {
 	/* TODO view home */
@@ -1690,6 +1704,8 @@ section.msg-Redes p {
 
 		width: 20%;
 		font-size: 120%;
+		margin: 0% 0% 1% 60%;
+		padding: 0rem;
 	}
 
 	.contend-profile {
@@ -1726,7 +1742,7 @@ section.msg-Redes p {
 	.label-profile-home {
 		padding: 1rem;
 	}
-	.profile_section-home {
+	/* .profile_section-home {
 		display: block;
 		height: 20rem;
 		position: relative;
@@ -1738,7 +1754,7 @@ section.msg-Redes p {
 		-webkit-box-shadow: 0px 10px 13px -7px #000000,
 			5px 5px 15px -8px rgba(0, 0, 0, 0);
 		box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px -8px rgba(0, 0, 0, 0);
-	}
+	} */
 	.profile-btn-editions {
 		padding: 1rem;
 	}
@@ -1746,14 +1762,37 @@ section.msg-Redes p {
 		font-size: 120%;
 		width: 150%;
 	}
-	.main {
+	.profile_section1{
+		height: 350px;
+	}
+	.name {
+		font-size: 1.5rem;
+		margin-top: 0rem;
+		margin-left: 20%;
+	}
+	.profile img {
+		height: 6rem;
+		bottom: 2rem;
+	}
+	.label-profile p {
+		font-size: 120%;
+	}
+	.name_pet, .description {
+		font-size: 120%;
+	}
+	.btn-profile {
+		padding: 2%;
+		margin: 0% 0% 1% 0%;
+		font-size:100%;
+	}
+	/* .main {
 		width: 90%;
 		margin: 20px auto;
 		display: grid;
 		height: 100%;
 		grid-template-columns: 40% 54% 0%;
 		padding-top: 3em;
-	}
+	} */
 	.allpost {
 		width: 70%;
 		margin: 1% 15% 1% 15%;
@@ -1782,7 +1821,6 @@ section.msg-Redes p {
 	}
 	.input-post {
     font-size: 150%;
-    height: 6em;
 	padding: 2rem;
 	margin-top: 5%;
 	}
@@ -1790,7 +1828,19 @@ section.msg-Redes p {
 		font-size: 2.0rem;
 		margin: 0% 2% 3% 20%;
 	}
-
+	.label-menu-comment {
+		font-size: 23px;
+	}
+	.btn-comment-edit, .btn-comment-delete {
+		font-size: 120%;
+	}
+	.nav-comment {
+		margin-top: 3%;
+	}
+	.input-comment{
+		font-size: 120%;
+		height: 3rem;
+	}
 }
 
 @media only screen and (min-width: 1024px) and (max-width: 1280px) {
@@ -1804,111 +1854,6 @@ section.msg-Redes p {
 		background-repeat: no-repeat;
 		background-size: cover;
 		position: relative;
-	}
-
-	.name-home {
-		font-size: 131%;
-		margin: 0 1rem;
-		text-shadow: none;
-		color: #a94824;
-	}
-	.name1,
-	.name-home {
-		font-size: 170%;
-	}
-	.status_imput {
-		font-size: 144%;
-	}
-	.menu-post-options {
-		justify-content: start;
-	}
-	.cam-post {
-		width: 3rem;
-	}
-	.privacy {
-		font-size: 200%;
-		margin-left: 0.5rem;
-	}
-	.post_buttom {
-		margin: 0rem 0rem 0rem 12rem;
-		font-size: 150%;
-		width: 6rem;
-	}
-	.grupo-nombre h1 {
-		font-size: 1.5rem;
-	}
-	.name_pet1 {
-		font-size: 100%;
-	}
-	img.user_img {
-		height: 4.5rem;
-	}
-	.name-user {
-		font-size: 123%;
-		line-height: 1.25rem;
-	}
-	.post-time {
-		font-size: 96%;
-		line-height: 2rem;
-	}
-	.btn-post-edit,
-	.btn-post-delete {
-		width: 121%;
-		font-size: 100%;
-	}
-	.label-menu-post {
-		height: 3rem;
-	}
-	.input-post {
-		padding: 2rem;
-		font-size: 128%;
-	}
-	.likes-counter {
-		font-size: 60%;
-	}
-	.input-comment {
-		width: 100%;
-		height: 3rem;
-		padding: 3%;
-		font-size: 100%;
-	}
-	.btn-post-cancel-edit-post,
-	.btn-post-save-edit-post,
-	.btn-save-comment,
-	.btn-cancel-comment,
-	.btn-comment-edit,
-	.btn-comment-delete {
-		font-size: 100%;
-	}
-	.container-new-comment {
-		display: none;
-		background-color: darkmagenta;
-	}
-	section.msg-Redes p {
-		font-size: 200%;
-	}
-}
-@media only screen and (min-width: 1024px) and (max-width: 1280px) {
-	body {
-		font-family: 'Playfair Display', serif;
-		background-attachment: fixed;
-		background-image: url(imagenes/desktopBG.png);
-		background-color: #fff895;
-		height: 500px;
-		background-position: inherit;
-		background-repeat: no-repeat;
-		background-size: cover;
-		position: relative;
-	}
-	/*TODO  Vista: encabezado  */
-	/*header h1 {
-		font-size: 600%;
-		text-align: end;
-	}*/
-	img.logoHuella {
-		width: 30%;
-		max-width: 30%;
-		top: 6rem;
 	}
 
 	.logoHeader {
@@ -2043,25 +1988,83 @@ section.msg-Redes p {
 		position: relative;
 		margin-left: 0%;
 	}
-	.body_container {
-		display: grid;
-		grid-gap: 20px;
-		grid-template-columns: repeat(3, 1fr);
+	.name-home {
+		font-size: 131%;
+		margin: 0 1rem;
+		text-shadow: none;
+		color: #a94824;
 	}
+	.profile img {
+		height: 7rem;
+	}
+	.name1,
+	.name-home {
+		font-size: 170%;
+	}
+	.status_imput {
+		font-size: 144%;
+	}
+	.menu-post-options {
+		justify-content: start;
+	}
+	.cam-post {
+		width: 3rem;
+	}
+	.grupo-nombre h1 {
+		font-size: 1.5rem;
+	}
+	.name_pet1 {
+		font-size: 100%;
+	}
+
+	.name-user {
+		font-size: 123%;
+		line-height: 1.25rem;
+	}
+	.btn-post-edit,
+	.btn-post-delete {
+		width: 121%;
+		font-size: 100%;
+	}
+	.input-post {
+		padding: 2rem;
+		font-size: 128%;
+	}
+	.likes-counter {
+		font-size: 60%;
+	}
+	.input-comment {
+		width: 100%;
+		height: 4rem;
+		font-size: 150%;
+	}
+	.btn-post-cancel-edit-post,
+	.btn-post-save-edit-post,
+	.btn-save-comment,
+	.btn-cancel-comment,
+	.btn-comment-edit,
+	.btn-comment-delete {
+		font-size: 100%;
+	}
+
+	section.msg-Redes p {
+		font-size: 200%;
+	}
+	/*---Profile Section---*/
+
 	.profile_section {
 		display: block;
 	}
 	.btn-profile {
 		font-size: 120%;
-		width: 150%;
 	}
 	.main {
-		width: 90%;
+		width: 98%;
 		margin: 20px auto;
 		display: grid;
 		height: 100%;
-		grid-template-columns: 40% 54% 0%;
-		padding-top: 3em;
+		grid-template-columns: 30% 65% 0%;
+		padding-top: 2em;
 	}
 	.main-profile {
 		width: 75%;
@@ -2076,17 +2079,20 @@ section.msg-Redes p {
 		/* background-repeat: no-repeat; */
 		height: 8rem;
 	}
+	.edit_btn {
+		width: 20%;
+		font-size: 120%;
+		margin: 6% 0% 1% 45%;
+		padding: 0rem;
+	}
 	.profile_section1 {
 		height: 450px;
 	}
 	.label-profile {
 		padding-bottom: 0px;
-		padding-top: 6rem;
+		padding-top: 5rem;
 	}
-	.edit_btn {
-		width: 20%;
-		font-size: 120%;
-	}
+
 	.name {
 		font-size: 30px;
 		margin-left: 20%;
@@ -2099,11 +2105,7 @@ section.msg-Redes p {
 	.label-profile p {
 		font-size: 120%;
 	}
-	/* .divPost {
-		padding: 0;
-		grid-column-start: 3;
-		grid-column-end: 4;
-	} */
+
 	.edition-section {
 		position: absolute;
 		margin-left: 30%;
@@ -2118,7 +2120,7 @@ section.msg-Redes p {
 		background-size: contain;
 		background-position: center;
 		/* background-repeat: no-repeat; */
-		height: 5.5rem;
+		height: 6.5rem;
 	}
 	.profile-img-home {
 		height: 4rem;
@@ -2149,9 +2151,6 @@ section.msg-Redes p {
 			5px 5px 15px -8px rgba(0, 0, 0, 0);
 		box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px -8px rgba(0, 0, 0, 0);
 	}
-	.profile-btn-editions {
-		padding: 1rem;
-	}
 	.divPost {
 		grid-column: span 2;
 	}
@@ -2159,9 +2158,6 @@ section.msg-Redes p {
 		padding: 0rem;
 		display: flex;
 		flex-direction: column;
-	}
-	.profile img {
-		height: 5rem;
 	}
 	.profile_section1{
 		height:450px;
@@ -2172,18 +2168,19 @@ section.msg-Redes p {
 		text-shadow: none;
 		color: #a94824;
 	}
-	.name1,
-	.name-home {
+	.name1{
 		font-size: 170%;
 	}
-	.edit_btn{
-		width: 20%;
-		font-size: 120%;
+	.name-home {
+		font-size: 100%;
 	}
 	.name {
 		font-size: 30px;
 		margin-left: 20%;
-		margin-top:0rem;
+		margin-top:2rem;
+	}
+	.contend-profile{
+		display: flex;
 	}
 	.status_imput {
 		font-size: 144%;
@@ -2196,10 +2193,6 @@ section.msg-Redes p {
 	}
 	.cam-post {
 		width: 3rem;
-	}
-	.privacy {
-		font-size: 200%;
-		margin-left: 0.5rem;
 	}
 	.post_buttom {
 		margin: 0rem 0rem 0rem 12rem;
@@ -2221,14 +2214,12 @@ section.msg-Redes p {
     	line-height: 2rem;
 	}
 	.label-menu-post {
-		margin: 0% 1% 0% 66%;
-		position: absolute;
-		width: 5%;
+		margin: 1% 1% 0% 2%;
 		height: auto;
+		right: -1rem;
 	}
 	.input-post {
 		font-size: 160%;
-		height: 4rem;
 		margin-top: 6%;
 
 	}
@@ -2236,69 +2227,18 @@ section.msg-Redes p {
 		font-size: 2.5rem;
 		margin: 0% 2% 3% 20%;
 	}
-
-}
-@media only screen and (min-width: 1281px) {
-	body {
-		font-family: 'Playfair Display', serif;
-		background-attachment: fixed;
-		background-image: url(imagenes/desktopBG.png);
-		background-color: #fff895;
-		height: 500px;
-		background-position: inherit;
-		background-repeat: no-repeat;
-		background-size: cover;
-		position: relative;
-	}
-	.grupo-nombre h1 {
-		font-size: 1.5rem;
-	}
-	.name_pet1 {
+	.text-name {
 		font-size: 100%;
 	}
-	img.user_img {
-		height: 4.5rem;
+	.nav-comment {
+		margin-top: 3%;
 	}
-	.name-user {
-		font-size: 123%;
-		line-height: 1.25rem;
+	.label-menu-comment {
+		font-size: 20px;
+		position: absolute;
 	}
-	.post-time {
-		font-size: 96%;
-		line-height: 2rem;
-	}
-	.btn-post-edit,
-	.btn-post-delete {
-		width: 121%;
-		font-size: 100%;
-	}
-	.label-menu-post {
-		height: 3rem;
-	}
-	.input-post {
-		padding: 2rem;
-		font-size: 128%;
-	}
-	.likes-counter {
-		font-size: 60%;
-	}
-	.input-comment {
-		width: 100%;
-		height: 3rem;
-		padding: 3%;
-		font-size: 100%;
-	}
-	.btn-post-cancel-edit-post,
-	.btn-post-save-edit-post,
-	.btn-save-comment,
-	.btn-cancel-comment,
-	.btn-comment-edit,
-	.btn-comment-delete {
-		font-size: 100%;
-	}
-	.container-new-comment {
-		display: none;
-		background-color: darkmagenta;
+	.text-comment {
+		font-size: 18px;
 	}
 }
 @media only screen and (min-width: 1281px) {
@@ -2504,12 +2444,13 @@ section.msg-Redes p {
 		display: flex;
 		flex-direction: column;
 		height: 100%;
-		padding-top: 3em;
+		padding-top: 1em;
 		box-sizing: border-box;
 	}
 	.btn-profile {
-		font-size: 180%;
-		width: 200%;
+		font-size: 150%;
+		width: auto;
+		padding: 2%;
 	}
 	.card {
 		height: 12rem;
@@ -2550,7 +2491,7 @@ section.msg-Redes p {
 	}
 	.label-profile {
 		padding-bottom: 0px;
-		padding-top: 6rem;
+		padding-top: 8.1rem;
 	}
 	.divPost {
 		grid-column: span 2;
@@ -2584,11 +2525,10 @@ section.msg-Redes p {
 		border-radius: 50%;
 	}
 	.label-profile-home p {
-		font-size: 110%;
-		text-shadow: none;
+		font-size: 130%;
 	}
 	.description1 {
-		font-size: 130%;
+		font-size: 150%;
 		text-shadow: none;
 		color: #a94824;
 	}
@@ -2597,7 +2537,7 @@ section.msg-Redes p {
 	}
 	.profile_section-home {
 		display: block;
-		height: 23rem;
+		height: 25rem;
 		position: relative;
 		bottom: 1rem;
 		background: #ffac00;
@@ -2614,7 +2554,6 @@ section.msg-Redes p {
 	.content {
 		padding: 0rem;
 		display: flex;
-		flex-direction: column;
 	}
 	.name-home {
 		font-size: 131%;
@@ -2633,11 +2572,11 @@ section.msg-Redes p {
 	.profile_section1{
 		height:600px;
 	}
-
-	.edit_btn{
-		width: 15%;
+	.edit_btn {
 		font-size: 120%;
+		margin: 6% 0% 1% 45%;
 		padding: 0rem;
+		height: 3rem;
 	}
 	.name {
 		font-size: 30px;
@@ -2662,7 +2601,7 @@ section.msg-Redes p {
 		margin-left: 0.5rem;
 	}
 	.post_buttom {
-		margin: 0rem 0rem 0rem 33rem;
+		margin: 0rem 0rem 0rem 17rem;
 		font-size: 150%;
 		width: 6rem;
 	}
@@ -2688,27 +2627,15 @@ section.msg-Redes p {
 		font-size: 134%;
 		line-height: 2rem;
 	}
-	.btn-post-edit,
-	.btn-post-delete {
-		font-size: 119%;
-		height: 2.5rem;
-	}
 	.label-menu-post {
 		height: 3rem;
-	}
-	.input-post {
-		padding: 2rem;
-		font-size: 128%;
 	}
 	.likes-counter {
 		font-size: 50%;
 	}
 	.input-comment {
-		width: 100%;
 		height: 4rem;
-		padding: 3%;
-		font-size: 140%;
-		overflow: hidden;
+		font-size: 160%;
 	}
 	.btn-post-cancel-edit-post,
 	.btn-post-save-edit-post,
@@ -2720,14 +2647,61 @@ section.msg-Redes p {
 		height: 2.5rem;
 	}
 	.text-name {
-		font-size: 113%;
+		font-size: 130%;
+	}
+	.date-comment {
+		font-size: 100%;
 	}
 	.all-posts-profile {
-		margin: 1rem 10rem 0rem;
+		margin: 0% 25%;
 	}
-	.container-new-comment {
-		display: none;
-		background-color: darkmagenta;
+	.grupo-nombre h1 {
+		font-size: 1.5rem;
 	}
-
+	.name_pet1 {
+		font-size: 100%;
+	}
+	.btn-post-edit,
+	.btn-post-delete {
+		width: 121%;
+		font-size: 100%;
+		height: 2.5rem
+	}
+	.label-menu-post {
+		height: 3rem;
+	}
+	.input-post {
+		padding: 2rem;
+		font-size: 170%;
+	}
+	.likes-counter {
+		font-size: 60%;
+	}
+	.btn-post-cancel-edit-post,
+	.btn-post-save-edit-post,
+	.btn-save-comment,
+	.btn-cancel-comment,
+	.btn-comment-edit,
+	.btn-comment-delete {
+		font-size: 100%;
+	}
+	.label-menu-comment {
+		font-size: 25px;
+		position: absolute;
+	}
+	.nav-comment {
+		position: absolute;
+		margin-top: 3%;
+		width: 4rem;
+		text-align: center;
+	}
+	.text-comment {
+		font-size: 25px;
+	}
+	.user-photo{
+		height: 4rem;
+	}
+	.comment-edition {
+		margin-left: 40%;
+	}
 }

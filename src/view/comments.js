@@ -11,10 +11,12 @@ export const eachComment = (dataComment) => {
         <p class="date-comment">${dataComment.time}</p>
       </div>
       <div class ='comment-edition'>      
-      <button id="menu-${dataComment.id}" class="${(userId !== dataComment.userID) ? 'hide' : 'label-menu-comment'}"><i class="fas fa-ellipsis-h"></i></button>
+      <label id="menu-${dataComment.id}" class="${(userId !== dataComment.userID) ? 'hide' : 'label-menu-comment'}"><i class="fas fa-ellipsis-h"></i></label>
         <nav class="nav-comment none" id="nav-${dataComment.id}">
-          <button class="btn-comment-edit" id="edit-${dataComment.id}">Editar</button>
-          <button class="btn-comment-delete" id="delete-${dataComment.id}">Eliminar</button>
+          <ul class='list-option'>
+            <li class="btn-comment-edit" id="edit-${dataComment.id}">Editar</li>
+            <li class="btn-comment-delete" id="delete-${dataComment.id}">Eliminar</li>
+          </ul>
         </nav>
       </div>
       </div>
@@ -32,12 +34,13 @@ export const eachComment = (dataComment) => {
   const newComment = document.createElement('div');
   newComment.classList.add('container-newComment');
   newComment.innerHTML = viewComments;
-  const ellipsisComment = newComment.querySelector('.label-menu-comment');
+
+  const ellipsisComment = newComment.querySelector(`#menu-${dataComment.id}`);
   console.log(ellipsisComment);
   const navComment = newComment.querySelector('.nav-comment');
-  // ellipsisComment.addEventListener('click', () => {
-  //   navComment.classList.toggle('none');
-  // });
+  ellipsisComment.addEventListener('click', () => {
+    navComment.classList.toggle('none');
+  });
 
   const editComment = newComment.querySelector(`#edit-${dataComment.id}`);
   const deleteCommentBtn = newComment.querySelector(`#delete-${dataComment.id}`);

@@ -95,7 +95,7 @@ export const postSection = (Object) => {
         </button>
       </div>
     </div>
-    <div class='showComments none'id="showAllComments-${Object.id}"></div>
+    <div class='showComments'id="showAllComments-${Object.id}"></div>
   </section>
   </div>
   </section>`;
@@ -123,11 +123,7 @@ export const postSection = (Object) => {
       // console.log('unliked posted');
     }
   });
-  // const btnComment = note.querySelector('.btton-desplegar-comment');
-  // const userComments = document.querySelector('.text-comment');
-  // btnComment.addEventListener('click', () => {
-  //   userComments.classList.toggle('hide');
-  // });
+
   // TODO Privacy status
   const optionPrivacy = note.querySelector('.privacy');
   optionPrivacy.addEventListener('change', () => {
@@ -208,13 +204,13 @@ export const postSection = (Object) => {
       allComments.appendChild(eachComment(doc));
     });
   }, Object.id);
-  // const desplegarComment = note.querySelector('.btton-desplegar-comment');
-  // const displayContendComment = note.querySelector('.container-new-comment');
-  // displayContendComment.style.display = 'block';
-  // const showComments = note.querySelector('.showComments');
-  // desplegarComment.addEventListener('click', () => {
-  //   showComments.classList.toggle('none');
-  // });
+  const desplegarComment = note.querySelector('.btton-desplegar-comment');
+  const displayContendComment = note.querySelector('.container-new-comment');
+  displayContendComment.style.display = 'block';
+  const showComments = note.querySelector('.showComments');
+  desplegarComment.addEventListener('click', () => {
+    showComments.classList.toggle('none');
+  });
 
   return note;
 };

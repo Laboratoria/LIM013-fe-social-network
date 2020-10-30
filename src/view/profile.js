@@ -46,6 +46,7 @@ export default (notes) => {
         </div>
         </div>
           <div class="content">
+            <button type="button" class="edit_btn"><i class="fas fa-edit"></i>Editar</button>
               <div class="labels-profile">
                 <div class="label-profile">
                   <p>Nombre de tu mascota:</p>
@@ -57,7 +58,7 @@ export default (notes) => {
                     <button id="btnSave" class="btn-profile hide">Guardar</button>
                   </div>
                 </div>
-                <button type="button" class="edit_btn"><i class="fas fa-edit"></i>Editar</button>
+                
               </div>                     
           </div>            
       </aside>
