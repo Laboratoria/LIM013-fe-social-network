@@ -52,14 +52,13 @@ export default (notes) => {
                   <h2 class="name_pet"></h2>
                   <p class="profile-text">Cuéntanos algo sobre ti y tu mascota</p>
                   <h2 class="description"></h2>
+                  <div class="profile-btn-editions">
+                    <button id="btnCancel" class="btn-profile hide">Cancelar</button>
+                    <button id="btnSave" class="btn-profile hide">Guardar</button>
+                  </div>
                 </div>
-                <div class="profile-btn-editions">
-                  <button id="btnCancel" class="btn-profile hide">Cancelar</button>
-                  <button id="btnSave" class="btn-profile hide">Guardar</button>
-                </div>
-              </div>
-              <button type="button" class="edit_btn"><i class="fas fa-edit"></i>Editar</button>
-                      
+                <button type="button" class="edit_btn"><i class="fas fa-edit"></i>Editar</button>
+              </div>                     
           </div>            
       </aside>
       <div class="all-posts-profile">
