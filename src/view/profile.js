@@ -61,7 +61,9 @@ export default (notes) => {
               </div>                     
           </div>            
       </aside>
-    <div class="all-posts"></div>   
+      <div class="all-posts-profile">
+        <div class="all-posts"></div>
+      </div>   
     </div> 
     </main>
   </div>`;
