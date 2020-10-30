@@ -208,13 +208,13 @@ export const postSection = (Object) => {
       allComments.appendChild(eachComment(doc));
     });
   }, Object.id);
-  const desplegarComment = note.querySelector('.btton-desplegar-comment');
-  const displayContendComment = note.querySelector('.container-new-comment');
-  displayContendComment.style.display = 'block';
-  const showComments = note.querySelector('.showComments');
-  desplegarComment.addEventListener('click', () => {
-    showComments.classList.toggle('none');
-  });
+  // const desplegarComment = note.querySelector('.btton-desplegar-comment');
+  // const displayContendComment = note.querySelector('.container-new-comment');
+  // displayContendComment.style.display = 'block';
+  // const showComments = note.querySelector('.showComments');
+  // desplegarComment.addEventListener('click', () => {
+  //   showComments.classList.toggle('none');
+  // });
 
   return note;
 };
