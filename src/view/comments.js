@@ -7,23 +7,25 @@ export const eachComment = (dataComment) => {
       <div class="user-comments-head">
       <img class="user-photo" src="${dataComment.photo}" alt="">
       <div class="data-comments-head">
-      <p class="text-name">${dataComment.name}</p>
-      <p class="date-comment">${dataComment.time}</p>
+        <p class="text-name">${dataComment.name}</p>
+        <p class="date-comment">${dataComment.time}</p>
+      </div>
+      <div class ='comment-edition'>      
+      <button id="menu-${dataComment.id}" class="${(userId !== dataComment.userID) ? 'hide' : 'label-menu-comment'}"><i class="fas fa-ellipsis-h"></i></button>
+        <nav class="nav-comment none" id="nav-${dataComment.id}">
+          <button class="btn-comment-edit" id="edit-${dataComment.id}">Editar</button>
+          <button class="btn-comment-delete" id="delete-${dataComment.id}">Eliminar</button>
+        </nav>
       </div>
       </div>
+
       <div class="container-comment">        
         <p class="text-comment" id="textComment">${dataComment.comment}</p>
         <div class="buttons-comments">
           <button class="hide btn-save-comment" id="btnSaveComment">Guardar</button>
           <button class="hide btn-cancel-comment" id="btnCancelComment">Cancelar</button>
         </div>
-          <div>      
-            <button id="menu-${dataComment.id}" class="${(userId !== dataComment.userID) ? 'hide' : 'label-menu-comment'}"><i class="fas fa-ellipsis-h"></i></button>
-              <nav class="nav-comment none" id="nav-${dataComment.id}">
-                <button class="btn-comment-edit" id="edit-${dataComment.id}">Editar</button>
-                <button class="btn-comment-delete" id="delete-${dataComment.id}">Eliminar</button>
-              </nav>
-          </div>
+
 
       </div>
       `;

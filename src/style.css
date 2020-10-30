@@ -639,13 +639,18 @@ li.optionMobile {
 .none{
 	display:none;
 }
+.comment-edition{
+	display: flex;
+    flex-direction: column;
+    margin-left: 0%;
+}
 .label-menu-comment{
-	background-image: url(imagenes/copywriting.png);
-	background-repeat: no-repeat;
-    background-size: contain;
-    border: none;
-    outline: none;
-    cursor: pointer;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	color: black;
+	background-color: transparent;
+	
 }
 #selectProfile {
 	margin: 0%;
