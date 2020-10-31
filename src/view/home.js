@@ -90,16 +90,16 @@ export default (notes, dataUser) => {
           <article class="card-group">
             <section class="content-home">
               <div class="grupo-nombre">              
-                <img class="comunidades-figures" src="/imagenes/team.png" alt="">            
+                <img class="comunidades-figures" src="./imagenes/team.png" alt="">            
                 <h1>Grupos públicos</h1>
               </div>             
                 <div class="label-comunidades-in">
-                  <a href="https://www.facebook.com/groups/1433700173348010/" target="_blank" class="a-enlace"><img src="/imagenes/adopta.png" class="img-adopta" alt="logo" width="8%" height="auto" /></a>
-                  <a href="https://www.facebook.com/mascotasfacilisimo/" target="_blank" class="a-enlace"><img src="/imagenes/facilismo-pets.png" class="img-facilismo" alt="logo" width="8%" height="auto"/></a>
-                  <a href="https://www.facebook.com/mascotaclubperu" target="_blank" class="a-enlace"><img src="/imagenes/mascota.png" class="img-mascota" alt="logo" width="8%" height="auto" /></a>
+                  <a href="https://www.facebook.com/groups/1433700173348010/" target="_blank" class="a-enlace"><img src="./imagenes/adopta.png" class="img-adopta" alt="logo" width="8%" height="auto" /></a>
+                  <a href="https://www.facebook.com/mascotasfacilisimo/" target="_blank" class="a-enlace"><img src="./imagenes/facilismo-pets.png" class="img-facilismo" alt="logo" width="8%" height="auto"/></a>
+                  <a href="https://www.facebook.com/mascotaclubperu" target="_blank" class="a-enlace"><img src="./imagenes/mascota.png" class="img-mascota" alt="logo" width="8%" height="auto" /></a>
                   <div class="label-msg">
                   <h2 class="name_pet1">¡A<strong> ${dataUser.petName} </strong>le va a gustar!</h2>                 
-                  <img class="comunidades-gif" src="/imagenes/puppy-avengers.gif" width="20%" height="auto" alt="">
+                  <img class="comunidades-gif" src="./imagenes/puppy-avengers.gif" width="20%" height="auto" alt="">
                   </div>              
                 </div>
             </section>

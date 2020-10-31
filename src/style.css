@@ -1844,7 +1844,7 @@ section.msg-Redes p {
 	}
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1024px) and (max-width: 1280px) {
 	body {
 		font-family: 'Playfair Display', serif;
 		background-attachment: fixed;
@@ -1856,7 +1856,6 @@ section.msg-Redes p {
 		background-size: cover;
 		position: relative;
 	}
-
 	.logoHeader {
 		width: 30%;
 		max-width: 50%;
@@ -1868,7 +1867,6 @@ section.msg-Redes p {
 		width: 50%;
 		margin: 0% 30%;
 	}
-
 	/*TODO Vista: inicio de sesion  */
 	.sign {
 		display: flex;
@@ -2241,5 +2239,467 @@ section.msg-Redes p {
 		font-size: 18px;
 	}
 }
+@media only screen and (min-width: 1281px) {
+	body {
+		font-family: 'Playfair Display', serif;
+		background-attachment: fixed;
+		background-image: url(imagenes/desktopBG.png);
+		background-color: #fff895;
+		height: 500px;
+		background-position: inherit;
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: relative;
+	}
 
+	/*TODO  Vista: encabezado  */
+	.header_signin,
+	.header_register {
+		margin: 1rem 1rem 1rem 1rem;
+		width: 50%;
+		max-width: 50%;
+		display: flex;
+	}
+	/*header h1 {
+		font-size: 600%;
+		text-align: end;
+	}*/
+	img.logoHuella {
+		width: 30%;
+		max-width: 40%;
+		top: 2rem;
+		position: relative;
+		left: 9rem;
+	}
+	.petLogoMenu {
+		width: 10%;
+		margin: 1% 2%;
+	}
+	.petLogo {
+		width: 50%;
+		margin-top: 5rem;
+	}
+	.logoHeader {
+		max-width: 25%;
+    position: absolute;
+    top: 18rem
+
+	}
+
+	/*TODO Vista: inicio de sesion  */
+
+	.position,
+	.sign {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	.container {
+		top: 2rem;
+		position: absolute;
+		border-radius: 5px;
+		padding: 1rem 1rem 1rem 1rem;
+		margin: 1rem 1rem 1rem 1rem;
+		left: 48rem;
+	}
+	form.signIn_Form {
+		margin: 5rem 2rem;
+	}
+	.signIn-container {
+		width: auto;
+		height: auto;
+		border-radius: 40px;
+		margin: 2rem 0rem;
+		position: relative;
+		padding: 2%;
+	}
+	.header-form {
+		font-size: 25px;
+	}
+	#SignInForm_email,
+	#SignInForm_password {
+		font-size: 30px;
+		margin-bottom: 25px;
+	}
+	span.input-item {
+		margin: 0.5rem auto 0rem 14.5rem;
+	}
+	.fa {
+		width: 25%;
+		max-width: 25%;
+	}
+	/*TODO Vista: registro de usuario  */
+
+	.registerForm-container {
+		width: auto;
+		height: auto;
+		border-radius: 40px;
+		margin: 4rem 0rem;
+		line-height: 3rem;
+		position: relative;
+		-webkit-box-shadow: 0px 10px 13px -7px #000000,
+			5px 5px 15px 5px rgba(0, 0, 0, 0);
+		box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+		padding: 2%;
+		background: linear-gradient(to top, #fcfbfb 0%, #fcfbfb 100%);
+	}
+	.signInForm-container {
+		border-radius: 40px;
+		margin: 2rem 0rem;
+		line-height: 3rem;
+		position: relative;
+		-webkit-box-shadow: 0px 10px 13px -7px #000000,
+			5px 5px 15px 5px rgba(0, 0, 0, 0);
+		box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+		padding: 2%;
+		background: linear-gradient(to top, #fcfbfb 0%, #fcfbfb 100%);
+	}
+	.registerForm-container h1 {
+		font-size: 220%;
+		text-align: center;
+	}
+
+	.signUp-form {
+		margin: 0rem 0rem;
+	}
+	form.form {
+		margin: 5rem 2rem;
+
+	}
+	span.input-itemR {
+		background: none;
+		color: black;
+		padding: 14.5px 0px 15px 9px;
+		border-radius: 5px 0px 0px 5px;
+		position: absolute;
+		margin: 0.445rem 0.45rem 1.45rem 18.5rem;
+	}
+	span.error-msg {
+		font-size: 100%;
+		top: 0rem;
+	}
+	.register-container {
+
+		margin: 5rem 7rem;
+		width: 35%;
+		max-width: 45%;
+	}
+	.container_msg p {
+		font-size: 20px;
+		text-align: center;
+	}
+	input {
+		line-height: 40px;
+		font-size: 35px;
+		margin-bottom: 25px;
+	}
+	#submit,
+	#submit-buttomRegister {
+		font-size: 25px;
+		margin-bottom: 20px;
+		line-height: 40px;
+	}
+
+	.btn-google {
+		font-size: 25px;
+	}
+
+	#headerHome label {
+		display: none;
+	}
+	#headerHome {
+		width: 100%;
+	}
+	.menu_mobile,
+	.menu_mobile1 {
+		display: flex;
+		visibility: visible;
+		flex-direction: row;
+		text-align: center;
+		padding: 0%;
+		padding-left: 0%;
+		margin-top: 0%;
+		margin-bottom: 0%;
+		list-style: none;
+		flex: auto;
+		position: relative;
+		margin-left: 0%;
+	}
+	.main {
+		width: 90%;
+		margin: 20px auto;
+		display: grid;
+		height: 100%;
+		grid-template-columns: 40% 54% 0%;
+		padding-top: 3em;
+		box-sizing: border-box;
+	}
+	.main-profile {
+		width: 70%;
+		margin: 20px auto;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		padding-top: 1em;
+		box-sizing: border-box;
+	}
+	.btn-profile {
+		font-size: 150%;
+		width: auto;
+		padding: 2%;
+	}
+	.card {
+		height: 12rem;
+	}
+	#selectProfile i {
+		font-size: 200%;
+	}
+	.cover {
+		/* background-repeat: no-repeat; */
+		height: 12rem;
+	}
+	.profile img {
+		height: 11rem;
+	}
+	.profile_section {
+		display: block;
+	}
+	.profile_section1 {
+		height: 600px;
+	}
+
+	.edit_btn {
+		width: 15%;
+		font-size: 120%;
+		padding: 0rem;
+	}
+	.name {
+		font-size: 30px;
+		margin-left: 20%;
+		margin-top: 0rem;
+	}
+	.label-profile p {
+		font-size: 150%;
+	}
+	.name_pet,
+	.description {
+		font-size: 30px;
+	}
+	.label-profile {
+		padding-bottom: 0px;
+		padding-top: 8.1rem;
+	}
+	.divPost {
+		grid-column: span 2;
+	}
+	.edition-section {
+		position: absolute;
+		margin-left: 30%;
+		color: black;
+	}
+
+	/* TODO vista hme */
+	.contend-profile {
+		display: flex;
+		flex-direction: row;
+		/* justify-content: center; */
+		align-items: center;
+	}
+	.body_container {
+		display: grid;
+		grid-gap: 20px;
+	}
+	.cover-home {
+		background-image: url(https://picsum.photos/480/136/?random);
+		background-size: contain;
+		background-position: center;
+		/* background-repeat: no-repeat; */
+		height: 5.5rem;
+	}
+	.profile-img-home {
+		height: 7rem;
+		border-radius: 50%;
+	}
+	.label-profile-home p {
+		font-size: 130%;
+	}
+	.description1 {
+		font-size: 150%;
+		text-shadow: none;
+		color: #a94824;
+	}
+	.label-profile-home {
+		padding: 1rem;
+	}
+	.profile_section-home {
+		display: block;
+		height: 25rem;
+		position: relative;
+		bottom: 1rem;
+		background: #ffac00;
+		border-radius: 15px;
+		padding: 3%;
+		margin: 0rem 0rem 1rem 0rem;
+		-webkit-box-shadow: 0px 10px 13px -7px #000000,
+			5px 5px 15px -8px rgba(0, 0, 0, 0);
+		box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px -8px rgba(0, 0, 0, 0);
+	}
+	.profile-btn-editions {
+		padding: 1rem;
+	}
+	.content {
+		padding: 0rem;
+		display: flex;
+	}
+	.name-home {
+		font-size: 131%;
+		margin: 0 1rem;
+		text-shadow: none;
+		color: #a94824;
+	}
+	.name1,
+	.name-home {
+		font-size: 170%;
+	}
+	.status_imput {
+		font-size: 144%;
+		width: 95%;
+	}
+	.profile_section1{
+		height:600px;
+	}
+	.edit_btn {
+		font-size: 120%;
+		margin: 2% 0% 1% 45%;
+		padding: 0rem;
+		height: 3rem;
+	}
+	.name {
+		font-size: 30px;
+		margin-left: 20%;
+		margin-top:0rem;
+	}
+	.label-profile p {
+		font-size: 150%;
+	}
+	.name_pet, .description {
+
+		font-size: 30px;
+	}
+	.menu-post-options {
+		justify-content: start;
+	}
+	.cam-post {
+		width: 3rem;
+	}
+	.privacy {
+		font-size: 292%;
+		margin-left: 0.5rem;
+	}
+	.post_buttom {
+		margin: 0rem 0rem 0rem 17rem;
+		font-size: 150%;
+		width: 6rem;
+	}
+	.fa-heart,
+	.fa-paper-plane,
+	.fa-comment {
+		font-size: 3rem;
+	}
+	.grupo-nombre h1 {
+		font-size: 1.5rem;
+	}
+	.name_pet1 {
+		font-size: 100%;
+	}
+	img.user_img {
+		height: 6.5rem;
+	}
+	.name-user {
+		font-size: 170%;
+		line-height: 1.25rem;
+	}
+	.post-time {
+		font-size: 134%;
+		line-height: 2rem;
+	}
+	.label-menu-post {
+		height: 3rem;
+	}
+	.likes-counter {
+		font-size: 50%;
+	}
+	.input-comment {
+		height: 4rem;
+		font-size: 160%;
+	}
+	.btn-post-cancel-edit-post,
+	.btn-post-save-edit-post,
+	.btn-save-comment,
+	.btn-cancel-comment,
+	.btn-comment-edit,
+	.btn-comment-delete {
+		font-size: 100%;
+		height: 2.5rem;
+	}
+	.text-name {
+		font-size: 130%;
+	}
+	.date-comment {
+		font-size: 100%;
+	}
+	.all-posts-profile {
+		margin: 0% 25%;
+	}
+	.grupo-nombre h1 {
+		font-size: 1.5rem;
+	}
+	.name_pet1 {
+		font-size: 100%;
+	}
+	.btn-post-edit,
+	.btn-post-delete {
+		width: 121%;
+		font-size: 100%;
+		height: 2.5rem
+	}
+	.label-menu-post {
+		height: 3rem;
+	}
+	.input-post {
+		padding: 2rem;
+		font-size: 170%;
+	}
+	.likes-counter {
+		font-size: 60%;
+	}
+	.btn-post-cancel-edit-post,
+	.btn-post-save-edit-post,
+	.btn-save-comment,
+	.btn-cancel-comment,
+	.btn-comment-edit,
+	.btn-comment-delete {
+		font-size: 100%;
+	}
+	.label-menu-comment {
+		font-size: 25px;
+		position: absolute;
+	}
+	.nav-comment {
+		position: absolute;
+		margin-top: 3%;
+		width: 4rem;
+		text-align: center;
+	}
+	.text-comment {
+		font-size: 25px;
+	}
+	.user-photo{
+		height: 4rem;
+	}
+	.comment-edition {
+		margin-left: 40%;
+	}
+}
 
