@@ -125,8 +125,14 @@ export default (notes) => {
     btnSave.classList.add('hide');
     btnCancel.classList.add('hide');
     editBtn.classList.remove('hide');
+    aboutYou.contentEditable = 'false';
+    petName.contentEditable = 'false';
+    petName.contentEditable = 'false';
   });
   btnSave.addEventListener('click', () => {
+    aboutYou.contentEditable = 'false';
+    petName.contentEditable = 'false';
+    petName.contentEditable = 'false';
     btnSave.classList.add('hide');
     btnCancel.classList.add('hide');
     editBtn.classList.remove('hide');
