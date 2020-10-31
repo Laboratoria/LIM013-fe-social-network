@@ -1637,6 +1637,7 @@ section.msg-Redes p {
 	}
 	.logoHeader {
 		margin: 0% 22%;
+		width: auto;
 	}
 	.signIn_Form h1 {
 		font-size: 300%;
@@ -1958,8 +1959,7 @@ section.msg-Redes p {
 	.register-container {
 		position: absolute;
 		top: 30rem;
-		margin: 0rem 1rem;
-		left: 13rem;
+		margin: 3% 25%;
 		width: 54%;
 		max-width: 54%;
 	}
@@ -2279,13 +2279,13 @@ section.msg-Redes p {
 	}
 	.petLogo {
 		width: 50%;
+		margin-top: 5rem;
 	}
 	.logoHeader {
-		width: 25%;
-		max-width: 30%;
-		margin: 7rem 12rem;
-		position: absolute;
-		top: 22rem;
+		max-width: 25%;
+    position: absolute;
+    top: 18rem
+
 	}
 
 	/*TODO Vista: inicio de sesion  */
@@ -2306,7 +2306,7 @@ section.msg-Redes p {
 		left: 48rem;
 	}
 	form.signIn_Form {
-		margin: 10rem 2rem;
+		margin: 5rem 2rem;
 	}
 	.signIn-container {
 		width: auto;
@@ -2317,13 +2317,12 @@ section.msg-Redes p {
 		padding: 2%;
 	}
 	.header-form {
-		font-size: 50px;
+		font-size: 25px;
 	}
 	#SignInForm_email,
 	#SignInForm_password {
-		line-height: 70px;
-		font-size: 40px;
-		margin-bottom: 30px;
+		font-size: 30px;
+		margin-bottom: 25px;
 	}
 	span.input-item {
 		margin: 0.5rem auto 0rem 14.5rem;
@@ -2367,8 +2366,8 @@ section.msg-Redes p {
 		margin: 0rem 0rem;
 	}
 	form.form {
-		margin: 7rem 2rem;
-		line-height: 2rem;
+		margin: 5rem 2rem;
+
 	}
 	span.input-itemR {
 		background: none;
@@ -2383,29 +2382,29 @@ section.msg-Redes p {
 		top: 0rem;
 	}
 	.register-container {
-		/* top: 0rem; */
-		margin: 3rem 7rem;
+
+		margin: 5rem 7rem;
 		width: 35%;
 		max-width: 45%;
 	}
 	.container_msg p {
-		font-size: 40px;
+		font-size: 20px;
 		text-align: center;
 	}
 	input {
-		line-height: 70px;
-		font-size: 40px;
-		margin-bottom: 30px;
+		line-height: 40px;
+		font-size: 35px;
+		margin-bottom: 25px;
 	}
 	#submit,
 	#submit-buttomRegister {
-		font-size: 40px;
+		font-size: 25px;
 		margin-bottom: 20px;
-		line-height: 60px;
+		line-height: 40px;
 	}
 
 	.btn-google {
-		font-size: 50px;
+		font-size: 25px;
 	}
 
 	#headerHome label {
