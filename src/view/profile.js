@@ -11,20 +11,20 @@ export default (notes) => {
     <header id='headerHome'>
     <nav class="nav_Mobile">   
     <label class='btn-menu1'><i class="fas fa-bars" style="color:#04BFBF; font-size:30px;"></i></label>
-    <img src="/imagenes/nombre2.png" class="petLogoMenu" alt="logo" width="10%" height="auto" />    
+    <img src="./imagenes/nombre2.png" class="petLogoMenu" alt="logo" width="10%" height="auto" />    
     <ul class='menu_mobile1'>
       <li class="optionMobile">
         <a class='btn-header' href='#/profile'>
-        <img src="/imagenes/032-wanted.png" class="img-nav" alt="logo" width="8%" height="auto" />Mi Perfil</a>
+        <img src="./imagenes/032-wanted.png" class="img-nav" alt="logo" width="8%" height="auto" />Mi Perfil</a>
       </li>
       <li class="optionMobile">
         <a class='btn-header'href='#/home'>
-        <img src="/imagenes/042-Doghouse.png" class="img-nav" alt="logo" width="8%" height="auto" />Home 
+        <img src="./imagenes/042-Doghouse.png" class="img-nav" alt="logo" width="8%" height="auto" />Home 
         </a>
       </li>
       <li class="optionMobile">
         <a class='btn-header' id="logout2" href='#/signIn'>
-        <img src="/imagenes/logout.png" class="img-nav" alt="logo" width="8%" height="auto" />Cerrar Sesión</a>
+        <img src="./imagenes/logout.png" class="img-nav" alt="logo" width="8%" height="auto" />Cerrar Sesión</a>
       </li>
     </ul>
     </nav>
