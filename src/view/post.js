@@ -94,7 +94,9 @@ export const postSection = (Object) => {
           <i class="fas fa-paper-plane"style='color:#F25F29;'></i>       
         </button>
       </div>
-      <div id="showAllComments-${Object.id}"></div>
+      <div class="showAllComments">
+        <div id="showAllComments-${Object.id}"></div>
+      </div>
     </div>
   </section>
   </div>
@@ -176,10 +178,14 @@ export const postSection = (Object) => {
 
   // TODO Commment section
   const desplegarComment = note.querySelector('.btton-desplegar-comment');
-  const displayContendComment = note.querySelector('.container-new-comment');
+  const displayContendComment = note.querySelector('.showAllComments');
   console.log(displayContendComment);
   desplegarComment.addEventListener('click', () => {
-    displayContendComment.style.display = 'block';
+    if (displayContendComment.style.display === 'block') {
+      displayContendComment.style.display = 'none';
+    } else {
+      displayContendComment.style.display = 'block';
+    }
     const allComments = note.querySelector(`#showAllComments-${Object.id}`);
     const btnNewComment = note.querySelector(`#comment-${Object.id}`);
     btnNewComment.addEventListener('click', (e) => {
