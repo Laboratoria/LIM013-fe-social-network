@@ -152,8 +152,7 @@ i {
 }
 
 .content {
-	padding: 2rem 1rem;
-}
+    padding: 2rem 0rem 0rem 1rem;}
 
 .content-post {
 	padding-left: 1rem;
@@ -726,7 +725,9 @@ li.optionMobile {
     font-size: 79%;
     padding: 12%;
     width: 119%;
-    text-align: center;
+	text-align: center;
+	-webkit-box-shadow: 2px 8px 13px -3px rgba(0, 0, 0, 0.59);
+	box-shadow: 2px 8px 13px -3px rgba(0, 0, 0, 0.59);
 }
 .btn-post-cancel-edit-post,
 .btn-post-save-edit-post,
@@ -774,38 +775,38 @@ li.optionMobile {
 	z-index: 1;
 }
 .edit_btn {
-	position: relative;
-	width: 30%;
-	padding: 0.5rem;
-	margin: 0% 0% 1% 70%;
-	height: 2rem;
-	border-radius: 15px;
-	border: none;
-	background-color: #04bfad;
-	color: white;
-	font-family: 'Abel', sans-serif;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 65%;
-	-webkit-box-shadow: 2px 8px 13px -3px rgba(0, 0, 0, 0.59);
-	box-shadow: 2px 8px 13px -3px rgba(0, 0, 0, 0.59);
-	outline: none;
-}
-.btn-profile {
-	padding: 3%;
-	/* margin: 0.5% 0% 0.5% 14%; */
-	border-radius: 15px;
-	border: none;
-	background-color: #04bfad;
-	color: white;
-	font-family: 'Abel', sans-serif;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 80%;
-	-webkit-box-shadow: 2px 8px 13px -3px rgba(0, 0, 0, 0.59);
-	box-shadow: 2px 8px 13px -3px rgba(0, 0, 0, 0.59);
+	position: absolute;
+    width: 30%;
+    padding: 1%;
+    margin: 0rem 0rem 0rem 11rem;
+    border-radius: 15px;
+    border: none;
+    background-color: #04bfad;
+    color: white;
+    font-family: 'Abel', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 65%;
+    -webkit-box-shadow: 2px 8px 13px -3px rgba(0, 0, 0, 0.59);
+    box-shadow: 2px 8px 13px -3px rgba(0, 0, 0, 0.59);
 	outline: none;
 	cursor: pointer;
+}
+.btn-profile {
+    padding: 3%;
+    margin: 0rem 0rem 0rem 3rem;
+    border-radius: 15px;
+    border: none;
+    background-color: #04bfad;
+    color: white;
+    font-family: 'Abel', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 80%;
+    -webkit-box-shadow: 2px 8px 13px -3px rgba(0, 0, 0, 0.59);
+    box-shadow: 2px 8px 13px -3px rgba(0, 0, 0, 0.59);
+    outline: none;
+    cursor: pointer;
 }
 .update_container {
 	/* Rectangle 10 */
@@ -949,7 +950,6 @@ img.user_img {
 .input-comment {
 	width: 100%;
 	height: 2rem;
-	opacity: 0.5;
 	border: none;
 	border-radius: 15px;
 	resize: none;
@@ -960,6 +960,8 @@ img.user_img {
 	outline: none;
 	margin: 0rem 0.5rem 0rem 0rem;
 	text-align: center;
+	overflow: hidden;
+	background-color: #8bf4f4;
 }
 .btton-comment,
 .btton-desplegar-comment {
@@ -1201,7 +1203,7 @@ section.msg-Redes p {
 .comment-edition{
 	display: flex;
     flex-direction: column;
-    margin-left: 35%;
+    margin-left: 18%;
 }
 .label-menu-comment{
 	border: none;
@@ -1414,10 +1416,13 @@ section.msg-Redes p {
 		font-size: 2.5rem;
 	}
 	.btn-profile {
-		padding: 0rem;
-		margin: 0.5rem 0rem 0.5rem 24rem;
-		font-size: 100%;
-		width: 25%;
+		padding: 4%;
+		margin: 3%;
+		font-size: 128%;
+		width: 100%;
+	}
+	.profile-btn-editions {
+		margin-left: 9rem;
 	}
 }
 /* Medium devices (landscape tablets, 768px and up) */
@@ -1508,6 +1513,7 @@ section.msg-Redes p {
 		width: 37%;
 		margin: 0rem 0rem 0rem 21rem;
 	}
+
 	.status_imput {
 		font-size: 2rem;
 		width: 90%;
@@ -1644,6 +1650,8 @@ section.msg-Redes p {
 	.edit_btn {
 		height: 3rem;
 		font-size: 170%;
+		position: relative;
+		margin-left: 26rem;
 	}
 	.fa-camera {
 		font-size: 2rem;
@@ -1739,16 +1747,15 @@ section.msg-Redes p {
 		height: 7rem;
 		bottom: 2rem;
 	}
-	.content button {
-		width: auto;
-	}
 	#selectProfile i {
 		font-size: 200%;
 	}
 	.edit_btn {
 		width: 20%;
-		font-size: 180%;
+		font-size: 174%;
 		height: 3rem;
+		position: relative;
+		margin-left: 41rem;
 	}
 
 	.contend-profile {
@@ -1805,6 +1812,7 @@ section.msg-Redes p {
 	.btn-profile {
 		padding: 6%;
 		font-size: 160%;
+		margin: 0rem;
 	}
 	.main {
 		width: 90%;
@@ -2187,9 +2195,9 @@ section.msg-Redes p {
 		margin-left: 1rem;
 	}
 	.edit_btn {
-		width: auto;
 		font-size: 180%;
 		height: auto;
+		margin-left: 30rem;
 	}
 	.name {
 		font-size: 200%;
@@ -2716,12 +2724,5 @@ section.msg-Redes p {
 	}
 	.all-posts-profile {
 		margin: 0rem 8rem;
-	}
-	.card-group {
-		position: absolute;
-		/* left: -31rem; */
-		right: 46rem;
-		width: 36%;
-		top: 35rem;
 	}
 }
