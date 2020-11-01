@@ -72,10 +72,8 @@ export default (notes) => {
   const divElemt = document.createElement('div');
   divElemt.classList.add('homePage');
   divElemt.innerHTML = viewProfile;
-
   // TODO infoProfile---*/
   infoProfile(divElemt);
-
   // TODO Button Toggle
   const toggle = divElemt.querySelector('.btn-menu1');
   toggle.addEventListener('click', () => {
@@ -86,15 +84,12 @@ export default (notes) => {
       menuLat.className = 'menu_mobile1';
     }
   });
-
   const editBtn = divElemt.querySelector('.edit_btn');
   const nameUserProfile = divElemt.querySelector('.name');
   const petName = divElemt.querySelector('.name_pet');
   const aboutYou = divElemt.querySelector('.description');
   const btnSave = divElemt.querySelector('#btnSave');
   const btnCancel = divElemt.querySelector('#btnCancel');
-
-
   /* ----Upload images---*/
   const selectPhotoProfile = divElemt.querySelector('#selectPhotoProfile');
   const profilePicture = divElemt.querySelector('.profile-img');
@@ -132,35 +127,6 @@ export default (notes) => {
     editBtn.classList.remove('hide');
     updateProfile(divElemt);
   });
-  // const file = '';
-  // const editBtn = divElemt.querySelector('.edit_btn');
-  // const nameUserProfile = divElemt.querySelector('.name');
-  // const petName = divElemt.querySelector('.name_pet');
-  // const selectProfile = divElemt.querySelector('#selectProfile');
-  // const aboutUs = divElemt.querySelector('.description');
-  // const btnSave = divElemt.querySelector('#btnSave');
-  // const btnCancel = divElemt.querySelector('#btnCancel');
-
-  // editBtn.addEventListener('click', () => {
-  //   aboutUs.contentEditable = 'true';
-  //   aboutUs.classList.add('input-style');
-
-  //   nameUserProfile.contentEditable = 'true';
-
-  //   petName.contentEditable = 'true';
-
-  //   editBtn.classList.add('hide');
-  //   btnSave.classList.remove('hide');
-  //   btnCancel.classList.remove('hide');
-  //   selectProfile.classList.remove('hide');
-
-  //   btnCancel.addEventListener('click', () => {
-  //     setProfileInfo();
-  //   });
-  //   btnSave.addEventListener('click', () => {
-  //     saveProfileInfo(file);
-  //   });
-  // });
   // TODO LogOut
   const logOut = divElemt.querySelector('#logout2');
   logOut.addEventListener('click', signOut);

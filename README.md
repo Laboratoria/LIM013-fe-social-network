@@ -46,6 +46,8 @@ compartir las fotos de sus mascotas y además hacer meetups con otros amantes de
 
 ## 4. El problema que resuelve el producto y para qué servirá
 
+A partir de los resultados de la entrevistas se identifica que Petlandia proporcionara un medio de comunicación para que diversos usuarios con mascotas puedan socializar, compartir información sobre sus mascotas y el cuidado a los mismos. Este producto garantiza una comunicación con seguridad para el usuario, quien puede compartir su información de manera segura con la comunidad de amantes de pets.
+
 ## 5. Prototipos 
 
 Como producto de las entrevistas , desarrollamos los prototipos de baja y alta fidelidad para vista mobile y desktop.

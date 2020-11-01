@@ -158,11 +158,6 @@ export default (notes, dataUser) => {
   notes.forEach((element) => {
     postFinal.appendChild(postSection(element));
   });
-  // // TODO Profile view changed
-  // const buttonEditProfile = divElemt.querySelector('#btnProfile');
-  // buttonEditProfile.addEventListener('click', () => {
-  //   window.location.hash = '#/profile';
-  // });
   // TODO LogOut
   const logOut = divElemt.querySelector('#logout');
   logOut.addEventListener('click', signOut);

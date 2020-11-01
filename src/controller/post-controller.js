@@ -4,10 +4,8 @@ import { crearPostPrueba } from '../firebase/firestore.js';
 // TODO makingPost
 export const makingPost = (file, userId, userName, userPhoto) => {
   const newPost = document.querySelector('#status_input').value;
-
   const status = document.querySelector('.privacy').value;
   const date = new Date().toLocaleString();
-
   let imPost = '';
   if (file) {
     imPost = localStorage.getItem('image');

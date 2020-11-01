@@ -31,13 +31,11 @@ export const eachComment = (dataComment) => {
   const newComment = document.createElement('div');
   newComment.classList.add('container-newComment');
   newComment.innerHTML = viewComments;
-
   const ellipsisComment = newComment.querySelector(`#menu-${dataComment.id}`);
   const navComment = newComment.querySelector('.nav-comment');
   ellipsisComment.addEventListener('click', () => {
     navComment.classList.toggle('none');
   });
-
   const editComment = newComment.querySelector(`#edit-${dataComment.id}`);
   const deleteCommentBtn = newComment.querySelector(`#delete-${dataComment.id}`);
   const inputComment = newComment.querySelector('#textComment');
