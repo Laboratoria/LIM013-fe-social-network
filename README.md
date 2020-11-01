@@ -39,7 +39,7 @@ La entrevista consistió se basó en las sisguientes preguntas
 compartir las fotos de sus mascotas y además hacer meetups con otros amantes de las mascotas. 
 * Como usuarios pasivos , les gustaría poder ver las fotos de las mascotas de otros usuario y quizás comentarlas.
 
-## 4. ¿Qué problema resuelve el producto / para qué le servirá a estos usuarios?
+## 4. ¿Qué problema resuelve el producto y para qué le servirá a estos usuarios?
 
 ## 5. Prototipos 
 
