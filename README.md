@@ -2,18 +2,18 @@
 ## Team : Verónica Flores ft Elizabeth Rivera 
 ___
 ## Índice
-* [1. ¿En qué consiste Petlandia ?](#1-¿En-qué-consiste-Petlandia-?)
+* [1. ¿En qué consiste Petlandia ?](#1-¿-En-qué-consiste-Petlandia-?)
 * [2. Desarrollo del Producto](#2-Desarrollo-del-Producto)
 * [3. ¿Quiénes son los principales usuarios de producto?](#3-Entrevistas-de-Usuario)
-* [4. ¿Qué problema resuelve el producto y para qué le servirá a estos usuarios?](#4-¿Qué-problema-resuelve-el-producto-y-para-qué-le-servirá-a-estos-usuarios?)
-* [5. Entrevistas de Usuario](#5-Entrevistas-de-Usuario)
+* [4. ¿Qué problema resuelve el producto y para qué le servirá a estos usuarios?](#4-¿-Qué-problema-resuelve-el-producto-y-para-qué-le-servirá-a-estos-usuarios-?)
+* [5. Prototipos](#5-Prototipos)
 * [6. Historias de Usuario desarrolladas](#6-Historias-de-Usuario-desarrolladas)
 * [7. Test de usabilidad](#7-Test-de-usabilidad)
 * [8.  Objetivos de aprendizaje](#8-Objetivos-de-aprendizaje)
 
 ***
 
-## 1. ¿En qué consiste Petlandia ?
+## 1. ¿En qué consiste Petlandia?
 Petlandia es una red social de entretenimiento para los amantes de las mascotas , 
 en cuál podran compartir a través de fotos o estados los momentos más divertidos junto a ellos. 
 
