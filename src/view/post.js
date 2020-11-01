@@ -94,9 +94,9 @@ export const postSection = (Object) => {
           <i class="fas fa-paper-plane"style='color:#F25F29;'></i>       
         </button>
       </div>
-      <div class="showAllComments">
-        <div id="showAllComments-${Object.id}"></div>
-      </div>
+
+        <div class="showComments" id="showAllComments-${Object.id}"></div>
+
     </div>
   </section>
   </div>
@@ -104,14 +104,8 @@ export const postSection = (Object) => {
 
   // TODO LikePost
   const likePost = note.querySelector(`#like-btton-${Object.id}`);
-  // console.log(likePost);
-  // const likes = note.querySelector('.likes-counter');
   likePost.addEventListener('click', (e) => {
     e.preventDefault();
-    // likes.value = parseInt(likes.value, 10) + 1;
-    // const arrayLikes = push(likes.value);
-    // updateLike(Object.id, likes.value);
-    // console.log(likes.value);
     const arrayLikes = Object.likes.indexOf(user);
     // console.log(arrayLikes);
     if (arrayLikes === -1) {
@@ -178,42 +172,41 @@ export const postSection = (Object) => {
 
   // TODO Commment section
   const desplegarComment = note.querySelector('.btton-desplegar-comment');
-  const displayContendComment = note.querySelector('.showAllComments');
-  console.log(displayContendComment);
+  const displayContendComment = note.querySelector('.showComments');
   desplegarComment.addEventListener('click', () => {
-    if (displayContendComment.style.display === 'block') {
-      displayContendComment.style.display = 'none';
-    } else {
+    console.log('click');
+    if (displayContendComment.style.display === 'none') {
       displayContendComment.style.display = 'block';
+    } else {
+      displayContendComment.style.display = 'none';
     }
-    const allComments = note.querySelector(`#showAllComments-${Object.id}`);
-    const btnNewComment = note.querySelector(`#comment-${Object.id}`);
-    btnNewComment.addEventListener('click', (e) => {
-      e.preventDefault();
-      const inputComment = note.querySelector(`#newComment-${Object.id}`).value;
-      allComments.innerHTML = '';
-      const time = new Date().toLocaleString();
-      if (inputComment.length !== 0) {
-        createComments(
-          currentUser().displayName,
-          inputComment,
-          currentUser().photoURL,
-          Object.id,
-          time,
-          user,
-        ).then(() => {
-          note.querySelector(`#newComment-${Object.id}`).value = '';
-          console.log('comentario creado');
-        });
-        getComments((comments) => {
-          allComments.innerHTML = '';
-          comments.forEach((doc) => {
-            allComments.appendChild(eachComment(doc));
-          });
-        }, Object.id);
-      }
-    });
   });
-
+  const allComments = note.querySelector(`#showAllComments-${Object.id}`);
+  const btnNewComment = note.querySelector(`#comment-${Object.id}`);
+  btnNewComment.addEventListener('click', (e) => {
+    e.preventDefault();
+    const inputComment = note.querySelector(`#newComment-${Object.id}`).value;
+    allComments.innerHTML = '';
+    const time = new Date().toLocaleString();
+    if (inputComment.length !== 0) {
+      createComments(
+        currentUser().displayName,
+        inputComment,
+        currentUser().photoURL,
+        Object.id,
+        time,
+        user,
+      ).then(() => {
+        note.querySelector(`#newComment-${Object.id}`).value = '';
+        console.log('comentario creado');
+      });
+      getComments((comments) => {
+        allComments.innerHTML = '';
+        comments.forEach((doc) => {
+          allComments.appendChild(eachComment(doc));
+        });
+      }, Object.id);
+    }
+  });
   return note;
 };

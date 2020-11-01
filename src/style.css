@@ -620,7 +620,6 @@ li.optionMobile {
 	border: 1px solid #ffffff;
 	text-align: center;
 }
-
 /*.header {
     text-transform: capitalize;
     max-width: 190px;
@@ -1185,14 +1184,13 @@ section.msg-Redes p {
 .menuDiv {
 	background-color: #f0f2f5;
 }
-
-.showAllComments {
+.showComments {
 	display: none;
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 601px) and (max-width: 767px) {
-	.showAllComments {
+	.showComments {
 		display: none;
 	}
 	.profile_section1 {
@@ -1395,9 +1393,7 @@ section.msg-Redes p {
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 	/* TODO view home */
-	.showAllComments {
-		display: none;
-	}
+
 	.logoHeader-nav {
 		width: 10%;
 		margin: 1rem 0rem 0.5rem 19rem;
@@ -1637,9 +1633,7 @@ section.msg-Redes p {
 	}
 }
 @media only screen and (min-width: 992px) and (max-width: 1023px) {
-	.showAllComments {
-		display: none;
-	}
+
 	/* TODO view home */
 	.petLogo {
 		width: 70%;
@@ -1931,9 +1925,7 @@ section.msg-Redes p {
 		background-size: cover;
 		position: relative;
 	}
-	.showAllComments {
-		display: none;
-	}
+
 	/*TODO  Vista: encabezado  */
 	/*header h1 {
 		font-size: 600%;
@@ -2316,13 +2308,6 @@ section.msg-Redes p {
 	.all-posts-profile {
 		margin: 0rem 8rem;
 	}
-	.card-group {
-		position: absolute;
-		/* left: -31rem; */
-		right: 37rem;
-		width: 36%;
-		top: 33rem;
-	}
 }
 @media only screen and (min-width: 1281px) {
 	body {
@@ -2341,9 +2326,6 @@ section.msg-Redes p {
 		font-size: 600%;
 		text-align: end;
 	}*/
-	.showAllComments {
-		display: none;
-	}
 	li.optionMobile {
 		padding: 1rem;
 	}
