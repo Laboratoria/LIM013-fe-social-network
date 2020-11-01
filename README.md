@@ -19,7 +19,7 @@ Petlandia es una red social de entretenimiento para los amantes de las mascotas,
 ## 2. Desarrollo del Producto 
 El producto presenta 4 vistas: una vista como ingreso de usuario registrado y otro para registrarse. Dentro de la app, como usuario registrado y en sesión, se presenta dos vistas, una llamada "home", en que se registra los posts del usuario, visualiza grupos de apoyo sobre mascotas, y su perfil. La ultima vista es "profile", donde el usuario logeado visualiza los posts únicos de él, y además puede modificar sus datos de perfil. 
 
-![zoom_0_Slomo_Slomo](https://user-images.githubusercontent.com/63525613/97816418-023fae80-1c63-11eb-80fd-d07a873ab38a.gif)
+![zoom-0-Slomo](https://user-images.githubusercontent.com/63525613/97816683-cf96b580-1c64-11eb-84ae-301af283fa34.gif)
 
 ## 3. Los principales usuarios de producto
 
