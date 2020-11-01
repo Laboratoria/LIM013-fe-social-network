@@ -47,7 +47,7 @@ Como producto de las entrevistas , desarrollamos los prototipos de baja y alta f
 
 ### 5.1 Vista prototipo de baja fidelidad
 
-![prototipobaja](img-readme/prototipobaja.png)
+![prototipobaja](https://user-images.githubusercontent.com/63525613/97815080-97d64080-1c59-11eb-8d30-04ee8431f4a3.jpg)
 
 ### 5.2 Vista prototipo de alta fidelidad
 
