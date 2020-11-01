@@ -4,7 +4,7 @@ export default () => {
   const viewRegister = `
   <section class='header_register'>
     <img src="/imagenes/nombre2.png" class="petLogo" alt="logo" width="200px" height="auto" />    
-    <img src="/imagenes/logoPrueba.png" class="logoHeader" alt="imagenPetlandia" width="400px" height="auto" />
+    <img src="/imagenes/petLogo.png" class="logoHeader" alt="imagenPetlandia" width="400px" height="auto" />
   </section>
   <section class="register-container">
     <section class="registerForm-container">
