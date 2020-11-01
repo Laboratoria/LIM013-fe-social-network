@@ -4,7 +4,7 @@ ___
 ## Índice
 * [1. ¿En qué consiste Petlandia ?](#1-¿-En-qué-consiste-Petlandia-?)
 * [2. Desarrollo del Producto](#2-Desarrollo-del-Producto)
-* [3. ¿Quiénes son los principales usuarios de producto?](#3-Entrevistas-de-Usuario)
+* [3. ¿Quiénes son los principales usuarios de producto?](#3-¿-Quiénes-son-los-principales-usuarios-de-producto-?-)
 * [4. ¿Qué problema resuelve el producto y para qué le servirá a estos usuarios?](#4-¿-Qué-problema-resuelve-el-producto-y-para-qué-le-servirá-a-estos-usuarios-?)
 * [5. Prototipos](#5-Prototipos)
 * [6. Historias de Usuario desarrolladas](#6-Historias-de-Usuario-desarrolladas)
