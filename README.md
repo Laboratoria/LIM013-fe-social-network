@@ -1,12 +1,25 @@
 # BIENVENID@S A PETLANDIA :cat: :orange_heart: :dog: 
+## Team : Verónica Flores ft Elizabeth Rivera 
+___
+## Índice
+* [1. ¿En qué consiste Petlandia ?](#1-¿En-qué-consiste-Petlandia-?)
+* [2. Desarrollo del Producto](#2-Desarrollo-del-Producto)
+* [3. ¿Quiénes son los principales usuarios de producto?](#3-Entrevistas-de-Usuario)
+* [4. ¿Qué problema resuelve el producto y para qué le servirá a estos usuarios?](#4-¿Qué-problema-resuelve-el-producto-y-para-qué-le-servirá-a-estos-usuarios?)
+* [5. Entrevistas de Usuario](#5-Entrevistas-de-Usuario)
+* [6. Historias de Usuario desarrolladas](#6-Historias-de-Usuario-desarrolladas)
+* [7. Test de usabilidad](#7-Test-de-usabilidad)
+* [8.  Objetivos de aprendizaje](#8-Objetivos-de-aprendizaje)
+
+***
 
 ## 1. ¿En qué consiste Petlandia ?
 Petlandia es una red social de entretenimiento para los amantes de las mascotas , 
 en cuál podran compartir a través de fotos o estados los momentos más divertidos junto a ellos. 
 
-## 2. Desarrollo del Producto
+## 2. Desarrollo del Producto 
 
-### 2.1 Entrevistas de Usuario
+## 3. ¿Quiénes son los principales usuarios de producto?
 Se realizó entrevistas a 5 personas de entre 15 y 30 años para determinar el perfil de 
 nuestro usuario y conocer acerca de las expecttivas del desarrollo de un producto como Petlandia.
 La entrevista consistió se basó en las sisguientes preguntas
@@ -17,7 +30,7 @@ La entrevista consistió se basó en las sisguientes preguntas
 * ¿Qué actividades le gustaría hacer en una red social cuyo tema principal sea las mascotas?
 * ¿Hay algo de lo que no hayamos hablado que quisiera comentar?
 
-### 2.2 Hallazgos de las entrevistas
+### 3.1 Hallazgos de las entrevistas
 
 * Las personas más interesadas en usar una red social enfocada en mascotas son de entre 20 y 30 años.
 * La red social que más usan son Facebook e Instagram.
@@ -26,34 +39,26 @@ La entrevista consistió se basó en las sisguientes preguntas
 compartir las fotos de sus mascotas y además hacer meetups con otros amantes de las mascotas. 
 * Como usuarios pasivos , les gustaría poder ver las fotos de las mascotas de otros usuario y quizás comentarlas.
 
-### 2.3 Prototipos 
+## 4. ¿Qué problema resuelve el producto / para qué le servirá a estos usuarios?
+
+## 5. Prototipos 
 
 Como producto de las entrevistas , desarrollamos los prototipos de baja y alta fidelidad para vista mobile y desktop.
 
-### Vista prototipo de baja fidelidad
+### 5.1 Vista prototipo de baja fidelidad
 
-### Vista prototipo de alta fidelidad
+### 5.2 Vista prototipo de alta fidelidad
 
-## Vista mobile
+#### 5.2.1 Vista mobile
 
   ![mobile](https://user-images.githubusercontent.com/68167686/97643081-bf889700-1a14-11eb-9156-1aecd1a39ab2.png)
 
-## Vista Desktop
+#### 5.2.2 Vista Desktop
 
   ![desktop1](https://user-images.githubusercontent.com/68167686/97643080-bef00080-1a14-11eb-9b6d-c24d399d47f6.png)
   ![desktop2](https://user-images.githubusercontent.com/68167686/97643074-bd263d00-1a14-11eb-9fc6-897cf38b7d80.png)
 
-### 2.3 Test de Usabilidad
-
-Resultados del test de usabilidad :
-
-* Mostrar el prototipo de alta fidelidad.
-* Modificar la pregunta planteada en el input del post.
-* Añadir el botón para eliminar las fotos antes de realizarse las publicaciones.
-
-## 3. Creando la Red Social
-
-### 3.1 Historias de Usuario desarrolladas
+## 6. Historias de Usuario desarrolladas
 
 * Como usuario nuevo debo poder crear una cuenta con email y password válidos para ingresar
 a la red social.
@@ -73,7 +78,15 @@ a la red social.
 
 * Yo como usuario loggeado debo poder visualizar los datos de mi perfil creado y editarlos para actualizar mi información.
 
-## 3. Objetivos de aprendizaje
+### 7. Test de Usabilidad
+
+Resultados del test de usabilidad :
+
+* Mostrar el prototipo de alta fidelidad.
+* Modificar la pregunta planteada en el input del post.
+* Añadir el botón para eliminar las fotos antes de realizarse las publicaciones.
+
+## 8. Objetivos de aprendizaje
 
 El objetivo principal de aprendizaje de este proyecto es construir una
 [Single-page Application (SPA)](https://es.wikipedia.org/wiki/Single-page_application) que se adapte 
