@@ -4,8 +4,8 @@ ___
 ## Índice
 * [1. ¿En qué consiste Petlandia ?](#1-¿-En-qué-consiste-Petlandia-?)
 * [2. Desarrollo del Producto](#2-Desarrollo-del-Producto)
-* [3. ¿Quiénes son los principales usuarios de producto?](#3-¿-Quiénes-son-los-principales-usuarios-de-producto-?-)
-* [4. ¿Qué problema resuelve el producto y para qué le servirá a estos usuarios?](#4-¿-Qué-problema-resuelve-el-producto-y-para-qué-le-servirá-a-estos-usuarios-?)
+* [3. Los principales usuarios de producto](#3-Los-principales-usuarios-de-producto)
+* [4. El problema que resuelve el producto y para qué servirá](#4-El-problema-que-resuelve-el-producto-y-para-qué-servirá)
 * [5. Prototipos](#5-Prototipos)
 * [6. Historias de Usuario desarrolladas](#6-Historias-de-Usuario-desarrolladas)
 * [7. Test de usabilidad](#7-Test-de-usabilidad)
@@ -14,16 +14,16 @@ ___
 ***
 
 ## 1. ¿En qué consiste Petlandia?
-Petlandia es una red social de entretenimiento para los amantes de las mascotas , 
-en cuál podran compartir a través de fotos o estados los momentos más divertidos junto a ellos. 
+Petlandia es una red social de entretenimiento para los amantes de las mascotas, en cuál podran compartir a través de fotos o estados los momentos más divertidos junto a ellos. 
 
 ## 2. Desarrollo del Producto 
+El producto presenta 4 vistas: una vista como ingreso de usuario registrado y otro para registrarse. Dentro de la app, como usuario registrado y en sesión, se presenta dos vistas, una llamada "home", en que se registra los posts del usuario, visualiza grupos de apoyo sobre mascotas, y su perfil. La ultima vista es "profile", donde el usuario logeado visualiza los posts únicos de él, y además puede modificar sus datos de perfil. 
 
-## 3. ¿Quiénes son los principales usuarios de producto?
+## 3. Los principales usuarios de producto
 Se realizó entrevistas a 5 personas de entre 15 y 30 años para determinar el perfil de 
 nuestro usuario y conocer acerca de las expecttivas del desarrollo de un producto como Petlandia.
 La entrevista consistió se basó en las sisguientes preguntas
-* ¿Puede contarme un poco sobre usted, a qué se dedica y qué hobbies tiene?2.
+* ¿Puede contarme un poco sobre usted, a qué se dedica y qué hobbies tiene?.
 * ¿Qué redes sociales es usted usuario en los últimos años? ¿Cuál ha sido su favorito?
 * ¿Ha conseguido una red social cuyo tema principal ha sido las mascotas?
 * ¿Le gustaría dedicar su tiempo de entretenimiento a una red social cuyo tema principal sea las mascotas?
@@ -39,13 +39,15 @@ La entrevista consistió se basó en las sisguientes preguntas
 compartir las fotos de sus mascotas y además hacer meetups con otros amantes de las mascotas. 
 * Como usuarios pasivos , les gustaría poder ver las fotos de las mascotas de otros usuario y quizás comentarlas.
 
-## 4. ¿Qué problema resuelve el producto y para qué le servirá a estos usuarios?
+## 4. El problema que resuelve el producto y para qué servirá
 
 ## 5. Prototipos 
 
 Como producto de las entrevistas , desarrollamos los prototipos de baja y alta fidelidad para vista mobile y desktop.
 
 ### 5.1 Vista prototipo de baja fidelidad
+
+![prototipobaja](img-readme/prototipobaja.png)
 
 ### 5.2 Vista prototipo de alta fidelidad
 
@@ -85,6 +87,7 @@ Resultados del test de usabilidad :
 * Mostrar el prototipo de alta fidelidad.
 * Modificar la pregunta planteada en el input del post.
 * Añadir el botón para eliminar las fotos antes de realizarse las publicaciones.
+* Permitir tener información sobre adopción de mascotas, cuidado de mascotas y otras redes sociales relacionados a la temática.
 
 ## 8. Objetivos de aprendizaje
 
