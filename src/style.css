@@ -54,7 +54,30 @@ i {
 	color: #04bfbf;
 	font-size: 15px;
 }
-
+.notfound-page{
+	align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 6%;
+    vertical-align: middle;
+}
+.enlace-404 {
+	text-transform: none;
+	text-decoration: none;
+	cursor: pointer;
+	color:red;
+	line-height: 2rem;
+}
+.nf-image-gif{
+	padding: 6%;
+}
+.nf-text{
+	color:black;
+}
+.nf-number{
+	font-size: 300%;
+}
 .card-group {
 	border-radius: 15px;
 	background-color: #ffac00;
@@ -1197,9 +1220,7 @@ section.msg-Redes p {
 .menuDiv {
 	background-color: #f0f2f5;
 }
-.showComments {
-	display: none;
-}
+
 .comment-edition{
 	display: flex;
     flex-direction: column;
@@ -1220,11 +1241,13 @@ section.msg-Redes p {
 .list-option{
 	list-style: none;
 }
+.none{
+	display:none;
+}
+
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 601px) and (max-width: 767px) {
-	.showComments {
-		display: none;
-	}
+
 	.profile_section1 {
 		height: 350px;
 	}
@@ -1918,9 +1941,6 @@ section.msg-Redes p {
 	.all-posts-profile {
 		margin: 0 12rem;
 	}
-	section.msg-Redes p {
-		font-size: 200%;
-	}
 	.btn-header {
 		font-size: 150%;
 	}
@@ -1949,6 +1969,9 @@ section.msg-Redes p {
 	.name_pet,
 	.description {
 		font-size: 180%;
+	}
+	section.msg-Redes p {
+		font-size: 200%;
 	}
 }
 @media only screen and (min-width: 1024px) and (max-width: 1280px) {
@@ -2193,11 +2216,14 @@ section.msg-Redes p {
 		padding-bottom: 0px;
 		padding-top: 6rem;
 		margin-left: 1rem;
+		
 	}
 	.edit_btn {
 		font-size: 180%;
 		height: auto;
 		margin-left: 30rem;
+		position: relative;
+
 	}
 	.name {
 		font-size: 200%;

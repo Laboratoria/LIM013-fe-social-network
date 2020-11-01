@@ -171,16 +171,6 @@ export const postSection = (Object) => {
   });
 
   // TODO Commment section
-  const desplegarComment = note.querySelector('.btton-desplegar-comment');
-  const displayContendComment = note.querySelector('.showComments');
-  desplegarComment.addEventListener('click', () => {
-    console.log('click');
-    if (displayContendComment.style.display === 'none') {
-      displayContendComment.style.display = 'block';
-    } else {
-      displayContendComment.style.display = 'none';
-    }
-  });
   const allComments = note.querySelector(`#showAllComments-${Object.id}`);
   const btnNewComment = note.querySelector(`#comment-${Object.id}`);
   btnNewComment.addEventListener('click', (e) => {
@@ -200,13 +190,20 @@ export const postSection = (Object) => {
         note.querySelector(`#newComment-${Object.id}`).value = '';
         console.log('comentario creado');
       });
-      getComments((comments) => {
-        allComments.innerHTML = '';
-        comments.forEach((doc) => {
-          allComments.appendChild(eachComment(doc));
-        });
-      }, Object.id);
     }
+  });
+  getComments((comments) => {
+    allComments.innerHTML = '';
+    comments.forEach((doc) => {
+      allComments.appendChild(eachComment(doc));
+    });
+  }, Object.id);
+  const desplegarComment = note.querySelector('.btton-desplegar-comment');
+  const displayContendComment = note.querySelector('.container-new-comment');
+  displayContendComment.style.display = 'block';
+  const showComments = note.querySelector('.showComments');
+  desplegarComment.addEventListener('click', () => {
+    showComments.classList.toggle('none');
   });
   return note;
 };

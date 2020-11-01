@@ -33,10 +33,9 @@ export const eachComment = (dataComment) => {
   newComment.innerHTML = viewComments;
 
   const ellipsisComment = newComment.querySelector(`#menu-${dataComment.id}`);
-  console.log(ellipsisComment);
   const navComment = newComment.querySelector('.nav-comment');
   ellipsisComment.addEventListener('click', () => {
-    navComment.classList.remove('none');
+    navComment.classList.toggle('none');
   });
 
   const editComment = newComment.querySelector(`#edit-${dataComment.id}`);
