@@ -1,6 +1,6 @@
-# Creando una Red Social
+# BIENVENID@S A PETLANDIA :cat: :orange_heart: :dog: 
 
-## 1. ¿En qué consiste el producto?
+## 1. ¿En qué consiste Petlandia ?
 Petlandia es una red social de entretenimiento para los amantes de las mascotas , 
 en cuál podran compartir a través de fotos o estados los momentos más divertidos junto a ellos. 
 
@@ -30,11 +30,15 @@ compartir las fotos de sus mascotas y además hacer meetups con otros amantes de
 
 Como producto de las entrevistas , desarrollamos los prototipos de baja y alta fidelidad para vista mobile y desktop.
 
-### Vista mobile
+### Vista prototipo de baja fidelidad
+
+### Vista prototipo de alta fidelidad
+
+## Vista mobile
 
   ![mobile](https://user-images.githubusercontent.com/68167686/97643081-bf889700-1a14-11eb-9156-1aecd1a39ab2.png)
 
-### Vista Desktop
+## Vista Desktop
 
   ![desktop1](https://user-images.githubusercontent.com/68167686/97643080-bef00080-1a14-11eb-9b6d-c24d399d47f6.png)
   ![desktop2](https://user-images.githubusercontent.com/68167686/97643074-bd263d00-1a14-11eb-9fc6-897cf38b7d80.png)
