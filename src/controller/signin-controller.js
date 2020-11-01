@@ -24,6 +24,22 @@ export const signingIn = (emailLogIn, passwordLogIn) => {
       showMessage('⚠️Cuenta o clave no coinciden, verifica o pulse click en REGISTER.');
     });
 };
+export const getAndCreateData = (user)=>{
+  getUser(user.uid).then((doc) => {
+    console.log('Get user');
+  if (!doc.exists) {
+    createUser(user.uid).then(() => {
+      window.location.hash = '#/home';
+      console.log('crear usuario en signIn');
+    });
+    console.log('crear usuario');
+  } else {
+    window.location.hash = '#/home';
+    console.log('existe collecion en signIn');
+  }
+  //   console.log(' entrar a vista');
+})
+}
 // TODO signIn with Google account
 export const signInGoogle = () => {
   googleSignIn()
