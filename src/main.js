@@ -1,5 +1,6 @@
 import { cambioVista } from './controller/router.js';
 import { getAndCreateData } from './controller/signin-controller.js';
+
 const firebaseConfig = {
   apiKey: 'AIzaSyBzHWIsaXuMT1H8-1DrI-WSGyDZqMTgH28',
   authDomain: 'petlandia-624cd.firebaseapp.com',
@@ -23,11 +24,8 @@ const onAuth = () => {
       if (user.emailVerified !== false) {
         if (window.location.hash !== '#/signIn') {
           route = window.location.hash;
-        } else {
-          if(getAndCreateData(user)){
-            route = '#/home';
-          }
-          
+        } else if (getAndCreateData(user)) {
+          route = '#/home';
         }
       }
       if (user.emailVerified === false) {

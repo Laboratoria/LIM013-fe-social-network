@@ -27,10 +27,10 @@ export const getAndCreateData = (user) => {
   getUser(user.uid).then((doc) => {
     if (!doc.exists) {
       createUser(user.uid).then(() => {
-        window.location.hash = "#/home";
+        window.location.hash = '#/home';
       });
     } else {
-      window.location.hash = "#/home";
+      window.location.hash = '#/home';
     }
   });
 };
