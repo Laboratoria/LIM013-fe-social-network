@@ -102,14 +102,8 @@ export const postSection = (Object) => {
 
   // TODO LikePost
   const likePost = note.querySelector(`#like-btton-${Object.id}`);
-  // console.log(likePost);
-  // const likes = note.querySelector('.likes-counter');
   likePost.addEventListener('click', (e) => {
     e.preventDefault();
-    // likes.value = parseInt(likes.value, 10) + 1;
-    // const arrayLikes = push(likes.value);
-    // updateLike(Object.id, likes.value);
-    // console.log(likes.value);
     const arrayLikes = Object.likes.indexOf(user);
     // console.log(arrayLikes);
     if (arrayLikes === -1) {
@@ -176,7 +170,6 @@ export const postSection = (Object) => {
   });
 
   // TODO Commment section
-
   const allComments = note.querySelector(`#showAllComments-${Object.id}`);
   const btnNewComment = note.querySelector(`#comment-${Object.id}`);
   btnNewComment.addEventListener('click', (e) => {
@@ -211,6 +204,5 @@ export const postSection = (Object) => {
   desplegarComment.addEventListener('click', () => {
     showComments.classList.toggle('none');
   });
-
   return note;
 };

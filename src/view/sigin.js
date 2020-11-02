@@ -29,7 +29,6 @@ export default () => {
           <input type="submit" id="submit" class="submit_signIn" value="Inicia sesión" />
         </section>
         <section class="logo-Redes">         
- 
           <a href="#" id="btnGoogle" class="google btn-google"><i class="fa fa-google fa-fw">
           </i> Login with Google+
         </a>
