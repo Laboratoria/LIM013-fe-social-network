@@ -36,6 +36,7 @@ export const eachComment = (dataComment) => {
   ellipsisComment.addEventListener('click', () => {
     navComment.classList.toggle('none');
   });
+
   const editComment = newComment.querySelector(`#edit-${dataComment.id}`);
   const deleteCommentBtn = newComment.querySelector(`#delete-${dataComment.id}`);
   const inputComment = newComment.querySelector('#textComment');

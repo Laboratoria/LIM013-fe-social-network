@@ -1,5 +1,5 @@
 import { cambioVista } from './controller/router.js';
-
+import { getAndCreateData } from './controller/signin-controller.js';
 const firebaseConfig = {
   apiKey: 'AIzaSyBzHWIsaXuMT1H8-1DrI-WSGyDZqMTgH28',
   authDomain: 'petlandia-624cd.firebaseapp.com',
@@ -16,7 +16,7 @@ firebase.initializeApp(firebaseConfig);
 // TODO onAuthStagedChange
 const onAuth = () => {
   firebase.auth().onAuthStateChanged((user) => {
-    let route = null;
+    let route = '';
     if (user) {
       // console.log(user);
       // console.log('usuario logeado');
@@ -24,7 +24,10 @@ const onAuth = () => {
         if (window.location.hash !== '#/signIn') {
           route = window.location.hash;
         } else {
-          route = '#/home';
+          if(getAndCreateData(user)){
+            route = '#/home';
+          }
+          
         }
       }
       if (user.emailVerified === false) {

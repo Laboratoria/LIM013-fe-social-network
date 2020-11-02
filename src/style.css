@@ -658,6 +658,22 @@ li.optionMobile {
 .hide {
 	visibility: hidden;
 }
+.none{
+	display:none;
+}
+.comment-edition{
+	display: flex;
+    flex-direction: column;
+    margin-left: 35%;
+}
+.label-menu-comment{
+	border: none;
+	outline: none;
+	cursor: pointer;
+	color: black;
+	background-color: transparent;
+	
+}
 #selectProfile {
 	margin: 0%;
 	padding: 0%;
@@ -932,7 +948,6 @@ img.user_img {
 	align-items: center;
 	/* padding: 1rem; */
 	margin: 0rem 0rem 0.5rem 0rem;
-	justify-content: space-evenly;
 }
 .user_photo {
 	margin: 0rem 0.25rem 0rem 0.25rem;
@@ -975,7 +990,7 @@ img.user_img {
 	width: 100%;
 	height: 2rem;
 	border: none;
-	border-radius: 15px;
+	border-radius: 10px;
 	resize: none;
 	position: relative;
 	font-family: 'Abel', sans-serif;
@@ -997,7 +1012,7 @@ img.user_img {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
-	margin: 1rem 1rem;
+	margin: 0.5rem 0rem;
 }
 .buttons-comments {
 	display: flex;
@@ -1039,7 +1054,8 @@ img.user_img {
 }
 .text-comment {
 	text-align: left;
-	padding: 1rem;
+	padding: 0.5rem;
+	margin-bottom: 2%;
 }
 .user-comments-head {
 	display: flex;
@@ -1138,7 +1154,7 @@ img.user_img {
 }
 .photo_post_img {
 	width: 40%;
-	margin: 0 5.5rem;
+	margin: 0 30%;
 }
 /*TODO editar */
 .hide-btton-post {
@@ -1182,6 +1198,7 @@ i.fa.fa-pencil {
 	justify-content: center;
 	align-items: center;
 }
+
 /*TODO liked posts*/
 .like-btton {
 	background: transparent;
@@ -1221,7 +1238,6 @@ section.msg-Redes p {
 .menuDiv {
 	background-color: #f0f2f5;
 }
-
 .comment-edition {
 	display: flex;
 	flex-direction: column;
@@ -1242,7 +1258,7 @@ section.msg-Redes p {
 	list-style: none;
 }
 .none {
-	display: none;
+	display: none
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -1359,9 +1375,7 @@ section.msg-Redes p {
 	.btn-post-cancel-edit-post,
 	.btn-post-save-edit-post,
 	.btn-save-comment,
-	.btn-cancel-comment,
-	.btn-comment-edit,
-	.btn-comment-delete {
+	.btn-cancel-comment {
 		font-size: 100%;
 		margin: 1rem 0rem 1rem 0rem;
 	}
@@ -1439,8 +1453,10 @@ section.msg-Redes p {
 	.labels-profile-home {
 		height: 1rem;
 	}
+
 	.privacy {
 		font-size: 2.5rem;
+
 	}
 	.btn-profile {
 		padding: 4%;
@@ -1564,7 +1580,7 @@ section.msg-Redes p {
 	.menu-post {
 		height: auto;
 	}
-	.content-post {
+	.content-post{
 		padding: 2rem;
 	}
 	.user_post {
@@ -1619,31 +1635,16 @@ section.msg-Redes p {
 	.name_pet1 {
 		font-size: 140%;
 	}
-	.btn-post-edit,
-	.btn-post-delete {
+	.profile_section1 {
+		height: 400px
+	}
+	.btn-post-edit, .btn-post-delete {
 		width: 100%;
 		font-size: 130%;
 		top: 1rem;
 		height: 2.5rem;
 	}
-	.btn-post-cancel-edit-post,
-	.btn-post-save-edit-post,
-	.btn-save-comment,
-	.btn-cancel-comment,
-	.btn-comment-edit,
-	.btn-comment-delete {
-		font-size: 100%;
-		margin: 1rem 0rem 1rem 0rem;
-	}
-	.btn-post-cancel-edit-post:hover,
-	.btn-post-save-edit-post:hover,
-	.btn-save-comment:hover,
-	.btn-cancel-comment:hover,
-	.btn-comment-edit:hover,
-	.btn-comment-delete:hover {
-		background-color: #983d1c;
-		color: white;
-	}
+
 	.photo_post_img {
 		margin: 0 9.5rem;
 	}
@@ -1653,6 +1654,10 @@ section.msg-Redes p {
 	}
 	.card {
 		height: 9.5rem;
+	}
+	.edit_btn{
+		width: 20%;
+		font-size: 100%;
 	}
 	.profile {
 		margin-left: 1rem;
@@ -1677,7 +1682,6 @@ section.msg-Redes p {
 	.description {
 		font-size: 160%;
 	}
-
 	.edit_btn {
 		height: 3rem;
 		font-size: 170%;
@@ -1787,7 +1791,6 @@ section.msg-Redes p {
 		position: relative;
 		margin-left: 41rem;
 	}
-
 	.contend-profile {
 		display: flex;
 		flex-direction: row;
@@ -1822,7 +1825,7 @@ section.msg-Redes p {
 	.label-profile-home {
 		padding: 1rem;
 	}
-	.profile_section-home {
+	/* .profile_section-home {
 		display: block;
 		height: 20rem;
 		position: relative;
@@ -1834,7 +1837,7 @@ section.msg-Redes p {
 		-webkit-box-shadow: 0px 10px 13px -7px #000000,
 			5px 5px 15px -8px rgba(0, 0, 0, 0);
 		box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px -8px rgba(0, 0, 0, 0);
-	}
+	} */
 	.profile-btn-editions {
 		padding: 1rem;
 		margin-left: 13rem;
@@ -1844,14 +1847,41 @@ section.msg-Redes p {
 		font-size: 160%;
 		margin: 0rem;
 	}
-	.main {
+	.btn-profile {
+		font-size: 120%;
+		width: 150%;
+	}
+	.profile_section1{
+		height: 350px;
+	}
+	.name {
+		font-size: 1.5rem;
+		margin-top: 0rem;
+		margin-left: 20%;
+	}
+	.profile img {
+		height: 6rem;
+		bottom: 2rem;
+	}
+	.label-profile p {
+		font-size: 120%;
+	}
+	.name_pet, .description {
+		font-size: 120%;
+	}
+	.btn-profile {
+		padding: 2%;
+		margin: 0% 0% 1% 0%;
+		font-size:100%;
+	}
+	/* .main {
 		width: 90%;
 		margin: 20px auto;
 		display: grid;
 		height: 100%;
 		grid-template-columns: 40% 54% 0%;
 		padding-top: 3em;
-	}
+	} */
 	.divPost {
 		grid-column: span 2;
 	}
@@ -1884,16 +1914,8 @@ section.msg-Redes p {
 		font-size: 200%;
 		margin-left: 0.5rem;
 	}
-	.post_buttom {
-		margin: 0rem 0rem 0rem 12rem;
+	.name-user {
 		font-size: 150%;
-		width: 6rem;
-	}
-	.grupo-nombre h1 {
-		font-size: 1.5rem;
-	}
-	.name_pet1 {
-		font-size: 100%;
 	}
 	img.user_img {
 		height: 3rem;
@@ -1922,14 +1944,18 @@ section.msg-Redes p {
 		height: 3rem;
 	}
 	.label-menu-post {
-		height: 3rem;
+	margin: 4% 1% 0% 66%;
+    position: absolute;
+    height: 6rem;
 	}
 	.input-post {
-		padding: 2rem;
-		font-size: 128%;
+    font-size: 150%;
+	padding: 2rem;
+	margin-top: 5%;
 	}
-	.likes-counter {
-		font-size: 60%;
+	.privacy {
+		font-size: 2.0rem;
+		margin: 0% 2% 3% 20%;
 	}
 	.input-comment {
 		width: 100%;
@@ -1937,13 +1963,8 @@ section.msg-Redes p {
 		padding: 3%;
 		font-size: 120%;
 	}
-	.btn-post-cancel-edit-post,
-	.btn-post-save-edit-post,
-	.btn-save-comment,
-	.btn-cancel-comment,
-	.btn-comment-edit,
-	.btn-comment-delete {
-		font-size: 100%;
+	.btn-comment-edit, .btn-comment-delete {
+		font-size: 120%;
 	}
 	.all-posts-profile {
 		margin: 0 12rem;
@@ -1977,10 +1998,12 @@ section.msg-Redes p {
 	.description {
 		font-size: 180%;
 	}
-	section.msg-Redes p {
-		font-size: 200%;
+	.input-comment{
+		font-size: 120%;
+		height: 3rem;
 	}
 }
+
 @media only screen and (min-width: 1024px) and (max-width: 1280px) {
 	body {
 		font-family: 'Playfair Display', serif;
@@ -2012,7 +2035,6 @@ section.msg-Redes p {
 		max-width: 30%;
 		top: 6rem;
 	}
-
 	.logoHeader {
 		width: 50%;
 		max-width: 50%;
@@ -2023,7 +2045,6 @@ section.msg-Redes p {
 		width: 50%;
 		margin: 3% 30%;
 	}
-
 	/*TODO Vista: inicio de sesion  */
 	.sign {
 		display: flex;
@@ -2220,17 +2241,78 @@ section.msg-Redes p {
 	}
 	.labels-profile-home {
 		height: auto;
+
 	}
+	.profile img {
+		height: 7rem;
+	}
+	.name1,
+	.name-home {
+		font-size: 170%;
+	}
+	.status_imput {
+		font-size: 144%;
+	}
+	.menu-post-options {
+		justify-content: start;
+	}
+	.cam-post {
+		width: 3rem;
+	}
+	.grupo-nombre h1 {
+		font-size: 1.5rem;
+	}
+	.name_pet1 {
+		font-size: 100%;
+	}
+
+	.name-user {
+		font-size: 123%;
+		line-height: 1.25rem;
+	}
+	.btn-post-edit,
+	.btn-post-delete {
+		width: 121%;
+		font-size: 100%;
+	}
+	.input-post {
+		padding: 2rem;
+		font-size: 128%;
+	}
+	.likes-counter {
+		font-size: 60%;
+	}
+	.input-comment {
+		width: 100%;
+		height: 4rem;
+		font-size: 150%;
+	}
+	.btn-post-cancel-edit-post,
+	.btn-post-save-edit-post,
+	.btn-save-comment,
+	.btn-cancel-comment,
+	.btn-comment-edit,
+	.btn-comment-delete {
+		font-size: 100%;
+	}
+
+	section.msg-Redes p {
+		font-size: 200%;
+	}
+	/*---Profile Section---*/
+
 	.profile_section {
 		display: block;
 	}
 	.btn-profile {
+
 		font-size: 150%;
 		width: 120%;
 		padding: 12%;
+
 	}
 	.main {
-		width: 90%;
+		width: 98%;
 		margin: 20px auto;
 		display: grid;
 		height: 100%;
@@ -2251,6 +2333,12 @@ section.msg-Redes p {
 		/* background-repeat: no-repeat; */
 		height: 8rem;
 	}
+	.edit_btn {
+		width: 20%;
+		font-size: 120%;
+		margin: 6% 0% 1% 45%;
+		padding: 0rem;
+	}
 	.profile_section1 {
 		height: max-content;
 	}
@@ -2265,6 +2353,7 @@ section.msg-Redes p {
 		margin-left: 30rem;
 		position: relative;
 	}
+
 	.name {
 		font-size: 200%;
 		margin-left: 5%;
@@ -2277,11 +2366,7 @@ section.msg-Redes p {
 	.label-profile p {
 		font-size: 150%;
 	}
-	/* .divPost {
-		padding: 0;
-		grid-column-start: 3;
-		grid-column-end: 4;
-	} */
+
 	.edition-section {
 		position: absolute;
 		margin-left: 30%;
@@ -2296,7 +2381,7 @@ section.msg-Redes p {
 		background-size: contain;
 		background-position: center;
 		/* background-repeat: no-repeat; */
-		height: 5.5rem;
+		height: 6.5rem;
 	}
 	.profile-img-home {
 		height: 4rem;
@@ -2339,9 +2424,19 @@ section.msg-Redes p {
 		text-shadow: none;
 		color: #a94824;
 	}
-	.name1,
-	.name-home {
+	.name1{
 		font-size: 170%;
+	}
+	.name-home {
+		font-size: 100%;
+	}
+	.name {
+		font-size: 30px;
+		margin-left: 20%;
+		margin-top:2rem;
+	}
+	.contend-profile{
+		display: flex;
 	}
 	.status_imput {
 		font-size: 144%;
@@ -2349,12 +2444,11 @@ section.msg-Redes p {
 	.menu-post-options {
 		justify-content: start;
 	}
+	.label-profile p {
+		font-size: 120%;
+	}
 	.cam-post {
 		width: 3rem;
-	}
-	.privacy {
-		font-size: 200%;
-		margin-left: 0.5rem;
 	}
 	.post_buttom {
 		margin: 0rem 0rem 0rem 12rem;
@@ -2371,12 +2465,10 @@ section.msg-Redes p {
 		height: 4.5rem;
 	}
 	.name-user {
-		font-size: 123%;
-		line-height: 1.25rem;
+		font-size: 160%;
 	}
-	.post-time {
-		font-size: 96%;
-		line-height: 2rem;
+	img.user_img {
+		height: 6rem;
 	}
 	.btn-post-edit,
 	.btn-post-delete {
@@ -2385,19 +2477,20 @@ section.msg-Redes p {
 		height: 2.5rem;
 	}
 	.label-menu-post {
-		height: 3rem;
+		margin: 1% 1% 0% 2%;
+		height: auto;
+		right: -1rem;
 	}
 	.input-post {
-		padding: 2rem;
-		font-size: 128%;
+		font-size: 160%;
+		margin-top: 6%;
+
 	}
-	.likes-counter {
-		font-size: 60%;
+	.privacy {
+		font-size: 2.5rem;
+		margin: 0% 2% 3% 20%;
 	}
-	.input-comment {
-		width: 100%;
-		height: 3rem;
-		padding: 3%;
+	.text-name {
 		font-size: 100%;
 	}
 	.btn-post-cancel-edit-post,
@@ -2484,7 +2577,6 @@ section.msg-Redes p {
 	.signIn_Form h1 {
 		font-size: 200%;
 	}
-
 	span.input-item {
 		margin: 0.5rem auto 0rem 14.5rem;
 	}
@@ -2593,6 +2685,7 @@ section.msg-Redes p {
 	}
 	.container_msg p {
 		font-size: 150%;
+
 	}
 	#headerHome label {
 		display: none;
@@ -2712,11 +2805,10 @@ section.msg-Redes p {
 		border-radius: 50%;
 	}
 	.label-profile-home p {
-		font-size: 110%;
-		text-shadow: none;
+		font-size: 130%;
 	}
 	.description1 {
-		font-size: 130%;
+		font-size: 150%;
 		text-shadow: none;
 		color: #a94824;
 	}
@@ -2737,7 +2829,6 @@ section.msg-Redes p {
 	.content {
 		padding: 0rem;
 		display: flex;
-		flex-direction: column;
 	}
 	.profile img {
 		height: 7em;
@@ -2754,6 +2845,27 @@ section.msg-Redes p {
 	}
 	.status_imput {
 		font-size: 144%;
+	}
+	.profile_section1{
+		height:600px;
+	}
+	.edit_btn {
+		font-size: 120%;
+		margin: 2% 0% 1% 45%;
+		padding: 0rem;
+		height: 3rem;
+	}
+	.name {
+		font-size: 30px;
+		margin-left: 20%;
+		margin-top:0rem;
+	}
+	.label-profile p {
+		font-size: 150%;
+	}
+	.name_pet, .description {
+
+		font-size: 30px;
 	}
 	.menu-post-options {
 		justify-content: start;
@@ -2796,10 +2908,6 @@ section.msg-Redes p {
 	.label-menu-post {
 		height: 3rem;
 	}
-	.input-post {
-		padding: 2rem;
-		font-size: 128%;
-	}
 	.likes-counter {
 		font-size: 60%;
 	}
@@ -2827,3 +2935,4 @@ section.msg-Redes p {
 		margin-left: 19rem;
 	}
 }
+

@@ -94,10 +94,8 @@ export const postSection = (Object) => {
           <i class="fas fa-paper-plane"style='color:#F25F29;'></i>       
         </button>
       </div>
-
-        <div class="showComments" id="showAllComments-${Object.id}"></div>
-
     </div>
+    <div class='showComments'id="showAllComments-${Object.id}"></div>
   </section>
   </div>
   </section>`;
@@ -119,6 +117,7 @@ export const postSection = (Object) => {
       // console.log('unliked posted');
     }
   });
+
   // TODO Privacy status
   const optionPrivacy = note.querySelector('.privacy');
   optionPrivacy.addEventListener('change', () => {
