@@ -11,20 +11,20 @@ export default (notes) => {
     <header id='headerHome'>
     <nav class="nav_Mobile">   
     <label class='btn-menu1'><i class="fas fa-bars" style="color:#04BFBF; font-size:30px;"></i></label>
-    <img src="/imagenes/nombre2.png" class="petLogoMenu" alt="logo" width="10%" height="auto" />    
+    <img src="./imagenes/nombre2.png" class="petLogoMenu" alt="logo" width="10%" height="auto" />    
     <ul class='menu_mobile1'>
       <li class="optionMobile">
         <a class='btn-header' href='#/profile'>
-        <img src="/imagenes/032-wanted.png" class="img-nav" alt="logo" width="8%" height="auto" />Mi Perfil</a>
+        <img src="./imagenes/032-wanted.png" class="img-nav" alt="logo" width="8%" height="auto" />Mi Perfil</a>
       </li>
       <li class="optionMobile">
         <a class='btn-header'href='#/home'>
-        <img src="/imagenes/042-Doghouse.png" class="img-nav" alt="logo" width="8%" height="auto" />Home 
+        <img src="./imagenes/042-Doghouse.png" class="img-nav" alt="logo" width="8%" height="auto" />Home 
         </a>
       </li>
       <li class="optionMobile">
         <a class='btn-header' id="logout2" href='#/signIn'>
-        <img src="/imagenes/logout.png" class="img-nav" alt="logo" width="8%" height="auto" />Cerrar Sesión</a>
+        <img src="./imagenes/logout.png" class="img-nav" alt="logo" width="8%" height="auto" />Cerrar Sesión</a>
       </li>
     </ul>
     </nav>
@@ -46,20 +46,20 @@ export default (notes) => {
         </div>
         </div>
           <div class="content">
+            <button type="button" class="edit_btn"><i class="fas fa-edit"></i>Editar</button>
               <div class="labels-profile">
                 <div class="label-profile">
                   <p>Nombre de tu mascota:</p>
                   <h2 class="name_pet"></h2>
                   <p class="profile-text">Cuéntanos algo sobre ti y tu mascota</p>
                   <h2 class="description"></h2>
+                  <div class="profile-btn-editions">
+                    <button id="btnCancel" class="btn-profile hide">Cancelar</button>
+                    <button id="btnSave" class="btn-profile hide">Guardar</button>
+                  </div>
                 </div>
-                <div class="profile-btn-editions">
-                  <button id="btnCancel" class="btn-profile hide">Cancelar</button>
-                  <button id="btnSave" class="btn-profile hide">Guardar</button>
-                </div>
-              </div>
-              <button type="button" class="edit_btn"><i class="fas fa-edit"></i>Editar</button>
-                      
+                
+              </div>                     
           </div>            
       </aside>
       <div class="all-posts-profile">
@@ -120,8 +120,14 @@ export default (notes) => {
     btnSave.classList.add('hide');
     btnCancel.classList.add('hide');
     editBtn.classList.remove('hide');
+    aboutYou.contentEditable = 'false';
+    petName.contentEditable = 'false';
+    petName.contentEditable = 'false';
   });
   btnSave.addEventListener('click', () => {
+    aboutYou.contentEditable = 'false';
+    petName.contentEditable = 'false';
+    petName.contentEditable = 'false';
     btnSave.classList.add('hide');
     btnCancel.classList.add('hide');
     editBtn.classList.remove('hide');
