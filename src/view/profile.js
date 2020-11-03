@@ -1,6 +1,5 @@
-import { signOut } from '../controller/home-controller.js';
 import { postSection } from './post.js';
-import { infoProfile, updateProfile } from '../controller/profile-controller.js';
+import { infoProfile, updateProfile, signOut } from '../controller/profile-controller.js';
 import { currentUser } from '../firebase/auth.js';
 import { uploadPhotoProfile } from '../firebase/storage.js';
 

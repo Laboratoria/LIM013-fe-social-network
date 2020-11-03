@@ -11,10 +11,10 @@ const firebaseConfig = {
   appId: '1:81569020681:web:8ffd76dcddc2d0b5bb31d8',
   measurementId: 'G-C0GXG85CE3',
 };
-// Initialize Firebase
+// TODO Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-// onAuthStagedChange
+// TODO onAuthStagedChange
 const onAuth = () => {
   firebase.auth().onAuthStateChanged((user) => {
     let route = '';
@@ -27,6 +27,7 @@ const onAuth = () => {
         }
       }
       if (user.emailVerified === false) {
+        // console.log('usuario logeado pero email no verificado');
       }
     } else {
       route = '#/signIn';
@@ -34,7 +35,7 @@ const onAuth = () => {
     cambioVista(route);
   });
 };
-// Initialize app
+// TODO Initialize app
 const init = () => {
   onAuth();
 };

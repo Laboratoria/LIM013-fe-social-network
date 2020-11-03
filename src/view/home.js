@@ -1,6 +1,6 @@
 import { postSection } from './post.js';
 import { currentUser } from '../firebase/auth.js';
-import { signOut } from '../controller/home-controller.js';
+import { signOut } from '../controller/profile-controller.js';
 import { makingPost } from '../controller/post-controller.js';
 
 export default (notes, dataUser) => {
@@ -74,15 +74,14 @@ export default (notes, dataUser) => {
             <div class="menu-post-options">
             <label for="selectImage" class="selectImage"> 
               <input type="file" id="selectImage"  name="imagensubida" class="upload" accept="image/png, .jpeg, .jpg, image/gif">
-              <img class="cam-post" src="/imagenes/camera.png" width="5%" height="auto" alt="">       
+              <img class="cam-post" src="./imagenes/camera.png" width="5%" height="auto" alt="">       
             </label>        
             <select id="privacy" class="privacy" style='color:#04BFBF; font-family:Arial, FontAwesome;'>
               <option value="0" style='color:#04BFBF;'>&#xf57d;</option>
               <option value="1" style='color:#04BFBF;'>&#xf023;</option>
             </select>
-            <i></i>
             <button type="button" id="bttonnewpost" class="post_buttom">
-            <img class="pencil-btton-post" src="/imagenes/pencil.png" width="10%" height="auto" alt="">       
+            <img class="pencil-btton-post" src="./imagenes/pencil.png" width="10%" height="auto" alt="">       
             Post</button>
             </div>
           </article>

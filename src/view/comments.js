@@ -61,13 +61,11 @@ export const eachComment = (dataComment) => {
     saveComment.classList.add('hide');
     editComment.classList.add('hide');
     await updateComment(dataComment.id, inputComment.textContent);
-    console.log('actualizar comentarios');
     editComment.classList.remove('hide');
     deleteCommentBtn.classList.remove('hide');
   });
   deleteCommentBtn.addEventListener('click', async () => {
     await deleteComment(dataComment.id);
-    console.log('borrar comentarios de la BD');
   });
   return newComment;
 };

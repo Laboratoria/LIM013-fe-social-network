@@ -10,15 +10,12 @@ import { currentUser } from '../firebase/auth.js';
 import { eachComment } from './comments.js';
 
 export const postSection = (Object) => {
-  // console.log(Object.likes.length);
-  console.log(Object.id);
   const user = currentUser().uid;
   const note = document.createElement('div');
   note.classList.add(
     `${Object.privacy === '1' && Object.user !== user ? 'hide-post' : 'allpost'
     }`,
   );
-  // console.log(user);
   note.innerHTML = ` 
   <section class="user_post" id="user_post">
   <div class="content-post">
@@ -31,24 +28,23 @@ export const postSection = (Object) => {
       <p class="post-time">${Object.time}</p>
     </div>
     <div class="menu-privacy"> 
-    <select id = "privacy" class="privacy ${user === Object.user || 'hide'
-}" style='color: #F25F29; font-family:Arial, FontAwesome;'>
-                      <option value="0" ${Object.privacy === '1' || 'selected'
-} style='color: #F25F29; '>&#xf57d;</option>
-                      <option value="1" ${Object.privacy === '0' || 'selected'
-} style='color: #F25F29; '>&#xf023;</option>
-                </select>
-                </div>
-                <div class="${user !== Object.user ? 'hide' : 'label-menu-post'
-}" id="containerMenu-${Object.id}">
-          <nav class="nav-post hide" id="nav-${Object.id}">
-            <button class="btn-post-edit" data-id="${Object.id}">Editar</button>
-            <button class="btn-post-delete" data-id="${Object.id
-}">Eliminar</button>
-            </nav>
-        </div>
-        </div>
-    <section>
+      <select id = "privacy" class="privacy ${user === Object.user || 'hide'}" 
+      style='color: #F25F29; font-family:Arial, FontAwesome;'>
+                        <option value="0" ${Object.privacy === '1' || 'selected'}
+      style='color: #F25F29; '>&#xf57d;</option>
+                        <option value="1" ${Object.privacy === '0' || 'selected'} 
+      style='color: #F25F29; '>&#xf023;</option>
+      </select>
+    </div>
+    <div class="${user !== Object.user ? 'hide' : 'label-menu-post'}" 
+      id="containerMenu-${Object.id}">
+      <nav class="nav-post hide" id="nav-${Object.id}">
+        <button class="btn-post-edit" data-id="${Object.id}">Editar</button>
+        <button class="btn-post-delete" data-id="${Object.id}">Eliminar</button>
+      </nav>
+    </div>
+  </div>
+  <section>
         <p
           class="input-post"
           name=""
@@ -187,7 +183,6 @@ export const postSection = (Object) => {
         user,
       ).then(() => {
         note.querySelector(`#newComment-${Object.id}`).value = '';
-        console.log('comentario creado');
       });
     }
   });

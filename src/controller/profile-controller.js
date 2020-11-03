@@ -1,8 +1,16 @@
 import { getUser, updateProfileInfo } from '../firebase/firestore.js';
-import { currentUser, updateUserData } from '../firebase/auth.js';
+import { currentUser, updateUserData, logOut } from '../firebase/auth.js';
+
+// Función SignOut
+export const signOut = () => {
+  logOut()
+    .then(() => {
+      // console.log('Sesion cerrada');
+    });
+};
 // TODO infoProfile users
+
 export const infoProfile = (divElemt) => {
-  // const nameUserProfile = divElemt.querySelector('.name');
   const petName = divElemt.querySelector('.name_pet');
   const aboutYou = divElemt.querySelector('.description');
   getUser(currentUser().uid).then((doc) => {
@@ -11,6 +19,7 @@ export const infoProfile = (divElemt) => {
   });
 };
 // TODO update Profile users
+
 export const updateProfile = (divElemt) => {
   const nameUserProfile1 = divElemt.querySelector('.name');
   const photoProfile = divElemt.querySelector('.profile-img');
