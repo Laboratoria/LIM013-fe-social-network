@@ -4,7 +4,6 @@ import { currentUser } from '../firebase/auth.js';
 
 // TODO router app with view
 export const cambioVista = (route) => {
-  // const user = currentUser();
   window.location.hash = route;
   const sectionContainer = document.getElementById('container');
   sectionContainer.innerHTML = '';
@@ -22,19 +21,11 @@ export const cambioVista = (route) => {
       break;
     case '#/home':
       getUser(currentUser().uid).then((doc) => {
-        // console.log(currentUser().uid);
-        // console.log(doc);
         const dataUser = doc.data();
-        // console.log(doc.data());
         allPosts((notes) => {
-        // console.log(notes);
           const arrNotes = [];
           notes.forEach((note) => {
-            // const dataDeUsuarioActual = currentUser();
-            // console.log(note);
-            // if (note.privacy === '0' && note.userId === dataDeUsuarioActual) {
             arrNotes.push(note);
-            // }
           });
           sectionContainer.innerHTML = '';
           routeSelected = sectionContainer.appendChild(components.home(notes, dataUser));
@@ -43,11 +34,9 @@ export const cambioVista = (route) => {
       break;
     case '#/profile':
       allPosts((notes) => {
-        // console.log(notes);
         const arrNotes = [];
         notes.forEach((note) => {
           const dataDeUsuarioActual = currentUser();
-          // console.log(dataDeUsuarioActual);
           if (note.user === dataDeUsuarioActual.uid) {
             arrNotes.push(note);
           }
