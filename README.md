@@ -1,4 +1,3 @@
-
 # BIENVENID@S A PETLANDIA :cat: :orange_heart: :dog: 
 ## Team : Verónica Flores ft Elizabeth Rivera 
 ___
@@ -47,17 +46,18 @@ En base a este perfil de usuario, se aplicaron entrevistas con las siguientes pr
 compartir las fotos de sus mascotas y además hacer meetups con otros amantes de las mascotas. 
 * Como usuarios pasivos , les gustaría poder ver las fotos de las mascotas de otros usuario y quizás comentarlas.
 
-
 ## 4. El problema que resuelve el producto y para qué servirá
-
 
 A partir de los resultados de la entrevistas se identifica que Petlandia proporcionara un medio de comunicación para que diversos usuarios con mascotas puedan socializar, compartir información sobre sus mascotas y el cuidado a los mismos. Este producto garantiza una comunicación con seguridad para el usuario, quien puede compartir su información de manera segura con la comunidad de amantes de pets.
 
 ## 5. Prototipos 
 
+
 Como producto de las entrevistas , desarrollamos los prototipos de baja y alta fidelidad para vista mobile y desktop.
 
+
 ### 5.1 Vista prototipo de baja fidelidad
+
 
 ![prototipobaja](https://user-images.githubusercontent.com/63525613/97815080-97d64080-1c59-11eb-8d30-04ee8431f4a3.jpg)
 
@@ -69,6 +69,7 @@ Como producto de las entrevistas , desarrollamos los prototipos de baja y alta f
   ![mobile](https://user-images.githubusercontent.com/68167686/97643081-bf889700-1a14-11eb-9156-1aecd1a39ab2.png)
 
 #### 5.2.2 Vista Desktop
+
 
   ![desktop1](https://user-images.githubusercontent.com/68167686/97643080-bef00080-1a14-11eb-9b6d-c24d399d47f6.png)
   ![desktop2](https://user-images.githubusercontent.com/68167686/97643074-bd263d00-1a14-11eb-9fc6-897cf38b7d80.png)
@@ -175,3 +176,4 @@ y que sea [_responsive_](https://github.com/Laboratoria/curricula-js/tree/master
 * [x] Crear prototipos para obtener feedback e iterar.
 * [x] Aplicar los principios de diseño visual (contraste, alineación, jerarquía)
 * [x] Planear y ejecutar tests de usabilidad.
+
