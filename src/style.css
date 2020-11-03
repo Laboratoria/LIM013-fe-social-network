@@ -127,6 +127,7 @@ i {
 }
 .img-adopta {
 	width: 80%;
+	max-width: 80%;
 	border-radius: 50px;
 	-webkit-box-shadow: 0px 10px 13px -7px #000000,
 		5px 5px 15px 5px rgba(0, 0, 0, 0);
@@ -156,12 +157,17 @@ i {
 	margin-bottom: 0.5rem;
 	text-shadow: none;
 	color: black;
+	/* margin: 0rem 0rem; */
 	text-align: center;
 }
+
 .a-enlace {
 	text-align: center;
+	/* margin: 0.5rem; */
 	width: 28%;
 	max-width: 28%;
+	/* margin-top: 2rem; */
+	/* line-height: 3rem; */
 	height: 3rem;
 	margin: 0.5rem 0.25rem 0rem 0.25rem;
 }
@@ -169,36 +175,43 @@ i {
 	background-image: url(https://picsum.photos/480/136/?random);
 	background-size: contain;
 	background-position: center;
+	/* background-repeat: no-repeat; */
 	height: 5.5rem;
 }
+
 .content {
-	padding: 2rem 0rem 0rem 1rem;
-	display: flex;
+    padding: 0rem 0rem 0rem 1rem;
+    display: flex;
     flex-direction: column;
 }
+
 .content-post {
 	padding-left: 1rem;
 	padding-right: 1rem;
 	padding-top: 1rem;
 }
+
 .card-profile {
 	padding: 1%;
 }
+
 .content-home {
 	padding: 2%;
 }
 .profile {
 	display: flex;
-	flex-direction: row;
-	align-items: center;
-	position: relative;
-	margin-left: 1rem;
-	bottom: 2rem;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    margin-left: 1rem;
+    /* margin-bottom: 1rem; */
+    bottom: 2rem;
 }
 .profile-btn-editions {
 	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
+    flex-direction: row;
+    /* position: absolute; */
+    justify-content: space-evenly;
     margin-top: 1rem;
 }
 .comunidades-figures {
@@ -210,6 +223,7 @@ i {
 	margin: 0rem 0rem 0rem 0.7rem;
 }
 /*TODO vista sign y register*/
+
 .sign {
 	display: flex;
 	flex-direction: column;
@@ -363,6 +377,7 @@ section.logo-Redes {
 	margin: 1rem 1rem 1rem 1rem;
 	left: 60%;
 }
+
 .google {
 	width: auto;
 	padding: 1%;
@@ -372,16 +387,20 @@ section.logo-Redes {
 	opacity: 0.85;
 	display: inline-block;
 	font-size: 17px;
+	/* line-height: 9px; */
 	text-decoration: none;
+
 	font-family: 'Abel', sans-serif;
 	-webkit-box-shadow: 1px 5px 9px -2px #000000;
 	box-shadow: 1px 5px 9px -2px #000000;
 }
+
 .btn-google {
 	background-color: #dd4b39;
 	color: white;
 	text-align: center;
 }
+
 .google:hover {
 	opacity: 1;
 }
@@ -462,14 +481,19 @@ span.error-msg {
 	font-style: normal;
 	font-weight: inherit;
 }
+
 .petLogoMenu {
     width: 41%;
+    /* height: 2rem; */
+    /* margin: 1rem 1rem 0rem 1rem; */
     padding: 1rem;
 }
+
 #headerHome {
 	width: 100%;
 	background: #ffac00;
 }
+
 .btn-header {
 	color: #f0f2f5;
 	text-decoration: none;
@@ -505,6 +529,7 @@ img.img-nav {
 .name_app {
 	display: none;
 }
+
 .btn-menu,
 .btn-menu1 {
 	margin: 3%;
@@ -578,7 +603,6 @@ li.optionMobile {
 	display: flex;
 	flex-direction: column;
 	background: #ffac00;
-	height: 250px;
 	border-radius: 15px;
 	padding: 3%;
 	margin: 0rem 0rem 1rem 0rem;
@@ -626,6 +650,12 @@ li.optionMobile {
 	border: 1px solid #ffffff;
 	text-align: center;
 }
+/*.header {
+    text-transform: capitalize;
+    max-width: 190px;
+    width: 35%;
+    margin: 0 auto;
+}*/
 .header_name {
 	margin-left: 9rem;
 }
@@ -634,21 +664,6 @@ li.optionMobile {
 }
 .hide {
 	visibility: hidden;
-}
-.none{
-	display:none;
-}
-.comment-edition{
-	display: flex;
-    flex-direction: column;
-    margin-left: 35%;
-}
-.label-menu-comment{
-	border: none;
-	outline: none;
-	cursor: pointer;
-	color: black;
-	background-color: transparent;
 }
 #selectProfile {
 	margin: 0%;
@@ -660,10 +675,12 @@ li.optionMobile {
 	visibility: visible;
 	position: absolute;
 }
+
 .label-profile {
     display: flex;
     flex-direction: column;
 }
+
 .labels-profile {
     display: flex;
     flex-direction: column;
@@ -686,6 +703,7 @@ li.optionMobile {
 	text-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 10px;
 	outline: none;
 }
+
 .privacy {
 	outline: none;
 	cursor: pointer;
@@ -762,11 +780,13 @@ li.optionMobile {
 	box-shadow: 2px 8px 13px -3px rgba(0, 0, 0, 0.59);
 	outline: none;
 }
+
 .btn-post-cancel-edit-post:hover,
 .btn-post-save-edit-post:hover {
 	background-color: #983d1c;
 	color: white;
 }
+
 .label-menu-post {
 	height: 2rem;
 	background-image: url(imagenes/copywriting.png);
@@ -777,6 +797,7 @@ li.optionMobile {
 	cursor: pointer;
 	margin: 0rem 0rem 0rem 0rem;
 	position: relative;
+	/* right: -1rem; */
 	left: 1.5rem;
 }
 .nav-post {
@@ -786,37 +807,38 @@ li.optionMobile {
 	z-index: 1;
 }
 .edit_btn {
-	position: absolute;
-	width: 30%;
-	padding: 3%;
-	margin: 0rem 0rem 0rem 12rem;
-	border-radius: 15px;
-	border: none;
-	background-color: #04bfad;
-	color: white;
-	font-family: 'Abel', sans-serif;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 100%;
-	-webkit-box-shadow: 2px 8px 13px -3px rgba(0, 0, 0, 0.59);
-	box-shadow: 2px 8px 13px -3px rgba(0, 0, 0, 0.59);
-	outline: none;
-	cursor: pointer;
+	position: relative;
+    width: 30%;
+    padding: 3%;
+    margin: -2rem 0rem 1rem 12rem;
+    border-radius: 15px;
+    border: none;
+    background-color: #04bfad;
+    color: white;
+    font-family: 'Abel', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 100%;
+    -webkit-box-shadow: 2px 8px 13px -3px rgba(0, 0, 0, 0.59);
+    box-shadow: 2px 8px 13px -3px rgba(0, 0, 0, 0.59);
+    outline: none;
+    cursor: pointer;
 }
 .btn-profile {
 	padding: 0.5rem 1rem;
-	border-radius: 15px;
-	border: none;
-	background-color: #04bfad;
-	color: white;
-	font-family: 'Abel', sans-serif;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 80%;
-	-webkit-box-shadow: 2px 8px 13px -3px rgba(0, 0, 0, 0.59);
-	box-shadow: 2px 8px 13px -3px rgba(0, 0, 0, 0.59);
-	outline: none;
-	cursor: pointer;
+    /* margin: 0rem 0rem 0rem 3rem; */
+    border-radius: 15px;
+    border: none;
+    background-color: #04bfad;
+    color: white;
+    font-family: 'Abel', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 80%;
+    -webkit-box-shadow: 2px 8px 13px -3px rgba(0, 0, 0, 0.59);
+    box-shadow: 2px 8px 13px -3px rgba(0, 0, 0, 0.59);
+    outline: none;
+    cursor: pointer;
 }
 .update_container {
 	/* Rectangle 10 */
@@ -841,6 +863,7 @@ li.optionMobile {
 	margin: 0rem 1rem 0rem 1.5rem;
 	text-transform: capitalize;
 }
+
 .name-grupo-comunidades {
 	font-size: 80%;
 	text-align: left;
@@ -913,8 +936,11 @@ img.user_img {
 .menu-post {
 	display: flex;
 	flex-direction: row;
+	/* height: 3rem; */
 	align-items: center;
+	/* padding: 1rem; */
 	margin: 0rem 0rem 0.5rem 0rem;
+	justify-content: space-evenly;
 }
 .user_photo {
 	margin: 0rem 0.25rem 0rem 0.25rem;
@@ -967,7 +993,7 @@ img.user_img {
 	margin: 0rem 0.5rem 0rem 0rem;
 	text-align: center;
 	overflow: hidden;
-	background-color: #8bf4f4;
+	background-color: #81dfdf;
 }
 .btton-comment,
 .btton-desplegar-comment {
@@ -1010,6 +1036,7 @@ img.user_img {
 	color: black;
 	text-shadow: none;
 }
+
 .date-comment {
 	font-family: 'Abel', sans-serif;
 	font-style: normal;
@@ -1035,8 +1062,10 @@ img.user_img {
 .menu-comment {
 	display: flex;
 	flex-direction: row;
+	/* margin: 0 7rem; */
 	justify-content: space-evenly;
 }
+
 .status_imput {
 	width: 90%;
 	height: 4em;
@@ -1056,6 +1085,7 @@ img.user_img {
 }
 .input-post {
 	width: 100%;
+	/* height: 3em; */
 	background: #e5e5e5;
 	border-radius: 15px;
 	text-align: center;
@@ -1067,6 +1097,7 @@ img.user_img {
 .bttons-select {
 	display: flex;
 	flex-direction: row;
+	/* margin: 0 7rem; */
 	justify-content: space-evenly;
 }
 .menu-post-options {
@@ -1100,6 +1131,7 @@ img.user_img {
 	background-repeat: no-repeat;
 	background-size: contain;
 	border: none;
+	/* outline: none; */
 	cursor: pointer;
 }
 .post-new-image {
@@ -1116,6 +1148,7 @@ img.user_img {
 	width: 40%;
 	margin: 0 5.5rem;
 }
+/*TODO editar */
 .hide-btton-post {
 	display: none;
 }
@@ -1157,7 +1190,6 @@ i.fa.fa-pencil {
 	justify-content: center;
 	align-items: center;
 }
-
 /*TODO liked posts*/
 .like-btton {
 	background: transparent;
@@ -1165,6 +1197,7 @@ i.fa.fa-pencil {
 	cursor: pointer;
 	outline: none;
 }
+
 .likes-counter {
 	font-size: 34%;
 	font-family: 'Abel', sans-serif;
@@ -1173,12 +1206,14 @@ i.fa.fa-pencil {
 	text-align: center;
 	text-shadow: none;
 }
+
 section.msg-Redes p {
 	width: auto;
 	margin: 1rem 2rem;
 	font-size: 100%;
 	font-family: 'Abel', sans-serif;
 }
+
 .labels .label p {
 	margin-bottom: 5px;
 	margin-top: 0px;
@@ -1194,10 +1229,11 @@ section.msg-Redes p {
 .menuDiv {
 	background-color: #f0f2f5;
 }
+
 .comment-edition {
 	display: flex;
-	flex-direction: column;
-	margin-left: 24%;
+    flex-direction: column;
+    margin-left: 24%;
 }
 .label-menu-comment {
 	border: none;
@@ -1213,6 +1249,10 @@ section.msg-Redes p {
 .list-option {
 	list-style: none;
 }
+.none {
+	display: none;
+}
+
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 601px) and (max-width: 767px) {
 	.comment-edition {
@@ -1327,7 +1367,9 @@ section.msg-Redes p {
 	.btn-post-cancel-edit-post,
 	.btn-post-save-edit-post,
 	.btn-save-comment,
-	.btn-cancel-comment {
+	.btn-cancel-comment,
+	.btn-comment-edit,
+	.btn-comment-delete {
 		font-size: 100%;
 		margin: 1rem 0rem 1rem 0rem;
 	}
@@ -1345,11 +1387,10 @@ section.msg-Redes p {
 	}
 	.card {
 		margin: 0rem;
-		height:auto;
 	}
 	.profile {
 		margin-left: 1rem;
-		margin-bottom: 1rem;
+		margin-bottom: 0rem;
 		bottom: 0rem;
 	}
 	.profile img {
@@ -1416,17 +1457,23 @@ section.msg-Redes p {
 		width: 100%;
 	}
 	.profile-btn-editions {
+		/* display: flex; */
+		/* flex-direction: row; */
 		position: absolute;
+		/* justify-content: space-evenly; */
+		/* margin-top: 1rem; */
 		margin-top: 6rem;
 	}
 	.petLogoMenu {
 		width: 25%;
+		/* height: 2rem; */
 		margin: 0rem 1rem 0rem 0rem;
 		padding: 1rem;
 	}
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+	/* TODO view home */
 	.content {
 		padding: 3rem 0rem 0rem 1rem;
 		display: flex;
@@ -1482,6 +1529,7 @@ section.msg-Redes p {
 	}
 	.petLogoMenu {
 		width: 26%;
+		/* height: 3rem; */
 		margin: 0rem 2rem 0rem 1rem;
 	}
 	#selectProfile i {
@@ -1509,6 +1557,7 @@ section.msg-Redes p {
 	}
 	.name1 {
 		font-size: 200%;
+
 		margin: 0rem 1rem 0rem 1.5rem;
 	}
 	.privacy {
@@ -1519,6 +1568,7 @@ section.msg-Redes p {
 		width: 37%;
 		margin: 0rem 0rem 0rem 21rem;
 	}
+
 	.status_imput {
 		font-size: 2rem;
 		width: 90%;
@@ -1538,7 +1588,7 @@ section.msg-Redes p {
 	.menu-post {
 		height: auto;
 	}
-	.content-post{
+	.content-post {
 		padding: 2rem;
 	}
 	.user_post {
@@ -1593,10 +1643,8 @@ section.msg-Redes p {
 	.name_pet1 {
 		font-size: 140%;
 	}
-	.profile_section1 {
-		height: 400px
-	}
-	.btn-post-edit, .btn-post-delete {
+	.btn-post-edit,
+	.btn-post-delete {
 		width: 100%;
 		font-size: 130%;
 		top: 1rem;
@@ -1630,10 +1678,6 @@ section.msg-Redes p {
 	.card {
 		height: 9.5rem;
 	}
-	.edit_btn{
-		width: 20%;
-		font-size: 100%;
-	}
 	.profile {
 		margin-left: 1rem;
 		margin-bottom: 1rem;
@@ -1657,7 +1701,9 @@ section.msg-Redes p {
 	.description {
 		font-size: 160%;
 	}
+
 	.edit_btn {
+		/* height: 3rem; */
 		font-size: 170%;
 		position: relative;
 		margin-left: 26rem;
@@ -1670,7 +1716,8 @@ section.msg-Redes p {
 		font-size: 150%;
 		padding: 1%;
 		margin: 1%;
-		width: 20%;	}
+		width: 20%;
+	}
 	.all-posts-profile {
 		margin: none;
 	}
@@ -1678,7 +1725,7 @@ section.msg-Redes p {
 		height: auto;
 	}
 	.profile-btn-editions {
-		margin-left: 1rem;
+		margin: 1rem;
 	}
 }
 @media only screen and (min-width: 992px) and (max-width: 1023px) {
@@ -1760,18 +1807,30 @@ section.msg-Redes p {
 		font-size: 200%;
 	}
 	.edit_btn {
-		width: 20%;
-		font-size: 174%;
-		margin-left: 34rem;
+    /* width: 20%; */
+    font-size: 174%;
+    /* height: auto; */
+    /* position: relative; */
+    margin-left: 34rem;
+    padding: 1%;
 	}
+
 	.contend-profile {
 		display: flex;
 		flex-direction: row;
+		/* justify-content: center; */
 		align-items: center;
 	}
 	.body_container {
 		display: grid;
 		grid-gap: 20px;
+	}
+	.cover {
+		background-image: url(https://picsum.photos/480/136/?random);
+		background-size: contain;
+		background-position: center;
+		/* background-repeat: no-repeat; */
+		height: 7rem;
 	}
 	.cover-home {
 		background-image: url(https://picsum.photos/480/136/?random);
@@ -1816,29 +1875,6 @@ section.msg-Redes p {
 		padding: 2%;
 		font-size: 160%;
 		margin: 0rem;
-	}
-	.profile_section1{
-		height: 350px;
-	}
-	.name {
-		font-size: 1.5rem;
-		margin-top: 0rem;
-		margin-left: 20%;
-	}
-	.profile img {
-		height: 6rem;
-		bottom: 2rem;
-	}
-	.label-profile p {
-		font-size: 120%;
-	}
-	.name_pet, .description {
-		font-size: 120%;
-	}
-	.btn-profile {
-		padding: 2%;
-		margin: 0% 0% 1% 0%;
-		font-size:100%;
 	}
 	.main {
 		width: 90%;
@@ -1885,9 +1921,11 @@ section.msg-Redes p {
 		font-size: 150%;
 		width: 6rem;
 	}
-	.name-user {
-		font-size: 150%;
-		line-height: 2rem;
+	.grupo-nombre h1 {
+		font-size: 1.5rem;
+	}
+	.name_pet1 {
+		font-size: 100%;
 	}
 	img.user_img {
 		height: 3rem;
@@ -1900,11 +1938,10 @@ section.msg-Redes p {
 		height: auto;
 	}
 	.name {
-		font-size: 200%;
+		font-size: 150%;
 	}
 	.label-profile {
-		margin-top: 3rem;
-	}
+		margin: 0;	}
 	.post-time {
 		font-size: 96%;
 		line-height: 2rem;
@@ -1916,14 +1953,14 @@ section.msg-Redes p {
 		height: 3rem;
 	}
 	.label-menu-post {
-	margin: 4% 1% 0% 66%;
-    position: absolute;
-    height: 6rem;
+		height: 3rem;
 	}
 	.input-post {
-    font-size: 150%;
-	padding: 2rem;
-	margin-top: 5%;
+		padding: 2rem;
+		font-size: 128%;
+	}
+	.likes-counter {
+		font-size: 60%;
 	}
 	.input-comment {
 		width: 100%;
@@ -1931,10 +1968,13 @@ section.msg-Redes p {
 		padding: 3%;
 		font-size: 120%;
 	}
-	.btn-comment-edit, .btn-comment-delete {
-		width: 121%;
-		font-size: 150%;
-		height: 3rem;
+	.btn-post-cancel-edit-post,
+	.btn-post-save-edit-post,
+	.btn-save-comment,
+	.btn-cancel-comment,
+	.btn-comment-edit,
+	.btn-comment-delete {
+		font-size: 100%;
 	}
 	.all-posts-profile {
 		margin: 0 12rem;
@@ -1969,10 +2009,6 @@ section.msg-Redes p {
 	.description {
 		font-size: 150%;
 	}
-	.input-comment{
-		font-size: 120%;
-		height: 3rem;
-	}
 	.comment-edition {
 		display: flex;
 		flex-direction: column;
@@ -1986,7 +2022,6 @@ section.msg-Redes p {
 		font-size: 200%;
 	}
 }
-
 @media only screen and (min-width: 1024px) and (max-width: 1280px) {
 	body {
 		font-family: 'Playfair Display', serif;
@@ -1999,6 +2034,12 @@ section.msg-Redes p {
 		background-size: cover;
 		position: relative;
 	}
+
+	/*TODO  Vista: encabezado  */
+	/*header h1 {
+		font-size: 600%;
+		text-align: end;
+	}*/
 	.comment-edition {
 		display: flex;
 		flex-direction: column;
@@ -2007,6 +2048,12 @@ section.msg-Redes p {
 	li.optionMobile {
 		padding: 1rem;
 	}
+	img.logoHuella {
+		width: 30%;
+		max-width: 30%;
+		top: 6rem;
+	}
+
 	.logoHeader {
 		width: 50%;
 		max-width: 50%;
@@ -2018,6 +2065,7 @@ section.msg-Redes p {
 		max-width: 50%;
 		margin: 3% 30%;
 	}
+
 	/*TODO Vista: inicio de sesion  */
 	.sign {
 		display: flex;
@@ -2125,6 +2173,7 @@ section.msg-Redes p {
 		width: 100%;
 		max-width: 100%;
 		margin: 1rem 1rem 2rem 0rem;
+		/* padding: 0 0rem; */
 	}
 	input {
 		font-size: 150%;
@@ -2132,6 +2181,7 @@ section.msg-Redes p {
 	.header-form {
 		font-size: 180%;
 	}
+
 	.signUp-form {
 		margin: 0rem 0rem;
 	}
@@ -2153,11 +2203,18 @@ section.msg-Redes p {
 	}
 	.register-container {
 		position: relative;
+		/* top: 30rem; */
 		margin: 0rem 12rem;
+		/* left: 13rem; */
+		/* width: 54%; */
+		/* max-width: 54%; */
 	}
 	#SignInForm_email,
 	#SignInForm_password {
+		/* text-decoration: none; */
 		font-size: 150%;
+		/* font-family: 'Abel', sans-serif; */
+		/* text-transform: uppercase; */
 		line-height: 2rem;
 	}
 	#submit,
@@ -2176,7 +2233,7 @@ section.msg-Redes p {
 	}
 	.petLogoMenu {
 		width: 18%;
-		margin: 1% 2%;
+		max-width: 18%;
 		margin: 1% 2%;
 	}
 	.btn-header {
@@ -2208,8 +2265,126 @@ section.msg-Redes p {
 	.labels-profile-home {
 		height: auto;
 	}
+	.profile_section {
+		display: block;
+	}
+	.btn-profile {
+		font-size: 150%;
+		/* width: 120%; */
+		padding: 1%;
+	}
+	.main {
+		width: 90%;
+		max-width: 90%;
+		margin: 20px auto;
+		display: grid;
+		height: 100%;
+		grid-template-columns: 40% 54%;
+		column-gap: 3%;
+		padding-top: 3em;
+	}
+	.main-profile {
+		width: 75%;
+		max-width:75%;
+	}
+	#selectProfile i {
+		font-size: 200%;
+	}
+	.card {
+		height: 8rem;
+	}
+	.cover {
+		/* background-repeat: no-repeat; */
+		height: 8rem;
+	}
+	.profile_section1 {
+		height: max-content;
+	}
+	.label-profile {
+		padding-bottom: 0px;
+		padding-top: 6rem;
+		margin-left: 1rem;
+	}
+	.edit_btn {
+		font-size: 180%;
+		height: auto;
+		margin-left: 30rem;
+		padding: 1%;
+		position: relative;
+	}
+	.name {
+		font-size: 150%;
+		margin-left: 5%;
+		margin-top: 0rem;
+	}
+	.name_pet,
+	.description {
+		font-size: 150%;
+	}
+	.label-profile p {
+		font-size: 150%;
+	}
+	/* .divPost {
+		padding: 0;
+		grid-column-start: 3;
+		grid-column-end: 4;
+	} */
+	.edition-section {
+		position: absolute;
+		margin-left: 30%;
+		color: black;
+	}
+	.photo_post_img {
+		width: 40%;
+		max-width:40%;
+		margin: 0 8rem;
+	}
+	.cover-home {
+		background-image: url(https://picsum.photos/480/136/?random);
+		background-size: contain;
+		background-position: center;
+		/* background-repeat: no-repeat; */
+		height: 5.5rem;
+	}
+	.profile-img-home {
+		height: 4rem;
+		border-radius: 50%;
+	}
+	.label-profile-home p {
+		font-size: 110%;
+		text-shadow: none;
+	}
+	.description1 {
+		font-size: 130%;
+		text-shadow: none;
+		color: #a94824;
+	}
+	.label-profile-home {
+		padding: 1rem;
+	}
+	.profile_section-home {
+		display: block;
+		height: fit-content;
+	}
+	.profile-btn-editions {
+		padding: 1rem;
+	}
+	.divPost {
+		grid-column: span 2;
+	}
+	.content {
+		padding: 0rem;
+		display: flex;
+		flex-direction: column;
+	}
 	.profile img {
 		height: 7em;
+	}
+	.name-home {
+		font-size: 131%;
+		margin: 0 1rem;
+		text-shadow: none;
+		color: #a94824;
 	}
 	.name1,
 	.name-home {
@@ -2225,11 +2400,24 @@ section.msg-Redes p {
 		width: 3rem;
 		max-width:3rem;
 	}
+	.privacy {
+		font-size: 200%;
+		margin-left: 0.5rem;
+	}
+	.post_buttom {
+		margin: 0rem 0rem 0rem 12rem;
+		font-size: 150%;
+		width: 6rem;
+		max-width:6rem;
+	}
 	.grupo-nombre h1 {
 		font-size: 1.2rem;
 	}
 	.name_pet1 {
 		font-size: 100%;
+	}
+	img.user_img {
+		height: 4.5rem;
 	}
 	.name-user {
 		font-size: 123%;
@@ -2246,6 +2434,9 @@ section.msg-Redes p {
 		max-width:100%;
 		font-size: 150%;
 		height: 2.5rem;
+	}
+	.label-menu-post {
+		height: 3rem;
 	}
 	.input-post {
 		padding: 2rem;
@@ -2270,208 +2461,6 @@ section.msg-Redes p {
 		font-size: 150%;
 		height: 2.5rem;
 	}
-
-	section.msg-Redes p {
-		font-size: 200%;
-	}
-	/*---Profile Section---*/
-
-	.profile_section {
-		display: block;
-	}
-	.btn-profile {
-
-		font-size: 150%;
-		width: 120%;
-		padding: 12%;
-	}
-	.main {
-		width: 98%;
-		margin: 20px auto;
-		display: grid;
-		height: 100%;
-		grid-template-columns: 40% 54%;
-		column-gap: 3%;
-		padding-top: 3em;
-	}
-	.main-profile {
-		width: 75%;
-	}
-	#selectProfile i {
-		font-size: 200%;
-	}
-	.card {
-		height: 8rem;
-	}
-	.cover {
-		height: 8rem;
-	}
-	.edit_btn {
-		width: 20%;
-		font-size: 120%;
-		margin: 6% 0% 1% 45%;
-		padding: 0rem;
-	}
-	.profile_section1 {
-		height: max-content;
-	}
-	.label-profile {
-		padding-bottom: 0px;
-		padding-top: 6rem;
-		margin-left: 1rem;
-	}
-	.edit_btn {
-		font-size: 180%;
-		height: auto;
-		margin-left: 30rem;
-		position: relative;
-	}
-
-	.name {
-		font-size: 200%;
-		margin-left: 5%;
-		margin-top: 0rem;
-	}
-	.name_pet,
-	.description {
-		font-size: 170%;
-	}
-	.label-profile p {
-		font-size: 150%;
-	}
-
-	.edition-section {
-		position: absolute;
-		margin-left: 30%;
-		color: black;
-	}
-	.photo_post_img {
-		width: 40%;
-		margin: 0 8rem;
-	}
-	.cover-home {
-		background-image: url(https://picsum.photos/480/136/?random);
-		background-size: contain;
-		background-position: center;
-		height: 6.5rem;
-	}
-	.profile-img-home {
-		height: 4rem;
-		border-radius: 50%;
-	}
-	.label-profile-home p {
-		font-size: 110%;
-		text-shadow: none;
-	}
-	.description1 {
-		font-size: 130%;
-		text-shadow: none;
-		color: #a94824;
-	}
-	.label-profile-home {
-		padding: 1rem;
-	}
-	.profile_section-home {
-		display: block;
-		height: fit-content;
-	}
-	.profile-btn-editions {
-		padding: 1rem;
-		margin-left: 8rem;
-	}
-	.divPost {
-		grid-column: span 2;
-	}
-	.content {
-		padding: 0rem;
-		display: flex;
-		flex-direction: column;
-	}
-	.profile img {
-		height: 7em;
-	}
-	.name-home {
-		font-size: 131%;
-		margin: 0 1rem;
-		text-shadow: none;
-		color: #a94824;
-	}
-	.name1{
-		font-size: 170%;
-	}
-	.name-home {
-		font-size: 100%;
-	}
-	.name {
-		font-size: 30px;
-		margin-left: 20%;
-		margin-top:2rem;
-	}
-	.contend-profile{
-		display: flex;
-	}
-	.status_imput {
-		font-size: 144%;
-	}
-	.menu-post-options {
-		justify-content: start;
-	}
-	.label-profile p {
-		font-size: 120%;
-	}
-	.cam-post {
-		width: 3rem;
-	}
-	.post_buttom {
-		margin: 0rem 0rem 0rem 12rem;
-		font-size: 150%;
-		width: 6rem;
-	}
-	.grupo-nombre h1 {
-		font-size: 1.2rem;
-	}
-	.name_pet1 {
-		font-size: 100%;
-	}
-	img.user_img {
-		height: 4.5rem;
-	}
-	.name-user {
-		font-size: 160%;
-	}
-	img.user_img {
-		height: 6rem;
-	}
-	.btn-post-edit,
-	.btn-post-delete {
-		width: 100%;
-		font-size: 150%;
-		height: 2.5rem;
-	}
-	.label-menu-post {
-		margin: 1% 1% 0% 2%;
-		height: auto;
-		right: -1rem;
-	}
-	.input-post {
-		font-size: 160%;
-		margin-top: 6%;
-
-	}
-	.privacy {
-		font-size: 2.5rem;
-		margin: 0% 2% 3% 20%;
-	}
-	.text-name {
-		font-size: 100%;
-	}
-	.input-comment {
-		width: 100%;
-		max-width:100%;
-		height: 3rem;
-		padding: 3%;
-		font-size: 100%;
-	}
 	.all-posts-profile {
 		margin: 0rem 8rem;
 	}
@@ -2488,6 +2477,11 @@ section.msg-Redes p {
 		background-size: cover;
 		position: relative;
 	}
+	/*TODO  Vista: encabezado  */
+	/*header h1 {
+		font-size: 600%;
+		text-align: end;
+	}*/
 	li.optionMobile {
 		padding: 1rem;
 	}
@@ -2496,6 +2490,7 @@ section.msg-Redes p {
 		max-width: 30%;
 		top: 6rem;
 	}
+
 	.logoHeader {
 		width: 80%;
 		max-width: 80%;
@@ -2510,6 +2505,7 @@ section.msg-Redes p {
 	.position {
 		display: flex;
 		flex-direction: row;
+		/* align-content: center; */
 		justify-content: space-evenly;
 	}
 
@@ -2541,6 +2537,7 @@ section.msg-Redes p {
 	.signIn_Form h1 {
 		font-size: 200%;
 	}
+
 	span.input-item {
 		margin: 0.5rem auto 0rem 14.5rem;
 	}
@@ -2649,7 +2646,6 @@ section.msg-Redes p {
 	}
 	.container_msg p {
 		font-size: 150%;
-
 	}
 	#headerHome label {
 		display: none;
@@ -2718,6 +2714,7 @@ section.msg-Redes p {
 		height: 8rem;
 	}
 	.cover {
+		/* background-repeat: no-repeat; */
 		height: 8rem;
 	}
 	.profile_section1 {
@@ -2732,9 +2729,9 @@ section.msg-Redes p {
 		width: fit-content;
 		font-size: 180%;
 		height: auto;
-		height: auto;
+		/* position: relative; */
 		margin-left: 63rem;
-		padding: 1%;
+		padding: 1%;	
 	}
 	.name {
 		font-size: 200%;
@@ -2748,6 +2745,11 @@ section.msg-Redes p {
 	.label-profile p {
 		font-size: 150%;
 	}
+	/* .divPost {
+		padding: 0;
+		grid-column-start: 3;
+		grid-column-end: 4;
+	} */
 	.edition-section {
 		position: absolute;
 		margin-left: 30%;
@@ -2756,12 +2758,13 @@ section.msg-Redes p {
 	.photo_post_img {
 		width: 40%;
 		max-width: 40%;
-		margin: 0 10rem;
+		margin: 0 14rem;
 	}
 	.cover-home {
 		background-image: url(https://picsum.photos/480/136/?random);
 		background-size: contain;
 		background-position: center;
+		/* background-repeat: no-repeat; */
 		height: 5.5rem;
 	}
 	.profile-img-home {
@@ -2786,6 +2789,7 @@ section.msg-Redes p {
 	}
 	.profile-btn-editions {
 		padding: 1%;
+		/* margin-left: 8rem; */
 		top: 32rem;
 		position: absolute;
 	}
@@ -2796,7 +2800,6 @@ section.msg-Redes p {
 		padding: 0rem;
 		display: flex;
 		flex-direction: column;
-
 	}
 	.profile img {
 		height: 7em;
@@ -2813,27 +2816,6 @@ section.msg-Redes p {
 	}
 	.status_imput {
 		font-size: 144%;
-	}
-	.profile_section1{
-		height:600px;
-	}
-	.edit_btn {
-		font-size: 120%;
-		margin: 2% 0% 1% 45%;
-		padding: 0rem;
-		height: 3rem;
-	}
-	.name {
-		font-size: 30px;
-		margin-left: 20%;
-		margin-top:0rem;
-	}
-	.label-profile p {
-		font-size: 150%;
-	}
-	.name_pet, .description {
-
-		font-size: 30px;
 	}
 	.menu-post-options {
 		justify-content: start;
@@ -2879,6 +2861,10 @@ section.msg-Redes p {
 	.label-menu-post {
 		height: 3rem;
 	}
+	.input-post {
+		padding: 2rem;
+		font-size: 128%;
+	}
 	.likes-counter {
 		font-size: 60%;
 	}
@@ -2911,4 +2897,3 @@ section.msg-Redes p {
 		margin-top: 2%;
 	}
 }
-
