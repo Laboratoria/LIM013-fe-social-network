@@ -1,4 +1,4 @@
-import {components} from '../views/index.js'
+import {components} from '../views/components.js'
 
 const changeView = (route) => {
     const container = document.getElementById('container')
