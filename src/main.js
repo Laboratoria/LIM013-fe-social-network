@@ -3,12 +3,13 @@
 /* import { myFunction } from './lib/index.js';
 
 myFunction(); */
-import {changeView} from './view_controller/router.js'
-const init = () => {
-    changeView(window.location.hash);
-    window.addEventListener('hashchange', () => {
-        changeView(window.location.hash);
-    })
-}
+import { changeView } from './view_controller/router.js';
 
-window.addEventListener('load', init)
+const init = () => {
+  changeView(window.location.hash);
+  window.addEventListener('hashchange', () => {
+    changeView(window.location.hash);
+  });
+};
+
+window.addEventListener('load', init);
