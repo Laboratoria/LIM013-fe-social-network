@@ -11,5 +11,4 @@ const init = () => {
     changeView(window.location.hash);
   });
 };
-
 window.addEventListener('load', init);
