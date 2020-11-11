@@ -24,20 +24,17 @@ export default () => {
         <p class="iniciar-sesion-text">¿Aun no tienes cuenta? <a href="#/">Registrarse</a></p> 
       </span>
     </section>
-
-    
-   
     `;
-  const divElement = document.createElement('section');
-  divElement.classList.add('container-login');
+  const divElement = document.createElement("section");
+  divElement.classList.add("container-login");
   divElement.innerHTML = viewLogin;
 
-  const loginBtn = divElement.querySelector('.form');
-  loginBtn.addEventListener('submit', (e) => {
+  const loginBtn = divElement.querySelector(".form");
+  loginBtn.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const inputEmail = document.querySelector('.input-email').value;
-    const inputPassword = document.querySelector('.input-password').value;
+    const inputEmail = document.querySelector(".input-email").value;
+    const inputPassword = document.querySelector(".input-password").value;
     // eslint-disable-next-line no-console
     console.log(inputEmail, inputPassword);
 
@@ -45,18 +42,43 @@ export default () => {
     auth
       .createUserWithEmailAndPassword(inputEmail, inputPassword)
       // eslint-disable-next-line no-unused-vars
-      .then((userCredential) => { console.log('hello word1'); });
+      .then((userCredential) => {
+        console.log("hello word1");
+      });
     // limpiaando formulario
     loginBtn.reset();
   });
-  // formulario login
-  const btnGoogle = document.querySelector('btn-redes-g');
-  btnGoogle.addEventListener('click', (e) => {
-    const provider = firebase.auth.GoogleAuthProvaider();
-    auth.signWithPopup(provider)
+  // Login with Google
+  const btnGoogle = divElement.querySelector(".btn-redes-g");
+  btnGoogle.addEventListener("click", (e) => {
+    //e.preventDefault();
+    const provider = new firebase.auth.GoogleAuthProvider();
+    
+    auth
+      .signInWithPopup(provider)
       // eslint-disable-next-line no-console
-      .then(resul => console.log('logeo con google'));
+      .then( result => {
+        console.log(result);
+        console.log('Sucess!')
+        loginBtn.reset();
+      })
+      .catch(error => console.log('error',error))
   });
+
+  const btnFacebook =  divElement.querySelector(".btn-redes-f");
+  btnFacebook.addEventListener("click", e => {
+    e.preventDefault();
+    const provider = new firebase.auth.FacebookAuthProvider();
+    auth.signInWithPopup(provider)
+    .then( result => {
+      console.log(result);
+      console.log('Sucess with Facebook!');
+    })
+    .catch( error => {
+      console.log(error);
+    })
+  })
+  
 
   return divElement;
 };
