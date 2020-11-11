@@ -15,6 +15,7 @@ body {
 
     display: flex;
     height: 100%;
+    
 }
 
 ul {
@@ -43,7 +44,7 @@ ul {
 }
 
 .text-center {
-    font-family: sans-serif;
+    font-family: Raleway;
     -webkit-text-stroke: 2px #F6AD25;
     color: #fff;
     font-size: 40px;
@@ -90,7 +91,7 @@ ul {
 }
 
 .form {
-    width: 400px;
+    width: 500px;
     display: flex;
     /* justify-content: center; */
     align-items: center;
@@ -108,7 +109,7 @@ ul {
     font-size: 18px;
 } */
 .input-container {
-    width: 300px;
+    width: 350px;
 }
 
 .form input[type="text"],
@@ -132,11 +133,11 @@ label {
     display: block;
     margin-bottom: 10px;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 500;
 }
 
 .login {
-    width: 300px;
+    width: 350px;
     padding: 15px;
     margin-top: 10px;
     border-radius: 5px;
