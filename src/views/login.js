@@ -16,8 +16,15 @@ export default () => {
     <p class="text-iniciar-sesion">También puedes ingresar con tu cuenta personal</p>
     
       <form class="form">
-        <input class="input-email" type="email" placeholder="Correo" name="usuario">
-        <input class="input-password"type="password" placeholder="Contraseña" name="pass">
+        <div class="input-container">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email">
+        </div>
+        <div class="input-container">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password"
+                placeholder="Must be at least 6 characters">
+        </div>
         <button class="login" id="btn-login" value="Iniciar Sesion" type ="submit">Iniciar Sesion</button>
       </form>
       <span>
