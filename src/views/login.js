@@ -28,64 +28,69 @@ export default () => {
         <button class="login" id="btn-login" value="Iniciar Sesion" type ="submit">Iniciar Sesion</button>
       </form>
       <span>
-        <p class="iniciar-sesion-text">¿Aun no tienes cuenta? <a href="#/">Registrarse</a></p> 
+        <p class="iniciar-sesion-text">¿Aun no tienes cuenta? <a href="#/register">Registrarse</a></p> 
       </span>
     </section>
     `;
-  const divElement = document.createElement("section");
-  divElement.classList.add("container-login");
+  const divElement = document.createElement('section');
+  divElement.classList.add('container-login');
   divElement.innerHTML = viewLogin;
-
-  const loginBtn = divElement.querySelector(".form");
-  loginBtn.addEventListener("submit", (e) => {
+  const loginBtn = divElement.querySelector('.form');
+  loginBtn.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const inputEmail = document.querySelector(".input-email").value;
-    const inputPassword = document.querySelector(".input-password").value;
+    const inputEmail = document.querySelector('#email').value;
+    const inputPassword = document.querySelector('#password').value;
     // eslint-disable-next-line no-console
     console.log(inputEmail, inputPassword);
 
     // eslint-disable-next-line no-undef
     auth
-      .createUserWithEmailAndPassword(inputEmail, inputPassword)
+      .signInWithEmailAndPassword(inputEmail, inputPassword)
       // eslint-disable-next-line no-unused-vars
       .then((userCredential) => {
-        console.log("hello word1");
+        loginBtn.reset();
+        // eslint-disable-next-line no-console
+        console.log('el ususario ingreso');
       });
     // limpiaando formulario
-    loginBtn.reset();
   });
   // Login with Google
-  const btnGoogle = divElement.querySelector(".btn-redes-g");
-  btnGoogle.addEventListener("click", (e) => {
-    //e.preventDefault();
+  const btnGoogle = divElement.querySelector('.btn-redes-g');
+  btnGoogle.addEventListener('click', (e) => {
+    // e.preventDefault();
     const provider = new firebase.auth.GoogleAuthProvider();
-    
+
     auth
       .signInWithPopup(provider)
       // eslint-disable-next-line no-console
-      .then( result => {
+      .then((result) => {
+        // eslint-disable-next-line no-console
         console.log(result);
-        console.log('Sucess!')
+        // eslint-disable-next-line no-console
+        console.log('Sucess!');
         loginBtn.reset();
       })
-      .catch(error => console.log('error',error))
+      // eslint-disable-next-line no-console
+      .catch(error => console.log('error', error));
   });
 
-  const btnFacebook =  divElement.querySelector(".btn-redes-f");
-  btnFacebook.addEventListener("click", e => {
+  const btnFacebook = divElement.querySelector('.btn-redes-f');
+  btnFacebook.addEventListener('click', (e) => {
     e.preventDefault();
     const provider = new firebase.auth.FacebookAuthProvider();
     auth.signInWithPopup(provider)
-    .then( result => {
-      console.log(result);
-      console.log('Sucess with Facebook!');
-    })
-    .catch( error => {
-      console.log(error);
-    })
-  })
-  
+      .then((result) => {
+        // eslint-disable-next-line no-console
+        console.log(result);
+        // eslint-disable-next-line no-console
+        console.log('Sucess with Facebook!');
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.log(error);
+      });
+  });
 
   return divElement;
 };
