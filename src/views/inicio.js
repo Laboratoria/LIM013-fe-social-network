@@ -1,80 +1,60 @@
+import { getPosts } from '../controllers/firestore.js';
+// eslint-disable-next-line no-unused-vars
+import { auth, fstore } from '../controllers/initialFirebase.js';
+
 export default () => {
   const viewInicio = `
-    <section class="post">
-        <main class="card">
-            <div class="card-picture"></div>
-            <div class="card-content">
-                <div class="card-header">
-                    <div class="profile-pic"></div>
-                    <div class="detail">
-                        <p class="name">Miranda</p>
-                        <p class="posted">2 hours ago</p>
-                    </div>
-                </div>
-                <div class="description">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing
-                    elit. Exercitationem optio omnis animi alias voluptas
-                    unde cum obcaecati, suscipit laboriosam earum.
-                </div>
-                <div class="tags">
-                    <span>#party</span>
-                    <span>#colorful</span>
-                </div>
-                <div class="footer">
-                    <div class="like">
-                        <i class="fas fa-heart"></i>
-                        <span>12k</span>
-                    </div>
-                    <div class="comment">
-                        <i class="fas fa-comment"></i>
-                        <span>12k</span>
-                    </div>
-                    <div class="share">
-                        <i class="fas fa-share"></i>
-                        <span>12k</span>
-                    </div>
-                </div>
-            </div>
-        </main>
-        <main class="card">
-            <div class="card-picture"></div>
-            <div class="card-content">
-                <div class="card-header">
-                    <div class="profile-pic"></div>
-                    <div class="detail">
-                        <p class="name">Miranda</p>
-                        <p class="posted">2 hours ago</p>
-                    </div>
-                </div>
-                <div class="description">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing
-                    elit. Exercitationem optio omnis animi alias voluptas
-                    unde cum obcaecati, suscipit laboriosam earum.
-                </div>
-                <div class="tags">
-                    <span>#party</span>
-                    <span>#colorful</span>
-                </div>
-                <div class="footer">
-                    <div class="like">
-                        <i class="fas fa-heart"></i>
-                        <span>12k</span>
-                    </div>
-                    <div class="comment">
-                        <i class="fas fa-comment"></i>
-                        <span>12k</span>
-                    </div>
-                    <div class="share">
-                        <i class="fas fa-share"></i>
-                        <span>12k</span>
-                    </div>
-                </div>
-            </div>
-        </main>
+    <h2 class="text-center">¡Bienvenidos al Home!</h2>
+    <section class="container">
+    <div class="title">TItulo</div>
+    <div class="img">Imagen</div>
+    <div class="description">Breve descripcion</div>
     </section>
     `;
-  const divElement = document.createElement("div");
+  const divElement = document.createElement('div');
   divElement.innerHTML = viewInicio;
-
+  const postsPublic = (data) => {
+    if (data.length) {
+      // eslint-disable-next-line no-unused-vars
+      let html = '';
+      data.forEach((element) => {
+        const templade = `
+        <div class="title">${element.title}</div>
+        <div class="img">${element.img}</div>
+        <div class="description">${element.description}</div>`;
+        html += templade;
+      });
+      divElement.innerHTML = html;
+    } else {
+      divElement.innerHTML = ' <p> No hay publicaciones pendientes </p> ';
+    }
+  };
+  // const postList = divElement.querySelector('.container');
+  // eslint-disable-next-line no-undef
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      // eslint-disable-next-line no-console
+      // eslint-disable-next-line no-undef
+      // fstore.collection('posts')
+      //   .get()
+      //   .then((snapshot) => {
+      //     // eslint-disable-next-line no-console
+      //     console.log(snapshot);
+      //     postsPublic(snapshot);
+      //     snapshot.forEach((doc) => {
+      //       // doc.data() is never undefined for query doc snapshots
+      //       console.log(doc.id, ' => ', doc.data());
+      //     });
+      //   });
+      getPosts((data) => {
+        // eslint-disable-next-line no-console
+        console.log(data);
+        postsPublic(data);
+      });
+    } else {
+      // eslint-disable-next-line no-console
+      console.log('Estas fuera de sesion');
+    }
+  });
   return divElement;
 };
