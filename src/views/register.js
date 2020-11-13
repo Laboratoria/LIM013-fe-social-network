@@ -1,4 +1,6 @@
-import {auth, fstore} from '../controllers/initialFirebase.js'
+import { auth, fstore } from "../controllers/initialFirebase.js";
+import { signUp } from "../controllers/firestore.js";
+
 export default () => {
   const viewRegister = `
     <img class="image" src="./img/imageAislados.png" alt="imagen aislados" >
@@ -23,38 +25,29 @@ export default () => {
       </form>
     </main>
   `;
-  const divElement = document.createElement('section');
-  divElement.classList.add('container-login');
+  const divElement = document.createElement("section");
+  divElement.classList.add("container-login");
   divElement.innerHTML = viewRegister;
 
-  const registerBtn = divElement.querySelector('.form-login');
-  registerBtn.addEventListener('submit', (e) => {
+  const registerBtn = divElement.querySelector(".form-login");
+  registerBtn.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const inputEmail = document.querySelector('#email').value;
-    const inputPassword = document.querySelector('#password').value;
-    const repeatPassword = document.querySelector('#repeat-password').value;
+    const inputEmail = document.querySelector("#email").value;
+    const inputPassword = document.querySelector("#password").value;
+    const repeatPassword = document.querySelector("#repeat-password").value;
     // eslint-disable-next-line no-console
     console.log(inputEmail, inputPassword);
 
     // eslint-disable-next-line no-undef
-    if(inputPassword === repeatPassword){
-      auth
-      .createUserWithEmailAndPassword(inputEmail, inputPassword)
-      // eslint-disable-next-line no-unused-vars
-      .then((userCredential) => {
-      // eslint-disable-next-line no-console
-        console.log('hello word1');
-      })
-      .catch( error => {
-        //console.log('error', error.message);
-        document.querySelector('.message-error').innerHTML = `${error.message}`
-      })
-    }else{
+    if (inputPassword === repeatPassword) {
+      signUp(inputEmail, inputPassword);
+    } else {
       //console.log('La contraseña no es la misma');
-      document.querySelector('.message-error').innerHTML = 'La contraseña no es la misma'
+      document.querySelector(".message-error").innerHTML =
+        "La contraseña no es la misma";
     }
-    
+
     // limpiaando formulario
     registerBtn.reset();
   });

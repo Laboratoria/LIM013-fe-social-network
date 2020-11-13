@@ -138,3 +138,13 @@ a {
 footer {
   display: none;
 }
+
+/* @media screen and (max-width: 700px){
+  .image{
+    width: 30%;
+  }
+  .right-side{
+    width: 70%;
+  }
+}
+ */

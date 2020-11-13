@@ -1,7 +1,8 @@
-import {auth, fstore} from '../controllers/initialFirebase.js'
+import { auth } from '../controllers/initialFirebase.js';
+import { signIn } from '../controllers/firestore.js';
+
 export default () => {
   const viewLogin = `
-
     <img class="image" src="./img/imageAislados.png" alt="imagen aislados" >
     <main class="right-side">
       <form class="form-login">
@@ -26,36 +27,26 @@ export default () => {
     </main>
   `;
 
-  const divElement = document.createElement("section");
-  divElement.classList.add("container-login");
+  const divElement = document.createElement('section');
+  divElement.classList.add('container-login');
   divElement.innerHTML = viewLogin;
 
-  const loginBtn = divElement.querySelector(".form-login");
-  loginBtn.addEventListener("submit", (e) => {
+  const loginBtn = divElement.querySelector('.form-login');
+  loginBtn.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const inputEmail = document.querySelector("#email").value;
-    const inputPassword = document.querySelector("#password").value;
+    const inputEmail = document.querySelector('#email').value;
+    const inputPassword = document.querySelector('#password').value;
     // eslint-disable-next-line no-console
     console.log(inputEmail, inputPassword);
 
-    auth
-      .signInWithEmailAndPassword(inputEmail, inputPassword)
-      // eslint-disable-next-line no-unused-vars
-      .then((userCredential) => {
-        loginBtn.reset();
-        // eslint-disable-next-line no-console
-        console.log("el ususario ingreso");
-      })
-      .catch( error => {
-        //console.log('error', error.message);
-        document.querySelector('.message-error').innerHTML = `${error.message}`
-      })
+    signIn(inputEmail, inputPassword);
+    loginBtn.reset();
     // limpiaando formulario
   });
   // Login with Google
-  const btnGoogle = divElement.querySelector(".btn-redes-g");
-  btnGoogle.addEventListener("click", (e) => {
+  const btnGoogle = divElement.querySelector('.btn-redes-g');
+  btnGoogle.addEventListener('click', (e) => {
     // e.preventDefault();
     const provider = new firebase.auth.GoogleAuthProvider();
 
@@ -66,15 +57,15 @@ export default () => {
         // eslint-disable-next-line no-console
         console.log(result);
         // eslint-disable-next-line no-console
-        console.log("Sucess!");
+        console.log('Sucess!');
         loginBtn.reset();
       })
       // eslint-disable-next-line no-console
-      .catch((error) => console.log("error", error));
+      .catch((error) => console.log('error', error));
   });
 
-  const btnFacebook = divElement.querySelector(".btn-redes-f");
-  btnFacebook.addEventListener("click", (e) => {
+  const btnFacebook = divElement.querySelector('.btn-redes-f');
+  btnFacebook.addEventListener('click', (e) => {
     e.preventDefault();
     const provider = new firebase.auth.FacebookAuthProvider();
     auth
@@ -83,7 +74,7 @@ export default () => {
         // eslint-disable-next-line no-console
         console.log(result);
         // eslint-disable-next-line no-console
-        console.log("Sucess with Facebook!");
+        console.log('Sucess with Facebook!');
       })
       .catch((error) => {
         // eslint-disable-next-line no-console
