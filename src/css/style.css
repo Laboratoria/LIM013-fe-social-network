@@ -1,6 +1,6 @@
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 body {
@@ -56,7 +56,7 @@ body {
   color: #fff;
 }
 .menu-items li:hover,
-li:active {
+.menu-items li:active {
   background: rgba(0, 0, 0, 0.3);
   transition: 0.4s;
   -webkit-transition: 0.4s;

@@ -1,5 +1,4 @@
-import { auth, fstore } from "../controllers/initialFirebase.js";
-import { signUp } from "../controllers/firestore.js";
+import { signUp } from '../controllers/firestore.js';
 
 export default () => {
   const viewRegister = `
@@ -25,17 +24,17 @@ export default () => {
       </form>
     </main>
   `;
-  const divElement = document.createElement("section");
-  divElement.classList.add("container-login");
+  const divElement = document.createElement('section');
+  divElement.classList.add('container-login');
   divElement.innerHTML = viewRegister;
 
-  const registerBtn = divElement.querySelector(".form-login");
-  registerBtn.addEventListener("submit", (e) => {
+  const registerBtn = divElement.querySelector('.form-login');
+  registerBtn.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const inputEmail = document.querySelector("#email").value;
-    const inputPassword = document.querySelector("#password").value;
-    const repeatPassword = document.querySelector("#repeat-password").value;
+    const inputEmail = document.querySelector('#email').value;
+    const inputPassword = document.querySelector('#password').value;
+    const repeatPassword = document.querySelector('#repeat-password').value;
     // eslint-disable-next-line no-console
     console.log(inputEmail, inputPassword);
 
@@ -43,9 +42,8 @@ export default () => {
     if (inputPassword === repeatPassword) {
       signUp(inputEmail, inputPassword);
     } else {
-      //console.log('La contraseña no es la misma');
-      document.querySelector(".message-error").innerHTML =
-        "La contraseña no es la misma";
+      // console.log('La contraseña no es la misma');
+      document.querySelector('.message-error').innerHTML = 'La contraseña no es la misma';
     }
 
     // limpiaando formulario

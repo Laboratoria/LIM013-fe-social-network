@@ -46,7 +46,7 @@ export default () => {
   });
   // Login with Google
   const btnGoogle = divElement.querySelector('.btn-redes-g');
-  btnGoogle.addEventListener('click', (e) => {
+  btnGoogle.addEventListener('click', () => {
     // e.preventDefault();
     const provider = new firebase.auth.GoogleAuthProvider();
 
@@ -61,7 +61,7 @@ export default () => {
         loginBtn.reset();
       })
       // eslint-disable-next-line no-console
-      .catch((error) => console.log('error', error));
+      .catch(error => console.log('error', error));
   });
 
   const btnFacebook = divElement.querySelector('.btn-redes-f');
