@@ -7,6 +7,10 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.container {
+    width: 100%;
+}
+
 .punchStarter {
     font-size: 54px;
     background-color: none;
@@ -51,7 +55,14 @@ td {
 }
 
 .videoIntro {
+    width: 100%;
     margin-top: -1px;
+}
+
+.video {
+    width: 882px;
+    height: 533px;
+    background-image: url(images/index_video_img.png);
 }
 
 .join {
@@ -60,13 +71,29 @@ td {
     vertical-align: top;
     width: 30%;
     margin-right: auto;
+    position: relative;
+}
+
+.ilustration {
+    width: 100%;
+    position: absolute;
+}
+
+.anime {
+    width: 460px;
+    height: 452px;
+    background-image: url(images/index_mayoi_neko.png);
+    background-size: 99%;
+    background-repeat: no-repeat; 
+    z-index: 2;   
 }
 
 .home_form {
-    margin-top: -110px;
+    margin-top: 342px;
     height: 533px;
     background-image: url(images/index_fondo_form.png);
     background-size: 100%;
+    z-index: 1;
 }
 
 .emptySpace {
