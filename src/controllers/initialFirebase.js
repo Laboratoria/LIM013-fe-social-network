@@ -1,5 +1,4 @@
 // Your web app's Firebase configuration
-import firebase from 'firebase'
 const firebaseConfig = {
   apiKey: 'AIzaSyCPIFVX4ns0ve-9g5z1TiOTGPoqq_-N514',
   authDomain: 'red-social-8bd66.firebaseapp.com',
