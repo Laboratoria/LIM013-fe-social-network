@@ -1,4 +1,5 @@
-import {auth, fstore} from '../controllers/initialFirebase.js'
+import {auth, fstore} from '../controllers/initialFirebase.js';
+import { signIn, signInWithGoogle, signInWithFacebook } from '../controllers/firestore.js';
 export default () => {
   const viewLogin = `
     <img class="image" src="./img/imageAislados.png" alt="imagen aislados" >
@@ -35,22 +36,9 @@ export default () => {
 
     const inputEmail = document.querySelector("#email").value;
     const inputPassword = document.querySelector("#password").value;
-    // eslint-disable-next-line no-console
     console.log(inputEmail, inputPassword);
 
-    auth
-      .signInWithEmailAndPassword(inputEmail, inputPassword)
-      // eslint-disable-next-line no-unused-vars
-      .then((userCredential) => {
-        loginBtn.reset();
-        // eslint-disable-next-line no-console
-        console.log("el ususario ingreso");
-      })
-      .catch( error => {
-        //console.log('error', error.message);
-        document.querySelector('.message-error').innerHTML = `${error.message}`
-      })
-    // limpiaando formulario
+    signIn(inputEmail, inputPassword)
   });
   // Login with Google
   const btnGoogle = divElement.querySelector(".btn-redes-g");
@@ -58,36 +46,15 @@ export default () => {
     // e.preventDefault();
     const provider = new firebase.auth.GoogleAuthProvider();
 
-    auth
-      .signInWithPopup(provider)
-      // eslint-disable-next-line no-console
-      .then((result) => {
-        // eslint-disable-next-line no-console
-        console.log(result);
-        // eslint-disable-next-line no-console
-        console.log("Sucess!");
-        loginBtn.reset();
-      })
-      // eslint-disable-next-line no-console
-      .catch((error) => console.log("error", error));
+    signInWithGoogle(provider);
   });
-
+  // Login with Facebook
   const btnFacebook = divElement.querySelector(".btn-redes-f");
   btnFacebook.addEventListener("click", (e) => {
     e.preventDefault();
     const provider = new firebase.auth.FacebookAuthProvider();
-    auth
-      .signInWithPopup(provider)
-      .then((result) => {
-        // eslint-disable-next-line no-console
-        console.log(result);
-        // eslint-disable-next-line no-console
-        console.log("Sucess with Facebook!");
-      })
-      .catch((error) => {
-        // eslint-disable-next-line no-console
-        console.log(error);
-      });
+
+    signInWithFacebook(provider)
   });
 
   return divElement;

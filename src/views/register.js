@@ -35,18 +35,16 @@ export default () => {
     const inputEmail = document.querySelector('#email').value;
     const inputPassword = document.querySelector('#password').value;
     const repeatPassword = document.querySelector('#repeat-password').value;
-    // eslint-disable-next-line no-console
+    
     console.log(inputEmail, inputPassword);
 
-    // eslint-disable-next-line no-undef
     if (inputPassword === repeatPassword) {
       signUp(inputEmail, inputPassword);
     } else {
       // console.log('La contraseña no es la misma');
       document.querySelector('.message-error').innerHTML = 'La contraseña no es la misma';
     }
-
-    // limpiaando formulario
+    
     registerBtn.reset();
   });
   return divElement;

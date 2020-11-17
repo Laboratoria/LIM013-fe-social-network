@@ -1,22 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flexbox</title>
-    <link rel="stylesheet" href="./css/home.css">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;1,400;1,600&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/9654f30172.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <header class="main-header">
+import { getPosts } from "../controllers/firestore.js";
+import { auth, fstore } from "../controllers/initialFirebase.js";
+
+export default () => {
+  const viewInicio = `
+  <header class="main-header">
         <section class="logo">Aislados</section>
         <nav class="main-nav">
             <ul class="nav-container">
-                <li class="nav-container_item"><a href="#" class="nav-container_link"><i class="fas fa-home"></i>&nbsp;Inicio</a></li>
-                <li class="nav-container_item"><a href="#" class="nav-container_link"><i class="fas fa-users"></i>&nbsp;Contactos</a></li>
-                <li class="nav-container_item"><a href="#" class="nav-container_link"><i class="fas fa-grin-alt"></i>&nbsp;Perfil</a></li>
-                <li class="nav-container_item"><a href="#" class="nav-container_link"><i class="fas fa-home"></i>&nbsp;Cerrar Sesión</a></li>
+                <li class="nav-container_item"><a href="#/home" class="nav-container_link"><i class="fas fa-home"></i>&nbsp;Inicio</a></li>
+                <li class="nav-container_item"><a href="#/contactos" class="nav-container_link"><i class="fas fa-users"></i>&nbsp;Contactos</a></li>
+                <li class="nav-container_item"><a href="#/perfil" class="nav-container_link"><i class="fas fa-grin-alt"></i>&nbsp;Perfil</a></li>
+                <li class="nav-container_item"><a href="#/" class="nav-container_link"><i class="fas fa-home"></i>&nbsp;Cerrar Sesión</a></li>
             </ul>
         </nav>
         <section class="photo-perfil"><img src="./img/ejemplo.jpg" alt=""></section>
@@ -91,6 +85,46 @@
         </aside>
     </main>
     <footer class="main-footer">&copy; Por Giovand & Diana</footer>
-    
-</body>
-</html>
+    `;
+  const divElement = document.createElement("div");
+  divElement.innerHTML = viewInicio;
+  /*   const postsPublic = (data) => {
+    if (data.length) {
+     
+      let html = '';
+      data.forEach((element) => {
+        const templade = `
+        <div class="title">${element.title}</div>
+        <div class="img">${element.img}</div>
+        <div class="description">${element.description}</div>`;
+        html += templade;
+      });
+      divElement.innerHTML = html;
+    } else {
+      divElement.innerHTML = ' <p> No hay publicaciones pendientes </p> ';
+    }
+  };
+
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      // fstore.collection('posts')
+      //   .get()
+      //   .then((snapshot) => {
+      //     // eslint-disable-next-line no-console
+      //     console.log(snapshot);
+      //     postsPublic(snapshot);
+      //     snapshot.forEach((doc) => {
+      //       // doc.data() is never undefined for query doc snapshots
+      //       console.log(doc.id, ' => ', doc.data());
+      //     });
+      //   });
+      getPosts((data) => {
+        console.log(data);
+        postsPublic(data);
+      });
+    } else {
+      console.log('Estas fuera de sesion');
+    }
+  }); */
+  return divElement;
+};
