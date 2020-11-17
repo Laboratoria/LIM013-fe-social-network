@@ -1,0 +1,149 @@
+/**********homeView Desktop***********************************************************/
+
+body {
+    background-color:white;
+    margin: auto;
+    padding: 20px, 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.punchStarter {
+    font-size: 54px;
+    background-color: none;
+    width: 30%;
+    display: inline-block;
+}
+
+.punchText {
+    margin-left: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    background-color: none;
+    width: 67%;
+    display: inline-block;
+}
+
+table {
+    background-color: none;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+th {
+    line-height: 0.8;
+    font-size: 14px;
+}
+
+td {
+    width: 35%;
+    background-color: none;
+    line-height: 1.2;
+    font-size: 14px;
+    padding: 9px;
+}
+
+.intro {
+    background-color: none;
+    width: 55.4%;
+    display: inline-block;
+    margin-left: 110px;
+}
+
+.videoIntro {
+    margin-top: -1px;
+}
+
+.join {
+    background-color: none;
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    margin-right: auto;
+}
+
+.home_form {
+    margin-top: -110px;
+    height: 533px;
+    background-image: url(images/index_fondo_form.png);
+    background-size: 100%;
+}
+
+.emptySpace {
+    height: 100px;
+}
+
+.formOptions {
+    background-color: none;
+    width: 350px;
+    height: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+.logIn {
+    background-color: none;
+    border-top: black solid 2px;
+    border-right: black solid 2px;
+    width: 175px;
+    text-align: left;
+    font-size: 18px;
+}
+
+.signIn {
+    background-color: none;
+    border-bottom: black solid 2px;
+    width: 175px;
+    text-align: right;
+    font-size: 18px;
+}
+
+.initForm {
+    width: 350px;
+    height: 310px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.input {
+    width: 350px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.logInButton{
+    width: 355px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+}
+
+.initForm p {
+    text-align: center;
+}
+
+.logInWithFacebookButton {
+    width: 355px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+}
+
+.logo {
+    text-align: center;
+    color: white;
+    font-size: 24px;
+}
+
+.footer {
+    padding: 10px;
+    text-align: center;
+}
+
