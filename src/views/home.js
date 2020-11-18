@@ -1,5 +1,3 @@
-import { getPosts } from '../controllers/firestore.js'; 
-/* import { auth, fstore } from '../controllers/initialFirebase.js'; */
 
 export default () => {
   const viewInicio = `
@@ -55,42 +53,85 @@ export default () => {
     </main>
     <footer class="main-footer">&copy; Por Giovand & Diana</footer>
     `;
-  const divElement = document.createElement('section');
-  divElement.classList.add('container')
+  const divElement = document.createElement("section");
+  divElement.classList.add("container");
   divElement.innerHTML = viewInicio;
 
   const db = firebase.firestore();
 
-  const postForm = divElement.querySelector('.upload-post');
-  const cards = divElement.querySelector('.card-container'); 
+  const postForm = divElement.querySelector(".upload-post");
+  const cardsContainer = divElement.querySelector(".card-container");
 
-  const savePost = (title, description) => db.collection('posts').doc().set({
-    title,
-    description,
-  });
+  const savePost = (title, description) =>
+    db.collection("posts").doc().set({
+      id,
+      title,
+      description,
+    });
 
-  const deletePost = (id) => db.collection('tasks').doc(id).delete();
-  /* const getPosts = () => db.collection('posts').get(); */ 
+  const getPosts = () => db.collection("posts").get();
+  const onGetPosts = (callback) => db.collection("posts").onSnapshot(callback);
+  const deletePost = (id) => db.collection('posts').doc(id).delete();
 
-  window.addEventListener('load', async (e) => {
-    const posts = await getPosts();
-    console.log('posts', posts);
-  }); 
+  if (document.readyState !== "loading") {
+    onGetPosts((querySnapshot) => {
+      cardsContainer.innerHTML = "";
+      querySnapshot.forEach((doc) => {
+        /* console.log(doc.data()); */
+        const post = doc.data();
+        post.id = doc.id;
+        cardsContainer.innerHTML += `
+        <section class="card">
+          <div class="card-title"><img src="./img/ejemplo.jpg" alt="">${post.title}</div>
+          <div class="card-image"><img src="./img/ejemplo.jpg" alt=""></div>
+          <div class="card-description">${post.description}</div>
+          <div class="card-options">
+              <div class="like">
+                  <i class="fas fa-heart"></i>
+                  <span>12k</span>
+              </div>
+              <div class="comment">
+                  <i class="fas fa-comment"></i>
+                  <span>12k</span>
+              </div>
+              <div class="share">
+                  <i class="fas fa-share"></i>
+              </div>
+              <div class="btn-options">
+                <button class="btn-edit" data-id=${post.id}>Editar</button>
+                <button class="btn-delete" data-id=${post.id}>Eliminar</button>
+              </div>
+          </div>
+        </section>`;
 
-  postForm.addEventListener('submit', async (e) => {
+        const btnsDelete = document.querySelectorAll(".btn-delete");
+        btnsDelete.forEach((btn) => {
+          btn.addEventListener('click', async (e) => {
+            await deletePost(e.target.dataset.id)
+            /* console.log(e.target); */
+          });
+        });
+      });
+    });
+  } else {
+    document.addEventListener("DOMContentLoaded", (e) => {
+      console.log("No funciona!!");
+    });
+  }
+  postForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const title = postForm['post-title'];
+    const title = postForm["post-title"];
     //const title = postForm.querySelector('#post-title')
-    const description = postForm['post-description'];
+    const description = postForm["post-description"];
 
     await savePost(title.value, description.value);
-
+    await getPosts();
     postForm.reset();
     title.focus();
     // console.log(title, description);
   });
- /*  const postsPublic = (data) => {
+  /*  const postsPublic = (data) => {
     if (data.length) {
      
       let html = '';
@@ -128,13 +169,6 @@ export default () => {
       cards.innerHTML = ' <p> No hay publicaciones pendientes </p> ';
     }
   };
-
-  const btnsDlete = document.querySelectorAll('#btn-delete');
-      btnsDlete.forEach( btn => {
-        btn.addEventListener('click', e => {
-          console.log(e.target);
-        })
-      }) 
 
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
