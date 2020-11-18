@@ -55,7 +55,8 @@ export default () => {
     </main>
     <footer class="main-footer">&copy; Por Giovand & Diana</footer>
     `;
-  const divElement = document.createElement('div');
+  const divElement = document.createElement('section');
+  divElement.classList.add('container')
   divElement.innerHTML = viewInicio;
 
   const db = firebase.firestore();
@@ -71,10 +72,10 @@ export default () => {
   const deletePost = (id) => db.collection('tasks').doc(id).delete();
   /* const getPosts = () => db.collection('posts').get(); */ 
 
-  /* window.addEventListener('DOMContentLoaded', async (e) => {
+  window.addEventListener('load', async (e) => {
     const posts = await getPosts();
     console.log('posts', posts);
-  }); */
+  }); 
 
   postForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -89,7 +90,7 @@ export default () => {
     title.focus();
     // console.log(title, description);
   });
-  const postsPublic = (data) => {
+ /*  const postsPublic = (data) => {
     if (data.length) {
      
       let html = '';
@@ -121,8 +122,6 @@ export default () => {
         </section>`;
         divCard.innerHTML = templade; 
         html += templade;
-
-       
       });
       cards.innerHTML = html;
     } else {
@@ -135,7 +134,7 @@ export default () => {
         btn.addEventListener('click', e => {
           console.log(e.target);
         })
-      })
+      }) 
 
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
@@ -158,6 +157,6 @@ export default () => {
     } else {
       console.log('Estas fuera de sesion');
     }
-  });
+  });*/
   return divElement;
 };
