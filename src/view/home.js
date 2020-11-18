@@ -44,8 +44,9 @@ export const mainView = () => {
           </table>
         </section>
         <section class= "videoIntro">
-          <section class= "video">
-          </section>
+          <iframe  class="video" width="882" height="495" src="https://www.youtube.com/embed/hVwKdMpXrx0" 
+          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+          gyroscope; picture-in-picture" allowfullscreen></iframe>          
         </section>
       </section>
     </main>

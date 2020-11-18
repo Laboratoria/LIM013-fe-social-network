@@ -61,8 +61,7 @@ td {
 
 .video {
     width: 882px;
-    height: 533px;
-    background-image: url(images/index_video_img.png);
+    height: 495px;
 }
 
 .join {
@@ -90,9 +89,9 @@ td {
 
 .home_form {
     margin-top: 342px;
-    height: 533px;
+    height: 495px;
     background-image: url(images/index_fondo_form.png);
-    background-size: 100%;
+    background-size: 92%;
     z-index: 1;
 }
 
@@ -128,7 +127,7 @@ td {
 
 .initForm {
     width: 350px;
-    height: 310px;
+    height: 260px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -170,7 +169,7 @@ td {
 }
 
 .footer {
-    padding: 10px;
+    padding: 20px;
     text-align: center;
 }
 
@@ -200,13 +199,12 @@ td {
     }
     
     .video {
-        width: 330px;
-        height: 200px;
-        background-size: 100%;
-        background-repeat: no-repeat;
+        width: 325px;
+        height: 184px;
         margin-left: auto;
         margin-right: auto;
         background-color: none;
+        padding-left: 18px;
     }
 
     .punchStats {
@@ -225,8 +223,8 @@ td {
         line-height: 60%;
         background-color: none;
         display: inline-block;
-        margin-top: 0px;
-        margin-left: 15px;
+        margin-top: -10px;
+        margin-left: 18px;
     }
     
     .punchText {
@@ -237,7 +235,8 @@ td {
         text-align: top;       
         background-color: none;
         display: inline-block;
-        margin-left: 15px;
+        margin-left: 18px;
+        margin-top: -10px;
     }
 
     .join {
@@ -250,20 +249,20 @@ td {
     }
     
     .ilustration {
-        width: 60%;
+        width: 55%;
         position: absolute;
         background-color: none;
     }
     
     .anime {
-        width: 235px;
-        height: 235px;
+        width: 215px;
+        height: 180px;
         background-image: url(images/index_mayoi_neko.png);
         background-size: 99%;
         background-repeat: no-repeat; 
         z-index: 2;
-        margin-left: 132px; 
-        margin-top: -175px; 
+        margin-left: 145px; 
+        margin-top: -160px; 
     }
     
     .home_form {
@@ -271,7 +270,7 @@ td {
         margin-left: auto;
         margin-right: auto;
         height: 380px;
-        width: 90%;
+        width: 325px;
         background-image: url(images/index_fondo_form.png);
         background-size: 100%;
         z-index: 1;
@@ -279,6 +278,7 @@ td {
   
     .emptySpace {
         height: 50px;
+        background-color: none;
     }
     
     .formOptions {
