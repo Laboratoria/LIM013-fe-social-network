@@ -251,16 +251,16 @@ td {
     .ilustration {
         width: 55%;
         position: absolute;
-        background-color: none;
+        background-color:none;
     }
     
     .anime {
         width: 215px;
-        height: 180px;
+        height: 200px;
         background-image: url(images/index_mayoi_neko.png);
         background-size: 99%;
         background-repeat: no-repeat; 
-        z-index: 2;
+        z-index: 3;
         margin-left: 145px; 
         margin-top: -160px; 
     }
@@ -279,6 +279,7 @@ td {
     .emptySpace {
         height: 50px;
         background-color: none;
+        z-index: 2;
     }
     
     .formOptions {
