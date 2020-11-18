@@ -17,8 +17,8 @@
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   font-family: "Raleway", Arial, Helvetica, sans-serif;
+  flex-wrap: wrap;
 }
 /*------------HOME------------------------*/
 .main-header {
@@ -72,10 +72,21 @@ body {
 .upload-post {
   background-color: var(--color-white);
   width: 90%;
-  height: 100px;
+  /* height: 150px; */
   margin: 20px 0;
   padding: 20px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.input-post {
+  color: var(--color-bgdark);
+  margin: 0 0 12px 0;
+  padding: 10px;
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+}
+.input-post:active {
+  border: 1px solid var(--color-yellow);
 }
 .upload-post p {
   color: var(--color-bgdark);
@@ -84,6 +95,13 @@ body {
   display: flex;
   justify-content: flex-end;
   color: var(--color-bgdark);
+  height: 20px;
+}
+.card-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .card {
   display: flex;
@@ -119,6 +137,9 @@ body {
 .card-image img {
   width: 100%;
 }
+.card-description{
+  background-color: #4c553d;
+}
 .card-options {
   flex-grow: 1;
   display: flex;
@@ -130,6 +151,9 @@ body {
 .comment,
 .share {
   padding: 0 10px;
+}
+.btn-options{
+  align-self: flex-end;
 }
 .main-container_aside {
   display: none;
@@ -318,6 +342,10 @@ label {
   .btn-menu {
     display: none;
   }
+  .input-post{
+    margin: 0 0 10px 0;
+    font-size: 16px;
+  }
   .card {
     height: 400px;
   }
@@ -347,7 +375,6 @@ label {
     display: flex;
     justify-content: flex-start;
     flex-basis: 40%;
-    display: flex;
     flex-direction: column;
   }
   .aside-post_section {

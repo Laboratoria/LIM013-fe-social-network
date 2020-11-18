@@ -26,35 +26,21 @@
     </header>
     <main class="main-container">
         <section class="main-container_section">
-            <section class="upload-post">
-                <p>¿Qué aprendiste hoy?</p>
-                <p>¿Alguna reflexión?</p>
+            <form class="upload-post">
+                    <input type="text" id="post-title" class="input-post" placeholder="¿Qué aprendiste hoy?" autofocus>
+                    <textarea name="" id="post-description" rows="3" class="input-post" placeholder="¿Alguna reflexión?" autofocus></textarea>
+                
+               <!--  <p>¿Qué aprendiste hoy?</p>
+                <p>¿Alguna reflexión?</p> -->
                 <div class="upload-options">
                     <div class="comment">
-                        <i class="fas fa-comment"></i>
+                        <button id="btn-comment"><i class="fas fa-comment"></i>Comentar</button>
                     </div>
                     <div class="image">
                         <i class="fas fa-image"></i>
                     </div>
                 </div>
-            </section>
-            <section class="card">
-                <div class="card-title"><img src="./img/ejemplo.jpg" alt="">Diana123</div>
-                <div class="card-image"><img src="./img/ejemplo.jpg" alt=""></div>
-                <div class="card-options">
-                    <div class="like">
-                        <i class="fas fa-heart"></i>
-                        <span>12k</span>
-                    </div>
-                    <div class="comment">
-                        <i class="fas fa-comment"></i>
-                        <span>12k</span>
-                    </div>
-                    <div class="share">
-                        <i class="fas fa-share"></i>
-                    </div>
-                </div>
-            </section>
+            </form>
             <section class="card">
                 <div class="card-title"><img src="./img/ejemplo.jpg" alt="">Diana123</div>
                 <div class="card-image"><img src="./img/ejemplo.jpg" alt=""></div>

@@ -74,6 +74,17 @@ body {
   margin: 20px 0;
   padding: 20px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.input-post {
+  color: var(--color-bgdark);
+  margin: 0 0 12px 0;
+  padding: 10px;
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+}
+.input-post:active {
+  border: 1px solid var(--color-yellow);
 }
 .upload-post p {
   color: var(--color-bgdark);
@@ -187,6 +198,10 @@ body {
   .btn-menu {
     display: none;
   }
+  .input-post{
+    margin: 0 0 10px 0;
+    font-size: 16px;
+  }
   .card {
     height: 400px;
   }
@@ -213,7 +228,6 @@ body {
     display: flex;
     justify-content: flex-start;
     flex-basis: 40%;
-    display: flex;
     flex-direction: column;
   }
   .aside-post_section {

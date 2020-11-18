@@ -1,5 +1,5 @@
-import { getPosts } from "../controllers/firestore.js";
-import { auth, fstore } from "../controllers/initialFirebase.js";
+import { getPosts } from '../controllers/firestore.js'; 
+/* import { auth, fstore } from '../controllers/initialFirebase.js'; */
 
 export default () => {
   const viewInicio = `
@@ -20,51 +20,20 @@ export default () => {
     </header>
     <main class="main-container">
         <section class="main-container_section">
-            <section class="upload-post">
-                <p>¿Qué aprendiste hoy?</p>
-                <p>¿Alguna reflexión?</p>
+            <form class="upload-post">
+                <input type="text" id="post-title" class="input-post" placeholder="¿Qué aprendiste hoy?" autofocus>
+                <textarea name="" id="post-description" rows="3" class="input-post" placeholder="¿Alguna reflexión?" autofocus></textarea>
                 <div class="upload-options">
                     <div class="comment">
-                        <i class="fas fa-comment"></i>
+                        <button id='btn-save'><i class="fas fa-save"></i>Guardar</button>
                     </div>
-                    <div class="image">
-                        <i class="fas fa-image"></i>
-                    </div>
-                </div>
-            </section>
-            <section class="card">
-                <div class="card-title"><img src="./img/ejemplo.jpg" alt="">Diana123</div>
-                <div class="card-image"><img src="./img/ejemplo.jpg" alt=""></div>
-                <div class="card-options">
-                    <div class="like">
-                        <i class="fas fa-heart"></i>
-                        <span>12k</span>
-                    </div>
-                    <div class="comment">
-                        <i class="fas fa-comment"></i>
-                        <span>12k</span>
-                    </div>
-                    <div class="share">
-                        <i class="fas fa-share"></i>
+                    <div class="icon-image">
+                      <input type="file"></input>
                     </div>
                 </div>
-            </section>
-            <section class="card">
-                <div class="card-title"><img src="./img/ejemplo.jpg" alt="">Diana123</div>
-                <div class="card-image"><img src="./img/ejemplo.jpg" alt=""></div>
-                <div class="card-options">
-                    <div class="like">
-                        <i class="fas fa-heart"></i>
-                        <span>12k</span>
-                    </div>
-                    <div class="comment">
-                        <i class="fas fa-comment"></i>
-                        <span>12k</span>
-                    </div>
-                    <div class="share">
-                        <i class="fas fa-share"></i>
-                    </div>
-                </div>
+            </form>
+            <section class="card-container">
+               
             </section>
         </section>
         <aside class="main-container_aside">
@@ -86,26 +55,89 @@ export default () => {
     </main>
     <footer class="main-footer">&copy; Por Giovand & Diana</footer>
     `;
-  const divElement = document.createElement("div");
+  const divElement = document.createElement('div');
   divElement.innerHTML = viewInicio;
-  /*   const postsPublic = (data) => {
+
+  const db = firebase.firestore();
+
+  const postForm = divElement.querySelector('.upload-post');
+  const cards = divElement.querySelector('.card-container'); 
+
+  const savePost = (title, description) => db.collection('posts').doc().set({
+    title,
+    description,
+  });
+
+  const deletePost = (id) => db.collection('tasks').doc(id).delete();
+  /* const getPosts = () => db.collection('posts').get(); */ 
+
+  /* window.addEventListener('DOMContentLoaded', async (e) => {
+    const posts = await getPosts();
+    console.log('posts', posts);
+  }); */
+
+  postForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const title = postForm['post-title'];
+    //const title = postForm.querySelector('#post-title')
+    const description = postForm['post-description'];
+
+    await savePost(title.value, description.value);
+
+    postForm.reset();
+    title.focus();
+    // console.log(title, description);
+  });
+  const postsPublic = (data) => {
     if (data.length) {
      
       let html = '';
       data.forEach((element) => {
+        const divCard = document.createElement('section');
+        divCard.classList.add('card') 
         const templade = `
-        <div class="title">${element.title}</div>
-        <div class="img">${element.img}</div>
-        <div class="description">${element.description}</div>`;
+        <section class="card">
+          <div class="card-title"><img src="./img/ejemplo.jpg" alt="">${element.title}</div>
+          <div class="card-image"><img src="./img/ejemplo.jpg" alt=""></div>
+          <div class="card-description">${element.description}</div>
+          <div class="card-options">
+              <div class="like">
+                  <i class="fas fa-heart"></i>
+                  <span>12k</span>
+              </div>
+              <div class="comment">
+                  <i class="fas fa-comment"></i>
+                  <span>12k</span>
+              </div>
+              <div class="share">
+                  <i class="fas fa-share"></i>
+              </div>
+              <div class="btn-options">
+                <button id="btn-edit">Editar</button>
+                <button id="btn-delete">Eliminar</button>
+              </div>
+          </div>
+        </section>`;
+        divCard.innerHTML = templade; 
         html += templade;
+
+       
       });
-      divElement.innerHTML = html;
+      cards.innerHTML = html;
     } else {
-      divElement.innerHTML = ' <p> No hay publicaciones pendientes </p> ';
+      cards.innerHTML = ' <p> No hay publicaciones pendientes </p> ';
     }
   };
 
-  auth.onAuthStateChanged((user) => {
+  const btnsDlete = document.querySelectorAll('#btn-delete');
+      btnsDlete.forEach( btn => {
+        btn.addEventListener('click', e => {
+          console.log(e.target);
+        })
+      })
+
+  firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       // fstore.collection('posts')
       //   .get()
@@ -122,9 +154,10 @@ export default () => {
         console.log(data);
         postsPublic(data);
       });
+      
     } else {
       console.log('Estas fuera de sesion');
     }
-  }); */
+  });
   return divElement;
 };

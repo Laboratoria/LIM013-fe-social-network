@@ -35,16 +35,24 @@ export default () => {
     const inputEmail = document.querySelector('#email').value;
     const inputPassword = document.querySelector('#password').value;
     const repeatPassword = document.querySelector('#repeat-password').value;
-    
+
     console.log(inputEmail, inputPassword);
 
     if (inputPassword === repeatPassword) {
-      signUp(inputEmail, inputPassword);
+      signUp(inputEmail, inputPassword)
+        .then(() => {
+          window.location.hash = '#/home';
+        })
+        .catch((error) => {
+          document.querySelector(
+            '.message-error',
+          ).innerHTML = `${error.message}`;
+        });
     } else {
       // console.log('La contraseña no es la misma');
       document.querySelector('.message-error').innerHTML = 'La contraseña no es la misma';
     }
-    
+
     registerBtn.reset();
   });
   return divElement;

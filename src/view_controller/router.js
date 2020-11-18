@@ -14,7 +14,14 @@ const changeView = (route) => {
       break;
   }
   // eslint-disable-next-line no-console
-  console.log(route);
+  /* console.log(route); */
 };
 
-export { changeView };
+const initRoute = () => {
+  changeView(window.location.hash);
+  window.addEventListener('hashchange', () => {
+    changeView(window.location.hash);
+  });
+};
+
+export { changeView, initRoute };

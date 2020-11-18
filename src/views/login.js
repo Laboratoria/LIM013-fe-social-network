@@ -1,5 +1,10 @@
-import {auth, fstore} from '../controllers/initialFirebase.js';
-import { signIn, signInWithGoogle, signInWithFacebook } from '../controllers/firestore.js';
+// import { auth, fstore } from '../controllers/initialFirebase.js';
+import {
+  signIn,
+  signInWithGoogle,
+  signInWithFacebook,
+} from '../controllers/firestore.js';
+
 export default () => {
   const viewLogin = `
     <img class="image" src="./img/imageAislados.png" alt="imagen aislados" >
@@ -26,35 +31,49 @@ export default () => {
     </main>
   `;
 
-  const divElement = document.createElement("section");
-  divElement.classList.add("container-login");
+  const divElement = document.createElement('section');
+  divElement.classList.add('container-login');
   divElement.innerHTML = viewLogin;
 
-  const loginBtn = divElement.querySelector(".form-login");
-  loginBtn.addEventListener("submit", (e) => {
+  const loginBtn = divElement.querySelector('.form-login');
+  loginBtn.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const inputEmail = document.querySelector("#email").value;
-    const inputPassword = document.querySelector("#password").value;
+    const inputEmail = document.querySelector('#email').value;
+    const inputPassword = document.querySelector('#password').value;
     console.log(inputEmail, inputPassword);
 
     signIn(inputEmail, inputPassword)
+      .then(() => {
+        window.location.hash = '#/home';
+      })
+      .catch((error) => {
+        document.querySelector('.message-error').innerHTML = `${error.message}`;
+      });
   });
   // Login with Google
-  const btnGoogle = divElement.querySelector(".btn-redes-g");
-  btnGoogle.addEventListener("click", (e) => {
+  const btnGoogle = divElement.querySelector('.btn-redes-g');
+  btnGoogle.addEventListener('click', () => {
     // e.preventDefault();
     const provider = new firebase.auth.GoogleAuthProvider();
 
-    signInWithGoogle(provider);
+    signInWithGoogle(provider)
+      .then(() => {
+        window.location.hash = '#/home';
+      })
+      .catch(error => console.log('error', error));
   });
   // Login with Facebook
-  const btnFacebook = divElement.querySelector(".btn-redes-f");
-  btnFacebook.addEventListener("click", (e) => {
+  const btnFacebook = divElement.querySelector('.btn-redes-f');
+  btnFacebook.addEventListener('click', (e) => {
     e.preventDefault();
     const provider = new firebase.auth.FacebookAuthProvider();
 
     signInWithFacebook(provider)
+      .then(() => {
+        window.location.hash = '#/home';
+      })
+      .catch(error => console.log('error', error));
   });
 
   return divElement;
