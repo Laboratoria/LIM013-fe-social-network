@@ -1,6 +1,9 @@
-// aqui exportaras las funciones que necesites
+/* eslint-disable no-console */
+// --- Creando controlador para asociar el cambio de la ruta con las vistas
+// --- Fucion para asociar vistas , que recibe la ruta que vamos a traer de
 
-export const myFunction = () => {
-  // aqui tu codigo
-  console.log('Hola mundo!');
+const changeView = (route) => {
+  console.log(route);
 };
+
+export { changeView };
