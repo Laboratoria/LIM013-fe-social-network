@@ -10,8 +10,8 @@ import { mainView } from './view/home.js';
 // --- Insertando template en la cajita container
 const container = document.getElementById('container');
 // --- Para insertar nodo
-container.appendChild(mainView());
 
+container.appendChild(mainView());
 
 //-------------------------------------------------------------------------------------
 /*
