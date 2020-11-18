@@ -1,10 +1,20 @@
-/* eslint-disable function-paren-newline */
+/* eslint-disable max-len */
+/* eslint-disable no-console */
+// Este es el punto de entrada de tu aplicacion
 // --- importando controlador
-import { changeView } from './view-controler/route.js';
+import { mainView } from './view/home.js';
 // --------------------------------------------------
 // --- Este main.js se va a ejcutar cuando se inicialice o
 // --- cuando se haga un load o una recarga de nuestra pagina
+//-------------------------------------------------------------------------------------
+// --- Insertando template en la cajita container
+const container = document.getElementById('container');
 
+container.appendChild(mainView());
+
+
+//-------------------------------------------------------------------------------------
+/*
 // --- Funcion para cambiar la url usando el evento "hashchange"
 const init = () => {
   // --- 'location' es una propiedad del objeto windowns que nos dice si la pagina ha cambiado
@@ -17,3 +27,4 @@ const init = () => {
 // --- cada vez que escuches que haya una recarga ejecutame esta funcion
 
 window.addEventListener('load', init);
+*/

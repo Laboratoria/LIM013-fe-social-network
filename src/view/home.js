@@ -1,83 +1,82 @@
-// -- creando template
-
-// --- Creando elemento
-// const container = document.getElementById("container");
-// const formElem = document.createElement("form");
-// formElem.innerHTML = viewHome;
-// --- Mostrando template
-
-// container.appendChild(formElem);
-export default () => {
-  const container = document.getElementById('container');
-  const formElem = document.createElement('form');
-  const viewHome = `<header></header>
-    <main class="intro">
-      <section class="punchLine">
-        <section class="punchStarter">
+export const mainView = () => {
+  // --- creando elemento de tipo "section"
+  const sectionElement = document.createElement('section');
+  // --- creando template
+  const template = `
+    <header></header>
+    <main class= "intro">
+      <section class= "punchLine">
+        <section class= "punchStarter">
           <h2>Why?</h2>
         </section>
-        <section class="punchText">
-          <p>
-            Because we’re fun, art driven, and look so freeking good in our
-            outfits !!!
-          </p>
+        <section class= "punchText">
+          <p>Because we’re fun, art driven, and<br>
+          look so freeking good in our outfits !!!</p>
         </section>
       </section>
-      <section class="stats">
+      <section class= "stats">
         <table>
           <tr>
-            <th>GROWING MARKET</th>
-            <th>ART SHOW CASE</th>
-            <th>IT’S LIKE A BIG FAMILY</th>
+            <th>GROWING MARKET<br>
+             _____________________<br></th>
+            <th>ART SHOW CASE<br>
+              _____________________<br></th>
+            <th>IT’S LIKE A BIG FAMILY<br>
+              _____________________<br></th>
           </tr>
           <tr>
             <td>
-              Cosplayers spend more<br />
-              than $23.6 billion on<br />
+              Cosplayers spend  more<br>
+              than $23.6 billion on<br> 
               costumes each year
             </td>
             <td>
-              The events host artists<br />
-              like illustrators, sculptures,<br />
+              The events host artists<br>
+              like illustrators, sculptures,<br>
               writers and other
             </td>
             <td>
-              Cosplayers reach out to<br />
-              each other for advice and<br />
-              complement on their work
+              Cosplayers reach out to<br> 
+              each other for advice and<br> 
+              complement on their work  
             </td>
           </tr>
         </table>
       </section>
-      <section class="videoIntro">
-        <img class="video" src="images\index_video_img.png" />
+      <section class= "videoIntro">
+        <section class= "video">
+        </section>
       </section>
     </main>
-    <aside class="join">
-      <section class="ilustration">
-        <img class="anime" src="images\index_mayoi_neko.png" width="470px" />
+    <aside class= "join">
+      <section class= "ilustration">
+        <section class= "anime">
+        </section>
       </section>
-      <section class="home_form">
-        <table>
+      <section class= "home_form">
+        <section class= "emptySpace">
+
+        </section>
+        <table class= "formOptions">
           <tr>
-            <th>LOG IN</th>
-            <th>SIGN IN</th>
+            <th class= "logIn">LOG IN</th>
+            <th class= "signIn">SIGN IN</th>
           </tr>
         </table>
-        <form>
-          <input type="text" placeholder="Email" id="emailInput" />
-          <input type="text" placeholder="Password" id="passwordInput" />
+        <form class= "initForm">
+          <input type="text" placeholder="Email" id="emailInput" class="input">
+          <input type="text" placeholder="Password" id="passwordInput" class="input">
           <button type="button" class="logInButton">LOG IN</button>
           <p>or</p>
-          <button type="button" class="logInWithFacebookButton">
-            LOG IN WITH FACEBOOK
-          </button>
+          <button type="button" class="logInWithFacebookButton">LOG IN WITH FACEBOOK</button>
         </form>
-        <p>COSplay</p>
+        <p class="logo"><b>COS</b>play</p>
       </section>
-    </aside>`;
-    container.appendChild(formElem);
-  formElem.innerHTML = viewHome;
-  
-  return formElem;
+    </aside>
+    <footer class="footer">@<b>COS</b>play | <b>Developed by</b>: Team 4 | Social Network | Laboratoria</footer>
+  `;
+  // --- insertando el template en la interfaz
+  sectionElement.innerHTML = template;
+
+  return sectionElement;
 };
