@@ -1,4 +1,5 @@
-import {auth, fstore} from '../controllers/initialFirebase.js'
+import { signUp } from '../controllers/firestore.js';
+
 export default () => {
   const viewRegister = `
     <img class="image" src="./img/imageAislados.png" alt="imagen aislados" >
@@ -34,28 +35,24 @@ export default () => {
     const inputEmail = document.querySelector('#email').value;
     const inputPassword = document.querySelector('#password').value;
     const repeatPassword = document.querySelector('#repeat-password').value;
-    // eslint-disable-next-line no-console
+
     console.log(inputEmail, inputPassword);
 
-    // eslint-disable-next-line no-undef
-    if(inputPassword === repeatPassword){
-      auth
-      .createUserWithEmailAndPassword(inputEmail, inputPassword)
-      // eslint-disable-next-line no-unused-vars
-      .then((userCredential) => {
-      // eslint-disable-next-line no-console
-        console.log('hello word1');
-      })
-      .catch( error => {
-        //console.log('error', error.message);
-        document.querySelector('.message-error').innerHTML = `${error.message}`
-      })
-    }else{
-      //console.log('La contraseña no es la misma');
-      document.querySelector('.message-error').innerHTML = 'La contraseña no es la misma'
+    if (inputPassword === repeatPassword) {
+      signUp(inputEmail, inputPassword)
+        .then(() => {
+          window.location.hash = '#/home';
+        })
+        .catch((error) => {
+          document.querySelector(
+            '.message-error',
+          ).innerHTML = `${error.message}`;
+        });
+    } else {
+      // console.log('La contraseña no es la misma');
+      document.querySelector('.message-error').innerHTML = 'La contraseña no es la misma';
     }
-    
-    // limpiaando formulario
+
     registerBtn.reset();
   });
   return divElement;

@@ -1,23 +1,29 @@
-import { fstore } from './initialFirebase.js';
+/* import { auth, fstore } from './initialFirebase.js'; */
+const signUp = (email, password) => firebase.auth().createUserWithEmailAndPassword(email, password);
 
-const getPosts = callback => fstore.collection('posts')
+const signIn = (email, password) => firebase.auth().signInWithEmailAndPassword(email, password);
+
+const signInWithGoogle = provider => firebase.auth().signInWithPopup(provider);
+
+const signInWithFacebook = provider => firebase.auth().signInWithPopup(provider);
+
+const getPosts = callback => firebase
+  .firestore()
+  .collection('posts')
   .get()
   .then((snapshot) => {
-    // eslint-disable-next-line no-console
-    console.log(snapshot);
-    // postsPublic(snapshot);
+    //console.log(snapshot);
     const data = [];
     snapshot.forEach((doc) => {
-      // doc.data() is never undefined for query doc snapshots
-      // eslint-disable-next-line no-console
-      console.log(doc.id, ' => ', doc.data());
+      //console.log(doc.id, ' => ', doc.data());
       data.push({
         id: doc.id,
         title: doc.data().title,
         description: doc.data().description,
-        image: doc.data().image,
       });
     });
     callback(data);
   });
-export { getPosts };
+export {
+  getPosts, signUp, signIn, signInWithGoogle, signInWithFacebook,
+};

@@ -1,10 +1,7 @@
-// Este es el punto de entrada de tu aplicacion
-
-/* import { myFunction } from './lib/index.js';
-
-myFunction(); */
 import { changeView } from './view_controller/router.js';
+import { initFirebase } from './controllers/initialFirebase.js';
 
+initFirebase()
 const init = () => {
   changeView(window.location.hash);
   window.addEventListener('hashchange', () => {
@@ -12,3 +9,4 @@ const init = () => {
   });
 };
 window.addEventListener('load', init);
+

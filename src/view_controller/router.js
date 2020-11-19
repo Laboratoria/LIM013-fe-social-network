@@ -8,13 +8,20 @@ const changeView = (route) => {
     case '#/': { return container.appendChild(components.login()); }
     case '': { return container.appendChild(components.login()); }
     case '#': { return container.appendChild(components.login()); }
-    case '#/inicio': { return container.appendChild(components.inicio()); }
+    case '#/home': { return container.appendChild(components.home()); }
     case '#/register': { return container.appendChild(components.register()); }
     default:
       break;
   }
   // eslint-disable-next-line no-console
-  console.log(route);
+  /* console.log(route); */
 };
 
-export { changeView };
+const initRoute = () => {
+  changeView(window.location.hash);
+  window.addEventListener('hashchange', () => {
+    changeView(window.location.hash);
+  });
+};
+
+export { changeView, initRoute };

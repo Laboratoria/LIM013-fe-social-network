@@ -17,10 +17,9 @@
 body {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
   font-family: "Raleway", Arial, Helvetica, sans-serif;
-  flex-wrap: wrap;
 }
-/*------------HOME------------------------*/
 .main-header {
   background-color: var(--color-green);
   color: var(--color-white);
@@ -55,11 +54,6 @@ body {
 .btn-menu {
   margin-right: 30px;
 }
-.container{
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
 .main-container {
   display: flex;
   flex-direction: column;
@@ -77,7 +71,6 @@ body {
 .upload-post {
   background-color: var(--color-white);
   width: 90%;
-  /* height: 150px; */
   margin: 20px 0;
   padding: 20px;
   box-sizing: border-box;
@@ -100,13 +93,6 @@ body {
   display: flex;
   justify-content: flex-end;
   color: var(--color-bgdark);
-  height: 20px;
-}
-.card-container{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 .card {
   display: flex;
@@ -137,16 +123,10 @@ body {
 }
 .card-image {
   flex-grow: 2;
-  /* flex-basis: 80%; */
+  flex-basis: 80%;
 }
 .card-image img {
   width: 100%;
-}
-.card-description{
-  background-color: var(--color-white);
-  padding: 5px 10px;
-  font-size: 16px;
-  color: var(--color-black);
 }
 .card-options {
   flex-grow: 1;
@@ -160,149 +140,15 @@ body {
 .share {
   padding: 0 10px;
 }
-.btn-options{
-  align-self: flex-end;
-}
 .main-container_aside {
   display: none;
 }
-/*------------LOGIN------------------------*/
-.container-login {
-    display: flex;
-    flex-direction: row;
-    height: 100vh;
-  /* justify-content: center; */
-  /* align-items: center; */
-}
-.image {
-  /* width: 30%; */
-  /* height: 75%; */
-  display: flex;
-  height: 100vh;
-  background-attachment: fixed;
-  /* background-color: red; */
-}
-.right-side{
-  display: flex;
-  width: 60vw;
-  /* justify-content: center; */
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 10px;
-}
-.form-login {
-  width: 350px;
-}
-.text-center {
-  -webkit-text-stroke: 2px #f6ad25;
-  color: #fff;
-  font-size: 40px;
-  padding: 20px;
-  letter-spacing: 1.5px;
-  text-align: center;
-}
-.text-sign-in {
-  color: #4c553d;
-  /* font-family:  sans-serif; */
-  margin: 10px 0px;
-  width: 100%;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 600;
-}
-.redes {
-  color: white;
-  font-size: 20px;
-  margin: 20px;
-  text-align: center;
-  padding: 3px;
-}
-.btn-redes-g,
-.btn-redes-f {
-  border-radius: 50%;
-  background: #347c62;
-  border-style: none;
-  width: 55px;
-  margin: 0 20px;
-}
-.redes i {
-  color: white;
-  font-size: 25px;
-  padding: 15px;
-  text-align: center;
-}
-.input-container {
-  width: 100%;
-}
-label {
-    display: block;
-    color: #4c553d;
-    margin-bottom: 10px;
-    font-size: 18px;
-    font-weight: 600;
-}
-.form-login input[type="text"],
-.form-login input[type="email"],
-.form-login input[type="password"] {
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
-  border: 1px solid #347c62;
-  padding: 15px;
-  margin-bottom: 20px;
-  font-size: 16px;
-}
-.message-error{
-    color: tomato;
-    padding: 10px 0;
-    font-style: italic;
-    font-size: 16px;
-}
-.btn-login {
-  width: 100%;
-  padding: 15px;
-  margin-top: 10px;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  background: #f6ad25;
-  text-align: center;
-  font-size: 18px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.5s;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
-}
-.btn-login:hover {
-  background: #f1bc5a;
-  color: #fff;
-}
-.text-sign-in a {
-  color: #347c62;
-  font-style: italic;
-  font-weight: 600;
-  text-decoration: none;
-}
-/*------------FOOTER------------------------*/
 .main-footer {
   background-color: var(--color-footer);
   color: var(--color-white);
-  line-height: 3;
-  width: 100%;
-  height: 50px;
+  line-height: 5;
   text-align: center;
   margin-top: auto;
-  font-size: 16px;
-  align-self: flex-end;
 }
 @media screen and (min-width: 730px) {
   .nav-container {
@@ -357,15 +203,12 @@ label {
     font-size: 16px;
   }
   .card {
-    height: 440px;
+    height: 400px;
   }
   .card-image img {
     height: 280px;
     object-fit: cover;
     /* object-position: 30% 5%; */
-  }
-  .main-footer{
-    font-size: 18px;
   }
 }
 @media screen and (min-width: 1024px) {

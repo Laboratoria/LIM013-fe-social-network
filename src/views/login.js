@@ -1,7 +1,12 @@
-import {auth, fstore} from '../controllers/initialFirebase.js'
+// import { auth, fstore } from '../controllers/initialFirebase.js';
+import {
+  signIn,
+  signInWithGoogle,
+  signInWithFacebook,
+} from '../controllers/firestore.js';
+
 export default () => {
   const viewLogin = `
-
     <img class="image" src="./img/imageAislados.png" alt="imagen aislados" >
     <main class="right-side">
       <form class="form-login">
@@ -26,69 +31,61 @@ export default () => {
     </main>
   `;
 
-  const divElement = document.createElement("section");
-  divElement.classList.add("container-login");
+  const divElement = document.createElement('section');
+  divElement.classList.add('container-login');
   divElement.innerHTML = viewLogin;
 
-  const loginBtn = divElement.querySelector(".form-login");
-  loginBtn.addEventListener("submit", (e) => {
+  const regExp = /@\w+([\.-]?\w+)/g;
+  let name = '';
+
+  const loginBtn = divElement.querySelector('.form-login');
+  loginBtn.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const inputEmail = document.querySelector("#email").value;
-    const inputPassword = document.querySelector("#password").value;
-    // eslint-disable-next-line no-console
+    const inputEmail = document.querySelector('#email').value;
+    const inputPassword = document.querySelector('#password').value;
     console.log(inputEmail, inputPassword);
 
-    auth
-      .signInWithEmailAndPassword(inputEmail, inputPassword)
-      // eslint-disable-next-line no-unused-vars
-      .then((userCredential) => {
-        loginBtn.reset();
-        // eslint-disable-next-line no-console
-        console.log("el ususario ingreso");
+    signIn(inputEmail, inputPassword)
+      .then((result) => {
+        //console.log(result.user.email);
+        name = result.user.email.split(regExp)[0]
+        /* console.log('name1', name); */
+        window.location.hash = '#/home';
       })
-      .catch( error => {
-        //console.log('error', error.message);
-        document.querySelector('.message-error').innerHTML = `${error.message}`
-      })
-    // limpiaando formulario
+      .catch((error) => {
+        document.querySelector('.message-error').innerHTML = `${error.message}`;
+      });
   });
-  // Login with Google
-  const btnGoogle = divElement.querySelector(".btn-redes-g");
-  btnGoogle.addEventListener("click", (e) => {
+  /*-------Login with Google------------------*/
+  const btnGoogle = divElement.querySelector('.btn-redes-g');
+  btnGoogle.addEventListener('click', () => {
     // e.preventDefault();
     const provider = new firebase.auth.GoogleAuthProvider();
 
-    auth
-      .signInWithPopup(provider)
-      // eslint-disable-next-line no-console
+    signInWithGoogle(provider)
       .then((result) => {
-        // eslint-disable-next-line no-console
-        console.log(result);
-        // eslint-disable-next-line no-console
-        console.log("Sucess!");
-        loginBtn.reset();
+        name = result.additionalUserInfo.profile.given_name
+        name.split(regExp)[0]
+        /* console.log('name2', name); */
+        window.location.hash = '#/home';
       })
-      // eslint-disable-next-line no-console
-      .catch((error) => console.log("error", error));
+      .catch(error => console.log('error', error));
   });
-
-  const btnFacebook = divElement.querySelector(".btn-redes-f");
-  btnFacebook.addEventListener("click", (e) => {
+  /*-------Login with Facebook------------------*/
+  const btnFacebook = divElement.querySelector('.btn-redes-f');
+  btnFacebook.addEventListener('click', (e) => {
     e.preventDefault();
     const provider = new firebase.auth.FacebookAuthProvider();
-    auth
-      .signInWithPopup(provider)
+
+    signInWithFacebook(provider)
       .then((result) => {
-        // eslint-disable-next-line no-console
-        console.log(result);
-        // eslint-disable-next-line no-console
-        console.log("Sucess with Facebook!");
+        name = result.additionalUserInfo.profile.given_name(regExp)
+        name.split(regExp)[0]
+        /* console.log('name3', name); */
+        window.location.hash = '#/home';
       })
-      .catch((error) => {
-        // eslint-disable-next-line no-console
-        console.log(error);
-      });
+      .catch(error => console.log('error', error));
   });
 
   return divElement;
