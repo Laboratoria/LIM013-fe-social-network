@@ -88,6 +88,11 @@ export const mainView = () => {
     const loginEmail = sectionElement.querySelector('#emailInput').value;
     const loginPassword = sectionElement.querySelector('#passwordInput').value;
     console.log(loginEmail, loginPassword);
+    firebase.auth()
+      .createUserWithEmailAndPassword(loginEmail, loginPassword)
+      .then((userCredential) => {
+        console.log('Log in');
+      });
   });
   return sectionElement;
 };
