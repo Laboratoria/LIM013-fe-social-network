@@ -60,21 +60,24 @@ export const mainView = () => {
       </section>
       <section class= "home_form">
         <section class= "emptySpace">
-
         </section>
-        <table class= "formOptions">
-          <tr>
-            <th class= "logIn">LOG IN</th>
-            <th class= "signIn">SIGN IN</th>
-          </tr>
-        </table>
-        <form name= "logIn" class= "initForm">
-          <input type="text" placeholder="Email" id="emailInput" name="emailInput" class="input">
-          <input type="password" placeholder="Password" id="passwordInput" name="passwordInput" class="input">
-          <button type="button" class="logInButton" id="logInButton">LOG IN</button>
-          <p>or</p>
-          <button type="button" class="logInWithFacebookButton">LOG IN WITH FACEBOOK</button>
-        </form>
+        <section class= "signInOptionForm">
+          <table class= "formOptions">
+            <tr>
+              <th class= "emptyCell">
+                
+              </th>
+              <th class= "signIn">SIGN IN</th>
+            </tr>
+          </table>
+          <form name= "signInForm" class= "initForm">
+            <input type="text" placeholder="Email" id="signInEmailInput" name="signInEmailInput" class="input">
+            <input type="password" placeholder="Password" id="signInPasswordInput" name="signInPasswordInput" class="input">
+            <button type="button" class="signInButton" id="signInButton">SIGN IN</button>
+            <p>or</p>
+            <button type="button" class="logInWithFacebookButton">SIGN IN WITH FACEBOOK</button>
+          </form>
+        </section>
         <p class="logo"><b>COS</b>play</p>
       </section>
     </aside>
@@ -84,17 +87,17 @@ export const mainView = () => {
   // --- insertando el template en la interfaz
   sectionElement.innerHTML = template;
 
-  // --- Funcionalidades para capturar lo escrito en el input y poner evento de click a el boton de "Log in"
+  // --- Funcionalidades para capturar lo escrito en el input y poner evento de click a el boton de "Sign in"
   const button = sectionElement.querySelector('button');
 
   button.addEventListener('click', () => {
-    const loginEmail = sectionElement.querySelector('#emailInput').value;
-    const loginPassword = sectionElement.querySelector('#passwordInput').value;
-    console.log(loginEmail, loginPassword);
+    const signInEmail = sectionElement.querySelector('#signInEmailInput').value;
+    const signInPassword = sectionElement.querySelector('#signInPasswordInput').value;
+    console.log(signInEmail, signInPassword);
     firebase.auth()
-      .createUserWithEmailAndPassword(loginEmail, loginPassword)
+      .createUserWithEmailAndPassword(signInEmail, signInPassword)
       .then((userCredential) => {
-        console.log('Log in');
+        console.log('Sign In');
       });
   });
   return sectionElement;

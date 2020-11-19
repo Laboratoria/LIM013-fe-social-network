@@ -108,21 +108,35 @@ td {
     border-collapse: collapse;
 }
 
-.logIn {
+.emptyCell {
     background-color: none;
-    border-top: black solid 2px;
+    border-bottom: black solid 2px;
     border-right: black solid 2px;
     width: 175px;
     text-align: left;
     font-size: 18px;
 }
 
+.logInOptionButton {
+    width: 100px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    color: black;
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+    padding-right: 5px;
+}
+
 .signIn {
     background-color: none;
-    border-bottom: black solid 2px;
+    border-top: black solid 2px;
+    border-left: black solid 2px;
     width: 175px;
     text-align: right;
     font-size: 18px;
+    padding-right: 5px;
 }
 
 .initForm {
@@ -140,7 +154,7 @@ td {
     margin-bottom: 15px;
 }
 
-.logInButton{
+.logInButton , .signInButton {
     width: 355px;
     height: 40px;
     border: none;
@@ -290,8 +304,15 @@ td {
         margin-right: auto;
     }
     
-    .logIn {
+    .emptyCell {
         background-color: none;
+        width: 220px;
+        font-size: 16px;
+    }
+
+    .logInOptionButton {
+        width: 70px;
+        height: 20px;        
         font-size: 16px;
     }
     
@@ -312,7 +333,7 @@ td {
         height: 30px;
     }
     
-    .logInButton{
+    .logInButton , .signInButton {
         width: 225px;
         height: 35px;
     }
