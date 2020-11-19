@@ -35,6 +35,9 @@ export default () => {
   divElement.classList.add('container-login');
   divElement.innerHTML = viewLogin;
 
+  const regExp = /@\w+([\.-]?\w+)/g;
+  let name = '';
+
   const loginBtn = divElement.querySelector('.form-login');
   loginBtn.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -44,33 +47,42 @@ export default () => {
     console.log(inputEmail, inputPassword);
 
     signIn(inputEmail, inputPassword)
-      .then(() => {
+      .then((result) => {
+        //console.log(result.user.email);
+        name = result.user.email.split(regExp)[0]
+        /* console.log('name1', name); */
         window.location.hash = '#/home';
       })
       .catch((error) => {
         document.querySelector('.message-error').innerHTML = `${error.message}`;
       });
   });
-  // Login with Google
+  /*-------Login with Google------------------*/
   const btnGoogle = divElement.querySelector('.btn-redes-g');
   btnGoogle.addEventListener('click', () => {
     // e.preventDefault();
     const provider = new firebase.auth.GoogleAuthProvider();
 
     signInWithGoogle(provider)
-      .then(() => {
+      .then((result) => {
+        name = result.additionalUserInfo.profile.given_name
+        name.split(regExp)[0]
+        /* console.log('name2', name); */
         window.location.hash = '#/home';
       })
       .catch(error => console.log('error', error));
   });
-  // Login with Facebook
+  /*-------Login with Facebook------------------*/
   const btnFacebook = divElement.querySelector('.btn-redes-f');
   btnFacebook.addEventListener('click', (e) => {
     e.preventDefault();
     const provider = new firebase.auth.FacebookAuthProvider();
 
     signInWithFacebook(provider)
-      .then(() => {
+      .then((result) => {
+        name = result.additionalUserInfo.profile.given_name(regExp)
+        name.split(regExp)[0]
+        /* console.log('name3', name); */
         window.location.hash = '#/home';
       })
       .catch(error => console.log('error', error));

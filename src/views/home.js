@@ -20,7 +20,10 @@ export default () => {
         <section class="main-container_section">
             <form class="upload-post">
                 <input type="text" id="post-title" class="input-post" placeholder="¿Qué aprendiste hoy?" autofocus>
-                <textarea name="" id="post-description" rows="3" class="input-post" placeholder="¿Alguna reflexión?" autofocus></textarea>
+                <input type="file" id="post-image" class="input-post">
+                <img id='image' width='100px'>
+                <button id='upload-image'>Subir imagen</button>
+                <textarea name="" id="post-description" rows="3" class="input-post" placeholder="¿Alguna reflexión?"></textarea>
                 <div class="upload-options">
                     <div class="comment">
                         <button id='btn-save'><i class="fas fa-save"></i>Guardar</button>
@@ -61,17 +64,43 @@ export default () => {
 
   const postForm = divElement.querySelector(".upload-post");
   const cardsContainer = divElement.querySelector(".card-container");
+  const btnUpImage = divElement.querySelector('#upload-image')
+
+  btnUpImage.addEventListener('click', () => {
+    const ref = firebase.storage().ref()
+    const file = postForm['post-image'].files[0]
+    const name = file.name
+
+    const metadata = {
+      contentType: file.type
+    }
+
+    const task = ref.child(name).put(file, metadata)
+    task
+    .then(snapshot => snapshot.ref.getDownloadURL())
+    .then(url => {
+      console.log(url);
+      alert('Image upload successful')
+      const image= postForm['image']
+      image.src = url
+    })
+
+  })
+
+  let editStatus = false;
+  let id = '';
 
   const savePost = (title, description) =>
     db.collection("posts").doc().set({
-      id,
       title,
       description,
     });
 
   const getPosts = () => db.collection("posts").get();
+  const getPost = (id) => db.collection("posts").doc(id).get();
   const onGetPosts = (callback) => db.collection("posts").onSnapshot(callback);
   const deletePost = (id) => db.collection('posts').doc(id).delete();
+  const updatePost = (id, updatedPost) => db.collection('posts').doc(id).update(updatedPost);
 
   if (document.readyState !== "loading") {
     onGetPosts((querySnapshot) => {
@@ -111,6 +140,21 @@ export default () => {
             /* console.log(e.target); */
           });
         });
+
+        const btnsEdit = document.querySelectorAll(".btn-edit");
+        btnsEdit.forEach((btn) => {
+          btn.addEventListener('click', async (e) => {
+            const doc = await getPost(e.target.dataset.id)
+            const post = doc.data();
+            /* console.log(e.target); */
+            editStatus = true;
+            id = doc.id;
+
+            postForm.querySelector('#post-title').value = post.title
+            postForm.querySelector('#post-description').value = post.description
+            postForm['btn-save'].innerText = 'Actualizar'
+          });
+        });
       });
     });
   } else {
@@ -125,7 +169,16 @@ export default () => {
     //const title = postForm.querySelector('#post-title')
     const description = postForm["post-description"];
 
-    await savePost(title.value, description.value);
+    if( !editStatus ){
+      await savePost( title.value, description.value);
+    } else { 
+      await updatePost( id, {
+        title: title.value,
+        description: description.value
+      })
+      editStatus = false;
+      postForm['btn-save'].innerText = 'Guardar'
+    }
     await getPosts();
     postForm.reset();
     title.focus();

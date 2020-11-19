@@ -137,13 +137,16 @@ body {
 }
 .card-image {
   flex-grow: 2;
-  flex-basis: 80%;
+  /* flex-basis: 80%; */
 }
 .card-image img {
   width: 100%;
 }
 .card-description{
-  background-color: #4c553d;
+  background-color: var(--color-white);
+  padding: 5px 10px;
+  font-size: 16px;
+  color: var(--color-black);
 }
 .card-options {
   flex-grow: 1;
@@ -354,7 +357,7 @@ label {
     font-size: 16px;
   }
   .card {
-    height: 400px;
+    height: 440px;
   }
   .card-image img {
     height: 280px;

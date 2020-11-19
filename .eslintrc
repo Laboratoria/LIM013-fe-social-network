@@ -29,3 +29,5 @@
     "jest/valid-expect": "error"
   }
 }
+
+/*node ./node_modules/eslint/bin/eslint -- src --fix*/
