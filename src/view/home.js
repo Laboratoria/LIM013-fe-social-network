@@ -80,10 +80,13 @@ export const mainView = () => {
     </aside>
     <footer class="footer">@<b>COS</b>play | <b>Developed by</b>: Team 4 | Social Network | Laboratoria</footer>
   `;
+
   // --- insertando el template en la interfaz
   sectionElement.innerHTML = template;
+
   // --- Funcionalidades para capturar lo escrito en el input y poner evento de click a el boton de "Log in"
   const button = sectionElement.querySelector('button');
+
   button.addEventListener('click', () => {
     const loginEmail = sectionElement.querySelector('#emailInput').value;
     const loginPassword = sectionElement.querySelector('#passwordInput').value;
