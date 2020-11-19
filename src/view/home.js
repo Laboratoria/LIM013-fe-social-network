@@ -70,7 +70,7 @@ export const mainView = () => {
         </table>
         <form name= "logIn" class= "initForm">
           <input type="text" placeholder="Email" id="emailInput" name="emailInput" class="input">
-          <input type="text" placeholder="Password" id="passwordInput" name="passwordInput" class="input">
+          <input type="password" placeholder="Password" id="passwordInput" name="passwordInput" class="input">
           <button type="button" class="logInButton" id="logInButton">LOG IN</button>
           <p>or</p>
           <button type="button" class="logInWithFacebookButton">LOG IN WITH FACEBOOK</button>
