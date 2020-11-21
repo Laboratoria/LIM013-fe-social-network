@@ -6,7 +6,7 @@ export const mainView = () => {
   const sectionElement = document.createElement('section');
   // --- creando template
   const template = `
-    <header></header>
+  <header></header>
     <main class= "intro">
       <section class="wrapper">
         <section class= "punchLine">
@@ -65,7 +65,7 @@ export const mainView = () => {
         <section class= "signInOptionForm">
           <table class= "formOptions">
             <tr>
-              <th class= "emptyCell">
+              <th class= "signInOptionCell">
                 
               </th>
               <th class= "signIn">SIGN IN</th>
@@ -85,7 +85,7 @@ export const mainView = () => {
     <footer class="footer">@<b>COS</b>play | <b>Developed by</b>: Team 4 | Social Network | Laboratoria</footer>
   `;
 
-  // --- insertando el template en la interfaz
+  // --- Insertando el template en la interfaz
   sectionElement.innerHTML = template;
 
   // --- Funcionalidades para capturar lo escrito en el input y poner evento de click a el boton de "Sign in"

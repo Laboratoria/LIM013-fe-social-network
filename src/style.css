@@ -108,13 +108,15 @@ td {
     border-collapse: collapse;
 }
 
-.emptyCell {
-    background-color: none;
-    border-bottom: black solid 2px;
-    border-right: black solid 2px;
-    width: 175px;
-    text-align: left;
+.signInOptionButton {
+    width: 100px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    color: black;
+    text-align: right;
     font-size: 18px;
+    font-weight: bold;
 }
 
 .logInOptionButton {
@@ -126,7 +128,33 @@ td {
     text-align: left;
     font-size: 18px;
     font-weight: bold;
-    padding-right: 5px;
+}
+
+.logIn {
+    background-color: none;
+    border-top: black solid 2px;
+    border-right: black solid 2px;
+    width: 175px;
+    text-align: left;
+    font-size: 18px;
+    padding-left: 5px;
+}
+
+.signInOptionCell {
+    background-color: none;
+    border-bottom: black solid 2px;
+    width: 175px;
+    text-align: right;
+    font-size: 18px;
+}
+
+.logInOptionCell {
+    background-color: none;
+    border-bottom: black solid 2px;
+    border-right: black solid 2px;
+    width: 175px;
+    text-align: left;
+    font-size: 18px;
 }
 
 .signIn {
@@ -167,7 +195,7 @@ td {
     text-align: center;
 }
 
-.logInWithFacebookButton {
+.logInWithFacebookButton , .signInWithFacebookButton {
     width: 355px;
     height: 40px;
     border: none;
@@ -303,24 +331,24 @@ td {
         margin-left: auto;
         margin-right: auto;
     }
-    
-    .emptyCell {
+
+    .logIn , .signIn {
+        width: 110px;
         background-color: none;
-        width: 220px;
         font-size: 16px;
     }
+    
+    .logInOptionCell , .signInOptionCell {
+        background-color: none;
+        width: 110px;
+    }
 
-    .logInOptionButton {
-        width: 70px;
+    .signInOptionButton , .logInOptionButton {
+        width: 80px;
         height: 20px;        
         font-size: 16px;
     }
-    
-    .signIn {
-        background-color: none;
-        font-size: 16px;
-    }
-    
+
     .initForm {
         width: 220px;
         height: 225px;
@@ -342,7 +370,7 @@ td {
         text-align: center;
     }
     
-    .logInWithFacebookButton {
+    .logInWithFacebookButton , .signInWithFacebookButton {
         width: 225px;
         height: 35px;
     }
