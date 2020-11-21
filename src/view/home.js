@@ -1,4 +1,3 @@
-import { signIn, logIn } from '../firebase/firebase-auth.js';
 /* eslint-disable max-len */
 /* eslint-disable no-console */
 export const mainView = () => {
@@ -95,7 +94,7 @@ export const mainView = () => {
             <section class= "form-group">
             <input type="password" placeholder="Password" id="signInPasswordInput" name="signInPasswordInput" class="input">
             </section>
-            <button type="button" class="signInButton" id="btn-signIn">SIGN IN</button>
+            <button type="button" class="signInButton" id="signInButton">SIGN IN</button>
             <p>or</p>
             <button type="button" class="signInWithFacebookButton">SIGN IN WITH FACEBOOK</button>
           </form>
@@ -105,18 +104,15 @@ export const mainView = () => {
     </aside>
     <footer class="footer">@<b>COS</b>play | <b>Developed by</b>: Team 4 | Social Network | Laboratoria</footer>
   `;
-  
 
   // --- Insertando el template en la interfaz
   sectionElement.innerHTML = template;
-  
 
   // --- Mostrando solo el formulario de LOG IN al cargar la página
   window.onload=()=> {
     document.getElementById("signInOptionForm").style.display = "none"; 
     document.getElementById("logInOptionForm").style.display = "block";
   }
-  
 
   // --- Selecionando las opciones de formulario LOG IN/SIGN IN
   const signInOpBtn = sectionElement.querySelector('#signInOptionButton');
@@ -133,30 +129,22 @@ export const mainView = () => {
     document.getElementById("signInOptionForm").style.display = "none";
   })
   
-  
   // --- Funcionalidades para capturar lo escrito en el input y poner evento de click a el boton de "Sign in"
-  const btnsignIn = sectionElement.querySelector('#btn-signIn');
+  const button = sectionElement.querySelector('#signInButton');
   
-  // --- Creando cuenta de usuario
-  btnsignIn.addEventListener('click', () => {
+  button.addEventListener('click', () => {
     const signInEmail = sectionElement.querySelector('#signInEmailInput').value;
     const signInPassword = sectionElement.querySelector('#signInPasswordInput').value;
+    //console.log(signInEmail, signInPassword);
+    firebase.auth()
+      .createUserWithEmailAndPassword(signInEmail, signInPassword)
+      .then(userCredential => {
+        //resetear el formulario
+        signInForm.reset();
 
-    signIn(signInEmail, signInPassword).then(() => {
-      console.log('Sing In');
-    });
+        console.log('Sign In');
+      });
   });
-  
-  // --- Acceder a cuenta de usuario
-  // btnlogIn.addEventListener('click', () => {
-  //   const signInEmail = sectionElement.querySelector('#signInEmailInput').value;
-  //   const signInPassword = sectionElement.querySelector('#signInPasswordInput').value;
-
-  //   logIn(signInEmail, signInPassword).then(() => {
-  //     console.log('Log In');
-  //   });
-  // });
 
   return sectionElement;
-
 };
