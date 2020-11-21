@@ -1,3 +1,4 @@
+import { signIn, logIn } from '../firebase/firebase-auth.js';
 /* eslint-disable max-len */
 /* eslint-disable no-console */
 export const mainView = () => {
@@ -73,7 +74,7 @@ export const mainView = () => {
           <form name= "signInForm" class= "initForm">
             <input type="text" placeholder="Email" id="signInEmailInput" name="signInEmailInput" class="input">
             <input type="password" placeholder="Password" id="signInPasswordInput" name="signInPasswordInput" class="input">
-            <button type="button" class="signInButton" id="signInButton">SIGN IN</button>
+            <button type="button" class="btn-signIn" id="btn-signIn">SIGN IN</button>
             <p>or</p>
             <button type="button" class="logInWithFacebookButton">SIGN IN WITH FACEBOOK</button>
           </form>
@@ -88,17 +89,25 @@ export const mainView = () => {
   sectionElement.innerHTML = template;
 
   // --- Funcionalidades para capturar lo escrito en el input y poner evento de click a el boton de "Sign in"
-  const button = sectionElement.querySelector('button');
-
-  button.addEventListener('click', () => {
+  const btnsignIn = sectionElement.querySelector('#btn-signIn');
+  // --- Creando cuenta de usuario
+  btnsignIn.addEventListener('click', () => {
     const signInEmail = sectionElement.querySelector('#signInEmailInput').value;
     const signInPassword = sectionElement.querySelector('#signInPasswordInput').value;
-    console.log(signInEmail, signInPassword);
-    firebase.auth()
-      .createUserWithEmailAndPassword(signInEmail, signInPassword)
-      .then((userCredential) => {
-        console.log('Sign In');
-      });
+
+    signIn(signInEmail, signInPassword).then(() => {
+      console.log('Sing In');
+    });
   });
+  // --- Acceder a cuenta de usuario
+  // btnlogIn.addEventListener('click', () => {
+  //   const signInEmail = sectionElement.querySelector('#signInEmailInput').value;
+  //   const signInPassword = sectionElement.querySelector('#signInPasswordInput').value;
+
+  //   logIn(signInEmail, signInPassword).then(() => {
+  //     console.log('Log In');
+  //   });
+  // });
+
   return sectionElement;
 };
