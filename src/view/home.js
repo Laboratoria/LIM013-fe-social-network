@@ -95,7 +95,7 @@ export const mainView = () => {
             <section class= "form-group">
             <input type="password" placeholder="Password" id="signInPasswordInput" name="signInPasswordInput" class="input">
             </section>
-            <button type="button" class="signInButton" id="signInButton">SIGN IN</button>
+            <button type="button" class="signInButton" id="btn-signIn">SIGN IN</button>
             <p>or</p>
             <button type="button" class="signInWithFacebookButton">SIGN IN WITH FACEBOOK</button>
           </form>
