@@ -44,12 +44,12 @@ export default () => {
 
     const inputEmail = document.querySelector('#email').value;
     const inputPassword = document.querySelector('#password').value;
-    console.log(inputEmail, inputPassword);
+    /* console.log(inputEmail, inputPassword); */
 
     signIn(inputEmail, inputPassword)
       .then((result) => {
-        //console.log(result.user.email);
         name = result.user.email.split(regExp)[0]
+        localStorage.setItem('name', name)
         /* console.log('name1', name); */
         window.location.hash = '#/home';
       })
@@ -65,9 +65,10 @@ export default () => {
 
     signInWithGoogle(provider)
       .then((result) => {
+        /* console.log('result', result); */
         name = result.additionalUserInfo.profile.given_name
         name.split(regExp)[0]
-        /* console.log('name2', name); */
+        /* console.log('name2', name);  */
         window.location.hash = '#/home';
       })
       .catch(error => console.log('error', error));

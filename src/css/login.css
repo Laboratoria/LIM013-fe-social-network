@@ -125,6 +125,15 @@ body {
   align-items: center;
   font-weight: 500;
 }
+#input-user-name{
+  font-weight: 600;
+}
+#input-user-name, #input-user-description{
+  padding: 10px;
+  border: var(--color-yellow);
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
 .card-title img,
 .aside-title img {
   width: 60px;
@@ -416,5 +425,8 @@ label {
   .aside-post-img {
     width: 150px;
     padding: 10px;
+  }
+  #input-user-name, #input-user-description{
+    font-size: 18px;
   }
 }

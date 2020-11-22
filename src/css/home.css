@@ -111,6 +111,10 @@ body {
   align-items: center;
   font-weight: 500;
 }
+#input-user-name{
+  padding: 10px;
+  border: var(--color-yellow);
+}
 .card-title img,
 .aside-title img {
   width: 60px;
@@ -260,4 +264,5 @@ body {
     width: 150px;
     padding: 10px;
   }
+  
 }

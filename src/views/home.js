@@ -66,9 +66,10 @@ export default () => {
   const cardsContainer = divElement.querySelector(".card-container");
   const btnUpImage = divElement.querySelector('#upload-image')
 
-  btnUpImage.addEventListener('click', () => {
+  /* btnUpImage.addEventListener('click', () => {
     const ref = firebase.storage().ref()
     const file = postForm['post-image'].files[0]
+    console.log('file', file);
     const name = file.name
 
     const metadata = {
@@ -85,14 +86,13 @@ export default () => {
       image.src = url
     })
 
-  })
+  }) */
 
   let editStatus = false;
   let id = '';
 
-  const savePost = (title, description) =>
+  const savePost = ( description) =>
     db.collection("posts").doc().set({
-      title,
       description,
     });
 
@@ -102,18 +102,20 @@ export default () => {
   const deletePost = (id) => db.collection('posts').doc(id).delete();
   const updatePost = (id, updatedPost) => db.collection('posts').doc(id).update(updatedPost);
 
+  const nameLocal = localStorage.getItem('name')
+
   if (document.readyState !== "loading") {
     onGetPosts((querySnapshot) => {
       cardsContainer.innerHTML = "";
       querySnapshot.forEach((doc) => {
-        /* console.log(doc.data()); */
+        //console.log('rara',doc); 
         const post = doc.data();
-        post.id = doc.id;
+        post.id = doc.id; 
         cardsContainer.innerHTML += `
         <section class="card">
-          <div class="card-title"><img src="./img/ejemplo.jpg" alt="">${post.title}</div>
+          <div class="card-title"><img src="./img/ejemplo.jpg" alt="">${nameLocal}</div>
           <div class="card-image"><img src="./img/ejemplo.jpg" alt=""></div>
-          <div class="card-description">${post.description}</div>
+          <div class="card-description"><input type="text" id="input-user-description" placeholder='${post.description}' disabled></div>
           <div class="card-options">
               <div class="like">
                   <i class="fas fa-heart"></i>
@@ -131,11 +133,23 @@ export default () => {
                 <button class="btn-delete" data-id=${post.id}>Eliminar</button>
               </div>
           </div>
+         /*  <form class="upload-post" style="display:none">
+            <input type="text" id="post-title" class="input-post" placeholder="¿Qué aprendiste hoy?" autofocus>
+            <textarea name="" id="post-description" rows="3" class="input-post" placeholder="¿Alguna reflexión?"></textarea>
+            <div class="upload-options">
+                <div class="comment">
+                    <button id='btn-save'><i class="fas fa-save"></i>Guardar</button>
+                </div>
+            </div>
+          </form> */
         </section>`;
+
+        const inputDescription = divElement.querySelector('#input-user-description')
 
         const btnsDelete = document.querySelectorAll(".btn-delete");
         btnsDelete.forEach((btn) => {
           btn.addEventListener('click', async (e) => {
+            //console.log(e.target);
             await deletePost(e.target.dataset.id)
             /* console.log(e.target); */
           });
@@ -144,15 +158,23 @@ export default () => {
         const btnsEdit = document.querySelectorAll(".btn-edit");
         btnsEdit.forEach((btn) => {
           btn.addEventListener('click', async (e) => {
-            const doc = await getPost(e.target.dataset.id)
+            const doc = await getPost(e.target.dataset.id);
             const post = doc.data();
+            /* const cardFather = e.target.closest('.card');
+            const form = cardFather.querySelector('.upload-post');
+            form.style.display = 'block'; */
             /* console.log(e.target); */
             editStatus = true;
             id = doc.id;
-
-            postForm.querySelector('#post-title').value = post.title
-            postForm.querySelector('#post-description').value = post.description
-            postForm['btn-save'].innerText = 'Actualizar'
+            
+            
+            const cardFather = e.target.closest('.card');
+            const input = cardFather.querySelector('#input-user-description')
+            input.disabled = false;
+            input.focus();
+          
+            btn.innerText = 'Actualizar'
+            
           });
         });
       });
@@ -165,12 +187,12 @@ export default () => {
   postForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const title = postForm["post-title"];
+    const title = postForm["post-title"]; 
     //const title = postForm.querySelector('#post-title')
     const description = postForm["post-description"];
 
     if( !editStatus ){
-      await savePost( title.value, description.value);
+      await savePost( description.value);
     } else { 
       await updatePost( id, {
         title: title.value,
