@@ -113,26 +113,29 @@ export default () => {
         post.id = doc.id; 
         cardsContainer.innerHTML += `
         <section class="card">
-          <div class="card-title"><img src="./img/ejemplo.jpg" alt="">${nameLocal}</div>
-          <div class="card-image"><img src="./img/ejemplo.jpg" alt=""></div>
-          <div class="card-description"><input type="text" id="input-user-description" placeholder='${post.description}' disabled></div>
-          <div class="card-options">
-              <div class="like">
-                  <i class="fas fa-heart"></i>
-                  <span>12k</span>
-              </div>
-              <div class="comment">
-                  <i class="fas fa-comment"></i>
-                  <span>12k</span>
-              </div>
-              <div class="share">
-                  <i class="fas fa-share"></i>
-              </div>
+          <section class="card-title"><img src="./img/ejemplo.jpg" alt="">${nameLocal}</section>
+          <section class="card-image"><img src="./img/ejemplo.jpg" alt=""></section>
+          <section class="card-description"><input type="text" id="input-user-description" placeholder='${post.description}' disabled></section>
+          <section class="card-options">
+              <section class="options-like-comment-share">
+                <div class="like">
+                    <i class="fas fa-heart"></i>
+                    <span>12k</span>
+                </div>
+                <div class="comment">
+                    <i class="fas fa-comment"></i>
+                    <span>12k</span>
+                </div>
+                <div class="share">
+                    <i class="fas fa-share"></i>
+                </div>
+              </section>
               <div class="btn-options">
                 <button class="btn-edit" data-id=${post.id}>Editar</button>
                 <button class="btn-delete" data-id=${post.id}>Eliminar</button>
               </div>
-          </div>
+          </section>
+          
          /*  <form class="upload-post" style="display:none">
             <input type="text" id="post-title" class="input-post" placeholder="¿Qué aprendiste hoy?" autofocus>
             <textarea name="" id="post-description" rows="3" class="input-post" placeholder="¿Alguna reflexión?"></textarea>
