@@ -3,11 +3,16 @@
 // Este es el punto de entrada de tu aplicacion
 // --- importando controlador
 import { mainView } from './view/home.js';
+import { firebaseConfig } from './firebase/firebase-init.js';
 // --------------------------------------------------
 // --- Este main.js se va a ejcutar cuando se inicialice o
 // --- cuando se haga un load o una recarga de nuestra pagina
 //-------------------------------------------------------------------------------------
 // --- Insertando template en la cajita container
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+// const auth = firebase.auth();
+
 const container = document.getElementById('container');
 // --- Para insertar nodo
 

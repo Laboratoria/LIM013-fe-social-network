@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+import { signIn, logIn } from '../firebase/firebase-auth.js';
 /* eslint-disable max-len */
 /* eslint-disable no-console */
 export const mainView = () => {
@@ -109,42 +111,49 @@ export const mainView = () => {
   sectionElement.innerHTML = template;
 
   // --- Mostrando solo el formulario de LOG IN al cargar la página
-  window.onload=()=> {
-    document.getElementById("signInOptionForm").style.display = "none"; 
-    document.getElementById("logInOptionForm").style.display = "block";
-  }
+  window.onload = () => {
+    document.getElementById('signInOptionForm').style.display = 'none';
+    document.getElementById('logInOptionForm').style.display = 'block';
+  };
 
   // --- Selecionando las opciones de formulario LOG IN/SIGN IN
   const signInOpBtn = sectionElement.querySelector('#signInOptionButton');
-  
+
   signInOpBtn.addEventListener('click', () => {
-    document.getElementById("logInOptionForm").style.display = "none"; 
-    document.getElementById("signInOptionForm").style.display = "block";
-  })
+    document.getElementById('logInOptionForm').style.display = 'none';
+    document.getElementById('signInOptionForm').style.display = 'block';
+  });
 
   const logInOpBtn = sectionElement.querySelector('#logInOptionButton');
-  
+
   logInOpBtn.addEventListener('click', () => {
-    document.getElementById("logInOptionForm").style.display = "block"; 
-    document.getElementById("signInOptionForm").style.display = "none";
-  })
-  
+    document.getElementById('logInOptionForm').style.display = 'block';
+    document.getElementById('signInOptionForm').style.display = 'none';
+  });
+
   // --- Funcionalidades para capturar lo escrito en el input y poner evento de click a el boton de "Sign in"
   const button = sectionElement.querySelector('#signInButton');
-  
+
   button.addEventListener('click', () => {
     const signInEmail = sectionElement.querySelector('#signInEmailInput').value;
-    const signInPassword = sectionElement.querySelector('#signInPasswordInput').value;
-    //console.log(signInEmail, signInPassword);
-    firebase.auth()
-      .createUserWithEmailAndPassword(signInEmail, signInPassword)
-      .then(userCredential => {
-        //resetear el formulario
-        signInForm.reset();
-
-        console.log('Sign In');
-      });
+    const signInPassword = sectionElement.querySelector('#signInPasswordInput')
+      .value;
+    signIn(signInEmail, signInPassword).then(() => {
+      console.log('Sing In');
+      signInForm.reset();
+    });
+    
   });
+
+  // --- Acceder a cuenta de usuario
+  // btnlogIn.addEventListener('click', () => {
+  //   const signInEmail = sectionElement.querySelector('#signInEmailInput').value;
+  //   const signInPassword = sectionElement.querySelector('#signInPasswordInput').value;
+
+  //   logIn(signInEmail, signInPassword).then(() => {
+  //     console.log('Log In');
+  //     signInForm.reset();
+  //   });
 
   return sectionElement;
 };
