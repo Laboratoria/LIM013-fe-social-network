@@ -131,10 +131,10 @@ export const mainView = () => {
     document.getElementById('signInOptionForm').style.display = 'none';
   });
 
-  // --- Funcionalidades para capturar lo escrito en el input y poner evento de click a el boton de "Sign in"
-  const button = sectionElement.querySelector('#signInButton');
-
-  button.addEventListener('click', () => {
+  // --- Sign In
+  const signInbtn = sectionElement.querySelector('#signInButton');
+  
+  signInbtn.addEventListener('click', () => {
     const signInEmail = sectionElement.querySelector('#signInEmailInput').value;
     const signInPassword = sectionElement.querySelector('#signInPasswordInput')
       .value;
@@ -145,6 +145,23 @@ export const mainView = () => {
     
   });
 
+  // --- Log In
+  const logInbtn = sectionElement.querySelector('#logInButton');
+
+  logInbtn.addEventListener('click', () => {
+    const logInEmail = sectionElement.querySelector('#logInEmailInput').value;
+    const logInPassword = sectionElement.querySelector('#logInPasswordInput').value;
+    //console.log(logInEmail, logInPassword);
+    firebase.auth()
+      .signInWithEmailAndPassword(logInEmail, logInPassword)
+      .then(userCredential => {
+        //resetear el formulario
+        logInForm.reset();
+
+        console.log('Log In');
+      });
+  })
+  
   // --- Acceder a cuenta de usuario
   // btnlogIn.addEventListener('click', () => {
   //   const signInEmail = sectionElement.querySelector('#signInEmailInput').value;
