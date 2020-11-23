@@ -1,4 +1,3 @@
-
 export default () => {
   const viewInicio = `
   <header class="main-header">
@@ -20,17 +19,11 @@ export default () => {
         <section class="main-container_section">
             <form class="upload-post">
                 <input type="text" id="post-title" class="input-post" placeholder="¿Qué aprendiste hoy?" autofocus>
-                <input type="file" id="post-image" class="input-post">
                 <img id='image' width='100px'>
-                <button id='upload-image'>Subir imagen</button>
                 <textarea name="" id="post-description" rows="3" class="input-post" placeholder="¿Alguna reflexión?"></textarea>
-                <div class="upload-options">
-                    <div class="comment">
-                        <button id='btn-save'><i class="fas fa-save"></i>Guardar</button>
-                    </div>
-                    <div class="icon-image">
-                      <input type="file"></input>
-                    </div>
+                <div class="upload-options">  
+                  <button id='btn-save'><i class="fas fa-save"></i>Guardar</button>
+                  <input type="file" id="post-image">  
                 </div>
             </form>
             <section class="card-container">
@@ -61,60 +54,61 @@ export default () => {
   divElement.innerHTML = viewInicio;
 
   const db = firebase.firestore();
+  const storage = firebase.storage();
 
   const postForm = divElement.querySelector(".upload-post");
   const cardsContainer = divElement.querySelector(".card-container");
-  const btnUpImage = divElement.querySelector('#upload-image')
-
-  /* btnUpImage.addEventListener('click', () => {
-    const ref = firebase.storage().ref()
-    const file = postForm['post-image'].files[0]
-    console.log('file', file);
-    const name = file.name
-
-    const metadata = {
-      contentType: file.type
-    }
-
-    const task = ref.child(name).put(file, metadata)
-    task
-    .then(snapshot => snapshot.ref.getDownloadURL())
-    .then(url => {
-      console.log(url);
-      alert('Image upload successful')
-      const image= postForm['image']
-      image.src = url
-    })
-
-  }) */
 
   let editStatus = false;
-  let id = '';
+  let id = "";
+  let imageURL = "";
 
-  const savePost = ( description) =>
+  const savePost = (imageURL, description) => 
     db.collection("posts").doc().set({
+      imageURL,
       description,
-    });
+  });
 
   const getPosts = () => db.collection("posts").get();
   const getPost = (id) => db.collection("posts").doc(id).get();
   const onGetPosts = (callback) => db.collection("posts").onSnapshot(callback);
-  const deletePost = (id) => db.collection('posts').doc(id).delete();
-  const updatePost = (id, updatedPost) => db.collection('posts').doc(id).update(updatedPost);
+  const deletePost = (id) => db.collection("posts").doc(id).delete();
+  const updatePost = (id, updatedPost) =>
+    db.collection("posts").doc(id).update(updatedPost);
 
-  const nameLocal = localStorage.getItem('name')
+  const nameLocal = localStorage.getItem("name");
+
+  let file = divElement.querySelector("#post-image");
+  const image = divElement.querySelector('#image');
+
+  file.addEventListener("change", () => {
+    file = file.files[0];
+    if ( file ) {
+      const storageRef = storage.ref();
+      const uploadTask = storageRef.child(file.name).put(file);
+      uploadTask
+      .then( snapshot => snapshot.ref.getDownloadURL())
+      .then( dowloadURL => {
+        image.src = dowloadURL
+        imageURL = dowloadURL
+        /* console.log('imageURL', imageURL); */
+      })
+    } else {
+      console.log('No hay ningun archivo');
+    }
+  });
 
   if (document.readyState !== "loading") {
     onGetPosts((querySnapshot) => {
       cardsContainer.innerHTML = "";
       querySnapshot.forEach((doc) => {
-        //console.log('rara',doc); 
+        //console.log('rara',doc);
         const post = doc.data();
-        post.id = doc.id; 
+        post.id = doc.id;
         cardsContainer.innerHTML += `
         <section class="card">
           <section class="card-title"><img src="./img/ejemplo.jpg" alt="">${nameLocal}</section>
-          <section class="card-image"><img src="./img/ejemplo.jpg" alt=""></section>
+          <section class="card-image"><img src="${post.imageURL}" alt=""></section>
           <section class="card-description"><input type="text" id="input-user-description" placeholder='${post.description}' disabled></section>
           <section class="card-options">
               <section class="options-like-comment-share">
@@ -135,32 +129,20 @@ export default () => {
                 <button class="btn-delete" data-id=${post.id}>Eliminar</button>
               </div>
           </section>
-          
-         /*  <form class="upload-post" style="display:none">
-            <input type="text" id="post-title" class="input-post" placeholder="¿Qué aprendiste hoy?" autofocus>
-            <textarea name="" id="post-description" rows="3" class="input-post" placeholder="¿Alguna reflexión?"></textarea>
-            <div class="upload-options">
-                <div class="comment">
-                    <button id='btn-save'><i class="fas fa-save"></i>Guardar</button>
-                </div>
-            </div>
-          </form> */
         </section>`;
-
-        const inputDescription = divElement.querySelector('#input-user-description')
 
         const btnsDelete = document.querySelectorAll(".btn-delete");
         btnsDelete.forEach((btn) => {
-          btn.addEventListener('click', async (e) => {
+          btn.addEventListener("click", async (e) => {
             //console.log(e.target);
-            await deletePost(e.target.dataset.id)
+            await deletePost(e.target.dataset.id);
             /* console.log(e.target); */
           });
         });
 
         const btnsEdit = document.querySelectorAll(".btn-edit");
         btnsEdit.forEach((btn) => {
-          btn.addEventListener('click', async (e) => {
+          btn.addEventListener("click", async (e) => {
             const doc = await getPost(e.target.dataset.id);
             const post = doc.data();
             /* const cardFather = e.target.closest('.card');
@@ -169,15 +151,13 @@ export default () => {
             /* console.log(e.target); */
             editStatus = true;
             id = doc.id;
-            
-            
-            const cardFather = e.target.closest('.card');
-            const input = cardFather.querySelector('#input-user-description')
+
+            const cardFather = e.target.closest(".card");
+            const input = cardFather.querySelector("#input-user-description");
             input.disabled = false;
             input.focus();
-          
-            btn.innerText = 'Actualizar'
-            
+
+            btn.innerText = "Actualizar";
           });
         });
       });
@@ -190,19 +170,19 @@ export default () => {
   postForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const title = postForm["post-title"]; 
+    const title = postForm["post-title"];
     //const title = postForm.querySelector('#post-title')
     const description = postForm["post-description"];
 
-    if( !editStatus ){
-      await savePost( description.value);
-    } else { 
-      await updatePost( id, {
+    if (!editStatus) {
+      await savePost(imageURL, description.value);
+    } else {
+      await updatePost(id, {
         title: title.value,
-        description: description.value
-      })
+        description: description.value,
+      });
       editStatus = false;
-      postForm['btn-save'].innerText = 'Guardar'
+      postForm["btn-save"].innerText = "Guardar";
     }
     await getPosts();
     postForm.reset();
