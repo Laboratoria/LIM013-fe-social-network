@@ -8,14 +8,15 @@ import { firebaseConfig } from './firebase/firebase-init.js';
 // --- Este main.js se va a ejcutar cuando se inicialice o
 // --- cuando se haga un load o una recarga de nuestra pagina
 //-------------------------------------------------------------------------------------
-// --- Insertando template en la cajita container
-// Initialize Firebase
+// --- Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
 // const auth = firebase.auth();
 
+// --- Insertando template en la cajita container
 const container = document.getElementById('container');
-// --- Para insertar nodo
 
+// --- Para insertar nodo
 container.appendChild(mainView());
 
 //-------------------------------------------------------------------------------------

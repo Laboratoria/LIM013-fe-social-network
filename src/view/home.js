@@ -136,13 +136,13 @@ export const mainView = () => {
   
   signInbtn.addEventListener('click', () => {
     const signInEmail = sectionElement.querySelector('#signInEmailInput').value;
-    const signInPassword = sectionElement.querySelector('#signInPasswordInput')
-      .value;
-    signIn(signInEmail, signInPassword).then(() => {
-      console.log('Sing In');
-      signInForm.reset();
-    });
-    
+    const signInPassword = sectionElement.querySelector('#signInPasswordInput').value;
+
+    signIn(signInEmail, signInPassword)
+      .then(() => {
+        console.log('Sign In');
+        signInForm.reset();
+    });  
   });
 
   // --- Log In
@@ -151,26 +151,29 @@ export const mainView = () => {
   logInbtn.addEventListener('click', () => {
     const logInEmail = sectionElement.querySelector('#logInEmailInput').value;
     const logInPassword = sectionElement.querySelector('#logInPasswordInput').value;
-    //console.log(logInEmail, logInPassword);
-    firebase.auth()
-      .signInWithEmailAndPassword(logInEmail, logInPassword)
-      .then(userCredential => {
-        //resetear el formulario
-        logInForm.reset();
-
+    
+    logIn(logInEmail, logInPassword)
+      .then(() => {
         console.log('Log In');
-      });
-  })
+        signInForm.reset();
+    });
+  });
   
-  // --- Acceder a cuenta de usuario
-  // btnlogIn.addEventListener('click', () => {
-  //   const signInEmail = sectionElement.querySelector('#signInEmailInput').value;
-  //   const signInPassword = sectionElement.querySelector('#signInPasswordInput').value;
-
-  //   logIn(signInEmail, signInPassword).then(() => {
-  //     console.log('Log In');
-  //     signInForm.reset();
-  //   });
-
   return sectionElement;
 };
+
+/*
+.catch((error) => {
+  // Handle Errors here.
+  const errorCode = error.code;
+  const errorMessage = error.message;
+  // [START_EXCLUDE]
+  if (errorCode === 'auth/weak-password') {
+    alert('The password is too weak.');
+  } else {
+    alert(errorMessage);
+  }
+  console.log(error);
+  // [END_EXCLUDE]
+});
+*/
