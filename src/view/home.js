@@ -131,29 +131,49 @@ export const mainView = () => {
     document.getElementById('signInOptionForm').style.display = 'none';
   });
 
-  // --- Funcionalidades para capturar lo escrito en el input y poner evento de click a el boton de "Sign in"
-  const button = sectionElement.querySelector('#signInButton');
-
-  button.addEventListener('click', () => {
+  // --- Sign In
+  const signInbtn = sectionElement.querySelector('#signInButton');
+  
+  signInbtn.addEventListener('click', () => {
     const signInEmail = sectionElement.querySelector('#signInEmailInput').value;
-    const signInPassword = sectionElement.querySelector('#signInPasswordInput')
-      .value;
-    signIn(signInEmail, signInPassword).then(() => {
-      console.log('Sing In');
-      signInForm.reset();
-    });
-    
+    const signInPassword = sectionElement.querySelector('#signInPasswordInput').value;
+
+    signIn(signInEmail, signInPassword)
+      .then(() => {
+        console.log('Sign In');
+        signInForm.reset();
+    });  
   });
 
-  // --- Acceder a cuenta de usuario
-  // btnlogIn.addEventListener('click', () => {
-  //   const signInEmail = sectionElement.querySelector('#signInEmailInput').value;
-  //   const signInPassword = sectionElement.querySelector('#signInPasswordInput').value;
+  // --- Log In
+  const logInbtn = sectionElement.querySelector('#logInButton');
 
-  //   logIn(signInEmail, signInPassword).then(() => {
-  //     console.log('Log In');
-  //     signInForm.reset();
-  //   });
-
+  logInbtn.addEventListener('click', () => {
+    const logInEmail = sectionElement.querySelector('#logInEmailInput').value;
+    const logInPassword = sectionElement.querySelector('#logInPasswordInput').value;
+    
+    logIn(logInEmail, logInPassword)
+      .then(() => {
+        console.log('Log In');
+        signInForm.reset();
+    });
+  });
+  
   return sectionElement;
 };
+
+/*
+.catch((error) => {
+  // Handle Errors here.
+  const errorCode = error.code;
+  const errorMessage = error.message;
+  // [START_EXCLUDE]
+  if (errorCode === 'auth/weak-password') {
+    alert('The password is too weak.');
+  } else {
+    alert(errorMessage);
+  }
+  console.log(error);
+  // [END_EXCLUDE]
+});
+*/
