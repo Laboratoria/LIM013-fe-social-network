@@ -1,3 +1,4 @@
+import { getPosts } from '../controllers/firestore.js';
 
 export default () => {
   const viewInicio = `
@@ -56,55 +57,56 @@ export default () => {
     </main>
     <footer class="main-footer">&copy; Por Giovand & Diana</footer>
     `;
-  const divElement = document.createElement("section");
-  divElement.classList.add("container");
+  const divElement = document.createElement('section');
+  divElement.classList.add('container');
   divElement.innerHTML = viewInicio;
 
-  const db = firebase.firestore();
 
-  const postForm = divElement.querySelector(".upload-post");
-  const cardsContainer = divElement.querySelector(".card-container");
-  const btnUpImage = divElement.querySelector('#upload-image')
+  const postForm = divElement.querySelector('.upload-post');
+  const cardsContainer = divElement.querySelector('.card-container');
+  const btnUpImage = divElement.querySelector('#upload-image');
 
   btnUpImage.addEventListener('click', () => {
-    const ref = firebase.storage().ref()
-    const file = postForm['post-image'].files[0]
-    const name = file.name
+    const ref = firebase.storage().ref();
+    const file = postForm['post-image'].files[0];
+    const name = file.name;
 
     const metadata = {
-      contentType: file.type
-    }
+      contentType: file.type,
+    };
 
-    const task = ref.child(name).put(file, metadata)
+    const task = ref.child(name).put(file, metadata);
     task
-    .then(snapshot => snapshot.ref.getDownloadURL())
-    .then(url => {
-      console.log(url);
-      alert('Image upload successful')
-      const image= postForm['image']
-      image.src = url
-    })
-
-  })
+      .then(snapshot => snapshot.ref.getDownloadURL())
+      .then((url) => {
+        // eslint-disable-next-line no-console
+        console.log(url);
+        // eslint-disable-next-line no-alert
+        alert('Image upload successful');
+        const image = postForm.image;
+        image.src = url;
+      });
+  });
 
   let editStatus = false;
   let id = '';
+  const db = firebase.firestore();
+  const savePost = (title, description) => db.collection('posts').doc().set({
+    title,
+    description,
+  });
 
-  const savePost = (title, description) =>
-    db.collection("posts").doc().set({
-      title,
-      description,
-    });
-
-  const getPosts = () => db.collection("posts").get();
-  const getPost = (id) => db.collection("posts").doc(id).get();
-  const onGetPosts = (callback) => db.collection("posts").onSnapshot(callback);
-  const deletePost = (id) => db.collection('posts').doc(id).delete();
+  // eslint-disable-next-line no-shadow
+  const getPost = id => db.collection('posts').doc(id).get();
+  const onGetPosts = callback => db.collection('posts').onSnapshot(callback);
+  // eslint-disable-next-line no-shadow
+  const deletePost = id => db.collection('posts').doc(id).delete();
+  // eslint-disable-next-line no-shadow
   const updatePost = (id, updatedPost) => db.collection('posts').doc(id).update(updatedPost);
 
-  if (document.readyState !== "loading") {
+  if (document.readyState !== 'loading') {
     onGetPosts((querySnapshot) => {
-      cardsContainer.innerHTML = "";
+      cardsContainer.innerHTML = '';
       querySnapshot.forEach((doc) => {
         /* console.log(doc.data()); */
         const post = doc.data();
@@ -133,51 +135,55 @@ export default () => {
           </div>
         </section>`;
 
-        const btnsDelete = document.querySelectorAll(".btn-delete");
+        const btnsDelete = document.querySelectorAll('.btn-delete');
         btnsDelete.forEach((btn) => {
           btn.addEventListener('click', async (e) => {
-            await deletePost(e.target.dataset.id)
+            await deletePost(e.target.dataset.id);
             /* console.log(e.target); */
           });
         });
 
-        const btnsEdit = document.querySelectorAll(".btn-edit");
+        const btnsEdit = document.querySelectorAll('.btn-edit');
         btnsEdit.forEach((btn) => {
           btn.addEventListener('click', async (e) => {
-            const doc = await getPost(e.target.dataset.id)
+            // eslint-disable-next-line no-shadow
+            const doc = await getPost(e.target.dataset.id);
+            // eslint-disable-next-line no-shadow
             const post = doc.data();
             /* console.log(e.target); */
             editStatus = true;
             id = doc.id;
 
-            postForm.querySelector('#post-title').value = post.title
-            postForm.querySelector('#post-description').value = post.description
-            postForm['btn-save'].innerText = 'Actualizar'
+            postForm.querySelector('#post-title').value = post.title;
+            postForm.querySelector('#post-description').value = post.description;
+            postForm['btn-save'].innerText = 'Actualizar';
           });
         });
       });
     });
   } else {
-    document.addEventListener("DOMContentLoaded", (e) => {
-      console.log("No funciona!!");
+    // eslint-disable-next-line no-unused-vars
+    document.addEventListener('DOMContentLoaded', (e) => {
+      // eslint-disable-next-line no-console
+      console.log('No funciona!!');
     });
   }
-  postForm.addEventListener("submit", async (e) => {
+  postForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const title = postForm["post-title"];
-    //const title = postForm.querySelector('#post-title')
-    const description = postForm["post-description"];
+    const title = postForm['post-title'];
+    // const title = postForm.querySelector('#post-title')
+    const description = postForm['post-description'];
 
-    if( !editStatus ){
-      await savePost( title.value, description.value);
-    } else { 
-      await updatePost( id, {
+    if (!editStatus) {
+      await savePost(title.value, description.value);
+    } else {
+      await updatePost(id, {
         title: title.value,
-        description: description.value
-      })
+        description: description.value,
+      });
       editStatus = false;
-      postForm['btn-save'].innerText = 'Guardar'
+      postForm['btn-save'].innerText = 'Guardar';
     }
     await getPosts();
     postForm.reset();
@@ -186,11 +192,11 @@ export default () => {
   });
   /*  const postsPublic = (data) => {
     if (data.length) {
-     
+
       let html = '';
       data.forEach((element) => {
         const divCard = document.createElement('section');
-        divCard.classList.add('card') 
+        divCard.classList.add('card')
         const templade = `
         <section class="card">
           <div class="card-title"><img src="./img/ejemplo.jpg" alt="">${element.title}</div>
@@ -214,7 +220,7 @@ export default () => {
               </div>
           </div>
         </section>`;
-        divCard.innerHTML = templade; 
+        divCard.innerHTML = templade;
         html += templade;
       });
       cards.innerHTML = html;
@@ -240,10 +246,10 @@ export default () => {
         console.log(data);
         postsPublic(data);
       });
-      
+
     } else {
       console.log('Estas fuera de sesion');
     }
-  });*/
+  }); */
   return divElement;
 };
