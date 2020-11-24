@@ -7,23 +7,24 @@ const signInWithGoogle = provider => firebase.auth().signInWithPopup(provider);
 
 const signInWithFacebook = provider => firebase.auth().signInWithPopup(provider);
 
-const getPosts = callback => firebase
-  .firestore()
-  .collection('posts')
-  .get()
-  .then((snapshot) => {
-    //console.log(snapshot);
-    const data = [];
-    snapshot.forEach((doc) => {
-      //console.log(doc.id, ' => ', doc.data());
-      data.push({
-        id: doc.id,
-        title: doc.data().title,
-        description: doc.data().description,
-      });
-    });
-    callback(data);
-  });
+// const getPosts = callback => firebase
+//   .firestore()
+//   .collection('posts')
+//   .get()
+//   .then((snapshot) => {
+//     // console.log(snapshot);
+//     const data = [];
+//     snapshot.forEach((doc) => {
+//       // console.log(doc.id, ' => ', doc.data());
+//       data.push({
+//         id: doc.id,
+//         title: doc.data().title,
+//         description: doc.data().description,
+//       });
+//     });
+//     callback(data);
+//   });
+const getPosts = () => firebase.firestore().collection('posts').get();
 export {
   getPosts, signUp, signIn, signInWithGoogle, signInWithFacebook,
 };

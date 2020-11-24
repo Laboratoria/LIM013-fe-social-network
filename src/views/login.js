@@ -7,8 +7,9 @@ import {
 
 export default () => {
   const viewLogin = `
-    <img class="image" src="./img/imageAislados.png" alt="imagen aislados" >
+   
     <main class="right-side">
+    <img class="image" src="./img/imageAislados.png" alt="imagen aislados" >
       <form class="form-login">
         <h2 class="text-center"> Aislados </h2>
         <section class="redes">
@@ -35,6 +36,7 @@ export default () => {
   divElement.classList.add('container-login');
   divElement.innerHTML = viewLogin;
 
+  // eslint-disable-next-line no-useless-escape
   const regExp = /@\w+([\.-]?\w+)/g;
   let name = '';
 
@@ -44,12 +46,18 @@ export default () => {
 
     const inputEmail = document.querySelector('#email').value;
     const inputPassword = document.querySelector('#password').value;
-    /* console.log(inputEmail, inputPassword); */
 
     signIn(inputEmail, inputPassword)
       .then((result) => {
         name = result.user.email.split(regExp)[0]
         localStorage.setItem('name', name)
+
+    console.log(inputEmail, inputPassword);
+
+    signIn(inputEmail, inputPassword)
+      .then((result) => {
+        // console.log(result.user.email);
+        name = result.user.email.split(regExp)[0];
         /* console.log('name1', name); */
         window.location.hash = '#/home';
       })
@@ -57,7 +65,7 @@ export default () => {
         document.querySelector('.message-error').innerHTML = `${error.message}`;
       });
   });
-  /*-------Login with Google------------------*/
+  /* -------Login with Google------------------*/
   const btnGoogle = divElement.querySelector('.btn-redes-g');
   btnGoogle.addEventListener('click', () => {
     // e.preventDefault();
@@ -65,15 +73,22 @@ export default () => {
 
     signInWithGoogle(provider)
       .then((result) => {
-        /* console.log('result', result); */
+
         name = result.additionalUserInfo.profile.given_name
         name.split(regExp)[0]
         /* console.log('name2', name);  */
+
+        name = result.additionalUserInfo.profile.given_name;
+        // eslint-disable-next-line no-unused-expressions
+        name.split(regExp)[0];
+        /* console.log('name2', name); */
+
         window.location.hash = '#/home';
       })
+      // eslint-disable-next-line no-console
       .catch(error => console.log('error', error));
   });
-  /*-------Login with Facebook------------------*/
+  /* -------Login with Facebook------------------*/
   const btnFacebook = divElement.querySelector('.btn-redes-f');
   btnFacebook.addEventListener('click', (e) => {
     e.preventDefault();
@@ -81,11 +96,13 @@ export default () => {
 
     signInWithFacebook(provider)
       .then((result) => {
-        name = result.additionalUserInfo.profile.given_name(regExp)
-        name.split(regExp)[0]
+        name = result.additionalUserInfo.profile.given_name(regExp);
+        // eslint-disable-next-line no-unused-expressions
+        name.split(regExp)[0];
         /* console.log('name3', name); */
         window.location.hash = '#/home';
       })
+      // eslint-disable-next-line no-console
       .catch(error => console.log('error', error));
   });
 
