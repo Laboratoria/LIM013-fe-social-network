@@ -96,18 +96,22 @@ export default () => {
 
     signInWithFacebook(provider)
       .then((result) => {
-<<<<<<< HEAD
+
         console.log('result', result);
         name = result.additionalUserInfo.profile.name(regExp)
         name.split(regExp)[0]
         console.log('name3', name);
        /*  name = result.additionalUserInfo.profile.given_name(regExp)
         name.split(regExp)[0] */
-=======
+
         name = result.additionalUserInfo.profile.given_name(regExp);
         // eslint-disable-next-line no-unused-expressions
         name.split(regExp)[0];
->>>>>>> 658233d1489c808408a2bbd8a7911cf3d62f0ab7
+
+        name = result.additionalUserInfo.profile.given_name(regExp);
+        // eslint-disable-next-line no-unused-expressions
+        name.split(regExp)[0];
+
         /* console.log('name3', name); */
         window.location.hash = '#/home';
       })

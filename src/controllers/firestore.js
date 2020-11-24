@@ -11,7 +11,6 @@ const signInWithGoogle = (provider) =>
 const signInWithFacebook = (provider) =>
   firebase.auth().signInWithPopup(provider);
 
-<<<<<<< HEAD
 const getPosts = (callback) =>
   firebase
     .firestore()
@@ -43,7 +42,6 @@ const deletePost = (id) =>
 const updatePost = (id, updatedPost) =>
   firebase.firestore().collection("posts").doc(id).update(updatedPost);
 
-=======
 // const getPosts = callback => firebase
 //   .firestore()
 //   .collection('posts')
@@ -62,7 +60,7 @@ const updatePost = (id, updatedPost) =>
 //     callback(data);
 //   });
 const getPosts = () => firebase.firestore().collection('posts').get();
->>>>>>> 658233d1489c808408a2bbd8a7911cf3d62f0ab7
+
 export {
   savePost,
   getPosts,

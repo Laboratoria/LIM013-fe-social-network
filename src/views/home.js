@@ -94,30 +94,6 @@ export default () => {
     }
   });
 
-  /*--GUARDAR EL POST EN EL FORM PRINCIPAL---*/
-  postForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const description = postForm["post-description"];
-
-    if (!editStatus) {
-      await savePost(imageURL, description.value);
-    } else {
-      await updatePost(id, {
-        description: description.value,
-      });
-      editStatus = false;
-      postForm["btn-save"].innerText = "Guardar";
-    }
-    await getPosts((data) => {
-      //console.log(data);
-      templateCard(data);
-    });
-    postForm.reset();
-    image.src = "";
-    
-  });
-
   const postForm = divElement.querySelector('.upload-post');
   const cardsContainer = divElement.querySelector('.card-container');
   const btnUpImage = divElement.querySelector('#upload-image');
@@ -195,13 +171,12 @@ export default () => {
       });
 
         const btnsDelete = document.querySelectorAll('.btn-delete');
-        btnsDelete.forEach((btn) => {
-                            
-            btn.addEventListener('click', async (e) => {
-            
-              await deletePost(e.target.dataset.id);
-              /* console.log(e.target); */
-            });
+        btnsDelete.forEach((btn) => 
+                           
+          btn.addEventListener('click', async (e) => {
+          
+            await deletePost(e.target.dataset.id);
+            /* console.log(e.target); */
           });
         });
 
@@ -315,6 +290,6 @@ export default () => {
     } else {
       console.log("Estas fuera de sesion");
     }
-  });
+  }); */
   return divElement;
 };
