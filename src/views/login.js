@@ -81,8 +81,12 @@ export default () => {
 
     signInWithFacebook(provider)
       .then((result) => {
-        name = result.additionalUserInfo.profile.given_name(regExp)
+        console.log('result', result);
+        name = result.additionalUserInfo.profile.name(regExp)
         name.split(regExp)[0]
+        console.log('name3', name);
+       /*  name = result.additionalUserInfo.profile.given_name(regExp)
+        name.split(regExp)[0] */
         /* console.log('name3', name); */
         window.location.hash = '#/home';
       })

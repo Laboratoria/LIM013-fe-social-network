@@ -1,3 +1,5 @@
+import { savePost, getPosts, deletePost, updatePost } from "../controllers/firestore.js";
+
 export default () => {
   const viewInicio = `
   <header class="main-header">
@@ -7,7 +9,7 @@ export default () => {
                 <li class="nav-container_item"><a href="#/home" class="nav-container_link"><i class="fas fa-home"></i>&nbsp;Inicio</a></li>
                 <li class="nav-container_item"><a href="#/contactos" class="nav-container_link"><i class="fas fa-users"></i>&nbsp;Contactos</a></li>
                 <li class="nav-container_item"><a href="#/perfil" class="nav-container_link"><i class="fas fa-grin-alt"></i>&nbsp;Perfil</a></li>
-                <li class="nav-container_item"><a href="#/" class="nav-container_link"><i class="fas fa-home"></i>&nbsp;Cerrar Sesión</a></li>
+                <li class="nav-container_item" id="sign-out"><a class="nav-container_link"><i class="fas fa-home" ></i>&nbsp;Cerrar Sesión</a></li>
             </ul>
         </nav>
         <section class="photo-perfil"><img src="./img/ejemplo.jpg" alt=""></section>
@@ -18,7 +20,7 @@ export default () => {
     <main class="main-container">
         <section class="main-container_section">
             <form class="upload-post">
-                <input type="text" id="post-title" class="input-post" placeholder="¿Qué aprendiste hoy?" autofocus>
+          
                 <img id='image' width='100px'>
                 <textarea name="" id="post-description" rows="3" class="input-post" placeholder="¿Alguna reflexión?"></textarea>
                 <div class="upload-options">  
@@ -53,63 +55,89 @@ export default () => {
   divElement.classList.add("container");
   divElement.innerHTML = viewInicio;
 
-  const db = firebase.firestore();
-  const storage = firebase.storage();
-
   const postForm = divElement.querySelector(".upload-post");
   const cardsContainer = divElement.querySelector(".card-container");
+  const signOut = divElement.querySelector("#sign-out");
 
   let editStatus = false;
   let id = "";
   let imageURL = "";
 
-  const savePost = (imageURL, description) => 
-    db.collection("posts").doc().set({
-      imageURL,
-      description,
-  });
+  let nameLocal = localStorage.getItem("name");
 
-  const getPosts = () => db.collection("posts").get();
-  const getPost = (id) => db.collection("posts").doc(id).get();
-  const onGetPosts = (callback) => db.collection("posts").onSnapshot(callback);
-  const deletePost = (id) => db.collection("posts").doc(id).delete();
-  const updatePost = (id, updatedPost) =>
-    db.collection("posts").doc(id).update(updatedPost);
-
-  const nameLocal = localStorage.getItem("name");
-
-  let file = divElement.querySelector("#post-image");
-  const image = divElement.querySelector('#image');
+  /*--SUBIR IMAGEN CON STORAGE---*/
+  let file = postForm["post-image"];
+  const image = divElement.querySelector("#image");
 
   file.addEventListener("change", () => {
     file = file.files[0];
-    if ( file ) {
-      const storageRef = storage.ref();
-      const uploadTask = storageRef.child(file.name).put(file);
-      uploadTask
-      .then( snapshot => snapshot.ref.getDownloadURL())
-      .then( dowloadURL => {
-        image.src = dowloadURL
-        imageURL = dowloadURL
-        /* console.log('imageURL', imageURL); */
-      })
+    console.log("file", file);
+    if (file.length) {
+      const ref = firebase.storage().ref();
+      const name = file.name;
+
+      const metadata = {
+        contentType: file.type,
+      };
+
+      const task = ref.child(name).put(file, metadata);
+      task
+        .then((snapshot) => snapshot.ref.getDownloadURL())
+        .then((url) => {
+          /* console.log(url); */
+          image.src = url;
+          imageURL = url;
+        });
     } else {
-      console.log('No hay ningun archivo');
+      console.log("No hay ningun archivo");
     }
   });
 
-  if (document.readyState !== "loading") {
-    onGetPosts((querySnapshot) => {
+  /*--GUARDAR EL POST EN EL FORM PRINCIPAL---*/
+  postForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const description = postForm["post-description"];
+
+    if (!editStatus) {
+      await savePost(imageURL, description.value);
+    } else {
+      await updatePost(id, {
+        description: description.value,
+      });
+      editStatus = false;
+      postForm["btn-save"].innerText = "Guardar";
+    }
+    await getPosts((data) => {
+      //console.log(data);
+      templateCard(data);
+    });
+    postForm.reset();
+    image.src = "";
+    
+  });
+
+  signOut.addEventListener("click", (e) => {
+    e.preventDefault();
+    firebase
+      .auth()
+      .signOut()
+      .then(() => {
+        console.log("signOut...");
+        window.location.hash = "#/";
+      });
+  });
+
+  /*--TRAER LA DATA DE LOS POST Y EL TEMPLATE DE LOS CARD---*/
+  const templateCard = (data) => {
+    if (data.length) {
       cardsContainer.innerHTML = "";
-      querySnapshot.forEach((doc) => {
-        //console.log('rara',doc);
-        const post = doc.data();
-        post.id = doc.id;
+      data.forEach((element) => {
         cardsContainer.innerHTML += `
         <section class="card">
           <section class="card-title"><img src="./img/ejemplo.jpg" alt="">${nameLocal}</section>
-          <section class="card-image"><img src="${post.imageURL}" alt=""></section>
-          <section class="card-description"><input type="text" id="input-user-description" placeholder='${post.description}' disabled></section>
+          <section class="card-image"><img src="${element.imageURL}" alt=""></section>
+          <section class="card-description"><input type="text" id="input-user-description" placeholder='${element.description}' disabled></section>
           <section class="card-options">
               <section class="options-like-comment-share">
                 <div class="like">
@@ -125,130 +153,64 @@ export default () => {
                 </div>
               </section>
               <div class="btn-options">
-                <button class="btn-edit" data-id=${post.id}>Editar</button>
-                <button class="btn-delete" data-id=${post.id}>Eliminar</button>
+                <button class="btn-edit" data-id=${element.id}>Editar</button>
+                <button class="btn-delete" data-id=${element.id}>Eliminar</button>
               </div>
           </section>
         </section>`;
+      });
 
-        const btnsDelete = document.querySelectorAll(".btn-delete");
-        btnsDelete.forEach((btn) => {
-          btn.addEventListener("click", async (e) => {
-            //console.log(e.target);
-            await deletePost(e.target.dataset.id);
-            /* console.log(e.target); */
-          });
+      const btnsDelete = document.querySelectorAll(".btn-delete");
+      btnsDelete.forEach((btn) => {
+        btn.addEventListener("click", async (e) => {
+          console.log(e.target);
+          await deletePost(e.target.dataset.id);
+          location.reload();
+          /* console.log(e.target); */
         });
+      });
 
-        const btnsEdit = document.querySelectorAll(".btn-edit");
-        btnsEdit.forEach((btn) => {
-          btn.addEventListener("click", async (e) => {
-            const doc = await getPost(e.target.dataset.id);
-            const post = doc.data();
-            /* const cardFather = e.target.closest('.card');
+      const btnsEdit = document.querySelectorAll(".btn-edit");
+      btnsEdit.forEach((btn) => {
+        btn.addEventListener("click", async (e) => {
+          /* const doc = await getPost(e.target.dataset.id);
+            const post = doc.data(); */
+          /* const cardFather = e.target.closest('.card');
             const form = cardFather.querySelector('.upload-post');
             form.style.display = 'block'; */
-            /* console.log(e.target); */
-            editStatus = true;
-            id = doc.id;
+          /* console.log(e.target); */
+          editStatus = true;
+          id = e.target.dataset.id;
 
-            const cardFather = e.target.closest(".card");
-            const input = cardFather.querySelector("#input-user-description");
-            input.disabled = false;
-            input.focus();
+          const cardFather = e.target.closest(".card");
+          const input = cardFather.querySelector("#input-user-description");
+          input.disabled = false;
+          input.focus();
 
-            btn.innerText = "Actualizar";
+          btn.innerText = "Actualizar";
+
+          /* await updatePost(id, {
+            description: input.value,
           });
+          editStatus = false;
+          input.disabled = true;
+          btn.innerText = "Editar"; */
         });
       });
-    });
-  } else {
-    document.addEventListener("DOMContentLoaded", (e) => {
-      console.log("No funciona!!");
-    });
-  }
-  postForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const title = postForm["post-title"];
-    //const title = postForm.querySelector('#post-title')
-    const description = postForm["post-description"];
-
-    if (!editStatus) {
-      await savePost(imageURL, description.value);
     } else {
-      await updatePost(id, {
-        title: title.value,
-        description: description.value,
-      });
-      editStatus = false;
-      postForm["btn-save"].innerText = "Guardar";
-    }
-    await getPosts();
-    postForm.reset();
-    title.focus();
-    // console.log(title, description);
-  });
-  /*  const postsPublic = (data) => {
-    if (data.length) {
-     
-      let html = '';
-      data.forEach((element) => {
-        const divCard = document.createElement('section');
-        divCard.classList.add('card') 
-        const templade = `
-        <section class="card">
-          <div class="card-title"><img src="./img/ejemplo.jpg" alt="">${element.title}</div>
-          <div class="card-image"><img src="./img/ejemplo.jpg" alt=""></div>
-          <div class="card-description">${element.description}</div>
-          <div class="card-options">
-              <div class="like">
-                  <i class="fas fa-heart"></i>
-                  <span>12k</span>
-              </div>
-              <div class="comment">
-                  <i class="fas fa-comment"></i>
-                  <span>12k</span>
-              </div>
-              <div class="share">
-                  <i class="fas fa-share"></i>
-              </div>
-              <div class="btn-options">
-                <button id="btn-edit">Editar</button>
-                <button id="btn-delete">Eliminar</button>
-              </div>
-          </div>
-        </section>`;
-        divCard.innerHTML = templade; 
-        html += templade;
-      });
-      cards.innerHTML = html;
-    } else {
-      cards.innerHTML = ' <p> No hay publicaciones pendientes </p> ';
+      cardsContainer.innerHTML = " <p> No hay publicaciones pendientes </p> ";
     }
   };
 
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      // fstore.collection('posts')
-      //   .get()
-      //   .then((snapshot) => {
-      //     // eslint-disable-next-line no-console
-      //     console.log(snapshot);
-      //     postsPublic(snapshot);
-      //     snapshot.forEach((doc) => {
-      //       // doc.data() is never undefined for query doc snapshots
-      //       console.log(doc.id, ' => ', doc.data());
-      //     });
-      //   });
       getPosts((data) => {
-        console.log(data);
-        postsPublic(data);
+        //console.log(data);
+        templateCard(data);
       });
-      
     } else {
-      console.log('Estas fuera de sesion');
+      console.log("Estas fuera de sesion");
     }
-  });*/
+  });
   return divElement;
 };
