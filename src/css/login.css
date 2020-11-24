@@ -447,35 +447,13 @@ label {
   align-items: center;
   /* margin: 0; */
 }
+}
 .container-login {
   display: flex;
   flex-direction: row;
   height: 100vh;
   justify-content: space-between;
   /* align-items: center; */
-}/* body {
-    border: 2px solid rgb(255, 102, 0);
-    width: 100%;
-    height: 100%;
-}
-.image {
-  opacity: 0.3;
-  filter: alpha(opacity=40);
-  height: 100vh;
-  width: 100vw;
-}
-.form-login {
-  margin-top: 16px;
-  margin: top;
-  position: relative;
-  right: 480px;
-  width: 172%;
-  height: 100%;
-}
-  .redes{
-    display: none;
-  } */
- 
 }
 
 @media screen and (max-width: 425px){
