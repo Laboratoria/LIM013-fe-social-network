@@ -304,122 +304,20 @@ label {
   font-size: 16px;
   align-self: flex-end;
 }
-/* @media screen and (min-width: 730px) {
-  .nav-container {
-    width: 100%;
-    display: flex;
-  }
-  .nav-container_item {
-    width: 100%;
-    text-align: center;
-    line-height: 2.5;
-    font-size: 16px;
-    flex-basis: 25%;
-  }
-  .nav-container_item:nth-child(4) {
-    flex-basis: 30%;
-  }
-  .nav-container_item:hover {
-    background-color: var(--color-nav-dark);
-  }
-  .nav-container_link {
-    color: var(--color-white);
-    display: block;
-    width: 100%;
-  }
-  .photo-perfil {
-    display: block;
-    flex-grow: 1;
-    /* margin-right: 30px; */
-  /* }
-  .photo-perfil img {
-    width: 80px;
-    margin: 10px auto;
-    display: block;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-  } */
-  /* .main-container_aside {
-    background-color: tomato;
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  } */
-  /* .btn-menu {
-    display: none;
-  }
-  .input-post{
-    margin: 0 0 10px 0;
-    font-size: 16px;
-  }
-  .card {
-    height: 440px;
-  }
-  .card-image img {
-    height: 280px;
-    object-fit: cover;
-    /* object-position: 30% 5%; */
-  /* }
-  .main-footer{
-    font-size: 18px;
-  }
-} */  
-/* @media screen and (min-width: 1024px) {
-  .nav-container_item {
-    font-size: 18px;
-  }
-  .main-container {
-    display: flex;
-    flex-direction: row;
-  }
-  .main-container_section {
-    flex-basis: 60%;
-  }
-  .main-container_aside {
-    background-color: var(--color-background);
-    flex-grow: 1;
-    display: flex;
-    justify-content: flex-start;
-    flex-basis: 40%;
-    flex-direction: column;
-  }
-  .aside-post_section {
-    background-color: var(--color-white);
-    margin-top: 20px;
-    margin-right: 40px;
-    padding: 30px 0;
-    box-sizing: border-box;
-  }
-  .aside-title {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 0 40px;
-    font-size: 25px;
-    font-weight: 600;
-  }
-  .aside-description {
-    display: block;
-    padding: 20px 40px;
-    text-align: center;
-    font-size: 18px;
-  }
-  .aside-post {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-  }
-  .aside-post-img {
-    width: 150px;
-    padding: 10px;
-  }
-} */
+
 
 /* Responsive */
+
+@media screen and (max-width: 1440px){
+  .right-side {
+    display: flex;
+    width: 80vw;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px;
+}
+}
+
 @media screen and (max-width: 1024px){
   .form-login {
     width: 300px;
