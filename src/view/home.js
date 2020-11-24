@@ -64,43 +64,75 @@ export const mainView = () => {
         <section class= "emptySpace">
         </section>
         <section class= "logInOptionForm" id="logInOptionForm">
-          <table class= "formOptions">
-            <tr>
-              <th class= "logIn">LOG IN</th>
-              <th class= "signInOptionCell"><button type="button" class="signInOptionButton" id="signInOptionButton">SIGN IN</button></th>
-            </tr>
-          </table>
           <form name= "logInForm" id= "logInForm" class= "initForm">
-            <section class= "form-group">
-              <input type="text" placeholder="Email" id="logInEmailInput" name="logInEmailInput" class="input">
+            <section class= "form-groupP">
+              <table class= "formOptions">
+                <tr>
+                  <th class= "logIn">LOG IN</th>
+                  <th class= "signInOptionCell"><button type="button" class="signInOptionButton" id="signInOptionButton">SIGN IN</button></th>
+                </tr>
+              </table>              
             </section>
-            <section class= "form-group">
-              <input type="password" placeholder="Password" id="logInPasswordInput" name="logInPasswordInput" class="input">
+            <section class= "form-groupS"></section> 
+            <section class= "form-groupP">
+              <input type="text" placeholder="Email" id="logInEmailInput" name="logInEmailInput" class="input" required>
             </section>
-            <button type="button" class="logInButton" id="logInButton">LOG IN</button>
-            <p>or</p>
-            <button type="button" class="logInWithFacebookButton">LOG IN WITH FACEBOOK</button>
+            <section class= "form-groupS">
+              <p class= "logInErrorResponse" id= "logInErroR"></p>
+            </section>
+            <section class= "form-groupP">
+              <input type="password" placeholder="Password" id="logInPasswordInput" name="logInPasswordInput" class="input" required>
+            </section>
+            <section class= "form-groupS">
+              <p class= "logInErrorResponse" id= "logInPswErroR"></p>
+            </section>
+            <section class= "form-groupP">
+              <button type="button" class="logInButton" id="logInButton">LOG IN</button>
+            </section>
+            <section class= "form-groupS">
+              <p class= "logInWith">or</p>
+            </section>
+            <section class= "form-groupP">
+              <button type="button" class="logInWithFacebookButton">LOG IN WITH FACEBOOK</button>
+            </section>
           </form>
         </section>
-        <section class= "signInOptionForm" id="signInOptionForm">
-          <table class= "formOptions">
-            <tr>
-              <th class= "logInOptionCell"><button type="button" class="logInOptionButton" id="logInOptionButton">LOG IN</button></th>
-              <th class= "signIn">SIGN IN</th>
-            </tr>
-          </table>
-          <form name= "signInForm" id= "signInForm" class= "initForm">
-            <section class= "form-group">
-              <input type="text" placeholder="Email" id="signInEmailInput" name="signInEmailInput" class="input">
+        <section class= "signInOptionForm" id="signInOptionForm">  
+        <form name= "signInForm" id= "signInForm" class= "initForm">
+            <section class= "form-groupP">
+              <table class= "formOptions">
+                <tr>
+                  <th class= "logInOptionCell"><button type="button" class="logInOptionButton" id="logInOptionButton">LOG IN</button></th>
+                  <th class= "signIn">SIGN IN</th>
+                </tr>
+              </table>
             </section>
-            <section class= "form-group">
-            <input type="password" placeholder="Password" id="signInPasswordInput" name="signInPasswordInput" class="input">
+            <section class= "form-groupS"></section>          
+            <section class= "form-groupP">
+              <input type="text" placeholder="Email" id="signInEmailInput" name="signInEmailInput" class="input" required>
+            </section>              
+            <section class= "form-groupS">
+              <p class= "signInErrorResponse" id= "signInErroR"></p>
             </section>
-            <button type="button" class="signInButton" id="signInButton">SIGN IN</button>
-            <p>or</p>
-            <button type="button" class="signInWithFacebookButton">SIGN IN WITH FACEBOOK</button>
+            <section class= "form-groupP">
+              <input type="password" placeholder="Password" id="signInPasswordInput" name="signInPasswordInput" class="input" required>
+            </section>
+            <section class= "form-groupS">
+              <p class= "signInErrorResponse" id= "signInPswErroR"></p>
+            </section>
+            <section class= "form-groupP">
+              <button type="button" class="signInButton" id="signInButton">SIGN IN</button>
+            </secition>
+            <section class= "form-groupS">
+              <p class= "signInWith">or</p>
+            </section>
+            <section class= "form-groupP">
+              <button type="button" class="signInWithFacebookButton">SIGN IN WITH FACEBOOK</button>
+            </section>
           </form>
         </section>
+      </section>
+      <section class= "formFooter" id= "formFtr">
         <p class="logo"><b>COS</b>play</p>
       </section>
     </aside>
@@ -137,12 +169,44 @@ export const mainView = () => {
   signInbtn.addEventListener('click', () => {
     const signInEmail = sectionElement.querySelector('#signInEmailInput').value;
     const signInPassword = sectionElement.querySelector('#signInPasswordInput').value;
+    const signInER = document.getElementById('signInErroR');
+    const signInPswER = document.getElementById('signInPswErroR');
+
+    if (signInEmail === "") {
+      signInER.innerHTML = '<p>*Please enter an email address</p>';
+      return;
+    }
+    else if (signInEmail.length < 4 || (!/^\S+@\S+\.\S+$/g.test(signInEmail))) {
+      signInER.innerHTML = '<p>*Please enter a valid email address</p>';
+      return;
+    }
+    if (signInPassword === "") {
+      signInPswER.innerHTML = '<p>*Please enter a password</p>';
+      return;
+    }
+    else if (signInPassword.length < 4) {
+      signInPswER.innerHTML = '<p>*Must enter at least 6 characters</p>';
+      return;
+    }
 
     signIn(signInEmail, signInPassword)
       .then(() => {
         console.log('Sign In');
         signInForm.reset();
-    });  
+      }) 
+      .catch(() => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // [START_EXCLUDE]
+        if (errorCode === 'auth/weak-password') {
+        alert('The password is too weak.');
+        } else {
+        alert(errorMessage);
+        }
+        console.log(error);
+        // [END_EXCLUDE]
+      }); 
   });
 
   // --- Log In
@@ -151,12 +215,44 @@ export const mainView = () => {
   logInbtn.addEventListener('click', () => {
     const logInEmail = sectionElement.querySelector('#logInEmailInput').value;
     const logInPassword = sectionElement.querySelector('#logInPasswordInput').value;
-    
+    const logInER = document.getElementById('logInErroR');
+    const logInPswER = document.getElementById('logInPswErroR');
+
+    if (logInEmail === "") {
+      logInER.innerHTML = '<p>*Please enter an email address</p>';
+      return;
+    }
+    else if (logInEmail.length < 4 || (!/^\S+@\S+\.\S+$/g.test(logInEmail))) {
+      logInER.innerHTML = '<p>*Please enter a valid email address</p>';
+      return;
+    }
+    if (logInPassword === "") {
+      logInPswER.innerHTML = '<p>*Please enter a password</p>';
+      return;
+    }
+    else if (logInPassword.length < 4) {
+      logInPswER.innerHTML = '<p>*Must enter at least 6 characters</p>';
+      return;
+    }
+
     logIn(logInEmail, logInPassword)
       .then(() => {
         console.log('Log In');
         signInForm.reset();
-    });
+      })
+      .catch(() => {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // [START_EXCLUDE]
+        if (errorCode === 'auth/wrong-password') {
+          alert('Wrong password.');
+        } else {
+          alert(errorMessage);
+        }
+        console.log(error);
+        // [END_EXCLUDE]
+      });
   });
   
   return sectionElement;
