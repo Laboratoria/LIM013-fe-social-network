@@ -1,5 +1,6 @@
 import { savePost, getPosts, deletePost, updatePost } from "../controllers/firestore.js";
 
+
 export default () => {
   const viewInicio = `
   <header class="main-header">
