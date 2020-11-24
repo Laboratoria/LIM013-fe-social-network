@@ -1,4 +1,5 @@
-import { savePost, getPosts, deletePost, updatePost } from "../controllers/firestore.js";
+
+import { getPosts } from '../controllers/firestore.js';
 
 
 export default () => {
@@ -52,8 +53,8 @@ export default () => {
     </main>
     <footer class="main-footer">&copy; Por Giovand & Diana</footer>
     `;
-  const divElement = document.createElement("section");
-  divElement.classList.add("container");
+  const divElement = document.createElement('section');
+  divElement.classList.add('container');
   divElement.innerHTML = viewInicio;
 
   const postForm = divElement.querySelector(".upload-post");
@@ -94,46 +95,55 @@ export default () => {
     }
   });
 
-  /*--GUARDAR EL POST EN EL FORM PRINCIPAL---*/
-  postForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
+  const postForm = divElement.querySelector('.upload-post');
+  const cardsContainer = divElement.querySelector('.card-container');
+  const btnUpImage = divElement.querySelector('#upload-image');
 
-    const description = postForm["post-description"];
+  btnUpImage.addEventListener('click', () => {
+    const ref = firebase.storage().ref();
+    const file = postForm['post-image'].files[0];
+    const name = file.name;
 
-    if (!editStatus) {
-      await savePost(imageURL, description.value);
-    } else {
-      await updatePost(id, {
-        description: description.value,
-      });
-      editStatus = false;
-      postForm["btn-save"].innerText = "Guardar";
-    }
-    await getPosts((data) => {
-      //console.log(data);
-      templateCard(data);
-    });
-    postForm.reset();
-    image.src = "";
-    
-  });
+    const metadata = {
+      contentType: file.type,
+    };
 
-  signOut.addEventListener("click", (e) => {
-    e.preventDefault();
-    firebase
-      .auth()
-      .signOut()
-      .then(() => {
-        console.log("signOut...");
-        window.location.hash = "#/";
+    const task = ref.child(name).put(file, metadata);
+    task
+      .then(snapshot => snapshot.ref.getDownloadURL())
+      .then((url) => {
+        // eslint-disable-next-line no-console
+        console.log(url);
+        // eslint-disable-next-line no-alert
+        alert('Image upload successful');
+        const image = postForm.image;
+        image.src = url;
       });
   });
 
-  /*--TRAER LA DATA DE LOS POST Y EL TEMPLATE DE LOS CARD---*/
-  const templateCard = (data) => {
-    if (data.length) {
-      cardsContainer.innerHTML = "";
-      data.forEach((element) => {
+  let editStatus = false;
+  let id = '';
+  const db = firebase.firestore();
+  const savePost = (title, description) => db.collection('posts').doc().set({
+    title,
+    description,
+  });
+
+  // eslint-disable-next-line no-shadow
+  const getPost = id => db.collection('posts').doc(id).get();
+  const onGetPosts = callback => db.collection('posts').onSnapshot(callback);
+  // eslint-disable-next-line no-shadow
+  const deletePost = id => db.collection('posts').doc(id).delete();
+  // eslint-disable-next-line no-shadow
+  const updatePost = (id, updatedPost) => db.collection('posts').doc(id).update(updatedPost);
+
+  if (document.readyState !== 'loading') {
+    onGetPosts((querySnapshot) => {
+      cardsContainer.innerHTML = '';
+      querySnapshot.forEach((doc) => {
+        //console.log('rara',doc);
+        const post = doc.data();
+        post.id = doc.id;
         cardsContainer.innerHTML += `
         <section class="card">
           <section class="card-title"><img src="./img/ejemplo.jpg" alt="">${nameLocal}</section>
@@ -161,22 +171,26 @@ export default () => {
         </section>`;
       });
 
-      const btnsDelete = document.querySelectorAll(".btn-delete");
-      btnsDelete.forEach((btn) => {
-        btn.addEventListener("click", async (e) => {
-          console.log(e.target);
-          await deletePost(e.target.dataset.id);
-          location.reload();
-          /* console.log(e.target); */
+        const btnsDelete = document.querySelectorAll('.btn-delete');
+        btnsDelete.forEach((btn) => 
+                           
+          btn.addEventListener('click', async (e) => {
+          
+            await deletePost(e.target.dataset.id);
+            /* console.log(e.target); */
+          });
         });
-      });
 
-      const btnsEdit = document.querySelectorAll(".btn-edit");
-      btnsEdit.forEach((btn) => {
-        btn.addEventListener("click", async (e) => {
-          /* const doc = await getPost(e.target.dataset.id);
-            const post = doc.data(); */
-          /* const cardFather = e.target.closest('.card');
+        const btnsEdit = document.querySelectorAll('.btn-edit');
+        btnsEdit.forEach((btn) => {
+          
+          btn.addEventListener('click', async (e) => {
+            // eslint-disable-next-line no-shadow
+            const doc = await getPost(e.target.dataset.id);
+            // eslint-disable-next-line no-shadow
+
+            const post = doc.data();
+            /* const cardFather = e.target.closest('.card');
             const form = cardFather.querySelector('.upload-post');
             form.style.display = 'block'; */
           /* console.log(e.target); */
@@ -190,16 +204,81 @@ export default () => {
 
           btn.innerText = "Actualizar";
 
-          /* await updatePost(id, {
-            description: input.value,
+            btn.innerText = "Actualizar";
+
+            postForm.querySelector('#post-title').value = post.title;
+            postForm.querySelector('#post-description').value = post.description;
+            postForm['btn-save'].innerText = 'Actualizar';
+
           });
-          editStatus = false;
-          input.disabled = true;
-          btn.innerText = "Editar"; */
         });
       });
+  } else {
+    // eslint-disable-next-line no-unused-vars
+    document.addEventListener('DOMContentLoaded', (e) => {
+      // eslint-disable-next-line no-console
+      console.log('No funciona!!');
+    });
+  }
+  postForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const title = postForm['post-title'];
+    // const title = postForm.querySelector('#post-title')
+    const description = postForm['post-description'];
+
+    if (!editStatus) {
+      await savePost(imageURL, description.value);
     } else {
-      cardsContainer.innerHTML = " <p> No hay publicaciones pendientes </p> ";
+      await updatePost(id, {
+        title: title.value,
+        description: description.value,
+      });
+      editStatus = false;
+      postForm['btn-save'].innerText = 'Guardar';
+
+    }
+    await getPosts();
+    postForm.reset();
+    title.focus();
+    // console.log(title, description);
+  });
+  /*  const postsPublic = (data) => {
+    if (data.length) {
+
+      let html = '';
+      data.forEach((element) => {
+        const divCard = document.createElement('section');
+        divCard.classList.add('card')
+        const templade = `
+        <section class="card">
+          <div class="card-title"><img src="./img/ejemplo.jpg" alt="">${element.title}</div>
+          <div class="card-image"><img src="./img/ejemplo.jpg" alt=""></div>
+          <div class="card-description">${element.description}</div>
+          <div class="card-options">
+              <div class="like">
+                  <i class="fas fa-heart"></i>
+                  <span>12k</span>
+              </div>
+              <div class="comment">
+                  <i class="fas fa-comment"></i>
+                  <span>12k</span>
+              </div>
+              <div class="share">
+                  <i class="fas fa-share"></i>
+              </div>
+              <div class="btn-options">
+                <button id="btn-edit">Editar</button>
+                <button id="btn-delete">Eliminar</button>
+              </div>
+          </div>
+        </section>`;
+        divCard.innerHTML = templade;
+        html += templade;
+      });
+      cards.innerHTML = html;
+    } else {
+      cards.innerHTML = ' <p> No hay publicaciones pendientes </p> ';
     }
   };
 
@@ -212,6 +291,6 @@ export default () => {
     } else {
       console.log("Estas fuera de sesion");
     }
-  });
+  }); */
   return divElement;
 };
