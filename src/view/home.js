@@ -73,7 +73,9 @@ export const mainView = () => {
                 </tr>
               </table>              
             </section>
-            <section class="form-groupS"></section> 
+            <section class="form-groupT">
+              <p class= "formTitle">Enter your account</p>
+            </section> 
             <section class="form-groupP">
               <input type="text" placeholder="Email" id="logInEmailInput" name="logInEmailInput" class="input" required>
             </section>
@@ -95,6 +97,9 @@ export const mainView = () => {
             <section class="form-groupP">
               <button type="button" class="logInWithFacebookButton">LOG IN WITH FACEBOOK</button>
             </section>
+            <section class="form-groupS">
+              <p class="logInCustomErrorResponse" id="logInCustomErroR"></p>
+            </section>
           </form>
         </section>
         <section class="signInOptionForm" id="signInOptionForm">  
@@ -107,7 +112,9 @@ export const mainView = () => {
                 </tr>
               </table>
             </section>
-            <section class="form-groupS"></section>          
+            <section class="form-groupT">
+              <p class= "formTitle">Create an account</p>
+            </section>          
             <section class="form-groupP">
               <input type="text" placeholder="Email" id="signInEmailInput" name="signInEmailInput" class="input" required>
             </section>              
@@ -128,6 +135,9 @@ export const mainView = () => {
             </section>
             <section class="form-groupP">
               <button type="button" class="signInWithFacebookButton">SIGN IN WITH FACEBOOK</button>
+            </section>
+            <section class="form-groupS">
+              <p class="signInCustomErrorResponse" id="signInCustomErroR"></p>
             </section>
           </form>
         </section>
@@ -194,18 +204,18 @@ export const mainView = () => {
         console.log('Sign In');
         signInForm.reset();
       }) 
-      .catch(() => {
-        // Handle Errors here.
+      .catch((error) => {
+        const signInCustomER = document.getElementById('signInCustomErroR');
         const errorCode = error.code;
         const errorMessage = error.message;
-        // [START_EXCLUDE]
+        
         if (errorCode === 'auth/weak-password') {
-        alert('The password is too weak.');
+          signInCustomER.innerHTML = '<p>*The password is too weak</p>';
+          return;
         } else {
-        alert(errorMessage);
+          signInCustomER.innerHTML = errorMessage;
         }
         console.log(error);
-        // [END_EXCLUDE]
       }); 
   });
 
@@ -240,20 +250,18 @@ export const mainView = () => {
         console.log('Log In');
         signInForm.reset();
       })
-      .catch(() => {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // [START_EXCLUDE]
+      .catch((error) => {
+        const logInCustomER = document.getElementById('logInCustomErroR');
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        
         if (errorCode === 'auth/wrong-password') {
-          alert('Wrong password.');
+          logInCustomER.innerHTML = '<p>*Wrong password</p>';
         } else {
-          alert(errorMessage);
+          logInCustomER.innerHTML = errorMessage;
         }
         console.log(error);
-        // [END_EXCLUDE]
       });
   });
-  
   return sectionElement;
 };
