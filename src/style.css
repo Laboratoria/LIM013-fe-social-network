@@ -96,13 +96,18 @@ td {
 }
 
 .emptySpace {
-  height: 100px;
+  height: 95px;
+  background-color: none;
+}
+
+.signInOptionForm {
+  display: none;
 }
 
 .formOptions {
   background-color: none;
   width: 350px;
-  height: 45px;
+  height: 35px;
   margin-left: auto;
   margin-right: auto;
   border-collapse: collapse;
@@ -169,9 +174,26 @@ td {
 
 .initForm {
   width: 350px;
-  height: 260px;
+  height: 340px;
   margin-left: auto;
   margin-right: auto;
+  justify-content: top;
+  background-color: none;
+}
+
+.form-groupP {
+  width: 350px;
+  height: 35px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.form-groupS {
+  width: 350px;
+  height: 25px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: none;
 }
 
 .input {
@@ -179,7 +201,33 @@ td {
   height: 35px;
   border: none;
   border-radius: 5px;
-  margin-bottom: 15px;
+  margin-bottom: 0px;
+}
+
+input:required {
+  border-right: 2px solid  rgb(54, 4, 83);
+  border-bottom: 2px solid rgb(54, 4, 83);  
+}
+
+input:invalid {
+  border-right: 2px solid rgb(54, 4, 83);
+  border-bottom: 2px solid rgb(54, 4, 83);  
+}
+
+input:valid {
+  border: none;
+}
+
+.signInErrorResponse,
+.logInErrorResponse {
+  text-align: left;
+  line-height: 0;
+  vertical-align: top;
+  font-size: 14px;  
+  color: rgb(25, 1, 70);
+  margin: auto;  
+  display: inline-block;
+  background-color: none;
 }
 
 .logInButton,
@@ -192,8 +240,14 @@ td {
   color: white;
 }
 
-.initForm p {
+.logInWith, 
+.signInWith {
   text-align: center;
+  font-size: 16px;
+  color: black;
+  background-color: none;
+  margin: auto;
+  padding-top: 5px;
 }
 
 .logInWithFacebookButton,
@@ -206,15 +260,29 @@ td {
   color: white;
 }
 
+.formFooter {
+  width: 350px;
+  height: 50px;
+  margin: auto;
+}
+
 .logo {
   text-align: center;
   color: white;
   font-size: 24px;
 }
 
+.logoBold {
+  font-weight: bolder;
+}
+
 .footer {
   padding: 20px;
   text-align: center;
+}
+
+.footerBold {
+  font-weight: bold;
 }
 
 /**********homeView Mobile (360px x 640px)*********************************************/
@@ -320,7 +388,7 @@ td {
   }
 
   .emptySpace {
-    height: 50px;
+    height: 45px;
     background-color: none;
     z-index: 2;
   }
@@ -355,14 +423,33 @@ td {
 
   .initForm {
     width: 220px;
-    height: 225px;
+    height: 280px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .form-groupP {
+    width: 220px;
+    height: 30px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+
+  .form-groupS {
+    width: 220px;
+    height: 15px;
+    padding-top: 0px;
+    padding-bottom: 5px;
   }
 
   .input {
     width: 220px;
     height: 30px;
+  }
+
+  .signInErrorResponse,
+  .logInErrorResponse {  
+    font-size: 12px;
   }
 
   .logInButton,
@@ -371,7 +458,8 @@ td {
     height: 35px;
   }
 
-  .initForm p {
+  .logInWith, 
+  .signInWith {
     text-align: center;
   }
 
@@ -379,6 +467,11 @@ td {
   .signInWithFacebookButton {
     width: 225px;
     height: 35px;
+  }
+
+  .formFooter {
+    width: 220px;
+    height: 40px;
   }
 
   .logo {
