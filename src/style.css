@@ -100,6 +100,10 @@ td {
   background-color: none;
 }
 
+.signInOptionForm {
+  display: none;
+}
+
 .formOptions {
   background-color: none;
   width: 350px;
@@ -268,9 +272,17 @@ input:valid {
   font-size: 24px;
 }
 
+.logoBold {
+  font-weight: bolder;
+}
+
 .footer {
   padding: 20px;
   text-align: center;
+}
+
+.footerBold {
+  font-weight: bold;
 }
 
 /**********homeView Mobile (360px x 640px)*********************************************/

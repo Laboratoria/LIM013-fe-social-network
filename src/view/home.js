@@ -8,19 +8,19 @@ export const mainView = () => {
   // --- creando template
   const template = `
   <header></header>
-    <main class= "intro">
+    <main class="intro">
       <section class="wrapper">
-        <section class= "punchLine">
-          <section class= "punchStarter">
+        <section class="punchLine">
+          <section class="punchStarter">
             <h2>Why?</h2>
           </section>
-          <section class= "punchText">
+          <section class="punchText">
             <p>Because we’re fun, art driven, and<br>
             look so freeking good in our outfits!!!</p>
           </section>
         </section>
-        <section class= "stats">
-          <table class= "punchStats">
+        <section class="stats">
+          <table class="punchStats">
             <tr>
               <th>GROWING MARKET<br>
                 _____________________<br></th>
@@ -48,100 +48,100 @@ export const mainView = () => {
             </tr>
           </table>
         </section>
-        <section class= "videoIntro">
-          <iframe  class="video" width="882" height="495" src="https://www.youtube.com/embed/hVwKdMpXrx0" 
-          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
-          gyroscope; picture-in-picture" allowfullscreen></iframe>          
+        <section class="videoIntro">
+        <iframe class="video" width="882" height="495" src="https://www.youtube.com/embed/hVwKdMpXrx0" 
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+        picture-in-picture" allowfullscreen></iframe>         
         </section>
       </section>
     </main>
-    <aside class= "join">
-      <section class= "ilustration">
-        <section class= "anime">
+    <aside class="join">
+      <section class="ilustration">
+        <section class="anime">
         </section>
       </section>
-      <section class= "home_form">
-        <section class= "emptySpace">
+      <section class="home_form">
+        <section class="emptySpace">
         </section>
-        <section class= "logInOptionForm" id="logInOptionForm">
-          <form name= "logInForm" id= "logInForm" class= "initForm">
-            <section class= "form-groupP">
-              <table class= "formOptions">
+        <section class="logInOptionForm" id="logInOptionForm">
+          <form name="logInForm" id="logInForm" class="initForm">
+            <section class="form-groupP">
+              <table class="formOptions">
                 <tr>
-                  <th class= "logIn">LOG IN</th>
-                  <th class= "signInOptionCell"><button type="button" class="signInOptionButton" id="signInOptionButton">SIGN IN</button></th>
+                  <th class="logIn">LOG IN</th>
+                  <th class="signInOptionCell"><button type="button" class="signInOptionButton" id="signInOptionButton">SIGN IN</button></th>
                 </tr>
               </table>              
             </section>
-            <section class= "form-groupS"></section> 
-            <section class= "form-groupP">
+            <section class="form-groupS"></section> 
+            <section class="form-groupP">
               <input type="text" placeholder="Email" id="logInEmailInput" name="logInEmailInput" class="input" required>
             </section>
-            <section class= "form-groupS">
-              <p class= "logInErrorResponse" id= "logInErroR"></p>
+            <section class="form-groupS">
+              <p class="logInErrorResponse" id="logInErroR"></p>
             </section>
-            <section class= "form-groupP">
+            <section class="form-groupP">
               <input type="password" placeholder="Password" id="logInPasswordInput" name="logInPasswordInput" class="input" required>
             </section>
-            <section class= "form-groupS">
-              <p class= "logInErrorResponse" id= "logInPswErroR"></p>
+            <section class="form-groupS">
+              <p class="logInErrorResponse" id="logInPswErroR"></p>
             </section>
-            <section class= "form-groupP">
+            <section class="form-groupP">
               <button type="button" class="logInButton" id="logInButton">LOG IN</button>
             </section>
-            <section class= "form-groupS">
+            <section class="form-groupS">
               <p class= "logInWith">or</p>
             </section>
-            <section class= "form-groupP">
+            <section class="form-groupP">
               <button type="button" class="logInWithFacebookButton">LOG IN WITH FACEBOOK</button>
             </section>
           </form>
         </section>
-        <section class= "signInOptionForm" id="signInOptionForm">  
-        <form name= "signInForm" id= "signInForm" class= "initForm">
-            <section class= "form-groupP">
-              <table class= "formOptions">
+        <section class="signInOptionForm" id="signInOptionForm">  
+        <form name="signInForm" id="signInForm" class="initForm">
+            <section class="form-groupP">
+              <table class="formOptions">
                 <tr>
-                  <th class= "logInOptionCell"><button type="button" class="logInOptionButton" id="logInOptionButton">LOG IN</button></th>
-                  <th class= "signIn">SIGN IN</th>
+                  <th class="logInOptionCell"><button type="button" class="logInOptionButton" id="logInOptionButton">LOG IN</button></th>
+                  <th class="signIn">SIGN IN</th>
                 </tr>
               </table>
             </section>
-            <section class= "form-groupS"></section>          
-            <section class= "form-groupP">
+            <section class="form-groupS"></section>          
+            <section class="form-groupP">
               <input type="text" placeholder="Email" id="signInEmailInput" name="signInEmailInput" class="input" required>
             </section>              
             <section class= "form-groupS">
-              <p class= "signInErrorResponse" id= "signInErroR"></p>
+              <p class="signInErrorResponse" id="signInErroR"></p>
             </section>
-            <section class= "form-groupP">
+            <section class="form-groupP">
               <input type="password" placeholder="Password" id="signInPasswordInput" name="signInPasswordInput" class="input" required>
             </section>
-            <section class= "form-groupS">
-              <p class= "signInErrorResponse" id= "signInPswErroR"></p>
+            <section class="form-groupS">
+              <p class="signInErrorResponse" id="signInPswErroR"></p>
             </section>
-            <section class= "form-groupP">
+            <section class="form-groupP">
               <button type="button" class="signInButton" id="signInButton">SIGN IN</button>
             </secition>
-            <section class= "form-groupS">
-              <p class= "signInWith">or</p>
+            <section class="form-groupS">
+              <p class="signInWith">or</p>
             </section>
-            <section class= "form-groupP">
+            <section class="form-groupP">
               <button type="button" class="signInWithFacebookButton">SIGN IN WITH FACEBOOK</button>
             </section>
           </form>
         </section>
       </section>
-      <section class= "formFooter" id= "formFtr">
-        <p class="logo"><b>COS</b>play</p>
+      <section class="formFooter" id="formFtr">
+        <p class="logo"><span class="logoBold">COS</span>play</p>
       </section>
     </aside>
-    <footer class="footer">@<b>COS</b>play | <b>Developed by</b>: Team 4 | Social Network | Laboratoria</footer>
+    <footer class="footer">@<span class="footerBold">COS</span>play | <span class="footerBold">Developed by</span>: Team 4 | Social Network | Laboratoria</footer>
   `;
 
   // --- Insertando el template en la interfaz
   sectionElement.innerHTML = template;
-
+  
   // --- Mostrando solo el formulario de LOG IN al cargar la página
   window.onload = () => {
     document.getElementById('signInOptionForm').style.display = 'none';
