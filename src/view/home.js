@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 /* eslint-disable no-undef */
 import { signIn, logIn } from '../firebase/firebase-auth.js';
 /* eslint-disable max-len */
@@ -141,7 +142,7 @@ export const mainView = () => {
 
   // --- Insertando el template en la interfaz
   sectionElement.innerHTML = template;
-  
+
   // --- Mostrando solo el formulario de LOG IN al cargar la página
   window.onload = () => {
     document.getElementById('signInOptionForm').style.display = 'none';
@@ -165,26 +166,26 @@ export const mainView = () => {
 
   // --- Sign In
   const signInbtn = sectionElement.querySelector('#signInButton');
-  
+
   signInbtn.addEventListener('click', () => {
     const signInEmail = sectionElement.querySelector('#signInEmailInput').value;
     const signInPassword = sectionElement.querySelector('#signInPasswordInput').value;
     const signInER = document.getElementById('signInErroR');
     const signInPswER = document.getElementById('signInPswErroR');
 
-    if (signInEmail === "") {
+    if (signInEmail === '') {
       signInER.innerHTML = '<p>*Please enter an email address</p>';
       return;
     }
-    else if (signInEmail.length < 4 || (!/^\S+@\S+\.\S+$/g.test(signInEmail))) {
+    if (signInEmail.length < 4 || (!/^\S+@\S+\.\S+$/g.test(signInEmail))) {
       signInER.innerHTML = '<p>*Please enter a valid email address</p>';
       return;
     }
-    if (signInPassword === "") {
+    if (signInPassword === '') {
       signInPswER.innerHTML = '<p>*Please enter a password</p>';
       return;
     }
-    else if (signInPassword.length < 4) {
+    if (signInPassword.length < 4) {
       signInPswER.innerHTML = '<p>*Must enter at least 6 characters</p>';
       return;
     }
@@ -193,20 +194,20 @@ export const mainView = () => {
       .then(() => {
         console.log('Sign In');
         signInForm.reset();
-      }) 
+      })
       .catch(() => {
         // Handle Errors here.
         const errorCode = error.code;
         const errorMessage = error.message;
         // [START_EXCLUDE]
         if (errorCode === 'auth/weak-password') {
-        alert('The password is too weak.');
+          alert('The password is too weak.');
         } else {
-        alert(errorMessage);
+          alert(errorMessage);
         }
         console.log(error);
         // [END_EXCLUDE]
-      }); 
+      });
   });
 
   // --- Log In
@@ -218,19 +219,19 @@ export const mainView = () => {
     const logInER = document.getElementById('logInErroR');
     const logInPswER = document.getElementById('logInPswErroR');
 
-    if (logInEmail === "") {
+    if (logInEmail === '') {
       logInER.innerHTML = '<p>*Please enter an email address</p>';
       return;
     }
-    else if (logInEmail.length < 4 || (!/^\S+@\S+\.\S+$/g.test(logInEmail))) {
+    if (logInEmail.length < 4 || (!/^\S+@\S+\.\S+$/g.test(logInEmail))) {
       logInER.innerHTML = '<p>*Please enter a valid email address</p>';
       return;
     }
-    if (logInPassword === "") {
+    if (logInPassword === '') {
       logInPswER.innerHTML = '<p>*Please enter a password</p>';
       return;
     }
-    else if (logInPassword.length < 4) {
+    if (logInPassword.length < 4) {
       logInPswER.innerHTML = '<p>*Must enter at least 6 characters</p>';
       return;
     }
@@ -242,8 +243,8 @@ export const mainView = () => {
       })
       .catch(() => {
         // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
+        const errorCode = error.code;
+        const errorMessage = error.message;
         // [START_EXCLUDE]
         if (errorCode === 'auth/wrong-password') {
           alert('Wrong password.');
@@ -254,6 +255,6 @@ export const mainView = () => {
         // [END_EXCLUDE]
       });
   });
-  
+
   return sectionElement;
 };
