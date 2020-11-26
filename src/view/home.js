@@ -215,7 +215,6 @@ export const mainView = () => {
           return;
         }
         signInCustomER.innerHTML = errorMessage;
-
         console.log(error);
       });
   });
