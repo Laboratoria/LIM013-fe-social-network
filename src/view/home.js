@@ -4,9 +4,9 @@ import { signIn, logIn } from '../firebase/firebase-auth.js';
 /* eslint-disable max-len */
 /* eslint-disable no-console */
 export const mainView = () => {
-  // --- creando elemento de tipo "section"
+  // creando elemento de tipo "section"
   const sectionElement = document.createElement('section');
-  // --- creando template
+  // creando template
   const template = `
   <header></header>
     <main class="intro">
@@ -140,16 +140,16 @@ export const mainView = () => {
     <footer class="footer">@<span class="footerBold">COS</span>play | <span class="footerBold">Developed by</span>: Team 4 | Social Network | Laboratoria</footer>
   `;
 
-  // --- Insertando el template en la interfaz
+  // Insertando el template en la interfaz
   sectionElement.innerHTML = template;
 
-  // --- Mostrando solo el formulario de LOG IN al cargar la página
+  // Mostrando solo el formulario de LOG IN al cargar la página
   window.onload = () => {
     document.getElementById('signInOptionForm').style.display = 'none';
     document.getElementById('logInOptionForm').style.display = 'block';
   };
 
-  // --- Selecionando las opciones de formulario LOG IN/SIGN IN
+  // Selecionando las opciones de formulario LOG IN/SIGN IN
   const signInOpBtn = sectionElement.querySelector('#signInOptionButton');
 
   signInOpBtn.addEventListener('click', () => {
@@ -164,7 +164,7 @@ export const mainView = () => {
     document.getElementById('signInOptionForm').style.display = 'none';
   });
 
-  // --- Sign In
+  // Sign In
   const signInbtn = sectionElement.querySelector('#signInButton');
 
   signInbtn.addEventListener('click', () => {
@@ -210,7 +210,7 @@ export const mainView = () => {
       });
   });
 
-  // --- Log In
+  // Log In
   const logInbtn = sectionElement.querySelector('#logInButton');
 
   logInbtn.addEventListener('click', () => {

@@ -1,37 +1,38 @@
-// // importamos la funcion que vamos a testear
-// import { myFunction } from "../src/lib/index";
-
-// describe('myFunction', () => {
-//   it('debería ser una función', () => {
-//     expect(typeof myFunction).toBe('function');
-//   });
-// });
-
-/* eslint-disable no-console */
-
-import { signIn } from '../src/firebase/firebase-auth.js';
+import { signIn, logIn } from '../src/firebase/firebase-auth.js';
+// configurando firebase mock
 
 const firebasemock = require('firebase-mock');
 
-const mockauth = new firebasemock.MockAuthentication();
+const mockauth = new firebasemock.MockFirebase();
+const mockfirestore = new firebasemock.MockFirestore();
+mockfirestore.autoFlush();
+mockauth.autoFlush();
 
-global.firebase = new firebasemock.MockFirebaseSdk(
-  // use null if your code does not use AUTHENTICATION
+global.firebase = firebasemock.MockFirebaseSdk(
+  // use null if your code does not use RTDB
+  () => null,
   () => mockauth,
+  () => mockfirestore,
 );
 
-describe('sigIn', () => {
-  it('Deberia poder iniciar sesion con email : aurelis.moreno@gmail.com y password: moreno28747', done => 
-    signIn('aurelis.moreno@gmail.com', 'moreno28747').then((data) => {
-      console.log(data);
-      expect(data).toBe('aurelis.moreno@gmail.com');
-      done();
+// test para signIn crear usuarios
+
+describe('Registro de usuario nuevo', () => {
+  it('Debería ser una función', () => expect(typeof signIn).toBe('function'));
+  it('Debería crear un usuario', () => signIn('cosplay@gmail.com', '123456')
+    .then((user) => {
+      expect(user.email).toBe('cosplay@gmail.com');
+      expect(user.password).toBe('123456');
     }));
 });
 
-// describe('logIn', () => {
-//   it('Deberia poder iniciar sesion con email : aurelis.moreno@gmail.com y password: moreno28747',
-// () => logIn('aurelis.moreno@gmail.com').then((data) => {
-//     expect(data).toBe('aurelis.moreno@gmail.com');
-//   }));
-// });
+// test para logIn acceso de usuarios existentes
+
+describe('Acceso de usuario existente', () => {
+  it('Debería ser una función', () => expect(typeof logIn).toBe('function'));
+  it('Debería iniciar sesion', () => logIn('cosplay@gmail.com', '1234567')
+    .then((user) => {
+      expect(user.email).toBe('cosplay@gmail.com');
+      // expect(user.password).toBe('1234567');
+    }));
+});
