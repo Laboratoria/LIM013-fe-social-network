@@ -1,4 +1,4 @@
-// --- Configuracion incial de firebase
+// Configuracion incial de firebase
 export const firebaseConfig = {
   apiKey: 'AIzaSyCz1PH_Wexpp5PPjrdCJQ7mBSLPgvUUy9A',
   authDomain: 'cosplay-b3cab.firebaseapp.com',
