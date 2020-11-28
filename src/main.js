@@ -2,6 +2,7 @@
 /* eslint-disable no-console */
 // Este es el punto de entrada de tu aplicacion
 // importando controlador
+//import { signAndLogView } from './view/home.js';
 import { firebaseConfig } from './firebase/firebase-init.js';
 import { changeView } from './view-controler/route.js';
 
@@ -12,6 +13,14 @@ import { changeView } from './view-controler/route.js';
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
+// const auth = firebase.auth();
+
+// Insertando template en la cajita container
+//const container = document.getElementById('container');
+
+// Para insertar nodo
+//container.appendChild(signAndLogView());
 
 //-------------------------------------------------------------
 
