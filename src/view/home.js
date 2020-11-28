@@ -17,7 +17,7 @@ export default () => {
           <!-- Links -->
             <nav class="listItem" id="listItem">
               <ul>
-                <li><a href="#/home">Feed</a></li>
+                <li><a href="#/home">Home</a></li>
                 <li><a href="#/profile">Profile</a></li>
               </ul>
             </nav>
@@ -40,6 +40,6 @@ export default () => {
   const sectionElement = document.createElement('section');
   sectionElement.classList.add('position')
   sectionElement.innerHTML = homeView;
-  
+
   return sectionElement;  
 };
