@@ -147,9 +147,9 @@ export default () => {
   `;
   
   // Insertando el template en la interfaz
-  document.getElementById('container').classList.add('container');
+  //document.getElementById('container').classList.add('container');
   const sectionElement = document.createElement('section');
-  sectionElement.classList.add('position')
+  //sectionElement.classList.add('position')
   sectionElement.innerHTML = signAndLogView;
   
   // Mostrando solo el formulario de LOG IN al cargar la página
