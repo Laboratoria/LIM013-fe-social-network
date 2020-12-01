@@ -1,12 +1,10 @@
 import { components } from '../view/index.js';
 
-//---------------------------------------------------------------------
-
-/* eslint-disable no-console */
 // Creando controlador para asociar el cambio de la ruta con las vistas
 // Fucion para asociar vistas , que recibe la ruta que vamos a traer de
 
-const changeView = (route) => {
+export const changeView = (route) => {
+  // const id = hash.split('/')[1];
   const container = document.querySelector('#container');
   window.location.hash = route;
   container.innerHTML = '';
@@ -23,8 +21,6 @@ const changeView = (route) => {
     default:
       break;
   }
-  console.log(route);
+  // console.log(route);
   return userRoute;
 };
-
-export { changeView };

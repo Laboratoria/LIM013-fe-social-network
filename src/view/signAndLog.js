@@ -1,8 +1,6 @@
-/* eslint-disable no-alert */
 /* eslint-disable no-undef */
-import { signIn, logIn } from '../firebase/firebase-auth.js';
-/* eslint-disable max-len */
-/* eslint-disable no-console */
+import { signIn, logIn } from '../controller/controller-firebase.js';
+
 export default () => {
   const signAndLogView = `
     <header></header>
@@ -145,43 +143,43 @@ export default () => {
       </section>
     </aside>
   `;
-  
+
   // Insertando el template en la interfaz
-  //document.getElementById('container').classList.add('container');
+  // document.getElementById('container').classList.add('container');
   const sectionElement = document.createElement('section');
-  //sectionElement.classList.add('position')
+  // sectionElement.classList.add('position')
   sectionElement.innerHTML = signAndLogView;
-  
+
   // Mostrando solo el formulario de LOG IN al cargar la página
   window.onload = () => {
     document.getElementById('signInOptionForm').style.display = 'none';
     document.getElementById('logInOptionForm').style.display = 'block';
   };
-  
+
   // Selecionando las opciones de formulario LOG IN/SIGN IN
   const signInOpBtn = sectionElement.querySelector('#signInOptionButton');
-  
+
   signInOpBtn.addEventListener('click', () => {
     document.getElementById('logInOptionForm').style.display = 'none';
     document.getElementById('signInOptionForm').style.display = 'block';
   });
-  
+
   const logInOpBtn = sectionElement.querySelector('#logInOptionButton');
-  
+
   logInOpBtn.addEventListener('click', () => {
     document.getElementById('logInOptionForm').style.display = 'block';
     document.getElementById('signInOptionForm').style.display = 'none';
   });
-  
+
   // Sign In
   const signInbtn = sectionElement.querySelector('#signInButton');
-  
+
   signInbtn.addEventListener('click', () => {
     const signInEmail = sectionElement.querySelector('#signInEmailInput').value;
     const signInPassword = sectionElement.querySelector('#signInPasswordInput').value;
     const signInER = document.getElementById('signInErroR');
     const signInPswER = document.getElementById('signInPswErroR');
-  
+
     if (signInEmail === '') {
       signInER.innerHTML = '<p>*Please enter an email address</p>';
       return;
@@ -198,7 +196,7 @@ export default () => {
       signInPswER.innerHTML = '<p>*Must enter at least 6 characters</p>';
       return;
     }
-  
+
     signIn(signInEmail, signInPassword)
       .then(() => {
         console.log('Sign In');
@@ -208,7 +206,7 @@ export default () => {
         const signInCustomER = document.getElementById('signInCustomErroR');
         const errorCode = error.code;
         const errorMessage = error.message;
-  
+
         if (errorCode === 'auth/weak-password') {
           signInCustomER.innerHTML = '<p>*The password is too weak</p>';
           return;
@@ -217,17 +215,17 @@ export default () => {
         console.log(error);
       });
   });
-  
+
   // Log In
   const logInbtn = sectionElement.querySelector('#logInButton');
-  
+
   logInbtn.addEventListener('click', () => {
     const logInEmail = sectionElement.querySelector('#logInEmailInput').value;
     const logInPassword = sectionElement.querySelector('#logInPasswordInput')
       .value;
     const logInER = document.getElementById('logInErroR');
     const logInPswER = document.getElementById('logInPswErroR');
-  
+
     if (logInEmail === '') {
       logInER.innerHTML = '<p>*Please enter an email address</p>';
       return;
@@ -244,7 +242,7 @@ export default () => {
       logInPswER.innerHTML = '<p>*Must enter at least 6 characters</p>';
       return;
     }
-  
+
     logIn(logInEmail, logInPassword)
       .then(() => {
         window.location.hash = '#/home';
@@ -255,7 +253,7 @@ export default () => {
         const logInCustomER = document.getElementById('logInCustomErroR');
         const errorCode = error.code;
         const errorMessage = error.message;
-  
+
         if (errorCode === 'auth/wrong-password') {
           logInCustomER.innerHTML = '<p>*Wrong password</p>';
         } else {
