@@ -1,8 +1,3 @@
-/* eslint-disable no-alert */
-/* eslint-disable no-undef */
-//import { signIn, logIn } from '../firebase/firebase-auth.js';
-/* eslint-disable max-len */
-/* eslint-disable no-console */
 export default () => {
   const homeView = `
     <header class="header">
@@ -23,23 +18,34 @@ export default () => {
             </nav>
             <!-- Brand/Logo -->
             <section class="logo">
-              <a class="navbar-brand"><span class="logoBold">COS</span>play</a>            
+              <a class="navbar-brand">COSplay</a>
             </section>
             <!-- Log out -->
             <section class="logout">
-              <p>Log out</p>
+
             </section>
         </section>
       </section>
     </header>
-    <main></main>
+    <main>
+    <form id="task-form">
+    <div class="form-group">
+      <input type="text" id="task-title" class="form-control" class="Task Title" placeholder="Crear publicación"
+        autofocus>
+    </div>
+    <div class="form-group">
+      <textarea id="task-description" rows="3" class="form-control" placeholder= "¿Que estas pensando , usuario?"></textarea>
+    </div>
+  
+    <button class="btn btn-primary" id="btn-task-form">
+      Publicar
+    </button></main>
     <aside></aside>
   `;
-      
   // Insertando el template en la interfaz
   const sectionElement = document.createElement('section');
-  //sectionElement.classList.add('position')
+  sectionElement.classList.add('position');
   sectionElement.innerHTML = homeView;
 
-  return sectionElement;  
+  return sectionElement;
 };

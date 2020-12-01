@@ -1,4 +1,4 @@
-import { signIn, logIn } from '../src/firebase/firebase-auth.js';
+import { signIn, logIn } from '../src/controller/controller-firebase.js';
 // configurando firebase mock
 
 const firebasemock = require('firebase-mock');
