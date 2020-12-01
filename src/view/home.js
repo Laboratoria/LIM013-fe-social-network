@@ -23,11 +23,11 @@ export default () => {
             </nav>
             <!-- Brand/Logo -->
             <section class="logo">
-              <a class="navbar-brand">COSplay</a>            
+              <a class="navbar-brand"><span class="logoBold">COS</span>play</a>            
             </section>
             <!-- Log out -->
             <section class="logout">
-      
+              <p>Log out</p>
             </section>
         </section>
       </section>
@@ -38,7 +38,7 @@ export default () => {
       
   // Insertando el template en la interfaz
   const sectionElement = document.createElement('section');
-  sectionElement.classList.add('position')
+  //sectionElement.classList.add('position')
   sectionElement.innerHTML = homeView;
 
   return sectionElement;  

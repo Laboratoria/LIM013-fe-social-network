@@ -309,3 +309,84 @@ input:valid {
 }
 
 /**********feed Desktop (1562px x 920px)*******************************************/
+.header {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.topnav {
+  padding: 10px;
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.flexNav {
+  width: 90%;  
+  display: flex; 
+  background-color: blue;  
+}
+
+.menu-deploy {
+  display: none;
+  font-size: 25px;
+  cursor: pointer; 
+}
+
+.menu-deploy i {
+  color: #E0DBDB;
+}
+
+.listItem {
+  justify-content: center;
+  width: 250px;
+  height: 30px;
+  margin-top: 10px;
+  background-color: orange;
+}
+
+.listItem li {
+  width: 80px;
+  margin: auto;
+  padding-bottom: 20px;
+  font-size: 16px;
+  display: inline-block; 
+}
+
+.listItem li a {
+  display: inline-block;
+  position: relative;
+  color:  #E0DBDB;
+  text-decoration: underline;
+  line-height: 25px;
+  padding: 0 5px;
+  margin-top: auto;
+  transition: .2s;
+}
+
+.listItem li a:hover {
+  color: #909394;
+}
+
+.logo {
+  width: 500px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;    
+}
+
+.logo a {
+  color: white;
+  font-size: 32px;
+  line-height: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: bold;
+  background-color:yellow ;
+}
+
+.logoBold {
+  font-weight: bolder;
+}
