@@ -10,13 +10,18 @@ export const changeView = (route) => {
   container.innerHTML = '';
   let userRoute = '';
   switch (route) {
-    case '': userRoute = container.appendChild(components.signAndLog());
+    case '': 
+      userRoute = container.appendChild(components.signAndLog());
       break;
-    case '#/': userRoute = container.appendChild(components.signAndLog());
+    case '#/': 
+      userRoute = container.appendChild(components.signAndLog());
       break;
-    case '#/home': userRoute = container.appendChild(components.home());
+    case '#/home': 
+      userRoute = container.appendChild(components.navBar());
+      userRoute = container.appendChild(components.home());
       break;
-    case '#/profile': userRoute = container.appendChild(components.profile());
+    case '#/profile': 
+      userRoute = container.appendChild(components.profile());
       break;
     default:
       break;

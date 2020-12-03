@@ -1,0 +1,78 @@
+/**********homeView Desktop (1562px x 920px)****************************/
+
+body {
+    margin: auto;
+    padding: 20px, 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #F4F1F1;
+}
+  
+.container {
+    width: 100%;
+}
+
+/**********newPostContainer Desktop (1562px x 920px)********************/
+
+.newPostContainer {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    background-color: transparent;
+}
+  
+.postFeed {
+    width: 33%;
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+.newPost {
+    width: 100%;
+    margin-left: 10px;
+}
+  
+.newPostForm {
+    width: 520px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+}
+  
+.form-groupPost {
+    display: block;
+    text-align: center;
+}
+  
+.newPostInputText {
+    width: 470px;  
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.096);
+    border-radius: 5px;
+}
+  
+.separator {
+    width: 490px;
+}
+  
+.callToAction {
+    text-align: right;
+}
+  
+.postButton {
+    width: 75px;
+    height: 25px;
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    border: black;
+    border-radius: 5px;
+    background-color: black;
+    font-size: 12px;
+    color: white;
+    display: inline-block;
+}

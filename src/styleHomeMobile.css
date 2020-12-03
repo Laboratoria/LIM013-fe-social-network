@@ -1,0 +1,23 @@
+/**********newPostView Mobile (360px x 640px)******************************/
+
+@media screen and (max-width: 361px) {
+    .postFeed {
+        width: 90%;
+    }
+    
+    .newPostForm {
+        width: 300px;
+    }
+    
+    .newPostInputText {
+        width: 260px;
+    }
+    
+    .separator {
+        width: 280px;
+    }
+    
+    .postButton {
+        margin-right: 10px;
+    }
+}
