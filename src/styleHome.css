@@ -10,12 +10,7 @@ body {
 .container {
     width: 100%;
 }
-/*
-.wrapper {
-    width: 100%;
-    background-color: #F4F1F1;
-}
-*/
+
 /**********newPostContainer Desktop (1562px x 920px)********************/
 
 .newPostContainer {
@@ -44,7 +39,6 @@ body {
 }
   
 .form-groupPost {
-    display: block;
     text-align: center;
 }
   
