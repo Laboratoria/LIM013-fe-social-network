@@ -4,20 +4,25 @@ body {
     margin: auto;
     padding: 20px, 0px;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #F4F1F1;
+    background-color: white;
 }
-  
+ 
 .container {
     width: 100%;
 }
-
+/*
+.wrapper {
+    width: 100%;
+    background-color: #F4F1F1;
+}
+*/
 /**********newPostContainer Desktop (1562px x 920px)********************/
 
 .newPostContainer {
     width: 100%;
     padding-top: 20px;
     padding-bottom: 10px;
-    background-color: transparent;
+    background-color: #F4F1F1;
 }
   
 .postFeed {

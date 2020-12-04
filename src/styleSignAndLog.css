@@ -9,8 +9,9 @@ body {
   
 .container {
     width: 100%;
+    background-color: white;
 }
-  
+
 .punchStarter {
     font-size: 54px;
     background-color: none;
