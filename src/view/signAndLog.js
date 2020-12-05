@@ -3,6 +3,7 @@ import { signIn, logIn } from '../controller/controller-firebase.js';
 
 export default () => {
   const signAndLogView = `
+  <section class="wrapper">
     <header></header>
     <main class="intro">
       <section class="wrapper">
@@ -142,7 +143,11 @@ export default () => {
         <p class="logo"><span class="logoBold">COS</span>play</p>
       </section>
     </aside>
-  `;
+    <footer class="footer">@<span class="footerBold">COS</span>play |
+      <span class="footerBold">Developed by</span>: Team 4 | Social Network |Laboratoria
+    </footer>
+  </section>
+`;
 
   // Insertando el template en la interfaz
   // document.getElementById('container').classList.add('container');
