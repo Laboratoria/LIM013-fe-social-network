@@ -14,7 +14,7 @@ body {
 
 /**********newPostContainer Desktop (1562px x 920px)********************/
 
-.homeBodyWrapper {
+.profileBodyWrapper {
     width: 100%;
     display: flex;
     justify-content: center;    
@@ -83,85 +83,91 @@ body {
 }
 
 /**********aside left**********/
-.leftHome {
+.leftProfile {
     width: 24%;
     display: inline-block; 
     background-color: none;
 }
   
-.myProfileTab {
+.myProfileResume {
     width: 100%;
 }
-
-.linkTab { 
+  
+.heroPhoto {
     width: 350px;
+    height: 239.5px;
     margin-right: auto;
-    margin-left: auto;
-    margin-top: 20px; 
-    background-color: none;
-}
-
-.iconLeft {
-    width: 24%;
-    font-size: 36px;
-    border-bottom: dotted 1px grey;
-    background-color: none;
-}
-
-.rightText {
-    width: 75%;
-    border-bottom: dotted 1px grey;
-    background-color: none;
-}
-/*
-.userPhotoMini {
-    width: 50px;
-    height: 50px;
+    margin-left: auto; 
+    margin-top: 20px;
     border: none;
-    background-image: url(images/logged_user_photo.png);
-    background-size: contain;
-    background-repeat: no-repeat;
+    border-radius: 5px;
+    background-image: url(images/hero_photo.jpg);
+    background-size: cover;
 }
-*/
-.rightText p,
-.rightTextLast p {
+
+.userData {    
+    background-color: none;
+}
+
+.userPhoto {
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+    float: right;
+    background-image: url(images/logged_user_photo.png);
+    background-size: cover;
+}
+
+.userName {
+    width: 175px;
+    height: 50px;
     text-align: left;
     font-size: 16px;
     font-weight: bold;
-}
-
-.subtitle {
-    width: 100%;
-    padding-top: 20px;
-    padding-left: 20px;
-    text-align: left;
-    font-size: 16px;
-    color:  rgb(82, 83, 83);
-}
-
-.subtitle2 {
-    width: 100%;
-    padding-top: 20px;
-    padding-left: 20px;
-    text-align: left;
-    font-size: 16px;
-    color:  white;
-}
-
-.iconLeftLast {
-    width: 24%;
-    font-size: 36px;
     background-color: none;
 }
 
-.rightTextLast {
-    width: 75%;
-    background-color: none;
+.myPhotos {
+    width: 350px;
+    height: 200px;
+    margin-right: auto;
+    margin-left: auto; 
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
 }
-   
+
+.photoGroup {
+    width: 100%;
+}
+
+.photoMini {
+    width: 22%;
+    height: 57px;
+    background-image: url(images/hero_photo.jpg);
+    background-size: cover;
+}
+
+.contact {
+    width: 350px;
+    height: 50px;
+    margin-right: auto;
+    margin-left: auto; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(54, 4, 83);
+    box-shadow:3px 3px 5px grey;
+}
+
+.profileLinksMobile {
+    display: none;
+}
+
 .sepUserData {
     width: 350px;
-    text-align: left;
 }
 
 .footerSideText {
@@ -170,8 +176,4 @@ body {
     text-align: center;
     font-size: 12px;
     color: rgb(82, 83, 83);
-}
-
-.iconLinkTab {
-    display: none;
 }

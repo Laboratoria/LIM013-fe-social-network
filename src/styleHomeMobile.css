@@ -1,10 +1,22 @@
 /**********newPostView Mobile (360px x 640px)******************************/
 
 @media screen and (max-width: 361px) {
-    .postFeed {
-        width: 90%;
+    /**********main**********/
+    .homeBodyWrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;    
+    }
+
+    .mainHome {
+        width: 100%;
+        align-self: center;
     }
     
+    .newPostContainer {
+        padding-top: 0px;
+    }
+
     .newPostForm {
         width: 300px;
     }
@@ -19,5 +31,49 @@
     
     .postButton {
         margin-right: 10px;
+    }
+
+    /**********aside left**********/
+    .left {
+        width: 100%;
+        align-self: center; 
+        margin-bottom: 0px;
+        background-color: none;
+    }
+
+    .linkTab {
+        display: none;
+    }
+    /*
+    .userPhoto {
+        width: 60px;
+        height: 60px;
+        margin-top: -20px;
+    }
+
+    .userName {
+        width: 150px;
+        height: 40px;
+        margin-top: -5px;
+    }
+
+    .userName p {
+        font-size: 14px;
+    }
+    */
+    .bottom {
+        display: none;
+    }
+
+    .iconLinkTab {
+        display: block;
+        height: 40px;
+        margin-left: 28px;
+    }
+
+    .iconMobile {
+        width: 20%;
+        font-size: 28px;
+        background-color: none;
     }
 }

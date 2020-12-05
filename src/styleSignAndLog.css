@@ -1,15 +1,22 @@
 /**********signAndLogView Desktop (1562px x 920px)*********************/
+.wrapper {
+    background-color: white;
+}
 
 body {
     margin: auto;
     padding: 20px, 0px;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: white;
+    background-color: transparent;
 }
-  
+
 .container {
     width: 100%;
-    background-color: white;
+    background-color: transparent;
+}
+
+.intro {
+    background-color: transparent;
 }
 
 .punchStarter {
@@ -66,7 +73,7 @@ td {
 }
   
 .join {
-    background-color: none;
+    background-color: transparent;
     display: inline-block;
     vertical-align: top;
     width: 30%;
@@ -298,4 +305,14 @@ input:valid {
   
 .logoBold {
     font-weight: bolder;
+}
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    background-color: transparent;
+}
+  
+.footerBold {
+    font-weight: bold;
 }

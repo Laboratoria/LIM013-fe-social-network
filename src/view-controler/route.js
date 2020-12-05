@@ -21,6 +21,7 @@ export const changeView = (route) => {
       userRoute = container.appendChild(components.home());
       break;
     case '#/profile': 
+      userRoute = container.appendChild(components.navBar());
       userRoute = container.appendChild(components.profile());
       break;
     default:

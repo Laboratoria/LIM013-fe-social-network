@@ -1,7 +1,7 @@
 /**********defaultView Desktop (1562px x 920px)*******************************************/
 
 body {
-  background-color: white;
+  background-color: transparent;
   margin: auto;
   padding: 20px, 0px;
   font-family: Arial, Helvetica, sans-serif;
@@ -11,20 +11,8 @@ body {
   width: 100%;
 }
 
-.footer {
-  padding: 20px;
-  text-align: center;
-  background-color: white;
-}
-
-.footerBold {
-  font-weight: bold;
-}
-
 /**********defaultView Mobile (360px x 640px)***************************/
 
 @media screen and (max-width: 361px) {
-  .footer {
-    font-size: 12px;
-  }
+  
 }
