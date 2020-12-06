@@ -18,10 +18,33 @@ export default () => {
               </div> 
             </td>
             <td class="logo">
-              <h1><a href="#/home"><span class="logoBold">COS</span>play</a></h1>
+              <a href="#/home"><span class="logoBold">COS</span>play</a>
             </td>
             <td class="rightLoggedUser">
               <a href="#" id="logOut">Log out <i class="fas fa-sign-out-alt"></i></a>
+            </td>          
+          </tr>
+        </table>
+      </section>
+      <section class="navbarMobile">
+        <table class="links">
+          <tr>
+            <td class="leftLoggedUser">
+              <div class="dropdown">
+                <button class="dropbtn"> 
+                  <a href="#/profile"><i class="fas fa-user-circle"></i> &#9660</a>
+                </button>
+                <div class="dropdown-content">
+                  <a href="#"><i class="fas fa-user-circle"></i> MySecondaryAccount</a>
+                  <a href="#"><i class="fas fa-user-circle"></i> MyTradingAccount</a>
+                </div>
+              </div> 
+            </td>
+            <td class="logo">
+              <a href="#/home"><span class="logoBold">COS</span>play</a>
+            </td>
+            <td class="rightLoggedUser">
+              <a href="#" id="logOut"><i class="fas fa-sign-out-alt"></i></a>
             </td>          
           </tr>
         </table>

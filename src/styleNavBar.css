@@ -42,6 +42,10 @@ header {
     background-size: cover;
 }
 */
+.fas {
+    font-size: 24px;
+}
+
 .leftLoggedUser a,
 .rightLoggedUser a {
     color: #ccc6c6;
@@ -50,7 +54,7 @@ header {
     text-decoration: none;
 }
 
-h1 a {
+.logo a {
     margin-left: 0px;
     font-size: x-large;
     color: white;
@@ -74,7 +78,7 @@ h1 a {
     float: left;
     overflow: hidden;
 }
-  
+
 .dropdown .dropbtn {
     font-size: 18px;  
     border: none;
@@ -116,23 +120,42 @@ h1 a {
     display: block;
 }
 
+.navbarMobile {
+    display: none;
+}
+
 /**********navBarView Mobile (360px x 640px)*********************************************/
 
 @media screen and (max-width: 361px) {
-  
+    .navbar {
+        display: none;
+    }
+
+    .navbarMobile {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url(images/home_navbar.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
     .leftLoggedUser,
     .rightLoggedUser {
         width: 50px;
     }
     
+    .fas {
+        font-size: 26px;
+    }
+    
     .leftLoggedUser a,
     .rightLoggedUser a {
-        font-size: 12px;
+        font-size: 20px;
     }
 
-    h1 a {
-        font-size: large;
-    }
     .nav-ul li a {
         width: 300px;
         display: inline-block;

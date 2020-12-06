@@ -25,6 +25,8 @@ export const changeView = (route) => {
       userRoute = container.appendChild(components.profile());
       break;
     default:
+      userRoute = container.appendChild(components.navBar());
+      userRoute = container.appendChild(components.error404());
       break;
   }
   // console.log(route);
