@@ -164,14 +164,16 @@ export default () => {
   // Selecionando las opciones de formulario LOG IN/SIGN IN
   const signInOpBtn = sectionElement.querySelector('#signInOptionButton');
 
-  signInOpBtn.addEventListener('click', () => {
+  signInOpBtn.addEventListener('click', (e) => {
+    e.preventDefault();
     document.getElementById('logInOptionForm').style.display = 'none';
     document.getElementById('signInOptionForm').style.display = 'block';
   });
 
   const logInOpBtn = sectionElement.querySelector('#logInOptionButton');
 
-  logInOpBtn.addEventListener('click', () => {
+  logInOpBtn.addEventListener('click', (e) => {
+    e.preventDefault();
     document.getElementById('logInOptionForm').style.display = 'block';
     document.getElementById('signInOptionForm').style.display = 'none';
   });
@@ -179,7 +181,9 @@ export default () => {
   // Sign In
   const signInbtn = sectionElement.querySelector('#signInButton');
 
-  signInbtn.addEventListener('click', () => {
+  signInbtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
     const signInEmail = sectionElement.querySelector('#signInEmailInput').value;
     const signInPassword = sectionElement.querySelector('#signInPasswordInput').value;
     const signInER = document.getElementById('signInErroR');
@@ -224,7 +228,9 @@ export default () => {
   // Log In
   const logInbtn = sectionElement.querySelector('#logInButton');
 
-  logInbtn.addEventListener('click', () => {
+  logInbtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
     const logInEmail = sectionElement.querySelector('#logInEmailInput').value;
     const logInPassword = sectionElement.querySelector('#logInPasswordInput')
       .value;

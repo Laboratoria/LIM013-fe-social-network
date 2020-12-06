@@ -1,3 +1,5 @@
+import { logOut as exit } from '../controller/controller-firebase.js';
+
 export default () => {
   const navBarView = `
     <header>
@@ -5,13 +7,21 @@ export default () => {
         <table class="links">
           <tr>
             <td class="leftLoggedUser">
-              <a href="#/profile">LoggedUser &#9660</a>
+              <div class="dropdown">
+                <button class="dropbtn"> 
+                  <a href="#/profile"><i class="fas fa-user-circle"></i> LoggedUser &#9660</a>
+                </button>
+                <div class="dropdown-content">
+                  <a href="#"><i class="fas fa-user-circle"></i> MySecondaryAccount</a>
+                  <a href="#"><i class="fas fa-user-circle"></i> MyTradingAccount</a>
+                </div>
+              </div> 
             </td>
             <td class="logo">
               <h1><a href="#/home"><span class="logoBold">COS</span>play</a></h1>
             </td>
             <td class="rightLoggedUser">
-              <a href="#/logOut">Log out <i class="fas fa-sign-out-alt"></i></a>
+              <a href="#" id="logOut">Log out <i class="fas fa-sign-out-alt"></i></a>
             </td>          
           </tr>
         </table>
@@ -24,5 +34,17 @@ export default () => {
   //sectionElement.classList.add('position');
   sectionElement.innerHTML = navBarView;
   
+  // signOut
+  const logOut = sectionElement.querySelector('#logOut');
+
+  logOut.addEventListener('click', (e) => {
+    e.preventDefault();
+    exit()
+      .then(() => {
+        window.location.hash = '#/';
+        console.log('Sign Out');
+      });
+  });
+
   return sectionElement;
 };

@@ -69,6 +69,53 @@ h1 a {
     color:  rgb(252, 215, 5);
 }
 
+/**********dropdown menu**********/
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+  
+.dropdown .dropbtn {
+    font-size: 18px;  
+    border: none;
+    outline: none;
+    color: #ccc6c6;
+    padding: 20px 0px;
+    background-color: transparent;
+    font-family: inherit;
+    margin: 0;
+}
+
+.dropdown:hover {
+    color:  rgb(252, 215, 5);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:#F4F1F1;
+    min-width: 160px;
+    box-shadow:3px 3px 5px grey;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 14px 15px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+  
+.dropdown-content a:hover {
+    background-color:  rgba(0, 0, 0, 0.096);
+}
+  
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 /**********navBarView Mobile (360px x 640px)*********************************************/
 
 @media screen and (max-width: 361px) {
