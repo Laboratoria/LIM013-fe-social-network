@@ -34,7 +34,7 @@ export default () => {
   //sectionElement.classList.add('position');
   sectionElement.innerHTML = navBarView;
   
-  // signOut
+  // Log Out
   const logOut = sectionElement.querySelector('#logOut');
 
   logOut.addEventListener('click', (e) => {
