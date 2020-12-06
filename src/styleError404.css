@@ -1,0 +1,112 @@
+/**********error404View Desktop (1562px x 920px)*********************/
+/*
+body {
+    margin: auto;
+    padding: 20px, 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: transparent;
+}
+
+.container {
+    width: 100%;
+    background-color: transparent;
+}
+*/
+.error404Wrapper {
+    width: 100%;
+    background-color: white;
+}
+
+.error404Main {
+    width: 100%; 
+    padding-top: 1px;   
+    vertical-align: top;
+    text-align: center;
+    background-color: white;
+}
+
+.errorText {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.reallyBigNumber {
+    font-size: 84px;
+    line-height: 0px;
+    font-weight: bold;
+    background-color: white;
+}
+
+.warning {
+    font-size: 48px;
+    line-height: 0px;
+}
+
+.supportText {
+    color: rgb(54, 4, 83);
+}
+
+.returnButton {
+    width: 150px;
+    height: 40px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(54, 4, 83);
+    box-shadow:3px 3px 5px grey;
+}
+
+.themeImage {
+    width: 490px;
+    height: 330px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(images/lonely\ anime\ boy\ _\ Tumblr.gif);
+    border-bottom: solid 1px black;
+}
+
+/**********navBarView Mobile (360px x 640px)*********************************************/
+
+@media screen and (max-width: 361px) {
+    .errorText {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+        background-color: white;
+    }
+
+    .reallyBigNumber {
+        font-size: 60px;
+    }
+    
+    .warning {
+        font-size: 36px;
+        line-height: 0px;
+    }
+    
+    .supportText {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+    
+    .returnButton {
+        font-size: 12px;
+    }
+    
+    .themeImage {
+        width: 365px;
+        height: 258px;
+        margin-left: auto;
+        margin-left: -5px;
+        margin-right: auto;
+        background-image: url(images/lonely\ anime\ boy\ _\ Tumblr.gif);
+        background-size: 108%;
+        background-repeat: no-repeat;
+        border-bottom: solid 1px black;
+    }
+}
