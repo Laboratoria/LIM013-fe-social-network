@@ -1,4 +1,4 @@
-/**********signAndLogView Desktop (1562px x 920px)*********************/
+/**********defaultView Desktop (1562px x 920px)************************/
 
 body {
     margin: auto;
@@ -9,8 +9,13 @@ body {
 
 .container {
     width: 100%;
+    max-width: 1562px;
+    margin-left: auto;
+    margin-right: auto;
     background-color: transparent;
 }
+
+/**********signAndLogView Desktop (1562px x 920px)*********************/
 
 .wrapper {
     background-color: white;
