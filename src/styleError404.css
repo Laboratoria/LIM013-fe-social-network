@@ -2,6 +2,7 @@
 
 .error404Wrapper {
     width: 100%;
+    padding-top: 5px;
     background-color: white;
 }
 
@@ -49,17 +50,50 @@
 }
 
 .themeImage {
-    width: 490px;
-    height: 330px;
+    width: 735px;
+    height: 495px;
     margin-left: auto;
     margin-right: auto;
     background-image: url(images/lonely\ anime\ boy\ _\ Tumblr.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
     border-bottom: solid 1px black;
 }
 
-/**********navBarView Mobile (360px x 640px)*********************************************/
+/**********profileView Laptop (1280px x 802px)*************************/
+
+@media screen and (max-width: 1281px) {
+    .error404Wrapper {
+        padding-top: 8px;
+    }
+
+    .themeImage {
+        width: 490px;
+        height: 330px;
+    }
+}
+
+/**********navBarView Tablet (768px x 1024px)*************************/
+
+@media screen and (max-width: 768px) {
+    .error404Wrapper {
+        padding-top: 35px;
+    }
+
+    .themeImage {
+        padding-top: 30px;
+        width: 735px;
+        height: 495px;
+    }
+}
+
+/**********navBarView Mobile (360px x 640px)**************************/
 
 @media screen and (max-width: 361px) {
+    .error404Wrapper {
+        padding-top: 0px;
+    }
+
     .errorText {
         width: 80%;
         margin-left: auto;
@@ -89,6 +123,7 @@
     .themeImage {
         width: 365px;
         height: 258px;
+        padding-top: 0px;
         margin-left: auto;
         margin-left: -5px;
         margin-right: auto;

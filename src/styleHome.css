@@ -1,5 +1,5 @@
 /**********defaultView Desktop (1562px x 920px)************************/
-
+/*
 body {
     margin: auto;
     padding: 20px, 0px;
@@ -14,13 +14,16 @@ body {
     margin-right: auto;
     background-color:  #F4F1F1;
 }
-
-/**********newPostContainer Desktop (1562px x 920px)********************/
+*/
+/**********homeView Desktop (1562px x 920px)**************************/
 
 .homeBodyWrapper {
     width: 100%;
     display: flex;
-    justify-content: center;    
+    justify-content: center; 
+    margin-left: auto;
+    margin-right: auto;
+    background-color:  #F4F1F1;   
 }
 
 /**********main**********/
@@ -177,4 +180,17 @@ body {
 
 .iconLinkTab {
     display: none;
+}
+
+/**********homeView Laptop (1280px x 802px)***************************/
+
+@media screen and (max-width: 1281px) {
+    /**********aside left**********/
+    .leftHome {
+        margin-left: -6.5%;
+    }
+
+    .mainHome {
+        margin-left: 7%;
+    }
 }

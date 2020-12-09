@@ -1,5 +1,5 @@
-/**********defaultView Desktop (1562px x 920px)************************/
-
+/**********defaultView Desktop (1600px x 992px)************************/
+/*
 body {
     margin: auto;
     padding: 20px, 0px;
@@ -14,15 +14,17 @@ body {
     margin-right: auto;
     background-color: transparent;
 }
+*/
 
-/**********signAndLogView Desktop (1562px x 920px)*********************/
-
-.wrapper {
+.wrapperSignAndLog {
     background-color: white;
 }
 
 .intro {
-    background-color: transparent;
+    background-color: none;
+    width: 57%;
+    display: inline-block;
+    margin-left: 6.5%;
 }
 
 .punchStarter {
@@ -40,12 +42,12 @@ body {
     width: 67%;
     display: inline-block;
 }
-  
+
 table {
     background-color: none;
     text-align: center;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 34px;
 }
   
 th {
@@ -60,22 +62,15 @@ td {
     font-size: 14px;
     padding: 9px;
 }
-  
-.intro {
-    background-color: none;
-    width: 55.4%;
-    display: inline-block;
-    margin-left: 110px;
-}
-  
+    
 .videoIntro {
     width: 100%;
     margin-top: -1px;
 }
   
 .video {
-    width: 882px;
-    height: 495px;
+    width: 912px;
+    height: 511.8px;
 }
   
 .join {
@@ -83,6 +78,7 @@ td {
     display: inline-block;
     vertical-align: top;
     width: 30%;
+    margin-left: -4px;
     margin-right: auto;
     position: relative;
 }
@@ -93,8 +89,8 @@ td {
 }
   
 .anime {
-    width: 460px;
-    height: 452px;
+    width: 480px;
+    height: 472px;
     background-image: url(images/index_mayoi_neko.png);
     background-size: 99%;
     background-repeat: no-repeat;
@@ -102,8 +98,8 @@ td {
 }
   
 .home_form {
-    margin-top: 342px;
-    height: 495px;
+    margin-top: 356px;
+    height: 511.8px;
     background-image: url(images/index_fondo_form.png);
     background-size: 92%;
     z-index: 1;
@@ -314,7 +310,8 @@ input:valid {
 }
 
 .footer {
-    padding: 20px;
+    padding-top: 40px;
+    padding-bottom: 62px;
     text-align: center;
     background-color: transparent;
 }
@@ -322,3 +319,127 @@ input:valid {
 .footerBold {
     font-weight: bold;
 }
+
+/**********defaultView Laptop (1280px x 802px)************************/
+
+@media screen and (max-width: 1281px) {
+    .punchStarter {
+        font-size: 44px;        
+        width: 29%;
+    }
+      
+    .punchText {
+        margin-left: 20px;
+        font-size: 26px;
+    }
+
+    table {
+        margin-bottom: 20px;
+    }
+
+    .videoIntro {
+        margin-top: 0px;
+    }
+
+    .video {
+        width: 735px;
+        height: 412.4px;
+    }
+
+    .join {
+        margin-left: 0px;
+    }
+
+    .anime {
+        width: 407px;
+        height: 393px;
+    }
+
+    .home_form {
+        margin-top: 302px;
+        height: 412.4px;
+        background-size: 92%;
+    }
+
+    .emptySpace {
+        height: 75px;
+    }
+
+    .formOptions {
+        width: 300px;
+        height: 30px;
+    }
+
+    .logIn {
+        width: 150px;
+    }
+      
+    .signInOptionCell {
+        width: 150px;
+    }
+      
+    .logInOptionCell {
+        width: 150px;
+    }
+      
+    .signIn {
+        width: 150px;
+    }
+
+    .initForm {
+        width: 300px;
+        height: 280px;
+    }
+      
+    .form-groupT {
+        width: 300px;
+        height: 40px;
+    }
+          
+    .form-groupP {
+        width: 300px;
+        height: 28px;
+    }
+      
+    .form-groupS {
+        width: 300px;
+        height: 24px;
+    }
+      
+    .input {
+        width: 300px;
+        height: 28px;
+    }
+
+    .logInButton,
+    .signInButton {
+        width: 305px;
+        height: 32px;
+    }
+  
+    .logInWith, 
+    .signInWith {
+        font-size: 14px;
+    }
+  
+    .logInWithFacebookButton,
+    .signInWithFacebookButton {
+        width: 305px;
+        height: 32px;
+    }
+
+    .formFooter {
+        width: 300px;
+        height: 30px;
+    }
+      
+    .logo {
+        font-size: 22px;
+    }
+    
+    .footer {
+        padding-top: 30px;
+        padding-bottom: 45px;
+    }
+}
+

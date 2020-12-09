@@ -3,10 +3,10 @@ import { signIn, logIn } from '../controller/controller-firebase.js';
 
 export default () => {
   const signAndLogView = `
-  <section class="wrapper">
+  <section class="wrapperSignAndLog">
     <header></header>
     <main class="intro">
-      <section class="wrapper">
+      <section class="wrapperSwitch">
         <section class="punchLine">
           <section class="punchStarter">
             <h2>Why?</h2>
@@ -46,9 +46,9 @@ export default () => {
           </table>
         </section>
         <section class="videoIntro">
-        <iframe class="video" width="882" height="495" src="https://www.youtube.com/embed/hVwKdMpXrx0" 
-        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
-        picture-in-picture" allowfullscreen></iframe>         
+          <iframe class="video" width="912" height="511.8" src="https://www.youtube.com/embed/hVwKdMpXrx0" 
+          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+          picture-in-picture" allowfullscreen></iframe>         
         </section>
       </section>
     </main>

@@ -1,7 +1,7 @@
-/**********defaultView Desktop (1562px x 920px)*******************************************/
+/**********defaultView Desktop (1600px x 992px)************************/
 
 body {
-  background-color:  transparent;
+  background-color:  #323a46;
   margin: auto;
   padding: 20px, 0px;
   font-family: Arial, Helvetica, sans-serif;
@@ -9,14 +9,22 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1562px;
+  height: auto;
+  max-width: 1920px;
+  min-width: 360px;
   margin-left: auto;
   margin-right: auto;
-  background-color: transparent;
+  box-sizing: border-box;
 }
 
-/**********defaultView Mobile (360px x 640px)***************************/
+/**********defaultView Laptop (1280px x 802px)************************/
+
+/**********defaultView Tablet (768px x 1024px)************************/
+
+/**********defaultView Mobile (360px x 640px)*************************/
 
 @media screen and (max-width: 361px) {
   
 }
+
+/**********defaultView Mobile mini (320px x 480px)********************/

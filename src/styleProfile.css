@@ -1,5 +1,5 @@
 /**********defaultView Desktop (1562px x 920px)************************/
-
+/*
 body {
     margin: auto;
     padding: 20px, 0px;
@@ -14,13 +14,14 @@ body {
     margin-right: auto;
     background-color:  #F4F1F1;
 }
-
-/**********newPostContainer Desktop (1562px x 920px)********************/
+/*
+/**********profileView Desktop (1562px x 920px)***********************/
 
 .profileBodyWrapper {
     width: 100%;
     display: flex;
-    justify-content: center;    
+    justify-content: center;
+    background-color:  #F4F1F1;    
 }
 
 /**********main**********/
@@ -179,4 +180,21 @@ body {
     text-align: center;
     font-size: 12px;
     color: rgb(82, 83, 83);
+}
+
+/**********profileView Laptop (1280px x 802px)*************************/
+
+@media screen and (max-width: 1281px) {
+    /**********aside left**********/
+    .leftProfile {
+        margin-left: -6.5%;
+    }
+
+    .userData {    
+        margin-left: 60px;
+    }
+
+    .mainHome {
+        margin-left: 7%;
+    }
 }
