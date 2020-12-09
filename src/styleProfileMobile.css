@@ -1,15 +1,15 @@
-/**********newPostView Mobile (360px x 640px)******************************/
+/**********homeView Tablet (768px x 1024px)***************************/
 
-@media screen and (max-width: 361px) {
+@media screen and (max-width: 768px) {
     /**********main**********/
     .profileBodyWrapper {
         flex-direction: column;
-        align-items: flex-start;
         width: 100%;    
     }
 
     .mainHome {
         width: 100%;
+        margin-left: 0%;
         align-self: center;
     }
     
@@ -37,9 +37,128 @@
     
     .leftProfile {
         width: 100%;
+        margin-left: 0%;
         align-self: center; 
         margin-bottom: 0px;
         background-color: none;
+    }
+
+    .userData {    
+        margin-left: -190px;
+    }
+
+    .heroPhoto {
+        width: 300px;
+        height: 160px;        
+        margin-top: 0px;
+        background-image: url(images/hero_photo_mobile.jpg);
+        background-size: cover;
+    }
+    
+    .userPhoto {
+        width: 70px;
+        height: 70px;
+        margin-top: -30px;
+    }
+    
+    .userName {
+        width: 165px;
+        height: 40px;
+        font-size: 14px;
+        white-space:nowrap;
+    }
+    
+    .myPhotos {
+        display: none;
+    }
+
+    .contact {
+        display: none;
+    }
+
+    .bottom {
+        display: none;
+    }
+
+    .profileLinksMobile {
+        display: block;
+        width: 300px;
+        height: 60px;
+        margin-right: auto;
+        margin-left: auto; 
+    }
+
+    .subtitleLeft {
+        width: 50%;
+        margin-right: 5px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        border-radius: 5px;
+        color:  grey;
+        background-color:  white;
+    }
+
+    .subtitleRight {
+        width: 50%;
+        margin-left: 5px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        border-radius: 5px;
+        color: white;
+        background-color: rgb(54, 4, 83);
+        box-shadow:3px 3px 5px grey;
+    }
+}
+
+/**********profileView Mobile (360px x 640px)**************************/
+/**********profileView Mobile mini (320px x 480px)*********************/
+
+@media screen and (max-width: 361px) {
+    /**********main**********/
+    .profileBodyWrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;    
+    }
+
+    .mainHome {
+        width: 100%;
+        margin-left: 0%;
+        align-self: center;
+    }
+    
+    .newPostContainer {
+        padding-top: 0px;
+    }
+
+    .newPostForm {
+        width: 300px;
+    }
+    
+    .newPostInputText {
+        width: 260px;
+    }
+    
+    .separator {
+        width: 280px;
+    }
+    
+    .postButton {
+        margin-right: 10px;
+    }
+
+    /**********aside left**********/
+    
+    .leftProfile {
+        width: 100%;
+        margin-left: 0%;
+        align-self: center; 
+        margin-bottom: 0px;
+        background-color: none;
+    }
+
+    .userData {    
+        margin-left: 0px;
     }
 
     .heroPhoto {

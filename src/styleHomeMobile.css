@@ -1,4 +1,128 @@
-/**********newPostView Mobile (360px x 640px)******************************/
+/**********homeView Tablet (768px x 1024px)***************************/
+
+@media screen and (max-width: 768px) {
+    .homeBodyWrapper {
+        width: 100%;
+        
+        flex-direction: column;            
+    }
+
+    .linkTab {
+        display: none;
+    }
+
+    .iconLinkTab {
+        display: block;
+    }
+
+    /**********aside left**********/
+    
+    .leftHome {
+        width: 80%;
+        margin-left: 0%;
+        align-self: center;
+        margin-bottom: 0px;
+        background-color: none;
+        
+    }
+
+    .linkTab {
+        display: none;
+    }
+
+    .iconLinkTab {
+        width: 100%;
+        display: block;
+    }
+
+    .iconMobile {
+        width: 18.5%;
+        font-size: 40px;
+        background-color: none;
+    }
+
+    /**********main**********/
+    
+    .mainHome {
+        width: 80%; 
+        margin-left: 7%;       
+        align-self: center;
+    }
+
+    
+    .newPostContainer {
+        width: 100%;
+        padding-top: 0px;
+        margin-bottom: 10px;
+    }
+    
+    .newPostForm {
+        width: 614.4px;
+    }
+    /*
+    .newPostInputText {
+        width: 260px;
+    }
+    
+    .separator {
+        width: 280px;
+    }
+    
+    .postButton {
+        margin-right: 10px;
+    }
+    */
+    /**********aside left**********/
+    /*
+    .leftHome {
+        width: 70%;
+        margin-bottom: 0px;
+        background-color: none;
+        margin-left: 13.5%;
+    }
+
+    .linkTab {
+        width: 70%;
+        display: none;
+    }
+    /*
+    .userPhoto {
+        width: 60px;
+        height: 60px;
+        margin-top: -20px;
+    }
+
+    .userName {
+        width: 150px;
+        height: 40px;
+        margin-top: -5px;
+    }
+
+    .userName p {
+        font-size: 14px;
+    }
+    */
+    /*
+    .bottom {
+        display: none;
+    }
+
+    .iconLinkTab {
+        display: block;
+        height: 40px;
+    }
+
+    .iconMobile {
+        width: 20%;
+        font-size: 40px;
+        background-color: none;
+    }
+    */
+}
+
+
+/**********homeView Mobile (360px x 640px)****************************/
+/**********homeView Mobile mini (320px x 480px)***********************/
 
 @media screen and (max-width: 361px) {
     /**********main**********/
@@ -10,6 +134,7 @@
 
     .mainHome {
         width: 100%;
+        margin-left: 0;
         align-self: center;
     }
     
@@ -37,6 +162,7 @@
     .left {
         width: 100%;
         align-self: center; 
+        margin-left: 0;
         margin-bottom: 0px;
         background-color: none;
     }
@@ -50,13 +176,11 @@
         height: 60px;
         margin-top: -20px;
     }
-
     .userName {
         width: 150px;
         height: 40px;
         margin-top: -5px;
     }
-
     .userName p {
         font-size: 14px;
     }
@@ -68,7 +192,7 @@
     .iconLinkTab {
         display: block;
         height: 40px;
-        margin-left: 28px;
+        margin-left: 0px;
     }
 
     .iconMobile {
