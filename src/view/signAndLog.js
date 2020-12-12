@@ -92,7 +92,7 @@ export default () => {
               <p class= "logInWith">or</p>
             </section>
             <section class="form-groupP">
-              <button type="button" class="logInWithFacebookButton">LOG IN WITH FACEBOOK</button>
+              <button type="button" class="logInWithFacebookButton" id="googleLogin">LOG IN WITH GOOGLE</button>
             </section>
             <section class="form-groupS">
               <p class="logInCustomErrorResponse" id="logInCustomErroR"></p>
@@ -186,6 +186,21 @@ export default () => {
   logInbtn.addEventListener('click', () => {
     signAndLogController.actionLogIn(sectionElement);
   });
+
+  // Google logIn
+  const googleLoginBtn = sectionElement.querySelector('#googleLogin');
+  googleLoginBtn.addEventListener('click', () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const auth = firebase.auth();
+    auth.signInWithPopup(provider)
+      .then(result => {
+        window.location.hash = '#/home';
+        //console.log('google logIn');
+      })
+      .catch(err => {
+        console.log(err);
+      })
+  }); 
 
   return sectionElement;
 };

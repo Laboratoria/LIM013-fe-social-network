@@ -98,4 +98,6 @@ export const signAndLogController = {
         console.log(error);
       });
   },
+
+  //actionLogInWithGoogle: (sectionElement) => {
 };

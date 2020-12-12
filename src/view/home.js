@@ -109,7 +109,7 @@ export default () => {
         </section>
       </aside>
       <main class="mainHome">
-        <section class="newPostContainer">
+        <section class="newPostContainer" id="newPostContainer">
           <form class="newPostForm" id="newPostForm">
             <section class="form-groupPost">
               <input type="text" placeholder="What have you been up to lately?" id="newPostText" name="newPostText" class="newPostInputText" ><br>
