@@ -131,7 +131,7 @@ export default () => {
               <p class="signInWith">or</p>
             </section>
             <section class="form-groupP">
-              <button type="button" class="signInWithFacebookButton">SIGN IN WITH FACEBOOK</button>
+              <button type="button" class="signInWithFacebookButton">SIGN IN WITH GOOGLE</button>
             </section>
             <section class="form-groupS">
               <p class="signInCustomErrorResponse" id="signInCustomErroR"></p>
