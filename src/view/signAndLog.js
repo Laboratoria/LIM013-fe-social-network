@@ -189,17 +189,9 @@ export default () => {
 
   // Google logIn
   const googleLoginBtn = sectionElement.querySelector('#googleLogin');
+
   googleLoginBtn.addEventListener('click', () => {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    const auth = firebase.auth();
-    auth.signInWithPopup(provider)
-      .then(result => {
-        window.location.hash = '#/home';
-        //console.log('google logIn');
-      })
-      .catch(err => {
-        console.log(err);
-      })
+    signAndLogController.actionLogInWithGoogle(sectionElement);      
   }); 
 
   return sectionElement;

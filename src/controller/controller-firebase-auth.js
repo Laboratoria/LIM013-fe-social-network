@@ -16,11 +16,15 @@ export const logIn = (email, password) => {
   return auth.signInWithEmailAndPassword(email, password);
 };
 
-// Usuario creado ingresa con google
 // Capturar usurio actual
 export const currentUser = () => firebase.auth().currentUser;
 
-
+// Usuario creado ingresa con google
+export const logInWithGoogle = () => {
+  const auth = firebase.auth();
+  const provider = new firebase.auth.GoogleAuthProvider();
+  return auth.signInWithPopup(provider);
+};
 
 // salir de la aplicación
 export const logOut = () => {

@@ -1,4 +1,4 @@
-import { signIn, logIn } from '../controller/controller-firebase-auth.js';
+import { signIn, logIn, logInWithGoogle } from '../controller/controller-firebase-auth.js';
 /* eslint-disable no-console */
 
 export const signAndLogController = {
@@ -99,5 +99,17 @@ export const signAndLogController = {
       });
   },
 
-  //actionLogInWithGoogle: (sectionElement) => {
+  actionLogInWithGoogle: (sectionElement) => {
+    const signInForm = sectionElement.querySelector('#signInForm');
+
+    logInWithGoogle()
+      .then(result => {
+        window.location.hash = '#/home';
+        //console.log('google logIn');
+        signInForm.reset();
+      })
+      .catch(err => {
+        console.log(err);
+      })
+  }
 };
