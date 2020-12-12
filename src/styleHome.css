@@ -35,10 +35,12 @@ body {
 }
 
 .newPostContainer {
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     padding-top: 20px;
-    padding-bottom: 10px;
+    padding-bottom: 0px;
+    background-color: transparent;
 }
     
 .newPostForm {
@@ -86,6 +88,123 @@ body {
     font-size: 12px;
     color: white;
     display: inline-block;
+}
+
+/**********postList************/
+
+.postList {
+    list-style-type: none;
+}
+
+.postContainer {
+    margin-left: -40px;
+    padding-top: 0px;
+    padding-bottom: 25px;
+    background-color:transparent;
+}
+
+.postForm {
+    width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.topUserData {
+    margin-bottom: 0;
+}
+
+.topUDContainer {
+    height: 30px;
+}
+
+.iconLeftPost {
+    width: 10%;
+    height: 30px;
+    margin-top: 5px;
+    margin-left: 6px;
+    display: inline-block;
+    background-image: url(images/quinnbee_mini.png);
+    background-size: 70%;
+    background-repeat: no-repeat;
+}
+
+.rightTextPost {
+    width: 60%;
+    vertical-align: top;
+    margin-left: 10px;
+    margin-right: 0px;
+    display: inline-block;
+    padding-top: 15px;
+    text-align: left;
+    background-color: transparent;
+}
+
+.loggedUsr {
+    height: 20px;
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.postDate {
+    font-size: 10px;
+    color: rgb(82, 83, 83);
+}
+
+.deletePost {
+    width: 15%;
+    vertical-align: top;
+    padding-top: 10px;
+    display: inline-block;
+    background-color: transparent;
+}
+
+.deletePostButton {
+    width: 20px;
+    height: 20px;
+    font-size: 32px;
+    text-align: center;
+    color:  rgb(82, 83, 83);
+    background-color: transparent;
+    border: none
+}
+
+.postInputTextContent {
+    margin-left: 15px;
+    text-align: left;
+}
+
+.otherUsersReaction {
+    height: 40px;
+    margin-left: 15px;
+    text-align: left;
+}
+
+.likeButton {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    background-image: url(images/heart-icon.jpg);
+    background-position: center;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    border: solid 2px black;
+}
+
+.shareButton {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    background-image: url(images/download-share-icon.png);
+    background-position: center;
+    background-size: 75%;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    border: solid 2px black;
 }
 
 /**********aside left**********/

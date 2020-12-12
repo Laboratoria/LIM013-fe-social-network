@@ -114,14 +114,14 @@
 
   .formOptions {
     background-color: none;
-    width: 320px;
+    width: 450px;
     height: 40px;
     
   }
 
   .logIn,
   .signIn {
-    width: 160px;
+    width: 225px;
     background-color: none;
     font-size: 14px;
   }
@@ -129,25 +129,25 @@
   .logInOptionCell,
   .signInOptionCell {
     background-color: none;
-    width: 160px;
+    width: 225px;
   }
 
   .signInOptionButton,
   .logInOptionButton {
-    width: 80px;
+    width: 200px;
     height: 30px;
     font-size: 14px;
   }
 
   .initForm {
-    width: 320px;
+    width: 450px;
     height: 580px;
     margin-left: auto;
     margin-right: auto;
   }
 
   .form-groupT {
-    width: 320px;
+    width: 450px;
     height: 60px;
   }
   
@@ -157,21 +157,21 @@
   }
 
   .form-groupP {
-    width: 320px;
+    width: 450px;
     height: 40px;
     padding-top: 10px;
     padding-bottom: 10px;
   }
 
   .form-groupS {
-    width: 320px;
+    width: 450px;
     height: 25px;
     padding-top: 0px;
     padding-bottom: 5px;
   }
 
   .input {
-    width: 320px;
+    width: 450px;
     height: 40px;
   }
 
@@ -182,7 +182,7 @@
 
   .logInButton,
   .signInButton {
-    width: 325px;
+    width: 455px;
     height: 50px;
   }
 
@@ -194,7 +194,7 @@
 
   .logInWithFacebookButton,
   .signInWithFacebookButton {
-    width: 325px;
+    width: 455px;
     height: 45px;
   }
 
@@ -204,7 +204,7 @@
   }
 
   .formFooter {
-    width: 320px;
+    width: 450px;
     height: 45px;
   }
 

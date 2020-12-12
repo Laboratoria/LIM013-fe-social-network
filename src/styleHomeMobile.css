@@ -57,9 +57,9 @@
     }
     
     .newPostForm {
-        width: 614.4px;
+        width: 300px;
     }
-    /*
+
     .newPostInputText {
         width: 260px;
     }
@@ -67,57 +67,53 @@
     .separator {
         width: 280px;
     }
-    
+
     .postButton {
         margin-right: 10px;
     }
-    */
-    /**********aside left**********/
-    /*
-    .leftHome {
-        width: 70%;
-        margin-bottom: 0px;
-        background-color: none;
-        margin-left: 13.5%;
+
+    /**********postList************/
+    .postForm {
+        width: 300px;
     }
 
-    .linkTab {
-        width: 70%;
-        display: none;
-    }
-    /*
-    .userPhoto {
-        width: 60px;
-        height: 60px;
-        margin-top: -20px;
+    .topUDContainer {
+        height: 25px;
     }
 
-    .userName {
-        width: 150px;
-        height: 40px;
-        margin-top: -5px;
+    .iconLeftPost {
+        width: 12%;
+        height: 25px;
+        margin-top: 5px;
+        margin-left: 5px;
     }
 
-    .userName p {
+    .rightTextPost {
+        width: 50%;        
+        margin-left: 0px;        
+        padding-top: 10px;
+    }
+
+    .loggedUsr {
+        height: 20px;
         font-size: 14px;
+        
     }
-    */
-    /*
-    .bottom {
-        display: none;
-    }
-
-    .iconLinkTab {
-        display: block;
-        height: 40px;
+    
+    .postDate {
+        font-size: 8px;
     }
 
-    .iconMobile {
-        width: 20%;
-        font-size: 40px;
-        background-color: none;
+    .deletePost {
+        width: 15%;        
+        padding-top: 10px;
     }
-    */
+
+    .deletePostButton {
+        width: 20px;
+        height: 20px;
+        font-size: 26px;
+    }
 }
 
 

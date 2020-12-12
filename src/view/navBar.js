@@ -1,4 +1,4 @@
-import { logOut as exit } from '../controller/controller-firebase.js';
+import { logOut as exit } from '../controller/controller-firebase-auth.js';
 
 export default () => {
   const navBarView = `

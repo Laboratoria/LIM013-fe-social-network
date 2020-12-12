@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import { signIn, logIn } from '../controller/controller-firebase.js';
+import { signAndLogController } from '../view-controler/signAndLog-controller.js';
 
 export default () => {
   const signAndLogView = `
@@ -157,121 +157,35 @@ export default () => {
 
   // Mostrando solo el formulario de LOG IN al cargar la página
   window.onload = () => {
-    document.getElementById('signInOptionForm').style.display = 'none';
-    document.getElementById('logInOptionForm').style.display = 'block';
+    signAndLogController.actionSeeLogIn();
   };
 
-  // Selecionando las opciones de formulario LOG IN/SIGN IN
+  // Selecionando el toggle de formulario LOG IN/SIGN IN
   const signInOpBtn = sectionElement.querySelector('#signInOptionButton');
 
-  signInOpBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    document.getElementById('logInOptionForm').style.display = 'none';
-    document.getElementById('signInOptionForm').style.display = 'block';
+  signInOpBtn.addEventListener('click', () => {
+    signAndLogController.actionSeeSignIn();
   });
 
   const logInOpBtn = sectionElement.querySelector('#logInOptionButton');
 
-  logInOpBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    document.getElementById('logInOptionForm').style.display = 'block';
-    document.getElementById('signInOptionForm').style.display = 'none';
+  logInOpBtn.addEventListener('click', () => {
+    signAndLogController.actionSeeLogIn();
   });
 
-  // Sign In
+  // Sign In Acciones de los botones
   const signInbtn = sectionElement.querySelector('#signInButton');
 
-  signInbtn.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    const signInEmail = sectionElement.querySelector('#signInEmailInput').value;
-    const signInPassword = sectionElement.querySelector('#signInPasswordInput').value;
-    const signInER = document.getElementById('signInErroR');
-    const signInPswER = document.getElementById('signInPswErroR');
-
-    if (signInEmail === '') {
-      signInER.innerHTML = '<p>*Please enter an email address</p>';
-      return;
-    }
-    if (signInEmail.length < 4 || !/^\S+@\S+\.\S+$/g.test(signInEmail)) {
-      signInER.innerHTML = '<p>*Please enter a valid email address</p>';
-      return;
-    }
-    if (signInPassword === '') {
-      signInPswER.innerHTML = '<p>*Please enter a password</p>';
-      return;
-    }
-    if (signInPassword.length < 4) {
-      signInPswER.innerHTML = '<p>*Must enter at least 6 characters</p>';
-      return;
-    }
-
-    signIn(signInEmail, signInPassword)
-      .then(() => {
-        console.log('Sign In');
-        signInForm.reset();
-      })
-      .catch((error) => {
-        const signInCustomER = document.getElementById('signInCustomErroR');
-        const errorCode = error.code;
-        const errorMessage = error.message;
-
-        if (errorCode === 'auth/weak-password') {
-          signInCustomER.innerHTML = '<p>*The password is too weak</p>';
-          return;
-        }
-        signInCustomER.innerHTML = errorMessage;
-        console.log(error);
-      });
+  signInbtn.addEventListener('click', () => {
+    signAndLogController.actionSignIn(sectionElement);
   });
 
   // Log In
   const logInbtn = sectionElement.querySelector('#logInButton');
 
-  logInbtn.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    const logInEmail = sectionElement.querySelector('#logInEmailInput').value;
-    const logInPassword = sectionElement.querySelector('#logInPasswordInput')
-      .value;
-    const logInER = document.getElementById('logInErroR');
-    const logInPswER = document.getElementById('logInPswErroR');
-
-    if (logInEmail === '') {
-      logInER.innerHTML = '<p>*Please enter an email address</p>';
-      return;
-    }
-    if (logInEmail.length < 4 || !/^\S+@\S+\.\S+$/g.test(logInEmail)) {
-      logInER.innerHTML = '<p>*Please enter a valid email address</p>';
-      return;
-    }
-    if (logInPassword === '') {
-      logInPswER.innerHTML = '<p>*Please enter a password</p>';
-      return;
-    }
-    if (logInPassword.length < 4) {
-      logInPswER.innerHTML = '<p>*Must enter at least 6 characters</p>';
-      return;
-    }
-
-    logIn(logInEmail, logInPassword)
-      .then(() => {
-        window.location.hash = '#/home';
-        console.log('Log In');
-        signInForm.reset();
-      })
-      .catch((error) => {
-        const logInCustomER = document.getElementById('logInCustomErroR');
-        const errorCode = error.code;
-        const errorMessage = error.message;
-
-        if (errorCode === 'auth/wrong-password') {
-          logInCustomER.innerHTML = '<p>*Wrong password</p>';
-        } else {
-          logInCustomER.innerHTML = errorMessage;
-        }
-        console.log(error);
-      });
+  logInbtn.addEventListener('click', () => {
+    signAndLogController.actionLogIn(sectionElement);
   });
+
   return sectionElement;
 };
